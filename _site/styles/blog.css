@@ -283,13 +283,14 @@ aside.post-meta {
 
 footer#disqus_thread {
 	background-color: #ddd;
-	padding: 20px 50px;
+	padding: 20px 50px 0px 50px;
 	width: 600px;
 	position: relative;
 	left: -50px;
 	margin-bottom: 0px;
 	line-height: none !important;
 	font-size: 14px;
+	min-height: 43px;
 }
 
 #dsq-account-dropdown a {
@@ -311,8 +312,39 @@ section#disqus-power {
 		text-decoration: underline;
 	}
 
+.dsq-textarea.dsq-textarea-reply {
+	margin-bottom: 30px !important;
+}
 
+#dsq-comments {
+	background-color: #fff;
+	padding: 0px 50px !important;
+	width: 100%;
+	position: relative;
+	left: -50px;
+}
 
+#dsq-content .dsq-comment {
+	margin: 0px !important;
+	padding-top: 20px;
+}
+
+	#dsq-content > h3 {
+		background-color: #fff;
+		padding: 20px 50px 0px 50px !important;
+		width: 100%;
+		position: relative !important;
+		left: -50px;
+		margin: 20px 0px 0px 0px !important;
+	}
+
+#dsq-pagination {
+	background-color: #fff;
+	padding: 20px 50px !important;
+	width: 100%;
+	position: relative;
+	left: -50px;
+}
 
 
 
