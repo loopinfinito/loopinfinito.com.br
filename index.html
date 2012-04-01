@@ -7,7 +7,7 @@ layout: home
 		<ul>
 			<li class="post-data">{{ post.date | date: "%d/%m/%Y" }}</li>
 			<li class="post-autor"><a href="{{ post.author_link }}">{{ post.author }}</a></li>
-			<li class="post-comentarios"><a href="#">5 comentários</a></li>
+			<li class="post-comentarios"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}">Carregando...</a></li>
 			{% unless post.tags == empty %}
 			<li class="post-tags">
 				<ul>

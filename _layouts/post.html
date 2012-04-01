@@ -1,36 +1,5 @@
-<!DOCTYPE HTML>
-<html lang="pt-BR">
-<head>
-	<meta charset="UTF-8" />
-	<title>Loop Infinito</title>
-	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" /> 
-	<script type="text/javascript">
+{% include head.html %}
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-27591633-1']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
-</head>
-<body>
-	<div id="wrapper">
-		<header id="main">
-			<h1><a href="/" id="logo">Loop Infinito</a></h1>
-			<nav>
-				<ul>
-					<li><a href="#">Posts</a></li>
-					<li><a href="#">Projetos</a></li>
-					<li><a href="#">Sobre</a></li>
-					<li><input type="search" placeholder="Busca"></li>
-				</ul>
-			</nav>
-		</header>
 		<section id="content">
 
 			<section class="post-container">
@@ -38,7 +7,7 @@
 					<ul>
 						<li class="post-data">{{ page.date | date: "%d/%m/%Y" }}</li>
 						<li class="post-autor"><a href="{{ page.author_link }}">{{ page.author }}</a></li>
-						<li class="post-comentarios"><a href="#">5 comentários</a></li>
+						<li class="post-comentarios"><a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.id}}">Carregando...</a></li>
 						{% unless page.tags == empty %}
 						<li class="post-tags">
 							<ul>
@@ -57,9 +26,18 @@
 					<section>						
 						{{ content }}						
 					</section>
+					{% if page.comments %}
+					<footer id="disqus_thread">
+						<noscript>Por favor, habilite JavaScript para ver os comentários. <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					</footer>
+					{% endif %}
 				</article>
 			</section>
+
+			<section id="disqus-power">
+				<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+			</section>
+
 		</section>
-	</div>
-</body>
-</html>
+
+{% include end_post.html %}

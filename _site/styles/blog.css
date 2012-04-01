@@ -18,6 +18,7 @@ body {
 	left:50%;
 	width:900px;
 	margin-left:-350px;
+	padding-bottom: 50px;
 }
 
 /* Diversos
@@ -103,7 +104,7 @@ header#main {
 /* ------ Content ------------------------------------*/
 
 #content {
-	padding-bottom:50px;
+	/*padding-bottom:50px;*/
 }
 
 	#content h1, h2, h3 {
@@ -128,12 +129,12 @@ header#main {
 	}
 
 		#content h1 a {
-			text-decoration: none;
+			text-decoration: none !important;
 			color: #666;
 		}
 
 		#content h1 a:hover {
-			text-decoration: underline;
+			text-decoration: underline !important;
 		}
 
 	#content h2 {
@@ -151,7 +152,7 @@ header#main {
 	#content .post-container article {
 		width:600px;
 		background-color:white;
-		padding: 45px 50px;
+		padding: 45px 50px 0px 50px;
 		line-height:200%;
 		color:#666;
 		border: 1px solid #CCCCCC;
@@ -167,6 +168,10 @@ header#main {
 		margin:0;
 	}
 
+		#content .post-container article section {
+			padding-bottom: 45px;
+		}
+
 		#content .post-container article p {
 			margin:25px 0;
 			-webkit-hyphens:auto;
@@ -175,6 +180,10 @@ header#main {
 		#content .post-container article a {
 			text-decoration: underline;
 			color: #666;
+		}
+
+		#content .post-container article a:hover {
+			color: #333;
 		}
 
 			#content .post-container article p img {
@@ -229,6 +238,7 @@ aside.post-meta {
 		margin:20px 0 0 0;
 		height:20px;
 		padding:0 0 0 35px;
+		line-height: 20px;
 	}
 
 	aside.post-meta li.post-data {
@@ -266,3 +276,55 @@ aside.post-meta {
 			aside.post-meta li.post-tags li a:hover span {
 				color: #333;
 			}
+
+ 
+ /* article footer: comments 
+ ---------------------------------------------------------------*/
+
+footer#disqus_thread {
+	background-color: #ddd;
+	padding: 20px 50px;
+	width: 600px;
+	position: relative;
+	left: -50px;
+	margin-bottom: 0px;
+	line-height: none !important;
+	font-size: 14px;
+}
+
+#dsq-account-dropdown a {
+	font-size: 13px;
+}
+
+section#disqus-power {
+	text-align: right;
+	line-height: 40px;
+	margin-right: 200px;
+}
+
+	section#disqus-power a {
+		color: #999;
+		text-decoration: none;
+	}
+
+	section#disqus-power a:hover {
+		text-decoration: underline;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
