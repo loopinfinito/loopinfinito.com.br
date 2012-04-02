@@ -330,17 +330,12 @@ section#disqus-power {
 	}
 
 #dsq-content .dsq-comment {
-	margin: 0px !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
 	padding-top: 20px;
 }
 
 	#dsq-content > h3 {
-		/*background-color: #fff;
-		padding: 20px 50px 0px 50px !important;
-		width: 100%;
-		position: relative !important;
-		left: -50px;
-		margin: 20px 0px 0px 0px !important;*/
 		display: none;
 	}
 
