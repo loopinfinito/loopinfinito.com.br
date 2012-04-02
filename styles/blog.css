@@ -324,6 +324,11 @@ section#disqus-power {
 	left: -50px;
 }
 
+	#dsq-comments span.dsq-like-thumb {
+		position: relative !important;
+		bottom: 5px !important;
+	}
+
 #dsq-content .dsq-comment {
 	margin: 0px !important;
 	padding-top: 20px;
