@@ -330,12 +330,18 @@ section#disqus-power {
 }
 
 	#dsq-content > h3 {
-		background-color: #fff;
+		/*background-color: #fff;
 		padding: 20px 50px 0px 50px !important;
 		width: 100%;
 		position: relative !important;
 		left: -50px;
-		margin: 20px 0px 0px 0px !important;
+		margin: 20px 0px 0px 0px !important;*/
+		display: none;
+	}
+
+	#dsq-content #dsq-reply h3 {
+		font-size: 28px;
+		margin:0 0 25px 0;
 	}
 
 #dsq-pagination {
@@ -345,18 +351,3 @@ section#disqus-power {
 	position: relative;
 	left: -50px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
