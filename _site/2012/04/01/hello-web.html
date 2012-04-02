@@ -103,6 +103,12 @@
 	    var disqus_identifier = '/2012/04/01/hello-web';
 	    // var disqus_developer = 1;
 
+	    // call back do Disqus
+	    function disqus_callback() {
+	    	// 
+	    	$('#dsq-reply h3').html('Comentários')
+	    }
+
 	    /* * * DON'T EDIT BELOW THIS LINE * * */
 	    (function() {
 	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -115,6 +121,6 @@
 	        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
 	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	    })();
-	</script>
+	</script>	
 </body>
 </html>

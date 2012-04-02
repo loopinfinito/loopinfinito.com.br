@@ -5,6 +5,12 @@
 	    var disqus_identifier = '{{page.id}}';
 	    // var disqus_developer = 1;
 
+	    // callback do Disqus
+	    function disqus_callback() {
+	    	// modifica o título da caixa de comentários
+	    	$('#dsq-reply h3').html('Comentários')
+	    }
+
 	    /* * * DON'T EDIT BELOW THIS LINE * * */
 	    (function() {
 	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -17,6 +23,6 @@
 	        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
 	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	    })();
-	</script>
+	</script>	
 </body>
 </html>
