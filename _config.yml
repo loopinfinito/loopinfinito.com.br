@@ -5,10 +5,8 @@ server_port: 4000
 baseurl:    /
 url: http://localhost:4000
 
-exclude: gomart.mobi.xcodeproj
-
 source:      ./_source
-destination: ./_site
+destination: ./site
 plugins:     ./_plugins
 
 future:      true
