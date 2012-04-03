@@ -7,7 +7,7 @@ url: http://localhost:4000
 
 exclude: gomart.mobi.xcodeproj
 
-source:      .
+source:      ./_source
 destination: ./_site
 plugins:     ./_plugins
 
