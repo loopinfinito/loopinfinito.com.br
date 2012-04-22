@@ -12,7 +12,7 @@
 						<li class="post-tags">
 							<ul>
 								{% for tag in page.tags %}
-								<li><a href=""><span>#</span>{{ tag }}</a></li>,
+								<li><a href=""><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
 								{% endfor %}					
 							</ul>
 						</li>

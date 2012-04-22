@@ -163,6 +163,20 @@ header#main {
 		margin:100px 0 0 0;
 		box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.06);
 	}
+		#content .post-container p > code,
+		#content .post-container section > code {
+			background-color: #EFEFEF;
+			padding: 3px;
+			border-radius: 3px;
+			color: #555;
+		}
+
+		#content .post-container pre {
+			width: 600px;
+			position: relative;
+			left: -50px;
+			padding: 0px 50px 20px 50px;
+		}
 
 	#content .post-container:first-child article {
 		margin:0;
@@ -206,6 +220,29 @@ header#main {
 			font-weight: bold;
 			margin-top: 20px;
 		}
+
+		#content .post-container aside.fonte {
+			font-size: 12px;
+			width: 600px;
+			position: relative;
+			left: -50px;
+			border-top: 1px dashed #CCC;
+			padding: 20px 50px;
+			margin-bottom: -40px;
+		}
+
+			#content .post-container aside.fonte ul {
+				list-style: none;
+			}
+
+				#content .post-container aside.fonte ul li {
+					line-height: 175%;	
+				}
+
+				#content .post-container aside.fonte ul a {
+					/*text-decoration: none;*/
+					color: #999;
+				}
 
 /* Post Meta
 ---------------------------------------- */

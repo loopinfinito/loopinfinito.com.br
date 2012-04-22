@@ -1,0 +1,24 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"> 
+  <id>http://loopinfinito.com.br/</id>
+  <title>Loop Infinito</title>
+  <icon>http://loopinfinito.com.br/images/favicon.png</icon>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
+  <link href="http://loopinfinito.com.br/" />
+  {% for post in site.posts %}
+  <entry>
+    <id>http://loopinfinito.com.br{{ post.id }}</id>
+    <title>{{ post.title }}</title>    
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <link href="http://loopinfinito.com.br{{ post.url }}" />
+    <author>
+      <name>{{ post.author }}</name>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {% endfor %}
+</feed>
