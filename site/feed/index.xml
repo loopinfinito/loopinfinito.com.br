@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-04-21T22:21:13-03:00</updated>
+  <updated>2012-04-21T23:04:21-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -129,7 +129,7 @@ img {
   
   <entry>
     <id>http://loopinfinito.com.br/2012/04/01/hello-web</id>
-    <title>console.log(<span class="light">‘Hello Web!’</span>)</title>    
+    <title>console.log(‘Hello Web!’)</title>    
     <updated>2012-04-01T00:00:00-03:00</updated>
     <link href="http://loopinfinito.com.br/2012/04/01/hello-web.html" />
     <author>
