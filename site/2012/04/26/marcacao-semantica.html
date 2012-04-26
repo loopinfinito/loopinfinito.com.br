@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<title>Loop Infinito</title>
+	
+	<meta name="author" content="Almir Filho, Caio Gondim" />
+	<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend" />
+	<meta name="description" content="Focado em front-end web dev, produtividade e usabilidade." />
+	<meta name="language" content="pt" />
+	<meta name="content-language" content="pt-BR" />
+	<meta name="robots" content="all" />
+	<meta name="distribution" content="Global" />
+	<meta name="resource-type" content="document" />
+	
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
+	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
+	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="/scripts/rainbow-custom.min.js"></script>	
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-27591633-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<header id="main">
+			<h1><a href="/" id="logo">Loop Infinito</a></h1>
+			<nav>
+				<ul>
+					<li><a href="/">Posts</a></li>
+					<li><a href="/projetos">Projetos</a></li>
+					<li><a href="/sobre">Sobre</a></li>
+					<li><input type="search" placeholder="Busca"></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="content">
+
+			<section class="post-container">
+				<aside class="post-meta">
+					<ul>
+						<li class="post-data">26/04/2012</li>
+						<li class="post-autor"><a href="http://twitter.com/almirfilho">Almir Filho</a></li>
+						
+							<li class="post-comentarios"><a href="/2012/04/26/marcacao-semantica.html#disqus_thread" data-disqus-identifier="/2012/04/26/marcacao-semantica">Carregando...</a></li>
+						
+						
+						<li class="post-tags">
+							<ul>
+								
+								<li><a href=""><span>#</span>web-semantica</a></li>,
+								
+								<li><a href=""><span>#</span>microdata</a></li>,
+								
+								<li><a href=""><span>#</span>schema.org</a></li>
+													
+							</ul>
+						</li>
+						
+					</ul>	
+				</aside>
+				<article>
+					<header>
+						<h1><a href="/2012/04/26/marcacao-semantica.html">Marcação Semântica</a></h1>
+					</header>
+					<section>						
+						<p>Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.</p>
+
+<p>Desde a década de 1990, a W3C tem apresentado maneiras para definição de conteúdo semântico, e de lá pra cá surgiram outras alternativas, mas devido a grande quantidade de informações, falarei apenas um pouco sobre cada uma delas: RDF, RDFa, Microformats e <strong>Microdata</strong> ← focaremos neste último cara aqui.</p>
+
+<p>Vale salientar que os principais motores de busca já levam em consideração o uso de qualquer uma destas tecnologias citadas (pelo menos em parte).</p>
+
+<h2 id='rdf_resource_description_framework'>RDF (Resource Description Framework)</h2>
+
+<p>Criada pela W3C em 1999, é uma <strong>linguagem</strong> baseada em XML que foi concebida com o intuito de representar informação na internet. RDF é um modelo similar aos conceitos de modelagem Entidade-Relacionamento. RDF é tão abrangente que é possível definir linguagens para definição de ontologias com ela. Na minha opinião, usar RDF para marcar páginas web semanticamente hoje em dia é a mesma coisa que querer usar uma bala de canhão pra matar uma formiga. Na prática, principalmente por ser uma outra linguagem, RDF é um mundo tão grande e diferente que se torna complexo querer definir qualquer relacionamento semântico nos ambientes web conhecidos de hoje.</p>
+
+<h2 id='rdfa_rdf__in__attributes'>RDFa (RDF – in – attributes)</h2>
+
+<p>O título fala por si só. RDFa é a marcação semântica sem a necessidade de utilização de novos elementos de marcação, sendo feita usando <strong>atributos</strong> que podem ser embutidos em qualquer elemento. A grande vantagem que a difere de RDF é a possibilidade de marcação no próprio conteúdo (já que um RDF tem que residir em um arquivo separado – o que acaba com a duplicação de dados do RDF). Porém, RDFa foi desenvolvida como um conjunto de extensões de XHTML e obedecendo aos padrões XML, obrigando-nos a fazer uso de <em>namespaces</em> para todo e qualquer escopo/atributo de item semântico que quisermos descrever, tornando assim a marcação semântica um tanto chata e trabalhosa.</p>
+
+<h2 id='microformats'>Microformats</h2>
+
+<p>Microformats não se trata de mais uma nova linguagem querendo abraçar o mundo. A idéia é resolver os problemas mais simples primeiro, <strong>adaptando-se aos padrões atuais</strong> e fazer com que você passe a usar uma marcação semântica o mais rápido possível, já que é de fácil utilização. A proposta dos microformats é bem simples e <strong>muito bem difundida</strong>. Dentre os formatos mais usados, estão o hCalendar (para publicação de eventos) e hCard (para pessoas, empresas e organizações em geral). <a href='http://microformats.org/wiki/Main_Page#Specifications'>Veja mais formatos definidos</a>.</p>
+
+<h2 id='microdata'>Microdata</h2>
+
+<p>Foi criado pelo WHATWG (os caras do HTML5/WebApplications 1.0) e tornou-se o padrão de marcação semântica adotado pelo HTML5. Microdata utiliza-se de variados <strong>vocabulários</strong> para descrever itens semanticamente e pares <em>key-value</em> para atribuição de valores a suas propriedades.</p>
+
+<p>Ótimo, mas onde podemos encontrar esses tais vocabulários? Os primeiros vocabulários microdata foram definidos em 2010 e podem ser encontrados em <a href='http://data-vocabulary.org/'>data-vocabulary.org</a>. Note que existem poucos vocabulários definidos (apenas 9), que são: <em>Event</em>, <em>Organization</em>, <em>Person</em>, <em>Product</em>, <em>Review</em>, <em>Review-aggregate</em>, <em>Breadcrumb</em>, <em>Offer</em> e <em>Offer-aggregate</em>. Mas calma lá, o melhor do microdata ainda está por vir com o <strong><a href='http://schema.org'>Schema.org</a></strong>, um repositório de vocabulários microdata que cresce a cada dia.</p>
+
+<h3 id='schemaorg'>Schema.org</h3>
+
+<p>Os principais motores de busca se baseiam nos vocabulários do schema.org para melhor indexar, classificar e refinar seus resultados de busca, visto que o schema.org é na verdade um consórcio entre os grandes buscadores da web – Google, Bing e Yahoo! – para &#8221;<em>criar e suportar um grupo de esquemas em comum para dados de marcação estruturados em páginas web</em>&#8221;. A iniciativa começou com um pequeno número de formatos (esquemas ou tipos), mas o objetivo a longo prazo é suportar uma ampla gama de formatos. No momento em que escrevo este post, já se encontram em torno de <strong>450 formatos</strong> definidos no schema.org – <a href='http://schema.org/docs/full.html'>Lista completa</a>. Existem desde os tipos mais básicos como pessoa (<em>Person</em>), evento (<em>Event</em>) ou organização (<em>Organization</em>) até os mais específicos como dentista (<em>Dentist</em>), parada de ônibus (<em>BusStop</em>) e até mesmo templo hindu (<em>HinduTemple</em>).</p>
+
+<p>Beleza, mas por quê Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de <a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'>Roy Tennant</a>, com o qual concordo plenamente e também recomendo a leitura.</p>
+<span id='razoes-microdata' />
+<ul>
+<li><strong>Há um claro incentivo à utilização de microdata</strong> – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. <em>As grandes armas estão por trás do microdata</em>. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivesse nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.</li>
+
+<li><strong>Não há nenhuma razão clara para usar RDFa e não microdata</strong> – O que RDFa se propõe a fazer que microdata não? Comentem por favor =)</li>
+
+<li><strong>É simples</strong> – Esta é a minha razão favorita. Sou um grande fã da <strong>simplicidade</strong>, especialmente quando se consegue um resultado tão (ou quase tão) bem feito de como se fosse algo mais complexo.</li>
+
+<li><strong>Faz parte do padrão HTML5</strong> (esta foi adicionada por mim =) - Aqui no Loop infinito nós encorajamos o uso dos padrões W3C, tanto que este blog já foi construído usando HTML5 e CSS3 desde o início.</li>
+</ul>
+
+<h2 id='na_prtica'>Na prática</h2>
+
+<p>Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o <strong>Google Shopping</strong> (busca de produtos à venda) e o <strong>Google Recipes</strong> (busca de receitas culinárias). É verdade que estes serviços conseguem recuperar também conteúdo não marcado semanticamente (a grande maioria), mas os que utilizam RDFa, microformats ou microdata têm chances muito maiores de serem os primeiros no pagerank.</p>
+
+<p>No <strong>Google Shopping</strong>, fiz uma pesquisa simples por &#8221;<em>jornalista</em>&#8221; e eis o resultado obtido:</p>
+<p id='img-produtos'><img class='bordered' src='http://localhost:4000/images/posts/2012-04-26-marcacao-semantica-google-shopping.png' /></p>
+<p>Pela imagem acima, é possível perceber que o nível de refinamento de uma pesquisa pode ser muito mais específico do que apenas procurar por palavras-chaves – como acontece normalmente hoje. Percebam que podemos especificar se procuramos por um produto novo ou não, a faixa de preço desejada e até a loja. Os seis primeiros resultados foram dos sites: Americanas.com, Submarino.com.br, Extra.com.br, CasasBahia.com.br, PontoFrio.com e Saraiva.com.br. Tive a curiosidade de analisar o código fonte de cada um deles, e eis que consegui detectar na base do olhômetro (se eu estiver errado sobre algum, por favor deixe um comentário):</p>
+
+<ol>
+<li><strong>Americanas.com</strong> - <em>usa microformats</em>;</li>
+
+<li><strong>Submarino.com.br</strong> - não usa marcação semântica;</li>
+
+<li><strong>Extra.com.br</strong> - <em>usa microformats</em>;</li>
+
+<li><strong>CasasBahia.com.br</strong> - <em>usa microformats</em>;</li>
+
+<li><strong>PontoFrio.com</strong> - <em>usa microformats</em>;</li>
+
+<li><strong>Saraiva.com.br</strong> - não usa marcação semântica.</li>
+</ol>
+
+<p>No <strong>Google Recipes</strong>, pesquisei por &#8221;<em>cupcake</em>&#8221;:</p>
+<p><img class='bordered' src='http://localhost:4000/images/posts/2012-04-26-marcacao-semantica-google-recipes.png' /></p>
+<p>Novamente, reparem nos filtros disponíveis para receitas. Eles diferem dos de produtos (<a href='#img-produtos'>mostrados acima</a>). Aqui é possível especificar o uso (ou não uso) de determinados ingredientes na receita (muito útil para quem tem alergia a certos alimentos, por exemplo), tempo de cozimento e até mesmo o valor calórico do que procuro. É outra história, meus amigos. Os três primeiros resultados foram dos sites: FoodNetwork.com, MarthaStewart.com e KraftRecipes.com. Analisando o código fontes das páginas, obtive que:</p>
+
+<ol>
+<li><strong>FoodNetwork.com</strong> - <em>usa microformats</em>;</li>
+
+<li><strong>MarthaStewart.com</strong> - <em>usa microformats</em>;</li>
+
+<li><strong>KraftRecipes.com</strong> - <em>usa RDFa</em>;</li>
+</ol>
+
+<h2 id='pondo_a_mo_na_massa'>Pondo a mão na massa</h2>
+
+<p>Apesar de não ter detectado o uso de microdata/schema.org nos exemplos acima, nós optamos por esta forma de marcação para aplicar aqui no Loop Infinito pelas mesmas <a href='#razoes-microdata'>razões que citei anteriormente</a>.</p>
+
+<p>No próximo post falarei mais detalhadamente sobre <strong>microdata</strong> e <strong>schema.org</strong>, e também explicarei como marcamos o conteúdo deste blog usando os vocabulários do schema.org (o que ainda farei, de fato). Até a próxima! o/</p>
+<aside class='fonte'>
+	<h3>Referência</h3>
+	<ul>
+		<li><a href='http://en.wikipedia.org/wiki/Resource_Description_Framework'>RDF</a> <span class='comment'>//wikipedia</span></li>
+		<li><a href='http://en.wikipedia.org/wiki/RDFa'>RDFa</a> <span class='comment'>//wikipedia</span></li>
+		<li><a href='http://microformats.org/about'>Microformats</a></li>
+		<li><a href='http://en.wikipedia.org/wiki/Microdata_(HTML)'>Microdata</a> <span class='comment'>//wikipedia</span></li>
+		<li><a href='http://schema.org'>Schema.org</a></li>
+		<li><a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'>Why Microdata, Not RDF, Will Power the Semantic Web</a></li>
+	</ul>
+</aside>						
+					</section>
+					
+					<footer id="disqus_thread">
+						<noscript>Por favor, habilite JavaScript para ver os comentários. <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					</footer>
+					
+				</article>
+			</section>
+
+			
+				<section id="disqus-power">
+					<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+				</section>
+			
+
+		</section>
+
+	</div>
+	
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
+		    var disqus_identifier = '/2012/04/26/marcacao-semantica';
+		    // var disqus_developer = 1;
+
+		    // callback do Disqus
+		    function disqus_callback() {
+		    	// modifica o título da caixa de comentários
+		    	$('#dsq-reply h3').html('Comentários')
+
+		    	//
+		    	// $('#dsq-comments').find('span.dsq-like-thumb').css({ position: 'relative', bottom: '5px' })
+		    }
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+		        // comment count
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    })();
+		</script>
+	
+</body>
+</html>
