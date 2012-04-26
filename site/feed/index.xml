@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-04-26T16:18:26-03:00</updated>
+  <updated>2012-04-26T20:48:17-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -11,7 +11,7 @@
     <id>http://loopinfinito.com.br/2012/04/26/marcacao-semantica</id>
     <title>Marcação Semântica</title>    
     <updated>2012-04-26T00:00:00-03:00</updated>
-    <link href="http://loopinfinito.com.br/2012/04/26/marcacao-semantica.html" />
+    <link href="http://loopinfinito.com.br/2012/04/26/marcacao-semantica/" />
     <author>
       <name>Almir Filho</name>
     </author>
@@ -111,7 +111,7 @@
     <id>http://loopinfinito.com.br/2012/04/14/css-filters</id>
     <title>CSS Filters</title>    
     <updated>2012-04-14T00:00:00-03:00</updated>
-    <link href="http://loopinfinito.com.br/2012/04/14/css-filters.html" />
+    <link href="http://loopinfinito.com.br/2012/04/14/css-filters/" />
     <author>
       <name>Caio Gondim</name>
     </author>
@@ -230,7 +230,7 @@ img {
     <id>http://loopinfinito.com.br/2012/04/01/hello-web</id>
     <title>console.log(‘Hello Web!’)</title>    
     <updated>2012-04-01T00:00:00-03:00</updated>
-    <link href="http://loopinfinito.com.br/2012/04/01/hello-web.html" />
+    <link href="http://loopinfinito.com.br/2012/04/01/hello-web/" />
     <author>
       <name>Caio Gondim</name>
     </author>
@@ -263,7 +263,7 @@ img {
 
 &lt;p&gt;Um feed RSS também será implementado.&lt;/p&gt;
 
-&lt;h2 id='id5'&gt;}&lt;/h2&gt;
+&lt;h2 id='id2'&gt;}&lt;/h2&gt;
 
 &lt;p&gt;Estamos muito empolgados e satisfeitos com o projeto finalmente estando no ar (ou nas nuvens). Esperamos que gostem do conteúdo e mandem idéias para posts, comentem e, principalmente, nos mandem pull requests no &lt;a href='https://github.com/loopinfinito/loopinfinito.com.br'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
