@@ -142,7 +142,7 @@ header#main {
 	}
 
 	#content h3 {
-		font-size: 17px;
+		font-size: 22px;
 	}
 
 	#content .post-container {
@@ -191,6 +191,17 @@ header#main {
 			-webkit-hyphens:auto;
 		}
 
+		#content .post-container article ul,
+		#content .post-container article ol {
+			margin:25px 0;
+			list-style-position: inside;
+			-webkit-hyphens:auto;
+		}
+
+		#content .post-container article li {
+			margin: 5px 0px;
+		}
+
 		#content .post-container article a {
 			text-decoration: underline;
 			color: #666;
@@ -204,6 +215,11 @@ header#main {
 				position:relative;
 				left:-50px;
 				width:700px;
+			}
+
+			#content .post-container article p img.bordered {
+				border-top: 1px solid #ddd;
+				border-bottom: 1px solid #ddd;
 			}
 
 		#content .post-container article pre.prettyprint {
@@ -227,8 +243,10 @@ header#main {
 			position: relative;
 			left: -50px;
 			border-top: 1px dashed #CCC;
-			padding: 20px 50px;
+			padding: 25px 50px 20px 50px;
 			margin-bottom: -40px;
+			background: #f5f5f5;
+			background: -webkit-linear-gradient(#f5f5f5,#FAFAFA);
 		}
 
 			#content .post-container aside.fonte ul {
@@ -240,8 +258,18 @@ header#main {
 				}
 
 				#content .post-container aside.fonte ul a {
-					/*text-decoration: none;*/
 					color: #999;
+					font-weight: normal;
+				}
+
+				#content .post-container aside.fonte ul a:hover {
+					color: #555;
+				}
+
+				#content .post-container aside.fonte ul .comment {
+					color: #ccc;
+					font-family: monospace;
+					padding-left: 4px;
 				}
 
 /* Post Meta

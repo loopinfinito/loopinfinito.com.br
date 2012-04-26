@@ -7,7 +7,9 @@
 					<ul>
 						<li class="post-data">{{ page.date | date: "%d/%m/%Y" }}</li>
 						<li class="post-autor"><a href="{{ page.author_link }}">{{ page.author }}</a></li>
-						<li class="post-comentarios"><a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.id}}">Carregando...</a></li>
+						{% if page.comments %}
+							<li class="post-comentarios"><a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.id}}">Carregando...</a></li>
+						{% endif %}
 						{% unless page.tags == empty %}
 						<li class="post-tags">
 							<ul>
@@ -34,10 +36,44 @@
 				</article>
 			</section>
 
-			<section id="disqus-power">
-				<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-			</section>
+			{% if page.comments %}
+				<section id="disqus-power">
+					<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+				</section>
+			{% endif %}
 
 		</section>
 
-{% include end_post.html %}
+	</div>
+	{% if page.comments %}
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
+		    var disqus_identifier = '{{page.id}}';
+		    // var disqus_developer = 1;
+
+		    // callback do Disqus
+		    function disqus_callback() {
+		    	// modifica o título da caixa de comentários
+		    	$('#dsq-reply h3').html('Comentários')
+
+		    	//
+		    	// $('#dsq-comments').find('span.dsq-like-thumb').css({ position: 'relative', bottom: '5px' })
+		    }
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+		        // comment count
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    })();
+		</script>
+	{% endif %}
+</body>
+</html>

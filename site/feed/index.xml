@@ -3,9 +3,109 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-04-21T23:04:21-03:00</updated>
+  <updated>2012-04-26T14:35:49-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/04/26/marcacao-semantica</id>
+    <title>Marcação Semântica</title>    
+    <updated>2012-04-26T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/04/26/marcacao-semantica.html" />
+    <author>
+      <name>Almir Filho</name>
+    </author>
+    <content type="html">&lt;p&gt;Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.&lt;/p&gt;
+
+&lt;p&gt;Desde a década de 1990, a W3C tem apresentado maneiras para definição de conteúdo semântico, e de lá pra cá surgiram outras alternativas, mas devido a grande quantidade de informações, falarei apenas um pouco sobre cada uma delas: RDF, RDFa, Microformats e &lt;strong&gt;Microdata&lt;/strong&gt; ← focaremos neste último cara aqui.&lt;/p&gt;
+
+&lt;p&gt;Vale salientar que os principais motores de busca já levam em consideração o uso de qualquer uma destas tecnologias citadas (pelo menos em parte).&lt;/p&gt;
+
+&lt;h2 id='rdf_resource_description_framework'&gt;RDF (Resource Description Framework)&lt;/h2&gt;
+
+&lt;p&gt;Criada pela W3C em 1999, é uma &lt;strong&gt;linguagem&lt;/strong&gt; baseada em XML que foi concebida com o intúito de representar informação na internet. RDF é um modelo similar aos conceitos de modelagem Entidade-Relacionamento. RDF é tão abrangente que é possível definir linguagens para definição de ontologias com ela. Na minha opinião, usar RDF para marcar páginas web semanticamente hoje em dia é a mesma coisa que querer usar uma bala de canhão pra matar uma formiga. Na prática, principalmente por ser uma outra linguagem, RDF é um mundo tão grande e diferente que se torna complexo querer definir qualquer relacionamento semântico nos ambiêntes web conhecidos de hoje.&lt;/p&gt;
+
+&lt;h2 id='rdfa_rdf__in__attributes'&gt;RDFa (RDF – in – attributes)&lt;/h2&gt;
+
+&lt;p&gt;O título fala por si só. RDFa é a marcação semântica sem a necessidade de utilização de novos elementos de marcação, sendo feita usando &lt;strong&gt;atributos&lt;/strong&gt; que podem ser embutidos em qualquer elemento. A grande vantagem que a difere de RDF é a possibilidade de marcação no próprio conteúdo (já que um RDF tem que residir em um arquivo separado – o que acaba com a duplicação de dados do RDF). Porém, RDFa foi desenvolvida como um conjunto de extenções de XHTML e obedecendo aos padrões XML, obrigando-nos a fazer uso de &lt;em&gt;namespaces&lt;/em&gt; para todo e qualquer escopo/atributo de item semântico que quisermos descrever, tornando assim a marcação semântica um tanto chata e trabalhosa.&lt;/p&gt;
+
+&lt;h2 id='microformats'&gt;Microformats&lt;/h2&gt;
+
+&lt;p&gt;Microformats não se trata de mais uma nova liguagem querendo abraçar o mundo. A idéia é resolver os problemas mais simples primeiro, &lt;strong&gt;adaptando-se aos padrões atuais&lt;/strong&gt; e fazer com que você passe a usar uma marcação semântica o mais rápido possível, já que é de fácil utilização. A proposta dos microformats é bem simples e &lt;strong&gt;muito bem difundida&lt;/strong&gt;. Dentre os formatos mais usados, estão o hCalendar (para publicação de eventos) e hCard (para pessoas, empresas e organizações em geral). &lt;a href='http://microformats.org/wiki/Main_Page#Specifications'&gt;Veja mais formatos definidos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id='microdata'&gt;Microdata&lt;/h2&gt;
+
+&lt;p&gt;Foi criado pelo WHATWG (os caras do HTML5/WebApplications 1.0) e tornou-se o padrão de marcação semântica adotado pelo HTML5. Microdata utiliza-se de variados &lt;strong&gt;vocabulários&lt;/strong&gt; para descrever itens semanticamente e pares &lt;em&gt;key-value&lt;/em&gt; para atribuição de valores a suas propriedades.&lt;/p&gt;
+
+&lt;p&gt;Ótimo, mas onde podemos encontrar esses tais vocabulários? Os primeiros vocabulários microdata foram definidos em 2010 e podem ser encontrados em &lt;a href='http://data-vocabulary.org/'&gt;data-vocabulary.org&lt;/a&gt;. Note que existem poucos vocabulários definidos (apenas 9), que são: &lt;em&gt;Event&lt;/em&gt;, &lt;em&gt;Organization&lt;/em&gt;, &lt;em&gt;Person&lt;/em&gt;, &lt;em&gt;Product&lt;/em&gt;, &lt;em&gt;Review&lt;/em&gt;, &lt;em&gt;Review-aggregate&lt;/em&gt;, &lt;em&gt;Breadcrumb&lt;/em&gt;, &lt;em&gt;Offer&lt;/em&gt; e &lt;em&gt;Offer-aggregate&lt;/em&gt;. Mas calma lá, o melhor do microdata ainda está por vir com o &lt;strong&gt;&lt;a href='http://schema.org'&gt;Schema.org&lt;/a&gt;&lt;/strong&gt;, um repositório de vocabulários microdata que cresce a cada dia.&lt;/p&gt;
+
+&lt;h3 id='schemaorg'&gt;Schema.org&lt;/h3&gt;
+
+&lt;p&gt;Os principais motores de busca se baseam nos vocabulários do schema.org para melhor indexar, classificar e refinar seus resultados de busca, visto que o schema.org é na verdade um consórcio entre os grandes buscadores da web – Google, Bing e Yahoo! – para &amp;#8221;&lt;em&gt;criar e suportar um grupo de esquemas em comum para dados de marcação estruturados em páginas web&lt;/em&gt;&amp;#8221;. A iniciativa começou com um pequeno número de formatos (esquemas ou tipos), mas o objetivo a longo prazo é suportar uma ampla gama de formatos. No momento em que escrevo este post, já se encontram em torno de &lt;strong&gt;450 formatos&lt;/strong&gt; definidos no schema.org – &lt;a href='http://schema.org/docs/full.html'&gt;Lista completa&lt;/a&gt;. Existem desde os tipos mais básicos como pessoa (&lt;em&gt;Person&lt;/em&gt;), evento (&lt;em&gt;Event&lt;/em&gt;) ou organização (&lt;em&gt;Organization&lt;/em&gt;) até os mais específicos como dentista (&lt;em&gt;Dentist&lt;/em&gt;), parada de ônibus (&lt;em&gt;BusStop&lt;/em&gt;) e até mesmo templo hindú (&lt;em&gt;HinduTemple&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Beleza, mas por quê Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de &lt;a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'&gt;Roy Tennant&lt;/a&gt;, com o qual concordo plenamente e também recomendo a leitura.&lt;/p&gt;
+&lt;span id='razoes-microdata' /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Há um claro incentivo à utilização de microdata&lt;/strong&gt; – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. &lt;em&gt;As grandes armas estão por trás do microdata&lt;/em&gt;. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivesse nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Não há nenhuma razão clara para usar RDFa e não microdata&lt;/strong&gt; – O que RDFa se propõe a fazer que microdata não? Comentem por favor =)&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;É simples&lt;/strong&gt; – Esta é a minha razão favorita. Sou um grande fã da &lt;strong&gt;simplicidade&lt;/strong&gt;, especialmente quando se consegue um resultado tão (ou quase tão) bem feito de como se fosse algo mais complexo.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Faz parte do padrão HTML5&lt;/strong&gt; (esta foi adicionada por mim =) - Aqui no Loop infinito nós encorajamos o uso dos padrões W3C, tanto que este blog já foi construido usando HTML5 e CSS3 desde o início.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='na_prtica'&gt;Na prática&lt;/h2&gt;
+
+&lt;p&gt;Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o &lt;strong&gt;Google Shopping&lt;/strong&gt; (busca de produtos à venda) e o &lt;strong&gt;Google Recipes&lt;/strong&gt; (busca de receitas culinárias). É verdade que estes serviços conseguem recuperar também conteúdo não marcado semanticamente (a grande maioria), mas os que utilizam RDFa, microformats ou microdata têm chances muito maiores de serem os primeiros no pagerank.&lt;/p&gt;
+
+&lt;p&gt;No &lt;strong&gt;Google Shopping&lt;/strong&gt;, fiz uma pesquisa simples por &amp;#8221;&lt;em&gt;jornalista&lt;/em&gt;&amp;#8221; e eis o resultado obtido:&lt;/p&gt;
+&lt;p id='img-produtos'&gt;&lt;img class='bordered' src='http://localhost:4000/images/posts/2012-04-26-marcacao-semantica-google-shopping.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Pela imagem acima, é possível perceber que o nível de refinamento de uma pesquisa pode ser muito mais específico do que apenas procurar por palavras-chaves – como acontece normalmente hoje. Percebam que podemos especificar se procuramos por um produdo novo ou não, a faixa de preço desejada e até a loja. Os seis primeiros resultados foram dos sites: Americanas.com, Submarino.com.br, Extra.com.br, CasasBahia.com.br, PontoFrio.com e Saraiva.com.br. Tive a curiosidade de analisar o código fonte de cada um deles, e eis que consegui detectar na base do olhômetro (se eu estiver errado sobre algum, por favor deixe um comentário):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Americanas.com&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Submarino.com.br&lt;/strong&gt; - não usa marcação semântica;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Extra.com.br&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;CasasBahia.com.br&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;PontoFrio.com&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Saraiva.com.br&lt;/strong&gt; - não usa marcação semântica.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No &lt;strong&gt;Google Recipes&lt;/strong&gt;, pesquisei por &amp;#8221;&lt;em&gt;cupcake&lt;/em&gt;&amp;#8221;:&lt;/p&gt;
+&lt;p&gt;&lt;img class='bordered' src='http://localhost:4000/images/posts/2012-04-26-marcacao-semantica-google-recipes.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Novamente, reparem nos filtros disponíveis para receitas. Eles diferem dos de produtos (&lt;a href='#img-produtos'&gt;mostrados acima&lt;/a&gt;). Aqui é possível especificar o uso (ou não uso) de determinados ingredientes na receita (muito útil para quem tem alergia a certos alimentos, por exemplo), tempo de cozimento e até mesmo o valor calórico do que procuro. É outra história, meus amigos. Os três primeiros resultados foram dos sites: FoodNetwork.com, MarthaStewart.com e KraftRecipes.com. Analisando o código fontes das páginas, obtive que:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;FoodNetwork.com&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;MarthaStewart.com&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;KraftRecipes.com&lt;/strong&gt; - &lt;em&gt;usa RDFa&lt;/em&gt;;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='pondo_a_mo_na_massa'&gt;Pondo a mão na massa&lt;/h2&gt;
+
+&lt;p&gt;Apesar de não ter detectado o uso de microdata/schema.org nos exemplos acima, nós optamos por esta forma de marcação para aplicar aqui no Loop Infinito pelas mesmas &lt;a href='#razoes-microdata'&gt;razões que citei anteriormente&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;No próximo post falarei mais detalhadamente sobre &lt;strong&gt;microdata&lt;/strong&gt; e &lt;strong&gt;schema.org&lt;/strong&gt;, e também explicarei como marcamos o conteúdo deste blog usando os vocabulários do schema.org (o que ainda farei, de fato). Até a próxima! o/&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+	&lt;h3&gt;Referência&lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href='http://en.wikipedia.org/wiki/Resource_Description_Framework'&gt;RDF&lt;/a&gt; &lt;span class='comment'&gt;//wikipedia&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='http://en.wikipedia.org/wiki/RDFa'&gt;RDFa&lt;/a&gt; &lt;span class='comment'&gt;//wikipedia&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='http://microformats.org/about'&gt;Microformats&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='http://en.wikipedia.org/wiki/Microdata_(HTML)'&gt;Microdata&lt;/a&gt; &lt;span class='comment'&gt;//wikipedia&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='http://schema.org'&gt;Schema.org&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'&gt;Why Microdata, Not RDF, Will Power the Semantic Web&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
   
   <entry>
     <id>http://loopinfinito.com.br/2012/04/14/css-filters</id>
