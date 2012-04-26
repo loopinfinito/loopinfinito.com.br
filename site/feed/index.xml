@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-04-26T15:23:28-03:00</updated>
+  <updated>2012-04-26T15:52:02-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -44,7 +44,7 @@
 &lt;p&gt;Os principais motores de busca se baseiam nos vocabulários do schema.org para melhor indexar, classificar e refinar seus resultados de busca, visto que o schema.org é na verdade um consórcio entre os grandes buscadores da web – Google, Bing e Yahoo! – para &amp;#8221;&lt;em&gt;criar e suportar um grupo de esquemas em comum para dados de marcação estruturados em páginas web&lt;/em&gt;&amp;#8221;. A iniciativa começou com um pequeno número de formatos (esquemas ou tipos), mas o objetivo a longo prazo é suportar uma ampla gama de formatos. No momento em que escrevo este post, já se encontram em torno de &lt;strong&gt;450 formatos&lt;/strong&gt; definidos no schema.org – &lt;a href='http://schema.org/docs/full.html'&gt;Lista completa&lt;/a&gt;. Existem desde os tipos mais básicos como pessoa (&lt;em&gt;Person&lt;/em&gt;), evento (&lt;em&gt;Event&lt;/em&gt;) ou organização (&lt;em&gt;Organization&lt;/em&gt;) até os mais específicos como dentista (&lt;em&gt;Dentist&lt;/em&gt;), parada de ônibus (&lt;em&gt;BusStop&lt;/em&gt;) e até mesmo templo hindu (&lt;em&gt;HinduTemple&lt;/em&gt;).&lt;/p&gt;
 
 &lt;p&gt;Beleza, mas por quê Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de &lt;a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'&gt;Roy Tennant&lt;/a&gt;, com o qual concordo plenamente e também recomendo a leitura.&lt;/p&gt;
-&lt;span id='razoes-microdata' /&gt;
+&lt;span id='razoes-microdata'&gt; &lt;/span&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Há um claro incentivo à utilização de microdata&lt;/strong&gt; – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. &lt;em&gt;As grandes armas estão por trás do microdata&lt;/em&gt;. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivesse nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.&lt;/li&gt;
 

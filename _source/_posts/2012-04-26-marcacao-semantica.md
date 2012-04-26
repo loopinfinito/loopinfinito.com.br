@@ -37,7 +37,7 @@ Os principais motores de busca se baseiam nos vocabulários do schema.org para m
 
 Beleza, mas por quê Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de <a href="http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/">Roy Tennant</a>, com o qual concordo plenamente e também recomendo a leitura.
 
-<span id="razoes-microdata"></span>
+<span id="razoes-microdata"> </span>
 - **Há um claro incentivo à utilização de microdata** – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. *As grandes armas estão por trás do microdata*. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivesse nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.
 - **Não há nenhuma razão clara para usar RDFa e não microdata** – O que RDFa se propõe a fazer que microdata não? Comentem por favor =)
 - **É simples** – Esta é a minha razão favorita. Sou um grande fã da **simplicidade**, especialmente quando se consegue um resultado tão (ou quase tão) bem feito de como se fosse algo mais complexo.
