@@ -191,14 +191,14 @@ header#main {
 			-webkit-hyphens:auto;
 		}
 
-		#content .post-container article ul,
-		#content .post-container article ol {
+		#content .post-container article > ul,
+		#content .post-container article > ol {
 			margin:25px 0;
 			list-style-position: inside;
 			-webkit-hyphens:auto;
 		}
 
-		#content .post-container article li {
+		#content .post-container article > li {
 			margin: 5px 0px;
 		}
 
