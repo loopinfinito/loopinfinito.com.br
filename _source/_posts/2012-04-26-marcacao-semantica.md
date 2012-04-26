@@ -50,7 +50,7 @@ Existem vários serviços do Google, por exemplo, que fazem filtragens mais espe
 
 No **Google Shopping**, fiz uma pesquisa simples por "*jornalista*" e eis o resultado obtido:
 
-<p id="img-produtos"><img class="bordered" src="http://localhost:4000/images/posts/2012-04-26-marcacao-semantica-google-shopping.png" /></p>
+<p id="img-produtos"><img class="bordered" src="http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-shopping.png" /></p>
 
 Pela imagem acima, é possível perceber que o nível de refinamento de uma pesquisa pode ser muito mais específico do que apenas procurar por palavras-chaves – como acontece normalmente hoje. Percebam que podemos especificar se procuramos por um produto novo ou não, a faixa de preço desejada e até a loja.
 Os seis primeiros resultados foram dos sites: Americanas.com, Submarino.com.br, Extra.com.br, CasasBahia.com.br, PontoFrio.com e Saraiva.com.br. Tive a curiosidade de analisar o código fonte de cada um deles, e eis que consegui detectar na base do olhômetro (se eu estiver errado sobre algum, por favor deixe um comentário):
@@ -64,7 +64,7 @@ Os seis primeiros resultados foram dos sites: Americanas.com, Submarino.com.br, 
 
 No **Google Recipes**, pesquisei por "*cupcake*":
 
-<p><img class="bordered" src="http://localhost:4000/images/posts/2012-04-26-marcacao-semantica-google-recipes.png" /></p>
+<p><img class="bordered" src="http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-recipes.png" /></p>
 
 Novamente, reparem nos filtros disponíveis para receitas. Eles diferem dos de produtos (<a href="#img-produtos">mostrados acima</a>). Aqui é possível especificar o uso (ou não uso) de determinados ingredientes na receita (muito útil para quem tem alergia a certos alimentos, por exemplo), tempo de cozimento e até mesmo o valor calórico do que procuro. É outra história, meus amigos.
 Os três primeiros resultados foram dos sites: FoodNetwork.com, MarthaStewart.com e KraftRecipes.com. Analisando o código fontes das páginas, obtive que:
