@@ -9,11 +9,11 @@ source:      ./_source
 destination: ./site
 plugins:     ./_plugins
 
-future:      true
+future:      false
 lsi:         false
 pygments:    false
 markdown:    maruku
-permalink:   date
+permalink:   pretty
 
 maruku:
   use_tex:    false
