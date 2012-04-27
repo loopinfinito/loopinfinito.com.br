@@ -2,11 +2,22 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8" />
-	<title>Loop Infinito</title>
-	
-	<meta name="author" content="Almir Filho, Caio Gondim" />
-	<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend" />
-	<meta name="description" content="Focado em front-end web dev, produtividade e usabilidade." />
+	<title>{% if page.title %}{{ page.title }} – {% endif %}Loop Infinito</title>
+	{% if page.author %}
+		<meta name="author" content="{{ page.author }}" />
+	{% else %}
+		<meta name="author" content="Almir Filho, Caio Gondim" />
+	{% endif %}
+	{% if page.keywords %}
+		<meta name="keywords" content="{{ page.keywords }}" />
+	{% else %}
+		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend" />
+	{% endif %}
+	{% if page.resumo %}
+		<meta name="description" content="{{ page.resumo }}" />
+	{% else %}
+		<meta name="description" content="Focado em front-end web dev, produtividade e usabilidade." />
+	{% endif %}
 	<meta name="language" content="pt" />
 	<meta name="content-language" content="pt-BR" />
 	<meta name="robots" content="all" />
