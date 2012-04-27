@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-04-26T21:24:19-03:00</updated>
+  <updated>2012-04-26T21:27:58-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -263,7 +263,7 @@ img {
 
 &lt;p&gt;Um feed RSS também será implementado.&lt;/p&gt;
 
-&lt;h2 id='id7'&gt;}&lt;/h2&gt;
+&lt;h2 id='id9'&gt;}&lt;/h2&gt;
 
 &lt;p&gt;Estamos muito empolgados e satisfeitos com o projeto finalmente estando no ar (ou nas nuvens). Esperamos que gostem do conteúdo e mandem idéias para posts, comentem e, principalmente, nos mandem pull requests no &lt;a href='https://github.com/loopinfinito/loopinfinito.com.br'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
