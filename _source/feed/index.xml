@@ -12,7 +12,7 @@ layout: nil
   {% for post in site.posts %}
   <entry>
     <id>http://loopinfinito.com.br{{ post.id }}</id>
-    <title>{% if post.title_plaintext %}{{ post.title_plaintext }}{% else %}{{ post.title }}{% endif %}</title>    
+    <title>{{ post.title | strip_html }}</title>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <link href="http://loopinfinito.com.br{{ post.url }}" />
     <author>

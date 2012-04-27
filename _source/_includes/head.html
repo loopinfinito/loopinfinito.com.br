@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8" />
-	<title>{% if page.title %}{{ page.title }} – {% endif %}Loop Infinito</title>
+	<title>{% if page.title %}{{ page.title | strip_html }} – {% endif %}Loop Infinito</title>
 	{% if page.author %}
 		<meta name="author" content="{{ page.author }}" />
 	{% else %}
@@ -14,7 +14,7 @@
 		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend" />
 	{% endif %}
 	{% if page.resumo %}
-		<meta name="description" content="{{ page.resumo }}" />
+		<meta name="description" content="{{ page.resumo | strip_html | escape }}" />
 	{% else %}
 		<meta name="description" content="Focado em front-end web dev, produtividade e usabilidade." />
 	{% endif %}
