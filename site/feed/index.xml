@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-04-26T20:48:17-03:00</updated>
+  <updated>2012-04-26T21:24:19-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -46,7 +46,7 @@
 &lt;p&gt;Beleza, mas por quê Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de &lt;a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'&gt;Roy Tennant&lt;/a&gt;, com o qual concordo plenamente e também recomendo a leitura.&lt;/p&gt;
 &lt;span id='razoes-microdata'&gt; &lt;/span&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Há um claro incentivo à utilização de microdata&lt;/strong&gt; – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. &lt;em&gt;As grandes armas estão por trás do microdata&lt;/em&gt;. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivesse nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Há um claro incentivo à utilização de microdata&lt;/strong&gt; – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. &lt;em&gt;As grandes armas estão por trás do microdata&lt;/em&gt;. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivessem nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.&lt;/li&gt;
 
 &lt;li&gt;&lt;strong&gt;Não há nenhuma razão clara para usar RDFa e não microdata&lt;/strong&gt; – O que RDFa se propõe a fazer que microdata não? Comentem por favor =)&lt;/li&gt;
 
@@ -57,7 +57,7 @@
 
 &lt;h2 id='na_prtica'&gt;Na prática&lt;/h2&gt;
 
-&lt;p&gt;Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o &lt;strong&gt;Google Shopping&lt;/strong&gt; (busca de produtos à venda) e o &lt;strong&gt;Google Recipes&lt;/strong&gt; (busca de receitas culinárias). É verdade que estes serviços conseguem recuperar também conteúdo não marcado semanticamente (a grande maioria), mas os que utilizam RDFa, microformats ou microdata têm chances muito maiores de serem os primeiros no pagerank.&lt;/p&gt;
+&lt;p&gt;Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o &lt;strong&gt;&lt;a href='http://www.google.com.br/prdhp'&gt;Google Shopping&lt;/a&gt;&lt;/strong&gt; (busca de produtos à venda) e o &lt;strong&gt;&lt;a href='http://www.google.com/landing/recipes/'&gt;Google Recipes&lt;/a&gt;&lt;/strong&gt; (busca de receitas culinárias). É verdade que estes serviços conseguem recuperar também conteúdo não marcado semanticamente (a grande maioria), mas os que utilizam RDFa, microformats ou microdata têm chances muito maiores de serem os primeiros no pagerank.&lt;/p&gt;
 
 &lt;p&gt;No &lt;strong&gt;Google Shopping&lt;/strong&gt;, fiz uma pesquisa simples por &amp;#8221;&lt;em&gt;jornalista&lt;/em&gt;&amp;#8221; e eis o resultado obtido:&lt;/p&gt;
 &lt;p id='img-produtos'&gt;&lt;img class='bordered' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-shopping.jpg' /&gt;&lt;/p&gt;
@@ -263,7 +263,7 @@ img {
 
 &lt;p&gt;Um feed RSS também será implementado.&lt;/p&gt;
 
-&lt;h2 id='id2'&gt;}&lt;/h2&gt;
+&lt;h2 id='id7'&gt;}&lt;/h2&gt;
 
 &lt;p&gt;Estamos muito empolgados e satisfeitos com o projeto finalmente estando no ar (ou nas nuvens). Esperamos que gostem do conteúdo e mandem idéias para posts, comentem e, principalmente, nos mandem pull requests no &lt;a href='https://github.com/loopinfinito/loopinfinito.com.br'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>

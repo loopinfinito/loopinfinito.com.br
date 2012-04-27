@@ -38,14 +38,14 @@ Os principais motores de busca se baseiam nos vocabulários do schema.org para m
 Beleza, mas por quê Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de <a href="http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/">Roy Tennant</a>, com o qual concordo plenamente e também recomendo a leitura.
 
 <span id="razoes-microdata"> </span>
-- **Há um claro incentivo à utilização de microdata** – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. *As grandes armas estão por trás do microdata*. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivesse nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.
+- **Há um claro incentivo à utilização de microdata** – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. *As grandes armas estão por trás do microdata*. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivessem nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.
 - **Não há nenhuma razão clara para usar RDFa e não microdata** – O que RDFa se propõe a fazer que microdata não? Comentem por favor =)
 - **É simples** – Esta é a minha razão favorita. Sou um grande fã da **simplicidade**, especialmente quando se consegue um resultado tão (ou quase tão) bem feito de como se fosse algo mais complexo.
 - **Faz parte do padrão HTML5** (esta foi adicionada por mim =) - Aqui no Loop infinito nós encorajamos o uso dos padrões W3C, tanto que este blog já foi construído usando HTML5 e CSS3 desde o início.
 
 
 ## Na prática
-Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o **Google Shopping** (busca de produtos à venda) e o **Google Recipes** (busca de receitas culinárias).
+Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o **<a href="http://www.google.com.br/prdhp">Google Shopping</a>** (busca de produtos à venda) e o **<a href="http://www.google.com/landing/recipes/">Google Recipes</a>** (busca de receitas culinárias).
 É verdade que estes serviços conseguem recuperar também conteúdo não marcado semanticamente (a grande maioria), mas os que utilizam RDFa, microformats ou microdata têm chances muito maiores de serem os primeiros no pagerank.
 
 No **Google Shopping**, fiz uma pesquisa simples por "*jornalista*" e eis o resultado obtido:

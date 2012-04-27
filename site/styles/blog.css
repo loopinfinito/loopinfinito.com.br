@@ -315,7 +315,9 @@ aside.post-meta {
 	}
 
 	aside.post-meta li.post-comentarios {
-		background:url(../images/comentarios.png) no-repeat 2px center;
+		background:url(../images/comentarios.png) no-repeat 2px 4px;
+		height: auto;
+		min-height: 20px;
 	}
 
 	aside.post-meta li.post-compartilhar {
@@ -413,6 +415,24 @@ section#disqus-power {
 	background-color: #fff;
 	padding: 20px 50px !important;
 	width: 100%;
+	position: relative;
+	left: -50px;
+}
+
+h3.dsq-h3-reactions {
+	display: block !important;
+	background: white;
+	margin: 0px !important;
+	padding: 0 50px 20px 50px !important;
+	position: relative !important;
+	left: -50px !important;
+	width: 600px;
+}
+
+#dsq-reactions {
+	background: white;
+	padding: 0px 50px 30px 50px !important;
+	width: 600px;
 	position: relative;
 	left: -50px;
 }
