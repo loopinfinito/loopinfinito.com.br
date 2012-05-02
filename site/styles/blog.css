@@ -29,6 +29,12 @@ body {
 	color: #333;
 }
 
+.clear {
+	clear: both;
+	height: 0px;
+	overflow: hidden;
+}
+
 /* Nav
 ---------------------------------------- */
 header#main {
@@ -101,6 +107,69 @@ header#main {
 			background-color: #fff;
 		}
 
+/* ------ Icons --------------------------------------*/
+
+.icon {
+	display: inline-block;
+	width: 29px;
+	height: 29px;
+	background: center no-repeat #444;
+	border-radius: 15px;
+	-webkit-transition: background-color 0.3s ease;
+}
+
+.icon:hover {
+	background-color: #777;
+}
+
+.icon.twitter {
+	background-image: url(../images/icons/twitter.png);
+}
+
+.icon.twitter:hover {
+	background-color: #32CCFE;
+}
+
+.icon.github {
+	background-image: url(../images/icons/github.png);
+}
+
+.icon.github:hover {
+	background-color: #000;
+}
+
+.icon.email {
+	background-image: url(../images/icons/email.png);
+}
+
+.icon.email:hover {
+	background-color: #FFCC00;
+}
+
+.icon.linkedin {
+	background-image: url(../images/icons/linkedin.png);
+}
+
+.icon.linkedin:hover {
+	background-color: #006599;
+}
+
+.icon.coderwall {
+	background-image: url(../images/icons/coderwall.png);
+}
+
+.icon.coderwall:hover {
+	background-color: #FF6600;
+}
+
+.icon.portfolio {
+	background-image: url(../images/icons/portfolio.png);
+}
+
+.icon.portfolio:hover {
+	background-color: #99CC00;
+}
+
 /* ------ Content ------------------------------------*/
 
 #content {
@@ -163,12 +232,12 @@ header#main {
 		margin:100px 0 0 0;
 		box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.06);
 	}
-		#content .post-container p > code,
-		#content .post-container section > code {
+		#content .post-container code {
 			background-color: #EFEFEF;
 			padding: 3px;
 			border-radius: 3px;
 			color: #555;
+			font-size: 12px;
 		}
 
 		#content .post-container pre {
@@ -176,7 +245,13 @@ header#main {
 			position: relative;
 			left: -50px;
 			padding: 0px 50px 20px 50px;
+			font-size: 12px;
 		}
+
+			#content .post-container pre code {
+				background: none;
+				color: white;
+			}
 
 	#content .post-container:first-child article {
 		margin:0;
@@ -211,7 +286,8 @@ header#main {
 			color: #333;
 		}
 
-			#content .post-container article p img {
+			#content .post-container article p img,
+			#content .post-container article svg.img {
 				position:relative;
 				left:-50px;
 				width:700px;
@@ -243,23 +319,28 @@ header#main {
 			position: relative;
 			left: -50px;
 			border-top: 1px dashed #CCC;
-			padding: 25px 50px 20px 50px;
+			padding: 25px 50px 30px 50px;
 			margin-bottom: -45px;
 			background: #f5f5f5;
 			background: -webkit-linear-gradient(#f5f5f5,#FAFAFA);
 		}
+
+			#content .post-container aside.fonte h3 {
+				margin-bottom: 12px;
+			}
 
 			#content .post-container aside.fonte ul {
 				list-style: none;
 			}
 
 				#content .post-container aside.fonte ul li {
-					line-height: 175%;	
+					line-height: 175%;
 				}
 
 				#content .post-container aside.fonte ul a {
 					color: #999;
 					font-weight: normal;
+					margin-left: 6px;
 				}
 
 				#content .post-container aside.fonte ul a:hover {

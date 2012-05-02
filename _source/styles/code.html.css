@@ -1,0 +1,15 @@
+pre .support {
+	color: #FFB3D2;
+}
+
+pre .tag-name {
+	color: #F91F72;
+}
+
+pre .attribute {
+	color: #8DB727;
+}
+
+pre .string {
+	color: #E6C864;
+}
