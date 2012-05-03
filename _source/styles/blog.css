@@ -251,6 +251,7 @@ header#main {
 			#content .post-container pre code {
 				background: none;
 				color: white;
+				line-height: 4px;
 			}
 
 	#content .post-container:first-child article {
