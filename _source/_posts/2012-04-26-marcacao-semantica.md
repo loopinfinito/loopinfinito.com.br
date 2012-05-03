@@ -4,8 +4,8 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 resumo: Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Neste post, apresentamos as principais formas de marcação semântica de dados usadas na web de hoje e fazemos alguns comparativos.
-tags: web-semantica microdata schema.org
-keywords: web semantica, microdata, schema.org, microformats, rdf, rdfa, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web
+tags: web-semantica microdata schema.org SEO
+keywords: web semantica, microdata, schema.org, microformats, rdf, rdfa, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web, seo
 comments: true
 ---
 Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto.
@@ -76,7 +76,7 @@ Os três primeiros resultados foram dos sites: FoodNetwork.com, MarthaStewart.co
 ## Pondo a mão na massa
 Apesar de não ter detectado o uso de microdata/schema.org nos exemplos acima, nós optamos por esta forma de marcação para aplicar aqui no Loop Infinito pelas mesmas <a href="#razoes-microdata">razões que citei anteriormente</a>.
 
-No próximo post falarei mais detalhadamente sobre **microdata** e **schema.org**, e também explicarei como marcamos o conteúdo deste blog usando os vocabulários do schema.org (o que ainda farei, de fato). Até a próxima! o/
+No <a href="http://loopinfinito.com.br/2012/05/02/microdata/">próximo post</a> falarei mais detalhadamente sobre **microdata** e **schema.org**, e também explicarei detalhadamente como marcamos conteúdo HTML usando os vocabulários do schema.org. Até a próxima! o/
 
 <aside class="fonte">
 	<h3>Referência</h3>

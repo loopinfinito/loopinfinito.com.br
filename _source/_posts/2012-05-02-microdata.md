@@ -4,11 +4,11 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 resumo: Olá pessoal, continuando o papo do nosso <a href="/2012/04/26/marcacao-semantica/">último post</a>, hoje continuarei falando de marcação semântica, com a diferença de que focarei em microdata e mostrarei também como realizar a marcação semântica de conteúdo usando os vocabulários <strong>Schema.org</strong>.
-tags: web-semantica microdata schema.org
+tags: web-semantica microdata schema.org SEO
 image: images/posts/2012-05-02-semantics-html5.jpg
-keywords: web semantica, microdata, schema.org, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web,
+keywords: web semantica, microdata, schema.org, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web, vocabulario, seo
 styles: [code.html]
-comments: false
+comments: true
 ---
 <style type="text/css">
 	
@@ -413,5 +413,6 @@ No próximo post irei realizar a marcação semântica aqui no Loop Infinito e m
 		<li>→<a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a> <span class="comment">//wikipedia</span></li>
 		<li>→<a href="http://schema.org">Schema.org</a></li>
 		<li>→<a href="http://schema.org/docs/gs.html">Getting started</a> <span class="comment">//schema.org</span></li>
+		<li>→<a href="http://desenvolvimentoparaweb.com/html/microdata-api-schema-org-significado-html/">Microdata API e Schema.org: dando significado ao HTML</a> <span class="comment">//dpw</span></li>
 	</ul>
 </aside>

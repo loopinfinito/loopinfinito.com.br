@@ -7,7 +7,7 @@
 		<meta name="author" content="Almir Filho" />
 	
 	
-		<meta name="keywords" content="web semantica, microdata, schema.org, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web," />
+		<meta name="keywords" content="web semantica, microdata, schema.org, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web, vocabulario, seo" />
 	
 	
 		<meta name="description" content="Olá pessoal, continuando o papo do nosso último post, hoje continuarei falando de marcação semântica, com a diferença de que focarei em microdata e mostrarei também como realizar a marcação semântica de conteúdo usando os vocabulários Schema.org." />
@@ -65,6 +65,8 @@
 						<li class="post-data">02/05/2012</li>
 						<li class="post-autor"><a href="http://twitter.com/almirfilho">Almir Filho</a></li>
 						
+							<li class="post-comentarios"><a href="/2012/05/02/microdata/#disqus_thread" data-disqus-identifier="/2012/05/02/microdata">Carregando...</a></li>
+						
 						
 						<li class="post-tags">
 							<ul>
@@ -73,7 +75,9 @@
 								
 								<li><a href=""><span>#</span>microdata</a></li>,
 								
-								<li><a href=""><span>#</span>schema.org</a></li>
+								<li><a href=""><span>#</span>schema.org</a></li>,
+								
+								<li><a href=""><span>#</span>SEO</a></li>
 													
 							</ul>
 						</li>
@@ -465,18 +469,56 @@
 		<li>→<a href='http://en.wikipedia.org/wiki/Microdata_(HTML)'>Microdata</a> <span class='comment'>//wikipedia</span></li>
 		<li>→<a href='http://schema.org'>Schema.org</a></li>
 		<li>→<a href='http://schema.org/docs/gs.html'>Getting started</a> <span class='comment'>//schema.org</span></li>
+		<li>→<a href='http://desenvolvimentoparaweb.com/html/microdata-api-schema-org-significado-html/'>Microdata API e Schema.org: dando significado ao HTML</a> <span class='comment'>//dpw</span></li>
 	</ul>
 </aside>						
 					</section>
+					
+					<footer id="disqus_thread">
+						<noscript>Por favor, habilite JavaScript para ver os comentários. <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					</footer>
 					
 				</article>
 			</section>
 
 			
+				<section id="disqus-power">
+					<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+				</section>
+			
 
 		</section>
 
 	</div>
+	
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
+		    var disqus_identifier = '/2012/05/02/microdata';
+		    // var disqus_developer = 1;
+
+		    // callback do Disqus
+		    function disqus_callback() {
+		    	// modifica o título da caixa de comentários
+		    	$('#dsq-reply h3').html('Comentários')
+
+		    	//
+		    	// $('#dsq-comments').find('span.dsq-like-thumb').css({ position: 'relative', bottom: '5px' })
+		    }
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+		        // comment count
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    })();
+		</script>
 	
 </body>
 </html>

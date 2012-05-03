@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-03T18:45:43-03:00</updated>
+  <updated>2012-05-02T21:10:57-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -592,6 +592,7 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
 		&lt;li&gt;→&lt;a href='http://en.wikipedia.org/wiki/Microdata_(HTML)'&gt;Microdata&lt;/a&gt; &lt;span class='comment'&gt;//wikipedia&lt;/span&gt;&lt;/li&gt;
 		&lt;li&gt;→&lt;a href='http://schema.org'&gt;Schema.org&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;→&lt;a href='http://schema.org/docs/gs.html'&gt;Getting started&lt;/a&gt; &lt;span class='comment'&gt;//schema.org&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://desenvolvimentoparaweb.com/html/microdata-api-schema-org-significado-html/'&gt;Microdata API e Schema.org: dando significado ao HTML&lt;/a&gt; &lt;span class='comment'&gt;//dpw&lt;/span&gt;&lt;/li&gt;
 	&lt;/ul&gt;
 &lt;/aside&gt;</content>
   </entry>
@@ -682,7 +683,7 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
 
 &lt;p&gt;Apesar de não ter detectado o uso de microdata/schema.org nos exemplos acima, nós optamos por esta forma de marcação para aplicar aqui no Loop Infinito pelas mesmas &lt;a href='#razoes-microdata'&gt;razões que citei anteriormente&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;No próximo post falarei mais detalhadamente sobre &lt;strong&gt;microdata&lt;/strong&gt; e &lt;strong&gt;schema.org&lt;/strong&gt;, e também explicarei como marcamos o conteúdo deste blog usando os vocabulários do schema.org (o que ainda farei, de fato). Até a próxima! o/&lt;/p&gt;
+&lt;p&gt;No &lt;a href='http://loopinfinito.com.br/2012/05/02/microdata/'&gt;próximo post&lt;/a&gt; falarei mais detalhadamente sobre &lt;strong&gt;microdata&lt;/strong&gt; e &lt;strong&gt;schema.org&lt;/strong&gt;, e também explicarei detalhadamente como marcamos conteúdo HTML usando os vocabulários do schema.org. Até a próxima! o/&lt;/p&gt;
 &lt;aside class='fonte'&gt;
 	&lt;h3&gt;Referência&lt;/h3&gt;
 	&lt;ul&gt;
@@ -852,7 +853,7 @@ img {
 
 &lt;p&gt;Um feed RSS também será implementado.&lt;/p&gt;
 
-&lt;h2 id='id1'&gt;}&lt;/h2&gt;
+&lt;h2 id='id136'&gt;}&lt;/h2&gt;
 
 &lt;p&gt;Estamos muito empolgados e satisfeitos com o projeto finalmente estando no ar (ou nas nuvens). Esperamos que gostem do conteúdo e mandem idéias para posts, comentem e, principalmente, nos mandem pull requests no &lt;a href='https://github.com/loopinfinito/loopinfinito.com.br'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
