@@ -9,7 +9,7 @@ layout: nil
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
-  {% for post in site.posts %}
+  {% for post in site.posts limit:10 %}
   <entry>
     <id>http://loopinfinito.com.br{{ post.id }}</id>
     <title>{{ post.title | strip_html }}</title>
