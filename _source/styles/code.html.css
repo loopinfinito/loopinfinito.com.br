@@ -13,3 +13,15 @@ pre .attribute {
 pre .string {
 	color: #E6C864;
 }
+
+pre .keyword {
+  color: #F91F72;
+}
+
+pre .function {
+  color: #A6E22A;
+}
+
+pre .entity {
+  color: #54D2EF;
+}
