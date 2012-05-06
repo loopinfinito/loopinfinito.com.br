@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"> 
+  <id>http://loopinfinito.com.br/</id>
+  <title>Loop Infinito</title>
+  <icon>http://loopinfinito.com.br/images/favicon.png</icon>
+  <updated>2012-05-06T01:54:38-03:00</updated>
+  <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
+  <link href="http://loopinfinito.com.br/" />
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1</id>
+    <title>Herança em JavaScript parte I</title>
+    <updated>2012-05-04T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/" />
+    <author>
+      <name>Caio Gondim</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt='' src='/images/posts/2012-05-04-heranca-em-javascript.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo. Mas antes de entrarmos em detalhes, vamos primeiro relembrar o que é a herança clássica nas linguagens orientadas a objetos.&lt;/p&gt;
+
+&lt;h2 id='herana_clssica'&gt;Herança clássica&lt;/h2&gt;
+
+&lt;p&gt;Herança em OOP é a capacidade de classes &lt;strong&gt;compartilharem&lt;/strong&gt; atributos e métodos entre si. Geralmente a herança é usada para compartilhar comportamentos generalizados e comuns entres as classes filhas.&lt;/p&gt;
+
+&lt;h3 id='show_me_the_code'&gt;Show me the code&lt;/h3&gt;
+
+&lt;p&gt;Imaginem que temos que representar em nossa aplicação alguns animais, como gato e cachorro. Com herança podemos definir comportamentos comuns entre eles apenas uma vez, como respirar, nascer e morrer, e reutilizar estes métodos já implementados apenas os herdando nas classes filhas.&lt;/p&gt;
+
+&lt;p&gt;Vamos implementar o cenário acima em Java. Como desejamos representar gatos e cachorros, e sabemos que eles possuem métodos similares, como nascer, morrer e respirar, vamos criar uma classe Animal e implementar estes métodos nela, para que gatos e cachorros possam herdá-los.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='java'&gt;
+// setamos a classe como abstrata pois não desejamos criar
+// objetos do tipo animal, apenas os tipos mais
+// especializados como Gato ou Cachorro podem ser instânciados
+public abstract class Animal {
+  public void nascer() {
+    ...
+  }
+
+  public void morrer() {
+    ...
+  }
+
+  public void respirar() {
+    ...
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora definimos as classes Gato e Cachorro, que irão herdar de Animal e implementar métodos que só fazem sentido em seu próprio escopo, como miar no caso de Gato e latir no caso de Cachorro.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='javascript'&gt;
+// além do método miar, os objetos do tipo Gato 
+// terão também, devido a herança, os métodos de Animal
+class Gato extends Animal {
+  public void miar() {
+    ...
+  }
+
+  // construtor
+  public Gato() {
+    ...
+  }
+}
+
+// com os objetos do tipo Cachorro acontece o mesmo
+// além do método latir, definido explicitamente na classe
+// ele irá herdar os métodos nascer, morrer e respirar
+class Cachorro extends Animal {
+  public void latir() {
+    ..
+  }
+
+  // construtor
+  public Cachorro() {
+    ...
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Definimos a relação de herança com a palavra reservada &lt;code&gt;extends&lt;/code&gt;. Com isso as classes Gato e Cachorro irão possuir, além de seus próprios métodos, os métodos herdados de Animal, como nascer, morrer e respirar.&lt;/p&gt;
+
+&lt;p&gt;Então fica claro que com herança conseguimos um enorme reuso de código. De outra forma, teríamos que redefinir métodos e atributos comuns em todas as classes, tornando a manutenção do código mais complexa e propensa a erros.&lt;/p&gt;
+
+&lt;h2 id='cadeia_de_prottipos'&gt;Cadeia de protótipos&lt;/h2&gt;
+
+&lt;p&gt;Em JavaScript (quase) tudo é um objeto, não existem classes. Até mesmo as &lt;code&gt;function&lt;/code&gt; são objetos. Se quisermos herdar os métodos e atributos de um objeto, o utilizamos como protótipo do novo objeto a ser criado. Mesmo que não esteja definido explicitamente no código, todos os outros objetos de JavaScript, com a exceção do objeto &lt;code&gt;Object&lt;/code&gt;, utilizam um outro objeto como protótipo.&lt;/p&gt;
+
+&lt;p&gt;Como no exemplo abaixo, definimos um objeto vazio, um array vazio e uma função. Eles todos herdarão métodos e atributos de seus protótipos.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='javascript'&gt;
+// aqui criamos um novo objeto genérico com o nome carro
+// ele automaticamente usará o prototipo de Object
+var carro = {}
+carro.modelo = 'Celta'
+carro.marca = 'Chevrolet'
+carro.hasOwnProperty('modelo') // método herdado de Object
+Object.getPrototypeOf(carro) // retorna Object
+
+// frutas herdará as propriedades de Array
+var frutas = [ 'morango', 'manga', 'laranja' ]
+frutas.reverse() // método herdado de Array
+frutas.hasOwnProperty('length') // método herdado de Object
+Object.getPrototypeOf(frutas) // retorna []
+Object.getPrototypeOf(Object.getPrototypeOf(frutas)) // retorna Object
+
+// validarCPF irá herdar propriedades de Function
+function validarCPF() {
+  ...
+  return true
+}
+// aqui vemos uma função se comportando como um objeto
+validarCPF.call() // método herdado de Function
+Object.getPrototypeOf(validarCPF) // retorna function Empty() {}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;É interessante notar que a herança ocorre em &lt;strong&gt;toda&lt;/strong&gt; a cadeia de protótipos. Como quando definimos um array: ele herda todas as propriedades de Array e de Object, uma vez que Array usa Object como protótipo. Podemos verificar isso chamando o protótipo do protótipo de frutas. O protótipo de frutas é Array, e o protótipo de Array é Object ou, o protótipo do protótipo de frutas é Object.&lt;/p&gt;
+
+&lt;p&gt;Quando chamamos a propriedade de um objeto, o interpretador/VM JavaScript primeiro procura esta propriedade dentro do objeto, caso não encontre procura em seu protótipo, caso não encontre novamente procura no protótipo do protótipo, e assim sucessivamente, percorrendo toda a cadeia de protótipos até alcançar um protótipo com valor &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id='herana_em_javascript_com_construtores'&gt;Herança em JavaScript com construtores&lt;/h2&gt;
+
+&lt;p&gt;O método mais difundido e crossbrowser de criação de objetos e herança em JavaScript é através de funções que funcionam como construtores. Nesse método, definimos funções que irão se comportar como construtores em linguagens clássicas orientadas a objeto. Depois de definida a função, podemos instanciar objetos do tipo definido usando &lt;code&gt;new&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Em JavaScript, uma função também é um objeto, e ela possui a propriedade &lt;code&gt;prototype&lt;/code&gt;. Nesta propriedade definimos o prototipo da função, ou todas as propriedades que os objetos deste tipo irão ter se invocarmos &lt;code&gt;new&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ok, pode parecer complicado falando, mas fica bem fácil olhando o código.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='javascript'&gt;
+// criamos o construtor Animal
+function Animal() {
+}
+Animal.prototype.nascer = function() {
+  ...
+}
+Animal.prototype.morrer = function() {
+  ...
+}
+Animal.prototype.respirar = function() {
+  ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora definimos Gato e Cachorro, e usamos Animal como protótipo.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='javascript'&gt;
+// criamos o construtor Gato
+function Gato(nome) {
+  this.nome = nome
+}
+Gato.prototype = new Animal() // definimos que Gato usa Animal como protótipo
+Gato.prototype.constructor = Gato // para que não fique com o valor do construtor do objeto usado como protótipo
+Gato.prototype.miar = function() { // método miar apenas para Gato
+  ...
+}
+
+// criamos o construtor Cachorro
+function Cachorro(nome) {
+  this.nome = nome
+}
+Cachorro.prototype = new Animal() // definimos que Cachorro usa Animal como protótipo
+Cachorro.prototype.constructor = Cachorro()
+Cachorro.prototype.latir = function() {
+  ...
+}
+
+var rex = new Cachorro('rex') // criamos um objeto do tipo Cachorro
+rex.latir() // utilizando um método definido em Cachorro
+rex.respirar() // utilizando um método herdado de Animal
+rex.nome // retorna 'rex'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Precisamos criar um novo objeto do tipo Animal para setarmos como protótipo, pois caso contrário estariamos passando a referência para a função.&lt;/p&gt;
+
+&lt;p&gt;A propriedade &lt;code&gt;constructor&lt;/code&gt; nos informa o construtor do objeto. Nós precisamos defini-la manualmente pois esta proprieda existe no objeto Animal que passamos por protótipo, então todos os objetos de Cachorro e Gato irão herdar a propriedade construtor com o setado valor como Animal. Esta propriedade pode ser útil caso seja preciso chamar um método de um dos objetos na cadeia de protótipos.&lt;/p&gt;
+
+&lt;p&gt;Podemos verificar que rex é de fato um cachorro perguntado se ele é uma instância de Cachorro.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='javascript'&gt;
+rex instanceof Cachorro // retorna true
+rex instanceof Animal // retorn true. Cachorro.prototype --&gt; Animal
+rex instanceof Object // retorna true. Cachorro.prototype --&gt; Animal.prototype --&gt; Object
+rex instanceof Array // retorna false
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Interessante notar que rex também é uma instância de Animal, já que Cachorro usa Animal como protótipo. E também é instância de Object, já que Animal usa, implicitamente, Object como protótipo.&lt;/p&gt;
+
+&lt;p&gt;Por ser uma linguagem orientada a protótipos, nós podemos definir um novo ao método ao protótipo e todos os objetos já instanciados irão ter acesso a este método criado, o que é impossível de ser feito em linguagens como Java (me corrijam se estiver falando besteira).&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='javascript'&gt;
+Cachorro.prototype.morder = function() {
+  ...
+}
+rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos definidos no protótipo de Cachorro
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Um dos perigos dessa abordagem é que caso se esqueça de usar &lt;code&gt;new&lt;/code&gt;, o &lt;code&gt;this&lt;/code&gt; dentro da &lt;code&gt;function&lt;/code&gt; irá se referenciar ao objeto global, e poderá sobreescrever algumas variáveis já declaradas antes.&lt;/p&gt;
+
+&lt;p&gt;Eu particularmente não sou a favor do uso do &lt;code&gt;new&lt;/code&gt; pois ele torna ambíguo o uso de funções. Pois algumas funcionam como construtores e outras como funções normais. E sintaticamente o &lt;code&gt;new&lt;/code&gt; pode ser usado em qualquer tipo de função.&lt;/p&gt;
+
+&lt;h3 id='continua'&gt;Continua&amp;#8230;&lt;/h3&gt;
+
+&lt;p&gt;Este é o método padrão de herança em JavaScript. Grande parte desta bagunça é devido ao JavaScript ter sido lançado &lt;strong&gt;muito&lt;/strong&gt; às pressas. Porém o ECMAscript, o grupo que padroniza o JavaScript, vem adicionado várias funções para tornar o trabalho com herança mais simples e finalmente abraçando a orientação a protótipo.&lt;/p&gt;
+
+&lt;p&gt;E é sobre este novo método de trabalhar com herança no ECMAscript 5 que iremos discutir na 2ª parte do post.&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+  &lt;h3&gt;Referência&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href='https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain'&gt;
+        Mozilla Developer Network: Inheritance and the Prototype Chain
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href='http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new'&gt;StackOverflow: Using Object.create() instead of new&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='http://joost.zeekat.nl/constructors-considered-mildly-confusing.html'&gt;code.h(oe)kje: Constructors considered mildly confusing&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/05/02/microdata</id>
+    <title>Microdata</title>
+    <updated>2012-05-02T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/05/02/microdata/" />
+    <author>
+      <name>Almir Filho</name>
+    </author>
+    <content type="html">&lt;style type='text/css'&gt;
+	
+	circle {
+		-webkit-transition: fill 0.5s ease;
+		-khtml-transition: fill 0.5s ease;
+		-moz-transition: fill 0.5s ease;
+		-ms-transition: fill 0.5s ease;
+		-o-transition: fill 0.5s ease;
+		transition: fill 0.5s ease;
+	}
+
+	g.circle:hover circle {
+		fill: #ccc;
+	}
+
+	#exemplo-filme {
+		border: 1px solid #ccc;
+		padding: 20px;
+		box-shadow: 2px 3px 0px #ccc;
+		font-family: &quot;Georgia&quot;, serif;
+		color: #333;
+		background-color: #f5f5f5;
+	}
+
+		#exemplo-filme h4 {
+			font-size: 18px !important;
+		}
+
+		#exemplo-filme p {
+			margin: 0px !important;
+		}
+
+&lt;/style&gt;&lt;p&gt;&lt;img alt='HTML5 Semantics' src='http://loopinfinito.com.br/images/posts/2012-05-02-semantics-html5.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;Olá pessoal, continuando o papo do nosso &lt;a href='http://loopinfinito.com.br/2012/04/26/marcacao-semantica/'&gt;último post&lt;/a&gt;, hoje continuarei falando de marcação semântica, com a diferença de que focarei em microdata e mostrarei também como realizar a marcação semântica de conteúdo usando os vocabulários &lt;strong&gt;Schema.org&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id='vocabulrios_do_schemaorg'&gt;Vocabulários do schema.org&lt;/h2&gt;
+
+&lt;p&gt;No site &lt;a href='http://schema.org'&gt;schema.org&lt;/a&gt; podemos encontrar a lista completa de todos os tipos de &lt;em&gt;esquemas&lt;/em&gt; (entidades) que já foram definidas. No momento em que escrevo este post, já encontram-se por volta de 450 entidades no site.&lt;/p&gt;
+
+&lt;p&gt;É importante observar que os vocabulários schema.org pertencem a uma &lt;strong&gt;hierarquia&lt;/strong&gt;, exatamente como se fosse uma hierarquia de classes da nossa velha e conhecida orientação a objeto, em que cada classe pode estender outra classe, &lt;strong&gt;herdando&lt;/strong&gt; assim todas as &lt;strong&gt;propriedades&lt;/strong&gt; e comportamentos da classe pai. No schema.org temos apenas 2 tipos básicos de entidades: &lt;strong&gt;DataType&lt;/strong&gt; e &lt;strong&gt;Thing&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id='datatype'&gt;DataType&lt;/h3&gt;
+
+&lt;p&gt;Apenas define vários tipos de dados primitivos que servem para descrever os tipos de dados que serão usados para preencher um atributo qualquer em qualquer vocabulário. As entidades &lt;em&gt;Boolean&lt;/em&gt;, &lt;em&gt;Date&lt;/em&gt;, &lt;em&gt;Number&lt;/em&gt; e &lt;em&gt;Text&lt;/em&gt; estendem &lt;strong&gt;DataType&lt;/strong&gt;, e &lt;em&gt;Float&lt;/em&gt; e &lt;em&gt;Integer&lt;/em&gt; por sua vez, estendem &lt;em&gt;Number&lt;/em&gt;. Até hoje não vi nenhuma aplicação que utiliza estes vocabulários para definir dados &lt;em&gt;semanticamente&lt;/em&gt;. Por exemplo, digamos que exista uma entidade &lt;em&gt;Empresa&lt;/em&gt; a qual queremos especificar o número de funcionários. Para isto, não usaremos Integer, e sim uma propriedade &lt;em&gt;numeroDeFuncionarios&lt;/em&gt; (que é do tipo &lt;em&gt;Integer&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Então resumindo, nós não precisamos nos preocupar com estes tipos de dados para marcar código semanticamente.&lt;/p&gt;
+
+&lt;h3 id='thing'&gt;Thing&lt;/h3&gt;
+
+&lt;p&gt;É aqui que a coisa começa a ficar interessante. &lt;strong&gt;Thing&lt;/strong&gt; é a entidade mais abstrata a nível semântico. Como o próprio nome já nos diz, &lt;em&gt;Thing&lt;/em&gt; é qualquer coisa, é o nosso &lt;em&gt;Object&lt;/em&gt; em Java (alô, JavaLovers). A partir de Thing, qualquer coisa pode ser definida. As 7 entidades que a estendem são: &lt;strong&gt;CreativeWork&lt;/strong&gt;, &lt;strong&gt;Event&lt;/strong&gt;, &lt;strong&gt;Intangible&lt;/strong&gt;, &lt;strong&gt;Organization&lt;/strong&gt;, &lt;strong&gt;Person&lt;/strong&gt;, &lt;strong&gt;Place&lt;/strong&gt; e &lt;strong&gt;Product&lt;/strong&gt;. Dentro de &lt;em&gt;CreativeWork&lt;/em&gt; temos &lt;em&gt;Article&lt;/em&gt;, &lt;em&gt;Blog&lt;/em&gt;, &lt;em&gt;Movie&lt;/em&gt;, &lt;em&gt;Recipe&lt;/em&gt; e por ai vai.&lt;/p&gt;
+&lt;svg class='img' height='400' width='700'&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='391.774' x2='391.774' y1='224.031' y2='249.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='231.773' x2='231.773' y1='224.031' y2='249.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='311.773' x2='311.773' y1='224.031' y2='249.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='471.774' x2='471.774' y1='224.031' y2='249.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='551.774' x2='551.774' y1='224.031' y2='249.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='631.774' x2='631.774' y1='224.031' y2='249.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='243.773' x2='243.773' y1='341.031' y2='366.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='181.773' x2='181.773' y1='341.031' y2='366.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='120.773' x2='120.773' y1='341.031' y2='366.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='58.773' x2='58.773' y1='341.031' y2='366.629' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='151.92' x2='121.258' y1='198.706' y2='321.607' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='151.773' x2='60.227' y1='194.608' y2='321.607' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='151.92' x2='182.29' y1='198.706' y2='321.607' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='151.773' x2='243.433' y1='194.608' y2='324.734' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='388.433' x2='311.773' y1='62.209' y2='184.161' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='388.433' x2='231.773' y1='62.209' y2='184.161' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='388.433' x2='151.773' y1='62.209' y2='184.161' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='391.92' x2='631.774' y1='62.209' y2='184.161' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='391.92' x2='551.774' y1='62.209' y2='184.161' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='391.92' x2='471.774' y1='62.209' y2='184.161' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='391.774' x2='391.774' y1='76.031' y2='184.161' /&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='391.774' cy='56.112' fill='#EEEEEE' r='33.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='18' transform='matrix(1 0 0 1 369.4121 62.209)'&gt;Thing&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='391.774' cy='194.607' fill='#EEEEEE' r='33.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='10' transform='matrix(1 0 0 1 363.3008 198.7051)'&gt;Organization&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='311.774' cy='194.607' fill='#EEEEEE' r='33.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 285.2446 198.7051)'&gt;Intangible&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='231.774' cy='194.607' fill='#EEEEEE' r='33.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='14' transform='matrix(1 0 0 1 214.4136 198.7051)'&gt;Event&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='151.774' cy='194.607' fill='#EEEEEE' r='33.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='10' transform='matrix(1 0 0 1 121.9155 198.7051)'&gt;CreativeWork&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='631.774' cy='194.607' fill='#EEEEEE' r='33.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='14' transform='matrix(1 0 0 1 607.4136 198.7051)'&gt;Product&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='551.774' cy='194.607' fill='#EEEEEE' r='33.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='14' transform='matrix(1 0 0 1 534.4136 198.7051)'&gt;Place&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='471.774' cy='194.607' fill='#EEEEEE' r='33.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='14' transform='matrix(1 0 0 1 450.1372 198.7051)'&gt;Person&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='121.258' cy='321.607' fill='#EEEEEE' r='25.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 109.0342 324.7339)'&gt;Blog&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='60.227' cy='321.607' fill='#EEEEEE' r='25.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 43.335 324.7339)'&gt;Article&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='182.29' cy='321.607' fill='#EEEEEE' r='25.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 166.3994 324.7339)'&gt;Movie&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='243.321' cy='321.607' fill='#EEEEEE' r='25.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 224.4248 324.7339)'&gt;Recipe&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;path d='M405.766,255.279c0,2.954-2.395,5.35-5.35,5.35h-17.539
+		c-2.955,0-5.351-2.396-5.351-5.35v-0.298c0-2.955,2.396-5.351,5.351-5.351h17.539c2.955,0,5.35,2.396,5.35,5.351V255.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='383.77' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='399.375' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='391.573' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M245.767,255.279c0,2.954-2.396,5.35-5.351,5.35h-17.538
+		c-2.955,0-5.351-2.396-5.351-5.35v-0.298c0-2.955,2.396-5.351,5.351-5.351h17.538c2.955,0,5.351,2.396,5.351,5.351V255.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='223.77' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='239.376' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='231.573' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M325.767,255.279c0,2.954-2.396,5.35-5.351,5.35h-17.538
+		c-2.955,0-5.351-2.396-5.351-5.35v-0.298c0-2.955,2.396-5.351,5.351-5.351h17.538c2.955,0,5.351,2.396,5.351,5.351V255.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='303.77' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='319.376' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='311.573' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M485.766,255.279c0,2.954-2.395,5.35-5.35,5.35h-17.539
+		c-2.955,0-5.35-2.396-5.35-5.35v-0.298c0-2.955,2.395-5.351,5.35-5.351h17.539c2.955,0,5.35,2.396,5.35,5.351V255.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='463.77' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='479.375' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='471.573' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M565.766,255.279c0,2.954-2.395,5.35-5.35,5.35h-17.539
+		c-2.955,0-5.35-2.396-5.35-5.35v-0.298c0-2.955,2.395-5.351,5.35-5.351h17.539c2.955,0,5.35,2.396,5.35,5.351V255.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='543.77' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='559.375' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='551.573' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M645.766,255.279c0,2.954-2.395,5.35-5.35,5.35h-17.539
+		c-2.955,0-5.35-2.396-5.35-5.35v-0.298c0-2.955,2.395-5.351,5.35-5.351h17.539c2.955,0,5.35,2.396,5.35,5.351V255.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='623.77' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='639.375' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='631.573' cy='255.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M257.767,372.279c0,2.954-2.396,5.35-5.351,5.35h-17.538
+		c-2.955,0-5.351-2.396-5.351-5.35v-0.298c0-2.955,2.396-5.351,5.351-5.351h17.538c2.955,0,5.351,2.396,5.351,5.351V372.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='235.77' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='251.376' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='243.573' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M195.767,372.279c0,2.954-2.396,5.35-5.351,5.35h-17.538
+		c-2.955,0-5.351-2.396-5.351-5.35v-0.298c0-2.955,2.396-5.351,5.351-5.351h17.538c2.955,0,5.351,2.396,5.351,5.351V372.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='173.77' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='189.376' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='181.573' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M134.767,372.279c0,2.954-2.396,5.35-5.351,5.35h-17.538
+		c-2.955,0-5.351-2.396-5.351-5.35v-0.298c0-2.955,2.396-5.351,5.351-5.351h17.538c2.955,0,5.351,2.396,5.351,5.351V372.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='112.77' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='128.376' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='120.573' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;path d='M72.767,372.279c0,2.954-2.396,5.35-5.351,5.35H49.878
+		c-2.955,0-5.351-2.396-5.351-5.35v-0.298c0-2.955,2.396-5.351,5.351-5.351h17.538c2.955,0,5.351,2.396,5.351,5.351V372.279z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+	&lt;circle cx='50.77' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='66.376' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='58.573' cy='372.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='285.77' cy='325.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='301.376' cy='325.129' fill='#CCCCCC' r='1.871' /&gt;
+	&lt;circle cx='293.573' cy='325.129' fill='#CCCCCC' r='1.871' /&gt;
+&lt;/svg&gt;
+&lt;h2 id='identificando_as_entidades'&gt;Identificando as entidades&lt;/h2&gt;
+
+&lt;p&gt;Antes de querermos marcar conteúdo semanticamente, é necessário identificar as entidades presentes na página que desejamos descrever. Digamos que temos uma página que apresenta informações sobre filmes, e em um trecho tenhamos:&lt;/p&gt;
+&lt;div id='exemplo-filme'&gt;
+	&lt;h4&gt;Avatar&lt;/h4&gt;
+	&lt;p&gt;Diretor: James Cameron (16 de agosto de 1954)&lt;/p&gt;
+	&lt;p&gt;Ficção Científica&lt;/p&gt;
+	&lt;p&gt;&lt;a href='http://www.youtube.com/watch?v=d1_JBMrrYw8'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Para nós é muito fácil identificar qual entidade de que se tratam as informações acima, &lt;strong&gt;mas e as máquinas&lt;/strong&gt;? Como elas saberão que &amp;#8220;James Cameron&amp;#8221; é o diretor do filme Avatar? Esta palavra &amp;#8220;Diretor&amp;#8221; também não tem o menor significado para uma máquina. E se &amp;#8220;Diretor&amp;#8221; estivesse em japonês ou em russo? &lt;strong&gt;Como elas saberiam dizer sequer o que é &amp;#8220;Avatar&amp;#8221;?&lt;/strong&gt; Seria Avatar, o &lt;strong&gt;desenho&lt;/strong&gt;, o &lt;strong&gt;filme&lt;/strong&gt;, ou até mesmo uma &lt;strong&gt;entidade divina&lt;/strong&gt; do mundo espiritual encarnada em uma pessoa? Quando você procura por Avatar no Google, como ele sabe pelo que você está procurando exatamente? Ele &lt;strong&gt;não sabe&lt;/strong&gt;. O que o Google e os outros motores de busca atuais fazem é aplicar um monte de algoritmos super complexos que fazem uma porrada de associações pra tentar &lt;strong&gt;adivinhar&lt;/strong&gt; do que seu conteúdo se trata (&lt;em&gt;n&lt;/em&gt; teses de doutorado e muita matemática por trás), e assim poder melhorar sua indexação e classificação de conteúdo.&lt;/p&gt;
+
+&lt;h2 id='propriedades_microdata'&gt;Propriedades microdata&lt;/h2&gt;
+
+&lt;p&gt;Como vimos, os vocabulários schema.org definem entidades do mundo real, suas propriedades e seus relacionamentos com outras entidades. Agora vamos ver como utilizar de fato todos estes metadados em nosso código HTML. Primeiro certifique-se de que seu cabeçalho tenha a definição &lt;em&gt;doctype&lt;/em&gt; correta, sendo microdata um padrão HTML5, a primeira linha do seu código deve ser &lt;code&gt;&amp;lt;!doctype html&amp;gt;&lt;/code&gt;, apenas isso – sem nomes complicados de versões e/ou urls que ninguém tem paciência de ficar escrevendo.&lt;/p&gt;
+
+&lt;p&gt;Feito isto, vamos finalmente ao microdata de fato. Microdata define 5 diferentes atributos que podem ser adicionados a qualquer elemento HTML o qual você queira descrever semanticamente. Estes atributos são:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;code&gt;itemscope&lt;/code&gt;: Indica que o item é uma entidade semântica e que todas as propriedades que estiverem dentro dele contêm informações sobre ele;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;itemtype&lt;/code&gt;: Indica a entidade (o tipo). Aqui você deve especificar a URL do vocabulário (por exemplo: http://schema.org/CreativeWork);&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;itemid&lt;/code&gt;: Um identificador único para o item (leia &lt;code&gt;itemref&lt;/code&gt;);&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;itemprop&lt;/code&gt;: Indica que o item possui o valor da propriedade especificada (veja o exemplo abaixo);&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;itemref&lt;/code&gt;: Propriedades que estão em elementos fora do escopo (elemento com &lt;code&gt;itemscope&lt;/code&gt;) podem ser associadas a este item. &lt;code&gt;itemref&lt;/code&gt; deve conter seu valor preenchido com o &lt;code&gt;itemid&lt;/code&gt; do elemento o qual se deseja fazer a associação.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Agora vamos voltar ao exemplo do Avatar. Digamos que o código HTML correspondente &lt;a href='#exemplo-filme'&gt;àquele trecho&lt;/a&gt; seja: (Este tutorial é basicamente o mesmo encontrado no &lt;a href='http://schema.org/docs/gs.html'&gt;getting started&lt;/a&gt; do site schema.org.)&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;&lt;div&gt;
+    &lt;h4&gt;Avatar&lt;/h4&gt;
+    &lt;p&gt;Diretor: James Cameron (16 de agosto de 1954)&lt;/p&gt;
+    &lt;p&gt;Ficção Científica&lt;/p&gt;
+    &lt;p&gt;&lt;a href='http://www.youtube.com/...'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Começamos definindo a entidade Movie e adicionando as propriedades &lt;code&gt;itemscope&lt;/code&gt; e &lt;code&gt;itemtype&lt;/code&gt; ao elemento &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, já que este elemento possui todo conteúdo relacionado ao filme &lt;em&gt;Avatar&lt;/em&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;&lt;!-- adicionamos os atributos itemscope e itemtype --&gt;
+&lt;div itemscope='itemscope' itemtype='http://schema.org/Movie'&gt;
+    &lt;h4&gt;Avatar&lt;/h4&gt;
+    &lt;p&gt;Diretor: James Cameron (16 de agosto de 1954)&lt;/p&gt;
+    &lt;p&gt;Ficção Científica&lt;/p&gt;
+    &lt;p&gt;&lt;a href='http://www.youtube.com/...'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora identificamos as propriedades presentes deste filme e definimos cada uma com o atributo &lt;code&gt;itemprop&lt;/code&gt;, no nosso caso estas propriedades são &lt;em&gt;nome&lt;/em&gt;, &lt;em&gt;diretor&lt;/em&gt;, &lt;em&gt;gênero&lt;/em&gt; e &lt;em&gt;trailer&lt;/em&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;&lt;div itemscope='itemscope' itemtype='http://schema.org/Movie'&gt;
+    &lt;!-- adicionamos o atributo itemprop ao nome do filme --&gt;
+    &lt;h4 itemprop='name'&gt;Avatar&lt;/h4&gt;
+    &lt;!-- adicionamos o atributo itemprop ao diretor do filme --&gt;
+    &lt;p&gt;
+        Diretor: 
+        &lt;span itemprop='director'&gt;James Cameron (16 de agosto de 1954)&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;!-- adicionamos o atributo itemprop ao gênero do filme --&gt;
+    &lt;p itemprop='genre'&gt;Ficção Científica&lt;/p&gt;
+    &lt;!-- adicionamos o atributo itemprop ao trailer do filme --&gt;
+    &lt;p&gt;&lt;a href='http://www.youtube.com/...' itemprop='trailer'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Temos um Filme cujo nome é Avatar, gênero é Ficção científica, trailer aponta para uma URL e o diretor é James Cameron. Numa representação gráfica da semântica deste trecho de código, teríamos algo parecido como:&lt;/p&gt;
+&lt;svg class='img' height='400' width='700'&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='350' x2='350' y1='57.031' y2='344.36' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='504.665' x2='197.336' y1='211.696' y2='211.696' /&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='350.774' cy='209.112' fill='#EEEEEE' r='60.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='32.4044' transform='matrix(1 0 0 1 310.3311 220.0874)'&gt;Movie&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M391.055,45.031c0,6.627-5.373,12-12,12h-56
+			c-6.627,0-12-5.373-12-12V37.36c0-6.627,5.373-12,12-12h56c6.627,0,12,5.373,12,12V45.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='21' transform='matrix(1 0 0 1 320.6929 48.0874)'&gt;Avatar&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M445.055,363.031c0,6.628-5.373,12-12,12h-166
+			c-6.627,0-12-5.372-12-12v-7.671c0-6.627,5.373-12,12-12h166c6.627,0,12,5.373,12,12V363.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='21' transform='matrix(1 0 0 1 274.0205 366.0874)'&gt;James Cameron&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M564.055,215.031c0,6.628-3.989,12-8.909,12h-41.572
+			c-4.92,0-8.909-5.372-8.909-12v-7.671c0-6.627,3.989-12,8.909-12h41.572c4.92,0,8.909,5.373,8.909,12V215.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='21' transform='matrix(1 0 0 1 513.6157 218.0874)'&gt;URL&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M198.055,228.031c0,6.628-5.373,12-12,12h-81
+			c-6.627,0-12-5.372-12-12V193.36c0-6.627,5.373-12,12-12h81c6.627,0,12,5.373,12,12V228.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text transform='matrix(1 0 0 1 114.5166 205.0874)'&gt;&lt;tspan font-size='21' x='0' y='0'&gt;Ficção&lt;/tspan&gt;&lt;tspan font-size='21' x='-10.5' y='25.2'&gt;científica&lt;/tspan&gt;&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M371.722,104.273c0,3.59-2.91,6.5-6.5,6.5h-30.334c-3.59,0-6.5-2.91-6.5-6.5v-4.155
+			c0-3.59,2.91-6.5,6.5-6.5h30.334c3.59,0,6.5,2.91,6.5,6.5V104.273z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 335.0493 106.3599)'&gt;name&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M374.722,308.273c0,3.59-2.91,6.5-6.5,6.5h-36.334c-3.59,0-6.5-2.91-6.5-6.5v-4.155
+			c0-3.59,2.91-6.5,6.5-6.5h36.334c3.59,0,6.5,2.91,6.5,6.5V308.273z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 330.7212 310.3599)'&gt;director&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M479.722,213.273c0,3.59-2.91,6.5-6.5,6.5h-30.334c-3.59,0-6.5-2.91-6.5-6.5v-4.155
+			c0-3.59,2.91-6.5,6.5-6.5h30.334c3.59,0,6.5,2.91,6.5,6.5V213.273z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 443.0552 215.3599)'&gt;trailer&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M268.056,213.273c0,3.59-3.224,6.5-7.2,6.5h-33.601c-3.977,0-7.2-2.91-7.2-6.5v-4.155
+			c0-3.59,3.224-6.5,7.2-6.5h33.601c3.977,0,7.2,2.91,7.2,6.5V213.273z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 225.0474 215.3599)'&gt;gender&lt;/text&gt;
+	&lt;/g&gt;
+&lt;/svg&gt;
+&lt;p&gt;Se for do nosso interesse, podemos refinar mais ainda a nossa marcação tentando identificar se uma destas propriedades pode ser definida como uma outra entidade. No caso da propriedade &lt;code&gt;director&lt;/code&gt; por exemplo, um diretor é uma &lt;strong&gt;pessoa&lt;/strong&gt; também, então vamos aplicar o vocabulário &lt;strong&gt;Person&lt;/strong&gt; do schema.org:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;&lt;div itemscope='itemscope' itemtype='http://schema.org/Movie'&gt;
+    &lt;h4 itemprop='name'&gt;Avatar&lt;/h4&gt;
+    &lt;!-- movemos o atributo itemprop do diretor para o wrapper (&lt;p&gt;) --&gt;
+    &lt;!-- e adicionamos os atributos itemscope e itemtype ao diretor --&gt;
+    &lt;p itemprop='director' itemscope='itemscope' itemtype='http://schema.org/Person'&gt;
+        Diretor: 
+        &lt;span&gt;James Cameron (16 de agosto de 1954)&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p itemprop='genre'&gt;Ficção Científica&lt;/p&gt;
+    &lt;p&gt;&lt;a href='http://www.youtube.com/...' itemprop='trailer'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E para terminar, vamos especificar as propriedades desta pessoa – que no nesta caso são &lt;em&gt;nome&lt;/em&gt; e &lt;em&gt;data de nascimento&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Observe que para data de nascimento criamos um novo elemento &lt;code&gt;&amp;lt;time datetime=&amp;quot;...&amp;quot;&amp;gt;&lt;/code&gt;. Optei por fazer isto por quê &lt;code&gt;&amp;lt;time&amp;gt;&lt;/code&gt; é uma &lt;a href='http://www.w3schools.com/html5/tag_time.asp'&gt;nova tag&lt;/a&gt; que faz parte da especificação HTML5, e usamos seu atributo &lt;code&gt;datetime&lt;/code&gt; para especificar o formato padrão de data usado pelo schema.org – na especificação do tipo de dados &lt;a href='http://schema.org/Date'&gt;Date&lt;/a&gt;, o formato de data esperado é o &lt;a href='http://en.wikipedia.org/wiki/ISO_8601'&gt;ISO 8601&lt;/a&gt; (AAAA-MM-DD).&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;&lt;div itemscope='itemscope' itemtype='http://schema.org/Movie'&gt;
+    &lt;h4 itemprop='name'&gt;Avatar&lt;/h4&gt;
+    &lt;p itemprop='director' itemscope='itemscope' itemtype='http://schema.org/Person'&gt;
+       Diretor: 
+       &lt;!-- adicionamos o atributo itemprop às seguintes propriedades da pessoa --&gt;
+       &lt;span itemprop='name'&gt;James Cameron&lt;/span&gt; 
+       &lt;time datetime='1954-08-16' itemprop='birthDate'&gt;(16 de agosto de 1954)&lt;/time&gt;
+    &lt;/p&gt;
+    &lt;p itemprop='genre'&gt;Ficção Científica&lt;/p&gt;
+    &lt;p&gt;&lt;a href='http://www.youtube.com/...' itemprop='trailer'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora temos um &lt;strong&gt;Filme&lt;/strong&gt; cujo nome é Avatar, gênero é Ficção científica, trailer aponta para uma URL e o diretor é uma &lt;strong&gt;Pessoa&lt;/strong&gt; cujo nome é James Cameron e sua data de nascimento é 16 de agosto de 1954. Com isso, uma representação gráfica da semântica passaria a ser algo como:&lt;/p&gt;
+&lt;svg class='img' height='550' width='700'&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='350' x2='350' y1='57.031' y2='344.36' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='504.665' x2='197.336' y1='211.696' y2='211.696' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='350' x2='201.038' y1='391.26' y2='516.196' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='350' x2='504.665' y1='391.26' y2='516.196' /&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='350.774' cy='209.112' fill='#EEEEEE' r='60.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='32.4044' transform='matrix(1 0 0 1 310.3311 220.0874)'&gt;Movie&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M391.055,45.031c0,6.627-5.373,12-12,12h-56
+			c-6.627,0-12-5.373-12-12V37.36c0-6.627,5.373-12,12-12h56c6.627,0,12,5.373,12,12V45.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='21' transform='matrix(1 0 0 1 320.6929 48.0874)'&gt;Avatar&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+	&lt;path d='M295.055,520.031c0,6.628-5.373,12-12,12h-166
+		c-6.627,0-12-5.372-12-12v-7.671c0-6.627,5.373-12,12-12h166c6.627,0,12,5.373,12,12V520.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='21' transform='matrix(1 0 0 1 124.0205 523.0874)'&gt;James Cameron&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M564.055,215.031c0,6.628-3.989,12-8.909,12h-41.572
+			c-4.92,0-8.909-5.372-8.909-12v-7.671c0-6.627,3.989-12,8.909-12h41.572c4.92,0,8.909,5.373,8.909,12V215.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='21' transform='matrix(1 0 0 1 513.6157 218.0874)'&gt;URL&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M198.055,228.031c0,6.628-5.373,12-12,12h-81
+			c-6.627,0-12-5.372-12-12V193.36c0-6.627,5.373-12,12-12h81c6.627,0,12,5.373,12,12V228.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text transform='matrix(1 0 0 1 114.5166 205.0874)'&gt;&lt;tspan font-size='21' x='0' y='0'&gt;Ficção&lt;/tspan&gt;&lt;tspan font-size='21' x='-10.5' y='25.2'&gt;científica&lt;/tspan&gt;&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M371.722,104.273c0,3.59-2.91,6.5-6.5,6.5h-30.334c-3.59,0-6.5-2.91-6.5-6.5v-4.155
+			c0-3.59,2.91-6.5,6.5-6.5h30.334c3.59,0,6.5,2.91,6.5,6.5V104.273z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 335.0493 106.3599)'&gt;name&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M374.722,308.273c0,3.59-2.91,6.5-6.5,6.5h-36.334c-3.59,0-6.5-2.91-6.5-6.5v-4.155
+			c0-3.59,2.91-6.5,6.5-6.5h36.334c3.59,0,6.5,2.91,6.5,6.5V308.273z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 330.7212 310.3599)'&gt;director&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M479.722,213.273c0,3.59-2.91,6.5-6.5,6.5h-30.334c-3.59,0-6.5-2.91-6.5-6.5v-4.155
+			c0-3.59,2.91-6.5,6.5-6.5h30.334c3.59,0,6.5,2.91,6.5,6.5V213.273z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 443.0552 215.3599)'&gt;trailer&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M268.056,213.273c0,3.59-3.224,6.5-7.2,6.5h-33.601c-3.977,0-7.2-2.91-7.2-6.5v-4.155
+			c0-3.59,3.224-6.5,7.2-6.5h33.601c3.977,0,7.2,2.91,7.2,6.5V213.273z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 225.0474 215.3599)'&gt;genre&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='350.774' cy='391.261' fill='#EEEEEE' r='47.74' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='21' transform='matrix(1 0 0 1 316.5522 399.8882)'&gt;Person&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M289.723,463.695c0,3.59-2.91,6.5-6.5,6.5h-30.334c-3.59,0-6.5-2.91-6.5-6.5v-4.155
+			c0-3.59,2.91-6.5,6.5-6.5h30.334c3.59,0,6.5,2.91,6.5,6.5V463.695z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 253.0498 465.7817)'&gt;name&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M563.722,520.031c0,6.628-5.373,12-12,12h-86
+			c-6.627,0-12-5.372-12-12v-7.671c0-6.627,5.373-12,12-12h86c6.627,0,12,5.373,12,12V520.031z' fill='#FFFFFF' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='16' transform='matrix(1 0 0 1 466.7925 521.0874)'&gt;1954-08-16&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;path d='M469.723,463.695c0,3.59-2.91,6.5-6.5,6.5h-50.334c-3.59,0-6.5-2.91-6.5-6.5v-4.155
+			c0-3.59,2.91-6.5,6.5-6.5h50.334c3.59,0,6.5,2.91,6.5,6.5V463.695z' fill='#CCCCCC' /&gt;
+		&lt;text font-size='12' transform='matrix(1 0 0 1 413.3833 465.7817)'&gt;birthDate&lt;/text&gt;
+	&lt;/g&gt;
+&lt;/svg&gt;
+&lt;p&gt;E não para por ai galera, você pode sair especificando qualquer coisa a adicional conforme achar necessário, mas acho isso aqui já é o necessário pra dar uma boa sacada na idéia né. Estou bastante satisfeito de ter finalmente terminado este post, pois além de tudo, minha dívida de Heinekens com &lt;a href='http://twitter.com/caio_gondim'&gt;Caio Gondim&lt;/a&gt; para de aumentar hoje (um dia explico essa história)!&lt;/p&gt;
+
+&lt;p&gt;No próximo post irei realizar a marcação semântica aqui no Loop Infinito e mostrarei o que mudou. Até lá!&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+	&lt;h3&gt;Referência&lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;→&lt;a href='http://en.wikipedia.org/wiki/Microdata_(HTML)'&gt;Microdata&lt;/a&gt; &lt;span class='comment'&gt;//wikipedia&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://schema.org'&gt;Schema.org&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://schema.org/docs/gs.html'&gt;Getting started&lt;/a&gt; &lt;span class='comment'&gt;//schema.org&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://desenvolvimentoparaweb.com/html/microdata-api-schema-org-significado-html/'&gt;Microdata API e Schema.org: dando significado ao HTML&lt;/a&gt; &lt;span class='comment'&gt;//dpw&lt;/span&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/04/26/marcacao-semantica</id>
+    <title>Marcação Semântica</title>
+    <updated>2012-04-26T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/04/26/marcacao-semantica/" />
+    <author>
+      <name>Almir Filho</name>
+    </author>
+    <content type="html">&lt;p&gt;Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.&lt;/p&gt;
+
+&lt;p&gt;Desde a década de 1990, a W3C tem apresentado maneiras para definição de conteúdo semântico, e de lá pra cá surgiram outras alternativas, mas devido a grande quantidade de informações, falarei apenas um pouco sobre cada uma delas: RDF, RDFa, Microformats e &lt;strong&gt;Microdata&lt;/strong&gt; ← focaremos neste último cara aqui.&lt;/p&gt;
+
+&lt;p&gt;Vale salientar que os principais motores de busca já levam em consideração o uso de qualquer uma destas tecnologias citadas (pelo menos em parte).&lt;/p&gt;
+
+&lt;h2 id='rdf_resource_description_framework'&gt;RDF (Resource Description Framework)&lt;/h2&gt;
+
+&lt;p&gt;Criada pela W3C em 1999, é uma &lt;strong&gt;linguagem&lt;/strong&gt; baseada em XML que foi concebida com o intuito de representar informação na internet. RDF é um modelo similar aos conceitos de modelagem Entidade-Relacionamento. RDF é tão abrangente que é possível definir linguagens para definição de ontologias com ela. Na minha opinião, usar RDF para marcar páginas web semanticamente hoje em dia é a mesma coisa que querer usar uma bala de canhão pra matar uma formiga. Na prática, principalmente por ser uma outra linguagem, RDF é um mundo tão grande e diferente que se torna complexo querer definir qualquer relacionamento semântico nos ambientes web conhecidos de hoje.&lt;/p&gt;
+
+&lt;h2 id='rdfa_rdf__in__attributes'&gt;RDFa (RDF – in – attributes)&lt;/h2&gt;
+
+&lt;p&gt;O título fala por si só. RDFa é a marcação semântica sem a necessidade de utilização de novos elementos de marcação, sendo feita usando &lt;strong&gt;atributos&lt;/strong&gt; que podem ser embutidos em qualquer elemento. A grande vantagem que a difere de RDF é a possibilidade de marcação no próprio conteúdo (já que um RDF tem que residir em um arquivo separado – o que acaba com a duplicação de dados do RDF). Porém, RDFa foi desenvolvida como um conjunto de extensões de XHTML e obedecendo aos padrões XML, obrigando-nos a fazer uso de &lt;em&gt;namespaces&lt;/em&gt; para todo e qualquer escopo/atributo de item semântico que quisermos descrever, tornando assim a marcação semântica um tanto chata e trabalhosa.&lt;/p&gt;
+
+&lt;h2 id='microformats'&gt;Microformats&lt;/h2&gt;
+
+&lt;p&gt;Microformats não se trata de mais uma nova linguagem querendo abraçar o mundo. A idéia é resolver os problemas mais simples primeiro, &lt;strong&gt;adaptando-se aos padrões atuais&lt;/strong&gt; e fazer com que você passe a usar uma marcação semântica o mais rápido possível, já que é de fácil utilização. A proposta dos microformats é bem simples e &lt;strong&gt;muito bem difundida&lt;/strong&gt;. Dentre os formatos mais usados, estão o hCalendar (para publicação de eventos) e hCard (para pessoas, empresas e organizações em geral). &lt;a href='http://microformats.org/wiki/Main_Page#Specifications'&gt;Veja mais formatos definidos&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id='microdata'&gt;Microdata&lt;/h2&gt;
+
+&lt;p&gt;Foi criado pelo WHATWG (os caras do HTML5/WebApplications 1.0) e tornou-se o padrão de marcação semântica adotado pelo HTML5. Microdata utiliza-se de variados &lt;strong&gt;vocabulários&lt;/strong&gt; para descrever itens semanticamente e pares &lt;em&gt;key-value&lt;/em&gt; para atribuição de valores a suas propriedades.&lt;/p&gt;
+
+&lt;p&gt;Ótimo, mas onde podemos encontrar esses tais vocabulários? Os primeiros vocabulários microdata foram definidos em 2010 e podem ser encontrados em &lt;a href='http://data-vocabulary.org/'&gt;data-vocabulary.org&lt;/a&gt;. Note que existem poucos vocabulários definidos (apenas 9), que são: &lt;em&gt;Event&lt;/em&gt;, &lt;em&gt;Organization&lt;/em&gt;, &lt;em&gt;Person&lt;/em&gt;, &lt;em&gt;Product&lt;/em&gt;, &lt;em&gt;Review&lt;/em&gt;, &lt;em&gt;Review-aggregate&lt;/em&gt;, &lt;em&gt;Breadcrumb&lt;/em&gt;, &lt;em&gt;Offer&lt;/em&gt; e &lt;em&gt;Offer-aggregate&lt;/em&gt;. Mas calma lá, o melhor do microdata ainda está por vir com o &lt;strong&gt;&lt;a href='http://schema.org'&gt;Schema.org&lt;/a&gt;&lt;/strong&gt;, um repositório de vocabulários microdata que cresce a cada dia.&lt;/p&gt;
+
+&lt;h3 id='schemaorg'&gt;Schema.org&lt;/h3&gt;
+
+&lt;p&gt;Os principais motores de busca se baseiam nos vocabulários do schema.org para melhor indexar, classificar e refinar seus resultados de busca, visto que o schema.org é na verdade um consórcio entre os grandes buscadores da web – Google, Bing e Yahoo! – para &amp;#8221;&lt;em&gt;criar e suportar um grupo de esquemas em comum para dados de marcação estruturados em páginas web&lt;/em&gt;&amp;#8221;. A iniciativa começou com um pequeno número de formatos (esquemas ou tipos), mas o objetivo a longo prazo é suportar uma ampla gama de formatos. No momento em que escrevo este post, já se encontram em torno de &lt;strong&gt;450 formatos&lt;/strong&gt; definidos no schema.org – &lt;a href='http://schema.org/docs/full.html'&gt;Lista completa&lt;/a&gt;. Existem desde os tipos mais básicos como pessoa (&lt;em&gt;Person&lt;/em&gt;), evento (&lt;em&gt;Event&lt;/em&gt;) ou organização (&lt;em&gt;Organization&lt;/em&gt;) até os mais específicos como dentista (&lt;em&gt;Dentist&lt;/em&gt;), parada de ônibus (&lt;em&gt;BusStop&lt;/em&gt;) e até mesmo templo hindu (&lt;em&gt;HinduTemple&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Beleza, mas por quê Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de &lt;a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'&gt;Roy Tennant&lt;/a&gt;, com o qual concordo plenamente e também recomendo a leitura.&lt;/p&gt;
+&lt;span id='razoes-microdata'&gt; &lt;/span&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Há um claro incentivo à utilização de microdata&lt;/strong&gt; – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. &lt;em&gt;As grandes armas estão por trás do microdata&lt;/em&gt;. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivessem nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Não há nenhuma razão clara para usar RDFa e não microdata&lt;/strong&gt; – O que RDFa se propõe a fazer que microdata não? Comentem por favor =)&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;É simples&lt;/strong&gt; – Esta é a minha razão favorita. Sou um grande fã da &lt;strong&gt;simplicidade&lt;/strong&gt;, especialmente quando se consegue um resultado tão (ou quase tão) bem feito de como se fosse algo mais complexo.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Faz parte do padrão HTML5&lt;/strong&gt; (esta foi adicionada por mim =) - Aqui no Loop infinito nós encorajamos o uso dos padrões W3C, tanto que este blog já foi construído usando HTML5 e CSS3 desde o início.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='na_prtica'&gt;Na prática&lt;/h2&gt;
+
+&lt;p&gt;Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o &lt;strong&gt;&lt;a href='http://www.google.com.br/prdhp'&gt;Google Shopping&lt;/a&gt;&lt;/strong&gt; (busca de produtos à venda) e o &lt;strong&gt;&lt;a href='http://www.google.com/landing/recipes/'&gt;Google Recipes&lt;/a&gt;&lt;/strong&gt; (busca de receitas culinárias). É verdade que estes serviços conseguem recuperar também conteúdo não marcado semanticamente (a grande maioria), mas os que utilizam RDFa, microformats ou microdata têm chances muito maiores de serem os primeiros no pagerank.&lt;/p&gt;
+
+&lt;p&gt;No &lt;strong&gt;Google Shopping&lt;/strong&gt;, fiz uma pesquisa simples por &amp;#8221;&lt;em&gt;jornalista&lt;/em&gt;&amp;#8221; e eis o resultado obtido:&lt;/p&gt;
+&lt;p id='img-produtos'&gt;&lt;img class='bordered' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-shopping.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;Pela imagem acima, é possível perceber que o nível de refinamento de uma pesquisa pode ser muito mais específico do que apenas procurar por palavras-chaves – como acontece normalmente hoje. Percebam que podemos especificar se procuramos por um produto novo ou não, a faixa de preço desejada e até a loja. Os seis primeiros resultados foram dos sites: Americanas.com, Submarino.com.br, Extra.com.br, CasasBahia.com.br, PontoFrio.com e Saraiva.com.br. Tive a curiosidade de analisar o código fonte de cada um deles, e eis que consegui detectar na base do olhômetro (se eu estiver errado sobre algum, por favor deixe um comentário):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Americanas.com&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Submarino.com.br&lt;/strong&gt; - não usa marcação semântica;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Extra.com.br&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;CasasBahia.com.br&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;PontoFrio.com&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Saraiva.com.br&lt;/strong&gt; - não usa marcação semântica.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No &lt;strong&gt;Google Recipes&lt;/strong&gt;, pesquisei por &amp;#8221;&lt;em&gt;cupcake&lt;/em&gt;&amp;#8221;:&lt;/p&gt;
+&lt;p&gt;&lt;img class='bordered' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-recipes.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;Novamente, reparem nos filtros disponíveis para receitas. Eles diferem dos de produtos (&lt;a href='#img-produtos'&gt;mostrados acima&lt;/a&gt;). Aqui é possível especificar o uso (ou não uso) de determinados ingredientes na receita (muito útil para quem tem alergia a certos alimentos, por exemplo), tempo de cozimento e até mesmo o valor calórico do que procuro. É outra história, meus amigos. Os três primeiros resultados foram dos sites: FoodNetwork.com, MarthaStewart.com e KraftRecipes.com. Analisando o código fontes das páginas, obtive que:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;FoodNetwork.com&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;MarthaStewart.com&lt;/strong&gt; - &lt;em&gt;usa microformats&lt;/em&gt;;&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;KraftRecipes.com&lt;/strong&gt; - &lt;em&gt;usa RDFa&lt;/em&gt;;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='pondo_a_mo_na_massa'&gt;Pondo a mão na massa&lt;/h2&gt;
+
+&lt;p&gt;Apesar de não ter detectado o uso de microdata/schema.org nos exemplos acima, nós optamos por esta forma de marcação para aplicar aqui no Loop Infinito pelas mesmas &lt;a href='#razoes-microdata'&gt;razões que citei anteriormente&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;No &lt;a href='http://loopinfinito.com.br/2012/05/02/microdata/'&gt;próximo post&lt;/a&gt; falarei mais detalhadamente sobre &lt;strong&gt;microdata&lt;/strong&gt; e &lt;strong&gt;schema.org&lt;/strong&gt;, e também explicarei detalhadamente como marcamos conteúdo HTML usando os vocabulários do schema.org. Até a próxima! o/&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+	&lt;h3&gt;Referência&lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;→&lt;a href='http://en.wikipedia.org/wiki/Resource_Description_Framework'&gt;RDF&lt;/a&gt; &lt;span class='comment'&gt;//wikipedia&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://en.wikipedia.org/wiki/RDFa'&gt;RDFa&lt;/a&gt; &lt;span class='comment'&gt;//wikipedia&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://microformats.org/about'&gt;Microformats&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://en.wikipedia.org/wiki/Microdata_(HTML)'&gt;Microdata&lt;/a&gt; &lt;span class='comment'&gt;//wikipedia&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://schema.org'&gt;Schema.org&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'&gt;Why Microdata, Not RDF, Will Power the Semantic Web&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/04/14/css-filters</id>
+    <title>CSS Filters</title>
+    <updated>2012-04-14T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/04/14/css-filters/" />
+    <author>
+      <name>Caio Gondim</name>
+    </author>
+    <content type="html">&lt;style&gt;
+
+	#cssfilter-img-base:hover {
+		-webkit-transition: all 1s linear;
+	}
+
+	#cssfilter-img-base:hover {
+		-webkit-filter: saturate(4);
+	}
+
+&lt;/style&gt;
+&lt;p&gt;A Adobe, Apple e Opera estão &lt;a href='https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html'&gt;trabalhando juntas&lt;/a&gt; para trazer alguns efeitos no estilo Photoshop para o CSS. Esses efeitos, chamados de filtros, irão nos permitir modificar a renderização de qualquer elemento DOM, de um simples &lt;code&gt;p&lt;/code&gt;, até elementos mais complexos como &lt;code&gt;image&lt;/code&gt; ou &lt;code&gt;video&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Alguns dos efeitos já definidos na especificação são &lt;code&gt;grayscale&lt;/code&gt;, &lt;code&gt;blur&lt;/code&gt;, &lt;code&gt;sepia&lt;/code&gt;, &lt;code&gt;saturate&lt;/code&gt;, &lt;code&gt;opacity&lt;/code&gt;, &lt;code&gt;brightness&lt;/code&gt;, &lt;code&gt;contrast&lt;/code&gt;, &lt;code&gt;hue-rotate&lt;/code&gt; e &lt;code&gt;invert&lt;/code&gt;. Aos familiarizados com Photoshop ou qualquer programa de edição de imagem, eles devem ser bastante auto-explicativos. Mas de qualquer forma, vamos explorar cada filtro, um a um.&lt;/p&gt;
+
+&lt;p&gt;Em todos os exemplos, iremos usar a imagem abaixo como base. Para verificar se o seu navegador suporta o CSS Filter, apenas passe o mouse por cima da imagem. Se ela modificar (saturar), quer dizer que o seu navegador suporta e já está aplicando um filtro no evento hover desta imagem.&lt;/p&gt;
+&lt;p&gt;&lt;img id='cssfilter-img-base' src='http://loopinfinito.com.br/images/posts/jeri.jpg' /&gt;&lt;/p&gt;
+&lt;h2 id='grayscale'&gt;Grayscale&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-grayscale.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Com o filtro &lt;code&gt;grayscale&lt;/code&gt; nós indicamos o quão preto-e-branco queremos que o elemento fique, numa escala de 0 a 1 ou 0% 100%.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: grayscale(100%);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='blur'&gt;Blur&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-blur.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Com o filtro &lt;code&gt;blur&lt;/code&gt; podemos embaçar um elemento. Algo parecido como ver uma foto sem óculos (eu imagino que seja assim). Os valores são definidos em pixels. Quanto maior o valor, mais embaçado o elemento.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: blur(3px);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='sepia'&gt;Sepia&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-sepia.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Este efeito é normamelmente usado em fotos, dando a elas um efeito de fotos antigas. Os valores do efeito vão de 0 a 1.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: sepia(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='saturate'&gt;Saturate&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-saturate.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Com o &lt;code&gt;saturate&lt;/code&gt; modificamos o canal saturação da cores do elemento. Quanto maior a saturação, mais vivas as cores estarão, e quanto menor a saturação, mais próximas do cinza elas estarão. Com o &lt;ceode&gt;saturate&lt;/ceode&gt; em 0, obtemos o mesmo resultado que o &lt;code&gt;grayscale&lt;/code&gt; em 100%&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: saturate(4);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='opacity'&gt;Opacity&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-opacity.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Ok, esse é bastante fácil. Simplesmente mude a opacidade do elemento. Os valores vão de 0 a 1. 0 deixa o elemento invisível.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: opacity(0.5);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='brightness'&gt;Brightness&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-brightness.png' /&gt;&lt;/p&gt;
+&lt;p&gt;O &lt;code&gt;brightness&lt;/code&gt; altera o brilho do elemento. Os valores vão de 100% a 0%. Em 100%, com o brilho no máximo, o elemento fica totalmente branco.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: brightness(50%);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='contrast'&gt;Contrast&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-contrast.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Também bastante óbvio. Aqui alteramos a saturação do elemento. O valor desse filtro pode ser expresso em unidades (0, 1, 3, 4, &amp;#8230;) ou em percentagem (0%, 100%, 1500%).&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: constrast(1.5);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='hue_rotate'&gt;Hue Rotate&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-hue-rotate.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Neste filtro podemos mover todas as cores do elemento em graus dentro da roda de cores. Com 0deg não iremos realizar nenhuma alteração, enquanto com 180deg iremos inverter todas as cores.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: hue-rotate(180deg);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='invert'&gt;Invert&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-invert.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Com o &lt;code&gt;invert&lt;/code&gt; invertemos todas as cores. Na verdade a inversão completa acontece apenas se usarmos o valor 100%. Com 50% as cores estarão no meio caminho entre suas cores invertidas, o que significa que estarão com um tom de cinza. Os valores vão de 0% a 100%.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: invert(100%);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='vrios_filtros'&gt;Vários filtros&lt;/h2&gt;
+&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-various.png' /&gt;&lt;/p&gt;
+&lt;p&gt;Também é possível o uso de vários filtros em conjunto, para obtermos um efeito mais único. Na imagem acima usamos &lt;code&gt;hue-rotate&lt;/code&gt; e &lt;code&gt;sepia&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+img {
+    -webkit-filter: hue-rotate(60deg) sepia(1);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Como podemos ver o CSS Filters vem adicionar ainda mais poder ao HTML5. E isto é só uma prévia do que há por vir, como os &lt;a href='http://www.youtube.com/watch?v=NZRqnohI3m4'&gt;CSS Shaders&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;No momento em que escrevo este post, os CSS Filters rodam no &lt;a href='http://tools.google.com/dlpage/chromesxs'&gt;Google Chrome Canary&lt;/a&gt;, &lt;a href='http://www.google.com/chrome/intl/en/eula_dev.html'&gt;Google Chrome dev channel&lt;/a&gt; e &lt;a href='http://nightly.webkit.org/'&gt;WebKit Nightly Build&lt;/a&gt;.&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+	&lt;h3&gt;Referência&lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;→&lt;a href='http://net.tutsplus.com/tutorials/html-css-techniques/say-hello-to-css3-filters/'&gt;NetTuts&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://davidwalsh.name/css-filters'&gt;David Walsh&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='http://updates.html5rocks.com/2011/12/CSS-Filter-Effects-Landing-in-WebKit'&gt;HTML5 Rocks&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a href='https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html'&gt;W3C&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/04/01/hello-web</id>
+    <title>console.log(‘Hello Web!’)</title>
+    <updated>2012-04-01T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/04/01/hello-web/" />
+    <author>
+      <name>Caio Gondim</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/darth-vader-and-elvis.jpeg' /&gt;&lt;/p&gt;
+&lt;p&gt;O Loop Infinito é uma idéia antiga minha &lt;a href='http://twitter.com/caio_gondim'&gt;(@caio_gondim)&lt;/a&gt; e de Almir Filho &lt;a href='http://twitter.com/almirfilho'&gt;(@almirfilho)&lt;/a&gt;, onde queríamos começar um blog pra postar todas as nossas &amp;#8220;descobertas&amp;#8221; e experimentos sobre desenvolvimento web. Anos se passaram desde essa idéia, e hoje, finalmente, a idéia vira realidade.&lt;/p&gt;
+
+&lt;p&gt;Aqui no blog postaremos principalmente sobre desenvolvimento web, mas alguns outros tópicos como produtividade, interface de usuário e nerdices em geral podem surgir de forma mais esporádica.&lt;/p&gt;
+
+&lt;p&gt;A meta do blog é: tornar-se o melhor blog sobre desenvolvimento web em língua portuguesa. Sim, ela é bastante ambiciosa, e nós sabemos que nunca iremos alcançá-la sozinhos, por isso que precisamos da sua contribuição.&lt;/p&gt;
+
+&lt;h2 id='contribuindo'&gt;Contribuindo&lt;/h2&gt;
+
+&lt;p&gt;O Loop Infinito é gerenciado como um projeto de software livre, tendo todo o código disponível no &lt;a href='https://github.com/loopinfinito/loopinfinito.com.br'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para contribuir com um post, basta dar um fork no nosso projeto, escrever seu post e nos enviar um pull request. &lt;strong&gt;Like a Hacker&lt;/strong&gt;. Não há banco de dados e muito menos linguagem no back-end. Todo o código é estático e totalmente aberto.&lt;/p&gt;
+
+&lt;p&gt;Então se você acha que tem algo a acrescentar para a comunidade de desenvolvimento web brasileira, por que não dar um fork agora no projeto, escrever o post e nos enviar um pull request?&lt;/p&gt;
+
+&lt;h2 id='melhor_feito_que_perfeito'&gt;Melhor feito que perfeito&lt;/h2&gt;
+
+&lt;p&gt;Um dos grandes motivos do blog ter demorado tanto tempo é essa busca pela perfeição, que estava atrasando o projeto indefinidamente, já que nunca estávamos satisfeitos com o design, a logo, as ferramentas usadas, etc.&lt;/p&gt;
+
+&lt;p&gt;Mas então se percebe que a perfeição não é um objetivo, já que é impossível alcançá-la. Mas sim um compromisso diário em sempre caminhar em sua direção. E este é o nosso compromisso. Não em sermos os melhores no dia 1, mas sim em sermos melhores que ontem, todos os dias. E é assim que o blog será gerenciado, com iterações constantes e graduais.&lt;/p&gt;
+
+&lt;p&gt;Então esperem coisas boas acontecerem por aqui. Sempre.&lt;/p&gt;
+
+&lt;h2 id='atualizao'&gt;Atualização&lt;/h2&gt;
+
+&lt;p&gt;Qualquer atualização no site iremos tuitar no &lt;a href='http://twitter.com/loopinfinito'&gt;@loopinfinito&lt;/a&gt;. E lá também postaremos notícias relacionadas ao mundo do desenvolvimento web.&lt;/p&gt;
+
+&lt;p&gt;Um feed RSS também será implementado.&lt;/p&gt;
+&lt;h2&gt;}&lt;/h2&gt;
+&lt;p&gt;Estamos muito empolgados e satisfeitos com o projeto finalmente estando no ar (ou nas nuvens). Esperamos que gostem do conteúdo e mandem idéias para posts, comentem e, principalmente, nos mandem pull requests no &lt;a href='https://github.com/loopinfinito/loopinfinito.com.br'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  
+</feed>
