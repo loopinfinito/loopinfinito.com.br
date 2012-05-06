@@ -55,22 +55,27 @@
 
 		<section id="content">
 
-			<section class="post-container">
+			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+				<span class="hidden" itemprop="publisher">Loop Infinito</span>
 				<aside class="post-meta">
 					<ul>
-						<li class="post-data">01/04/2012</li>
-						<li class="post-autor"><a href="http://twitter.com/caio_gondim">Caio Gondim</a></li>
+						<li class="post-data">
+							<time itemprop="datePublished" datetime="2012-04-01">01/04/2012</time>
+						</li>
+						<li class="post-autor">
+							<a href="http://twitter.com/caio_gondim" title="Caio Gondim" alt="Caio Gondim" rel="author" itemprop="author">Caio Gondim</a>
+						</li>
 						
-							<li class="post-comentarios"><a href="/2012/04/01/hello-web/#disqus_thread" data-disqus-identifier="/2012/04/01/hello-web">Carregando...</a></li>
+							<li class="post-comentarios"><a href="/2012/04/01/hello-web/#disqus_thread" data-disqus-identifier="/2012/04/01/hello-web" itemprop="interactionCount">Carregando...</a></li>
 						
 						
 					</ul>	
 				</aside>
 				<article>
 					<header>
-						<h1><a href="/2012/04/01/hello-web/">console.log(<span class="light">‘Hello Web!’</span>)</a></h1>
+						<h1><a href="/2012/04/01/hello-web/" itemprop="headline">console.log(<span class="light">‘Hello Web!’</span>)</a></h1>
 					</header>
-					<section>						
+					<section itemprop="articleBody">
 						<p><img src='http://loopinfinito.com.br/images/posts/darth-vader-and-elvis.jpeg' /></p>
 <p>O Loop Infinito é uma idéia antiga minha <a href='http://twitter.com/caio_gondim'>(@caio_gondim)</a> e de Almir Filho <a href='http://twitter.com/almirfilho'>(@almirfilho)</a>, onde queríamos começar um blog pra postar todas as nossas &#8220;descobertas&#8221; e experimentos sobre desenvolvimento web. Anos se passaram desde essa idéia, e hoje, finalmente, a idéia vira realidade.</p>
 
@@ -100,7 +105,7 @@
 
 <p>Um feed RSS também será implementado.</p>
 <h2>}</h2>
-<p>Estamos muito empolgados e satisfeitos com o projeto finalmente estando no ar (ou nas nuvens). Esperamos que gostem do conteúdo e mandem idéias para posts, comentem e, principalmente, nos mandem pull requests no <a href='https://github.com/loopinfinito/loopinfinito.com.br'>GitHub</a>.</p>						
+<p>Estamos muito empolgados e satisfeitos com o projeto finalmente estando no ar (ou nas nuvens). Esperamos que gostem do conteúdo e mandem idéias para posts, comentem e, principalmente, nos mandem pull requests no <a href='https://github.com/loopinfinito/loopinfinito.com.br'>GitHub</a>.</p>				
 					</section>
 					
 					<footer id="disqus_thread">

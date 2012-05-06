@@ -55,13 +55,18 @@
 
 		<section id="content">
 
-			<section class="post-container">
+			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+				<span class="hidden" itemprop="publisher">Loop Infinito</span>
 				<aside class="post-meta">
 					<ul>
-						<li class="post-data">14/04/2012</li>
-						<li class="post-autor"><a href="http://twitter.com/caio_gondim">Caio Gondim</a></li>
+						<li class="post-data">
+							<time itemprop="datePublished" datetime="2012-04-14">14/04/2012</time>
+						</li>
+						<li class="post-autor">
+							<a href="http://twitter.com/caio_gondim" title="Caio Gondim" alt="Caio Gondim" rel="author" itemprop="author">Caio Gondim</a>
+						</li>
 						
-							<li class="post-comentarios"><a href="/2012/04/14/css-filters/#disqus_thread" data-disqus-identifier="/2012/04/14/css-filters">Carregando...</a></li>
+							<li class="post-comentarios"><a href="/2012/04/14/css-filters/#disqus_thread" data-disqus-identifier="/2012/04/14/css-filters" itemprop="interactionCount">Carregando...</a></li>
 						
 						
 						<li class="post-tags">
@@ -70,15 +75,18 @@
 								<li><a href=""><span>#</span>CSS</a></li>
 													
 							</ul>
+							
+								<span class="hidden" itemprop="keywords">css, css filters, html5, adobe, apple, webkit, frontend, front end, webdev, desenvolvimento web</span>
+							
 						</li>
 						
 					</ul>	
 				</aside>
 				<article>
 					<header>
-						<h1><a href="/2012/04/14/css-filters/">CSS Filters</a></h1>
+						<h1><a href="/2012/04/14/css-filters/" itemprop="headline">CSS Filters</a></h1>
 					</header>
-					<section>						
+					<section itemprop="articleBody">
 						<style>
 
 	#cssfilter-img-base:hover {
@@ -187,7 +195,7 @@ img {
 		<li>→<a href='http://updates.html5rocks.com/2011/12/CSS-Filter-Effects-Landing-in-WebKit'>HTML5 Rocks</a></li>
 		<li>→<a href='https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html'>W3C</a></li>
 	</ul>
-</aside>						
+</aside>				
 					</section>
 					
 					<footer id="disqus_thread">

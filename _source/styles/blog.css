@@ -35,6 +35,10 @@ body {
 	overflow: hidden;
 }
 
+.hidden {
+	display: none;
+}
+
 /* Nav
 ---------------------------------------- */
 header#main {
@@ -244,7 +248,7 @@ header#main {
 			width: 600px;
 			position: relative;
 			left: -50px;
-			padding: 0px 50px 20px 50px;
+			padding: 15px 50px 30px 50px;
 			font-size: 12px;
 			line-height: 160%;
 		}

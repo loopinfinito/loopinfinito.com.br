@@ -59,13 +59,18 @@
 
 		<section id="content">
 
-			<section class="post-container">
+			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+				<span class="hidden" itemprop="publisher">Loop Infinito</span>
 				<aside class="post-meta">
 					<ul>
-						<li class="post-data">04/05/2012</li>
-						<li class="post-autor"><a href="http://twitter.com/caio_gondim">Caio Gondim</a></li>
+						<li class="post-data">
+							<time itemprop="datePublished" datetime="2012-05-04">04/05/2012</time>
+						</li>
+						<li class="post-autor">
+							<a href="http://twitter.com/caio_gondim" title="Caio Gondim" alt="Caio Gondim" rel="author" itemprop="author">Caio Gondim</a>
+						</li>
 						
-							<li class="post-comentarios"><a href="/2012/05/04/heranca-em-javascript-parte-1/#disqus_thread" data-disqus-identifier="/2012/05/04/heranca-em-javascript-parte-1">Carregando...</a></li>
+							<li class="post-comentarios"><a href="/2012/05/04/heranca-em-javascript-parte-1/#disqus_thread" data-disqus-identifier="/2012/05/04/heranca-em-javascript-parte-1" itemprop="interactionCount">Carregando...</a></li>
 						
 						
 						<li class="post-tags">
@@ -74,15 +79,18 @@
 								<li><a href=""><span>#</span>javascript</a></li>
 													
 							</ul>
+							
+								<span class="hidden" itemprop="keywords">javascript, js, web development, desenvolvimento web, html5, front-end, programação, oop, orientação a objetos, herança, orientação a protótipos, java</span>
+							
 						</li>
 						
 					</ul>	
 				</aside>
 				<article>
 					<header>
-						<h1><a href="/2012/05/04/heranca-em-javascript-parte-1/">Herança em JavaScript <span class="light">parte I</span></a></h1>
+						<h1><a href="/2012/05/04/heranca-em-javascript-parte-1/" itemprop="headline">Herança em JavaScript <span class="light">parte I</span></a></h1>
 					</header>
-					<section>						
+					<section itemprop="articleBody">
 						<p><img alt='' src='/images/posts/2012-05-04-heranca-em-javascript.jpg' /></p>
 <p>Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo. Mas antes de entrarmos em detalhes, vamos primeiro relembrar o que é a herança clássica nas linguagens orientadas a objetos.</p>
 
@@ -269,7 +277,7 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
     <li><a href='http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new'>StackOverflow: Using Object.create() instead of new</a></li>
     <li><a href='http://joost.zeekat.nl/constructors-considered-mildly-confusing.html'>code.h(oe)kje: Constructors considered mildly confusing</a></li>
   </ul>
-</aside>						
+</aside>				
 					</section>
 					
 					<footer id="disqus_thread">

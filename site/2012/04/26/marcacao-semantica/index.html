@@ -55,13 +55,18 @@
 
 		<section id="content">
 
-			<section class="post-container">
+			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+				<span class="hidden" itemprop="publisher">Loop Infinito</span>
 				<aside class="post-meta">
 					<ul>
-						<li class="post-data">26/04/2012</li>
-						<li class="post-autor"><a href="http://twitter.com/almirfilho">Almir Filho</a></li>
+						<li class="post-data">
+							<time itemprop="datePublished" datetime="2012-04-26">26/04/2012</time>
+						</li>
+						<li class="post-autor">
+							<a href="http://twitter.com/almirfilho" title="Almir Filho" alt="Almir Filho" rel="author" itemprop="author">Almir Filho</a>
+						</li>
 						
-							<li class="post-comentarios"><a href="/2012/04/26/marcacao-semantica/#disqus_thread" data-disqus-identifier="/2012/04/26/marcacao-semantica">Carregando...</a></li>
+							<li class="post-comentarios"><a href="/2012/04/26/marcacao-semantica/#disqus_thread" data-disqus-identifier="/2012/04/26/marcacao-semantica" itemprop="interactionCount">Carregando...</a></li>
 						
 						
 						<li class="post-tags">
@@ -76,15 +81,18 @@
 								<li><a href=""><span>#</span>SEO</a></li>
 													
 							</ul>
+							
+								<span class="hidden" itemprop="keywords">web semantica, microdata, schema.org, microformats, rdf, rdfa, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web, seo</span>
+							
 						</li>
 						
 					</ul>	
 				</aside>
 				<article>
 					<header>
-						<h1><a href="/2012/04/26/marcacao-semantica/">Marcação Semântica</a></h1>
+						<h1><a href="/2012/04/26/marcacao-semantica/" itemprop="headline">Marcação Semântica</a></h1>
 					</header>
-					<section>						
+					<section itemprop="articleBody">
 						<p>Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.</p>
 
 <p>Desde a década de 1990, a W3C tem apresentado maneiras para definição de conteúdo semântico, e de lá pra cá surgiram outras alternativas, mas devido a grande quantidade de informações, falarei apenas um pouco sobre cada uma delas: RDF, RDFa, Microformats e <strong>Microdata</strong> ← focaremos neste último cara aqui.</p>
@@ -174,7 +182,7 @@
 		<li>→<a href='http://schema.org'>Schema.org</a></li>
 		<li>→<a href='http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/'>Why Microdata, Not RDF, Will Power the Semantic Web</a></li>
 	</ul>
-</aside>						
+</aside>				
 					</section>
 					
 					<footer id="disqus_thread">

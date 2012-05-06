@@ -2,13 +2,18 @@
 
 		<section id="content">
 
-			<section class="post-container">
+			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+				<span class="hidden" itemprop="publisher">Loop Infinito</span>
 				<aside class="post-meta">
 					<ul>
-						<li class="post-data">{{ page.date | date: "%d/%m/%Y" }}</li>
-						<li class="post-autor"><a href="{{ page.author_link }}">{{ page.author }}</a></li>
+						<li class="post-data">
+							<time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%d/%m/%Y" }}</time>
+						</li>
+						<li class="post-autor">
+							<a href="{{ page.author_link }}" title="{{ page.author }}" alt="{{ page.author }}" rel="author" itemprop="author">{{ page.author }}</a>
+						</li>
 						{% if page.comments %}
-							<li class="post-comentarios"><a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.id}}">Carregando...</a></li>
+							<li class="post-comentarios"><a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.id}}" itemprop="interactionCount">Carregando...</a></li>
 						{% endif %}
 						{% unless page.tags == empty %}
 						<li class="post-tags">
@@ -17,16 +22,19 @@
 								<li><a href=""><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
 								{% endfor %}					
 							</ul>
+							{% if page.keywords %}
+								<span class="hidden" itemprop="keywords">{{ page.keywords }}</span>
+							{% endif %}
 						</li>
 						{% endunless %}
 					</ul>	
 				</aside>
 				<article>
 					<header>
-						<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+						<h1><a href="{{ page.url }}" itemprop="headline">{{ page.title }}</a></h1>
 					</header>
-					<section>						
-						{{ content }}						
+					<section itemprop="articleBody">
+						{{ content }}				
 					</section>
 					{% if page.comments %}
 					<footer id="disqus_thread">

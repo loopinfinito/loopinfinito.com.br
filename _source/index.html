@@ -2,13 +2,18 @@
 layout: home
 ---
 {% for post in site.posts %}
-<section class="post-container">
+<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+	<span class="hidden" itemprop="publisher">Loop Infinito</span>
 	<aside class="post-meta">
 		<ul>
-			<li class="post-data">{{ post.date | date: "%d/%m/%Y" }}</li>
-			<li class="post-autor"><a href="{{ post.author_link }}">{{ post.author }}</a></li>
+			<li class="post-data">
+				<time itemprop="datePublished" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+			</li>
+			<li class="post-autor">
+				<a href="{{ post.author_link }}" title="{{ post.author }}" alt="{{ post.author }}" rel="author" itemprop="author">{{ post.author }}</a>
+			</li>
 			{% if post.comments %}
-				<li class="post-comentarios"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}">Carregando...</a></li>
+				<li class="post-comentarios"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}" itemprop="interactionCount">Carregando...</a></li>
 			{% endif %}
 			{% unless post.tags == empty %}
 			<li class="post-tags">
@@ -17,20 +22,23 @@ layout: home
 					<li><a href=""><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
 					{% endfor %}					
 				</ul>
+				{% if post.keywords %}
+					<span class="hidden" itemprop="keywords">{{ post.keywords }}</span>
+				{% endif %}
 			</li>
 			{% endunless %}
 		</ul>
 	</aside>
 	<article>
 		<header>
-			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+			<h1><a href="{{ post.url }}" itemprop="headline">{{ post.title }}</a></h1>
 		</header>
 		<section>
 			{% if post.image %}
-			<p><img src="{{ post.image }}" alt="" /></p>
+				<p><img itemprop="thumbnailUrl" src="http://loopinfinito.com.br/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" /></p>
 			{% endif %}
-			{{ post.resumo }}
-			<a href="{{ post.url }}" class="leia-mais">Continue lendo &rarrw;</a>
+			<div itemprop="description">{{ post.resumo }}</div>
+			<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>
 		</section>
 	</article>
 </section>
