@@ -2,7 +2,11 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8" />
-	<title>{% if page.title %}{{ page.title | strip_html }} – {% endif %}Loop Infinito</title>
+	{% if page.title %}
+		<title>{{ page.title | strip_html }} – Loop Infinito</title>
+	{% else %}
+		<title>Loop Infinito: Web na Crista da Onda</title>
+	{% endif %}
 	{% if page.author %}
 		<meta name="author" content="{{ page.author }}" />
 	{% else %}
@@ -11,12 +15,12 @@
 	{% if page.keywords %}
 		<meta name="keywords" content="{{ page.keywords }}" />
 	{% else %}
-		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend" />
+		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend, loop, loop infinito, l8p, crista da onda" />
 	{% endif %}
 	{% if page.resumo %}
 		<meta name="description" content="{{ page.resumo | strip_html | escape }}" />
 	{% else %}
-		<meta name="description" content="Front-end na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
+		<meta name="description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
 	{% endif %}
 	<meta name="language" content="pt" />
 	<meta name="content-language" content="pt-BR" />
@@ -25,7 +29,7 @@
 	<meta name="resource-type" content="document" />
 	
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
-	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
+	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito: Web na Crista da Onda" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
 	{% if page.styles %}
