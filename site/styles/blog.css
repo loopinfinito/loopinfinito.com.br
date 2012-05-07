@@ -24,7 +24,8 @@ body {
 /* Diversos
 ---------------------------------------- */
 
-.bold {
+.bold,
+strong {
 	font-weight: bold;
 	color: #333;
 }

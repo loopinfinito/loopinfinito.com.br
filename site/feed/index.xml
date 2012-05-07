@@ -3,9 +3,257 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-06T02:52:07-03:00</updated>
+  <updated>2012-05-07T01:50:38-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/05/07/ganhando-visibilidade-com-schema-org</id>
+    <title>Ganhando visibilidade com schema.org</title>
+    <updated>2012-05-07T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/05/07/ganhando-visibilidade-com-schema-org/" />
+    <author>
+      <name>Almir Filho</name>
+    </author>
+    <content type="html">&lt;style type='text/css'&gt;
+	
+	circle {
+		-webkit-transition: fill 0.5s ease;
+		-khtml-transition: fill 0.5s ease;
+		-moz-transition: fill 0.5s ease;
+		-ms-transition: fill 0.5s ease;
+		-o-transition: fill 0.5s ease;
+		transition: fill 0.5s ease;
+	}
+
+	g.circle:hover circle {
+		fill: #ccc;
+	}
+
+&lt;/style&gt;
+&lt;p&gt;Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso blog usando &lt;strong&gt;microdata&lt;/strong&gt; e os vocabulários &lt;strong&gt;schema.org&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hoje explicarei passo a passo como fiz isto aqui no Loop Infinito. A qualquer momento você pode visualizar nosso código fonte e observar estas mesmas marcações lá.&lt;/p&gt;
+
+&lt;p&gt;Aconselho a leitura dos meus últimos 2 posts sobre o assunto, em especial do &lt;a alt='Microdata (Loop Infinito)' href='http://loopinfinito.com.br/2012/05/02/microdata/' title='Microdata (Loop Infinito)'&gt;último&lt;/a&gt; onde explico como usar microdata e schema.org detalhadamente.&lt;/p&gt;
+
+&lt;h2 id='identificando_as_entidades'&gt;Identificando as entidades&lt;/h2&gt;
+
+&lt;p&gt;O primeiro passo é identificar as entidades na página que desejamos marcar semanticamente. Aqui no Loop Infinito, apliquei as marcações em 3 páginas diferentes: a &lt;a href='http://loopinfinito.com.br'&gt;página inicial&lt;/a&gt;, a página interna do post (onde você está agora) e a página &lt;a href='http://loopinfinito.com.br/sobre/'&gt;Sobre&lt;/a&gt; (a página &lt;a href='http://loopinfinito.com.br/projetos/'&gt;Projetos&lt;/a&gt; ainda não fizemos).&lt;/p&gt;
+
+&lt;p&gt;Irei mostrar como realizei as marcações semânticas apenas na página inicial, onde aparece a listagem dos posts resumidos com links para suas versões completas. Caso você deseje saber como ficaram os códigos fontes das outras páginas, basta abri-los no seu navegador, o princípio de marcação é o mesmo. Abaixo segue um &lt;em&gt;print screen&lt;/em&gt; de um destes posts resumidos da página inicial:&lt;/p&gt;
+&lt;p id='print-home'&gt;&lt;img alt='Print screen de post resumido na Home (loopinfinito.com.br)' src='http://loopinfinito.com.br/images/posts/2012-05-07-schema.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;A primeira entidade que podemos identificar nesta página é o próprio &lt;strong&gt;Post&lt;/strong&gt;, ou seja, um &lt;strong&gt;Artigo&lt;/strong&gt; ou coisa parecida. Navegando pelo site do &lt;a alt='schema.org' href='http://schema.org'&gt;schema.org&lt;/a&gt; pude achar o vocabulário &lt;a class='bold' href='http://schema.org/Article'&gt;Article&lt;/a&gt;, que corresponde a Artigo. Percebi também que há mais 3 vocabulários que estendem de Article, ou seja, são vocabulários Article &lt;strong&gt;mais específicos&lt;/strong&gt;, e estes são &lt;a alt='Vocabulário BlogPosting (schema.org)' href='http://schema.org/BlogPosting' title='Vocabulário BlogPosting (schema.org)'&gt;BlogPosting&lt;/a&gt;, &lt;a alt='Vocabulário NewsArticle (schema.org)' href='http://schema.org/NewsArticle' title='Vocabulário NewsArticle (schema.org)'&gt;NewsArticle&lt;/a&gt; e &lt;a alt='Vocabulário ScholarlyArticle (schema.org)' href='http://schema.org/ScholarlyArticle' title='Vocabulário ScholarlyArticle (schema.org)'&gt;ScholarlyArticle&lt;/a&gt;.&lt;/p&gt;
+&lt;svg class='img' height='330' width='700'&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='354.691' x2='221.759' y1='115.241' y2='268.516' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='355.459' x2='355.191' y1='1' y2='110.069' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='354.691' x2='355.287' y1='115.241' y2='268.516' /&gt;
+	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='354.452' x2='488.813' y1='108.637' y2='268.516' /&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='221.758' cy='268.516' fill='#EEEEEE' r='56.315' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='16.2905' transform='matrix(1 0 0 1 178.2629 275.3572)'&gt;BlogPosting&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='355.191' cy='108.069' fill='#EEEEEE' r='41.483' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='19.3394' transform='matrix(1 0 0 1 327.967 113.1091)'&gt;Article&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='355.288' cy='268.516' fill='#EEEEEE' r='56.315' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='16.2905' transform='matrix(1 0 0 1 312.3694 275.3572)'&gt;NewsArticle&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;g class='circle'&gt;
+		&lt;circle cx='488.813' cy='268.516' fill='#EEEEEE' r='56.315' stroke='#CCCCCC' stroke-miterlimit='10' /&gt;
+		&lt;text font-size='14' transform='matrix(1 0 0 1 439.5764 275.3572)'&gt;ScholarlyArticle&lt;/text&gt;
+	&lt;/g&gt;
+	&lt;text fill='#999999' font-size='14' transform='matrix(1 0 0 1 314.9143 25.4998)'&gt;CreativeWork&lt;/text&gt;
+&lt;/svg&gt;
+&lt;p&gt;Obviamente os nossos posts se encaixam na categoria &lt;strong&gt;BlogPosting&lt;/strong&gt;, então este será o primeiro vocabulário a ser utilizado no nosso caso.&lt;/p&gt;
+
+&lt;h2 id='antes'&gt;Antes&lt;/h2&gt;
+
+&lt;p&gt;O trecho de código abaixo mostra como era o código fonte de um resumo de post (o exemplo abaixo ilustra o &lt;a href='#print-home'&gt;print screen&lt;/a&gt; acima). Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de ficar olhando para um monte de linhas de código de uma vez, né).&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;&lt;!-- bloco do post --&gt;
+&lt;section class='post-container'&gt;
+    &lt;!-- menu da lateral direita --&gt;
+    &lt;aside class='post-meta'&gt; ... &lt;/aside&gt;
+    &lt;!-- área principal do post --&gt;
+    &lt;article&gt; ... &lt;/article&gt;
+&lt;/section&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Menu da lateral direita&lt;/em&gt; detalhadamente:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;&lt;aside class='post-meta'&gt;
+    &lt;ul&gt;
+        &lt;!-- data da publicação --&gt;
+        &lt;li class='post-data'&gt;04/05/2012&lt;/li&gt;
+        &lt;!-- autor do post --&gt;
+        &lt;li class='post-autor'&gt;
+            &lt;a href='...'&gt;Caio Gondim&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;!-- quantidade de comentarios --&gt;
+        &lt;li class='post-comentarios'&gt;
+            &lt;a href='...'&gt;1 Comentário e 4 Reações&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;!-- tags do post --&gt;
+        &lt;li class='post-tags'&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href='...'&gt;&lt;span&gt;#&lt;/span&gt;javascript&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;Área principal do post&lt;/em&gt; detalhadamente:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;&lt;article&gt;
+    &lt;!-- título do post --&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a href='...'&gt;Herança em JavaScript parte I&lt;/a&gt;&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;!-- conteúdo do post --&gt;
+    &lt;section&gt;
+        &lt;!-- imagem principal --&gt;
+        &lt;p&gt;&lt;img src='...' /&gt;&lt;/p&gt;
+        &lt;!-- texto (o post de fato) --&gt;
+        &lt;p&gt;Uma das coisas que mais assusta programadores vindos de...&lt;/p&gt;
+        &lt;!-- link para o post completo --&gt;
+        &lt;a class='leia-mais' href='...'&gt;Continue lendo &amp;rarrw;&lt;/a&gt;
+    &lt;/section&gt;
+&lt;/article&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;OK, nada de mais. Basicamente uma marcação simples HTML5.&lt;/p&gt;
+
+&lt;h2 id='depois'&gt;Depois&lt;/h2&gt;
+
+&lt;p&gt;Agora vamos ver como ficou o código fonte &lt;strong&gt;depois da marcação semântica&lt;/strong&gt;, percebam o uso das propriedades &lt;code&gt;itemscope&lt;/code&gt;, &lt;code&gt;itemtype&lt;/code&gt; e &lt;code&gt;itemprop&lt;/code&gt;. Mesmo esquema aqui, dividi o código em blocos:&lt;/p&gt;
+
+&lt;h3 id='elemento_geral'&gt;Elemento geral&lt;/h3&gt;
+&lt;p /&gt;&lt;pre&gt;&lt;code data-language='html'&gt;&lt;!-- adicionamos as propriedades itemscope e itemtype para BlogPosting --&gt;
+&lt;section class='post-container' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'&gt;
+    &lt;!-- adicionamos esta tag &lt;span&gt; para o publicador do post --&gt;
+    &lt;span class='hidden' itemprop='publisher'&gt;Loop Infinito&lt;/span&gt;
+    
+    &lt;aside class='post-meta'&gt; ... &lt;/aside&gt;
+    &lt;article&gt; ... &lt;/article&gt;
+&lt;/section&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Definimos a entidade principal (BlogPosting) no elemento que engloba todos os dados sobre o post;&lt;/li&gt;
+
+&lt;li&gt;O elemento &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt; não é visível para o leitor (classe &lt;code&gt;.hidden&lt;/code&gt;), pois foi adicionado apenas para podermos especificar que este post foi publicado pelo Loop Infinito com &lt;code&gt;itemprop=&quot;publisher&quot;&lt;/code&gt;;&lt;/li&gt;
+
+&lt;li&gt;Os outros 2 elementos principais ainda permanecem inauterados por enquanto.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Obs.:&lt;/strong&gt; A aplicação da propriedade &lt;code&gt;itemscope=&quot;itemscope&quot;&lt;/code&gt; pode ser feita apenas colocando &lt;code&gt;itemscope&lt;/code&gt; dentro da tag, pois é uma propriedade que não contém valor explícito associado, e a especificação HTML permite seu uso desta maneira. Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permitida no HTML5 – neste exemplo.&lt;/p&gt;
+
+&lt;h3 id='menu_lateral_direito'&gt;Menu lateral direito&lt;/h3&gt;
+&lt;p /&gt;&lt;pre&gt;&lt;code data-language='html'&gt;&lt;aside class='post-meta'&gt;
+    &lt;ul&gt;
+        &lt;li class='post-data'&gt;
+            &lt;!-- data de publicação do post --&gt;
+            &lt;time datetime='2012-05-06' itemprop='datePublished'&gt;06/05/2012&lt;/time&gt;
+        &lt;/li&gt;
+        &lt;li class='post-autor'&gt;
+            &lt;!-- autor do post --&gt;
+            &lt;a href='...' itemprop='author' rel='author'&gt;Caio Gondim&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class='post-comentarios'&gt;
+        	&lt;!-- contagem de comentários do post --&gt;
+            &lt;a href='...' itemprop='interactionCount'&gt;1 Comentário e 4 Reações&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class='post-tags'&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href='...'&gt;&lt;span&gt;#&lt;/span&gt;javascript&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;!-- palavras-chave do post --&gt;
+            &lt;span class='hidden' itemprop='keywords'&gt;javascript, js, ...&lt;/span&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Envolvemos a data de publicação com um elemento &lt;code&gt;&amp;lt;time&amp;gt;&lt;/code&gt; (novo no HTML5) para usar a propriedade &lt;code&gt;itemprop=&quot;datePublished&quot;&lt;/code&gt;. Usamos também a propriedade &lt;code&gt;datetime&lt;/code&gt; para podermos especificar a data no formato padrão (aaaa-mm-dd);&lt;/li&gt;
+
+&lt;li&gt;Em autor, é aconselhável o uso da propriedade HTML &lt;code&gt;rel=&quot;author&quot;&lt;/code&gt; (&lt;a href='http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm'&gt;leia sobre&lt;/a&gt;), além de especificar a propriedade &lt;code&gt;itemprop=&quot;author&quot;&lt;/code&gt;;&lt;/li&gt;
+
+&lt;li&gt;Na contagem de comentários, usei a propriedade &lt;code&gt;itemprop=&quot;interactionCount&quot;&lt;/code&gt;;&lt;/li&gt;
+
+&lt;li&gt;Adicionei um elemento &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt; invisível para colocar todas as palavra-chaves dentro, já de que as tags do post estão separadas por elementos &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; acima. Usamos a propriedade &lt;code&gt;itemprop=&quot;keywords&quot;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='rea_principal_do_post'&gt;Área principal do post&lt;/h3&gt;
+&lt;p /&gt;&lt;pre&gt;&lt;code data-language='html'&gt;&lt;article&gt;
+    &lt;header&gt;
+    	&lt;!-- título do post --&gt;
+        &lt;h1&gt;&lt;a href='...' itemprop='headline'&gt;Herança em JavaScript parte I&lt;/a&gt;&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;!-- imagem principal do post --&gt;
+        &lt;p&gt;&lt;img itemprop='thumbnailUrl' src='...' /&gt;&lt;/p&gt;
+        &lt;!-- envolvemos o resumo com uma &lt;div&gt; a descrição do post --&gt;
+        &lt;div itemprop='description'&gt;
+        	&lt;p&gt;Uma das coisas que mais assusta programadores vindos de...&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;!-- url do post --&gt;
+        &lt;a class='leia-mais' href='...' itemprop='url'&gt;Continue lendo &amp;rarrw;&lt;/a&gt;
+    &lt;/section&gt;
+&lt;/article&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Definimos o título do post com a propriedade &lt;code&gt;itemprop=&quot;headline&quot;&lt;/code&gt;;&lt;/li&gt;
+
+&lt;li&gt;A propriedade &lt;code&gt;itemprop=&quot;thumbnailUrl&quot;&lt;/code&gt; serve para especificar uma imagem associada ao post;&lt;/li&gt;
+
+&lt;li&gt;Adicionamos um elemento &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; para envolver o resumo do post, que servirá para definir a descrição do post através da propriedade &lt;code&gt;itemprop=&quot;description&quot;&lt;/code&gt;;&lt;/li&gt;
+
+&lt;li&gt;O link &amp;#8220;Continue lendo&amp;#8221; contém a URL do post, que pode ser usada para definir a URL da entidade através da propriedade &lt;code&gt;itemprop=&quot;url&quot;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='testando'&gt;Testando&lt;/h2&gt;
+
+&lt;p&gt;Bem, com isto terminamos a marcação semântica da página inicial do Loop Infinito usando o padrão HTML5 Microdata com os vocabulários schema.org.&lt;/p&gt;
+
+&lt;p&gt;Agora podemos testar se está tudo beleza com o &lt;a href='http://www.google.com/webmasters/tools/richsnippets'&gt;Rich Snippets Testing Tool&lt;/a&gt; do Google. Basta informar uma URL que o &lt;em&gt;crawler&lt;/em&gt; do Google realizará uma visita ao endereço informado, irá procurar por informações semânticas e depois irá exibir o resultado da varredura.&lt;/p&gt;
+
+&lt;p&gt;Fiz um teste com a URL da página inicial do blog (&lt;a href='http://loopinfinito.com.br'&gt;loopinfinito.com.br&lt;/a&gt;) apareceram 5 itens BlogPosting (sem contar com este post). Eis um destes itens:&lt;/p&gt;
+&lt;pre&gt;
+Item 
+    Type: http://schema.org/blogposting
+    publisher = Loop Infinito 
+    datepublished = 2012-05-04 
+
+    author 
+        text = Caio Gondim 
+        href = http://twitter.com/caio_gondim
+
+    interactioncount 
+        text = Carregando... 
+        href = http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/#disqus_thread
+    
+    keywords = javascript, js, web development, desenvolvimento web, html5, front-end, programação, oop, orientação a objetos, herança, orientação a protótipos, java 
+    
+    headline 
+        text = Herança em JavaScript parte I 
+        href = http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/
+    
+    thumbnailurl = http://loopinfinito.com.br/images/posts/2012-05-04-heranca-em-javascript.jpg 
+    
+    description = Uma das coisas que mais assusta programadores vindos de linguagens orientadas a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos, inclusive, tentam simular este comportamento... 
+    
+    url 
+        text = Continue lendo &amp;rarrw; 
+        href = http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/
+&lt;/pre&gt;
+&lt;p&gt;Até a próxima!&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+	&lt;h3&gt;Referência&lt;/h3&gt;
+	&lt;ul&gt;
+		&lt;li&gt;→&lt;a alt='Marcação Semântica (Loop Infinito)' href='http://loopinfinito.com.br/2012/04/26/marcacao-semantica/' title='Marcação Semântica (Loop Infinito)'&gt;Marcação Semântica&lt;/a&gt; &lt;span class='comment'&gt;//loop infinito&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a alt='Microdata (Loop Infinito)' href='http://loopinfinito.com.br/2012/05/02/microdata/' title='Microdata (Loop Infinito)'&gt;Microdata: Como usar&lt;/a&gt; &lt;span class='comment'&gt;//loop infinito&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a alt='Schema.org' href='http://schema.org' title='Schema.org'&gt;Schema.org&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;→&lt;a alt='Rel=author Authorship Markup in HTML5' href='http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm' title='Rel=author Authorship Markup in HTML5'&gt;Rel=author Authorship Markup in HTML5&lt;/a&gt; &lt;span class='comment'&gt;//about.com&lt;/span&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
   
   <entry>
     <id>http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1</id>
