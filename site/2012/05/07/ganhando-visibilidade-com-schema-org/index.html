@@ -72,6 +72,8 @@
 							<a href="http://twitter.com/almirfilho" title="Almir Filho" alt="Almir Filho" rel="author" itemprop="author">Almir Filho</a>
 						</li>
 						
+							<li class="post-comentarios"><a href="/2012/05/07/ganhando-visibilidade-com-schema-org/#disqus_thread" data-disqus-identifier="/2012/05/07/ganhando-visibilidade-com-schema-org" itemprop="interactionCount">Carregando...</a></li>
+						
 						
 						<li class="post-tags">
 							<ul>
@@ -345,14 +347,51 @@ Item
 </aside>				
 					</section>
 					
+					<footer id="disqus_thread">
+						<noscript>Por favor, habilite JavaScript para ver os comentários. <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					</footer>
+					
 				</article>
 			</section>
 
+			
+				<section id="disqus-power">
+					<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+				</section>
 			
 
 		</section>
 
 	</div>
+	
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
+		    var disqus_identifier = '/2012/05/07/ganhando-visibilidade-com-schema-org';
+		    // var disqus_developer = 1;
+
+		    // callback do Disqus
+		    function disqus_callback() {
+		    	// modifica o título da caixa de comentários
+		    	$('#dsq-reply h3').html('Comentários')
+
+		    	//
+		    	// $('#dsq-comments').find('span.dsq-like-thumb').css({ position: 'relative', bottom: '5px' })
+		    }
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+		        // comment count
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    })();
+		</script>
 	
 </body>
 </html>
