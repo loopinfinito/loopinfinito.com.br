@@ -40,7 +40,7 @@ Irei mostrar como realizei as marcações semânticas apenas na página inicial,
 Caso você deseje saber como ficaram os códigos fontes das outras páginas, basta abri-los no seu navegador, o princípio de marcação é o mesmo.
 Abaixo segue um *print screen* de um destes posts resumidos da página inicial:
 
-<p id="print-home"><img src="http://loopinfinito.com.br/images/posts/2012-05-07-schema.jpg" alt="Print screen de post resumido na Home (loopinfinito.com.br)" /></p>
+<p id="print-home"><img src="http://loopinfinito.com.br/images/posts/2012-05-07-ganhando-visibilidade.jpg" alt="Print screen de post resumido na Home (loopinfinito.com.br)" /></p>
 
 A primeira entidade que podemos identificar nesta página é o próprio **Post**, ou seja, um **Artigo** ou coisa parecida.
 Navegando pelo site do <a href="http://schema.org" alt="schema.org">schema.org</a> pude achar o vocabulário <a href="http://schema.org/Article" class="bold">Article</a>, que corresponde a Artigo.
@@ -149,7 +149,7 @@ Mesmo esquema aqui, dividi o código em blocos:
 
 - Definimos a entidade principal (BlogPosting) no elemento que engloba todos os dados sobre o post;
 - O elemento <code>{{ '<span>' | escape }}</code> não é visível para o leitor (classe <code>.hidden</code>), pois foi adicionado apenas para podermos especificar que este post foi publicado pelo Loop Infinito com <code>itemprop="publisher"</code>;
-- Os outros 2 elementos principais ainda permanecem inauterados por enquanto.
+- Os outros 2 elementos principais ainda permanecem inalterados por enquanto.
 
 **Obs.:** A aplicação da propriedade <code>itemscope="itemscope"</code> pode ser feita apenas colocando <code>itemscope</code> dentro da tag, pois é uma propriedade que não contém valor explícito associado, e a especificação HTML permite seu uso desta maneira.
 Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permitida no HTML5 – neste exemplo.
@@ -161,7 +161,9 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
     <ul>
         <li class="post-data">
             <!-- data de publicação do post -->
-            <time itemprop="datePublished" datetime="2012-05-06">06/05/2012</time>
+            <time itemprop="datePublished" datetime="2012-05-06">
+                06/05/2012
+            </time>
         </li>
         <li class="post-autor">
             <!-- autor do post -->
@@ -169,14 +171,16 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
         </li>
         <li class="post-comentarios">
         	<!-- contagem de comentários do post -->
-            <a href="..." itemprop="interactionCount">1 Comentário e 4 Reações</a>
+            <a href="..." itemprop="interactionCount">
+                1 Comentário e 4 Reações
+            </a>
         </li>
         <li class="post-tags">
             <ul>
                 <li><a href="..."><span>#</span>javascript</a></li>
             </ul>
             <!-- palavras-chave do post -->
-            <span class="hidden" itemprop="keywords">javascript, js, ...</span>
+            <span class="hidden" itemprop="keywords">javascript, ...</span>
         </li>
     </ul>
 </aside>
@@ -185,7 +189,7 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
 - Envolvemos a data de publicação com um elemento <code>{{'<time>'|escape}}</code> (novo no HTML5) para usar a propriedade <code>itemprop="datePublished"</code>. Usamos também a propriedade <code>datetime</code> para podermos especificar a data no formato padrão (aaaa-mm-dd);
 - Em autor, é aconselhável o uso da propriedade HTML <code>rel="author"</code> (<a href="http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm">leia sobre</a>), além de especificar a propriedade <code>itemprop="author"</code>;
 - Na contagem de comentários, usei a propriedade <code>itemprop="interactionCount"</code>;
-- Adicionei um elemento <code>{{ '<span>' | escape }}</code> invisível para colocar todas as palavra-chaves dentro, já de que as tags do post estão separadas por elementos <code>{{'<li>'|escape}}</code> acima. Usamos a propriedade <code>itemprop="keywords"</code>.
+- Adicionei um elemento <code>{{ '<span>' | escape }}</code> invisível para colocar todas as palavras-chave dentro, já de que as tags do post estão separadas por elementos <code>{{'<li>'|escape}}</code> acima. Usamos a propriedade <code>itemprop="keywords"</code>.
 
 ### Área principal do post
 <p></p>
@@ -193,14 +197,18 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
 <pre><code data-language="html"><article>
     <header>
     	<!-- título do post -->
-        <h1><a href="..." itemprop="headline">Herança em JavaScript parte I</a></h1>
+        <h1>
+            <a href="..." itemprop="headline">
+                Herança em JavaScript parte I
+            </a>
+        </h1>
     </header>
     <section>
         <!-- imagem principal do post -->
         <p><img itemprop="thumbnailUrl" src="..." /></p>
         <!-- envolvemos o resumo com uma <div> a descrição do post -->
         <div itemprop="description">
-        	<p>Uma das coisas que mais assusta programadores vindos de...</p>
+        	<p>Uma das coisas que mais assusta programadores...</p>
         </div>
         <!-- url do post -->
         <a href="..." class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>
@@ -219,7 +227,7 @@ Bem, com isto terminamos a marcação semântica da página inicial do Loop Infi
 Agora podemos testar se está tudo beleza com o <a href="http://www.google.com/webmasters/tools/richsnippets">Rich Snippets Testing Tool</a> do Google.
 Basta informar uma URL que o *crawler* do Google realizará uma visita ao endereço informado, irá procurar por informações semânticas e depois irá exibir o resultado da varredura.
 
-Fiz um teste com a URL da página inicial do blog (<a href="http://loopinfinito.com.br">loopinfinito.com.br</a>) apareceram 5 itens BlogPosting (sem contar com este post).
+Fiz um teste com a URL da página inicial do blog (<a href="http://loopinfinito.com.br">loopinfinito.com.br</a>) e apareceram 5 itens BlogPosting (sem contar com este post).
 Eis um destes itens:
 
 <pre>
@@ -251,7 +259,10 @@ Item
         href = http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/
 </pre>
 
-Até a próxima!
+Com isto, vemos que o Google está extraindo nossos metadados de forma correta.
+Aconselho que façam o mesmo teste com as nossas outras páginas marcadas com schema.org (interna do post e Sobre) para quem possam ver as direfenças entre elas.
+A diferença entre a página inicial e a interna do post é mínima: no resumo da página inicial temos as propriedades <code>thumbnailurl</code>, <code>description</code> e <code>url</code>, enquanto que na interna temos a propriedade <code>articleBody</code> substituindo essas 3.
+Por hoje é só, até a próxima!
 
 <aside class="fonte">
 	<h3>Referência</h3>
