@@ -19,7 +19,7 @@ layout: home
 			<li class="post-tags">
 				<ul>
 					{% for tag in post.tags %}
-					<li><a href=""><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
+					<li><a href="/tag/{{ tag }}"><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
 					{% endfor %}					
 				</ul>
 				{% if post.keywords %}

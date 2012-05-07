@@ -19,7 +19,7 @@
 						<li class="post-tags">
 							<ul>
 								{% for tag in page.tags %}
-								<li><a href=""><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
+								<li><a href="/tag/{{ tag }}"><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
 								{% endfor %}					
 							</ul>
 							{% if page.keywords %}

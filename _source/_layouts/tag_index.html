@@ -1,0 +1,54 @@
+{% include head.html %}
+
+		<section id="content">
+
+			{% for post in site.posts %}
+			{% for tag in post.tags %}
+			{% if tag == page.tag %}
+			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+				<span class="hidden" itemprop="publisher">Loop Infinito</span>
+				<aside class="post-meta">
+					<ul>
+						<li class="post-data">
+							<time itemprop="datePublished" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+						</li>
+						<li class="post-autor">
+							<a href="{{ post.author_link }}" title="{{ post.author }}" alt="{{ post.author }}" rel="author" itemprop="author">{{ post.author }}</a>
+						</li>
+						{% if post.comments %}
+							<li class="post-comentarios"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}" itemprop="interactionCount">Carregando...</a></li>
+						{% endif %}
+						{% unless post.tags == empty %}
+						<li class="post-tags">
+							<ul>
+								{% for tag in post.tags %}
+								<li><a href="/tag/{{ tag }}"><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
+								{% endfor %}					
+							</ul>
+							{% if post.keywords %}
+								<span class="hidden" itemprop="keywords">{{ post.keywords }}</span>
+							{% endif %}
+						</li>
+						{% endunless %}
+					</ul>
+				</aside>
+				<article>
+					<header>
+						<h1><a href="{{ post.url }}" itemprop="headline">{{ post.title }}</a></h1>
+					</header>
+					<section>
+						{% if post.image %}
+							<p><img itemprop="thumbnailUrl" src="http://loopinfinito.com.br/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" /></p>
+						{% endif %}
+						<div itemprop="description">{{ post.resumo }}</div>
+						<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>
+					</section>
+				</article>
+			</section>
+			{% endif %}
+			{% endfor %}
+			{% endfor %}
+
+		</section><!-- #content -->
+
+{% include foot.html %}
