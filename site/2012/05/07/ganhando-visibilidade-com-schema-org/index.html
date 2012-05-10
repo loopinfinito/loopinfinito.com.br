@@ -21,7 +21,7 @@
 	<meta name="resource-type" content="document" />
 	
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
-	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito: Web na Crista da Onda" />
+	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
 	
@@ -32,7 +32,16 @@
 	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
 	<script type="text/javascript" src="/scripts/rainbow-custom.min.js"></script>	
 	<script type="text/javascript">
-	
+		
+		$(document).ready( function(){
+
+			$('#social-btn').click( function(e){
+				e.preventDefault();
+				$(this).toggleClass('open');
+				$('#social').toggleClass('open');
+			});
+		});
+
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-30127419-1']);
 	  _gaq.push(['_trackPageview']);
@@ -46,6 +55,13 @@
 	</script>
 </head>
 <body>
+	<section id="social">
+		<ul>
+			<li><a class="icon rss" alt="RSS" title="RSS" href="http://feeds.feedburner.com/l8p"></a></li>
+			<li><a class="icon twitter" alt="Twitter" title="Twitter" href="http://twitter.com/loopinfinito"></a></li>
+			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
+		</ul>
+	</section>
 	<div id="wrapper">
 		<header id="main">
 			<h1><a href="/" id="logo">Loop Infinito</a></h1>
@@ -54,7 +70,12 @@
 					<li><a href="/">Posts</a></li>
 					<li><a href="/projetos">Projetos</a></li>
 					<li><a href="/sobre">Sobre</a></li>
-					<li><input type="search" placeholder="Busca"></li>
+					<li>
+						<a href="#social" id="social-btn">
+							<span id="social-btn-open"><img src="/images/icons/loopinfinito.png" alt=""></span>
+							<span id="social-btn-close">&times;</span>
+						</a>
+					</li>
 				</ul>
 			</nav>
 		</header>

@@ -9,7 +9,6 @@
 ---------------------------------------- */
 body {
 	background: url(../images/bg.png) #F2F2F2;
-	border-top:5px solid #666666;
 	font-family: "Lucida Grande";
 }
 
@@ -40,79 +39,8 @@ strong {
 	display: none;
 }
 
-/* Nav
+/* Icons 
 ---------------------------------------- */
-header#main {
-	position:relative;
-	height:165px;
-}
-
-	header#main a#logo {
-		text-indent: -9999px;
-		background-image:url(../images/loop-infinito-logo.png);
-		width:173px;
-		height:30px;
-		display:block;
-		position:absolute;
-		top:80px;
-	}
-
-	header#main nav {
-		position:absolute;
-		right:8px;
-		top:15px;
-	}
-
-		header#main nav ul {
-			list-style: none;
-		}
-
-			header#main nav ul li {
-				float:left;
-				margin:0 0 0 30px;
-				color:#666;
-			}
-
-		header#main nav a {
-			line-height: 25px;
-			text-decoration: none;
-			color: #666;
-			font-size:16px;
-		}
-
-		header#main nav a:hover {
-			color: #000;
-		}
-
-		header#main nav input[type=search] {
-			border:0;
-			height: 25px;
-			font-size:14px;
-			background: url(../images/lupa.png) no-repeat 5px center;
-			padding-left:20px;
-			outline: none;
-			border-radius: 10px;
-			-webkit-appearance:none;
-			visibility: hidden;
-		}
-
-		header#main nav input[type=search]::-webkit-input-placeholder {
-			color:#999;
-		}
-		
-		header#main nav input[type=search]:hover {
-			background-color: rgba(255, 255, 255, 0.4);
-		}
-		
-		header#main nav input[type=search]:hover::-webkit-input-placeholder {
-			color: #000;
-		}
-
-		header#main nav input[type=search]:focus {
-			background-color: #fff;
-		}
-
-/* ------ Icons --------------------------------------*/
 
 .icon {
 	display: inline-block;
@@ -174,6 +102,150 @@ header#main {
 .icon.portfolio:hover {
 	background-color: #99CC00;
 }
+
+.icon.rss {
+	background-image: url(../images/icons/rss.png);
+}
+
+.icon.rss:hover {
+	background-color: #FF6600;
+}
+
+/* Redes sociais
+---------------------------------------- */
+section#social {
+	height: 5px;
+	overflow: hidden;
+	background: url(../images/bg_dark.png) #666666;
+	border-bottom: 1px solid #fff;
+	-webkit-transition: height 0.2s ease;
+}
+
+section#social.open {
+	height: 55px;
+}
+
+	section#social ul {
+		list-style: none;
+		display: block;
+		width: 700px;
+		margin: auto;
+		padding-top: 12px;
+	}
+
+		section#social ul li {
+			display: block;
+			float: right;
+			width: 29px;
+			height: 29px;
+			margin-left: 12px;
+		}
+
+a#social-btn {
+	display: block;
+	width: 31px;
+	height: 44px;
+	background: url(../images/social_btn.png) no-repeat;
+	position: relative;
+	top: -11px;
+}
+
+a#social-btn span {
+	text-align: center;
+	padding-top: 11px;
+	position: relative;
+	left: -1px;
+}
+
+a#social-btn span#social-btn-open {
+	display: block;
+}
+
+a#social-btn span#social-btn-close {
+	display: none;
+	font-size: 14px;
+	color: #ddd;
+}
+
+a#social-btn.open span#social-btn-open {
+	display: none;
+}
+
+a#social-btn.open span#social-btn-close {
+	display: block;
+}
+
+/* Nav
+---------------------------------------- */
+header#main {
+	position:relative;
+	height:165px;
+}
+
+	header#main a#logo {
+		text-indent: -9999px;
+		background-image:url(../images/loop-infinito-logo.png);
+		width:173px;
+		height:30px;
+		display:block;
+		position:absolute;
+		top:80px;
+	}
+
+	header#main nav {
+		position:absolute;
+		right: 143px;
+		top: 10px;
+	}
+
+		header#main nav ul {
+			list-style: none;
+		}
+
+			header#main nav ul li {
+				float:left;
+				margin:0 0 0 30px;
+				color:#666;
+			}
+
+		header#main nav a {
+			line-height: 25px;
+			text-decoration: none;
+			color: #666;
+			font-size:16px;
+		}
+
+		header#main nav a:hover {
+			color: #000;
+		}
+
+		header#main nav input[type=search] {
+			border:0;
+			height: 25px;
+			font-size:14px;
+			background: url(../images/lupa.png) no-repeat 5px center;
+			padding-left:20px;
+			outline: none;
+			border-radius: 10px;
+			-webkit-appearance:none;
+			visibility: hidden;
+		}
+
+		header#main nav input[type=search]::-webkit-input-placeholder {
+			color:#999;
+		}
+		
+		header#main nav input[type=search]:hover {
+			background-color: rgba(255, 255, 255, 0.4);
+		}
+		
+		header#main nav input[type=search]:hover::-webkit-input-placeholder {
+			color: #000;
+		}
+
+		header#main nav input[type=search]:focus {
+			background-color: #fff;
+		}
 
 /* ------ Content ------------------------------------*/
 
