@@ -17,7 +17,7 @@ body {
 	left:50%;
 	width:900px;
 	margin-left:-350px;
-	padding-bottom: 50px;
+	/*padding-bottom: 50px;*/
 }
 
 /* Diversos
@@ -287,12 +287,34 @@ header#main {
 		font-size: 28px;
 	}
 
+	#content h2.tagged {
+		color: #ccc;
+		margin-bottom: 20px;
+		font-weight: 400;
+	}
+
+		#content h2.tagged a.tag {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 100;
+			/*font-size: 22px;*/
+			color: #999;
+			padding-left: 20px;
+			background: url(../images/tags.png) no-repeat center left;
+			margin-left: 5px;
+			text-decoration: none;
+		}
+
+		#content h2.tagged a.tag:hover {
+			text-decoration: underline;
+		}
+
 	#content h3 {
 		font-size: 22px;
 	}
 
 	#content .post-container {
 		position:relative;
+		margin-bottom: 100px;
 	}
 
 	#content .post-container article {
@@ -306,7 +328,7 @@ header#main {
 		font-weight: 300;
 		font-size:15px;
 /*		text-align: justify;*/
-		margin:100px 0 0 0;
+		/*margin:100px 0 0 0;*/
 		box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.06);
 	}
 		#content .post-container code {
@@ -331,10 +353,6 @@ header#main {
 				color: white;
 				line-height: 4px;
 			}
-
-	#content .post-container:first-child article {
-		margin:0;
-	}
 
 		#content .post-container article section {
 			padding-bottom: 45px;

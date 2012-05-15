@@ -2,6 +2,8 @@
 
 		<section id="content">
 
+			<h2 class="tagged">Posts com <a class="tag" href="/tag/{{ page.tag }}/">{{ page.tag }}</a></h2>
+
 			{% for post in site.posts %}
 			{% for tag in post.tags %}
 			{% if tag == page.tag %}
@@ -16,7 +18,7 @@
 							<a href="{{ post.author_link }}" title="{{ post.author }}" alt="{{ post.author }}" rel="author" itemprop="author">{{ post.author }}</a>
 						</li>
 						{% if post.comments %}
-							<li class="post-comentarios"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}" itemprop="interactionCount">Carregando...</a></li>
+						<li class="post-comentarios"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}" itemprop="interactionCount">Carregando...</a></li>
 						{% endif %}
 						{% unless post.tags == empty %}
 						<li class="post-tags">
@@ -26,7 +28,7 @@
 								{% endfor %}					
 							</ul>
 							{% if post.keywords %}
-								<span class="hidden" itemprop="keywords">{{ post.keywords }}</span>
+							<span class="hidden" itemprop="keywords">{{ post.keywords }}</span>
 							{% endif %}
 						</li>
 						{% endunless %}
@@ -38,7 +40,7 @@
 					</header>
 					<section>
 						{% if post.image %}
-							<p><img itemprop="thumbnailUrl" src="http://loopinfinito.com.br/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" /></p>
+						<p><img itemprop="thumbnailUrl" src="http://loopinfinito.com.br/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" /></p>
 						{% endif %}
 						<div itemprop="description">{{ post.resumo }}</div>
 						<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>
