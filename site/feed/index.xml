@@ -3,9 +3,222 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-15T15:28:45-03:00</updated>
+  <updated>2012-05-17T11:40:19-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/05/13/piao-da-casa-propria-em-css-3d</id>
+    <title>Pião da Casa Própria em CSS 3D</title>
+    <updated>2012-05-13T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/05/13/piao-da-casa-propria-em-css-3d/" />
+    <author>
+      <name>Caio Gondim</name>
+    </author>
+    <content type="html">&lt;p&gt;Quem não lembra do &lt;strong&gt;lendário&lt;/strong&gt; programa do Silvio Santos &lt;a href='http://www.youtube.com/watch?v=X0YAnNNK2OE'&gt;Pião da Casa Própria&lt;/a&gt;? Neste post vamos trazer esta lenda de volta a vida, desta vez encarnado em puro código HTML5, sem imagens ou plugins. Se seu navegador for baseado em WebKit, você poderá ver abaixo como nosso experimento irá ficar ao final deste post.&lt;/p&gt;
+&lt;iframe class='img' frameborder='0' src='http://caiogondim.github.com/piao-da-casa-propria-em-css-3d/' style='height:432px;'&gt; &lt;/iframe&gt;
+&lt;p&gt;Todo o código deste experimento está disponível no &lt;a href='https://github.com/caiogondim/piao-da-casa-propria-em-css-3d'&gt;GitHub&lt;/a&gt; e um preview completo pode ser visto &lt;a href='http://caiogondim.github.com/piao-da-casa-propria-em-css-3d/'&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id='a_brincadeira__muito_fcil'&gt;A brincadeira é muito fácil&lt;/h2&gt;
+
+&lt;p&gt;Vamos começar com o código HTML. Apenas uma &lt;code&gt;div&lt;/code&gt; contendo 6 outras &lt;code&gt;div&lt;/code&gt;, uma para cada face do pião, a &lt;code&gt;div&lt;/code&gt; wrapper, que servirá de container para o pião, e mais uma última para a moldura do pião.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;
+&lt;div id='wrapper'&gt;
+  &lt;div id='piao'&gt;
+    &lt;!-- todas as faces do pião --&gt;
+    &lt;div class='numero um'&gt;1&lt;/div&gt;
+    &lt;div class='numero dois'&gt;2&lt;/div&gt;
+    &lt;div class='numero tres'&gt;3&lt;/div&gt;
+    &lt;div class='numero quatro'&gt;4&lt;/div&gt;
+    &lt;div class='numero cinco'&gt;5&lt;/div&gt;
+    &lt;div class='numero seis'&gt;6&lt;/div&gt;        
+  &lt;/div&gt;
+  &lt;div id='moldura'&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora vamos dar um pouco de estilo ao pião e à moldura.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+#wrapper {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+}
+
+#piao {
+  position: relative;
+  top: 40px; /* centraliza o pião */
+  margin: 0 auto; /* centraliza o pião */
+  height: 330px;
+  width: 200px;
+}
+
+#piao .numero {
+  position: absolute;
+  height: 100%;
+  width: 200px;
+  border: 6px solid white;
+  -webkit-box-sizing: border-box;
+  text-align: center;
+  line-height: 320px;
+  font-family: Impact, sans-serif;
+  font-size: 240px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+}
+
+#moldura {
+  height: 400px;
+  width: 400px;
+  border: 50px solid rgb(200, 0, 0);
+  border-radius: 250px;
+  position: absolute;
+  top: -45px;
+  left: -50px;
+  /* 
+    1ª shadow: simula 3D no elemento, na parte interna
+    2ª shadow: shadow interna para simular profundidade
+    3ª shadow: simula 3D no elemento, na parte externa
+    4ª shadow: shadow externa para simular profundidade 
+  */
+  box-shadow: 
+    inset -1px -2px 0px 3px rgb(150, 0, 0),
+    inset -1px -2px 10px 10px rgba(0, 0, 0, 0.5), 
+    -2px -2px 0px 3px rgb(150, 0, 0),
+    -4px -4px 10px 10px rgba(0, 0, 0, 0.5);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora já podemos ver algo sem graça no browser com o código acima: um número 6 dentro de um círculo vermelho com um efeito 3D simulado.&lt;/p&gt;
+
+&lt;h2 id='posio_no_plano_3d'&gt;Posição no plano 3D&lt;/h2&gt;
+
+&lt;p&gt;Vamos agora posicionar o pião no plano 3D. Mas antes uma breve explicação sobre o plano 3D em CSS.&lt;/p&gt;
+
+&lt;p&gt;Temos 3 eixos de coordenadas para posicionarmos os elementos relativos a eles. O eixo &lt;strong&gt;X é o eixo horizontal&lt;/strong&gt; (esquerda-direita) e, diferente de um plano cartesiano comum, tem seu início na parte mais a esquerda do navegador. O eixo &lt;strong&gt;Y é o eixo vertical&lt;/strong&gt; (cima-baixo) e tem sua origem no ponto mais acima. Portanto, o ponto do seu navegador mais acima e a esquerda é o ponto de coordenadas X = 0 e Y = 0.&lt;/p&gt;
+
+&lt;p&gt;Mas para objetos 3D nós precisamos de mais um eixo, o eixo &lt;strong&gt;Z&lt;/strong&gt;, que vai nos dar a sensação de &lt;strong&gt;profundidade&lt;/strong&gt;. Este eixo se inicia no monitor e cresce no sentido monitor &amp;rarrw; você. Então, quanto mais &amp;#8220;distante&amp;#8221; do monitor o objeto aparentar estar, maior o valor de Z.&lt;/p&gt;
+
+&lt;p&gt;Agora entendendo um pouco sobre o plano 3D, vamos organizar os elementos a fim de formar o pião.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+#piao &gt; .numero.um {
+  /* 
+    a rotação deste elemento é 0, o que já é o valor padrão
+    então não há necessidade de redeclarar sua rotação
+   */
+}
+
+#piao &gt; .numero.dois {
+  -webkit-transform: rotateY(60deg);
+}
+
+#piao &gt; .numero.tres {
+  -webkit-transform: rotateY(120deg);
+}
+
+#piao &gt; .numero.quatro {
+  -webkit-transform: rotateY(180deg);
+}
+
+#piao &gt; .numero.cinco {
+  -webkit-transform: rotateY(240deg);
+}
+
+#piao &gt; .numero.seis {
+  -webkit-transform: rotateY(300deg);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nó trecho de CSS acima, nós giramos as faces em relação ao eixo Y. Precisamos girar todas as faces a fim de fecharmos uma volta. Como uma volta possue 360 graus e o pião possui 6 faces, entamos iremos rotacionar cada face em 60 graus mais a rotação da face anterior, ou seja, o primeiro elemento irá ser rotacionado em 60 graus, o segundo em 120 graus, o terceiro em 180 graus, e assim por diante até o último elemento.&lt;/p&gt;
+
+&lt;p&gt;Porém se rotacionarmos apenas no eixo Y os elementos, eles ficarão todos um por cima dos outros, apenas inclinados de forma diferente. Estarão todos no centro do que será nosso pião. Precisamos agora afastar as faces umas das outras. E para isso iremos usar a propriedade &lt;code&gt;translateZ&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+#piao {
+  ...
+  -webkit-transform-style: preserve-3d;
+}
+
+#piao &gt; .numero.um {
+  -webkit-transform: translateZ(170px);
+}
+
+#piao &gt; .numero.dois {
+  -webkit-transform: rotateY(60deg) translateZ(170px);
+}
+
+#piao &gt; .numero.tres {
+  -webkit-transform: rotateY(120deg) translateZ(170px);
+}
+
+#piao &gt; .numero.quatro {
+  -webkit-transform: rotateY(180deg) translateZ(170px);
+}
+
+#piao &gt; .numero.cinco {
+  -webkit-transform: rotateY(240deg) translateZ(170px);
+}
+
+#piao &gt; .numero.seis {
+  -webkit-transform: rotateY(300deg) translateZ(170px);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Com o &lt;code&gt;transform-style: preserve-3d&lt;/code&gt; estamos dizendo que os filhos diretos do elemento pião irão compartilhar o mesmo espaço 3D que o pai. Caso contrário os elementos seriam renderizados de forma plana no elemento pai.&lt;/p&gt;
+
+&lt;p&gt;Depois, com a regra &lt;code&gt;translateZ&lt;/code&gt;, estamos afastanto todos os elementos do seu ponto inicial no eixo Z. Com o &lt;code&gt;rotateY&lt;/code&gt; giramos todas as faces e com o &lt;code&gt;translateZ&lt;/code&gt; é como se estivessemos pedindo para que todas as faces dessem um passo de 170px à frente. Como giramos todas para um lado diferente, elas irão &amp;#8220;caminhar&amp;#8221; para um sentido diferente.&lt;/p&gt;
+
+&lt;p&gt;Com isso temos o nosso pião 3D, mas para deixar tudo mais interessante, vamos usar &lt;code&gt;animation&lt;/code&gt; para fazer a rotação do pião.&lt;/p&gt;
+
+&lt;h2 id='animao_em_ritmo_de_festa'&gt;Animação em ritmo de festa&lt;/h2&gt;
+
+&lt;p&gt;O efeito que queremos ver é o do pião rodando em relação ao seu eixo Y, o mesmo eixo em que rotacionamos as faces do pião. Para isso iremos criar uma animação com o estado inicial no ponto 0 graus do eixo Y e estado final no 360 graus, ou seja, uma volta completa.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+/* 
+  animação para o pião rodar 
+  uma animação básica ao redor do eixo Y
+*/
+@-webkit-keyframes rodando {
+  from { -webkit-transform: rotateY(0); }
+  to   { -webkit-transform: rotateY(-360deg); }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;No trecho acima definimos nossa animação e a chamamos de rodando (em homenagem). Agora é só a usarmos no elemento que desejarmos.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='css'&gt;
+#piao {
+  ...
+  -webkit-animation: rodando 4s infinite linear;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Aqui dizemos que queremos animar o elemento pião, utilizando a animação rodando, demorando 4 segundos para ir de seu estado inicial ao estado final, essa animação não irá parar (infinite) e a sua transição entre estados será linear.&lt;/p&gt;
+
+&lt;p&gt;Agora se checarmos no navegador, iremos finalmente ter nosso pião da casa própria em HTML5. E rodandooo.&lt;/p&gt;
+
+&lt;h2 id='one_more_thing'&gt;One more thing&amp;#8230;&lt;/h2&gt;
+
+&lt;p&gt;O Pião da Casa Própria não seria o mesmo sem a &lt;strong&gt;clássica&lt;/strong&gt; trilha sonnora. Então vamos adicioná-la ao experimento. Iremos usar a nova tag &lt;code&gt;audio&lt;/code&gt; para reproduzir a música sem a nececissade do Flash. &lt;!-- O seu uso é bastante simples.  --&gt; Basta declarar a tag &lt;code&gt;audio&lt;/code&gt; e dentro dela as tags &lt;code&gt;source&lt;/code&gt; com os caminhos para o mesmo arquivo salvo em diferentes codecs.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='html'&gt;
+&lt;!-- trilha do pião da casa própria. máá ô-ê --&gt;
+&lt;audio loop='true' preload='auto'&gt;
+  &lt;source src='piao-da-casa-propria-soundtrack.mp3' /&gt;
+  &lt;source src='piao-da-casa-propria-soundtrack.m4a' /&gt;
+  &lt;source src='piao-da-casa-propria-soundtrack.ogg' /&gt;
+&lt;/audio&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O navegador irá tentar de cima para baixo executar os formatos, e quando achar um que possa reproduzir, irá carregar e não irá mais procurar por outros &lt;code&gt;source&lt;/code&gt;. O uso desta tag é necessário pois cada navegador dá suporte a um &lt;a href='http://html5doctor.com/native-audio-in-the-browser/'&gt;diferente conjunto de codecs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Caso queiram escutar a trilha sonora agora e ver o pião rodando é só apertar o botão play no lado direito superior dentro do experimento, no início do post. Utilizei a API JavaScript para controlar o comportamento da tag &lt;code&gt;audio&lt;/code&gt;, mas para não perdemos o foco, essa API fica para um próximo post. &lt;!-- 
+Existe também uma API JavaScript para controlar por programação o áudio, mas para não perdemos o foco do post não vamos entrar em detalhes.
+Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento logo no começo do post.
+É necessário esperar fazer o download da música. --&gt;&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+  &lt;h3&gt;Referência&lt;/h3&gt;
+  &lt;ul&gt;    
+    &lt;li&gt;→&lt;a alt='Mozilla Developer Network' href='https://developer.mozilla.org/En/HTML/Element/Audio' title='Mozilla Developer Network'&gt;Mozilla Developer Network: audio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;→&lt;a alt='Mozilla Developer Network' href='https://developer.mozilla.org/en/CSS/transform-style' title='Mozilla Developer Network'&gt;Mozilla Developer Network: transform style&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;→&lt;a alt='Webkit Morphing Cubes' href='http://www.webkit.org/blog-files/3d-transforms/morphing-cubes.html' title='Webkit Morphing Cubes'&gt;WebKit blog&lt;/a&gt;&lt;/li&gt;  
+  &lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
   
   <entry>
     <id>http://loopinfinito.com.br/2012/05/07/ganhando-visibilidade-com-schema-org</id>

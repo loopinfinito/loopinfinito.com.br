@@ -35,7 +35,7 @@ layout: home
 		</header>
 		<section>
 			{% if post.image %}
-				<p><img itemprop="thumbnailUrl" src="http://loopinfinito.com.br/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" /></p>
+				<p><img itemprop="thumbnailUrl" src="{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" /></p>
 			{% endif %}
 			<div itemprop="description">{{ post.resumo }}</div>
 			<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>

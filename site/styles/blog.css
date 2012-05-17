@@ -384,7 +384,7 @@ header#main {
 		}
 
 			#content .post-container article p img,
-			#content .post-container article svg.img {
+			#content .post-container article .img {
 				position:relative;
 				left:-50px;
 				width:700px;
