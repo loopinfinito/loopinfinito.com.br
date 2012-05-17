@@ -13,9 +13,9 @@ styles: [code.html]
 
 Quem não lembra do __lendário__ programa do Silvio Santos [Pião da Casa Própria](http://www.youtube.com/watch?v=X0YAnNNK2OE)?
 Neste post vamos trazer esta lenda de volta a vida, desta vez encarnado em puro código HTML5, sem imagens ou plugins.
-Se seu navegador for baseado em WebKit, você poderá ver abaixo como nosso experimento irá ficar ao final deste post.
+Se seu navegador for o Chrome, Safari ou Firefox atualizados, você poderá ver abaixo como nosso experimento irá ficar ao final deste post.
 
-<iframe src="http://caiogondim.github.com/piao-da-casa-propria-em-css-3d/" frameborder="0" class="img" style="height:432px;"> </iframe>
+<iframe src="http://caiogondim.github.com/piao-da-casa-propria-em-css-3d/" frameborder="0" class="img" style="height:432px;" id="experimento-piao"> </iframe>
 
 Todo o código deste experimento está disponível no [GitHub](https://github.com/caiogondim/piao-da-casa-propria-em-css-3d) e um preview completo pode ser visto [aqui](http://caiogondim.github.com/piao-da-casa-propria-em-css-3d/).
 
@@ -104,8 +104,8 @@ Agora já podemos ver algo sem graça no browser com o código acima: um número
 Vamos agora posicionar o pião no plano 3D. Mas antes uma breve explicação sobre o plano 3D em CSS.
 
 Temos 3 eixos de coordenadas para posicionarmos os elementos relativos a eles.
-O eixo __X é o eixo horizontal__ (esquerda-direita) e, diferente de um plano cartesiano comum, tem seu início na parte mais a esquerda do navegador.
-O eixo __Y é o eixo vertical__ (cima-baixo) e tem sua origem no ponto mais acima.
+O eixo __X é o eixo horizontal__ (esquerda-direita) e tem sua origem no ponto mais a esquerda.
+O eixo __Y é o eixo vertical__ (cima-baixo) e, diferente de um plano cartesiano comum, tem seu início na parte mais acima do navegador.
 Portanto, o ponto do seu navegador mais acima e a esquerda é o ponto de coordenadas X = 0 e Y = 0.
 
 Mas para objetos 3D nós precisamos de mais um eixo, o eixo __Z__, que vai nos dar a sensação de __profundidade__.
@@ -143,9 +143,9 @@ Agora entendendo um pouco sobre o plano 3D, vamos organizar os elementos a fim d
 }
 </code></pre>
 
-Nó trecho de CSS acima, nós giramos as faces em relação ao eixo Y.
+No trecho de CSS acima, nós giramos as faces em relação ao eixo Y.
 Precisamos girar todas as faces a fim de fecharmos uma volta.
-Como uma volta possue 360 graus e o pião possui 6 faces, entamos iremos rotacionar cada face em 60 graus mais a rotação da face anterior, ou seja, o primeiro elemento irá ser rotacionado em 60 graus, o segundo em 120 graus, o terceiro em 180 graus, e assim por diante até o último elemento.
+Como uma volta possui 360 graus e o pião possui 6 faces, então iremos rotacionar cada face em 60 graus mais a rotação da face anterior, ou seja, o primeiro elemento irá ser rotacionado em 60 graus, o segundo em 120 graus, o terceiro em 180 graus, e assim por diante até o último elemento.
 
 Porém se rotacionarmos apenas no eixo Y os elementos, eles ficarão todos um por cima dos outros, apenas inclinados de forma diferente. Estarão todos no centro do que será nosso pião. Precisamos agora afastar as faces umas das outras. E para isso iremos usar a propriedade <code>translateZ</code>.
 
@@ -184,7 +184,7 @@ Com o <code>transform-style: preserve-3d</code> estamos dizendo que os filhos di
 Caso contrário os elementos seriam renderizados de forma plana no elemento pai.
 
 Depois, com a regra <code>translateZ</code>, estamos afastanto todos os elementos do seu ponto inicial no eixo Z.
-Com o <code>rotateY</code> giramos todas as faces e com o <code>translateZ</code> é como se estivessemos pedindo para que todas as faces dessem um passo de 170px à frente. Como giramos todas para um lado diferente, elas irão "caminhar" para um sentido diferente.
+Com o <code>rotateY</code> giramos todas as faces e com o <code>translateZ</code> é como se estivéssemos pedindo para que todas as faces dessem um passo de 170px à frente. Como giramos todas para um lado diferente, elas irão "caminhar" para um sentido diferente.
 
 Com isso temos o nosso pião 3D, mas para deixar tudo mais interessante, vamos usar <code>animation</code> para fazer a rotação do pião.
 
@@ -214,7 +214,7 @@ Agora é só a usarmos no elemento que desejarmos.
 }
 </code></pre>
 
-Aqui dizemos que queremos animar o elemento pião, utilizando a animação rodando, demorando 4 segundos para ir de seu estado inicial ao estado final, essa animação não irá parar (infinite) e a sua transição entre estados será linear.
+Aqui dizemos que queremos animar o elemento pião, utilizando a animação "rodando", demorando 4 segundos para ir de seu estado inicial ao estado final, essa animação não irá parar (infinite) e a sua transição entre estados será linear.
 
 Agora se checarmos no navegador, iremos finalmente ter nosso pião da casa própria em HTML5. E rodandooo.
 
@@ -238,7 +238,7 @@ Basta declarar a tag <code>audio</code> e dentro dela as tags <code>source</code
 O navegador irá tentar de cima para baixo executar os formatos, e quando achar um que possa reproduzir, irá carregar e não irá mais procurar por outros <code>source</code>.
 O uso desta tag é necessário pois cada navegador dá suporte a um [diferente conjunto de codecs](http://html5doctor.com/native-audio-in-the-browser/).
 
-Caso queiram escutar a trilha sonora agora e ver o pião rodando é só apertar o botão play no lado direito superior dentro do experimento, no início do post.
+Caso queiram escutar a trilha sonora agora e ver o pião rodando é só apertar o botão play no lado direito superior dentro do experimento, no [início](#experimento-piao) do post.
 Utilizei a API JavaScript para controlar o comportamento da tag <code>audio</code>, mas para não perdemos o foco, essa API fica para um próximo post.
 <!-- 
 Existe também uma API JavaScript para controlar por programação o áudio, mas para não perdemos o foco do post não vamos entrar em detalhes.
