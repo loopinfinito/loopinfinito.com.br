@@ -614,3 +614,7 @@ h3.dsq-h3-reactions {
 	position: relative;
 	left: -50px;
 }
+
+#disqus-power {
+	display: none;
+}
