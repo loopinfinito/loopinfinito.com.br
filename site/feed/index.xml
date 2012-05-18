@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-18T12:29:32-03:00</updated>
+  <updated>2012-05-18T16:42:44-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -243,7 +243,7 @@ Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento 
 		fill: #ccc;
 	}
 
-&lt;/style&gt;
+&lt;/style&gt;&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-05-07-ganhando-visibilidade-com-schema-org.jpg' /&gt;&lt;/p&gt;
 &lt;p&gt;Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso blog usando &lt;strong&gt;microdata&lt;/strong&gt; e os vocabulários &lt;strong&gt;schema.org&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Hoje explicarei passo a passo como fiz isto aqui no Loop Infinito. A qualquer momento você pode visualizar nosso código fonte e observar estas mesmas marcações lá.&lt;/p&gt;
@@ -484,7 +484,7 @@ Item
     <author>
       <name>Caio Gondim</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt='' src='/images/posts/2012-05-04-heranca-em-javascript.jpg' /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-05-04-heranca-em-javascript.jpg' /&gt;&lt;/p&gt;
 &lt;p&gt;Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo. Mas antes de entrarmos em detalhes, vamos primeiro relembrar o que é a herança clássica nas linguagens orientadas a objetos.&lt;/p&gt;
 
 &lt;h2 id='herana_clssica'&gt;Herança clássica&lt;/h2&gt;
@@ -1074,7 +1074,8 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
     <author>
       <name>Almir Filho</name>
     </author>
-    <content type="html">&lt;p&gt;Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.&lt;/p&gt;
 
 &lt;p&gt;Desde a década de 1990, a W3C tem apresentado maneiras para definição de conteúdo semântico, e de lá pra cá surgiram outras alternativas, mas devido a grande quantidade de informações, falarei apenas um pouco sobre cada uma delas: RDF, RDFa, Microformats e &lt;strong&gt;Microdata&lt;/strong&gt; ← focaremos neste último cara aqui.&lt;/p&gt;
 
@@ -1184,7 +1185,7 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
 		-webkit-filter: saturate(4);
 	}
 
-&lt;/style&gt;&lt;p&gt;&lt;img alt='' src='/images/posts/2012-04-14-css-filters.jpg' /&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-04-14-css-filters.jpg' /&gt;&lt;/p&gt;
 &lt;p&gt;A Adobe, Apple e Opera estão &lt;a href='https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html'&gt;trabalhando juntas&lt;/a&gt; para trazer alguns efeitos no estilo Photoshop para o CSS. Esses efeitos, chamados de filtros, irão nos permitir modificar a renderização de qualquer elemento DOM, de um simples &lt;code&gt;p&lt;/code&gt;, até elementos mais complexos como &lt;code&gt;image&lt;/code&gt; ou &lt;code&gt;video&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Alguns dos efeitos já definidos na especificação são &lt;code&gt;grayscale&lt;/code&gt;, &lt;code&gt;blur&lt;/code&gt;, &lt;code&gt;sepia&lt;/code&gt;, &lt;code&gt;saturate&lt;/code&gt;, &lt;code&gt;opacity&lt;/code&gt;, &lt;code&gt;brightness&lt;/code&gt;, &lt;code&gt;contrast&lt;/code&gt;, &lt;code&gt;hue-rotate&lt;/code&gt; e &lt;code&gt;invert&lt;/code&gt;. Aos familiarizados com Photoshop ou qualquer programa de edição de imagem, eles devem ser bastante auto-explicativos. Mas de qualquer forma, vamos explorar cada filtro, um a um.&lt;/p&gt;

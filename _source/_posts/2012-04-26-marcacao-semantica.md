@@ -3,11 +3,15 @@ title: Marcação Semântica
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+image: images/posts/2012-04-26-marcacao-semantica.jpg
 resumo: Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Neste post, apresentamos as principais formas de marcação semântica de dados usadas na web de hoje e fazemos alguns comparativos.
 tags: web-semantica microdata schema.org SEO
 keywords: web semantica, microdata, schema.org, microformats, rdf, rdfa, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web, seo
 comments: true
 ---
+
+<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt=""></p>
+
 Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto.
 Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.
 

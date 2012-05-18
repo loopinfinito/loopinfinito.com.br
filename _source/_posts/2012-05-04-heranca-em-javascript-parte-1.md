@@ -11,7 +11,7 @@ keywords: javascript, js, web development, desenvolvimento web, html5, front-end
 comments: true
 ---
 
-<p><img src="/images/posts/2012-05-04-heranca-em-javascript.jpg" alt=""></p>
+<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt=""></p>
 
 Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo. 
 Mas antes de entrarmos em detalhes, vamos primeiro relembrar o que é a herança clássica nas linguagens orientadas a objetos.
