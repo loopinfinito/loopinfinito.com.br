@@ -3,9 +3,73 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-18T21:18:47-03:00</updated>
+  <updated>2012-05-24T12:24:59-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/05/23/saiba-a-hora-de-ejetar</id>
+    <title>Saiba a Hora de Ejetar</title>
+    <updated>2012-05-23T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/05/23/saiba-a-hora-de-ejetar/" />
+    <author>
+      <name>Almir Filho</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt='Saiba a Hora de Ejetar' src='/images/posts/2012-05-20-saiba-a-hora-de-ejetar.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;Já fazia um tempinho que queria postar algo sobre produtividade, afinal de contas o Loop Infinito não se trata apenas de mais um blog sobre tecnologia web, e sim de assuntos como &lt;strong&gt;produtividade&lt;/strong&gt;, &lt;strong&gt;usabilidade&lt;/strong&gt; e &lt;strong&gt;lifestyle&lt;/strong&gt;. Estes assuntos serão abordados por aqui de vez em quando.&lt;/p&gt;
+
+&lt;p&gt;Acho &lt;em&gt;produtividade&lt;/em&gt; um tema super importante e interessante. É sempre bom aprender truques que nos tornem mais produtivos, estamos sempre em busca de melhorar processos, economizar tempo e aumentar nossa eficiência – principalmente com aquelas coisas repetitivas (quem dera se os funcionários públicos fizessem o mesmo, hein).&lt;/p&gt;
+
+&lt;p&gt;Estou lendo um livro muito interessante, chama-se &lt;a href='http://www.amazon.com/Rework-Jason-Fried/dp/0307463745/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1337872498&amp;amp;sr=1-1' target='_blank'&gt;&lt;strong&gt;Rework&lt;/strong&gt;&lt;/a&gt;. Este livro foi escrito por nada mais nada menos que os fundadores da &lt;a href='http://37signals.com/' target='_blank'&gt;&lt;em&gt;37signals&lt;/em&gt;&lt;/a&gt;, são dois meganerds que gostam das coisas bem feitas, &lt;a href='http://twitter.com/jasonfried' target='_blank'&gt;Jason Fried&lt;/a&gt; e &lt;a href='http://twitter.com/dhh' target='_blank'&gt;David Heinemeier Hansson&lt;/a&gt; (criador do &lt;em&gt;Ruby on Rails&lt;/em&gt;). Pra vocês terem uma idéia, o primeiro projeto que estes caras criaram juntos foi o &lt;a href='http://basecamp.com' target='_blank'&gt;Basecamp&lt;/a&gt; – inclusive foi assim que nasceu o &lt;em&gt;RoR&lt;/em&gt;, mas isso é outro papo. E sobre o livro, falarei melhor futuramente.&lt;/p&gt;
+
+&lt;p&gt;Há um capítulo no livro que se chama &lt;em&gt;Reasons to quit&lt;/em&gt;, e foi isto que me inspirou a fazer este post. Eu traduzi o capítulo (é bem pequeno) e adicionei algumas coisas. Espero que gostem.&lt;/p&gt;
+
+&lt;h2 id='chega_de_papo'&gt;Chega de papo&lt;/h2&gt;
+
+&lt;p&gt;É fácil se conformar, baixar a cabeça e apenas trabalhar no que você &lt;strong&gt;pensa&lt;/strong&gt; ser importante. Difícil é levantar sua cabeça e se perguntar o &lt;strong&gt;porquê&lt;/strong&gt;. Aqui estão algumas perguntas importantes para você indagar a si mesmo e poder ter certeza de que você está investindo seu tempo em algo que importa.&lt;/p&gt;
+
+&lt;h2 id='por_que_voc_est_fazendo_isto'&gt;Por que você está fazendo isto?&lt;/h2&gt;
+
+&lt;p&gt;Você já se encontrou trabalhando em algo sem saber &lt;em&gt;exatamente&lt;/em&gt; o porquê? &lt;strong&gt;Alguém apenas disse-lhe para fazê-lo&lt;/strong&gt;. Isto é bem comum, na verdade. É por isso que é importante se perguntar por que você está trabalhando em _________. Para que serve isto? Quem se beneficia com isto? Qual a motivação por trás disto? Saber as respostas destas perguntas vai lhe ajudar a entender o seu próprio trabalho.&lt;/p&gt;
+
+&lt;h2 id='que_problema_voc_est_resolvendo'&gt;Que problema você está resolvendo?&lt;/h2&gt;
+
+&lt;p&gt;Qual é o problema? Os clientes estão confusos? &lt;em&gt;Você está confuso?&lt;/em&gt; Há algo que não está claro o suficiente? Havia algo que não era possível, e que agora é? Às vezes quando você faz estas perguntas, você vai descobrir que você está solucionando problemas &lt;em&gt;imaginários&lt;/em&gt;. É neste momento que é hora de parar e reavaliar &lt;strong&gt;o que diabos você está fazendo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id='isto__til_de_verdade'&gt;Isto é útil de verdade?&lt;/h2&gt;
+
+&lt;p&gt;Você está fazendo algo útil ou está apenas fazendo algo? É fácil confundir entusiasmo com &lt;strong&gt;utilidade&lt;/strong&gt;. Às vezes, tudo bem brincar um pouco e construir algo legal por diversão. Mas eventualmente você tem que parar e se perguntar se isto é útil, também. O legal acaba ficando ultrapassado. O útil, não.&lt;/p&gt;
+
+&lt;h2 id='voc_est_agregando_valor'&gt;Você está agregando valor?&lt;/h2&gt;
+
+&lt;p&gt;Agregar qualquer coisa é fácil; agregar &lt;strong&gt;valor é difícil&lt;/strong&gt;. Isto com que você está trabalhando está fazendo com que seu produto tenha mais valor para seus clientes? Com isto, eles poderão obter mais do seu produto do que antes? Às vezes coisas que você pensa que estão adicionando valor na verdade estão subtraindo valor. Muito ketchup pode estragar as fritas. &lt;em&gt;Valor é uma questão de equilibrio&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id='isto_vai_mudar_o_comportamento'&gt;Isto vai mudar o comportamento?&lt;/h2&gt;
+
+&lt;p&gt;Isto em que você está trabalhando vai realmente &lt;strong&gt;mudar&lt;/strong&gt; alguma coisa? Não crie algo a não ser que tenha um impacto real em como as pessoas irão usar seu produto.&lt;/p&gt;
+
+&lt;h2 id='h_uma_maneira_mais_fcil'&gt;Há uma maneira mais fácil?&lt;/h2&gt;
+
+&lt;p&gt;Sempre que você estiver trabalhando em algo, pergunte-se, &amp;#8220;Há uma maneira mais fácil?&amp;#8221; Muitas vezes você vai acabar descobrindo que esta maneira mais fácil é mais do que suficiente &lt;em&gt;por agora&lt;/em&gt;. Problemas geralmente são bem simples. Apenas imaginamos que eles exigem soluções difíceis, temos uma tendência incrível para complicar as coisas.&lt;/p&gt;
+
+&lt;h2 id='o_que_voc_poderia_estar_fazendo_em_vez_disto'&gt;O que você poderia estar fazendo em vez disto?&lt;/h2&gt;
+
+&lt;p&gt;O que você não pode fazer porque está ocupado com isto? Esta pergunta é especialmente importante para equipes pequenas, com recursos limitados. É quando priorização ganha ainda mais importância. Se você trabalha em &lt;em&gt;A&lt;/em&gt;, ainda pode terminar &lt;em&gt;B&lt;/em&gt; e &lt;em&gt;C&lt;/em&gt; antes de abril? Se não, não seria melhor ficar com &lt;em&gt;B&lt;/em&gt; e &lt;em&gt;C&lt;/em&gt; em vez de &lt;em&gt;A&lt;/em&gt;? Se você emperrou em alguma coisa por muito tempo, isso significa que há outras coisas que você não está podendo dar continuidade em detrimento disto.&lt;/p&gt;
+
+&lt;h2 id='isto_realmente_vale_a_pena'&gt;Isto realmente vale a pena?&lt;/h2&gt;
+
+&lt;p&gt;Isto em que você está trabalhando vale a pena de verdade? Esta reunião vale tirar seis pessoas de seus trabalhos por uma hora inteira? Vale a pena terminar um determinado trabalho durante toda esta noite, ou você poderia terminar amanhã? Vale a pena ficar todo estressado por causa de um comunicado de imprensa de um concorrente? &lt;em&gt;Vale a pena gastar seu dinheiro em propaganda?&lt;/em&gt; Determine o valor real do que quer que você esteja prestes a fazer, antes de mergulhar de cabeça.&lt;/p&gt;
+
+&lt;p&gt;Mantenha-se fazendo estas perguntas acima a si próprio (e aos outros também). Você não precisa fazer disto uma coisa certinha ou formal, mas também não deixe que passe despercebido.&lt;/p&gt;
+
+&lt;p&gt;Não tenha medo de suas conclusões, &lt;strong&gt;seja sincero consigo mesmo&lt;/strong&gt;. Às vezes abandonar o que você está trabalhando é a decisão correta, mesmo que você já tenha investido muito tempo e esforço nisto. Não jogue seu tempo fora.&lt;/p&gt;
+
+&lt;h2 id='aperte_o_grande_boto_vermelho'&gt;Aperte o grande botão vermelho&lt;/h2&gt;
+
+&lt;p&gt;Pode não ser a hora oportuna de fazer isso ainda, mas tome uma decisão, se prepare, se programe para &lt;strong&gt;apertar o botão de eject&lt;/strong&gt;. Estas são decisões que você deve tomar não só no ramo profissional, mas também em todos as outras áreas da sua vida.&lt;/p&gt;
+
+&lt;p&gt;Se você não parar agora pra pensar em que você vai investir seu tempo, alguém certamente o fará, saberá o que quer e usará &lt;strong&gt;você&lt;/strong&gt; para atingir o sonho dele. Se liga, é sua vida, não venda seu tempo, não seja mais uma ferramenta para o sonho de outra pessoa.&lt;/p&gt;</content>
+  </entry>
   
   <entry>
     <id>http://loopinfinito.com.br/2012/05/13/piao-da-casa-propria-em-css-3d</id>
