@@ -55,7 +55,7 @@ bem brincar um pouco e construir algo legal por diversão. Mas eventualmente voc
 Agregar qualquer coisa é fácil; agregar **valor é difícil**. Isto com que você está trabalhando está fazendo com que seu 
 produto tenha mais valor para seus clientes? Com isto, eles poderão obter mais do seu produto do que antes? Às vezes coisas 
 que você pensa que estão adicionando valor na verdade estão subtraindo valor. Muito ketchup pode estragar as fritas. 
-*Valor é uma questão de equilibrio*.
+*Valor é uma questão de equilíbrio*.
 
 ## Isto vai mudar o comportamento?
 Isto em que você está trabalhando vai realmente **mudar** alguma coisa? Não crie algo a não ser que tenha um impacto 
