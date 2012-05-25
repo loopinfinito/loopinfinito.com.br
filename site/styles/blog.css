@@ -20,6 +20,8 @@ body{background:url(../images/bg.png) #f2f2f2;font-family:"Lucida Grande";}
 .icon.portfolio:hover{background-color:#99CC00;}
 .icon.rss{background-image:url(../images/icons/rss.png);}
 .icon.rss:hover{background-color:#FF6600;}
+.icon.speakerdeck{background-image:url(../images/icons/speakerdeck.png);}
+.icon.speakerdeck:hover{background-color:#289678;}
 section#social{height:5px;overflow:hidden;background:url(../images/bg_dark.png) #666666;border-bottom:1px solid #fff;-webkit-transition:height 0.2s ease;}
 section#social.open{height:55px;}
 section#social ul{list-style:none;display:block;width:700px;margin:auto;padding-top:12px;}
