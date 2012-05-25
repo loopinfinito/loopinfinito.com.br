@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	
+		<title>Automatizando o deploy com rsync – Loop Infinito</title>
+	
+	
+		<meta name="author" content="Caio Gondim" />
+	
+	
+		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend, loop, loop infinito, l8p, crista da onda" />
+	
+	
+		<meta name="description" content="lorem ipsum" />
+	
+	<meta name="language" content="pt" />
+	<meta name="content-language" content="pt-BR" />
+	<meta name="robots" content="all" />
+	<meta name="distribution" content="Global" />
+	<meta name="resource-type" content="document" />
+	
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
+	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
+	
+	
+		<link rel="stylesheet" type="text/css" href="/styles/code.html.css" media="all" />
+	
+	
+	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="/scripts/rainbow-custom.min.js"></script>	
+	<script type="text/javascript">
+		
+		$(document).ready( function(){
+
+			$('#social-btn').click( function(e){
+				e.preventDefault();
+				$(this).toggleClass('open');
+				$('#social').toggleClass('open');
+			});
+		});
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-30127419-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+	<section id="social">
+		<ul>
+			<li><a class="icon rss" alt="RSS" title="RSS" href="http://feeds.feedburner.com/l8p"></a></li>
+			<li><a class="icon twitter" alt="Twitter" title="Twitter" href="http://twitter.com/loopinfinito"></a></li>
+			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
+		</ul>
+	</section>
+	<div id="wrapper">
+		<header id="main">
+			<h1><a href="/" id="logo">Loop Infinito</a></h1>
+			<nav>
+				<ul>
+					<li><a href="/">Posts</a></li>
+					<li><a href="/projetos">Projetos</a></li>
+					<li><a href="/sobre">Sobre</a></li>
+					<li>
+						<a href="#social" id="social-btn">
+							<span id="social-btn-open"><img src="/images/icons/loopinfinito.png" alt=""></span>
+							<span id="social-btn-close">&times;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="content">
+
+			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+				<span class="hidden" itemprop="publisher">Loop Infinito</span>
+				<aside class="post-meta">
+					<ul>
+						<li class="post-data">
+							<time itemprop="datePublished" datetime="2012-05-27">27/05/2012</time>
+						</li>
+						<li class="post-autor">
+							<a href="http://twitter.com/caio_gondim" title="Caio Gondim" alt="Caio Gondim" rel="author" itemprop="author">Caio Gondim</a>
+						</li>
+						
+						
+					</ul>	
+				</aside>
+				<article>
+					<header>
+						<h1><a href="/2012/05/27/automatizando-o-deploy-com-rsync/" itemprop="headline">Automatizando o deploy com <span>rsync</span></a></h1>
+					</header>
+					<section itemprop="articleBody">
+						<p><img alt='' src='http://localhost:4000/images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg' /></p>
+<ul>
+<li>Você sempre esquece de upar um arquivo para o servidor de produção?</li>
+
+<li>Acha um saco ter que upar os arquivos um a um?</li>
+
+<li>Acha o FTP lento?</li>
+
+<li>Se sente inseguro tendo que compartilhar a senha do server com outros?</li>
+</ul>
+
+<p>Então&#8230;</p>
+
+<h2 id='seus_problemas_se_acabaramse'>Seus problemas se acabaram-se</h2>
+
+<p>O rsync é uma ferramenta para sincronização de arquivos/pastas que se encaixa como uma luva para a tarefa de deploy (enviar os arquivos modificados para uma outra máquina).</p>
+
+<p>Caso você esteja usando uma máquina Unix-like (Mac, Linux, BSD, &#8230;) você provavelmente já possui o rsync instalado. Caso esteja utilizando o Windows, você pode baixar um port do projeto para sua plataforma <a href='http://rsync.samba.org/download.html'>aqui</a>.</p>
+
+<p>Este post é o primeiro do Loop Infinito a ser upado com o rsync. Vamos então dar uma estudada em como o processo é feito por aqui para aprendermos um pouco mais sobre a ferramenta.</p>
+
+<h2 id='ligando_agora_voc_recebe'>Ligando agora você recebe&#8230;</h2>
+
+<p>O rsync é uma ferramenta que roda no terminal. Nós apenas definimos a pasta/arquivo origem e a pasta/arquivo destino que deve ser sincronizado com a origem. Ele então verifica quais arquivos foram modificados entre a origem e o destino e envia apenas o delta (a diferença) entre as diferentes versões do mesmo arquivo, o que torna o processo bem mais rápido se comparado ao FTP.</p>
+
+<p>O uso mais básico para o rsync seria o de deixarmos duas pastas na mesma máquina sincronizadas. Basta executarmos o rsync pela linha de comando, passando a pasta origem como primeiro argumento e a pasta destino como segundo argumento.</p>
+<pre><code data-language='shell'>
+$ rsync ~/uma/pasta/origem/qualquer ~/outra/pasta/destino
+</code></pre>
+<p>Mas no nosso caso queremos sincronizar uma pasta em nossa máquina com uma outra em uma máquina remota (o servidor do nosso blog). Então o comando usado foi:</p>
+<pre><code data-language='shell'>
+$ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br
+</code></pre>
+<p><strong>Calma</strong>! Não se apavore (ainda).</p>
+
+<p>O nosso comando de deploy segue o mesmo princípio do exemplo mais básico que demos logo acima: o de deixar duas pasta sincronizadas. A diferença aqui é que estamos deixando duas pastas sincronizadas em diferentes máquinas. Parece complicado, mas vamos quebrar o comando acima e entendê-lo por completo. <ul>
+  <li><code>-a</code> archive mode. esta flag habilita o modo recursivo e preserva links simbólicos, permissões e timestamps</li>
+  <li><code>-v</code> verbose. nos dá mais feedback sobre o que está acontecendo</li>
+  <li><code>-z</code> habilita compressão de dados durante o envio</li>
+  <li><code>-e ssh</code> especifica o shell remoto, no caso estamos usando SSH</li>
+  <li><code>./site</code> pasta origem </li>
+  <li><code>loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br</code> destino que queremos deixar sincronizado com a origem</li>
+</ul></p>
+
+<p>Vamos quebrar o último comando para entendermos como estamos nos conectando no servidor. <ul>
+  <li><code>loopinfinito</code> nome de usuário na máquina que estamos nos conectando</li>
+  <li><code>bugsy.dreamhost.com</code> endereço do server</li>
+  <li><code>~/loopinfinito.com.br</code> pasta dentro do server que queremos deixar sincronizada com a pasta local</li>
+</ul></p>
+
+<p>Com apenas este comando nós estamos:</p>
+
+<ul>
+<li>Atualizando o nosso server com todos os arquivos novos, sem a necessidade de escolher arquivos manualmente</li>
+
+<li>Conexão segura, já que estamos usando SSH</li>
+
+<li>Mais rápido que FTP, já que usamos apenas uma conexão e enviamos apenas o delta de cada arquivo</li>
+</ul>
+
+<p>Perceberam também que não estamos utilizando senha para nos conectarmos? Isso porque com o SSH nós apenas upamos as nossas chaves públicas para o servidor. Para quem quisermos dar acesso ao server, basta colar a chave pública no arquivo <code>~/.ssh/authorized_keys</code> no servidor (no nosso caso específico) e a conexão para esta pessoa com esta chave é liberada. E para revogar o acesso também é muito fácil, é só retirar a chave pública do mesmo arquivo, sem a necessidade de mudar de senha e reenviar a senha para todas as pessoas do projeto.</p>
+
+<h2 id='e_no__s_isso'>E não é só isso</h2>
+
+<p>Seria um saco termos que sempre digitar esse comando gigante quando fossemos dar um deploy. Para isso nós criamos uma tarefa com o <code>cake</code>, um sistema de build do CoffeeScript (nós amamos CoffeeScript) parecido com o rake (de Ruby) e make (de C).</p>
+
+<p>É só criar um arquivo chamado Cakefile na raiz do projeto e por este trecho de código:</p>
+<pre><code data-language='ruby'>
+# módulos
+{spawn, exec} = require('child_process')
+
+# task 'deploy'
+task 'deploy', 'Envia o diff do blog para o server', () ->
+
+  # configurações de deploy do rsync
+  # para poder dar o deploy com sucesso, é necessário que sua chave pública esteja no arquivo ~/.ssh/authorized_keys do servidor
+  user = "caiogondim"
+  remote_root = "~/tmp.caiogondim.com"
+  local_root = "site/"
+
+  # executa o deploy
+  rsync = spawn "rsync", [
+    "-avz"
+    "-e"
+    "ssh"
+    "#{__dirname}/#{local_root}"
+    "#{user}@bugsy.dreamhost.com:#{remote_root}"
+  ]
+
+  # evento disparado quando a tarefa imprime algo no stdout
+  rsync.stdout.on 'data', (data) ->
+    console.log data.toString().trim()
+
+  # evento disparado caso ocorra um erro na tarefa
+  rsync.stderr.on 'data', (data) ->
+    console.log "Erro no deploy: #{data}"
+
+  # evento disparado quando a tarefa é terminada
+  rsync.on 'exit', (code) ->
+    # console.log "exit code #{code}"
+</code></pre>
+<p>Agora aquele nosso comando gigantesco para deploy está encapsulado em um muito mais simples e fácil de modificar. É só entrarmos na pasta do projeto e digitarmos o comando abaixo e <strong>BOOM</strong>, o deploy acontece como mágica.</p>
+<pre><code data-language='shell'>
+# muito mais simples, hein? =)
+$ cake deploy
+</code></pre>
+<h2 id='rpido_quanto'>Rápido quanto?</h2>
+
+<p>Aqui nós tentamos fazer ciência, e como cientistas nós sabemos que <strong>não se pode melhorar o que não se pode medir</strong>. Então vamos deixar a fé de lado e ver na prática o quanto o rsync é mais rápido.</p>
+
+<p>Para simular diferentes velocidades em minha conexão com a internet utilizei o Network Link Conditioner para <a href='http://www.apple.com/macosx/'>OS X</a> (que será assunto para outro post).</p>
+
+<h3 id='upando_o_site_inteiro'>Upando o site inteiro</h3>
+
+<p>Upando o site inteiro em diferentes conexões, obtivemos os seguintes números.</p>
+
+<p><strong>1 Mbps DSL</strong></p>
+
+<ul>
+<li>FTP 165 segundos</li>
+
+<li>rsync 97 segundos</li>
+</ul>
+
+<p><strong>3G, average case</strong></p>
+
+<ul>
+<li>FTP 193 segundos</li>
+
+<li>rsync 112 segundos</li>
+</ul>
+
+<p><strong>EDGE, average case</strong></p>
+
+<ul>
+<li>FTP 350 segundos</li>
+
+<li>rsync 162 segundos</li>
+</ul>
+
+<p>Um gráfico com os dados que obtive</p>
+<img alt='' class='img' src='http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg' />
+<p>Neste cenário o rsync foi bem mais rápido.</p>
+
+<h3 id='adicionando_1_caractere_em_10_arquivos_diferentes'>Adicionando 1 caractere em 10 arquivos diferentes</h3>
+
+<p>Neste teste eu adicionei um caractere ao final de 10 diferentes arquivos e os upei.</p>
+
+<p><strong>1 Mbps DSL</strong></p>
+
+<ul>
+<li>FTP 10 segundos</li>
+
+<li>rsync 7 segundos</li>
+</ul>
+
+<p><strong>3G, average case</strong></p>
+
+<ul>
+<li>FTP 20 segundos</li>
+
+<li>rsync 11 segundos</li>
+</ul>
+
+<p><strong>EDGE, average case</strong></p>
+
+<ul>
+<li>FTP 29 segundos</li>
+
+<li>rsync 21 segundos</li>
+</ul>
+<img alt='' class='img' src='http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg' />
+<p>Em relação ao FTP eu apenas cronometrei o tempo gasto para upar os arquivos. Num cenário real nos ainda iríamos ter que escolher um a um os arquivos a serem enviados, o que resulta em mais tempo gasto. No caso do rsync, não precisamos escolher quais arquivos mandar. Ele mesmo verifica quais os arquivos que devem ser upados e faz todo o trabalho chato.</p>
+
+<p>Então não há mais motivos para upar arquivos como se ainda vivéssemos na década de 80. Automatize seu processo de deploy com o rsync e nunca mais esqueça de enviar <strong>aquele</strong> arquivo novamente.</p>
+<aside class='fonte'>
+  <h3>Referência</h3>
+  <ul>    
+    <li>→<a alt='How to Backup Linux? 15 rsync Command Examples' href='http://www.thegeekstuff.com/2010/09/rsync-command-examples/' title='How to Backup Linux? 15 rsync Command Examples'>Geek Stuff: How to Backup Linux? 15 rsync Command Examples</a></li>    
+    <li>→<a alt='CoffeeScript: Cake, and Cakefiles' href='http://coffeescript.org/#cake' title='CoffeeScript: Cake, and Cakefiles'>CoffeeScript: Cake, and Cakefiles</a></li>    
+  </ul>
+</aside>				
+					</section>
+					
+				</article>
+			</section>
+
+			
+
+		</section>
+
+	</div>
+	
+</body>
+</html>

@@ -3,9 +3,201 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-24T13:00:29-03:00</updated>
+  <updated>2012-05-25T16:23:48-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/05/27/automatizando-o-deploy-com-rsync</id>
+    <title>Automatizando o deploy com rsync</title>
+    <updated>2012-05-27T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/05/27/automatizando-o-deploy-com-rsync/" />
+    <author>
+      <name>Caio Gondim</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt='' src='http://localhost:4000/images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg' /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Você sempre esquece de upar um arquivo para o servidor de produção?&lt;/li&gt;
+
+&lt;li&gt;Acha um saco ter que upar os arquivos um a um?&lt;/li&gt;
+
+&lt;li&gt;Acha o FTP lento?&lt;/li&gt;
+
+&lt;li&gt;Se sente inseguro tendo que compartilhar a senha do server com outros?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Então&amp;#8230;&lt;/p&gt;
+
+&lt;h2 id='seus_problemas_se_acabaramse'&gt;Seus problemas se acabaram-se&lt;/h2&gt;
+
+&lt;p&gt;O rsync é uma ferramenta para sincronização de arquivos/pastas que se encaixa como uma luva para a tarefa de deploy (enviar os arquivos modificados para uma outra máquina).&lt;/p&gt;
+
+&lt;p&gt;Caso você esteja usando uma máquina Unix-like (Mac, Linux, BSD, &amp;#8230;) você provavelmente já possui o rsync instalado. Caso esteja utilizando o Windows, você pode baixar um port do projeto para sua plataforma &lt;a href='http://rsync.samba.org/download.html'&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Este post é o primeiro do Loop Infinito a ser upado com o rsync. Vamos então dar uma estudada em como o processo é feito por aqui para aprendermos um pouco mais sobre a ferramenta.&lt;/p&gt;
+
+&lt;h2 id='ligando_agora_voc_recebe'&gt;Ligando agora você recebe&amp;#8230;&lt;/h2&gt;
+
+&lt;p&gt;O rsync é uma ferramenta que roda no terminal. Nós apenas definimos a pasta/arquivo origem e a pasta/arquivo destino que deve ser sincronizado com a origem. Ele então verifica quais arquivos foram modificados entre a origem e o destino e envia apenas o delta (a diferença) entre as diferentes versões do mesmo arquivo, o que torna o processo bem mais rápido se comparado ao FTP.&lt;/p&gt;
+
+&lt;p&gt;O uso mais básico para o rsync seria o de deixarmos duas pastas na mesma máquina sincronizadas. Basta executarmos o rsync pela linha de comando, passando a pasta origem como primeiro argumento e a pasta destino como segundo argumento.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='shell'&gt;
+$ rsync ~/uma/pasta/origem/qualquer ~/outra/pasta/destino
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mas no nosso caso queremos sincronizar uma pasta em nossa máquina com uma outra em uma máquina remota (o servidor do nosso blog). Então o comando usado foi:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='shell'&gt;
+$ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Calma&lt;/strong&gt;! Não se apavore (ainda).&lt;/p&gt;
+
+&lt;p&gt;O nosso comando de deploy segue o mesmo princípio do exemplo mais básico que demos logo acima: o de deixar duas pasta sincronizadas. A diferença aqui é que estamos deixando duas pastas sincronizadas em diferentes máquinas. Parece complicado, mas vamos quebrar o comando acima e entendê-lo por completo. &lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;-a&lt;/code&gt; archive mode. esta flag habilita o modo recursivo e preserva links simbólicos, permissões e timestamps&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-v&lt;/code&gt; verbose. nos dá mais feedback sobre o que está acontecendo&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-z&lt;/code&gt; habilita compressão de dados durante o envio&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-e ssh&lt;/code&gt; especifica o shell remoto, no caso estamos usando SSH&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;./site&lt;/code&gt; pasta origem &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br&lt;/code&gt; destino que queremos deixar sincronizado com a origem&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;Vamos quebrar o último comando para entendermos como estamos nos conectando no servidor. &lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;loopinfinito&lt;/code&gt; nome de usuário na máquina que estamos nos conectando&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;bugsy.dreamhost.com&lt;/code&gt; endereço do server&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;~/loopinfinito.com.br&lt;/code&gt; pasta dentro do server que queremos deixar sincronizada com a pasta local&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+
+&lt;p&gt;Com apenas este comando nós estamos:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Atualizando o nosso server com todos os arquivos novos, sem a necessidade de escolher arquivos manualmente&lt;/li&gt;
+
+&lt;li&gt;Conexão segura, já que estamos usando SSH&lt;/li&gt;
+
+&lt;li&gt;Mais rápido que FTP, já que usamos apenas uma conexão e enviamos apenas o delta de cada arquivo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Perceberam também que não estamos utilizando senha para nos conectarmos? Isso porque com o SSH nós apenas upamos as nossas chaves públicas para o servidor. Para quem quisermos dar acesso ao server, basta colar a chave pública no arquivo &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; no servidor (no nosso caso específico) e a conexão para esta pessoa com esta chave é liberada. E para revogar o acesso também é muito fácil, é só retirar a chave pública do mesmo arquivo, sem a necessidade de mudar de senha e reenviar a senha para todas as pessoas do projeto.&lt;/p&gt;
+
+&lt;h2 id='e_no__s_isso'&gt;E não é só isso&lt;/h2&gt;
+
+&lt;p&gt;Seria um saco termos que sempre digitar esse comando gigante quando fossemos dar um deploy. Para isso nós criamos uma tarefa com o &lt;code&gt;cake&lt;/code&gt;, um sistema de build do CoffeeScript (nós amamos CoffeeScript) parecido com o rake (de Ruby) e make (de C).&lt;/p&gt;
+
+&lt;p&gt;É só criar um arquivo chamado Cakefile na raiz do projeto e por este trecho de código:&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='ruby'&gt;
+# módulos
+{spawn, exec} = require('child_process')
+
+# task 'deploy'
+task 'deploy', 'Envia o diff do blog para o server', () -&gt;
+
+  # configurações de deploy do rsync
+  # para poder dar o deploy com sucesso, é necessário que sua chave pública esteja no arquivo ~/.ssh/authorized_keys do servidor
+  user = &quot;caiogondim&quot;
+  remote_root = &quot;~/tmp.caiogondim.com&quot;
+  local_root = &quot;site/&quot;
+
+  # executa o deploy
+  rsync = spawn &quot;rsync&quot;, [
+    &quot;-avz&quot;
+    &quot;-e&quot;
+    &quot;ssh&quot;
+    &quot;#{__dirname}/#{local_root}&quot;
+    &quot;#{user}@bugsy.dreamhost.com:#{remote_root}&quot;
+  ]
+
+  # evento disparado quando a tarefa imprime algo no stdout
+  rsync.stdout.on 'data', (data) -&gt;
+    console.log data.toString().trim()
+
+  # evento disparado caso ocorra um erro na tarefa
+  rsync.stderr.on 'data', (data) -&gt;
+    console.log &quot;Erro no deploy: #{data}&quot;
+
+  # evento disparado quando a tarefa é terminada
+  rsync.on 'exit', (code) -&gt;
+    # console.log &quot;exit code #{code}&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora aquele nosso comando gigantesco para deploy está encapsulado em um muito mais simples e fácil de modificar. É só entrarmos na pasta do projeto e digitarmos o comando abaixo e &lt;strong&gt;BOOM&lt;/strong&gt;, o deploy acontece como mágica.&lt;/p&gt;
+&lt;pre&gt;&lt;code data-language='shell'&gt;
+# muito mais simples, hein? =)
+$ cake deploy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id='rpido_quanto'&gt;Rápido quanto?&lt;/h2&gt;
+
+&lt;p&gt;Aqui nós tentamos fazer ciência, e como cientistas nós sabemos que &lt;strong&gt;não se pode melhorar o que não se pode medir&lt;/strong&gt;. Então vamos deixar a fé de lado e ver na prática o quanto o rsync é mais rápido.&lt;/p&gt;
+
+&lt;p&gt;Para simular diferentes velocidades em minha conexão com a internet utilizei o Network Link Conditioner para &lt;a href='http://www.apple.com/macosx/'&gt;OS X&lt;/a&gt; (que será assunto para outro post).&lt;/p&gt;
+
+&lt;h3 id='upando_o_site_inteiro'&gt;Upando o site inteiro&lt;/h3&gt;
+
+&lt;p&gt;Upando o site inteiro em diferentes conexões, obtivemos os seguintes números.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1 Mbps DSL&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FTP 165 segundos&lt;/li&gt;
+
+&lt;li&gt;rsync 97 segundos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;3G, average case&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FTP 193 segundos&lt;/li&gt;
+
+&lt;li&gt;rsync 112 segundos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;EDGE, average case&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FTP 350 segundos&lt;/li&gt;
+
+&lt;li&gt;rsync 162 segundos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Um gráfico com os dados que obtive&lt;/p&gt;
+&lt;img alt='' class='img' src='http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg' /&gt;
+&lt;p&gt;Neste cenário o rsync foi bem mais rápido.&lt;/p&gt;
+
+&lt;h3 id='adicionando_1_caractere_em_10_arquivos_diferentes'&gt;Adicionando 1 caractere em 10 arquivos diferentes&lt;/h3&gt;
+
+&lt;p&gt;Neste teste eu adicionei um caractere ao final de 10 diferentes arquivos e os upei.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1 Mbps DSL&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FTP 10 segundos&lt;/li&gt;
+
+&lt;li&gt;rsync 7 segundos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;3G, average case&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FTP 20 segundos&lt;/li&gt;
+
+&lt;li&gt;rsync 11 segundos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;EDGE, average case&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FTP 29 segundos&lt;/li&gt;
+
+&lt;li&gt;rsync 21 segundos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt='' class='img' src='http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg' /&gt;
+&lt;p&gt;Em relação ao FTP eu apenas cronometrei o tempo gasto para upar os arquivos. Num cenário real nos ainda iríamos ter que escolher um a um os arquivos a serem enviados, o que resulta em mais tempo gasto. No caso do rsync, não precisamos escolher quais arquivos mandar. Ele mesmo verifica quais os arquivos que devem ser upados e faz todo o trabalho chato.&lt;/p&gt;
+
+&lt;p&gt;Então não há mais motivos para upar arquivos como se ainda vivéssemos na década de 80. Automatize seu processo de deploy com o rsync e nunca mais esqueça de enviar &lt;strong&gt;aquele&lt;/strong&gt; arquivo novamente.&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+  &lt;h3&gt;Referência&lt;/h3&gt;
+  &lt;ul&gt;    
+    &lt;li&gt;→&lt;a alt='How to Backup Linux? 15 rsync Command Examples' href='http://www.thegeekstuff.com/2010/09/rsync-command-examples/' title='How to Backup Linux? 15 rsync Command Examples'&gt;Geek Stuff: How to Backup Linux? 15 rsync Command Examples&lt;/a&gt;&lt;/li&gt;    
+    &lt;li&gt;→&lt;a alt='CoffeeScript: Cake, and Cakefiles' href='http://coffeescript.org/#cake' title='CoffeeScript: Cake, and Cakefiles'&gt;CoffeeScript: Cake, and Cakefiles&lt;/a&gt;&lt;/li&gt;    
+  &lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
   
   <entry>
     <id>http://loopinfinito.com.br/2012/05/23/saiba-a-hora-de-ejetar</id>
