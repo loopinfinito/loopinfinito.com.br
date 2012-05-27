@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-27T19:30:15-03:00</updated>
+  <updated>2012-05-27T19:46:04-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -90,7 +90,8 @@ $ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.b
 task 'deploy', 'Envia o diff do blog para o server', () -&gt;
 
   # configurações de deploy do rsync
-  # para poder dar o deploy com sucesso, é necessário que sua chave pública esteja no arquivo ~/.ssh/authorized_keys do servidor
+  # para poder dar o deploy com sucesso, é necessário que sua chave pública 
+  # esteja no arquivo ~/.ssh/authorized_keys do servidor
   user = &quot;caiogondim&quot;
   remote_root = &quot;~/tmp.caiogondim.com&quot;
   local_root = &quot;site/&quot;

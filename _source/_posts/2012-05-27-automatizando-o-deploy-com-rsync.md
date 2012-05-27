@@ -93,7 +93,8 @@ Para isso nós criamos uma tarefa com o <code>cake</code>, um sistema de build d
 task 'deploy', 'Envia o diff do blog para o server', () ->
 
   # configurações de deploy do rsync
-  # para poder dar o deploy com sucesso, é necessário que sua chave pública esteja no arquivo ~/.ssh/authorized_keys do servidor
+  # para poder dar o deploy com sucesso, é necessário que sua chave pública 
+  # esteja no arquivo ~/.ssh/authorized_keys do servidor
   user = "caiogondim"
   remote_root = "~/tmp.caiogondim.com"
   local_root = "site/"
