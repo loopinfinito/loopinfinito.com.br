@@ -106,3 +106,5 @@ section#disqus-power a:hover{text-decoration:underline;}
 h3.dsq-h3-reactions{display:block !important;background:white;margin:0px !important;padding:0 50px 20px 50px !important;position:relative !important;left:-50px !important;width:600px;}
 #dsq-reactions{background:white;padding:0px 50px 30px 50px !important;width:600px;position:relative;left:-50px;}
 #disqus-power{display:none;}
+#dsq-content #dsq-global-toolbar .dsq-global-toolbar-left li.dsq-dislike-thread{display:none;}
+#dsq-content #dsq-global-toolbar .dsq-global-toolbar-left li.dsq-like-thread{margin-right:5px;}
