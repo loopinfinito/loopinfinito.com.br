@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-25T16:23:48-03:00</updated>
+  <updated>2012-05-27T19:30:15-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -15,7 +15,7 @@
     <author>
       <name>Caio Gondim</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt='' src='http://localhost:4000/images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg' /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg' /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Você sempre esquece de upar um arquivo para o servidor de produção?&lt;/li&gt;
 
@@ -156,7 +156,7 @@ $ cake deploy
 &lt;/ul&gt;
 
 &lt;p&gt;Um gráfico com os dados que obtive&lt;/p&gt;
-&lt;img alt='' class='img' src='http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg' /&gt;
+&lt;img alt='' class='img' src='http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg' /&gt;
 &lt;p&gt;Neste cenário o rsync foi bem mais rápido.&lt;/p&gt;
 
 &lt;h3 id='adicionando_1_caractere_em_10_arquivos_diferentes'&gt;Adicionando 1 caractere em 10 arquivos diferentes&lt;/h3&gt;
@@ -186,7 +186,7 @@ $ cake deploy
 
 &lt;li&gt;rsync 21 segundos&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img alt='' class='img' src='http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg' /&gt;
+&lt;img alt='' class='img' src='http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg' /&gt;
 &lt;p&gt;Em relação ao FTP eu apenas cronometrei o tempo gasto para upar os arquivos. Num cenário real nos ainda iríamos ter que escolher um a um os arquivos a serem enviados, o que resulta em mais tempo gasto. No caso do rsync, não precisamos escolher quais arquivos mandar. Ele mesmo verifica quais os arquivos que devem ser upados e faz todo o trabalho chato.&lt;/p&gt;
 
 &lt;p&gt;Então não há mais motivos para upar arquivos como se ainda vivéssemos na década de 80. Automatize seu processo de deploy com o rsync e nunca mais esqueça de enviar &lt;strong&gt;aquele&lt;/strong&gt; arquivo novamente.&lt;/p&gt;
