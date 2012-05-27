@@ -9,10 +9,10 @@
 		<meta name="author" content="Caio Gondim" />
 	
 	
-		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend, loop, loop infinito, l8p, crista da onda" />
+		<meta name="keywords" content="rsync, deploy, deploy automático, cake task, coffeescript" />
 	
 	
-		<meta name="description" content="lorem ipsum" />
+		<meta name="description" content="O rsync é uma ferramenta de sincronização de pastas/arquivos muito comum no mundo Unix para realizar backups. Neste post vamos aprender como utilizá-lo para a tarefa de deploy de forma automatizada, segura e veloz." />
 	
 	<meta name="language" content="pt" />
 	<meta name="content-language" content="pt-BR" />
@@ -93,6 +93,21 @@
 							<a href="http://twitter.com/caio_gondim" title="Caio Gondim" alt="Caio Gondim" rel="author" itemprop="author">Caio Gondim</a>
 						</li>
 						
+							<li class="post-comentarios"><a href="/2012/05/27/automatizando-o-deploy-com-rsync/#disqus_thread" data-disqus-identifier="/2012/05/27/automatizando-o-deploy-com-rsync" itemprop="interactionCount">Carregando...</a></li>
+						
+						
+						<li class="post-tags">
+							<ul>
+								
+								<li><a href="/tag/automatizacao"><span>#</span>automatizacao</a></li>,
+								
+								<li><a href="/tag/coffeescript"><span>#</span>coffeescript</a></li>
+													
+							</ul>
+							
+								<span class="hidden" itemprop="keywords">rsync, deploy, deploy automático, cake task, coffeescript</span>
+							
+						</li>
 						
 					</ul>	
 				</aside>
@@ -101,7 +116,7 @@
 						<h1><a href="/2012/05/27/automatizando-o-deploy-com-rsync/" itemprop="headline">Automatizando o deploy com <span>rsync</span></a></h1>
 					</header>
 					<section itemprop="articleBody">
-						<p><img alt='' src='http://localhost:4000/images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg' /></p>
+						<p><img alt='' src='http://loopinfinito.com.br/images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg' /></p>
 <ul>
 <li>Você sempre esquece de upar um arquivo para o servidor de produção?</li>
 
@@ -242,7 +257,7 @@ $ cake deploy
 </ul>
 
 <p>Um gráfico com os dados que obtive</p>
-<img alt='' class='img' src='http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg' />
+<img alt='' class='img' src='http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg' />
 <p>Neste cenário o rsync foi bem mais rápido.</p>
 
 <h3 id='adicionando_1_caractere_em_10_arquivos_diferentes'>Adicionando 1 caractere em 10 arquivos diferentes</h3>
@@ -272,7 +287,7 @@ $ cake deploy
 
 <li>rsync 21 segundos</li>
 </ul>
-<img alt='' class='img' src='http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg' />
+<img alt='' class='img' src='http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg' />
 <p>Em relação ao FTP eu apenas cronometrei o tempo gasto para upar os arquivos. Num cenário real nos ainda iríamos ter que escolher um a um os arquivos a serem enviados, o que resulta em mais tempo gasto. No caso do rsync, não precisamos escolher quais arquivos mandar. Ele mesmo verifica quais os arquivos que devem ser upados e faz todo o trabalho chato.</p>
 
 <p>Então não há mais motivos para upar arquivos como se ainda vivéssemos na década de 80. Automatize seu processo de deploy com o rsync e nunca mais esqueça de enviar <strong>aquele</strong> arquivo novamente.</p>
@@ -285,14 +300,51 @@ $ cake deploy
 </aside>				
 					</section>
 					
+					<footer id="disqus_thread">
+						<noscript>Por favor, habilite JavaScript para ver os comentários. <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					</footer>
+					
 				</article>
 			</section>
 
+			
+				<section id="disqus-power">
+					<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+				</section>
 			
 
 		</section>
 
 	</div>
+	
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
+		    var disqus_identifier = '/2012/05/27/automatizando-o-deploy-com-rsync';
+		    // var disqus_developer = 1;
+
+		    // callback do Disqus
+		    function disqus_callback() {
+		    	// modifica o título da caixa de comentários
+		    	$('#dsq-reply h3').html('Comentários')
+
+		    	//
+		    	// $('#dsq-comments').find('span.dsq-like-thumb').css({ position: 'relative', bottom: '5px' })
+		    }
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+		        // comment count
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    })();
+		</script>
 	
 </body>
 </html>

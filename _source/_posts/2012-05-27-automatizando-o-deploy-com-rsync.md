@@ -3,15 +3,15 @@ title: Automatizando o deploy com <span>rsync</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
-resumo: lorem ipsum
+resumo: O rsync é uma ferramenta de sincronização de pastas/arquivos muito comum no mundo Unix para realizar backups. Neste post vamos aprender como utilizá-lo para a tarefa de deploy de forma automatizada, segura e veloz.
 image: images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg
-tags: 
-keywords: 
-comments: false
+tags: automatizacao coffeescript
+keywords: rsync, deploy, deploy automático, cake task, coffeescript
+comments: true
 styles: [code.html]
 ---
 
-<p><img src="http://localhost:4000/{{ page.image }}" alt=""></p>
+<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt=""></p>
 
 
 - Você sempre esquece de upar um arquivo para o servidor de produção?
@@ -153,7 +153,7 @@ __EDGE, average case__
 
 Um gráfico com os dados que obtive
 
-<img src="http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg" alt="" class="img" />
+<img src="http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg" alt="" class="img" />
 
 Neste cenário o rsync foi bem mais rápido.
 
@@ -173,7 +173,7 @@ __EDGE, average case__
 - FTP 29 segundos
 - rsync 21 segundos
 
-<img src="http://localhost:4000/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg" alt="" class="img" />
+<img src="http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg" alt="" class="img" />
 
 Em relação ao FTP eu apenas cronometrei o tempo gasto para upar os arquivos. Num cenário real nos ainda iríamos ter que escolher um a um os arquivos a serem enviados, o que resulta em mais tempo gasto.
 No caso do rsync, não precisamos escolher quais arquivos mandar. Ele mesmo verifica quais os arquivos que devem ser upados e faz todo o trabalho chato.
