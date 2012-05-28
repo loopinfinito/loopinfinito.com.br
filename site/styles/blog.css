@@ -1,6 +1,11 @@
 *{margin:0;padding:0;}
 body{background:url(../images/bg.png) #f2f2f2;font-family:"Lucida Grande";}
 #wrapper{position:absolute;left:50%;width:900px;margin-left:-350px;}
+#forkme{position:fixed;margin:15px;}
+#forkme a{float:left;opacity:0.15;-o-opacity:0.15;-moz-opacity:0.15;-webkit-opacity:0.15;filter:alpha(opacity=15);}
+#forkme p{float:left;color:#ccc;font-family:Museo,"Helvetica Neue",Helvetica,sans-serif;font-size:12px;font-weight:300;line-height:16px;margin-left:5px;opacity:0;-o-opacity:0;-moz-opacity:0;-webkit-opacity:0;filter:alpha(opacity=0);transition:opacity 0.5s ease,margin-left 0.5s ease;-o-transition:opacity 0.5s ease,margin-left 0.5s ease;-moz-transition:opacity 0.5s ease,margin-left 0.5s ease;-webkit-transition:opacity 0.5s ease,margin-left 0.5s ease;}
+#forkme p strong{color:#999;}
+#forkme p.show{opacity:1;-o-opacity:1;-moz-opacity:1;-webkit-opacity:1;filter:alpha(opacity=1);margin-left:15px;}
 .bold,strong{font-weight:bold;color:#333;}
 .clear{clear:both;height:0px;overflow:hidden;}
 .hidden{display:none;}

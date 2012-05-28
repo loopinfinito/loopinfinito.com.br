@@ -36,6 +36,12 @@
 				$(this).toggleClass('open');
 				$('#social').toggleClass('open');
 			});
+
+			$('#forkme a').hover( function(){
+				$('#forkme p').addClass('show');
+			}, function(){
+				$('#forkme p').removeClass('show');
+			});
 		});
 
 	  var _gaq = _gaq || [];
@@ -58,6 +64,10 @@
 			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
 		</ul>
 	</section>
+	<div id="forkme">
+		<a href="https://github.com/loopinfinito/loopinfinito.com.br"><img src="/images/icons/fork.png" alt="" /></a>
+		<p>fork me on <br /><strong>GitHub</strong></p>
+	</div>
 	<div id="wrapper">
 		<header id="main">
 			<h1><a href="/" id="logo">Loop Infinito</a></h1>
