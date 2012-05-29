@@ -25,6 +25,7 @@
 body {
 	background: url(../images/bg.png) #F2F2F2;
 	font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-top: 5px solid #666;
 }
 
 #wrapper {
@@ -35,28 +36,55 @@ body {
 	/*padding-bottom: 50px;*/
 }
 
-#forkme {
+#links {
 	position: fixed;
 	margin: 15px;
+	bottom: 0px;
+	list-style: none;
+	display: block;
 }
 
-	#forkme a {
-		float: left;
-		opacity: 0.15;
-		-o-opacity: 0.15;
-		-moz-opacity: 0.15;
-		-webkit-opacity: 0.15;
-		filter:alpha(opacity=15);
+	#links li {
+		display: block;
+		height: 40px;
 	}
 
-	#forkme p {
+	#links div {
+		width: 30px;
 		float: left;
-		color: #ccc;
+		text-align: center;
+	}
+
+	#links a {
+		opacity: 0.2;
+		-o-opacity: 0.2;
+		-moz-opacity: 0.2;
+		-webkit-opacity: 0.2;
+		filter:alpha(opacity=20);
+		transition: opacity 0.5s ease;
+		-o-transition: opacity 0.5s ease;
+		-moz-transition: opacity 0.5s ease;
+		-webkit-transition: opacity 0.5s ease;
+	}
+
+	#links a:hover {
+		opacity: 0.5;
+		-o-opacity: 0.5;
+		-moz-opacity: 0.5;
+		-webkit-opacity: 0.5;
+		filter:alpha(opacity=50);
+	}
+
+	#links span {
+		display: block;
+		float: left;
+		line-height: 40px !important;
+		color: #aaa;
 		font-family: Museo, MuseoRegular, Georgia, Times, serif;
 		font-size: 12px;
 		font-weight: 300;
 		line-height: 16px;
-		margin-left: 5px;
+		margin-left: 0px;
 		opacity: 0;
 		-o-opacity: 0;
 		-moz-opacity: 0;
@@ -68,17 +96,29 @@ body {
 		-webkit-transition: opacity 0.5s ease, margin-left 0.5s ease;
 	}
 
-		#forkme p strong {
-			color: #999;
+		#links span strong {
+			color: #888;
 		}
 
-	#forkme p.show {
+	#links span.show {
 		opacity: 1;
 		-o-opacity: 1;
 		-moz-opacity: 1;
 		-webkit-opacity: 1;
 		filter:alpha(opacity=1);
 		margin-left: 15px;
+	}
+
+	#links li.twitter div {
+		padding-top: 10px;
+	}
+
+	#links li.fork div {
+		padding-top: 5px;
+	}
+
+	#links li.rss div {
+		padding-top: 10px;
 	}
 
 /* Diversos
@@ -180,70 +220,6 @@ strong {
 	background-color: #289678;
 }
 
-/* Redes sociais
----------------------------------------- */
-section#social {
-	height: 5px;
-	overflow: hidden;
-	background: url(../images/bg_dark.png) #666666;
-	border-bottom: 1px solid #fff;
-	-webkit-transition: height 0.2s ease;
-}
-
-section#social.open {
-	height: 55px;
-}
-
-	section#social ul {
-		list-style: none;
-		display: block;
-		width: 700px;
-		margin: auto;
-		padding-top: 12px;
-	}
-
-		section#social ul li {
-			display: block;
-			float: right;
-			width: 29px;
-			height: 29px;
-			margin-left: 12px;
-		}
-
-a#social-btn {
-	display: block;
-	width: 31px;
-	height: 44px;
-	background: url(../images/social_btn.png) no-repeat;
-	position: relative;
-	top: -11px;
-}
-
-a#social-btn span {
-	text-align: center;
-	padding-top: 11px;
-	position: relative;
-	left: -1px;
-}
-
-a#social-btn span#social-btn-open {
-	display: block;
-}
-
-a#social-btn span#social-btn-close {
-	display: none;
-	font-size: 14px;
-	color: #ddd;
-}
-
-a#social-btn.open span#social-btn-open {
-	display: none;
-}
-
-a#social-btn.open span#social-btn-close {
-	display: block;
-}
-
 /* Nav
 ---------------------------------------- */
 header#main {
@@ -263,7 +239,7 @@ header#main {
 
 	header#main nav {
 		position:absolute;
-		right: 143px;
+		right: 200px;
 		top: 10px;
 	}
 
@@ -637,6 +613,16 @@ section#disqus-power {
 	position: relative;
 	left: -50px;
 }
+
+	#dsq-comments li.dsq-moderator div.dsq-comment-header {
+		background-color: #ddd;
+	}
+
+		#dsq-comments li.dsq-moderator div.dsq-comment-header a.dsq-commenter-name {
+			color: white;
+			text-shadow: 0px -1px 0px #999;
+			-moz-text-shadow: 0px -1px 0px #999;
+		}
 
 	#dsq-comments span.dsq-like-thumb {
 		position: relative !important;

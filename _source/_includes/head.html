@@ -43,16 +43,10 @@
 		
 		$(document).ready( function(){
 
-			$('#social-btn').click( function(e){
-				e.preventDefault();
-				$(this).toggleClass('open');
-				$('#social').toggleClass('open');
-			});
-
-			$('#forkme a').hover( function(){
-				$('#forkme p').addClass('show');
+			$('#links a').hover( function(){
+				$(this).parent().siblings('span').addClass('show');
 			}, function(){
-				$('#forkme p').removeClass('show');
+				$(this).parent().siblings('span').removeClass('show');
 			});
 		});
 
@@ -69,17 +63,20 @@
 	</script>
 </head>
 <body>
-	<section id="social">
-		<ul>
-			<li><a class="icon rss" alt="RSS" title="RSS" href="http://feeds.feedburner.com/l8p"></a></li>
-			<li><a class="icon twitter" alt="Twitter" title="Twitter" href="http://twitter.com/loopinfinito"></a></li>
-			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
-		</ul>
-	</section>
-	<div id="forkme">
-		<a href="https://github.com/loopinfinito/loopinfinito.com.br"><img src="/images/icons/fork.png" alt="" /></a>
-		<p>fork me on <br /><strong>GitHub</strong></p>
-	</div>
+	<ul id="links">
+		<li class="twitter">
+			<div><a href="http://twitter.com/loopinfinito"><img src="/images/icons/twitter.png" alt="" /></a></div>
+			<span>siga o <strong>Twitter</strong></span>
+		</li>
+		<li class="fork">
+			<div><a href="https://github.com/loopinfinito/loopinfinito.com.br"><img src="/images/icons/fork.png" alt="" /></a></div>
+			<span>fork me on <strong>GitHub</strong></span>
+		</li>
+		<li class="rss">
+			<div><a href="http://feeds.feedburner.com/l8p"><img src="/images/icons/rss.png" alt="" /></a></div>
+			<span>assine o <strong>Feed</strong></span>
+		</li>
+	</ul>
 	<div id="wrapper">
 		<header id="main">
 			<h1><a href="/" id="logo">Loop Infinito</a></h1>
@@ -88,12 +85,6 @@
 					<li><a href="/">Posts</a></li>
 					<li><a href="/projetos">Projetos</a></li>
 					<li><a href="/sobre">Sobre</a></li>
-					<li>
-						<a href="#social" id="social-btn">
-							<span id="social-btn-open"><img src="/images/icons/loopinfinito.png" alt=""></span>
-							<span id="social-btn-close">&times;</span>
-						</a>
-					</li>
 				</ul>
 			</nav>
 		</header>
