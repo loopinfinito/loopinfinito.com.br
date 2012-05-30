@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-29T18:08:16-03:00</updated>
+  <updated>2012-05-30T02:32:44-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -41,13 +41,13 @@
 &lt;p&gt;O rsync é uma ferramenta que roda no terminal. Nós apenas definimos a pasta/arquivo origem e a pasta/arquivo destino que deve ser sincronizado com a origem. Ele então verifica quais arquivos foram modificados entre a origem e o destino e envia apenas o delta (a diferença) entre as diferentes versões do mesmo arquivo, o que torna o processo bem mais rápido se comparado ao FTP.&lt;/p&gt;
 
 &lt;p&gt;O uso mais básico para o rsync seria o de deixarmos duas pastas na mesma máquina sincronizadas. Basta executarmos o rsync pela linha de comando, passando a pasta origem como primeiro argumento e a pasta destino como segundo argumento.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='shell'&gt;
-$ rsync ~/uma/pasta/origem/qualquer ~/outra/pasta/destino
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='nv'&gt;$ &lt;/span&gt;rsync ~/uma/pasta/origem/qualquer ~/outra/pasta/destino
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Mas no nosso caso queremos sincronizar uma pasta em nossa máquina com uma outra em uma máquina remota (o servidor do nosso blog). Então o comando usado foi:&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='shell'&gt;
-$ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='nv'&gt;$ &lt;/span&gt;rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Calma&lt;/strong&gt;! Não se apavore (ainda).&lt;/p&gt;
 
 &lt;p&gt;O nosso comando de deploy segue o mesmo princípio do exemplo mais básico que demos logo acima: o de deixar duas pasta sincronizadas. A diferença aqui é que estamos deixando duas pastas sincronizadas em diferentes máquinas. Parece complicado, mas vamos quebrar o comando acima e entendê-lo por completo. &lt;ul&gt;
@@ -82,46 +82,46 @@ $ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.b
 &lt;p&gt;Seria um saco termos que sempre digitar esse comando gigante quando fossemos dar um deploy. Para isso nós criamos uma tarefa com o &lt;code&gt;cake&lt;/code&gt;, um sistema de build do CoffeeScript (nós amamos CoffeeScript) parecido com o rake (de Ruby) e make (de C).&lt;/p&gt;
 
 &lt;p&gt;É só criar um arquivo chamado Cakefile na raiz do projeto e por este trecho de código:&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='ruby'&gt;
-# módulos
-{spawn, exec} = require('child_process')
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='coffeescript'&gt;&lt;span class='c1'&gt;# módulos&lt;/span&gt;
+&lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='nx'&gt;spawn&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;exec&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;require&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;child_process&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 
-# task 'deploy'
-task 'deploy', 'Envia o diff do blog para o server', () -&gt;
+&lt;span class='c1'&gt;# task &amp;#39;deploy&amp;#39;&lt;/span&gt;
+&lt;span class='nx'&gt;task&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;deploy&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;Envia o diff do blog para o server&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nf'&gt;() -&amp;gt;&lt;/span&gt;
 
-  # configurações de deploy do rsync
-  # para poder dar o deploy com sucesso, é necessário que sua chave pública 
-  # esteja no arquivo ~/.ssh/authorized_keys do servidor
-  user = &quot;caiogondim&quot;
-  remote_root = &quot;~/tmp.caiogondim.com&quot;
-  local_root = &quot;site/&quot;
+  &lt;span class='c1'&gt;# configurações de deploy do rsync&lt;/span&gt;
+  &lt;span class='c1'&gt;# para poder dar o deploy com sucesso, é necessário que sua chave pública &lt;/span&gt;
+  &lt;span class='c1'&gt;# esteja no arquivo ~/.ssh/authorized_keys do servidor&lt;/span&gt;
+  &lt;span class='nv'&gt;user = &lt;/span&gt;&lt;span class='s'&gt;&amp;quot;caiogondim&amp;quot;&lt;/span&gt;
+  &lt;span class='nv'&gt;remote_root = &lt;/span&gt;&lt;span class='s'&gt;&amp;quot;~/tmp.caiogondim.com&amp;quot;&lt;/span&gt;
+  &lt;span class='nv'&gt;local_root = &lt;/span&gt;&lt;span class='s'&gt;&amp;quot;site/&amp;quot;&lt;/span&gt;
 
-  # executa o deploy
-  rsync = spawn &quot;rsync&quot;, [
-    &quot;-avz&quot;
-    &quot;-e&quot;
-    &quot;ssh&quot;
-    &quot;#{__dirname}/#{local_root}&quot;
-    &quot;#{user}@bugsy.dreamhost.com:#{remote_root}&quot;
-  ]
+  &lt;span class='c1'&gt;# executa o deploy&lt;/span&gt;
+  &lt;span class='nv'&gt;rsync = &lt;/span&gt;&lt;span class='nx'&gt;spawn&lt;/span&gt; &lt;span class='s'&gt;&amp;quot;rsync&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt;
+    &lt;span class='s'&gt;&amp;quot;-avz&amp;quot;&lt;/span&gt;
+    &lt;span class='s'&gt;&amp;quot;-e&amp;quot;&lt;/span&gt;
+    &lt;span class='s'&gt;&amp;quot;ssh&amp;quot;&lt;/span&gt;
+    &lt;span class='s'&gt;&amp;quot;&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='nx'&gt;__dirname&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s'&gt;/&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='nx'&gt;local_root&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class='s'&gt;&amp;quot;&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='nx'&gt;user&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s'&gt;@bugsy.dreamhost.com:&lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='nx'&gt;remote_root&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class='p'&gt;]&lt;/span&gt;
 
-  # evento disparado quando a tarefa imprime algo no stdout
-  rsync.stdout.on 'data', (data) -&gt;
-    console.log data.toString().trim()
+  &lt;span class='c1'&gt;# evento disparado quando a tarefa imprime algo no stdout&lt;/span&gt;
+  &lt;span class='nx'&gt;rsync&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;stdout&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='kc'&gt;on&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nf'&gt;(data) -&amp;gt;&lt;/span&gt;
+    &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt; &lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;toString&lt;/span&gt;&lt;span class='p'&gt;().&lt;/span&gt;&lt;span class='nx'&gt;trim&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
 
-  # evento disparado caso ocorra um erro na tarefa
-  rsync.stderr.on 'data', (data) -&gt;
-    console.log &quot;Erro no deploy: #{data}&quot;
+  &lt;span class='c1'&gt;# evento disparado caso ocorra um erro na tarefa&lt;/span&gt;
+  &lt;span class='nx'&gt;rsync&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;stderr&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='kc'&gt;on&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nf'&gt;(data) -&amp;gt;&lt;/span&gt;
+    &lt;span class='nx'&gt;console&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;log&lt;/span&gt; &lt;span class='s'&gt;&amp;quot;Erro no deploy: &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='nx'&gt;data&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;&lt;/span&gt;
 
-  # evento disparado quando a tarefa é terminada
-  rsync.on 'exit', (code) -&gt;
-    # console.log &quot;exit code #{code}&quot;
+  &lt;span class='c1'&gt;# evento disparado quando a tarefa é terminada&lt;/span&gt;
+  &lt;span class='nx'&gt;rsync&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='kc'&gt;on&lt;/span&gt; &lt;span class='s'&gt;&amp;#39;exit&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='nf'&gt;(code) -&amp;gt;&lt;/span&gt;
+    &lt;span class='c1'&gt;# console.log &amp;quot;exit code #{code}&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Agora aquele nosso comando gigantesco para deploy está encapsulado em um muito mais simples e fácil de modificar. É só entrarmos na pasta do projeto e digitarmos o comando abaixo e &lt;strong&gt;BOOM&lt;/strong&gt;, o deploy acontece como mágica.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='shell'&gt;
-# muito mais simples, hein? =)
-$ cake deploy
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='c'&gt;# muito mais simples, hein? =)&lt;/span&gt;
+&lt;span class='nv'&gt;$ &lt;/span&gt;cake deploy
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='rpido_quanto'&gt;Rápido quanto?&lt;/h2&gt;
 
 &lt;p&gt;Aqui nós tentamos fazer ciência, e como cientistas nós sabemos que &lt;strong&gt;não se pode melhorar o que não se pode medir&lt;/strong&gt;. Então vamos deixar a fé de lado e ver na prática o quanto o rsync é mais rápido.&lt;/p&gt;
@@ -279,75 +279,75 @@ $ cake deploy
 &lt;h2 id='a_brincadeira__muito_fcil'&gt;A brincadeira é muito fácil&lt;/h2&gt;
 
 &lt;p&gt;Vamos começar com o código HTML. Apenas uma &lt;code&gt;div&lt;/code&gt; contendo 6 outras &lt;code&gt;div&lt;/code&gt;, uma para cada face do pião, a &lt;code&gt;div&lt;/code&gt; wrapper, que servirá de container para o pião, e mais uma última para a moldura do pião.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;
-&lt;div id='wrapper'&gt;
-  &lt;div id='piao'&gt;
-    &lt;!-- todas as faces do pião --&gt;
-    &lt;div class='numero um'&gt;1&lt;/div&gt;
-    &lt;div class='numero dois'&gt;2&lt;/div&gt;
-    &lt;div class='numero tres'&gt;3&lt;/div&gt;
-    &lt;div class='numero quatro'&gt;4&lt;/div&gt;
-    &lt;div class='numero cinco'&gt;5&lt;/div&gt;
-    &lt;div class='numero seis'&gt;6&lt;/div&gt;        
-  &lt;/div&gt;
-  &lt;div id='moldura'&gt; &lt;/div&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;wrapper&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;piao&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- todas as faces do pião --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;numero um&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;1&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;numero dois&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;2&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;numero tres&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;3&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;numero quatro&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;4&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;numero cinco&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;5&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;numero seis&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;6&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;        
+  &lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;id=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;moldura&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Agora vamos dar um pouco de estilo ao pião e à moldura.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-#wrapper {
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -200px;
-  margin-top: -200px;
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#wrapper&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;400px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;400px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;absolute&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;left&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;50&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;50&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;margin-left&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;-200px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;margin-top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;-200px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao {
-  position: relative;
-  top: 40px; /* centraliza o pião */
-  margin: 0 auto; /* centraliza o pião */
-  height: 330px;
-  width: 200px;
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;relative&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;40px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='c'&gt;/* centraliza o pião */&lt;/span&gt;
+  &lt;span class='k'&gt;margin&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt; &lt;span class='k'&gt;auto&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='c'&gt;/* centraliza o pião */&lt;/span&gt;
+  &lt;span class='k'&gt;height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;330px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;200px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao .numero {
-  position: absolute;
-  height: 100%;
-  width: 200px;
-  border: 6px solid white;
-  -webkit-box-sizing: border-box;
-  text-align: center;
-  line-height: 320px;
-  font-family: Impact, sans-serif;
-  font-size: 240px;
-  color: white;
-  background-color: rgb(0, 0, 0);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='nc'&gt;.numero&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;absolute&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;100&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;200px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;border&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;6px&lt;/span&gt; &lt;span class='k'&gt;solid&lt;/span&gt; &lt;span class='nb'&gt;white&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;box&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;sizing&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;border&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;box&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;text-align&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;center&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;line-height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;320px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;font-family&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;Impact&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='k'&gt;sans-serif&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;font-size&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;240px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;white&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;background-color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;rgb&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#moldura {
-  height: 400px;
-  width: 400px;
-  border: 50px solid rgb(200, 0, 0);
-  border-radius: 250px;
-  position: absolute;
-  top: -45px;
-  left: -50px;
-  /* 
-    1ª shadow: simula 3D no elemento, na parte interna
-    2ª shadow: shadow interna para simular profundidade
-    3ª shadow: simula 3D no elemento, na parte externa
-    4ª shadow: shadow externa para simular profundidade 
-  */
-  box-shadow: 
-    inset -1px -2px 0px 3px rgb(150, 0, 0),
-    inset -1px -2px 10px 10px rgba(0, 0, 0, 0.5), 
-    -2px -2px 0px 3px rgb(150, 0, 0),
-    -4px -4px 10px 10px rgba(0, 0, 0, 0.5);
-}
+&lt;span class='nf'&gt;#moldura&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;400px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;400px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;border&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;50px&lt;/span&gt; &lt;span class='k'&gt;solid&lt;/span&gt; &lt;span class='k'&gt;rgb&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;200&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+  &lt;span class='k'&gt;border&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;radius&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;250px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;absolute&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;-45px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='k'&gt;left&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;-50px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+  &lt;span class='c'&gt;/* &lt;/span&gt;
+&lt;span class='c'&gt;    1ª shadow: simula 3D no elemento, na parte interna&lt;/span&gt;
+&lt;span class='c'&gt;    2ª shadow: shadow interna para simular profundidade&lt;/span&gt;
+&lt;span class='c'&gt;    3ª shadow: simula 3D no elemento, na parte externa&lt;/span&gt;
+&lt;span class='c'&gt;    4ª shadow: shadow externa para simular profundidade &lt;/span&gt;
+&lt;span class='c'&gt;  */&lt;/span&gt;
+  &lt;span class='n'&gt;box&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;shadow&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; 
+    &lt;span class='k'&gt;inset&lt;/span&gt; &lt;span class='m'&gt;-1px&lt;/span&gt; &lt;span class='m'&gt;-2px&lt;/span&gt; &lt;span class='m'&gt;0px&lt;/span&gt; &lt;span class='m'&gt;3px&lt;/span&gt; &lt;span class='k'&gt;rgb&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;150&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
+    &lt;span class='k'&gt;inset&lt;/span&gt; &lt;span class='m'&gt;-1px&lt;/span&gt; &lt;span class='m'&gt;-2px&lt;/span&gt; &lt;span class='m'&gt;10px&lt;/span&gt; &lt;span class='m'&gt;10px&lt;/span&gt; &lt;span class='n'&gt;rgba&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='m'&gt;5&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; 
+    &lt;span class='m'&gt;-2px&lt;/span&gt; &lt;span class='m'&gt;-2px&lt;/span&gt; &lt;span class='m'&gt;0px&lt;/span&gt; &lt;span class='m'&gt;3px&lt;/span&gt; &lt;span class='k'&gt;rgb&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;150&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt;
+    &lt;span class='m'&gt;-4px&lt;/span&gt; &lt;span class='m'&gt;-4px&lt;/span&gt; &lt;span class='m'&gt;10px&lt;/span&gt; &lt;span class='m'&gt;10px&lt;/span&gt; &lt;span class='n'&gt;rgba&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='m'&gt;5&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Agora já podemos ver algo sem graça no browser com o código acima: um número 6 dentro de um círculo vermelho com um efeito 3D simulado.&lt;/p&gt;
 
 &lt;h2 id='posio_no_plano_3d'&gt;Posição no plano 3D&lt;/h2&gt;
@@ -359,67 +359,67 @@ $ cake deploy
 &lt;p&gt;Mas para objetos 3D nós precisamos de mais um eixo, o eixo &lt;strong&gt;Z&lt;/strong&gt;, que vai nos dar a sensação de &lt;strong&gt;profundidade&lt;/strong&gt;. Este eixo se inicia no monitor e cresce no sentido monitor &amp;rarrw; você. Então, quanto mais &amp;#8220;distante&amp;#8221; do monitor o objeto aparentar estar, maior o valor de Z.&lt;/p&gt;
 
 &lt;p&gt;Agora entendendo um pouco sobre o plano 3D, vamos organizar os elementos a fim de formar o pião.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-#piao &gt; .numero.um {
-  /* 
-    a rotação deste elemento é 0, o que já é o valor padrão
-    então não há necessidade de redeclarar sua rotação
-   */
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.um&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='c'&gt;/* &lt;/span&gt;
+&lt;span class='c'&gt;    a rotação deste elemento é 0, o que já é o valor padrão&lt;/span&gt;
+&lt;span class='c'&gt;    então não há necessidade de redeclarar sua rotação&lt;/span&gt;
+&lt;span class='c'&gt;   */&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.dois {
-  -webkit-transform: rotateY(60deg);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.dois&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;60&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.tres {
-  -webkit-transform: rotateY(120deg);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.tres&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;120&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.quatro {
-  -webkit-transform: rotateY(180deg);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.quatro&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;180&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.cinco {
-  -webkit-transform: rotateY(240deg);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.cinco&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;240&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.seis {
-  -webkit-transform: rotateY(300deg);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.seis&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;300&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;No trecho de CSS acima, nós giramos as faces em relação ao eixo Y. Precisamos girar todas as faces a fim de fecharmos uma volta. Como uma volta possui 360 graus e o pião possui 6 faces, então iremos rotacionar cada face em 60 graus mais a rotação da face anterior, ou seja, o primeiro elemento irá ser rotacionado em 60 graus, o segundo em 120 graus, o terceiro em 180 graus, e assim por diante até o último elemento.&lt;/p&gt;
 
 &lt;p&gt;Porém se rotacionarmos apenas no eixo Y os elementos, eles ficarão todos um por cima dos outros, apenas inclinados de forma diferente. Estarão todos no centro do que será nosso pião. Precisamos agora afastar as faces umas das outras. E para isso iremos usar a propriedade &lt;code&gt;translateZ&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-#piao {
-  ...
-  -webkit-transform-style: preserve-3d;
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;...&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;style&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;preserve&lt;/span&gt;&lt;span class='m'&gt;-3&lt;/span&gt;&lt;span class='err'&gt;d&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.um {
-  -webkit-transform: translateZ(170px);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.um&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;translateZ&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;170px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.dois {
-  -webkit-transform: rotateY(60deg) translateZ(170px);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.dois&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;60&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='n'&gt;translateZ&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;170px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.tres {
-  -webkit-transform: rotateY(120deg) translateZ(170px);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.tres&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;120&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='n'&gt;translateZ&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;170px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.quatro {
-  -webkit-transform: rotateY(180deg) translateZ(170px);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.quatro&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;180&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='n'&gt;translateZ&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;170px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.cinco {
-  -webkit-transform: rotateY(240deg) translateZ(170px);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.cinco&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;240&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='n'&gt;translateZ&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;170px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-#piao &gt; .numero.seis {
-  -webkit-transform: rotateY(300deg) translateZ(170px);
-}
+&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='nc'&gt;.numero.seis&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;300&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='n'&gt;translateZ&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;170px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Com o &lt;code&gt;transform-style: preserve-3d&lt;/code&gt; estamos dizendo que os filhos diretos do elemento pião irão compartilhar o mesmo espaço 3D que o pai. Caso contrário os elementos seriam renderizados de forma plana no elemento pai.&lt;/p&gt;
 
 &lt;p&gt;Depois, com a regra &lt;code&gt;translateZ&lt;/code&gt;, estamos afastanto todos os elementos do seu ponto inicial no eixo Z. Com o &lt;code&gt;rotateY&lt;/code&gt; giramos todas as faces e com o &lt;code&gt;translateZ&lt;/code&gt; é como se estivéssemos pedindo para que todas as faces dessem um passo de 170px à frente. Como giramos todas para um lado diferente, elas irão &amp;#8220;caminhar&amp;#8221; para um sentido diferente.&lt;/p&gt;
@@ -429,23 +429,23 @@ $ cake deploy
 &lt;h2 id='animao_em_ritmo_de_festa'&gt;Animação em ritmo de festa&lt;/h2&gt;
 
 &lt;p&gt;O efeito que queremos ver é o do pião rodando em relação ao seu eixo Y, o mesmo eixo em que rotacionamos as faces do pião. Para isso iremos criar uma animação com o estado inicial no ponto 0 graus do eixo Y e estado final no 360 graus, ou seja, uma volta completa.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-/* 
-  animação para o pião rodar 
-  uma animação básica ao redor do eixo Y
-*/
-@-webkit-keyframes rodando {
-  from { -webkit-transform: rotateY(0); }
-  to   { -webkit-transform: rotateY(-360deg); }
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='c'&gt;/* &lt;/span&gt;
+&lt;span class='c'&gt;  animação para o pião rodar &lt;/span&gt;
+&lt;span class='c'&gt;  uma animação básica ao redor do eixo Y&lt;/span&gt;
+&lt;span class='c'&gt;*/&lt;/span&gt;
+&lt;span class='k'&gt;@-webkit-keyframes&lt;/span&gt; &lt;span class='nt'&gt;rodando&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='nt'&gt;from&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+  &lt;span class='nt'&gt;to&lt;/span&gt;   &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;transform&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rotateY&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;-360&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;No trecho acima definimos nossa animação e a chamamos de rodando (em homenagem). Agora é só a usarmos no elemento que desejarmos.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-#piao {
-  ...
-  -webkit-animation: rodando 4s infinite linear;
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#piao&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='o'&gt;...&lt;/span&gt;
+  &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;animation&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;rodando&lt;/span&gt; &lt;span class='m'&gt;4s&lt;/span&gt; &lt;span class='n'&gt;infinite&lt;/span&gt; &lt;span class='n'&gt;linear&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Aqui dizemos que queremos animar o elemento pião, utilizando a animação &amp;#8220;rodando&amp;#8221;, demorando 4 segundos para ir de seu estado inicial ao estado final, essa animação não irá parar (infinite) e a sua transição entre estados será linear.&lt;/p&gt;
 
 &lt;p&gt;Agora se checarmos no navegador, iremos finalmente ter nosso pião da casa própria em HTML5. E rodandooo.&lt;/p&gt;
@@ -453,14 +453,14 @@ $ cake deploy
 &lt;h2 id='one_more_thing'&gt;One more thing&amp;#8230;&lt;/h2&gt;
 
 &lt;p&gt;O Pião da Casa Própria não seria o mesmo sem a &lt;strong&gt;clássica&lt;/strong&gt; trilha sonnora. Então vamos adicioná-la ao experimento. Iremos usar a nova tag &lt;code&gt;audio&lt;/code&gt; para reproduzir a música sem a nececissade do Flash. &lt;!-- O seu uso é bastante simples.  --&gt; Basta declarar a tag &lt;code&gt;audio&lt;/code&gt; e dentro dela as tags &lt;code&gt;source&lt;/code&gt; com os caminhos para o mesmo arquivo salvo em diferentes codecs.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;
-&lt;!-- trilha do pião da casa própria. máá ô-ê --&gt;
-&lt;audio loop='true' preload='auto'&gt;
-  &lt;source src='piao-da-casa-propria-soundtrack.mp3' /&gt;
-  &lt;source src='piao-da-casa-propria-soundtrack.m4a' /&gt;
-  &lt;source src='piao-da-casa-propria-soundtrack.ogg' /&gt;
-&lt;/audio&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- trilha do pião da casa própria. máá ô-ê --&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;audio&lt;/span&gt; &lt;span class='na'&gt;preload=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;auto&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;loop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;true&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class='nt'&gt;&amp;lt;source&lt;/span&gt; &lt;span class='na'&gt;src=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;piao-da-casa-propria-soundtrack.mp3&amp;quot;&lt;/span&gt; &lt;span class='nt'&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class='nt'&gt;&amp;lt;source&lt;/span&gt; &lt;span class='na'&gt;src=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;piao-da-casa-propria-soundtrack.m4a&amp;quot;&lt;/span&gt; &lt;span class='nt'&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class='nt'&gt;&amp;lt;source&lt;/span&gt; &lt;span class='na'&gt;src=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;piao-da-casa-propria-soundtrack.ogg&amp;quot;&lt;/span&gt; &lt;span class='nt'&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/audio&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;O navegador irá tentar de cima para baixo executar os formatos, e quando achar um que possa reproduzir, irá carregar e não irá mais procurar por outros &lt;code&gt;source&lt;/code&gt;. O uso desta tag é necessário pois cada navegador dá suporte a um &lt;a href='http://html5doctor.com/native-audio-in-the-browser/'&gt;diferente conjunto de codecs&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Caso queiram escutar a trilha sonora agora e ver o pião rodando é só apertar o botão play no lado direito superior dentro do experimento, no &lt;a href='#experimento-piao'&gt;início&lt;/a&gt; do post. Utilizei a API JavaScript para controlar o comportamento da tag &lt;code&gt;audio&lt;/code&gt;, mas para não perdemos o foco, essa API fica para um próximo post. &lt;!-- 
@@ -542,53 +542,56 @@ Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento 
 &lt;h2 id='antes'&gt;Antes&lt;/h2&gt;
 
 &lt;p&gt;O trecho de código abaixo mostra como era o código fonte de um resumo de post (o exemplo abaixo ilustra o &lt;a href='#print-home'&gt;print screen&lt;/a&gt; acima). Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de ficar olhando para um monte de linhas de código de uma vez, né).&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;&lt;!-- bloco do post --&gt;
-&lt;section class='post-container'&gt;
-    &lt;!-- menu da lateral direita --&gt;
-    &lt;aside class='post-meta'&gt; ... &lt;/aside&gt;
-    &lt;!-- área principal do post --&gt;
-    &lt;article&gt; ... &lt;/article&gt;
-&lt;/section&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- bloco do post --&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;section&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-container&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- menu da lateral direita --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;aside&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-meta&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt; ... &lt;span class='nt'&gt;&amp;lt;/aside&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- área principal do post --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;article&amp;gt;&lt;/span&gt; ... &lt;span class='nt'&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;em&gt;Menu da lateral direita&lt;/em&gt; detalhadamente:&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;&lt;aside class='post-meta'&gt;
-    &lt;ul&gt;
-        &lt;!-- data da publicação --&gt;
-        &lt;li class='post-data'&gt;04/05/2012&lt;/li&gt;
-        &lt;!-- autor do post --&gt;
-        &lt;li class='post-autor'&gt;
-            &lt;a href='...'&gt;Caio Gondim&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;!-- quantidade de comentarios --&gt;
-        &lt;li class='post-comentarios'&gt;
-            &lt;a href='...'&gt;1 Comentário e 4 Reações&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;!-- tags do post --&gt;
-        &lt;li class='post-tags'&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href='...'&gt;&lt;span&gt;#&lt;/span&gt;javascript&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/aside&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;aside&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-meta&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- data da publicação --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;li&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-data&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;04/05/2012&lt;span class='nt'&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- autor do post --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;li&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-autor&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Caio Gondim&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- quantidade de comentarios --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;li&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-comentarios&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;1 Comentário e 4 Reações&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- tags do post --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;li&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-tags&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+                &lt;span class='nt'&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;#&lt;span class='nt'&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;javascript&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/aside&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;em&gt;Área principal do post&lt;/em&gt; detalhadamente:&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;&lt;article&gt;
-    &lt;!-- título do post --&gt;
-    &lt;header&gt;
-        &lt;h1&gt;&lt;a href='...'&gt;Herança em JavaScript parte I&lt;/a&gt;&lt;/h1&gt;
-    &lt;/header&gt;
-    &lt;!-- conteúdo do post --&gt;
-    &lt;section&gt;
-        &lt;!-- imagem principal --&gt;
-        &lt;p&gt;&lt;img src='...' /&gt;&lt;/p&gt;
-        &lt;!-- texto (o post de fato) --&gt;
-        &lt;p&gt;Uma das coisas que mais assusta programadores vindos de...&lt;/p&gt;
-        &lt;!-- link para o post completo --&gt;
-        &lt;a class='leia-mais' href='...'&gt;Continue lendo &amp;rarrw;&lt;/a&gt;
-    &lt;/section&gt;
-&lt;/article&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- título do post --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;header&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;h1&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Herança em JavaScript parte I&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- conteúdo do post --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;section&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- imagem principal --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class='na'&gt;src=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class='nt'&gt;/&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- texto (o post de fato) --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Uma das coisas que mais assusta programadores vindos de...&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- link para o post completo --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;leia-mais&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Continue lendo &lt;span class='ni'&gt;&amp;amp;rarrw;&lt;/span&gt;&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;OK, nada de mais. Basicamente uma marcação simples HTML5.&lt;/p&gt;
 
 &lt;h2 id='depois'&gt;Depois&lt;/h2&gt;
@@ -596,15 +599,16 @@ Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento 
 &lt;p&gt;Agora vamos ver como ficou o código fonte &lt;strong&gt;depois da marcação semântica&lt;/strong&gt;, percebam o uso das propriedades &lt;code&gt;itemscope&lt;/code&gt;, &lt;code&gt;itemtype&lt;/code&gt; e &lt;code&gt;itemprop&lt;/code&gt;. Mesmo esquema aqui, dividi o código em blocos:&lt;/p&gt;
 
 &lt;h3 id='elemento_geral'&gt;Elemento geral&lt;/h3&gt;
-&lt;p /&gt;&lt;pre&gt;&lt;code data-language='html'&gt;&lt;!-- adicionamos as propriedades itemscope e itemtype para BlogPosting --&gt;
-&lt;section class='post-container' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'&gt;
-    &lt;!-- adicionamos esta tag &lt;span&gt; para o publicador do post --&gt;
-    &lt;span class='hidden' itemprop='publisher'&gt;Loop Infinito&lt;/span&gt;
+&lt;p /&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- adicionamos as propriedades itemscope e itemtype para BlogPosting --&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;section&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-container&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemscope=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;itemscope&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemtype=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://schema.org/BlogPosting&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- adicionamos esta tag &amp;lt;span&amp;gt; para o publicador do post --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;span&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;publisher&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Loop Infinito&lt;span class='nt'&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
     
-    &lt;aside class='post-meta'&gt; ... &lt;/aside&gt;
-    &lt;article&gt; ... &lt;/article&gt;
-&lt;/section&gt;
+    &lt;span class='nt'&gt;&amp;lt;aside&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-meta&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt; ... &lt;span class='nt'&gt;&amp;lt;/aside&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;article&amp;gt;&lt;/span&gt; ... &lt;span class='nt'&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Definimos a entidade principal (BlogPosting) no elemento que engloba todos os dados sobre o post;&lt;/li&gt;
 
@@ -616,34 +620,35 @@ Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento 
 &lt;p&gt;&lt;strong&gt;Obs.:&lt;/strong&gt; A aplicação da propriedade &lt;code&gt;itemscope=&quot;itemscope&quot;&lt;/code&gt; pode ser feita apenas colocando &lt;code&gt;itemscope&lt;/code&gt; dentro da tag, pois é uma propriedade que não contém valor explícito associado, e a especificação HTML permite seu uso desta maneira. Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permitida no HTML5 – neste exemplo.&lt;/p&gt;
 
 &lt;h3 id='menu_lateral_direito'&gt;Menu lateral direito&lt;/h3&gt;
-&lt;p /&gt;&lt;pre&gt;&lt;code data-language='html'&gt;&lt;aside class='post-meta'&gt;
-    &lt;ul&gt;
-        &lt;li class='post-data'&gt;
-            &lt;!-- data de publicação do post --&gt;
-            &lt;time datetime='2012-05-06' itemprop='datePublished'&gt;
+&lt;p /&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;aside&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-meta&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;li&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-data&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class='c'&gt;&amp;lt;!-- data de publicação do post --&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;time&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;datePublished&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;datetime=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;2012-05-06&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
                 06/05/2012
-            &lt;/time&gt;
-        &lt;/li&gt;
-        &lt;li class='post-autor'&gt;
-            &lt;!-- autor do post --&gt;
-            &lt;a href='...' itemprop='author' rel='author'&gt;Caio Gondim&lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li class='post-comentarios'&gt;
-        	&lt;!-- contagem de comentários do post --&gt;
-            &lt;a href='...' itemprop='interactionCount'&gt;
+            &lt;span class='nt'&gt;&amp;lt;/time&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;li&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-autor&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class='c'&gt;&amp;lt;!-- autor do post --&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;rel=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;author&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;author&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Caio Gondim&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;li&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-comentarios&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+        	&lt;span class='c'&gt;&amp;lt;!-- contagem de comentários do post --&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;interactionCount&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
                 1 Comentário e 4 Reações
-            &lt;/a&gt;
-        &lt;/li&gt;
-        &lt;li class='post-tags'&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href='...'&gt;&lt;span&gt;#&lt;/span&gt;javascript&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-            &lt;!-- palavras-chave do post --&gt;
-            &lt;span class='hidden' itemprop='keywords'&gt;javascript, ...&lt;/span&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/aside&gt;
+            &lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;li&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;post-tags&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+                &lt;span class='nt'&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;#&lt;span class='nt'&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;javascript&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+            &lt;span class='c'&gt;&amp;lt;!-- palavras-chave do post --&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;span&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;keywords&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;javascript, ...&lt;span class='nt'&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/aside&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Envolvemos a data de publicação com um elemento &lt;code&gt;&amp;lt;time&amp;gt;&lt;/code&gt; (novo no HTML5) para usar a propriedade &lt;code&gt;itemprop=&quot;datePublished&quot;&lt;/code&gt;. Usamos também a propriedade &lt;code&gt;datetime&lt;/code&gt; para podermos especificar a data no formato padrão (aaaa-mm-dd);&lt;/li&gt;
 
@@ -655,27 +660,28 @@ Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento 
 &lt;/ul&gt;
 
 &lt;h3 id='rea_principal_do_post'&gt;Área principal do post&lt;/h3&gt;
-&lt;p /&gt;&lt;pre&gt;&lt;code data-language='html'&gt;&lt;article&gt;
-    &lt;header&gt;
-    	&lt;!-- título do post --&gt;
-        &lt;h1&gt;
-            &lt;a href='...' itemprop='headline'&gt;
+&lt;p /&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;header&amp;gt;&lt;/span&gt;
+    	&lt;span class='c'&gt;&amp;lt;!-- título do post --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;
+            &lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;headline&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
                 Herança em JavaScript parte I
-            &lt;/a&gt;
-        &lt;/h1&gt;
-    &lt;/header&gt;
-    &lt;section&gt;
-        &lt;!-- imagem principal do post --&gt;
-        &lt;p&gt;&lt;img itemprop='thumbnailUrl' src='...' /&gt;&lt;/p&gt;
-        &lt;!-- envolvemos o resumo com uma &lt;div&gt; a descrição do post --&gt;
-        &lt;div itemprop='description'&gt;
-        	&lt;p&gt;Uma das coisas que mais assusta programadores...&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;!-- url do post --&gt;
-        &lt;a class='leia-mais' href='...' itemprop='url'&gt;Continue lendo &amp;rarrw;&lt;/a&gt;
-    &lt;/section&gt;
-&lt;/article&gt;
+            &lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;section&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- imagem principal do post --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;thumbnailUrl&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;src=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class='nt'&gt;/&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- envolvemos o resumo com uma &amp;lt;div&amp;gt; a descrição do post --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+        	&lt;span class='nt'&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Uma das coisas que mais assusta programadores...&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class='c'&gt;&amp;lt;!-- url do post --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;...&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;leia-mais&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Continue lendo &lt;span class='ni'&gt;&amp;amp;rarrw;&lt;/span&gt;&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Definimos o título do post com a propriedade &lt;code&gt;itemprop=&quot;headline&quot;&lt;/code&gt;;&lt;/li&gt;
 
@@ -753,53 +759,53 @@ Item
 &lt;p&gt;Imaginem que temos que representar em nossa aplicação alguns animais, como gato e cachorro. Com herança podemos definir comportamentos comuns entre eles apenas uma vez, como respirar, nascer e morrer, e reutilizar estes métodos já implementados apenas os herdando nas classes filhas.&lt;/p&gt;
 
 &lt;p&gt;Vamos implementar o cenário acima em Java. Como desejamos representar gatos e cachorros, e sabemos que eles possuem métodos similares, como nascer, morrer e respirar, vamos criar uma classe Animal e implementar estes métodos nela, para que gatos e cachorros possam herdá-los.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='java'&gt;
-// setamos a classe como abstrata pois não desejamos criar
-// objetos do tipo animal, apenas os tipos mais
-// especializados como Gato ou Cachorro podem ser instânciados
-public abstract class Animal {
-  public void nascer() {
-    ...
-  }
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='c1'&gt;// setamos a classe como abstrata pois não desejamos criar&lt;/span&gt;
+&lt;span class='c1'&gt;// objetos do tipo animal, apenas os tipos mais&lt;/span&gt;
+&lt;span class='c1'&gt;// especializados como Gato ou Cachorro podem ser instânciados&lt;/span&gt;
+&lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kd'&gt;abstract&lt;/span&gt; &lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Animal&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+  &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;nascer&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;...&lt;/span&gt;
+  &lt;span class='o'&gt;}&lt;/span&gt;
 
-  public void morrer() {
-    ...
-  }
+  &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;morrer&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;...&lt;/span&gt;
+  &lt;span class='o'&gt;}&lt;/span&gt;
 
-  public void respirar() {
-    ...
-  }
-}
+  &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;respirar&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;...&lt;/span&gt;
+  &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;span class='o'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Agora definimos as classes Gato e Cachorro, que irão herdar de Animal e implementar métodos que só fazem sentido em seu próprio escopo, como miar no caso de Gato e latir no caso de Cachorro.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='javascript'&gt;
-// além do método miar, os objetos do tipo Gato 
-// terão também, devido a herança, os métodos de Animal
-class Gato extends Animal {
-  public void miar() {
-    ...
-  }
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='java'&gt;&lt;span class='c1'&gt;// além do método miar, os objetos do tipo Gato &lt;/span&gt;
+&lt;span class='c1'&gt;// terão também, devido a herança, os métodos de Animal&lt;/span&gt;
+&lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Gato&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='n'&gt;Animal&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+  &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;miar&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;...&lt;/span&gt;
+  &lt;span class='o'&gt;}&lt;/span&gt;
 
-  // construtor
-  public Gato() {
-    ...
-  }
-}
+  &lt;span class='c1'&gt;// construtor&lt;/span&gt;
+  &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='nf'&gt;Gato&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;...&lt;/span&gt;
+  &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;span class='o'&gt;}&lt;/span&gt;
 
-// com os objetos do tipo Cachorro acontece o mesmo
-// além do método latir, definido explicitamente na classe
-// ele irá herdar os métodos nascer, morrer e respirar
-class Cachorro extends Animal {
-  public void latir() {
-    ..
-  }
+&lt;span class='c1'&gt;// com os objetos do tipo Cachorro acontece o mesmo&lt;/span&gt;
+&lt;span class='c1'&gt;// além do método latir, definido explicitamente na classe&lt;/span&gt;
+&lt;span class='c1'&gt;// ele irá herdar os métodos nascer, morrer e respirar&lt;/span&gt;
+&lt;span class='kd'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Cachorro&lt;/span&gt; &lt;span class='kd'&gt;extends&lt;/span&gt; &lt;span class='n'&gt;Animal&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+  &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='kt'&gt;void&lt;/span&gt; &lt;span class='nf'&gt;latir&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;..&lt;/span&gt;
+  &lt;span class='o'&gt;}&lt;/span&gt;
 
-  // construtor
-  public Cachorro() {
-    ...
-  }
-}
+  &lt;span class='c1'&gt;// construtor&lt;/span&gt;
+  &lt;span class='kd'&gt;public&lt;/span&gt; &lt;span class='nf'&gt;Cachorro&lt;/span&gt;&lt;span class='o'&gt;()&lt;/span&gt; &lt;span class='o'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;...&lt;/span&gt;
+  &lt;span class='o'&gt;}&lt;/span&gt;
+&lt;span class='o'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Definimos a relação de herança com a palavra reservada &lt;code&gt;extends&lt;/code&gt;. Com isso as classes Gato e Cachorro irão possuir, além de seus próprios métodos, os métodos herdados de Animal, como nascer, morrer e respirar.&lt;/p&gt;
 
 &lt;p&gt;Então fica claro que com herança conseguimos um enorme reuso de código. De outra forma, teríamos que redefinir métodos e atributos comuns em todas as classes, tornando a manutenção do código mais complexa e propensa a erros.&lt;/p&gt;
@@ -809,32 +815,31 @@ class Cachorro extends Animal {
 &lt;p&gt;Em JavaScript (quase) tudo é um objeto, não existem classes. Até mesmo as &lt;code&gt;function&lt;/code&gt; são objetos. Se quisermos herdar os métodos e atributos de um objeto, o utilizamos como protótipo do novo objeto a ser criado. Mesmo que não esteja definido explicitamente no código, todos os outros objetos de JavaScript, com a exceção do objeto &lt;code&gt;Object&lt;/code&gt;, utilizam um outro objeto como protótipo.&lt;/p&gt;
 
 &lt;p&gt;Como no exemplo abaixo, definimos um objeto vazio, um array vazio e uma função. Eles todos herdarão métodos e atributos de seus protótipos.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='javascript'&gt;
-// aqui criamos um novo objeto genérico com o nome carro
-// ele automaticamente usará o prototipo de Object
-var carro = {}
-carro.modelo = 'Celta'
-carro.marca = 'Chevrolet'
-carro.hasOwnProperty('modelo') // método herdado de Object
-Object.getPrototypeOf(carro) // retorna Object
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='c1'&gt;// aqui criamos um novo objeto genérico com o nome carro&lt;/span&gt;
+&lt;span class='c1'&gt;// ele automaticamente usará o prototipo de Object&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;carro&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{}&lt;/span&gt;
+&lt;span class='nx'&gt;carro&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;modelo&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;Celta&amp;#39;&lt;/span&gt;
+&lt;span class='nx'&gt;carro&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;marca&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;Chevrolet&amp;#39;&lt;/span&gt;
+&lt;span class='nx'&gt;carro&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;hasOwnProperty&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;modelo&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// método herdado de Object&lt;/span&gt;
+&lt;span class='nb'&gt;Object&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;getPrototypeOf&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;carro&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// retorna Object&lt;/span&gt;
 
-// frutas herdará as propriedades de Array
-var frutas = [ 'morango', 'manga', 'laranja' ]
-frutas.reverse() // método herdado de Array
-frutas.hasOwnProperty('length') // método herdado de Object
-Object.getPrototypeOf(frutas) // retorna []
-Object.getPrototypeOf(Object.getPrototypeOf(frutas)) // retorna Object
+&lt;span class='c1'&gt;// frutas herdará as propriedades de Array&lt;/span&gt;
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;frutas&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;[&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;morango&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;manga&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;laranja&amp;#39;&lt;/span&gt; &lt;span class='p'&gt;]&lt;/span&gt;
+&lt;span class='nx'&gt;frutas&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;reverse&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='c1'&gt;// método herdado de Array&lt;/span&gt;
+&lt;span class='nx'&gt;frutas&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;hasOwnProperty&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;length&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// método herdado de Object&lt;/span&gt;
+&lt;span class='nb'&gt;Object&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;getPrototypeOf&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;frutas&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// retorna []&lt;/span&gt;
+&lt;span class='nb'&gt;Object&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;getPrototypeOf&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;Object&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;getPrototypeOf&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;frutas&lt;/span&gt;&lt;span class='p'&gt;))&lt;/span&gt; &lt;span class='c1'&gt;// retorna Object&lt;/span&gt;
 
-// validarCPF irá herdar propriedades de Function
-function validarCPF() {
-  ...
-  return true
-}
-// aqui vemos uma função se comportando como um objeto
-validarCPF.call() // método herdado de Function
-Object.getPrototypeOf(validarCPF) // retorna function Empty() {}
-
+&lt;span class='c1'&gt;// validarCPF irá herdar propriedades de Function&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;validarCPF&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='p'&gt;...&lt;/span&gt;
+  &lt;span class='k'&gt;return&lt;/span&gt; &lt;span class='kc'&gt;true&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='c1'&gt;// aqui vemos uma função se comportando como um objeto&lt;/span&gt;
+&lt;span class='nx'&gt;validarCPF&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;call&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='c1'&gt;// método herdado de Function&lt;/span&gt;
+&lt;span class='nb'&gt;Object&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;getPrototypeOf&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;validarCPF&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// retorna function Empty() {}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;É interessante notar que a herança ocorre em &lt;strong&gt;toda&lt;/strong&gt; a cadeia de protótipos. Como quando definimos um array: ele herda todas as propriedades de Array e de Object, uma vez que Array usa Object como protótipo. Podemos verificar isso chamando o protótipo do protótipo de frutas. O protótipo de frutas é Array, e o protótipo de Array é Object ou, o protótipo do protótipo de frutas é Object.&lt;/p&gt;
 
 &lt;p&gt;Quando chamamos a propriedade de um objeto, o interpretador/VM JavaScript primeiro procura esta propriedade dentro do objeto, caso não encontre procura em seu protótipo, caso não encontre novamente procura no protótipo do protótipo, e assim sucessivamente, percorrendo toda a cadeia de protótipos até alcançar um protótipo com valor &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
@@ -846,67 +851,67 @@ Object.getPrototypeOf(validarCPF) // retorna function Empty() {}
 &lt;p&gt;Em JavaScript, uma função também é um objeto, e ela possui a propriedade &lt;code&gt;prototype&lt;/code&gt;. Nesta propriedade definimos o prototipo da função, ou todas as propriedades que os objetos deste tipo irão ter se invocarmos &lt;code&gt;new&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Ok, pode parecer complicado falando, mas fica bem fácil olhando o código.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='javascript'&gt;
-// criamos o construtor Animal
-function Animal() {
-}
-Animal.prototype.nascer = function() {
-  ...
-}
-Animal.prototype.morrer = function() {
-  ...
-}
-Animal.prototype.respirar = function() {
-  ...
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='c1'&gt;// criamos o construtor Animal&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;Animal&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='nx'&gt;Animal&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;nascer&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='p'&gt;...&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='nx'&gt;Animal&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;morrer&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='p'&gt;...&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='nx'&gt;Animal&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;respirar&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='p'&gt;...&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Agora definimos Gato e Cachorro, e usamos Animal como protótipo.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='javascript'&gt;
-// criamos o construtor Gato
-function Gato(nome) {
-  this.nome = nome
-}
-Gato.prototype = new Animal() // definimos que Gato usa Animal como protótipo
-Gato.prototype.constructor = Gato // para que não fique com o valor do construtor do objeto usado como protótipo
-Gato.prototype.miar = function() { // método miar apenas para Gato
-  ...
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='c1'&gt;// criamos o construtor Gato&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;Gato&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;nome&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;nome&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;nome&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='nx'&gt;Gato&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;Animal&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='c1'&gt;// definimos que Gato usa Animal como protótipo&lt;/span&gt;
+&lt;span class='nx'&gt;Gato&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;constructor&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;Gato&lt;/span&gt; &lt;span class='c1'&gt;// para que não fique com o valor do construtor do objeto usado como protótipo&lt;/span&gt;
+&lt;span class='nx'&gt;Gato&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;miar&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='c1'&gt;// método miar apenas para Gato&lt;/span&gt;
+  &lt;span class='p'&gt;...&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-// criamos o construtor Cachorro
-function Cachorro(nome) {
-  this.nome = nome
-}
-Cachorro.prototype = new Animal() // definimos que Cachorro usa Animal como protótipo
-Cachorro.prototype.constructor = Cachorro()
-Cachorro.prototype.latir = function() {
-  ...
-}
+&lt;span class='c1'&gt;// criamos o construtor Cachorro&lt;/span&gt;
+&lt;span class='kd'&gt;function&lt;/span&gt; &lt;span class='nx'&gt;Cachorro&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;nome&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;nome&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;nome&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='nx'&gt;Cachorro&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;Animal&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='c1'&gt;// definimos que Cachorro usa Animal como protótipo&lt;/span&gt;
+&lt;span class='nx'&gt;Cachorro&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;constructor&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;Cachorro&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class='nx'&gt;Cachorro&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;latir&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='p'&gt;...&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 
-var rex = new Cachorro('rex') // criamos um objeto do tipo Cachorro
-rex.latir() // utilizando um método definido em Cachorro
-rex.respirar() // utilizando um método herdado de Animal
-rex.nome // retorna 'rex'
+&lt;span class='kd'&gt;var&lt;/span&gt; &lt;span class='nx'&gt;rex&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;Cachorro&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;rex&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;// criamos um objeto do tipo Cachorro&lt;/span&gt;
+&lt;span class='nx'&gt;rex&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;latir&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='c1'&gt;// utilizando um método definido em Cachorro&lt;/span&gt;
+&lt;span class='nx'&gt;rex&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;respirar&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='c1'&gt;// utilizando um método herdado de Animal&lt;/span&gt;
+&lt;span class='nx'&gt;rex&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;nome&lt;/span&gt; &lt;span class='c1'&gt;// retorna &amp;#39;rex&amp;#39;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Precisamos criar um novo objeto do tipo Animal para setarmos como protótipo, pois caso contrário estariamos passando a referência para a função.&lt;/p&gt;
 
 &lt;p&gt;A propriedade &lt;code&gt;constructor&lt;/code&gt; nos informa o construtor do objeto. Nós precisamos defini-la manualmente pois esta proprieda existe no objeto Animal que passamos por protótipo, então todos os objetos de Cachorro e Gato irão herdar a propriedade construtor com o setado valor como Animal. Esta propriedade pode ser útil caso seja preciso chamar um método de um dos objetos na cadeia de protótipos.&lt;/p&gt;
 
 &lt;p&gt;Podemos verificar que rex é de fato um cachorro perguntado se ele é uma instância de Cachorro.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='javascript'&gt;
-rex instanceof Cachorro // retorna true
-rex instanceof Animal // retorn true. Cachorro.prototype --&gt; Animal
-rex instanceof Object // retorna true. Cachorro.prototype --&gt; Animal.prototype --&gt; Object
-rex instanceof Array // retorna false
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='nx'&gt;rex&lt;/span&gt; &lt;span class='k'&gt;instanceof&lt;/span&gt; &lt;span class='nx'&gt;Cachorro&lt;/span&gt; &lt;span class='c1'&gt;// retorna true&lt;/span&gt;
+&lt;span class='nx'&gt;rex&lt;/span&gt; &lt;span class='k'&gt;instanceof&lt;/span&gt; &lt;span class='nx'&gt;Animal&lt;/span&gt; &lt;span class='c1'&gt;// retorn true. Cachorro.prototype --&amp;gt; Animal&lt;/span&gt;
+&lt;span class='nx'&gt;rex&lt;/span&gt; &lt;span class='k'&gt;instanceof&lt;/span&gt; &lt;span class='nb'&gt;Object&lt;/span&gt; &lt;span class='c1'&gt;// retorna true. Cachorro.prototype --&amp;gt; Animal.prototype --&amp;gt; Object&lt;/span&gt;
+&lt;span class='nx'&gt;rex&lt;/span&gt; &lt;span class='k'&gt;instanceof&lt;/span&gt; &lt;span class='nb'&gt;Array&lt;/span&gt; &lt;span class='c1'&gt;// retorna false&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Interessante notar que rex também é uma instância de Animal, já que Cachorro usa Animal como protótipo. E também é instância de Object, já que Animal usa, implicitamente, Object como protótipo.&lt;/p&gt;
 
 &lt;p&gt;Por ser uma linguagem orientada a protótipos, nós podemos definir um novo ao método ao protótipo e todos os objetos já instanciados irão ter acesso a este método criado, o que é impossível de ser feito em linguagens como Java (me corrijam se estiver falando besteira).&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='javascript'&gt;
-Cachorro.prototype.morder = function() {
-  ...
-}
-rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos definidos no protótipo de Cachorro
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='nx'&gt;Cachorro&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;morder&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kd'&gt;function&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+  &lt;span class='p'&gt;...&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;span class='nx'&gt;rex&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;morder&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt; &lt;span class='c1'&gt;// rex mesmo depois de instanciado terá acesso aos novos métodos definidos no protótipo de Cachorro&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Um dos perigos dessa abordagem é que caso se esqueça de usar &lt;code&gt;new&lt;/code&gt;, o &lt;code&gt;this&lt;/code&gt; dentro da &lt;code&gt;function&lt;/code&gt; irá se referenciar ao objeto global, e poderá sobreescrever algumas variáveis já declaradas antes.&lt;/p&gt;
 
 &lt;p&gt;Eu particularmente não sou a favor do uso do &lt;code&gt;new&lt;/code&gt; pois ele torna ambíguo o uso de funções. Pois algumas funcionam como construtores e outras como funções normais. E sintaticamente o &lt;code&gt;new&lt;/code&gt; pode ser usado em qualquer tipo de função.&lt;/p&gt;
@@ -1136,34 +1141,40 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
 	&lt;li&gt;&lt;code&gt;itemref&lt;/code&gt;: Propriedades que estão em elementos fora do escopo (elemento com &lt;code&gt;itemscope&lt;/code&gt;) podem ser associadas a este item. &lt;code&gt;itemref&lt;/code&gt; deve conter seu valor preenchido com o &lt;code&gt;itemid&lt;/code&gt; do elemento o qual se deseja fazer a associação.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Agora vamos voltar ao exemplo do Avatar. Digamos que o código HTML correspondente &lt;a href='#exemplo-filme'&gt;àquele trecho&lt;/a&gt; seja: (Este tutorial é basicamente o mesmo encontrado no &lt;a href='http://schema.org/docs/gs.html'&gt;getting started&lt;/a&gt; do site schema.org.)&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;&lt;div&gt;
-    &lt;h4&gt;Avatar&lt;/h4&gt;
-    &lt;p&gt;Diretor: James Cameron (16 de agosto de 1954)&lt;/p&gt;
-    &lt;p&gt;Ficção Científica&lt;/p&gt;
-    &lt;p&gt;&lt;a href='http://www.youtube.com/...'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;Avatar&lt;span class='nt'&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Diretor: James Cameron (16 de agosto de 1954)&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Ficção Científica&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://www.youtube.com/...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Veja o trailer&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Começamos definindo a entidade Movie e adicionando as propriedades &lt;code&gt;itemscope&lt;/code&gt; e &lt;code&gt;itemtype&lt;/code&gt; ao elemento &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, já que este elemento possui todo conteúdo relacionado ao filme &lt;em&gt;Avatar&lt;/em&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;&lt;!-- adicionamos os atributos itemscope e itemtype --&gt;
-&lt;div itemscope='itemscope' itemtype='http://schema.org/Movie'&gt;
-    &lt;h4&gt;Avatar&lt;/h4&gt;
-    &lt;p&gt;Diretor: James Cameron (16 de agosto de 1954)&lt;/p&gt;
-    &lt;p&gt;Ficção Científica&lt;/p&gt;
-    &lt;p&gt;&lt;a href='http://www.youtube.com/...'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='c'&gt;&amp;lt;!-- adicionamos os atributos itemscope e itemtype --&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;itemscope=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;itemscope&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemtype=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://schema.org/Movie&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;Avatar&lt;span class='nt'&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Diretor: James Cameron (16 de agosto de 1954)&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Ficção Científica&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://www.youtube.com/...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Veja o trailer&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Agora identificamos as propriedades presentes deste filme e definimos cada uma com o atributo &lt;code&gt;itemprop&lt;/code&gt;, no nosso caso estas propriedades são &lt;em&gt;nome&lt;/em&gt;, &lt;em&gt;diretor&lt;/em&gt;, &lt;em&gt;gênero&lt;/em&gt; e &lt;em&gt;trailer&lt;/em&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;&lt;div itemscope='itemscope' itemtype='http://schema.org/Movie'&gt;
-    &lt;!-- adicionamos o atributo itemprop ao nome do filme --&gt;
-    &lt;h4 itemprop='name'&gt;Avatar&lt;/h4&gt;
-    &lt;!-- adicionamos o atributo itemprop ao diretor do filme --&gt;
-    &lt;p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;itemscope=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;itemscope&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemtype=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://schema.org/Movie&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- adicionamos o atributo itemprop ao nome do filme --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;h4&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Avatar&lt;span class='nt'&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- adicionamos o atributo itemprop ao diretor do filme --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
         Diretor: 
-        &lt;span itemprop='director'&gt;James Cameron (16 de agosto de 1954)&lt;/span&gt;
-    &lt;/p&gt;
-    &lt;!-- adicionamos o atributo itemprop ao gênero do filme --&gt;
-    &lt;p itemprop='genre'&gt;Ficção Científica&lt;/p&gt;
-    &lt;!-- adicionamos o atributo itemprop ao trailer do filme --&gt;
-    &lt;p&gt;&lt;a href='http://www.youtube.com/...' itemprop='trailer'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+        &lt;span class='nt'&gt;&amp;lt;span&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;director&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;James Cameron (16 de agosto de 1954)&lt;span class='nt'&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- adicionamos o atributo itemprop ao gênero do filme --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;genre&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Ficção Científica&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- adicionamos o atributo itemprop ao trailer do filme --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;trailer&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://www.youtube.com/...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Veja o trailer&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Temos um Filme cujo nome é Avatar, gênero é Ficção científica, trailer aponta para uma URL e o diretor é James Cameron. Numa representação gráfica da semântica deste trecho de código, teríamos algo parecido como:&lt;/p&gt;
 &lt;svg class='img' height='400' width='700'&gt;
 	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='350' x2='350' y1='57.031' y2='344.36' /&gt;
@@ -1214,31 +1225,37 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
 	&lt;/g&gt;
 &lt;/svg&gt;
 &lt;p&gt;Se for do nosso interesse, podemos refinar mais ainda a nossa marcação tentando identificar se uma destas propriedades pode ser definida como uma outra entidade. No caso da propriedade &lt;code&gt;director&lt;/code&gt; por exemplo, um diretor é uma &lt;strong&gt;pessoa&lt;/strong&gt; também, então vamos aplicar o vocabulário &lt;strong&gt;Person&lt;/strong&gt; do schema.org:&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;&lt;div itemscope='itemscope' itemtype='http://schema.org/Movie'&gt;
-    &lt;h4 itemprop='name'&gt;Avatar&lt;/h4&gt;
-    &lt;!-- movemos o atributo itemprop do diretor para o wrapper (&lt;p&gt;) --&gt;
-    &lt;!-- e adicionamos os atributos itemscope e itemtype ao diretor --&gt;
-    &lt;p itemprop='director' itemscope='itemscope' itemtype='http://schema.org/Person'&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;itemscope=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;itemscope&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemtype=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://schema.org/Movie&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;h4&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Avatar&lt;span class='nt'&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- movemos o atributo itemprop do diretor para o wrapper (&amp;lt;p&amp;gt;) --&amp;gt;&lt;/span&gt;
+    &lt;span class='c'&gt;&amp;lt;!-- e adicionamos os atributos itemscope e itemtype ao diretor --&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;director&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemscope=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;itemscope&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemtype=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://schema.org/Person&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
         Diretor: 
-        &lt;span&gt;James Cameron (16 de agosto de 1954)&lt;/span&gt;
-    &lt;/p&gt;
-    &lt;p itemprop='genre'&gt;Ficção Científica&lt;/p&gt;
-    &lt;p&gt;&lt;a href='http://www.youtube.com/...' itemprop='trailer'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+        &lt;span class='nt'&gt;&amp;lt;span&amp;gt;&lt;/span&gt;James Cameron (16 de agosto de 1954)&lt;span class='nt'&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;genre&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Ficção Científica&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;trailer&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://www.youtube.com/...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Veja o trailer&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;E para terminar, vamos especificar as propriedades desta pessoa – que no nesta caso são &lt;em&gt;nome&lt;/em&gt; e &lt;em&gt;data de nascimento&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Observe que para data de nascimento criamos um novo elemento &lt;code&gt;&amp;lt;time datetime=&amp;quot;...&amp;quot;&amp;gt;&lt;/code&gt;. Optei por fazer isto por quê &lt;code&gt;&amp;lt;time&amp;gt;&lt;/code&gt; é uma &lt;a href='http://www.w3schools.com/html5/tag_time.asp'&gt;nova tag&lt;/a&gt; que faz parte da especificação HTML5, e usamos seu atributo &lt;code&gt;datetime&lt;/code&gt; para especificar o formato padrão de data usado pelo schema.org – na especificação do tipo de dados &lt;a href='http://schema.org/Date'&gt;Date&lt;/a&gt;, o formato de data esperado é o &lt;a href='http://en.wikipedia.org/wiki/ISO_8601'&gt;ISO 8601&lt;/a&gt; (AAAA-MM-DD).&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='html'&gt;&lt;div itemscope='itemscope' itemtype='http://schema.org/Movie'&gt;
-    &lt;h4 itemprop='name'&gt;Avatar&lt;/h4&gt;
-    &lt;p itemprop='director' itemscope='itemscope' itemtype='http://schema.org/Person'&gt;
-       Diretor: 
-       &lt;!-- adicionamos o atributo itemprop às seguintes propriedades da pessoa --&gt;
-       &lt;span itemprop='name'&gt;James Cameron&lt;/span&gt; 
-       &lt;time datetime='1954-08-16' itemprop='birthDate'&gt;(16 de agosto de 1954)&lt;/time&gt;
-    &lt;/p&gt;
-    &lt;p itemprop='genre'&gt;Ficção Científica&lt;/p&gt;
-    &lt;p&gt;&lt;a href='http://www.youtube.com/...' itemprop='trailer'&gt;Veja o trailer&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;itemscope=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;itemscope&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemtype=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://schema.org/Movie&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;h4&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Avatar&lt;span class='nt'&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;director&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemscope=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;itemscope&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;itemtype=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://schema.org/Person&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+        Diretor: 
+        &lt;span class='c'&gt;&amp;lt;!-- adicionamos o atributo itemprop às seguintes propriedades da pessoa --&amp;gt;&lt;/span&gt;
+        &lt;span class='nt'&gt;&amp;lt;span&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;James Cameron&lt;span class='nt'&gt;&amp;lt;/span&amp;gt;&lt;/span&gt; 
+        &lt;span class='nt'&gt;&amp;lt;time&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;birthDate&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;datetime=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;1954-08-16&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;
+            (16 de agosto de 1954)
+        &lt;span class='nt'&gt;&amp;lt;/time&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;genre&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Ficção Científica&lt;span class='nt'&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class='na'&gt;itemprop=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;trailer&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;http://www.youtube.com/...&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Veja o trailer&lt;span class='nt'&gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class='nt'&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Agora temos um &lt;strong&gt;Filme&lt;/strong&gt; cujo nome é Avatar, gênero é Ficção científica, trailer aponta para uma URL e o diretor é uma &lt;strong&gt;Pessoa&lt;/strong&gt; cujo nome é James Cameron e sua data de nascimento é 16 de agosto de 1954. Com isso, uma representação gráfica da semântica passaria a ser algo como:&lt;/p&gt;
 &lt;svg class='img' height='550' width='700'&gt;
 	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='350' x2='350' y1='57.031' y2='344.36' /&gt;
@@ -1452,83 +1469,83 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
 &lt;h2 id='grayscale'&gt;Grayscale&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-grayscale.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Com o filtro &lt;code&gt;grayscale&lt;/code&gt; nós indicamos o quão preto-e-branco queremos que o elemento fique, numa escala de 0 a 1 ou 0% 100%.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: grayscale(100%);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;grayscale&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;100&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='blur'&gt;Blur&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-blur.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Com o filtro &lt;code&gt;blur&lt;/code&gt; podemos embaçar um elemento. Algo parecido como ver uma foto sem óculos (eu imagino que seja assim). Os valores são definidos em pixels. Quanto maior o valor, mais embaçado o elemento.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: blur(3px);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;blur&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;3px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='sepia'&gt;Sepia&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-sepia.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Este efeito é normamelmente usado em fotos, dando a elas um efeito de fotos antigas. Os valores do efeito vão de 0 a 1.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: sepia(1);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;sepia&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='saturate'&gt;Saturate&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-saturate.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Com o &lt;code&gt;saturate&lt;/code&gt; modificamos o canal saturação da cores do elemento. Quanto maior a saturação, mais vivas as cores estarão, e quanto menor a saturação, mais próximas do cinza elas estarão. Com o &lt;ceode&gt;saturate&lt;/ceode&gt; em 0, obtemos o mesmo resultado que o &lt;code&gt;grayscale&lt;/code&gt; em 100%&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: saturate(4);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;saturate&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;4&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='opacity'&gt;Opacity&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-opacity.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Ok, esse é bastante fácil. Simplesmente mude a opacidade do elemento. Os valores vão de 0 a 1. 0 deixa o elemento invisível.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: opacity(0.5);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;opacity&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='m'&gt;5&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='brightness'&gt;Brightness&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-brightness.png' /&gt;&lt;/p&gt;
 &lt;p&gt;O &lt;code&gt;brightness&lt;/code&gt; altera o brilho do elemento. Os valores vão de 100% a 0%. Em 100%, com o brilho no máximo, o elemento fica totalmente branco.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: brightness(50%);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;brightness&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;50&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='contrast'&gt;Contrast&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-contrast.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Também bastante óbvio. Aqui alteramos a saturação do elemento. O valor desse filtro pode ser expresso em unidades (0, 1, 3, 4, &amp;#8230;) ou em percentagem (0%, 100%, 1500%).&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: constrast(1.5);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;constrast&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='m'&gt;5&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='hue_rotate'&gt;Hue Rotate&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-hue-rotate.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Neste filtro podemos mover todas as cores do elemento em graus dentro da roda de cores. Com 0deg não iremos realizar nenhuma alteração, enquanto com 180deg iremos inverter todas as cores.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: hue-rotate(180deg);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;hue&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;rotate&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;180&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='invert'&gt;Invert&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-invert.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Com o &lt;code&gt;invert&lt;/code&gt; invertemos todas as cores. Na verdade a inversão completa acontece apenas se usarmos o valor 100%. Com 50% as cores estarão no meio caminho entre suas cores invertidas, o que significa que estarão com um tom de cinza. Os valores vão de 0% a 100%.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: invert(100%);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;invert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;100&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;h2 id='vrios_filtros'&gt;Vários filtros&lt;/h2&gt;
 &lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-various.png' /&gt;&lt;/p&gt;
 &lt;p&gt;Também é possível o uso de vários filtros em conjunto, para obtermos um efeito mais único. Na imagem acima usamos &lt;code&gt;hue-rotate&lt;/code&gt; e &lt;code&gt;sepia&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code data-language='css'&gt;
-img {
-    -webkit-filter: hue-rotate(60deg) sepia(1);
-}
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;hue&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;rotate&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;60&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='n'&gt;sepia&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 &lt;p&gt;Como podemos ver o CSS Filters vem adicionar ainda mais poder ao HTML5. E isto é só uma prévia do que há por vir, como os &lt;a href='http://www.youtube.com/watch?v=NZRqnohI3m4'&gt;CSS Shaders&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;No momento em que escrevo este post, os CSS Filters rodam no &lt;a href='http://tools.google.com/dlpage/chromesxs'&gt;Google Chrome Canary&lt;/a&gt;, &lt;a href='http://www.google.com/chrome/intl/en/eula_dev.html'&gt;Google Chrome dev channel&lt;/a&gt; e &lt;a href='http://nightly.webkit.org/'&gt;WebKit Nightly Build&lt;/a&gt;.&lt;/p&gt;

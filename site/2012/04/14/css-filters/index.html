@@ -23,19 +23,15 @@
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
+	
+	
+		<link rel="stylesheet" type="text/css" href="/styles/wombat.css" media="all" />
+	
 	
 	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="/scripts/rainbow-custom.min.js"></script>	
 	<script type="text/javascript">
 		
 		$(document).ready( function(){
-
-			// $('#social-btn').click( function(e){
-			// 	e.preventDefault();
-			// 	$(this).toggleClass('open');
-			// 	$('#social').toggleClass('open');
-			// });
 
 			$('#links a').hover( function(){
 				$(this).parent().siblings('span').addClass('show');
@@ -57,13 +53,6 @@
 	</script>
 </head>
 <body>
-	<!-- <section id="social">
-		<ul>
-			<li><a class="icon rss" alt="RSS" title="RSS" href="http://feeds.feedburner.com/l8p"></a></li>
-			<li><a class="icon twitter" alt="Twitter" title="Twitter" href="http://twitter.com/loopinfinito"></a></li>
-			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
-		</ul>
-	</section> -->
 	<ul id="links">
 		<li class="twitter">
 			<div><a href="http://twitter.com/loopinfinito"><img src="/images/icons/twitter.png" alt="" /></a></div>
@@ -86,12 +75,6 @@
 					<li><a href="/">Posts</a></li>
 					<li><a href="/projetos">Projetos</a></li>
 					<li><a href="/sobre">Sobre</a></li>
-					<!-- <li>
-						<a href="#social" id="social-btn">
-							<span id="social-btn-open"><img src="/images/icons/loopinfinito.png" alt=""></span>
-							<span id="social-btn-close">&times;</span>
-						</a>
-					</li> -->
 				</ul>
 			</nav>
 		</header>
@@ -150,83 +133,83 @@
 <h2 id='grayscale'>Grayscale</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-grayscale.png' /></p>
 <p>Com o filtro <code>grayscale</code> nós indicamos o quão preto-e-branco queremos que o elemento fique, numa escala de 0 a 1 ou 0% 100%.</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: grayscale(100%);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='n'>grayscale</span><span class='p'>(</span><span class='m'>100</span><span class='o'>%</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='blur'>Blur</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-blur.png' /></p>
 <p>Com o filtro <code>blur</code> podemos embaçar um elemento. Algo parecido como ver uma foto sem óculos (eu imagino que seja assim). Os valores são definidos em pixels. Quanto maior o valor, mais embaçado o elemento.</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: blur(3px);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='n'>blur</span><span class='p'>(</span><span class='m'>3px</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='sepia'>Sepia</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-sepia.png' /></p>
 <p>Este efeito é normamelmente usado em fotos, dando a elas um efeito de fotos antigas. Os valores do efeito vão de 0 a 1.</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: sepia(1);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='n'>sepia</span><span class='p'>(</span><span class='m'>1</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='saturate'>Saturate</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-saturate.png' /></p>
 <p>Com o <code>saturate</code> modificamos o canal saturação da cores do elemento. Quanto maior a saturação, mais vivas as cores estarão, e quanto menor a saturação, mais próximas do cinza elas estarão. Com o <ceode>saturate</ceode> em 0, obtemos o mesmo resultado que o <code>grayscale</code> em 100%</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: saturate(4);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='n'>saturate</span><span class='p'>(</span><span class='m'>4</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='opacity'>Opacity</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-opacity.png' /></p>
 <p>Ok, esse é bastante fácil. Simplesmente mude a opacidade do elemento. Os valores vão de 0 a 1. 0 deixa o elemento invisível.</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: opacity(0.5);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='k'>opacity</span><span class='p'>(</span><span class='m'>0</span><span class='o'>.</span><span class='m'>5</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='brightness'>Brightness</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-brightness.png' /></p>
 <p>O <code>brightness</code> altera o brilho do elemento. Os valores vão de 100% a 0%. Em 100%, com o brilho no máximo, o elemento fica totalmente branco.</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: brightness(50%);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='n'>brightness</span><span class='p'>(</span><span class='m'>50</span><span class='o'>%</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='contrast'>Contrast</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-contrast.png' /></p>
 <p>Também bastante óbvio. Aqui alteramos a saturação do elemento. O valor desse filtro pode ser expresso em unidades (0, 1, 3, 4, &#8230;) ou em percentagem (0%, 100%, 1500%).</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: constrast(1.5);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='n'>constrast</span><span class='p'>(</span><span class='m'>1</span><span class='o'>.</span><span class='m'>5</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='hue_rotate'>Hue Rotate</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-hue-rotate.png' /></p>
 <p>Neste filtro podemos mover todas as cores do elemento em graus dentro da roda de cores. Com 0deg não iremos realizar nenhuma alteração, enquanto com 180deg iremos inverter todas as cores.</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: hue-rotate(180deg);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='n'>hue</span><span class='o'>-</span><span class='n'>rotate</span><span class='p'>(</span><span class='m'>180</span><span class='n'>deg</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='invert'>Invert</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-invert.png' /></p>
 <p>Com o <code>invert</code> invertemos todas as cores. Na verdade a inversão completa acontece apenas se usarmos o valor 100%. Com 50% as cores estarão no meio caminho entre suas cores invertidas, o que significa que estarão com um tom de cinza. Os valores vão de 0% a 100%.</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: invert(100%);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='k'>invert</span><span class='p'>(</span><span class='m'>100</span><span class='o'>%</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <h2 id='vrios_filtros'>Vários filtros</h2>
 <p><img src='http://loopinfinito.com.br/images/posts/jeri-various.png' /></p>
 <p>Também é possível o uso de vários filtros em conjunto, para obtermos um efeito mais único. Na imagem acima usamos <code>hue-rotate</code> e <code>sepia</code>.</p>
-<pre><code data-language='css'>
-img {
-    -webkit-filter: hue-rotate(60deg) sepia(1);
-}
+<div class='highlight'><pre><code class='css'><span class='nt'>img</span> <span class='p'>{</span>
+    <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>filter</span><span class='o'>:</span> <span class='n'>hue</span><span class='o'>-</span><span class='n'>rotate</span><span class='p'>(</span><span class='m'>60</span><span class='n'>deg</span><span class='p'>)</span> <span class='n'>sepia</span><span class='p'>(</span><span class='m'>1</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <p>Como podemos ver o CSS Filters vem adicionar ainda mais poder ao HTML5. E isto é só uma prévia do que há por vir, como os <a href='http://www.youtube.com/watch?v=NZRqnohI3m4'>CSS Shaders</a>.</p>
 
 <p>No momento em que escrevo este post, os CSS Filters rodam no <a href='http://tools.google.com/dlpage/chromesxs'>Google Chrome Canary</a>, <a href='http://www.google.com/chrome/intl/en/eula_dev.html'>Google Chrome dev channel</a> e <a href='http://nightly.webkit.org/'>WebKit Nightly Build</a>.</p>

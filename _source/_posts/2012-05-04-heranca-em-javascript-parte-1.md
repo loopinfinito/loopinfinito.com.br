@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 image: images/posts/2012-05-04-heranca-em-javascript.jpg
 resumo: Uma das coisas que mais assusta programadores vindos de linguagens orientadas a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos, inclusive, tentam simular este comportamento no JavaScript, mas poucos conseguem com sucesso. Neste post numa série de 2, iremos relembrar o que é herança, a cadeia de protótipos e como era feito a herança em JavaScript.
 tags: javascript
-styles: [code.html]
+styles: [wombat]
 keywords: javascript, js, web development, desenvolvimento web, html5, front-end, programação, oop, orientação a objetos, herança, orientação a protótipos, java
 comments: true
 ---
@@ -25,7 +25,7 @@ Imaginem que temos que representar em nossa aplicação alguns animais, como gat
 
 Vamos implementar o cenário acima em Java. Como desejamos representar gatos e cachorros, e sabemos que eles possuem métodos similares, como nascer, morrer e respirar, vamos criar uma classe Animal e implementar estes métodos nela, para que gatos e cachorros possam herdá-los.
 
-<pre><code data-language="java">
+{% highlight java %}
 // setamos a classe como abstrata pois não desejamos criar
 // objetos do tipo animal, apenas os tipos mais
 // especializados como Gato ou Cachorro podem ser instânciados
@@ -42,11 +42,11 @@ public abstract class Animal {
     ...
   }
 }
-</code></pre>
+{% endhighlight %}
 
 Agora definimos as classes Gato e Cachorro, que irão herdar de Animal e implementar métodos que só fazem sentido em seu próprio escopo, como miar no caso de Gato e latir no caso de Cachorro.
 
-<pre><code data-language="javascript">
+{% highlight java %}
 // além do método miar, os objetos do tipo Gato 
 // terão também, devido a herança, os métodos de Animal
 class Gato extends Animal {
@@ -73,7 +73,7 @@ class Cachorro extends Animal {
     ...
   }
 }
-</code></pre>
+{% endhighlight %}
 
 Definimos a relação de herança com a palavra reservada <code>extends</code>. Com isso as classes Gato e Cachorro irão possuir, além de seus próprios métodos, os métodos herdados de Animal, como nascer, morrer e respirar.
 
@@ -88,7 +88,7 @@ Mesmo que não esteja definido explicitamente no código, todos os outros objeto
 Como no exemplo abaixo, definimos um objeto vazio, um array vazio e uma função.
 Eles todos herdarão métodos e atributos de seus protótipos.
 
-<pre><code data-language="javascript">
+{% highlight javascript %}
 // aqui criamos um novo objeto genérico com o nome carro
 // ele automaticamente usará o prototipo de Object
 var carro = {}
@@ -113,7 +113,7 @@ function validarCPF() {
 validarCPF.call() // método herdado de Function
 Object.getPrototypeOf(validarCPF) // retorna function Empty() {}
 
-</code></pre>
+{% endhighlight %}
 
 É interessante notar que a herança ocorre em __toda__ a cadeia de protótipos. Como quando definimos um array: ele herda todas as propriedades de Array e de Object, uma vez que Array usa Object como protótipo.
 Podemos verificar isso chamando o protótipo do protótipo de frutas. O protótipo de frutas é Array, e o protótipo de Array é Object ou, o protótipo do protótipo de frutas é Object.
@@ -129,7 +129,7 @@ Nesta propriedade definimos o prototipo da função, ou todas as propriedades qu
 
 Ok, pode parecer complicado falando, mas fica bem fácil olhando o código.
 
-<pre><code data-language="javascript">
+{% highlight javascript %}
 // criamos o construtor Animal
 function Animal() {
 }
@@ -142,11 +142,11 @@ Animal.prototype.morrer = function() {
 Animal.prototype.respirar = function() {
   ...
 }
-</code></pre>
+{% endhighlight %}
 
 Agora definimos Gato e Cachorro, e usamos Animal como protótipo.
 
-<pre><code data-language="javascript">
+{% highlight javascript %}
 // criamos o construtor Gato
 function Gato(nome) {
   this.nome = nome
@@ -171,7 +171,7 @@ var rex = new Cachorro('rex') // criamos um objeto do tipo Cachorro
 rex.latir() // utilizando um método definido em Cachorro
 rex.respirar() // utilizando um método herdado de Animal
 rex.nome // retorna 'rex'
-</code></pre>
+{% endhighlight %}
 
 Precisamos criar um novo objeto do tipo Animal para setarmos como protótipo, pois caso contrário estariamos passando a referência para a função.
 
@@ -179,23 +179,23 @@ A propriedade <code>constructor</code> nos informa o construtor do objeto. Nós 
 
 Podemos verificar que rex é de fato um cachorro perguntado se ele é uma instância de Cachorro.
 
-<pre><code data-language="javascript">
+{% highlight javascript %}
 rex instanceof Cachorro // retorna true
 rex instanceof Animal // retorn true. Cachorro.prototype --> Animal
 rex instanceof Object // retorna true. Cachorro.prototype --> Animal.prototype --> Object
 rex instanceof Array // retorna false
-</code></pre>
+{% endhighlight %}
 
 Interessante notar que rex também é uma instância de Animal, já que Cachorro usa Animal como protótipo. E também é instância de Object, já que Animal usa, implicitamente, Object como protótipo.
 
 Por ser uma linguagem orientada a protótipos, nós podemos definir um novo ao método ao protótipo e todos os objetos já instanciados irão ter acesso a este método criado, o que é impossível de ser feito em linguagens como Java (me corrijam se estiver falando besteira).
 
-<pre><code data-language="javascript">
+{% highlight javascript %}
 Cachorro.prototype.morder = function() {
   ...
 }
 rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos definidos no protótipo de Cachorro
-</code></pre>
+{% endhighlight %}
 
 Um dos perigos dessa abordagem é que caso se esqueça de usar <code>new</code>, o <code>this</code> dentro da <code>function</code> irá se referenciar ao objeto global, e poderá sobreescrever algumas variáveis já declaradas antes.
 

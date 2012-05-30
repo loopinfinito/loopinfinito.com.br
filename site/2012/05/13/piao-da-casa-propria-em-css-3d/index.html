@@ -23,23 +23,15 @@
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
 	
 	
-		<link rel="stylesheet" type="text/css" href="/styles/code.html.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="/styles/wombat.css" media="all" />
 	
 	
 	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="/scripts/rainbow-custom.min.js"></script>	
 	<script type="text/javascript">
 		
 		$(document).ready( function(){
-
-			// $('#social-btn').click( function(e){
-			// 	e.preventDefault();
-			// 	$(this).toggleClass('open');
-			// 	$('#social').toggleClass('open');
-			// });
 
 			$('#links a').hover( function(){
 				$(this).parent().siblings('span').addClass('show');
@@ -61,13 +53,6 @@
 	</script>
 </head>
 <body>
-	<!-- <section id="social">
-		<ul>
-			<li><a class="icon rss" alt="RSS" title="RSS" href="http://feeds.feedburner.com/l8p"></a></li>
-			<li><a class="icon twitter" alt="Twitter" title="Twitter" href="http://twitter.com/loopinfinito"></a></li>
-			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
-		</ul>
-	</section> -->
 	<ul id="links">
 		<li class="twitter">
 			<div><a href="http://twitter.com/loopinfinito"><img src="/images/icons/twitter.png" alt="" /></a></div>
@@ -90,12 +75,6 @@
 					<li><a href="/">Posts</a></li>
 					<li><a href="/projetos">Projetos</a></li>
 					<li><a href="/sobre">Sobre</a></li>
-					<!-- <li>
-						<a href="#social" id="social-btn">
-							<span id="social-btn-open"><img src="/images/icons/loopinfinito.png" alt=""></span>
-							<span id="social-btn-close">&times;</span>
-						</a>
-					</li> -->
 				</ul>
 			</nav>
 		</header>
@@ -145,75 +124,75 @@
 <h2 id='a_brincadeira__muito_fcil'>A brincadeira é muito fácil</h2>
 
 <p>Vamos começar com o código HTML. Apenas uma <code>div</code> contendo 6 outras <code>div</code>, uma para cada face do pião, a <code>div</code> wrapper, que servirá de container para o pião, e mais uma última para a moldura do pião.</p>
-<pre><code data-language='html'>
-<div id='wrapper'>
-  <div id='piao'>
-    <!-- todas as faces do pião -->
-    <div class='numero um'>1</div>
-    <div class='numero dois'>2</div>
-    <div class='numero tres'>3</div>
-    <div class='numero quatro'>4</div>
-    <div class='numero cinco'>5</div>
-    <div class='numero seis'>6</div>        
-  </div>
-  <div id='moldura'> </div>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>id=</span><span class='s'>&quot;wrapper&quot;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>id=</span><span class='s'>&quot;piao&quot;</span><span class='nt'>&gt;</span>
+    <span class='c'>&lt;!-- todas as faces do pião --&gt;</span>
+    <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;numero um&quot;</span><span class='nt'>&gt;</span>1<span class='nt'>&lt;/div&gt;</span>
+    <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;numero dois&quot;</span><span class='nt'>&gt;</span>2<span class='nt'>&lt;/div&gt;</span>
+    <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;numero tres&quot;</span><span class='nt'>&gt;</span>3<span class='nt'>&lt;/div&gt;</span>
+    <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;numero quatro&quot;</span><span class='nt'>&gt;</span>4<span class='nt'>&lt;/div&gt;</span>
+    <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;numero cinco&quot;</span><span class='nt'>&gt;</span>5<span class='nt'>&lt;/div&gt;</span>
+    <span class='nt'>&lt;div</span> <span class='na'>class=</span><span class='s'>&quot;numero seis&quot;</span><span class='nt'>&gt;</span>6<span class='nt'>&lt;/div&gt;</span>        
+  <span class='nt'>&lt;/div&gt;</span>
+  <span class='nt'>&lt;div</span> <span class='na'>id=</span><span class='s'>&quot;moldura&quot;</span><span class='nt'>&gt;</span> <span class='nt'>&lt;/div&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre>
 </div>
-</code></pre>
 <p>Agora vamos dar um pouco de estilo ao pião e à moldura.</p>
-<pre><code data-language='css'>
-#wrapper {
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -200px;
-  margin-top: -200px;
-}
+<div class='highlight'><pre><code class='css'><span class='nf'>#wrapper</span> <span class='p'>{</span>
+  <span class='k'>width</span><span class='o'>:</span> <span class='m'>400px</span><span class='p'>;</span>
+  <span class='k'>height</span><span class='o'>:</span> <span class='m'>400px</span><span class='p'>;</span>
+  <span class='k'>position</span><span class='o'>:</span> <span class='k'>absolute</span><span class='p'>;</span>
+  <span class='k'>left</span><span class='o'>:</span> <span class='m'>50</span><span class='o'>%</span><span class='p'>;</span>
+  <span class='k'>top</span><span class='o'>:</span> <span class='m'>50</span><span class='o'>%</span><span class='p'>;</span>
+  <span class='k'>margin-left</span><span class='o'>:</span> <span class='m'>-200px</span><span class='p'>;</span>
+  <span class='k'>margin-top</span><span class='o'>:</span> <span class='m'>-200px</span><span class='p'>;</span>
+<span class='p'>}</span>
 
-#piao {
-  position: relative;
-  top: 40px; /* centraliza o pião */
-  margin: 0 auto; /* centraliza o pião */
-  height: 330px;
-  width: 200px;
-}
+<span class='nf'>#piao</span> <span class='p'>{</span>
+  <span class='k'>position</span><span class='o'>:</span> <span class='k'>relative</span><span class='p'>;</span>
+  <span class='k'>top</span><span class='o'>:</span> <span class='m'>40px</span><span class='p'>;</span> <span class='c'>/* centraliza o pião */</span>
+  <span class='k'>margin</span><span class='o'>:</span> <span class='m'>0</span> <span class='k'>auto</span><span class='p'>;</span> <span class='c'>/* centraliza o pião */</span>
+  <span class='k'>height</span><span class='o'>:</span> <span class='m'>330px</span><span class='p'>;</span>
+  <span class='k'>width</span><span class='o'>:</span> <span class='m'>200px</span><span class='p'>;</span>
+<span class='p'>}</span>
 
-#piao .numero {
-  position: absolute;
-  height: 100%;
-  width: 200px;
-  border: 6px solid white;
-  -webkit-box-sizing: border-box;
-  text-align: center;
-  line-height: 320px;
-  font-family: Impact, sans-serif;
-  font-size: 240px;
-  color: white;
-  background-color: rgb(0, 0, 0);
-}
+<span class='nf'>#piao</span> <span class='nc'>.numero</span> <span class='p'>{</span>
+  <span class='k'>position</span><span class='o'>:</span> <span class='k'>absolute</span><span class='p'>;</span>
+  <span class='k'>height</span><span class='o'>:</span> <span class='m'>100</span><span class='o'>%</span><span class='p'>;</span>
+  <span class='k'>width</span><span class='o'>:</span> <span class='m'>200px</span><span class='p'>;</span>
+  <span class='k'>border</span><span class='o'>:</span> <span class='m'>6px</span> <span class='k'>solid</span> <span class='nb'>white</span><span class='p'>;</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>box</span><span class='o'>-</span><span class='n'>sizing</span><span class='o'>:</span> <span class='k'>border</span><span class='o'>-</span><span class='n'>box</span><span class='p'>;</span>
+  <span class='k'>text-align</span><span class='o'>:</span> <span class='k'>center</span><span class='p'>;</span>
+  <span class='k'>line-height</span><span class='o'>:</span> <span class='m'>320px</span><span class='p'>;</span>
+  <span class='k'>font-family</span><span class='o'>:</span> <span class='n'>Impact</span><span class='o'>,</span> <span class='k'>sans-serif</span><span class='p'>;</span>
+  <span class='k'>font-size</span><span class='o'>:</span> <span class='m'>240px</span><span class='p'>;</span>
+  <span class='k'>color</span><span class='o'>:</span> <span class='nb'>white</span><span class='p'>;</span>
+  <span class='k'>background-color</span><span class='o'>:</span> <span class='k'>rgb</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#moldura {
-  height: 400px;
-  width: 400px;
-  border: 50px solid rgb(200, 0, 0);
-  border-radius: 250px;
-  position: absolute;
-  top: -45px;
-  left: -50px;
-  /* 
-    1ª shadow: simula 3D no elemento, na parte interna
-    2ª shadow: shadow interna para simular profundidade
-    3ª shadow: simula 3D no elemento, na parte externa
-    4ª shadow: shadow externa para simular profundidade 
-  */
-  box-shadow: 
-    inset -1px -2px 0px 3px rgb(150, 0, 0),
-    inset -1px -2px 10px 10px rgba(0, 0, 0, 0.5), 
-    -2px -2px 0px 3px rgb(150, 0, 0),
-    -4px -4px 10px 10px rgba(0, 0, 0, 0.5);
-}
+<span class='nf'>#moldura</span> <span class='p'>{</span>
+  <span class='k'>height</span><span class='o'>:</span> <span class='m'>400px</span><span class='p'>;</span>
+  <span class='k'>width</span><span class='o'>:</span> <span class='m'>400px</span><span class='p'>;</span>
+  <span class='k'>border</span><span class='o'>:</span> <span class='m'>50px</span> <span class='k'>solid</span> <span class='k'>rgb</span><span class='p'>(</span><span class='m'>200</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='p'>);</span>
+  <span class='k'>border</span><span class='o'>-</span><span class='n'>radius</span><span class='o'>:</span> <span class='m'>250px</span><span class='p'>;</span>
+  <span class='k'>position</span><span class='o'>:</span> <span class='k'>absolute</span><span class='p'>;</span>
+  <span class='k'>top</span><span class='o'>:</span> <span class='m'>-45px</span><span class='p'>;</span>
+  <span class='k'>left</span><span class='o'>:</span> <span class='m'>-50px</span><span class='p'>;</span>
+  <span class='c'>/* </span>
+<span class='c'>    1ª shadow: simula 3D no elemento, na parte interna</span>
+<span class='c'>    2ª shadow: shadow interna para simular profundidade</span>
+<span class='c'>    3ª shadow: simula 3D no elemento, na parte externa</span>
+<span class='c'>    4ª shadow: shadow externa para simular profundidade </span>
+<span class='c'>  */</span>
+  <span class='n'>box</span><span class='o'>-</span><span class='n'>shadow</span><span class='o'>:</span> 
+    <span class='k'>inset</span> <span class='m'>-1px</span> <span class='m'>-2px</span> <span class='m'>0px</span> <span class='m'>3px</span> <span class='k'>rgb</span><span class='p'>(</span><span class='m'>150</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='p'>)</span><span class='o'>,</span>
+    <span class='k'>inset</span> <span class='m'>-1px</span> <span class='m'>-2px</span> <span class='m'>10px</span> <span class='m'>10px</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>.</span><span class='m'>5</span><span class='p'>)</span><span class='o'>,</span> 
+    <span class='m'>-2px</span> <span class='m'>-2px</span> <span class='m'>0px</span> <span class='m'>3px</span> <span class='k'>rgb</span><span class='p'>(</span><span class='m'>150</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='p'>)</span><span class='o'>,</span>
+    <span class='m'>-4px</span> <span class='m'>-4px</span> <span class='m'>10px</span> <span class='m'>10px</span> <span class='n'>rgba</span><span class='p'>(</span><span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>,</span> <span class='m'>0</span><span class='o'>.</span><span class='m'>5</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <p>Agora já podemos ver algo sem graça no browser com o código acima: um número 6 dentro de um círculo vermelho com um efeito 3D simulado.</p>
 
 <h2 id='posio_no_plano_3d'>Posição no plano 3D</h2>
@@ -225,67 +204,67 @@
 <p>Mas para objetos 3D nós precisamos de mais um eixo, o eixo <strong>Z</strong>, que vai nos dar a sensação de <strong>profundidade</strong>. Este eixo se inicia no monitor e cresce no sentido monitor &rarrw; você. Então, quanto mais &#8220;distante&#8221; do monitor o objeto aparentar estar, maior o valor de Z.</p>
 
 <p>Agora entendendo um pouco sobre o plano 3D, vamos organizar os elementos a fim de formar o pião.</p>
-<pre><code data-language='css'>
-#piao > .numero.um {
-  /* 
-    a rotação deste elemento é 0, o que já é o valor padrão
-    então não há necessidade de redeclarar sua rotação
-   */
-}
+<div class='highlight'><pre><code class='css'><span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.um</span> <span class='p'>{</span>
+  <span class='c'>/* </span>
+<span class='c'>    a rotação deste elemento é 0, o que já é o valor padrão</span>
+<span class='c'>    então não há necessidade de redeclarar sua rotação</span>
+<span class='c'>   */</span>
+<span class='p'>}</span>
 
-#piao > .numero.dois {
-  -webkit-transform: rotateY(60deg);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.dois</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>60</span><span class='n'>deg</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.tres {
-  -webkit-transform: rotateY(120deg);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.tres</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>120</span><span class='n'>deg</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.quatro {
-  -webkit-transform: rotateY(180deg);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.quatro</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>180</span><span class='n'>deg</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.cinco {
-  -webkit-transform: rotateY(240deg);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.cinco</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>240</span><span class='n'>deg</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.seis {
-  -webkit-transform: rotateY(300deg);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.seis</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>300</span><span class='n'>deg</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <p>No trecho de CSS acima, nós giramos as faces em relação ao eixo Y. Precisamos girar todas as faces a fim de fecharmos uma volta. Como uma volta possui 360 graus e o pião possui 6 faces, então iremos rotacionar cada face em 60 graus mais a rotação da face anterior, ou seja, o primeiro elemento irá ser rotacionado em 60 graus, o segundo em 120 graus, o terceiro em 180 graus, e assim por diante até o último elemento.</p>
 
 <p>Porém se rotacionarmos apenas no eixo Y os elementos, eles ficarão todos um por cima dos outros, apenas inclinados de forma diferente. Estarão todos no centro do que será nosso pião. Precisamos agora afastar as faces umas das outras. E para isso iremos usar a propriedade <code>translateZ</code>.</p>
-<pre><code data-language='css'>
-#piao {
-  ...
-  -webkit-transform-style: preserve-3d;
-}
+<div class='highlight'><pre><code class='css'><span class='nf'>#piao</span> <span class='p'>{</span>
+  <span class='o'>...</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>-</span><span class='n'>style</span><span class='o'>:</span> <span class='n'>preserve</span><span class='m'>-3</span><span class='err'>d</span><span class='p'>;</span>
+<span class='p'>}</span>
 
-#piao > .numero.um {
-  -webkit-transform: translateZ(170px);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.um</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>translateZ</span><span class='p'>(</span><span class='m'>170px</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.dois {
-  -webkit-transform: rotateY(60deg) translateZ(170px);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.dois</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>60</span><span class='n'>deg</span><span class='p'>)</span> <span class='n'>translateZ</span><span class='p'>(</span><span class='m'>170px</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.tres {
-  -webkit-transform: rotateY(120deg) translateZ(170px);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.tres</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>120</span><span class='n'>deg</span><span class='p'>)</span> <span class='n'>translateZ</span><span class='p'>(</span><span class='m'>170px</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.quatro {
-  -webkit-transform: rotateY(180deg) translateZ(170px);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.quatro</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>180</span><span class='n'>deg</span><span class='p'>)</span> <span class='n'>translateZ</span><span class='p'>(</span><span class='m'>170px</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.cinco {
-  -webkit-transform: rotateY(240deg) translateZ(170px);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.cinco</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>240</span><span class='n'>deg</span><span class='p'>)</span> <span class='n'>translateZ</span><span class='p'>(</span><span class='m'>170px</span><span class='p'>);</span>
+<span class='p'>}</span>
 
-#piao > .numero.seis {
-  -webkit-transform: rotateY(300deg) translateZ(170px);
-}
+<span class='nf'>#piao</span> <span class='o'>&gt;</span> <span class='nc'>.numero.seis</span> <span class='p'>{</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>300</span><span class='n'>deg</span><span class='p'>)</span> <span class='n'>translateZ</span><span class='p'>(</span><span class='m'>170px</span><span class='p'>);</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <p>Com o <code>transform-style: preserve-3d</code> estamos dizendo que os filhos diretos do elemento pião irão compartilhar o mesmo espaço 3D que o pai. Caso contrário os elementos seriam renderizados de forma plana no elemento pai.</p>
 
 <p>Depois, com a regra <code>translateZ</code>, estamos afastanto todos os elementos do seu ponto inicial no eixo Z. Com o <code>rotateY</code> giramos todas as faces e com o <code>translateZ</code> é como se estivéssemos pedindo para que todas as faces dessem um passo de 170px à frente. Como giramos todas para um lado diferente, elas irão &#8220;caminhar&#8221; para um sentido diferente.</p>
@@ -295,23 +274,23 @@
 <h2 id='animao_em_ritmo_de_festa'>Animação em ritmo de festa</h2>
 
 <p>O efeito que queremos ver é o do pião rodando em relação ao seu eixo Y, o mesmo eixo em que rotacionamos as faces do pião. Para isso iremos criar uma animação com o estado inicial no ponto 0 graus do eixo Y e estado final no 360 graus, ou seja, uma volta completa.</p>
-<pre><code data-language='css'>
-/* 
-  animação para o pião rodar 
-  uma animação básica ao redor do eixo Y
-*/
-@-webkit-keyframes rodando {
-  from { -webkit-transform: rotateY(0); }
-  to   { -webkit-transform: rotateY(-360deg); }
-}
+<div class='highlight'><pre><code class='css'><span class='c'>/* </span>
+<span class='c'>  animação para o pião rodar </span>
+<span class='c'>  uma animação básica ao redor do eixo Y</span>
+<span class='c'>*/</span>
+<span class='k'>@-webkit-keyframes</span> <span class='nt'>rodando</span> <span class='p'>{</span>
+  <span class='nt'>from</span> <span class='p'>{</span> <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>0</span><span class='p'>);</span> <span class='p'>}</span>
+  <span class='nt'>to</span>   <span class='p'>{</span> <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>transform</span><span class='o'>:</span> <span class='n'>rotateY</span><span class='p'>(</span><span class='m'>-360</span><span class='n'>deg</span><span class='p'>);</span> <span class='p'>}</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <p>No trecho acima definimos nossa animação e a chamamos de rodando (em homenagem). Agora é só a usarmos no elemento que desejarmos.</p>
-<pre><code data-language='css'>
-#piao {
-  ...
-  -webkit-animation: rodando 4s infinite linear;
-}
+<div class='highlight'><pre><code class='css'><span class='nf'>#piao</span> <span class='p'>{</span>
+  <span class='o'>...</span>
+  <span class='o'>-</span><span class='n'>webkit</span><span class='o'>-</span><span class='n'>animation</span><span class='o'>:</span> <span class='n'>rodando</span> <span class='m'>4s</span> <span class='n'>infinite</span> <span class='n'>linear</span><span class='p'>;</span>
+<span class='p'>}</span>
 </code></pre>
+</div>
 <p>Aqui dizemos que queremos animar o elemento pião, utilizando a animação &#8220;rodando&#8221;, demorando 4 segundos para ir de seu estado inicial ao estado final, essa animação não irá parar (infinite) e a sua transição entre estados será linear.</p>
 
 <p>Agora se checarmos no navegador, iremos finalmente ter nosso pião da casa própria em HTML5. E rodandooo.</p>
@@ -319,14 +298,14 @@
 <h2 id='one_more_thing'>One more thing&#8230;</h2>
 
 <p>O Pião da Casa Própria não seria o mesmo sem a <strong>clássica</strong> trilha sonnora. Então vamos adicioná-la ao experimento. Iremos usar a nova tag <code>audio</code> para reproduzir a música sem a nececissade do Flash. <!-- O seu uso é bastante simples.  --> Basta declarar a tag <code>audio</code> e dentro dela as tags <code>source</code> com os caminhos para o mesmo arquivo salvo em diferentes codecs.</p>
-<pre><code data-language='html'>
-<!-- trilha do pião da casa própria. máá ô-ê -->
-<audio loop='true' preload='auto'>
-  <source src='piao-da-casa-propria-soundtrack.mp3' />
-  <source src='piao-da-casa-propria-soundtrack.m4a' />
-  <source src='piao-da-casa-propria-soundtrack.ogg' />
-</audio>
+<div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- trilha do pião da casa própria. máá ô-ê --&gt;</span>
+<span class='nt'>&lt;audio</span> <span class='na'>preload=</span><span class='s'>&quot;auto&quot;</span> <span class='na'>loop=</span><span class='s'>&quot;true&quot;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;source</span> <span class='na'>src=</span><span class='s'>&quot;piao-da-casa-propria-soundtrack.mp3&quot;</span> <span class='nt'>/&gt;</span>
+  <span class='nt'>&lt;source</span> <span class='na'>src=</span><span class='s'>&quot;piao-da-casa-propria-soundtrack.m4a&quot;</span> <span class='nt'>/&gt;</span>
+  <span class='nt'>&lt;source</span> <span class='na'>src=</span><span class='s'>&quot;piao-da-casa-propria-soundtrack.ogg&quot;</span> <span class='nt'>/&gt;</span>
+<span class='nt'>&lt;/audio&gt;</span>
 </code></pre>
+</div>
 <p>O navegador irá tentar de cima para baixo executar os formatos, e quando achar um que possa reproduzir, irá carregar e não irá mais procurar por outros <code>source</code>. O uso desta tag é necessário pois cada navegador dá suporte a um <a href='http://html5doctor.com/native-audio-in-the-browser/'>diferente conjunto de codecs</a>.</p>
 
 <p>Caso queiram escutar a trilha sonora agora e ver o pião rodando é só apertar o botão play no lado direito superior dentro do experimento, no <a href='#experimento-piao'>início</a> do post. Utilizei a API JavaScript para controlar o comportamento da tag <code>audio</code>, mas para não perdemos o foco, essa API fica para um próximo post. <!-- 
