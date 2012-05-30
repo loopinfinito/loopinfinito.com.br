@@ -8,7 +8,7 @@ resumo: Ontem finalmente saímos da teoria e realizamos a marcação semântica 
 tags: SEO microdata schema.org HTML5 web-semantica
 keywords: SEO, microdata, schema.org, HTML5, marcacao semantica, web semantica, desenvolvimento web, crawler, visibilidade
 comments: true
-styles: [code.html]
+styles: [wombat]
 ---
 <style type="text/css">
 	
@@ -80,18 +80,20 @@ Obviamente os nossos posts se encaixam na categoria **BlogPosting**, então este
 O trecho de código abaixo mostra como era o código fonte de um resumo de post (o exemplo abaixo ilustra o <a href="#print-home">print screen</a> acima).
 Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de ficar olhando para um monte de linhas de código de uma vez, né).
 
-<pre><code data-language="html"><!-- bloco do post -->
+{% highlight html %}
+<!-- bloco do post -->
 <section class="post-container">
     <!-- menu da lateral direita -->
     <aside class="post-meta"> ... </aside>
     <!-- área principal do post -->
     <article> ... </article>
 </section>
-</code></pre>
+{% endhighlight %}
 
 *Menu da lateral direita* detalhadamente:
 
-<pre><code data-language="html"><aside class="post-meta">
+{% highlight html %}
+<aside class="post-meta">
     <ul>
         <!-- data da publicação -->
         <li class="post-data">04/05/2012</li>
@@ -111,11 +113,12 @@ Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de 
         </li>
     </ul>
 </aside>
-</code></pre>
+{% endhighlight %}
 
 *Área principal do post* detalhadamente:
 
-<pre><code data-language="html"><article>
+{% highlight html %}
+<article>
     <!-- título do post -->
     <header>
         <h1><a href="...">Herança em JavaScript parte I</a></h1>
@@ -130,7 +133,7 @@ Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de 
         <a href="..." class="leia-mais">Continue lendo &rarrw;</a>
     </section>
 </article>
-</code></pre>
+{% endhighlight %}
 
 OK, nada de mais. Basicamente uma marcação simples HTML5.
 
@@ -141,7 +144,8 @@ Mesmo esquema aqui, dividi o código em blocos:
 ### Elemento geral
 <p></p>
 
-<pre><code data-language="html"><!-- adicionamos as propriedades itemscope e itemtype para BlogPosting -->
+{% highlight html %}
+<!-- adicionamos as propriedades itemscope e itemtype para BlogPosting -->
 <section class="post-container" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
     <!-- adicionamos esta tag <span> para o publicador do post -->
     <span class="hidden" itemprop="publisher">Loop Infinito</span>
@@ -149,7 +153,7 @@ Mesmo esquema aqui, dividi o código em blocos:
     <aside class="post-meta"> ... </aside>
     <article> ... </article>
 </section>
-</code></pre>
+{% endhighlight %}
 
 - Definimos a entidade principal (BlogPosting) no elemento que engloba todos os dados sobre o post;
 - O elemento <code>{{ '<span>' | escape }}</code> não é visível para o leitor (classe <code>.hidden</code>), pois foi adicionado apenas para podermos especificar que este post foi publicado pelo Loop Infinito com <code>itemprop="publisher"</code>;
@@ -161,7 +165,8 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
 ### Menu lateral direito
 <p></p>
 
-<pre><code data-language="html"><aside class="post-meta">
+{% highlight html %}
+<aside class="post-meta">
     <ul>
         <li class="post-data">
             <!-- data de publicação do post -->
@@ -188,7 +193,7 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
         </li>
     </ul>
 </aside>
-</code></pre>
+{% endhighlight %}
 
 - Envolvemos a data de publicação com um elemento <code>{{'<time>'|escape}}</code> (novo no HTML5) para usar a propriedade <code>itemprop="datePublished"</code>. Usamos também a propriedade <code>datetime</code> para podermos especificar a data no formato padrão (aaaa-mm-dd);
 - Em autor, é aconselhável o uso da propriedade HTML <code>rel="author"</code> (<a href="http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm">leia sobre</a>), além de especificar a propriedade <code>itemprop="author"</code>;
@@ -198,7 +203,8 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
 ### Área principal do post
 <p></p>
 
-<pre><code data-language="html"><article>
+{% highlight html %}
+<article>
     <header>
     	<!-- título do post -->
         <h1>
@@ -218,7 +224,7 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
         <a href="..." class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>
     </section>
 </article>
-</code></pre>
+{% endhighlight %}
 
 - Definimos o título do post com a propriedade <code>itemprop="headline"</code>;
 - A propriedade <code>itemprop="thumbnailUrl"</code> serve para especificar uma imagem associada ao post;

@@ -23,23 +23,15 @@
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
 	
 	
-		<link rel="stylesheet" type="text/css" href="/styles/code.html.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="/styles/wombat.css" media="all" />
 	
 	
 	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="/scripts/rainbow-custom.min.js"></script>	
 	<script type="text/javascript">
 		
 		$(document).ready( function(){
-
-			// $('#social-btn').click( function(e){
-			// 	e.preventDefault();
-			// 	$(this).toggleClass('open');
-			// 	$('#social').toggleClass('open');
-			// });
 
 			$('#links a').hover( function(){
 				$(this).parent().siblings('span').addClass('show');
@@ -61,13 +53,6 @@
 	</script>
 </head>
 <body>
-	<!-- <section id="social">
-		<ul>
-			<li><a class="icon rss" alt="RSS" title="RSS" href="http://feeds.feedburner.com/l8p"></a></li>
-			<li><a class="icon twitter" alt="Twitter" title="Twitter" href="http://twitter.com/loopinfinito"></a></li>
-			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
-		</ul>
-	</section> -->
 	<ul id="links">
 		<li class="twitter">
 			<div><a href="http://twitter.com/loopinfinito"><img src="/images/icons/twitter.png" alt="" /></a></div>
@@ -90,12 +75,6 @@
 					<li><a href="/">Posts</a></li>
 					<li><a href="/projetos">Projetos</a></li>
 					<li><a href="/sobre">Sobre</a></li>
-					<!-- <li>
-						<a href="#social" id="social-btn">
-							<span id="social-btn-open"><img src="/images/icons/loopinfinito.png" alt=""></span>
-							<span id="social-btn-close">&times;</span>
-						</a>
-					</li> -->
 				</ul>
 			</nav>
 		</header>
@@ -340,34 +319,40 @@
 	<li><code>itemref</code>: Propriedades que estão em elementos fora do escopo (elemento com <code>itemscope</code>) podem ser associadas a este item. <code>itemref</code> deve conter seu valor preenchido com o <code>itemid</code> do elemento o qual se deseja fazer a associação.</li>
 </ul>
 <p>Agora vamos voltar ao exemplo do Avatar. Digamos que o código HTML correspondente <a href='#exemplo-filme'>àquele trecho</a> seja: (Este tutorial é basicamente o mesmo encontrado no <a href='http://schema.org/docs/gs.html'>getting started</a> do site schema.org.)</p>
-<pre><code data-language='html'><div>
-    <h4>Avatar</h4>
-    <p>Diretor: James Cameron (16 de agosto de 1954)</p>
-    <p>Ficção Científica</p>
-    <p><a href='http://www.youtube.com/...'>Veja o trailer</a></p>
-</div></code></pre>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div&gt;</span>
+    <span class='nt'>&lt;h4&gt;</span>Avatar<span class='nt'>&lt;/h4&gt;</span>
+    <span class='nt'>&lt;p&gt;</span>Diretor: James Cameron (16 de agosto de 1954)<span class='nt'>&lt;/p&gt;</span>
+    <span class='nt'>&lt;p&gt;</span>Ficção Científica<span class='nt'>&lt;/p&gt;</span>
+    <span class='nt'>&lt;p&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;http://www.youtube.com/...&quot;</span><span class='nt'>&gt;</span>Veja o trailer<span class='nt'>&lt;/a&gt;&lt;/p&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre>
+</div>
 <p>Começamos definindo a entidade Movie e adicionando as propriedades <code>itemscope</code> e <code>itemtype</code> ao elemento <code>&lt;div&gt;</code>, já que este elemento possui todo conteúdo relacionado ao filme <em>Avatar</em>.</p>
-<pre><code data-language='html'><!-- adicionamos os atributos itemscope e itemtype -->
-<div itemscope='itemscope' itemtype='http://schema.org/Movie'>
-    <h4>Avatar</h4>
-    <p>Diretor: James Cameron (16 de agosto de 1954)</p>
-    <p>Ficção Científica</p>
-    <p><a href='http://www.youtube.com/...'>Veja o trailer</a></p>
-</div></code></pre>
+<div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- adicionamos os atributos itemscope e itemtype --&gt;</span>
+<span class='nt'>&lt;div</span> <span class='na'>itemscope=</span><span class='s'>&quot;itemscope&quot;</span> <span class='na'>itemtype=</span><span class='s'>&quot;http://schema.org/Movie&quot;</span><span class='nt'>&gt;</span>
+    <span class='nt'>&lt;h4&gt;</span>Avatar<span class='nt'>&lt;/h4&gt;</span>
+    <span class='nt'>&lt;p&gt;</span>Diretor: James Cameron (16 de agosto de 1954)<span class='nt'>&lt;/p&gt;</span>
+    <span class='nt'>&lt;p&gt;</span>Ficção Científica<span class='nt'>&lt;/p&gt;</span>
+    <span class='nt'>&lt;p&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;http://www.youtube.com/...&quot;</span><span class='nt'>&gt;</span>Veja o trailer<span class='nt'>&lt;/a&gt;&lt;/p&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre>
+</div>
 <p>Agora identificamos as propriedades presentes deste filme e definimos cada uma com o atributo <code>itemprop</code>, no nosso caso estas propriedades são <em>nome</em>, <em>diretor</em>, <em>gênero</em> e <em>trailer</em>.</p>
-<pre><code data-language='html'><div itemscope='itemscope' itemtype='http://schema.org/Movie'>
-    <!-- adicionamos o atributo itemprop ao nome do filme -->
-    <h4 itemprop='name'>Avatar</h4>
-    <!-- adicionamos o atributo itemprop ao diretor do filme -->
-    <p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>itemscope=</span><span class='s'>&quot;itemscope&quot;</span> <span class='na'>itemtype=</span><span class='s'>&quot;http://schema.org/Movie&quot;</span><span class='nt'>&gt;</span>
+    <span class='c'>&lt;!-- adicionamos o atributo itemprop ao nome do filme --&gt;</span>
+    <span class='nt'>&lt;h4</span> <span class='na'>itemprop=</span><span class='s'>&quot;name&quot;</span><span class='nt'>&gt;</span>Avatar<span class='nt'>&lt;/h4&gt;</span>
+    <span class='c'>&lt;!-- adicionamos o atributo itemprop ao diretor do filme --&gt;</span>
+    <span class='nt'>&lt;p&gt;</span>
         Diretor: 
-        <span itemprop='director'>James Cameron (16 de agosto de 1954)</span>
-    </p>
-    <!-- adicionamos o atributo itemprop ao gênero do filme -->
-    <p itemprop='genre'>Ficção Científica</p>
-    <!-- adicionamos o atributo itemprop ao trailer do filme -->
-    <p><a href='http://www.youtube.com/...' itemprop='trailer'>Veja o trailer</a></p>
-</div></code></pre>
+        <span class='nt'>&lt;span</span> <span class='na'>itemprop=</span><span class='s'>&quot;director&quot;</span><span class='nt'>&gt;</span>James Cameron (16 de agosto de 1954)<span class='nt'>&lt;/span&gt;</span>
+    <span class='nt'>&lt;/p&gt;</span>
+    <span class='c'>&lt;!-- adicionamos o atributo itemprop ao gênero do filme --&gt;</span>
+    <span class='nt'>&lt;p</span> <span class='na'>itemprop=</span><span class='s'>&quot;genre&quot;</span><span class='nt'>&gt;</span>Ficção Científica<span class='nt'>&lt;/p&gt;</span>
+    <span class='c'>&lt;!-- adicionamos o atributo itemprop ao trailer do filme --&gt;</span>
+    <span class='nt'>&lt;p&gt;&lt;a</span> <span class='na'>itemprop=</span><span class='s'>&quot;trailer&quot;</span> <span class='na'>href=</span><span class='s'>&quot;http://www.youtube.com/...&quot;</span><span class='nt'>&gt;</span>Veja o trailer<span class='nt'>&lt;/a&gt;&lt;/p&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre>
+</div>
 <p>Temos um Filme cujo nome é Avatar, gênero é Ficção científica, trailer aponta para uma URL e o diretor é James Cameron. Numa representação gráfica da semântica deste trecho de código, teríamos algo parecido como:</p>
 <svg class='img' height='400' width='700'>
 	<line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='350' x2='350' y1='57.031' y2='344.36' />
@@ -418,31 +403,37 @@
 	</g>
 </svg>
 <p>Se for do nosso interesse, podemos refinar mais ainda a nossa marcação tentando identificar se uma destas propriedades pode ser definida como uma outra entidade. No caso da propriedade <code>director</code> por exemplo, um diretor é uma <strong>pessoa</strong> também, então vamos aplicar o vocabulário <strong>Person</strong> do schema.org:</p>
-<pre><code data-language='html'><div itemscope='itemscope' itemtype='http://schema.org/Movie'>
-    <h4 itemprop='name'>Avatar</h4>
-    <!-- movemos o atributo itemprop do diretor para o wrapper (<p>) -->
-    <!-- e adicionamos os atributos itemscope e itemtype ao diretor -->
-    <p itemprop='director' itemscope='itemscope' itemtype='http://schema.org/Person'>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>itemscope=</span><span class='s'>&quot;itemscope&quot;</span> <span class='na'>itemtype=</span><span class='s'>&quot;http://schema.org/Movie&quot;</span><span class='nt'>&gt;</span>
+    <span class='nt'>&lt;h4</span> <span class='na'>itemprop=</span><span class='s'>&quot;name&quot;</span><span class='nt'>&gt;</span>Avatar<span class='nt'>&lt;/h4&gt;</span>
+    <span class='c'>&lt;!-- movemos o atributo itemprop do diretor para o wrapper (&lt;p&gt;) --&gt;</span>
+    <span class='c'>&lt;!-- e adicionamos os atributos itemscope e itemtype ao diretor --&gt;</span>
+    <span class='nt'>&lt;p</span> <span class='na'>itemprop=</span><span class='s'>&quot;director&quot;</span> <span class='na'>itemscope=</span><span class='s'>&quot;itemscope&quot;</span> <span class='na'>itemtype=</span><span class='s'>&quot;http://schema.org/Person&quot;</span><span class='nt'>&gt;</span>
         Diretor: 
-        <span>James Cameron (16 de agosto de 1954)</span>
-    </p>
-    <p itemprop='genre'>Ficção Científica</p>
-    <p><a href='http://www.youtube.com/...' itemprop='trailer'>Veja o trailer</a></p>
-</div></code></pre>
+        <span class='nt'>&lt;span&gt;</span>James Cameron (16 de agosto de 1954)<span class='nt'>&lt;/span&gt;</span>
+    <span class='nt'>&lt;/p&gt;</span>
+    <span class='nt'>&lt;p</span> <span class='na'>itemprop=</span><span class='s'>&quot;genre&quot;</span><span class='nt'>&gt;</span>Ficção Científica<span class='nt'>&lt;/p&gt;</span>
+    <span class='nt'>&lt;p&gt;&lt;a</span> <span class='na'>itemprop=</span><span class='s'>&quot;trailer&quot;</span> <span class='na'>href=</span><span class='s'>&quot;http://www.youtube.com/...&quot;</span><span class='nt'>&gt;</span>Veja o trailer<span class='nt'>&lt;/a&gt;&lt;/p&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre>
+</div>
 <p>E para terminar, vamos especificar as propriedades desta pessoa – que no nesta caso são <em>nome</em> e <em>data de nascimento</em>.</p>
 
 <p>Observe que para data de nascimento criamos um novo elemento <code>&lt;time datetime=&quot;...&quot;&gt;</code>. Optei por fazer isto por quê <code>&lt;time&gt;</code> é uma <a href='http://www.w3schools.com/html5/tag_time.asp'>nova tag</a> que faz parte da especificação HTML5, e usamos seu atributo <code>datetime</code> para especificar o formato padrão de data usado pelo schema.org – na especificação do tipo de dados <a href='http://schema.org/Date'>Date</a>, o formato de data esperado é o <a href='http://en.wikipedia.org/wiki/ISO_8601'>ISO 8601</a> (AAAA-MM-DD).</p>
-<pre><code data-language='html'><div itemscope='itemscope' itemtype='http://schema.org/Movie'>
-    <h4 itemprop='name'>Avatar</h4>
-    <p itemprop='director' itemscope='itemscope' itemtype='http://schema.org/Person'>
-       Diretor: 
-       <!-- adicionamos o atributo itemprop às seguintes propriedades da pessoa -->
-       <span itemprop='name'>James Cameron</span> 
-       <time datetime='1954-08-16' itemprop='birthDate'>(16 de agosto de 1954)</time>
-    </p>
-    <p itemprop='genre'>Ficção Científica</p>
-    <p><a href='http://www.youtube.com/...' itemprop='trailer'>Veja o trailer</a></p>
-</div></code></pre>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>itemscope=</span><span class='s'>&quot;itemscope&quot;</span> <span class='na'>itemtype=</span><span class='s'>&quot;http://schema.org/Movie&quot;</span><span class='nt'>&gt;</span>
+    <span class='nt'>&lt;h4</span> <span class='na'>itemprop=</span><span class='s'>&quot;name&quot;</span><span class='nt'>&gt;</span>Avatar<span class='nt'>&lt;/h4&gt;</span>
+    <span class='nt'>&lt;p</span> <span class='na'>itemprop=</span><span class='s'>&quot;director&quot;</span> <span class='na'>itemscope=</span><span class='s'>&quot;itemscope&quot;</span> <span class='na'>itemtype=</span><span class='s'>&quot;http://schema.org/Person&quot;</span><span class='nt'>&gt;</span>
+        Diretor: 
+        <span class='c'>&lt;!-- adicionamos o atributo itemprop às seguintes propriedades da pessoa --&gt;</span>
+        <span class='nt'>&lt;span</span> <span class='na'>itemprop=</span><span class='s'>&quot;name&quot;</span><span class='nt'>&gt;</span>James Cameron<span class='nt'>&lt;/span&gt;</span> 
+        <span class='nt'>&lt;time</span> <span class='na'>itemprop=</span><span class='s'>&quot;birthDate&quot;</span> <span class='na'>datetime=</span><span class='s'>&quot;1954-08-16&quot;</span><span class='nt'>&gt;</span>
+            (16 de agosto de 1954)
+        <span class='nt'>&lt;/time&gt;</span>
+    <span class='nt'>&lt;/p&gt;</span>
+    <span class='nt'>&lt;p</span> <span class='na'>itemprop=</span><span class='s'>&quot;genre&quot;</span><span class='nt'>&gt;</span>Ficção Científica<span class='nt'>&lt;/p&gt;</span>
+    <span class='nt'>&lt;p&gt;&lt;a</span> <span class='na'>itemprop=</span><span class='s'>&quot;trailer&quot;</span> <span class='na'>href=</span><span class='s'>&quot;http://www.youtube.com/...&quot;</span><span class='nt'>&gt;</span>Veja o trailer<span class='nt'>&lt;/a&gt;&lt;/p&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre>
+</div>
 <p>Agora temos um <strong>Filme</strong> cujo nome é Avatar, gênero é Ficção científica, trailer aponta para uma URL e o diretor é uma <strong>Pessoa</strong> cujo nome é James Cameron e sua data de nascimento é 16 de agosto de 1954. Com isso, uma representação gráfica da semântica passaria a ser algo como:</p>
 <svg class='img' height='550' width='700'>
 	<line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='350' x2='350' y1='57.031' y2='344.36' />

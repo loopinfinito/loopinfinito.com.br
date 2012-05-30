@@ -23,23 +23,15 @@
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
 	
 	
-		<link rel="stylesheet" type="text/css" href="/styles/code.html.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="/styles/wombat.css" media="all" />
 	
 	
 	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="/scripts/rainbow-custom.min.js"></script>	
 	<script type="text/javascript">
 		
 		$(document).ready( function(){
-
-			// $('#social-btn').click( function(e){
-			// 	e.preventDefault();
-			// 	$(this).toggleClass('open');
-			// 	$('#social').toggleClass('open');
-			// });
 
 			$('#links a').hover( function(){
 				$(this).parent().siblings('span').addClass('show');
@@ -61,13 +53,6 @@
 	</script>
 </head>
 <body>
-	<!-- <section id="social">
-		<ul>
-			<li><a class="icon rss" alt="RSS" title="RSS" href="http://feeds.feedburner.com/l8p"></a></li>
-			<li><a class="icon twitter" alt="Twitter" title="Twitter" href="http://twitter.com/loopinfinito"></a></li>
-			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
-		</ul>
-	</section> -->
 	<ul id="links">
 		<li class="twitter">
 			<div><a href="http://twitter.com/loopinfinito"><img src="/images/icons/twitter.png" alt="" /></a></div>
@@ -90,12 +75,6 @@
 					<li><a href="/">Posts</a></li>
 					<li><a href="/projetos">Projetos</a></li>
 					<li><a href="/sobre">Sobre</a></li>
-					<!-- <li>
-						<a href="#social" id="social-btn">
-							<span id="social-btn-open"><img src="/images/icons/loopinfinito.png" alt=""></span>
-							<span id="social-btn-close">&times;</span>
-						</a>
-					</li> -->
 				</ul>
 			</nav>
 		</header>
@@ -199,53 +178,56 @@
 <h2 id='antes'>Antes</h2>
 
 <p>O trecho de código abaixo mostra como era o código fonte de um resumo de post (o exemplo abaixo ilustra o <a href='#print-home'>print screen</a> acima). Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de ficar olhando para um monte de linhas de código de uma vez, né).</p>
-<pre><code data-language='html'><!-- bloco do post -->
-<section class='post-container'>
-    <!-- menu da lateral direita -->
-    <aside class='post-meta'> ... </aside>
-    <!-- área principal do post -->
-    <article> ... </article>
-</section>
+<div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- bloco do post --&gt;</span>
+<span class='nt'>&lt;section</span> <span class='na'>class=</span><span class='s'>&quot;post-container&quot;</span><span class='nt'>&gt;</span>
+    <span class='c'>&lt;!-- menu da lateral direita --&gt;</span>
+    <span class='nt'>&lt;aside</span> <span class='na'>class=</span><span class='s'>&quot;post-meta&quot;</span><span class='nt'>&gt;</span> ... <span class='nt'>&lt;/aside&gt;</span>
+    <span class='c'>&lt;!-- área principal do post --&gt;</span>
+    <span class='nt'>&lt;article&gt;</span> ... <span class='nt'>&lt;/article&gt;</span>
+<span class='nt'>&lt;/section&gt;</span>
 </code></pre>
+</div>
 <p><em>Menu da lateral direita</em> detalhadamente:</p>
-<pre><code data-language='html'><aside class='post-meta'>
-    <ul>
-        <!-- data da publicação -->
-        <li class='post-data'>04/05/2012</li>
-        <!-- autor do post -->
-        <li class='post-autor'>
-            <a href='...'>Caio Gondim</a>
-        </li>
-        <!-- quantidade de comentarios -->
-        <li class='post-comentarios'>
-            <a href='...'>1 Comentário e 4 Reações</a>
-        </li>
-        <!-- tags do post -->
-        <li class='post-tags'>
-            <ul>
-                <li><a href='...'><span>#</span>javascript</a></li>
-            </ul>
-        </li>
-    </ul>
-</aside>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;aside</span> <span class='na'>class=</span><span class='s'>&quot;post-meta&quot;</span><span class='nt'>&gt;</span>
+    <span class='nt'>&lt;ul&gt;</span>
+        <span class='c'>&lt;!-- data da publicação --&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;post-data&quot;</span><span class='nt'>&gt;</span>04/05/2012<span class='nt'>&lt;/li&gt;</span>
+        <span class='c'>&lt;!-- autor do post --&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;post-autor&quot;</span><span class='nt'>&gt;</span>
+            <span class='nt'>&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span><span class='nt'>&gt;</span>Caio Gondim<span class='nt'>&lt;/a&gt;</span>
+        <span class='nt'>&lt;/li&gt;</span>
+        <span class='c'>&lt;!-- quantidade de comentarios --&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;post-comentarios&quot;</span><span class='nt'>&gt;</span>
+            <span class='nt'>&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span><span class='nt'>&gt;</span>1 Comentário e 4 Reações<span class='nt'>&lt;/a&gt;</span>
+        <span class='nt'>&lt;/li&gt;</span>
+        <span class='c'>&lt;!-- tags do post --&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;post-tags&quot;</span><span class='nt'>&gt;</span>
+            <span class='nt'>&lt;ul&gt;</span>
+                <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span><span class='nt'>&gt;&lt;span&gt;</span>#<span class='nt'>&lt;/span&gt;</span>javascript<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+            <span class='nt'>&lt;/ul&gt;</span>
+        <span class='nt'>&lt;/li&gt;</span>
+    <span class='nt'>&lt;/ul&gt;</span>
+<span class='nt'>&lt;/aside&gt;</span>
 </code></pre>
+</div>
 <p><em>Área principal do post</em> detalhadamente:</p>
-<pre><code data-language='html'><article>
-    <!-- título do post -->
-    <header>
-        <h1><a href='...'>Herança em JavaScript parte I</a></h1>
-    </header>
-    <!-- conteúdo do post -->
-    <section>
-        <!-- imagem principal -->
-        <p><img src='...' /></p>
-        <!-- texto (o post de fato) -->
-        <p>Uma das coisas que mais assusta programadores vindos de...</p>
-        <!-- link para o post completo -->
-        <a class='leia-mais' href='...'>Continue lendo &rarrw;</a>
-    </section>
-</article>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;article&gt;</span>
+    <span class='c'>&lt;!-- título do post --&gt;</span>
+    <span class='nt'>&lt;header&gt;</span>
+        <span class='nt'>&lt;h1&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span><span class='nt'>&gt;</span>Herança em JavaScript parte I<span class='nt'>&lt;/a&gt;&lt;/h1&gt;</span>
+    <span class='nt'>&lt;/header&gt;</span>
+    <span class='c'>&lt;!-- conteúdo do post --&gt;</span>
+    <span class='nt'>&lt;section&gt;</span>
+        <span class='c'>&lt;!-- imagem principal --&gt;</span>
+        <span class='nt'>&lt;p&gt;&lt;img</span> <span class='na'>src=</span><span class='s'>&quot;...&quot;</span> <span class='nt'>/&gt;&lt;/p&gt;</span>
+        <span class='c'>&lt;!-- texto (o post de fato) --&gt;</span>
+        <span class='nt'>&lt;p&gt;</span>Uma das coisas que mais assusta programadores vindos de...<span class='nt'>&lt;/p&gt;</span>
+        <span class='c'>&lt;!-- link para o post completo --&gt;</span>
+        <span class='nt'>&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span> <span class='na'>class=</span><span class='s'>&quot;leia-mais&quot;</span><span class='nt'>&gt;</span>Continue lendo <span class='ni'>&amp;rarrw;</span><span class='nt'>&lt;/a&gt;</span>
+    <span class='nt'>&lt;/section&gt;</span>
+<span class='nt'>&lt;/article&gt;</span>
 </code></pre>
+</div>
 <p>OK, nada de mais. Basicamente uma marcação simples HTML5.</p>
 
 <h2 id='depois'>Depois</h2>
@@ -253,15 +235,16 @@
 <p>Agora vamos ver como ficou o código fonte <strong>depois da marcação semântica</strong>, percebam o uso das propriedades <code>itemscope</code>, <code>itemtype</code> e <code>itemprop</code>. Mesmo esquema aqui, dividi o código em blocos:</p>
 
 <h3 id='elemento_geral'>Elemento geral</h3>
-<p /><pre><code data-language='html'><!-- adicionamos as propriedades itemscope e itemtype para BlogPosting -->
-<section class='post-container' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
-    <!-- adicionamos esta tag <span> para o publicador do post -->
-    <span class='hidden' itemprop='publisher'>Loop Infinito</span>
+<p /><div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- adicionamos as propriedades itemscope e itemtype para BlogPosting --&gt;</span>
+<span class='nt'>&lt;section</span> <span class='na'>class=</span><span class='s'>&quot;post-container&quot;</span> <span class='na'>itemscope=</span><span class='s'>&quot;itemscope&quot;</span> <span class='na'>itemtype=</span><span class='s'>&quot;http://schema.org/BlogPosting&quot;</span><span class='nt'>&gt;</span>
+    <span class='c'>&lt;!-- adicionamos esta tag &lt;span&gt; para o publicador do post --&gt;</span>
+    <span class='nt'>&lt;span</span> <span class='na'>class=</span><span class='s'>&quot;hidden&quot;</span> <span class='na'>itemprop=</span><span class='s'>&quot;publisher&quot;</span><span class='nt'>&gt;</span>Loop Infinito<span class='nt'>&lt;/span&gt;</span>
     
-    <aside class='post-meta'> ... </aside>
-    <article> ... </article>
-</section>
+    <span class='nt'>&lt;aside</span> <span class='na'>class=</span><span class='s'>&quot;post-meta&quot;</span><span class='nt'>&gt;</span> ... <span class='nt'>&lt;/aside&gt;</span>
+    <span class='nt'>&lt;article&gt;</span> ... <span class='nt'>&lt;/article&gt;</span>
+<span class='nt'>&lt;/section&gt;</span>
 </code></pre>
+</div>
 <ul>
 <li>Definimos a entidade principal (BlogPosting) no elemento que engloba todos os dados sobre o post;</li>
 
@@ -273,34 +256,35 @@
 <p><strong>Obs.:</strong> A aplicação da propriedade <code>itemscope="itemscope"</code> pode ser feita apenas colocando <code>itemscope</code> dentro da tag, pois é uma propriedade que não contém valor explícito associado, e a especificação HTML permite seu uso desta maneira. Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permitida no HTML5 – neste exemplo.</p>
 
 <h3 id='menu_lateral_direito'>Menu lateral direito</h3>
-<p /><pre><code data-language='html'><aside class='post-meta'>
-    <ul>
-        <li class='post-data'>
-            <!-- data de publicação do post -->
-            <time datetime='2012-05-06' itemprop='datePublished'>
+<p /><div class='highlight'><pre><code class='html'><span class='nt'>&lt;aside</span> <span class='na'>class=</span><span class='s'>&quot;post-meta&quot;</span><span class='nt'>&gt;</span>
+    <span class='nt'>&lt;ul&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;post-data&quot;</span><span class='nt'>&gt;</span>
+            <span class='c'>&lt;!-- data de publicação do post --&gt;</span>
+            <span class='nt'>&lt;time</span> <span class='na'>itemprop=</span><span class='s'>&quot;datePublished&quot;</span> <span class='na'>datetime=</span><span class='s'>&quot;2012-05-06&quot;</span><span class='nt'>&gt;</span>
                 06/05/2012
-            </time>
-        </li>
-        <li class='post-autor'>
-            <!-- autor do post -->
-            <a href='...' itemprop='author' rel='author'>Caio Gondim</a>
-        </li>
-        <li class='post-comentarios'>
-        	<!-- contagem de comentários do post -->
-            <a href='...' itemprop='interactionCount'>
+            <span class='nt'>&lt;/time&gt;</span>
+        <span class='nt'>&lt;/li&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;post-autor&quot;</span><span class='nt'>&gt;</span>
+            <span class='c'>&lt;!-- autor do post --&gt;</span>
+            <span class='nt'>&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span> <span class='na'>rel=</span><span class='s'>&quot;author&quot;</span> <span class='na'>itemprop=</span><span class='s'>&quot;author&quot;</span><span class='nt'>&gt;</span>Caio Gondim<span class='nt'>&lt;/a&gt;</span>
+        <span class='nt'>&lt;/li&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;post-comentarios&quot;</span><span class='nt'>&gt;</span>
+        	<span class='c'>&lt;!-- contagem de comentários do post --&gt;</span>
+            <span class='nt'>&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span> <span class='na'>itemprop=</span><span class='s'>&quot;interactionCount&quot;</span><span class='nt'>&gt;</span>
                 1 Comentário e 4 Reações
-            </a>
-        </li>
-        <li class='post-tags'>
-            <ul>
-                <li><a href='...'><span>#</span>javascript</a></li>
-            </ul>
-            <!-- palavras-chave do post -->
-            <span class='hidden' itemprop='keywords'>javascript, ...</span>
-        </li>
-    </ul>
-</aside>
+            <span class='nt'>&lt;/a&gt;</span>
+        <span class='nt'>&lt;/li&gt;</span>
+        <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;post-tags&quot;</span><span class='nt'>&gt;</span>
+            <span class='nt'>&lt;ul&gt;</span>
+                <span class='nt'>&lt;li&gt;&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span><span class='nt'>&gt;&lt;span&gt;</span>#<span class='nt'>&lt;/span&gt;</span>javascript<span class='nt'>&lt;/a&gt;&lt;/li&gt;</span>
+            <span class='nt'>&lt;/ul&gt;</span>
+            <span class='c'>&lt;!-- palavras-chave do post --&gt;</span>
+            <span class='nt'>&lt;span</span> <span class='na'>class=</span><span class='s'>&quot;hidden&quot;</span> <span class='na'>itemprop=</span><span class='s'>&quot;keywords&quot;</span><span class='nt'>&gt;</span>javascript, ...<span class='nt'>&lt;/span&gt;</span>
+        <span class='nt'>&lt;/li&gt;</span>
+    <span class='nt'>&lt;/ul&gt;</span>
+<span class='nt'>&lt;/aside&gt;</span>
 </code></pre>
+</div>
 <ul>
 <li>Envolvemos a data de publicação com um elemento <code>&lt;time&gt;</code> (novo no HTML5) para usar a propriedade <code>itemprop="datePublished"</code>. Usamos também a propriedade <code>datetime</code> para podermos especificar a data no formato padrão (aaaa-mm-dd);</li>
 
@@ -312,27 +296,28 @@
 </ul>
 
 <h3 id='rea_principal_do_post'>Área principal do post</h3>
-<p /><pre><code data-language='html'><article>
-    <header>
-    	<!-- título do post -->
-        <h1>
-            <a href='...' itemprop='headline'>
+<p /><div class='highlight'><pre><code class='html'><span class='nt'>&lt;article&gt;</span>
+    <span class='nt'>&lt;header&gt;</span>
+    	<span class='c'>&lt;!-- título do post --&gt;</span>
+        <span class='nt'>&lt;h1&gt;</span>
+            <span class='nt'>&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span> <span class='na'>itemprop=</span><span class='s'>&quot;headline&quot;</span><span class='nt'>&gt;</span>
                 Herança em JavaScript parte I
-            </a>
-        </h1>
-    </header>
-    <section>
-        <!-- imagem principal do post -->
-        <p><img itemprop='thumbnailUrl' src='...' /></p>
-        <!-- envolvemos o resumo com uma <div> a descrição do post -->
-        <div itemprop='description'>
-        	<p>Uma das coisas que mais assusta programadores...</p>
-        </div>
-        <!-- url do post -->
-        <a class='leia-mais' href='...' itemprop='url'>Continue lendo &rarrw;</a>
-    </section>
-</article>
+            <span class='nt'>&lt;/a&gt;</span>
+        <span class='nt'>&lt;/h1&gt;</span>
+    <span class='nt'>&lt;/header&gt;</span>
+    <span class='nt'>&lt;section&gt;</span>
+        <span class='c'>&lt;!-- imagem principal do post --&gt;</span>
+        <span class='nt'>&lt;p&gt;&lt;img</span> <span class='na'>itemprop=</span><span class='s'>&quot;thumbnailUrl&quot;</span> <span class='na'>src=</span><span class='s'>&quot;...&quot;</span> <span class='nt'>/&gt;&lt;/p&gt;</span>
+        <span class='c'>&lt;!-- envolvemos o resumo com uma &lt;div&gt; a descrição do post --&gt;</span>
+        <span class='nt'>&lt;div</span> <span class='na'>itemprop=</span><span class='s'>&quot;description&quot;</span><span class='nt'>&gt;</span>
+        	<span class='nt'>&lt;p&gt;</span>Uma das coisas que mais assusta programadores...<span class='nt'>&lt;/p&gt;</span>
+        <span class='nt'>&lt;/div&gt;</span>
+        <span class='c'>&lt;!-- url do post --&gt;</span>
+        <span class='nt'>&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;...&quot;</span> <span class='na'>class=</span><span class='s'>&quot;leia-mais&quot;</span> <span class='na'>itemprop=</span><span class='s'>&quot;url&quot;</span><span class='nt'>&gt;</span>Continue lendo <span class='ni'>&amp;rarrw;</span><span class='nt'>&lt;/a&gt;</span>
+    <span class='nt'>&lt;/section&gt;</span>
+<span class='nt'>&lt;/article&gt;</span>
 </code></pre>
+</div>
 <ul>
 <li>Definimos o título do post com a propriedade <code>itemprop="headline"</code>;</li>
 

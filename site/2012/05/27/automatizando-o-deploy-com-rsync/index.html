@@ -23,23 +23,15 @@
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/styles/twilight.css" media="all" />
 	
 	
-		<link rel="stylesheet" type="text/css" href="/styles/code.html.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="/styles/wombat.css" media="all" />
 	
 	
 	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="/scripts/rainbow-custom.min.js"></script>	
 	<script type="text/javascript">
 		
 		$(document).ready( function(){
-
-			// $('#social-btn').click( function(e){
-			// 	e.preventDefault();
-			// 	$(this).toggleClass('open');
-			// 	$('#social').toggleClass('open');
-			// });
 
 			$('#links a').hover( function(){
 				$(this).parent().siblings('span').addClass('show');
@@ -61,13 +53,6 @@
 	</script>
 </head>
 <body>
-	<!-- <section id="social">
-		<ul>
-			<li><a class="icon rss" alt="RSS" title="RSS" href="http://feeds.feedburner.com/l8p"></a></li>
-			<li><a class="icon twitter" alt="Twitter" title="Twitter" href="http://twitter.com/loopinfinito"></a></li>
-			<li><a class="icon github" alt="GitHub" title="GitHub" href="http://github.com/loopinfinito"></a></li>
-		</ul>
-	</section> -->
 	<ul id="links">
 		<li class="twitter">
 			<div><a href="http://twitter.com/loopinfinito"><img src="/images/icons/twitter.png" alt="" /></a></div>
@@ -90,12 +75,6 @@
 					<li><a href="/">Posts</a></li>
 					<li><a href="/projetos">Projetos</a></li>
 					<li><a href="/sobre">Sobre</a></li>
-					<!-- <li>
-						<a href="#social" id="social-btn">
-							<span id="social-btn-open"><img src="/images/icons/loopinfinito.png" alt=""></span>
-							<span id="social-btn-close">&times;</span>
-						</a>
-					</li> -->
 				</ul>
 			</nav>
 		</header>
@@ -162,13 +141,13 @@
 <p>O rsync é uma ferramenta que roda no terminal. Nós apenas definimos a pasta/arquivo origem e a pasta/arquivo destino que deve ser sincronizado com a origem. Ele então verifica quais arquivos foram modificados entre a origem e o destino e envia apenas o delta (a diferença) entre as diferentes versões do mesmo arquivo, o que torna o processo bem mais rápido se comparado ao FTP.</p>
 
 <p>O uso mais básico para o rsync seria o de deixarmos duas pastas na mesma máquina sincronizadas. Basta executarmos o rsync pela linha de comando, passando a pasta origem como primeiro argumento e a pasta destino como segundo argumento.</p>
-<pre><code data-language='shell'>
-$ rsync ~/uma/pasta/origem/qualquer ~/outra/pasta/destino
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rsync ~/uma/pasta/origem/qualquer ~/outra/pasta/destino
 </code></pre>
+</div>
 <p>Mas no nosso caso queremos sincronizar uma pasta em nossa máquina com uma outra em uma máquina remota (o servidor do nosso blog). Então o comando usado foi:</p>
-<pre><code data-language='shell'>
-$ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br
 </code></pre>
+</div>
 <p><strong>Calma</strong>! Não se apavore (ainda).</p>
 
 <p>O nosso comando de deploy segue o mesmo princípio do exemplo mais básico que demos logo acima: o de deixar duas pasta sincronizadas. A diferença aqui é que estamos deixando duas pastas sincronizadas em diferentes máquinas. Parece complicado, mas vamos quebrar o comando acima e entendê-lo por completo. <ul>
@@ -203,46 +182,46 @@ $ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.b
 <p>Seria um saco termos que sempre digitar esse comando gigante quando fossemos dar um deploy. Para isso nós criamos uma tarefa com o <code>cake</code>, um sistema de build do CoffeeScript (nós amamos CoffeeScript) parecido com o rake (de Ruby) e make (de C).</p>
 
 <p>É só criar um arquivo chamado Cakefile na raiz do projeto e por este trecho de código:</p>
-<pre><code data-language='ruby'>
-# módulos
-{spawn, exec} = require('child_process')
+<div class='highlight'><pre><code class='coffeescript'><span class='c1'># módulos</span>
+<span class='p'>{</span><span class='nx'>spawn</span><span class='p'>,</span> <span class='nx'>exec</span><span class='p'>}</span> <span class='o'>=</span> <span class='nx'>require</span><span class='p'>(</span><span class='s'>&#39;child_process&#39;</span><span class='p'>)</span>
 
-# task 'deploy'
-task 'deploy', 'Envia o diff do blog para o server', () ->
+<span class='c1'># task &#39;deploy&#39;</span>
+<span class='nx'>task</span> <span class='s'>&#39;deploy&#39;</span><span class='p'>,</span> <span class='s'>&#39;Envia o diff do blog para o server&#39;</span><span class='p'>,</span> <span class='nf'>() -&gt;</span>
 
-  # configurações de deploy do rsync
-  # para poder dar o deploy com sucesso, é necessário que sua chave pública 
-  # esteja no arquivo ~/.ssh/authorized_keys do servidor
-  user = "caiogondim"
-  remote_root = "~/tmp.caiogondim.com"
-  local_root = "site/"
+  <span class='c1'># configurações de deploy do rsync</span>
+  <span class='c1'># para poder dar o deploy com sucesso, é necessário que sua chave pública </span>
+  <span class='c1'># esteja no arquivo ~/.ssh/authorized_keys do servidor</span>
+  <span class='nv'>user = </span><span class='s'>&quot;caiogondim&quot;</span>
+  <span class='nv'>remote_root = </span><span class='s'>&quot;~/tmp.caiogondim.com&quot;</span>
+  <span class='nv'>local_root = </span><span class='s'>&quot;site/&quot;</span>
 
-  # executa o deploy
-  rsync = spawn "rsync", [
-    "-avz"
-    "-e"
-    "ssh"
-    "#{__dirname}/#{local_root}"
-    "#{user}@bugsy.dreamhost.com:#{remote_root}"
-  ]
+  <span class='c1'># executa o deploy</span>
+  <span class='nv'>rsync = </span><span class='nx'>spawn</span> <span class='s'>&quot;rsync&quot;</span><span class='p'>,</span> <span class='p'>[</span>
+    <span class='s'>&quot;-avz&quot;</span>
+    <span class='s'>&quot;-e&quot;</span>
+    <span class='s'>&quot;ssh&quot;</span>
+    <span class='s'>&quot;</span><span class='si'>#{</span><span class='nx'>__dirname</span><span class='si'>}</span><span class='s'>/</span><span class='si'>#{</span><span class='nx'>local_root</span><span class='si'>}</span><span class='s'>&quot;</span>
+    <span class='s'>&quot;</span><span class='si'>#{</span><span class='nx'>user</span><span class='si'>}</span><span class='s'>@bugsy.dreamhost.com:</span><span class='si'>#{</span><span class='nx'>remote_root</span><span class='si'>}</span><span class='s'>&quot;</span>
+  <span class='p'>]</span>
 
-  # evento disparado quando a tarefa imprime algo no stdout
-  rsync.stdout.on 'data', (data) ->
-    console.log data.toString().trim()
+  <span class='c1'># evento disparado quando a tarefa imprime algo no stdout</span>
+  <span class='nx'>rsync</span><span class='p'>.</span><span class='nx'>stdout</span><span class='p'>.</span><span class='kc'>on</span> <span class='s'>&#39;data&#39;</span><span class='p'>,</span> <span class='nf'>(data) -&gt;</span>
+    <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span> <span class='nx'>data</span><span class='p'>.</span><span class='nx'>toString</span><span class='p'>().</span><span class='nx'>trim</span><span class='p'>()</span>
 
-  # evento disparado caso ocorra um erro na tarefa
-  rsync.stderr.on 'data', (data) ->
-    console.log "Erro no deploy: #{data}"
+  <span class='c1'># evento disparado caso ocorra um erro na tarefa</span>
+  <span class='nx'>rsync</span><span class='p'>.</span><span class='nx'>stderr</span><span class='p'>.</span><span class='kc'>on</span> <span class='s'>&#39;data&#39;</span><span class='p'>,</span> <span class='nf'>(data) -&gt;</span>
+    <span class='nx'>console</span><span class='p'>.</span><span class='nx'>log</span> <span class='s'>&quot;Erro no deploy: </span><span class='si'>#{</span><span class='nx'>data</span><span class='si'>}</span><span class='s'>&quot;</span>
 
-  # evento disparado quando a tarefa é terminada
-  rsync.on 'exit', (code) ->
-    # console.log "exit code #{code}"
+  <span class='c1'># evento disparado quando a tarefa é terminada</span>
+  <span class='nx'>rsync</span><span class='p'>.</span><span class='kc'>on</span> <span class='s'>&#39;exit&#39;</span><span class='p'>,</span> <span class='nf'>(code) -&gt;</span>
+    <span class='c1'># console.log &quot;exit code #{code}&quot;</span>
 </code></pre>
+</div>
 <p>Agora aquele nosso comando gigantesco para deploy está encapsulado em um muito mais simples e fácil de modificar. É só entrarmos na pasta do projeto e digitarmos o comando abaixo e <strong>BOOM</strong>, o deploy acontece como mágica.</p>
-<pre><code data-language='shell'>
-# muito mais simples, hein? =)
-$ cake deploy
+<div class='highlight'><pre><code class='bash'><span class='c'># muito mais simples, hein? =)</span>
+<span class='nv'>$ </span>cake deploy
 </code></pre>
+</div>
 <h2 id='rpido_quanto'>Rápido quanto?</h2>
 
 <p>Aqui nós tentamos fazer ciência, e como cientistas nós sabemos que <strong>não se pode melhorar o que não se pode medir</strong>. Então vamos deixar a fé de lado e ver na prática o quanto o rsync é mais rápido.</p>

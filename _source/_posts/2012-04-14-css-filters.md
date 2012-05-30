@@ -8,6 +8,7 @@ resumo: A Adobe, Apple e Opera estão <a href="https://dvcs.w3.org/hg/FXTF/raw-f
 tags: CSS
 keywords: css, css filters, html5, adobe, apple, webkit, frontend, front end, webdev, desenvolvimento web
 comments: true
+styles: [wombat]
 ---
 <style>
 
@@ -39,33 +40,33 @@ Para verificar se o seu navegador suporta o CSS Filter, apenas passe o mouse por
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-grayscale.png" /></p>
 Com o filtro <code>grayscale</code> nós indicamos o quão preto-e-branco queremos que o elemento fique, numa escala de 0 a 1 ou 0% 100%.
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: grayscale(100%);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Blur
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-blur.png" /></p>
 Com o filtro <code>blur</code> podemos embaçar um elemento. Algo parecido como ver uma foto sem óculos (eu imagino que seja assim).
 Os valores são definidos em pixels. Quanto maior o valor, mais embaçado o elemento.
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: blur(3px);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Sepia
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-sepia.png" /></p>
 Este efeito é normamelmente usado em fotos, dando a elas um efeito de fotos antigas.
 Os valores do efeito vão de 0 a 1.
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: sepia(1);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Saturate
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-saturate.png" /></p>
@@ -73,54 +74,54 @@ Com o <code>saturate</code> modificamos o canal saturação da cores do elemento
 Quanto maior a saturação, mais vivas as cores estarão, e quanto menor a saturação, mais próximas do cinza elas estarão.
 Com o <ceode>saturate</ceode> em 0, obtemos o mesmo resultado que o <code>grayscale</code> em 100%
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: saturate(4);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Opacity
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-opacity.png" /></p>
 Ok, esse é bastante fácil. Simplesmente mude a opacidade do elemento.
 Os valores vão de 0 a 1. 0 deixa o elemento invisível.
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: opacity(0.5);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Brightness
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-brightness.png" /></p>
 O <code>brightness</code> altera o brilho do elemento. Os valores vão de 100% a 0%. Em 100%, com o brilho no máximo, o elemento fica totalmente branco.
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: brightness(50%);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Contrast
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-contrast.png" /></p>
 Também bastante óbvio. Aqui alteramos a saturação do elemento. 
 O valor desse filtro pode ser expresso em unidades (0, 1, 3, 4, ...) ou em percentagem (0%, 100%, 1500%).
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: constrast(1.5);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Hue Rotate
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-hue-rotate.png" /></p>
 Neste filtro podemos mover todas as cores do elemento em graus dentro da roda de cores.
 Com 0deg não iremos realizar nenhuma alteração, enquanto com 180deg iremos inverter todas as cores.
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: hue-rotate(180deg);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Invert
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-invert.png" /></p>
@@ -129,22 +130,22 @@ Na verdade a inversão completa acontece apenas se usarmos o valor 100%.
 Com 50% as cores estarão no meio caminho entre suas cores invertidas, o que significa que estarão com um tom de cinza.
 Os valores vão de 0% a 100%.
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: invert(100%);
 }
-</code></pre>
+{% endhighlight %}
 
 ## Vários filtros
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-various.png" /></p>
 Também é possível o uso de vários filtros em conjunto, para obtermos um efeito mais único.
 Na imagem acima usamos <code>hue-rotate</code> e <code>sepia</code>.
 
-<pre><code data-language="css">
+{% highlight css %}
 img {
     -webkit-filter: hue-rotate(60deg) sepia(1);
 }
-</code></pre>
+{% endhighlight %}
 
 Como podemos ver o CSS Filters vem adicionar ainda mais poder ao HTML5. E isto é só uma prévia do que há por vir, como os <a href="http://www.youtube.com/watch?v=NZRqnohI3m4">CSS Shaders</a>.
 

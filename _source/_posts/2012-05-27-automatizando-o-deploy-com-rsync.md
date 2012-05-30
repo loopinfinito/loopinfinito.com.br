@@ -8,7 +8,7 @@ image: images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg
 tags: automatizacao coffeescript
 keywords: rsync, deploy, deploy automático, cake task, coffeescript
 comments: true
-styles: [code.html]
+styles: [wombat]
 ---
 
 <p><img src="http://loopinfinito.com.br/{{ page.image }}" alt=""></p>
@@ -37,16 +37,16 @@ Ele então verifica quais arquivos foram modificados entre a origem e o destino 
 
 O uso mais básico para o rsync seria o de deixarmos duas pastas na mesma máquina sincronizadas. Basta executarmos o rsync pela linha de comando, passando a pasta origem como primeiro argumento e a pasta destino como segundo argumento.
 
-<pre><code data-language="shell">
+{% highlight bash %}
 $ rsync ~/uma/pasta/origem/qualquer ~/outra/pasta/destino
-</code></pre>
+{% endhighlight %}
 
 Mas no nosso caso queremos sincronizar uma pasta em nossa máquina com uma outra em uma máquina remota (o servidor do nosso blog).
 Então o comando usado foi:
 
-<pre><code data-language="shell">
+{% highlight bash %}
 $ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br
-</code></pre>
+{% endhighlight %}
 
 **Calma**! Não se apavore (ainda). 
 
@@ -85,7 +85,7 @@ Para isso nós criamos uma tarefa com o <code>cake</code>, um sistema de build d
 
 É só criar um arquivo chamado Cakefile na raiz do projeto e por este trecho de código:
 
-<pre><code data-language="ruby">
+{% highlight coffeescript %}
 # módulos
 {spawn, exec} = require('child_process')
 
@@ -119,15 +119,15 @@ task 'deploy', 'Envia o diff do blog para o server', () ->
   # evento disparado quando a tarefa é terminada
   rsync.on 'exit', (code) ->
     # console.log "exit code #{code}"
-</code></pre>
+{% endhighlight %}
 
 Agora aquele nosso comando gigantesco para deploy está encapsulado em um muito mais simples e fácil de modificar.
 É só entrarmos na pasta do projeto e digitarmos o comando abaixo e **BOOM**, o deploy acontece como mágica.
 
-<pre><code data-language="shell">
+{% highlight bash %}
 # muito mais simples, hein? =)
 $ cake deploy
-</code></pre>
+{% endhighlight %}
 
 ## Rápido quanto?
 
