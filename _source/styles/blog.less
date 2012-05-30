@@ -42,6 +42,8 @@ body {
 	bottom: 0px;
 	list-style: none;
 	display: block;
+	z-index: 100;
+	width: 200px;
 }
 
 	#links li {
@@ -433,23 +435,23 @@ header#main {
 			color: #333;
 		}
 
-			#content .post-container article p img,
-			#content .post-container article .img {
+			#content .post-container article section img,
+			#content .post-container article section .img {
 				position:relative;
 				left:-50px;
 				width:700px;				
 			}
 
-			#content .post-container article img {
+			#content .post-container article section img {
 				background-color: white;
 				background-image: 
-					-webkit-linear-gradient(45deg, #EEE 25%, transparent 25%, transparent 75%, #EEE 75%, #EEE), 					
+					-webkit-linear-gradient(45deg, #EEE 25%, transparent 25%, transparent 75%, #EEE 75%, #EEE),
 					-webkit-linear-gradient(45deg, #EEE 25%, transparent 25%, transparent 75%, #EEE 75%, #EEE);
-				background-size:30px 30px;
+				background-size: 30px 30px;
 				background-position: 0 0, 15px 15px;
 			}
 
-			#content .post-container article p img.bordered {
+			#content .post-container article section img.bordered {
 				border-top: 1px solid #ddd;
 				border-bottom: 1px solid #ddd;
 			}
@@ -637,7 +639,7 @@ section#disqus-power {
 		background-color: #ddd;
 	}
 
-		#dsq-comments li.dsq-moderator div.dsq-comment-header a.dsq-commenter-name {
+		#dsq-comments li.dsq-moderator div.dsq-comment-header .dsq-commenter-name {
 			color: white;
 			text-shadow: 0px -1px 0px #999;
 			-moz-text-shadow: 0px -1px 0px #999;
