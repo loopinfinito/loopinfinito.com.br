@@ -17,7 +17,7 @@
 .hidden{display:none;}
 .icon{display:inline-block;width:29px;height:29px;background:center no-repeat #444444;border-radius:15px;-webkit-transition:background-color 0.3s ease;}
 .icon:hover{background-color:#777;}
-.icon.twitter{background-image:url(../images/icons/twitter.png);}
+.icon.twitter{background-image:url(../images/icons/twitter-white.png);}
 .icon.twitter:hover{background-color:#32CCFE;}
 .icon.github{background-image:url(../images/icons/github.png);}
 .icon.github:hover{background-color:#000;}
