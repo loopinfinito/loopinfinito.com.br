@@ -27,7 +27,7 @@ styles: [wombat]
 
 </style>
 
-<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt=""></p>
+<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt="" width="700" height="432" /></p>
 
 Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso blog usando **microdata** e os vocabulários **schema.org**.
 
@@ -44,7 +44,7 @@ Irei mostrar como realizei as marcações semânticas apenas na página inicial,
 Caso você deseje saber como ficaram os códigos fontes das outras páginas, basta abri-los no seu navegador, o princípio de marcação é o mesmo.
 Abaixo segue um *print screen* de um destes posts resumidos da página inicial:
 
-<p id="print-home"><img src="http://loopinfinito.com.br/images/posts/2012-05-07-ganhando-visibilidade.jpg" alt="Print screen de post resumido na Home (loopinfinito.com.br)" /></p>
+<p id="print-home"><img src="http://loopinfinito.com.br/images/posts/2012-05-07-ganhando-visibilidade.jpg" alt="Print screen de post resumido na Home (loopinfinito.com.br)" width="700" height="662"/></p>
 
 A primeira entidade que podemos identificar nesta página é o próprio **Post**, ou seja, um **Artigo** ou coisa parecida.
 Navegando pelo site do <a href="http://schema.org" alt="schema.org">schema.org</a> pude achar o vocabulário <a href="http://schema.org/Article" class="bold">Article</a>, que corresponde a Artigo.

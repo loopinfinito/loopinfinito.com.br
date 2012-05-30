@@ -393,7 +393,7 @@ header#main {
 			font-size: 12px;
 			line-height: 160%;
 			background-color: #333;
-			word-wrap: break-word;
+			white-space: pre-wrap;
 			color: whiteSmoke;
 		}
 
@@ -436,7 +436,16 @@ header#main {
 			#content .post-container article .img {
 				position:relative;
 				left:-50px;
-				width:700px;
+				width:700px;				
+			}
+
+			#content .post-container article img {
+				background-color: white;
+				background-image: 
+					-webkit-linear-gradient(45deg, #EEE 25%, transparent 25%, transparent 75%, #EEE 75%, #EEE), 					
+					-webkit-linear-gradient(45deg, #EEE 25%, transparent 25%, transparent 75%, #EEE 75%, #EEE);
+				background-size:30px 30px;
+				background-position: 0 0, 15px 15px;
 			}
 
 			#content .post-container article p img.bordered {

@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-05-30T10:03:45-03:00</updated>
+  <updated>2012-05-30T10:58:16-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -15,7 +15,7 @@
     <author>
       <name>Caio Gondim</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg' /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt='Automatizando o deploy com rsync' height='432' src='http://loopinfinito.com.br/images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Você sempre esquece de upar um arquivo para o servidor de produção?&lt;/li&gt;
 
@@ -157,7 +157,7 @@
 &lt;/ul&gt;
 
 &lt;p&gt;Um gráfico com os dados que obtive&lt;/p&gt;
-&lt;img alt='' class='img' src='http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg' /&gt;
+&lt;img alt='' class='img' height='300' src='http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg' width='700' /&gt;
 &lt;p&gt;Neste cenário o rsync foi bem mais rápido.&lt;/p&gt;
 
 &lt;h3 id='adicionando_1_caractere_em_10_arquivos_diferentes'&gt;Adicionando 1 caractere em 10 arquivos diferentes&lt;/h3&gt;
@@ -187,7 +187,7 @@
 
 &lt;li&gt;rsync 21 segundos&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img alt='' class='img' src='http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg' /&gt;
+&lt;img alt='' class='img' height='300' src='http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg' width='700' /&gt;
 &lt;p&gt;Em relação ao FTP eu apenas cronometrei o tempo gasto para upar os arquivos. Num cenário real nos ainda iríamos ter que escolher um a um os arquivos a serem enviados, o que resulta em mais tempo gasto. No caso do rsync, não precisamos escolher quais arquivos mandar. Ele mesmo verifica quais os arquivos que devem ser upados e faz todo o trabalho chato.&lt;/p&gt;
 
 &lt;p&gt;Então não há mais motivos para upar arquivos como se ainda vivéssemos na década de 80. Automatize seu processo de deploy com o rsync e nunca mais esqueça de enviar &lt;strong&gt;aquele&lt;/strong&gt; arquivo novamente.&lt;/p&gt;
@@ -208,7 +208,7 @@
     <author>
       <name>Almir Filho</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt='Saiba a Hora de Ejetar' src='/images/posts/2012-05-20-saiba-a-hora-de-ejetar.jpg' /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt='Saiba a Hora de Ejetar' height='432' src='/images/posts/2012-05-20-saiba-a-hora-de-ejetar.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Já fazia um tempinho que queria postar algo sobre produtividade, afinal de contas o Loop Infinito não se trata apenas de mais um blog sobre tecnologia web, e sim de assuntos como &lt;strong&gt;produtividade&lt;/strong&gt;, &lt;strong&gt;usabilidade&lt;/strong&gt; e &lt;strong&gt;lifestyle&lt;/strong&gt;. Estes assuntos serão abordados por aqui de vez em quando.&lt;/p&gt;
 
 &lt;p&gt;Acho &lt;em&gt;produtividade&lt;/em&gt; um tema super importante e interessante. É sempre bom aprender truques que nos tornem mais produtivos, estamos sempre em busca de melhorar processos, economizar tempo e aumentar nossa eficiência – principalmente com aquelas coisas repetitivas (quem dera se os funcionários públicos fizessem o mesmo, hein).&lt;/p&gt;
@@ -500,7 +500,7 @@ Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento 
 		fill: #ccc;
 	}
 
-&lt;/style&gt;&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-05-07-ganhando-visibilidade-com-schema-org.jpg' /&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;p&gt;&lt;img alt='' height='432' src='http://loopinfinito.com.br/images/posts/2012-05-07-ganhando-visibilidade-com-schema-org.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso blog usando &lt;strong&gt;microdata&lt;/strong&gt; e os vocabulários &lt;strong&gt;schema.org&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Hoje explicarei passo a passo como fiz isto aqui no Loop Infinito. A qualquer momento você pode visualizar nosso código fonte e observar estas mesmas marcações lá.&lt;/p&gt;
@@ -512,7 +512,7 @@ Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento 
 &lt;p&gt;O primeiro passo é identificar as entidades na página que desejamos marcar semanticamente. Aqui no Loop Infinito, apliquei as marcações em 3 páginas diferentes: a &lt;a href='http://loopinfinito.com.br'&gt;página inicial&lt;/a&gt;, a página interna do post (onde você está agora) e a página &lt;a href='http://loopinfinito.com.br/sobre/'&gt;Sobre&lt;/a&gt; (a página &lt;a href='http://loopinfinito.com.br/projetos/'&gt;Projetos&lt;/a&gt; ainda não fizemos).&lt;/p&gt;
 
 &lt;p&gt;Irei mostrar como realizei as marcações semânticas apenas na página inicial, onde aparece a listagem dos posts resumidos com links para suas versões completas. Caso você deseje saber como ficaram os códigos fontes das outras páginas, basta abri-los no seu navegador, o princípio de marcação é o mesmo. Abaixo segue um &lt;em&gt;print screen&lt;/em&gt; de um destes posts resumidos da página inicial:&lt;/p&gt;
-&lt;p id='print-home'&gt;&lt;img alt='Print screen de post resumido na Home (loopinfinito.com.br)' src='http://loopinfinito.com.br/images/posts/2012-05-07-ganhando-visibilidade.jpg' /&gt;&lt;/p&gt;
+&lt;p id='print-home'&gt;&lt;img alt='Print screen de post resumido na Home (loopinfinito.com.br)' height='662' src='http://loopinfinito.com.br/images/posts/2012-05-07-ganhando-visibilidade.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;A primeira entidade que podemos identificar nesta página é o próprio &lt;strong&gt;Post&lt;/strong&gt;, ou seja, um &lt;strong&gt;Artigo&lt;/strong&gt; ou coisa parecida. Navegando pelo site do &lt;a alt='schema.org' href='http://schema.org'&gt;schema.org&lt;/a&gt; pude achar o vocabulário &lt;a class='bold' href='http://schema.org/Article'&gt;Article&lt;/a&gt;, que corresponde a Artigo. Percebi também que há mais 3 vocabulários que estendem de Article, ou seja, são vocabulários Article &lt;strong&gt;mais específicos&lt;/strong&gt;, e estes são &lt;a alt='Vocabulário BlogPosting (schema.org)' href='http://schema.org/BlogPosting' title='Vocabulário BlogPosting (schema.org)'&gt;BlogPosting&lt;/a&gt;, &lt;a alt='Vocabulário NewsArticle (schema.org)' href='http://schema.org/NewsArticle' title='Vocabulário NewsArticle (schema.org)'&gt;NewsArticle&lt;/a&gt; e &lt;a alt='Vocabulário ScholarlyArticle (schema.org)' href='http://schema.org/ScholarlyArticle' title='Vocabulário ScholarlyArticle (schema.org)'&gt;ScholarlyArticle&lt;/a&gt;.&lt;/p&gt;
 &lt;svg class='img' height='330' width='700'&gt;
 	&lt;line fill='none' stroke='#CCCCCC' stroke-miterlimit='10' x1='354.691' x2='221.759' y1='115.241' y2='268.516' /&gt;
@@ -747,7 +747,7 @@ Item
     <author>
       <name>Caio Gondim</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-05-04-heranca-em-javascript.jpg' /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt='' height='432' src='http://loopinfinito.com.br/images/posts/2012-05-04-heranca-em-javascript.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo. Mas antes de entrarmos em detalhes, vamos primeiro relembrar o que é a herança clássica nas linguagens orientadas a objetos.&lt;/p&gt;
 
 &lt;h2 id='herana_clssica'&gt;Herança clássica&lt;/h2&gt;
@@ -975,7 +975,7 @@ Item
 			margin: 0px !important;
 		}
 
-&lt;/style&gt;&lt;p&gt;&lt;img alt='HTML5 Semantics' src='http://loopinfinito.com.br/images/posts/2012-05-02-semantics-html5.jpg' /&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;p&gt;&lt;img alt='HTML5 Semantics' height='432' src='http://loopinfinito.com.br/images/posts/2012-05-02-semantics-html5.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Olá pessoal, continuando o papo do nosso &lt;a href='http://loopinfinito.com.br/2012/04/26/marcacao-semantica/'&gt;último post&lt;/a&gt;, hoje continuarei falando de marcação semântica, com a diferença de que focarei em microdata e mostrarei também como realizar a marcação semântica de conteúdo usando os vocabulários &lt;strong&gt;Schema.org&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h2 id='vocabulrios_do_schemaorg'&gt;Vocabulários do schema.org&lt;/h2&gt;
@@ -1348,7 +1348,7 @@ Item
     <author>
       <name>Almir Filho</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica.jpg' /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt='' height='432' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.&lt;/p&gt;
 
 &lt;p&gt;Desde a década de 1990, a W3C tem apresentado maneiras para definição de conteúdo semântico, e de lá pra cá surgiram outras alternativas, mas devido a grande quantidade de informações, falarei apenas um pouco sobre cada uma delas: RDF, RDFa, Microformats e &lt;strong&gt;Microdata&lt;/strong&gt; ← focaremos neste último cara aqui.&lt;/p&gt;
@@ -1394,7 +1394,7 @@ Item
 &lt;p&gt;Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o &lt;strong&gt;&lt;a href='http://www.google.com.br/prdhp'&gt;Google Shopping&lt;/a&gt;&lt;/strong&gt; (busca de produtos à venda) e o &lt;strong&gt;&lt;a href='http://www.google.com/landing/recipes/'&gt;Google Recipes&lt;/a&gt;&lt;/strong&gt; (busca de receitas culinárias). É verdade que estes serviços conseguem recuperar também conteúdo não marcado semanticamente (a grande maioria), mas os que utilizam RDFa, microformats ou microdata têm chances muito maiores de serem os primeiros no pagerank.&lt;/p&gt;
 
 &lt;p&gt;No &lt;strong&gt;Google Shopping&lt;/strong&gt;, fiz uma pesquisa simples por &amp;#8221;&lt;em&gt;jornalista&lt;/em&gt;&amp;#8221; e eis o resultado obtido:&lt;/p&gt;
-&lt;p id='img-produtos'&gt;&lt;img class='bordered' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-shopping.jpg' /&gt;&lt;/p&gt;
+&lt;p id='img-produtos'&gt;&lt;img class='bordered' height='502' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-shopping.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Pela imagem acima, é possível perceber que o nível de refinamento de uma pesquisa pode ser muito mais específico do que apenas procurar por palavras-chaves – como acontece normalmente hoje. Percebam que podemos especificar se procuramos por um produto novo ou não, a faixa de preço desejada e até a loja. Os seis primeiros resultados foram dos sites: Americanas.com, Submarino.com.br, Extra.com.br, CasasBahia.com.br, PontoFrio.com e Saraiva.com.br. Tive a curiosidade de analisar o código fonte de cada um deles, e eis que consegui detectar na base do olhômetro (se eu estiver errado sobre algum, por favor deixe um comentário):&lt;/p&gt;
 
 &lt;ol&gt;
@@ -1412,7 +1412,7 @@ Item
 &lt;/ol&gt;
 
 &lt;p&gt;No &lt;strong&gt;Google Recipes&lt;/strong&gt;, pesquisei por &amp;#8221;&lt;em&gt;cupcake&lt;/em&gt;&amp;#8221;:&lt;/p&gt;
-&lt;p&gt;&lt;img class='bordered' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-recipes.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class='bordered' height='386' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-recipes.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Novamente, reparem nos filtros disponíveis para receitas. Eles diferem dos de produtos (&lt;a href='#img-produtos'&gt;mostrados acima&lt;/a&gt;). Aqui é possível especificar o uso (ou não uso) de determinados ingredientes na receita (muito útil para quem tem alergia a certos alimentos, por exemplo), tempo de cozimento e até mesmo o valor calórico do que procuro. É outra história, meus amigos. Os três primeiros resultados foram dos sites: FoodNetwork.com, MarthaStewart.com e KraftRecipes.com. Analisando o código fontes das páginas, obtive que:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -1459,15 +1459,15 @@ Item
 		-webkit-filter: saturate(4);
 	}
 
-&lt;/style&gt;&lt;p&gt;&lt;img alt='' src='http://loopinfinito.com.br/images/posts/2012-04-14-css-filters.jpg' /&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;p&gt;&lt;img alt='' height='432' src='http://loopinfinito.com.br/images/posts/2012-04-14-css-filters.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;A Adobe, Apple e Opera estão &lt;a href='https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html'&gt;trabalhando juntas&lt;/a&gt; para trazer alguns efeitos no estilo Photoshop para o CSS. Esses efeitos, chamados de filtros, irão nos permitir modificar a renderização de qualquer elemento DOM, de um simples &lt;code&gt;p&lt;/code&gt;, até elementos mais complexos como &lt;code&gt;image&lt;/code&gt; ou &lt;code&gt;video&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Alguns dos efeitos já definidos na especificação são &lt;code&gt;grayscale&lt;/code&gt;, &lt;code&gt;blur&lt;/code&gt;, &lt;code&gt;sepia&lt;/code&gt;, &lt;code&gt;saturate&lt;/code&gt;, &lt;code&gt;opacity&lt;/code&gt;, &lt;code&gt;brightness&lt;/code&gt;, &lt;code&gt;contrast&lt;/code&gt;, &lt;code&gt;hue-rotate&lt;/code&gt; e &lt;code&gt;invert&lt;/code&gt;. Aos familiarizados com Photoshop ou qualquer programa de edição de imagem, eles devem ser bastante auto-explicativos. Mas de qualquer forma, vamos explorar cada filtro, um a um.&lt;/p&gt;
 
 &lt;p&gt;Em todos os exemplos, iremos usar a imagem abaixo como base. Para verificar se o seu navegador suporta o CSS Filter, apenas passe o mouse por cima da imagem. Se ela modificar (saturar), quer dizer que o seu navegador suporta e já está aplicando um filtro no evento hover desta imagem.&lt;/p&gt;
-&lt;p&gt;&lt;img id='cssfilter-img-base' src='http://loopinfinito.com.br/images/posts/jeri.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' id='cssfilter-img-base' src='http://loopinfinito.com.br/images/posts/jeri.jpg' width='700' /&gt;&lt;/p&gt;
 &lt;h2 id='grayscale'&gt;Grayscale&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-grayscale.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-grayscale.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Com o filtro &lt;code&gt;grayscale&lt;/code&gt; nós indicamos o quão preto-e-branco queremos que o elemento fique, numa escala de 0 a 1 ou 0% 100%.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;grayscale&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;100&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1475,7 +1475,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='blur'&gt;Blur&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-blur.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-blur.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Com o filtro &lt;code&gt;blur&lt;/code&gt; podemos embaçar um elemento. Algo parecido como ver uma foto sem óculos (eu imagino que seja assim). Os valores são definidos em pixels. Quanto maior o valor, mais embaçado o elemento.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;blur&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;3px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1483,7 +1483,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='sepia'&gt;Sepia&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-sepia.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-sepia.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Este efeito é normamelmente usado em fotos, dando a elas um efeito de fotos antigas. Os valores do efeito vão de 0 a 1.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;sepia&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1491,7 +1491,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='saturate'&gt;Saturate&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-saturate.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-saturate.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Com o &lt;code&gt;saturate&lt;/code&gt; modificamos o canal saturação da cores do elemento. Quanto maior a saturação, mais vivas as cores estarão, e quanto menor a saturação, mais próximas do cinza elas estarão. Com o &lt;ceode&gt;saturate&lt;/ceode&gt; em 0, obtemos o mesmo resultado que o &lt;code&gt;grayscale&lt;/code&gt; em 100%&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;saturate&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;4&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1499,7 +1499,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='opacity'&gt;Opacity&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-opacity.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-opacity.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Ok, esse é bastante fácil. Simplesmente mude a opacidade do elemento. Os valores vão de 0 a 1. 0 deixa o elemento invisível.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;opacity&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='m'&gt;5&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1507,7 +1507,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='brightness'&gt;Brightness&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-brightness.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-brightness.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;O &lt;code&gt;brightness&lt;/code&gt; altera o brilho do elemento. Os valores vão de 100% a 0%. Em 100%, com o brilho no máximo, o elemento fica totalmente branco.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;brightness&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;50&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1515,7 +1515,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='contrast'&gt;Contrast&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-contrast.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-contrast.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Também bastante óbvio. Aqui alteramos a saturação do elemento. O valor desse filtro pode ser expresso em unidades (0, 1, 3, 4, &amp;#8230;) ou em percentagem (0%, 100%, 1500%).&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;constrast&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='m'&gt;5&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1523,7 +1523,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='hue_rotate'&gt;Hue Rotate&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-hue-rotate.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-hue-rotate.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Neste filtro podemos mover todas as cores do elemento em graus dentro da roda de cores. Com 0deg não iremos realizar nenhuma alteração, enquanto com 180deg iremos inverter todas as cores.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;hue&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;rotate&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;180&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1531,7 +1531,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='invert'&gt;Invert&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-invert.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-invert.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Com o &lt;code&gt;invert&lt;/code&gt; invertemos todas as cores. Na verdade a inversão completa acontece apenas se usarmos o valor 100%. Com 50% as cores estarão no meio caminho entre suas cores invertidas, o que significa que estarão com um tom de cinza. Os valores vão de 0% a 100%.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;invert&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;100&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1539,7 +1539,7 @@ Item
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='vrios_filtros'&gt;Vários filtros&lt;/h2&gt;
-&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/jeri-various.png' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img height='200' src='http://loopinfinito.com.br/images/posts/jeri-various.png' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;Também é possível o uso de vários filtros em conjunto, para obtermos um efeito mais único. Na imagem acima usamos &lt;code&gt;hue-rotate&lt;/code&gt; e &lt;code&gt;sepia&lt;/code&gt;.&lt;/p&gt;
 &lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nt'&gt;img&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;webkit&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;filter&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;hue&lt;/span&gt;&lt;span class='o'&gt;-&lt;/span&gt;&lt;span class='n'&gt;rotate&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;60&lt;/span&gt;&lt;span class='n'&gt;deg&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='n'&gt;sepia&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;1&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -1568,7 +1568,7 @@ Item
     <author>
       <name>Caio Gondim</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src='http://loopinfinito.com.br/images/posts/darth-vader-and-elvis.jpeg' /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img height='432' src='http://loopinfinito.com.br/images/posts/darth-vader-and-elvis.jpeg' width='700' /&gt;&lt;/p&gt;
 &lt;p&gt;O Loop Infinito é uma idéia antiga minha &lt;a href='http://twitter.com/caio_gondim'&gt;(@caio_gondim)&lt;/a&gt; e de Almir Filho &lt;a href='http://twitter.com/almirfilho'&gt;(@almirfilho)&lt;/a&gt;, onde queríamos começar um blog pra postar todas as nossas &amp;#8220;descobertas&amp;#8221; e experimentos sobre desenvolvimento web. Anos se passaram desde essa idéia, e hoje, finalmente, a idéia vira realidade.&lt;/p&gt;
 
 &lt;p&gt;Aqui no blog postaremos principalmente sobre desenvolvimento web, mas alguns outros tópicos como produtividade, interface de usuário e nerdices em geral podem surgir de forma mais esporádica.&lt;/p&gt;

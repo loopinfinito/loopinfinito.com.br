@@ -43,7 +43,7 @@ comments: true
 		}
 
 </style>
-<p><img src="http://loopinfinito.com.br/images/posts/2012-05-02-semantics-html5.jpg" alt="HTML5 Semantics" /></p>
+<p><img src="http://loopinfinito.com.br/images/posts/2012-05-02-semantics-html5.jpg" alt="HTML5 Semantics" width="700" height="432" /></p>
 
 Olá pessoal, continuando o papo do nosso <a href="http://loopinfinito.com.br/2012/04/26/marcacao-semantica/">último post</a>, hoje continuarei falando de marcação semântica, com a diferença de que focarei em microdata e mostrarei também como realizar a marcação semântica de conteúdo usando os vocabulários **Schema.org**.
 

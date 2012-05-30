@@ -10,7 +10,7 @@ keywords: produtividade, lifestyle, rework, 37signals, porque, decisao, ejetar
 comments: true
 ---
 
-<p><img src="/{{ page.image }}" alt="{{ page.title | strip_html }}" /></p>
+<p><img src="/{{ page.image }}" alt="{{ page.title | strip_html }}" width="700" height="432" /></p>
 
 Já fazia um tempinho que queria postar algo sobre produtividade, afinal de contas o Loop Infinito não se trata apenas 
 de mais um blog sobre tecnologia web, e sim de assuntos como **produtividade**, **usabilidade** e **lifestyle**. Estes 

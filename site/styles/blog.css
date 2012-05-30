@@ -60,7 +60,7 @@ header#main nav input[type=search]:focus{background-color:#fff;}
 #content .post-container{position:relative;margin-bottom:100px;}
 #content .post-container article{width:600px;background-color:white;padding:45px 50px 0px 50px;line-height:200%;color:#666;border:1px solid #CCCCCC;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:300;font-size:15px;box-shadow:3px 5px 0 rgba(0, 0, 0, 0.06);}
 #content .post-container code{background-color:#EFEFEF;padding:3px;border-radius:3px;color:#555;font-size:12px;font-family:Monaco, monospace;}
-#content .post-container pre{width:600px;position:relative;left:-50px;padding:30px 50px 30px 50px;font-size:12px;line-height:160%;background-color:#333;word-wrap:break-word;color:whiteSmoke;}
+#content .post-container pre{width:600px;position:relative;left:-50px;padding:30px 50px 30px 50px;font-size:12px;line-height:160%;background-color:#333;white-space:pre-wrap;color:whiteSmoke;}
 #content .post-container pre code{background:none;color:white;line-height:4px;}
 #content .post-container article section{padding-bottom:45px;}
 #content .post-container article p{margin:25px 0;-webkit-hyphens:auto;}
@@ -69,6 +69,7 @@ header#main nav input[type=search]:focus{background-color:#fff;}
 #content .post-container article a{text-decoration:underline;color:#666;}
 #content .post-container article a:hover{color:#333;}
 #content .post-container article p img,#content .post-container article .img{position:relative;left:-50px;width:700px;}
+#content .post-container article img{background-color:white;background-image:-webkit-linear-gradient(45deg, #eeeeee 25%, transparent 25%, transparent 75%, #eeeeee 75%, #eeeeee),-webkit-linear-gradient(45deg, #eeeeee 25%, transparent 25%, transparent 75%, #eeeeee 75%, #eeeeee);background-size:30px 30px;background-position:0 0, 15px 15px;}
 #content .post-container article p img.bordered{border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
 #content .post-container article pre.prettyprint{position:relative;left:-50px;width:600px;padding:10px 50px;font-size:14px;}
 #content .post-container article a.leia-mais{display:block;color:#333;font-weight:bold;margin-top:20px;}

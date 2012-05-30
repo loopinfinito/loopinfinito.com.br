@@ -37,8 +37,9 @@ layout: home
 			{% if post.image %}
 				<p>
 					<a href="{{ post.url }}">
-						<img itemprop="thumbnailUrl" src="{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" /></p>
+						<img itemprop="thumbnailUrl" src="{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" width="700" height="432" />
 					</a>
+				</p>
 			{% endif %}
 			<div itemprop="description">{{ post.resumo }}</div>
 			<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>

@@ -115,7 +115,7 @@
 						<h1><a href="/2012/04/26/marcacao-semantica/" itemprop="headline">Marcação Semântica</a></h1>
 					</header>
 					<section itemprop="articleBody">
-						<p><img alt='' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica.jpg' /></p>
+						<p><img alt='' height='432' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica.jpg' width='700' /></p>
 <p>Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.</p>
 
 <p>Desde a década de 1990, a W3C tem apresentado maneiras para definição de conteúdo semântico, e de lá pra cá surgiram outras alternativas, mas devido a grande quantidade de informações, falarei apenas um pouco sobre cada uma delas: RDF, RDFa, Microformats e <strong>Microdata</strong> ← focaremos neste último cara aqui.</p>
@@ -161,7 +161,7 @@
 <p>Existem vários serviços do Google, por exemplo, que fazem filtragens mais específicas de conteúdo e que levam muito em consideração a marcação semântica. Dois bons exemplos são o <strong><a href='http://www.google.com.br/prdhp'>Google Shopping</a></strong> (busca de produtos à venda) e o <strong><a href='http://www.google.com/landing/recipes/'>Google Recipes</a></strong> (busca de receitas culinárias). É verdade que estes serviços conseguem recuperar também conteúdo não marcado semanticamente (a grande maioria), mas os que utilizam RDFa, microformats ou microdata têm chances muito maiores de serem os primeiros no pagerank.</p>
 
 <p>No <strong>Google Shopping</strong>, fiz uma pesquisa simples por &#8221;<em>jornalista</em>&#8221; e eis o resultado obtido:</p>
-<p id='img-produtos'><img class='bordered' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-shopping.jpg' /></p>
+<p id='img-produtos'><img class='bordered' height='502' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-shopping.jpg' width='700' /></p>
 <p>Pela imagem acima, é possível perceber que o nível de refinamento de uma pesquisa pode ser muito mais específico do que apenas procurar por palavras-chaves – como acontece normalmente hoje. Percebam que podemos especificar se procuramos por um produto novo ou não, a faixa de preço desejada e até a loja. Os seis primeiros resultados foram dos sites: Americanas.com, Submarino.com.br, Extra.com.br, CasasBahia.com.br, PontoFrio.com e Saraiva.com.br. Tive a curiosidade de analisar o código fonte de cada um deles, e eis que consegui detectar na base do olhômetro (se eu estiver errado sobre algum, por favor deixe um comentário):</p>
 
 <ol>
@@ -179,7 +179,7 @@
 </ol>
 
 <p>No <strong>Google Recipes</strong>, pesquisei por &#8221;<em>cupcake</em>&#8221;:</p>
-<p><img class='bordered' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-recipes.jpg' /></p>
+<p><img class='bordered' height='386' src='http://loopinfinito.com.br/images/posts/2012-04-26-marcacao-semantica-google-recipes.jpg' width='700' /></p>
 <p>Novamente, reparem nos filtros disponíveis para receitas. Eles diferem dos de produtos (<a href='#img-produtos'>mostrados acima</a>). Aqui é possível especificar o uso (ou não uso) de determinados ingredientes na receita (muito útil para quem tem alergia a certos alimentos, por exemplo), tempo de cozimento e até mesmo o valor calórico do que procuro. É outra história, meus amigos. Os três primeiros resultados foram dos sites: FoodNetwork.com, MarthaStewart.com e KraftRecipes.com. Analisando o código fontes das páginas, obtive que:</p>
 
 <ol>

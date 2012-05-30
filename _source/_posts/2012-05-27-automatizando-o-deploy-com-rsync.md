@@ -11,7 +11,7 @@ comments: true
 styles: [wombat]
 ---
 
-<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt=""></p>
+<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt="Automatizando o deploy com rsync" width="700" height="432" /></p>
 
 
 - Você sempre esquece de upar um arquivo para o servidor de produção?
@@ -154,7 +154,7 @@ __EDGE, average case__
 
 Um gráfico com os dados que obtive
 
-<img src="http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg" alt="" class="img" />
+<img src="http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-site-inteiro.jpg" alt="" class="img" width="700" height="300" />
 
 Neste cenário o rsync foi bem mais rápido.
 
@@ -174,7 +174,7 @@ __EDGE, average case__
 - FTP 29 segundos
 - rsync 21 segundos
 
-<img src="http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg" alt="" class="img" />
+<img src="http://loopinfinito.com.br/images/posts/2012-05-27-grafico-tempo-de-deploy-rsync-vs-ftp-caracteres-10-arquivos-diferentes.jpg" alt="" class="img" width="700" height="300" />
 
 Em relação ao FTP eu apenas cronometrei o tempo gasto para upar os arquivos. Num cenário real nos ainda iríamos ter que escolher um a um os arquivos a serem enviados, o que resulta em mais tempo gasto.
 No caso do rsync, não precisamos escolher quais arquivos mandar. Ele mesmo verifica quais os arquivos que devem ser upados e faz todo o trabalho chato.
