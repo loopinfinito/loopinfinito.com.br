@@ -94,6 +94,7 @@ aside.post-meta li.post-tags li{display:inline;padding:0px;line-height:24px;}
 aside.post-meta li.post-tags li a span{color:#555;}
 aside.post-meta li.post-tags li a:hover span{color:#333;}
 footer#disqus_thread{background-color:#ddd;padding:20px 50px 0px 50px;width:600px;position:relative;left:-50px;margin-bottom:0px;line-height:none !important;font-size:14px;min-height:43px;}
+#dsq-content-stub img{background-color:#DDD !important;background-image:none !important;}
 #dsq-account-dropdown a{font-size:13px;}
 section#disqus-power{text-align:right;line-height:40px;margin-right:200px;}
 section#disqus-power a{color:#999;text-decoration:none;}
