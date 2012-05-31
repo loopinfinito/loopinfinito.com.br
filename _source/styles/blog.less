@@ -250,21 +250,29 @@ header#main {
 		}
 
 			header#main nav ul li {
-				float:left;
-				margin:0 0 0 30px;
-				color:#666;
+				float: left;
+				margin: 0 0 0 30px;
+				color: #666;				
 			}
 
-		header#main nav a {
-			line-height: 25px;
-			text-decoration: none;
-			color: #666;
-			font-size:16px;
-		}
+				header#main nav ul li a {
+					line-height: 25px;
+					text-decoration: none;
+					color: #666;
+					font-size:16px;
+					opacity: 0.5;					
+					text-shadow:0px 2px 0px white;
+				}
 
-		header#main nav a:hover {
-			color: #000;
-		}
+				header#main nav ul li a.menu-ativo {
+					opacity: 1;
+				}
+
+				header#main nav ul li a:hover {
+					color: #000;
+					text-decoration: underline;
+					opacity: 1;
+				}
 
 		header#main nav input[type=search] {
 			border:0;

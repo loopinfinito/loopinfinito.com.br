@@ -38,8 +38,9 @@ header#main a#logo{text-indent:-9999px;background-image:url(../images/loop-infin
 header#main nav{position:absolute;right:200px;top:10px;}
 header#main nav ul{list-style:none;}
 header#main nav ul li{float:left;margin:0 0 0 30px;color:#666;}
-header#main nav a{line-height:25px;text-decoration:none;color:#666;font-size:16px;}
-header#main nav a:hover{color:#000;}
+header#main nav ul li a{line-height:25px;text-decoration:none;color:#666;font-size:16px;opacity:0.5;text-shadow:0px 2px 0px white;}
+header#main nav ul li a.menu-ativo{opacity:1;}
+header#main nav ul li a:hover{color:#000;text-decoration:underline;opacity:1;}
 header#main nav input[type=search]{border:0;height:25px;font-size:14px;background:url(../images/lupa.png) no-repeat 5px center;padding-left:20px;outline:none;border-radius:10px;-webkit-appearance:none;visibility:hidden;}
 header#main nav input[type=search]::-webkit-input-placeholder{color:#999;}
 header#main nav input[type=search]:hover{background-color:rgba(255, 255, 255, 0.4);}
