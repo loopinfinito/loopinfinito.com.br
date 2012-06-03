@@ -1,0 +1,50 @@
+section.project {
+	position: relative;
+	left: -50px;
+	width: 700px;
+	padding-bottom: 35px !important;
+}
+
+	section.project a {
+		text-decoration: none !important;
+	}
+
+	section.project a:hover {
+		text-decoration: underline !important;
+	}
+
+	section.project .project-icon {
+		display: block;
+		float: left;
+		width: 207px;
+		height: 207px;
+		box-shadow: 3px 4px #ddd;
+	}
+
+		section.project .project-icon img {
+			width: 207px !important;
+			height: 207px !important;
+			left: 0px !important;
+		}
+
+	section.project div.content {
+		float: left;
+		width: 450px;
+		padding: 10px 20px 0px 20px;
+		color: #999;
+	}
+
+		section.project div.content p {
+			margin: 10px 0px !important;
+			line-height: 150%;
+			font-size: 18px;
+		}
+
+#sugestao {
+	text-align: center;
+	font-family: Museo, MuseoRegular, Helvetica, Arial, sans-serif;
+	font-size: 130px;
+	font-weight: bold;
+	line-height: 207px;
+	background: url(../images/bg.png);
+}
