@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	
+		<title>Expressões matemáticas em CSS com calc() – Loop Infinito</title>
+	
+	
+		<meta name="author" content="Almir Filho" />
+	
+	
+		<meta name="keywords" content="css, css3, calc, matematica, calculo, unidades css" />
+	
+	
+		<meta name="description" content="Um novo recurso bastante interessante do CSS3 é a função calc(). Com esta função agora é possível calcularmos valores de expressões matemáticas diretamente no CSS! Like a rockstar coder." />
+	
+	<meta name="language" content="pt" />
+	<meta name="content-language" content="pt-BR" />
+	<meta name="robots" content="all" />
+	<meta name="distribution" content="Global" />
+	<meta name="resource-type" content="document" />
+	
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
+	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
+	
+	
+		<link rel="stylesheet" type="text/css" href="/styles/wombat.css" media="all" />
+	
+	
+	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready( function(){
+
+			$('#links a').hover( function(){
+				$(this).parent().siblings('span').addClass('show');
+			}, function(){
+				$(this).parent().siblings('span').removeClass('show');
+			});
+		});
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-30127419-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+	<ul id="links">
+		<li class="twitter">
+			<div><a href="http://twitter.com/loopinfinito"><img src="/images/icons/twitter.png" alt="" /></a></div>
+			<span>siga o <strong>Twitter</strong></span>
+		</li>
+		<li class="fork">
+			<div><a href="https://github.com/loopinfinito/loopinfinito.com.br"><img src="/images/icons/fork.png" alt="" /></a></div>
+			<span>fork me on <strong>GitHub</strong></span>
+		</li>
+		<li class="rss">
+			<div><a href="http://feeds.feedburner.com/l8p"><img src="/images/icons/rss.png" alt="" /></a></div>
+			<span>assine o <strong>Feed</strong></span>
+		</li>
+	</ul>
+	<div id="wrapper">
+		<header id="main">
+			<h1><a href="/" id="logo">Loop Infinito</a></h1>
+			<nav>
+				<ul>
+					<li><a href="/" class="menu-ativo">Posts</a></li>
+					<li><a href="/projetos" >Projetos</a></li>
+					<li><a href="/sobre" >Sobre</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="content">
+
+			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
+				<span class="hidden" itemprop="publisher">Loop Infinito</span>
+				<aside class="post-meta">
+					<ul>
+						<li class="post-data">
+							<time itemprop="datePublished" datetime="2012-06-04">04/06/2012</time>
+						</li>
+						<li class="post-autor">
+							<a href="http://twitter.com/almirfilho" title="Almir Filho" alt="Almir Filho" rel="author" itemprop="author">Almir Filho</a>
+						</li>
+						
+							<li class="post-comentarios"><a href="/2012/06/04/expressoes-matematicas-em-css-com-calc/#disqus_thread" data-disqus-identifier="/2012/06/04/expressoes-matematicas-em-css-com-calc" itemprop="interactionCount">Carregando...</a></li>
+						
+						
+						<li class="post-tags">
+							<ul>
+								
+								<li><a href="/tag/CSS"><span>#</span>CSS</a></li>
+													
+							</ul>
+							
+								<span class="hidden" itemprop="keywords">css, css3, calc, matematica, calculo, unidades css</span>
+							
+						</li>
+						
+					</ul>	
+				</aside>
+				<article>
+					<header>
+						<h1><a href="/2012/06/04/expressoes-matematicas-em-css-com-calc/" itemprop="headline">Expressões matemáticas em CSS com <span class="light">calc()</span></a></h1>
+					</header>
+					<section itemprop="articleBody">
+						<script type='text/javascript'>
+$(document).ready( function(){
+	$('#btn').click( function(){
+		$('.input').each( function( i, e ){
+			var a = $(e).attr('data-attr');
+			var val = $(e).val();
+			$('#acdc').css( a, '-webkit-calc('+val+')' ).css( a, '-moz-calc('+val+')' ).css( a, '-ms-calc('+val+')' ).css( a, '-o-calc('+val+')' ).css( a, 'calc('+val+')' );
+		});
+	});
+});
+</script><style type='text/css'>
+
+#stage {
+	width: 700px;
+	height: 432px;
+	overflow: hidden;
+	background-color:#333;
+	background-image: -webkit-linear-gradient(white 2px, transparent 2px),
+	  -webkit-linear-gradient(0, white 2px, transparent 2px),
+	  -webkit-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  -webkit-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-image: -moz-linear-gradient(white 2px, transparent 2px),
+	  -moz-linear-gradient(0, white 2px, transparent 2px),
+	  -moz-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  -moz-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-image: -ms-linear-gradient(white 2px, transparent 2px),
+	  -ms-linear-gradient(0, white 2px, transparent 2px),
+	  -ms-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  -ms-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-image: -o-linear-gradient(white 2px, transparent 2px),
+	  -o-linear-gradient(0, white 2px, transparent 2px),
+	  -o-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  -o-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-image: linear-gradient(white 2px, transparent 2px),
+	  linear-gradient(0, white 2px, transparent 2px),
+	  linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+}
+
+#content .post-container article section img#acdc {
+	width: auto;
+	height: auto;
+	background: none !important;
+	position: relative;
+	left: 0px;
+	left: -webkit-calc(50% - 175px);
+	left: -moz-calc(50% - 175px);
+	left: -ms-calc(50% - 175px);
+	left: -o-calc(50% - 175px);
+	left: calc(50% - 175px);
+	top: -webkit-calc(50% - 75px);
+	top: -moz-calc(50% - 75px);
+	top: -ms-calc(50% - 75px);
+	top: -o-calc(50% - 75px);
+	top: calc(50% - 75px);
+}
+
+#btn {
+	padding: 0px 5px;
+}
+
+#experiment {
+	padding-bottom: 0px !important;
+}
+
+	#experiment input.input {
+		width: 120px;
+	}
+
+	#experiment table {
+		text-align: left;
+		border-collapse: collapse;
+		border-spacing: 0px;
+		margin-top: 20px;
+		line-height: 120% !important;
+	}
+
+		#experiment table td {
+			padding: 2px;
+		}
+
+</style><p><img alt='Expressões matemáticas em CSS com calc()' height='432' src='http://loopinfinito.com.br/images/posts/2012-06-04-isaac-newton.jpg' title='Isaac Newton' width='700' /></p>
+<p>Um novo recurso bastante interessante do CSS3 é a função <code>calc()</code>. Com esta função agora é possível calcularmos valores de <strong>expressões matemáticas</strong> diretamente no CSS! <em>Like a rockstar coder</em>.</p>
+
+<p>Em CSS, sabemos que existem diversos tipos de valores e medidas: <code>px</code>, <code>%</code>, <code>em</code>, <code>in</code>, <code>cm</code>, <code>mm</code>, <code>pc</code>, <code>pt</code> e <code>ex</code>. Se quisermos atribuir qualquer valor numérico a uma determinada propriedade, apenas escolhemos uma destas unidades:</p>
+<div class='highlight'><pre><code class='css'><span class='nf'>#acdc</span> <span class='p'>{</span>
+    <span class='k'>width</span><span class='o'>:</span> <span class='m'>100px</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<p>Contudo, em CSS <strong>não</strong> é permitido fazer isto:</p>
+<div class='highlight'><pre><code class='css'><span class='nf'>#acdc</span> <span class='p'>{</span>
+    <span class='k'>width</span><span class='o'>:</span> <span class='m'>100px</span> <span class='o'>+</span> <span class='m'>10px</span><span class='p'>;</span> <span class='c'>/* incorreto */</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<p>Ou seja, não é possível calcular nenhuma expressão matemática – mesmo que seja uma coisa totalmente desnecessária e tosca como o exemplo acima. E desculpem-me por isto, no próximo melhora.</p>
+
+<h2 id='um_exemplo_descente'>Um exemplo descente</h2>
+
+<p>Acho que boa parte das pessoas que trabalham com CSS já se depararam com o seguinte problema: precisar apenas centralizar um elemento na tela. Isto é, independente da resolução que o cidadão esteja usando, o elemento terá que ficar centralizado. Dai você pensa, <em>&#8220;p!@# q%$ p%$!# como é que vou fazer esta m!@#$ funcionar?&#8221;</em>. E <strong>sem trapacear com JS</strong>.</p>
+
+<p>A <span style='text-decoration:line-through;'>gambiarra</span> solução para este pequeno impasse é bem simples, na verdade:</p>
+<div class='highlight'><pre><code class='css'><span class='nf'>#pinkfloyd</span> <span class='p'>{</span>
+    <span class='k'>width</span><span class='o'>:</span> <span class='m'>200px</span><span class='p'>;</span>
+    <span class='k'>height</span><span class='o'>:</span> <span class='m'>150px</span><span class='p'>;</span>
+    <span class='k'>position</span><span class='o'>:</span> <span class='k'>absolute</span><span class='p'>;</span>
+    <span class='k'>top</span><span class='o'>:</span> <span class='m'>50</span><span class='o'>%</span><span class='p'>;</span>
+    <span class='k'>left</span><span class='o'>:</span> <span class='m'>50</span><span class='o'>%</span><span class='p'>;</span>
+    <span class='k'>margin-top</span><span class='o'>:</span> <span class='m'>-75px</span><span class='p'>;</span> <span class='c'>/* metade da altura */</span>
+    <span class='k'>margin-left</span><span class='o'>:</span> <span class='m'>-100px</span><span class='p'>;</span> <span class='c'>/* metade da largura */</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<p>Hora do purismo: Ter que resolver um problema de posição de um elemento usando <code>margin</code> é <strong>toscasso</strong>! Se já existem as propriedades <code>top</code>, <code>left</code>, <code>right</code> e <code>bottom</code>, isto deveria ser mais que suficiente, mas pela limitação do CSS de não permitir expressões matemáticas, infelizmente não poderíamos simplesmente fazer: <code>top: 50% - 75px</code>.</p>
+
+<h2 id='resolvendo_a_bronca_da_maneira_correta'>Resolvendo a bronca da maneira correta</h2>
+
+<p>Não seria legal se a expressão acima (<code>top: 50% - 75px</code>) funcionasse logo de cara, sem frescura? Pois é, por isso apresentamos&#8230; <code>calc()</code>!</p>
+
+<p>Com <code>calc()</code> poderemos calcular expressões matemáticas <strong>simples</strong> de boa. Quando digo <em>simples</em> quer dizer apenas que não dá pra sair calculando integrais e diabo a quatro, os operadores suportados por <code>calc()</code> são apenas os básicos – <code>+</code>, <code>-</code>, <code>*</code> e <code>/</code> – e também podemos usar parênteses – <code>(</code> e <code>)</code>. Mais do que o suficiente por hora.</p>
+
+<p>O mais interessante é que podemos <em>misturar</em> valores relativos com valores absolutos, e valores de <em>diferentes unidades</em>. <code>calc()</code> automaticamente converte as diferentes unidades e calcula valores relativos (como <code>%</code>).</p>
+
+<h3 id='misturando_valores_relativos_e_absolutos'>Misturando valores relativos e absolutos</h3>
+
+<p>O exemplo anterior ficaria:</p>
+<div class='highlight'><pre><code class='css'><span class='nf'>#pinkfloyd</span> <span class='p'>{</span>
+    <span class='k'>width</span><span class='o'>:</span> <span class='m'>200px</span><span class='p'>;</span>
+    <span class='k'>height</span><span class='o'>:</span> <span class='m'>150px</span><span class='p'>;</span>
+    <span class='k'>position</span><span class='o'>:</span> <span class='k'>absolute</span><span class='p'>;</span>
+    <span class='c'>/* top: 50%; */</span>
+    <span class='c'>/* margin-top: -75px; */</span>
+    <span class='k'>top</span><span class='o'>:</span> <span class='n'>calc</span><span class='p'>(</span><span class='m'>50</span><span class='o'>%</span> <span class='o'>-</span> <span class='m'>75px</span><span class='p'>);</span>
+    <span class='c'>/* left: 50%; */</span>
+    <span class='c'>/* margin-left: -100px; */</span>
+    <span class='k'>left</span><span class='o'>:</span> <span class='n'>calc</span><span class='p'>(</span><span class='m'>50</span><span class='o'>%</span> <span class='o'>-</span> <span class='m'>100px</span><span class='p'>);</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<h3 id='misturando_unidades'>Misturando unidades</h3>
+
+<p>Também é possível usar valores de unidades diferentes numa mesma expressão:</p>
+<div class='highlight'><pre><code class='css'><span class='nf'>#ledzeppelin</span> <span class='p'>{</span>
+    <span class='k'>width</span><span class='o'>:</span> <span class='n'>calc</span><span class='p'>(</span><span class='m'>100px</span> <span class='o'>+</span> <span class='m'>2in</span> <span class='o'>+</span> <span class='m'>5em</span><span class='p'>);</span>
+    <span class='k'>min-height</span><span class='o'>:</span> <span class='n'>calc</span><span class='p'>(</span><span class='m'>5em</span> <span class='o'>+</span> <span class='m'>30px</span> <span class='o'>+</span> <span class='m'>25</span><span class='o'>%</span> <span class='o'>+</span> <span class='m'>3.5pc</span><span class='p'>);</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<h2 id='suporte'>Suporte</h2>
+
+<p>No momento em que escrevo este post, os únicos navegadores que estão dando suporte a esta propriedade são o <strong>Google Chrome v.19</strong> (o mais novo) através da propriedade prefixada <code>-webkit-calc()</code> e o <strong>Mozilla Firefox</strong>, que já dá suporte desde sua versão 8 através da propriedade prefixada <code>-moz-calc()</code>. O <strong>Internet Explorer 9</strong> e o <strong>Webkit Nightly Build</strong> são os únicos que dão suporte completo até o momento (<code>calc()</code>). Já o <em>Opera</em>, o <em>Safari</em> ainda não estão dando suporte algum.</p>
+
+<h2 id='se_vira_nos_30'>Se vira nos 30</h2>
+
+<p>Agora é a sua vez =). Fiz este pequeno experimento abaixo onde é possível entrar com os valores de cada propriedade e visualizar o resultado.</p>
+<section id='experiment'>
+	<div class='img' id='stage'>
+		<img alt='AC/DC' id='acdc' src='http://loopinfinito.com.br/images/posts/2012-06-04-acdc.png' title='there&apos;s a long way to the top if you wanna rock n&apos; roll' />
+	</div>
+	<table>
+		<thead>
+			<th><label for='input-top'><code>top</code></label></th>
+			<th><label for='input-left'><code>left</code></label></th>
+			<th><label for='input-width'><code>width</code></label></th>
+			<th><label for='input-height'><code>height</code></label></th>
+			<th />
+		</thead>
+		<tbody>
+			<td><input class='input' data-attr='top' id='input-top' placeholder='top' value='50% - 75px' /></td>
+			<td><input class='input' data-attr='left' id='input-left' placeholder='left' value='50% - 175px' /></td>
+			<td><input class='input' data-attr='width' id='input-width' placeholder='width' value='350px' /></td>
+			<td><input class='input' data-attr='height' id='input-height' placeholder='height' value='150px' /></td>
+			<td><input id='btn' type='button' value='Atualizar' /></td>
+		</tbody>
+	</table>
+</section>
+<p><strong>OBS.:</strong> Se alguma expressão matemática que você digitar não surtir efeito, é porque deve estar incorreta.</p>
+
+<p><strong>Dica 1:</strong> sempre especifique uma unidade. Ex.:</p>
+
+<ul>
+<li>INCORRETO: <code>0</code></li>
+
+<li>CORRETO: <code>0px</code>, <code>0em</code> ou <code>0%</code> etc.</li>
+</ul>
+
+<p><strong>Dica 2:</strong> para soma (<code>+</code>) e subtração (<code>-</code>), sempre deixe espaço entre os elementos da expressão. Ex.:</p>
+
+<ul>
+<li>INCORRETO: <code>10px+30%</code>, <code>10px +10%</code> etc.</li>
+
+<li>CORRETO: <code>10px + 30%</code></li>
+</ul>
+
+<p>That&#8217;s all folks!</p>
+<aside class='fonte'>
+  <h3>Referência</h3>
+  <ul>    
+    <li>→<a alt='CSS Values and Units Module Level 3' href='http://www.w3.org/TR/css3-values/#calc' title='CSS Values and Units Module Level 3'>CSS Values and Units Module Level 3</a> <span class='comment'>// W3C</span></li>
+    <li>→<a alt='CSS Units' href='http://www.w3schools.com/cssref/css_units.asp' title='CSS Units'>CSS Units</a> <span class='comment'>// W3 Schools</span></li>
+    <li>→<a alt='CSS LAYOUT GETS SMARTER WITH CALC()' href='http://updates.html5rocks.com/2012/03/CSS-layout-gets-smarter-with-calc' title='CSS LAYOUT GETS SMARTER WITH CALC()'>CSS LAYOUT GETS SMARTER WITH CALC()</a> <span class='comment'>// HTML5 Rocks</span></li>
+  </ul>
+</aside>				
+					</section>
+					
+					<footer id="disqus_thread">
+						<noscript>Por favor, habilite JavaScript para ver os comentários. <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					</footer>
+					
+				</article>
+			</section>
+
+			
+				<section id="disqus-power">
+					<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+				</section>
+			
+
+		</section>
+
+	</div>
+	
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
+		    var disqus_identifier = '/2012/06/04/expressoes-matematicas-em-css-com-calc';
+		    // var disqus_developer = 1;
+
+		    // callback do Disqus
+		    function disqus_callback() {
+		    	// modifica o título da caixa de comentários
+		    	$('#dsq-reply h3').html('Comentários')
+
+		    	//
+		    	// $('#dsq-comments').find('span.dsq-like-thumb').css({ position: 'relative', bottom: '5px' })
+		    }
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+		        // comment count
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    })();
+		</script>
+	
+</body>
+</html>

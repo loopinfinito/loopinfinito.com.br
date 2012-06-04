@@ -3,9 +3,225 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-06-03T03:11:16-03:00</updated>
+  <updated>2012-06-04T16:42:49-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/06/04/expressoes-matematicas-em-css-com-calc</id>
+    <title>Expressões matemáticas em CSS com calc()</title>
+    <updated>2012-06-04T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/06/04/expressoes-matematicas-em-css-com-calc/" />
+    <author>
+      <name>Almir Filho</name>
+    </author>
+    <content type="html">&lt;script type='text/javascript'&gt;
+$(document).ready( function(){
+	$('#btn').click( function(){
+		$('.input').each( function( i, e ){
+			var a = $(e).attr('data-attr');
+			var val = $(e).val();
+			$('#acdc').css( a, '-webkit-calc('+val+')' ).css( a, '-moz-calc('+val+')' ).css( a, '-ms-calc('+val+')' ).css( a, '-o-calc('+val+')' ).css( a, 'calc('+val+')' );
+		});
+	});
+});
+&lt;/script&gt;&lt;style type='text/css'&gt;
+
+#stage {
+	width: 700px;
+	height: 432px;
+	overflow: hidden;
+	background-color:#333;
+	background-image: -webkit-linear-gradient(white 2px, transparent 2px),
+	  -webkit-linear-gradient(0, white 2px, transparent 2px),
+	  -webkit-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  -webkit-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-image: -moz-linear-gradient(white 2px, transparent 2px),
+	  -moz-linear-gradient(0, white 2px, transparent 2px),
+	  -moz-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  -moz-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-image: -ms-linear-gradient(white 2px, transparent 2px),
+	  -ms-linear-gradient(0, white 2px, transparent 2px),
+	  -ms-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  -ms-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-image: -o-linear-gradient(white 2px, transparent 2px),
+	  -o-linear-gradient(0, white 2px, transparent 2px),
+	  -o-linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  -o-linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-image: linear-gradient(white 2px, transparent 2px),
+	  linear-gradient(0, white 2px, transparent 2px),
+	  linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+	  linear-gradient(0, rgba(255,255,255,.3) 1px, transparent 1px);
+	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+}
+
+#content .post-container article section img#acdc {
+	width: auto;
+	height: auto;
+	background: none !important;
+	position: relative;
+	left: 0px;
+	left: -webkit-calc(50% - 175px);
+	left: -moz-calc(50% - 175px);
+	left: -ms-calc(50% - 175px);
+	left: -o-calc(50% - 175px);
+	left: calc(50% - 175px);
+	top: -webkit-calc(50% - 75px);
+	top: -moz-calc(50% - 75px);
+	top: -ms-calc(50% - 75px);
+	top: -o-calc(50% - 75px);
+	top: calc(50% - 75px);
+}
+
+#btn {
+	padding: 0px 5px;
+}
+
+#experiment {
+	padding-bottom: 0px !important;
+}
+
+	#experiment input.input {
+		width: 120px;
+	}
+
+	#experiment table {
+		text-align: left;
+		border-collapse: collapse;
+		border-spacing: 0px;
+		margin-top: 20px;
+		line-height: 120% !important;
+	}
+
+		#experiment table td {
+			padding: 2px;
+		}
+
+&lt;/style&gt;&lt;p&gt;&lt;img alt='Expressões matemáticas em CSS com calc()' height='432' src='http://loopinfinito.com.br/images/posts/2012-06-04-isaac-newton.jpg' title='Isaac Newton' width='700' /&gt;&lt;/p&gt;
+&lt;p&gt;Um novo recurso bastante interessante do CSS3 é a função &lt;code&gt;calc()&lt;/code&gt;. Com esta função agora é possível calcularmos valores de &lt;strong&gt;expressões matemáticas&lt;/strong&gt; diretamente no CSS! &lt;em&gt;Like a rockstar coder&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Em CSS, sabemos que existem diversos tipos de valores e medidas: &lt;code&gt;px&lt;/code&gt;, &lt;code&gt;%&lt;/code&gt;, &lt;code&gt;em&lt;/code&gt;, &lt;code&gt;in&lt;/code&gt;, &lt;code&gt;cm&lt;/code&gt;, &lt;code&gt;mm&lt;/code&gt;, &lt;code&gt;pc&lt;/code&gt;, &lt;code&gt;pt&lt;/code&gt; e &lt;code&gt;ex&lt;/code&gt;. Se quisermos atribuir qualquer valor numérico a uma determinada propriedade, apenas escolhemos uma destas unidades:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#acdc&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;100px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Contudo, em CSS &lt;strong&gt;não&lt;/strong&gt; é permitido fazer isto:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#acdc&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;100px&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='m'&gt;10px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='c'&gt;/* incorreto */&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Ou seja, não é possível calcular nenhuma expressão matemática – mesmo que seja uma coisa totalmente desnecessária e tosca como o exemplo acima. E desculpem-me por isto, no próximo melhora.&lt;/p&gt;
+
+&lt;h2 id='um_exemplo_descente'&gt;Um exemplo descente&lt;/h2&gt;
+
+&lt;p&gt;Acho que boa parte das pessoas que trabalham com CSS já se depararam com o seguinte problema: precisar apenas centralizar um elemento na tela. Isto é, independente da resolução que o cidadão esteja usando, o elemento terá que ficar centralizado. Dai você pensa, &lt;em&gt;&amp;#8220;p!@# q%$ p%$!# como é que vou fazer esta m!@#$ funcionar?&amp;#8221;&lt;/em&gt;. E &lt;strong&gt;sem trapacear com JS&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A &lt;span style='text-decoration:line-through;'&gt;gambiarra&lt;/span&gt; solução para este pequeno impasse é bem simples, na verdade:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#pinkfloyd&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;200px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;150px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;absolute&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;50&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;left&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;50&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;margin-top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;-75px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='c'&gt;/* metade da altura */&lt;/span&gt;
+    &lt;span class='k'&gt;margin-left&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;-100px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='c'&gt;/* metade da largura */&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Hora do purismo: Ter que resolver um problema de posição de um elemento usando &lt;code&gt;margin&lt;/code&gt; é &lt;strong&gt;toscasso&lt;/strong&gt;! Se já existem as propriedades &lt;code&gt;top&lt;/code&gt;, &lt;code&gt;left&lt;/code&gt;, &lt;code&gt;right&lt;/code&gt; e &lt;code&gt;bottom&lt;/code&gt;, isto deveria ser mais que suficiente, mas pela limitação do CSS de não permitir expressões matemáticas, infelizmente não poderíamos simplesmente fazer: &lt;code&gt;top: 50% - 75px&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id='resolvendo_a_bronca_da_maneira_correta'&gt;Resolvendo a bronca da maneira correta&lt;/h2&gt;
+
+&lt;p&gt;Não seria legal se a expressão acima (&lt;code&gt;top: 50% - 75px&lt;/code&gt;) funcionasse logo de cara, sem frescura? Pois é, por isso apresentamos&amp;#8230; &lt;code&gt;calc()&lt;/code&gt;!&lt;/p&gt;
+
+&lt;p&gt;Com &lt;code&gt;calc()&lt;/code&gt; poderemos calcular expressões matemáticas &lt;strong&gt;simples&lt;/strong&gt; de boa. Quando digo &lt;em&gt;simples&lt;/em&gt; quer dizer apenas que não dá pra sair calculando integrais e diabo a quatro, os operadores suportados por &lt;code&gt;calc()&lt;/code&gt; são apenas os básicos – &lt;code&gt;+&lt;/code&gt;, &lt;code&gt;-&lt;/code&gt;, &lt;code&gt;*&lt;/code&gt; e &lt;code&gt;/&lt;/code&gt; – e também podemos usar parênteses – &lt;code&gt;(&lt;/code&gt; e &lt;code&gt;)&lt;/code&gt;. Mais do que o suficiente por hora.&lt;/p&gt;
+
+&lt;p&gt;O mais interessante é que podemos &lt;em&gt;misturar&lt;/em&gt; valores relativos com valores absolutos, e valores de &lt;em&gt;diferentes unidades&lt;/em&gt;. &lt;code&gt;calc()&lt;/code&gt; automaticamente converte as diferentes unidades e calcula valores relativos (como &lt;code&gt;%&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id='misturando_valores_relativos_e_absolutos'&gt;Misturando valores relativos e absolutos&lt;/h3&gt;
+
+&lt;p&gt;O exemplo anterior ficaria:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#pinkfloyd&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;200px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;150px&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='k'&gt;position&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;absolute&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt;
+    &lt;span class='c'&gt;/* top: 50%; */&lt;/span&gt;
+    &lt;span class='c'&gt;/* margin-top: -75px; */&lt;/span&gt;
+    &lt;span class='k'&gt;top&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;calc&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;50&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt; &lt;span class='o'&gt;-&lt;/span&gt; &lt;span class='m'&gt;75px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+    &lt;span class='c'&gt;/* left: 50%; */&lt;/span&gt;
+    &lt;span class='c'&gt;/* margin-left: -100px; */&lt;/span&gt;
+    &lt;span class='k'&gt;left&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;calc&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;50&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt; &lt;span class='o'&gt;-&lt;/span&gt; &lt;span class='m'&gt;100px&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id='misturando_unidades'&gt;Misturando unidades&lt;/h3&gt;
+
+&lt;p&gt;Também é possível usar valores de unidades diferentes numa mesma expressão:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#ledzeppelin&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
+    &lt;span class='k'&gt;width&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;calc&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;100px&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='m'&gt;2in&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='m'&gt;5em&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+    &lt;span class='k'&gt;min-height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='n'&gt;calc&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='m'&gt;5em&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='m'&gt;30px&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='m'&gt;25&lt;/span&gt;&lt;span class='o'&gt;%&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='m'&gt;3.5pc&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
+&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id='suporte'&gt;Suporte&lt;/h2&gt;
+
+&lt;p&gt;No momento em que escrevo este post, os únicos navegadores que estão dando suporte a esta propriedade são o &lt;strong&gt;Google Chrome v.19&lt;/strong&gt; (o mais novo) através da propriedade prefixada &lt;code&gt;-webkit-calc()&lt;/code&gt; e o &lt;strong&gt;Mozilla Firefox&lt;/strong&gt;, que já dá suporte desde sua versão 8 através da propriedade prefixada &lt;code&gt;-moz-calc()&lt;/code&gt;. O &lt;strong&gt;Internet Explorer 9&lt;/strong&gt; e o &lt;strong&gt;Webkit Nightly Build&lt;/strong&gt; são os únicos que dão suporte completo até o momento (&lt;code&gt;calc()&lt;/code&gt;). Já o &lt;em&gt;Opera&lt;/em&gt;, o &lt;em&gt;Safari&lt;/em&gt; ainda não estão dando suporte algum.&lt;/p&gt;
+
+&lt;h2 id='se_vira_nos_30'&gt;Se vira nos 30&lt;/h2&gt;
+
+&lt;p&gt;Agora é a sua vez =). Fiz este pequeno experimento abaixo onde é possível entrar com os valores de cada propriedade e visualizar o resultado.&lt;/p&gt;
+&lt;section id='experiment'&gt;
+	&lt;div class='img' id='stage'&gt;
+		&lt;img alt='AC/DC' id='acdc' src='http://loopinfinito.com.br/images/posts/2012-06-04-acdc.png' title='there&amp;apos;s a long way to the top if you wanna rock n&amp;apos; roll' /&gt;
+	&lt;/div&gt;
+	&lt;table&gt;
+		&lt;thead&gt;
+			&lt;th&gt;&lt;label for='input-top'&gt;&lt;code&gt;top&lt;/code&gt;&lt;/label&gt;&lt;/th&gt;
+			&lt;th&gt;&lt;label for='input-left'&gt;&lt;code&gt;left&lt;/code&gt;&lt;/label&gt;&lt;/th&gt;
+			&lt;th&gt;&lt;label for='input-width'&gt;&lt;code&gt;width&lt;/code&gt;&lt;/label&gt;&lt;/th&gt;
+			&lt;th&gt;&lt;label for='input-height'&gt;&lt;code&gt;height&lt;/code&gt;&lt;/label&gt;&lt;/th&gt;
+			&lt;th /&gt;
+		&lt;/thead&gt;
+		&lt;tbody&gt;
+			&lt;td&gt;&lt;input class='input' data-attr='top' id='input-top' placeholder='top' value='50% - 75px' /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;input class='input' data-attr='left' id='input-left' placeholder='left' value='50% - 175px' /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;input class='input' data-attr='width' id='input-width' placeholder='width' value='350px' /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;input class='input' data-attr='height' id='input-height' placeholder='height' value='150px' /&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;input id='btn' type='button' value='Atualizar' /&gt;&lt;/td&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/section&gt;
+&lt;p&gt;&lt;strong&gt;OBS.:&lt;/strong&gt; Se alguma expressão matemática que você digitar não surtir efeito, é porque deve estar incorreta.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Dica 1:&lt;/strong&gt; sempre especifique uma unidade. Ex.:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;INCORRETO: &lt;code&gt;0&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;CORRETO: &lt;code&gt;0px&lt;/code&gt;, &lt;code&gt;0em&lt;/code&gt; ou &lt;code&gt;0%&lt;/code&gt; etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Dica 2:&lt;/strong&gt; para soma (&lt;code&gt;+&lt;/code&gt;) e subtração (&lt;code&gt;-&lt;/code&gt;), sempre deixe espaço entre os elementos da expressão. Ex.:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;INCORRETO: &lt;code&gt;10px+30%&lt;/code&gt;, &lt;code&gt;10px +10%&lt;/code&gt; etc.&lt;/li&gt;
+
+&lt;li&gt;CORRETO: &lt;code&gt;10px + 30%&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;#8217;s all folks!&lt;/p&gt;
+&lt;aside class='fonte'&gt;
+  &lt;h3&gt;Referência&lt;/h3&gt;
+  &lt;ul&gt;    
+    &lt;li&gt;→&lt;a alt='CSS Values and Units Module Level 3' href='http://www.w3.org/TR/css3-values/#calc' title='CSS Values and Units Module Level 3'&gt;CSS Values and Units Module Level 3&lt;/a&gt; &lt;span class='comment'&gt;// W3C&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;→&lt;a alt='CSS Units' href='http://www.w3schools.com/cssref/css_units.asp' title='CSS Units'&gt;CSS Units&lt;/a&gt; &lt;span class='comment'&gt;// W3 Schools&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;→&lt;a alt='CSS LAYOUT GETS SMARTER WITH CALC()' href='http://updates.html5rocks.com/2012/03/CSS-layout-gets-smarter-with-calc' title='CSS LAYOUT GETS SMARTER WITH CALC()'&gt;CSS LAYOUT GETS SMARTER WITH CALC()&lt;/a&gt; &lt;span class='comment'&gt;// HTML5 Rocks&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;</content>
+  </entry>
   
   <entry>
     <id>http://loopinfinito.com.br/2012/05/27/automatizando-o-deploy-com-rsync</id>
