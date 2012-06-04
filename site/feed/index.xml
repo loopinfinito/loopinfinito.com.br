@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-06-04T16:42:49-03:00</updated>
+  <updated>2012-06-04T18:21:18-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -115,7 +115,7 @@ $(document).ready( function(){
 &lt;/div&gt;
 &lt;p&gt;Ou seja, não é possível calcular nenhuma expressão matemática – mesmo que seja uma coisa totalmente desnecessária e tosca como o exemplo acima. E desculpem-me por isto, no próximo melhora.&lt;/p&gt;
 
-&lt;h2 id='um_exemplo_descente'&gt;Um exemplo descente&lt;/h2&gt;
+&lt;h2 id='um_exemplo_decente'&gt;Um exemplo decente&lt;/h2&gt;
 
 &lt;p&gt;Acho que boa parte das pessoas que trabalham com CSS já se depararam com o seguinte problema: precisar apenas centralizar um elemento na tela. Isto é, independente da resolução que o cidadão esteja usando, o elemento terá que ficar centralizado. Dai você pensa, &lt;em&gt;&amp;#8220;p!@# q%$ p%$!# como é que vou fazer esta m!@#$ funcionar?&amp;#8221;&lt;/em&gt;. E &lt;strong&gt;sem trapacear com JS&lt;/strong&gt;.&lt;/p&gt;
 

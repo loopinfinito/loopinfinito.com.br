@@ -121,7 +121,7 @@ Contudo, em CSS **não** é permitido fazer isto:
 Ou seja, não é possível calcular nenhuma expressão matemática – mesmo que seja uma coisa totalmente desnecessária e tosca 
 como o exemplo acima. E desculpem-me por isto, no próximo melhora.
 
-## Um exemplo descente
+## Um exemplo decente
 
 Acho que boa parte das pessoas que trabalham com CSS já se depararam com o seguinte problema: precisar apenas centralizar 
 um elemento na tela. Isto é, independente da resolução que o cidadão esteja usando, o elemento terá que ficar centralizado.
