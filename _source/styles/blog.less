@@ -65,23 +65,42 @@ body {
 		&.twitter {
 			div {
 				padding-top: 10px;
+
+				a {
+					height: 22px;
+					background-position: -219px -8px;
+				}
 			}
 		}
 
 		&.fork {
 			div {
 				padding-top: 5px;
+
+				a {
+					height: 32px;
+					background-position: -254px -4px;
+				}
 			}
 		}
 
 		&.rss {
 			div {
 				padding-top: 10px;
+
+				a {
+					height: 22px;
+					background-position: -291px -8px;
+				}
 			}
 		}
 	}
 
 	a {
+		display: block;
+		outline:1px solid black;
+		width: 30px;
+		background: url(@icons-sprite) no-repeat;
 		opacity: 0.2;
 		-o-opacity: 0.2;
 		-moz-opacity: 0.2;

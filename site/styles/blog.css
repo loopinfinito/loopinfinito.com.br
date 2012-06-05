@@ -2,10 +2,10 @@
 @font-face{font-family:'MuseoRegular';src:url('../images/museo300-regular-webfont.eot');src:url('../images/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),url('../images/museo300-regular-webfont.woff') format('woff'),url('../images/museo300-regular-webfont.ttf') format('truetype'),url('../images/museo300-regular-webfont.svg#Museo300Regular') format('svg');font-weight:normal;font-style:normal;}body{background:url('../images/bg.png') #f2f2f2;font-family:"Lucida Grande","Helvetica Neue",Helvetica,Arial,sans-serif;border-top:5px solid #666;}
 #wrapper{position:absolute;left:50%;width:900px;margin-left:-350px;}
 #links{position:fixed;margin:15px;bottom:0px;list-style:none;display:block;z-index:100;width:200px;}#links div{width:30px;float:left;text-align:center;}
-#links li{display:block;height:40px;}#links li.twitter div{padding-top:10px;}
-#links li.fork div{padding-top:5px;}
-#links li.rss div{padding-top:10px;}
-#links a{opacity:0.2;-o-opacity:0.2;-moz-opacity:0.2;-webkit-opacity:0.2;filter:alpha(opacity=20);transition:opacity 0.5s ease;-o-transition:opacity 0.5s ease;-moz-transition:opacity 0.5s ease;-webkit-transition:opacity 0.5s ease;}#links a:hover{opacity:0.5;-o-opacity:0.5;-moz-opacity:0.5;-webkit-opacity:0.5;filter:alpha(opacity=50);}
+#links li{display:block;height:40px;}#links li.twitter div{padding-top:10px;}#links li.twitter div a{height:22px;background-position:-219px -8px;}
+#links li.fork div{padding-top:5px;}#links li.fork div a{height:32px;background-position:-254px -4px;}
+#links li.rss div{padding-top:10px;}#links li.rss div a{height:22px;background-position:-291px -8px;}
+#links a{display:block;outline:1px solid black;width:30px;background:url('../images/icons_sprite.png') no-repeat;opacity:0.2;-o-opacity:0.2;-moz-opacity:0.2;-webkit-opacity:0.2;filter:alpha(opacity=20);transition:opacity 0.5s ease;-o-transition:opacity 0.5s ease;-moz-transition:opacity 0.5s ease;-webkit-transition:opacity 0.5s ease;}#links a:hover{opacity:0.5;-o-opacity:0.5;-moz-opacity:0.5;-webkit-opacity:0.5;filter:alpha(opacity=50);}
 #links span{display:block;float:left;line-height:40px !important;color:#aaa;font-family:Museo, MuseoRegular, Georgia, Times, serif;font-size:12px;font-weight:300;line-height:16px;margin-left:0px;opacity:0;-o-opacity:0;-moz-opacity:0;-webkit-opacity:0;filter:alpha(opacity=0);transition:opacity 0.5s ease,margin-left 0.5s ease;-o-transition:opacity 0.5s ease,margin-left 0.5s ease;-moz-transition:opacity 0.5s ease,margin-left 0.5s ease;-webkit-transition:opacity 0.5s ease,margin-left 0.5s ease;}#links span.show{opacity:1;-o-opacity:1;-moz-opacity:1;-webkit-opacity:1;filter:alpha(opacity=1);margin-left:15px;}
 #links span strong{color:#888;}
 .bold,strong{font-weight:bold;}
