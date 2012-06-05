@@ -13,5 +13,19 @@
 	(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	})();
 	</script>
+	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready( function(){
+
+			$('#links a').hover( function(){
+				$(this).parent().siblings('span').addClass('show');
+			}, function(){
+				$(this).parent().siblings('span').removeClass('show');
+			})
+			
+		})
+
+	</script>
 </body>
 </html>

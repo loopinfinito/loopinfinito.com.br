@@ -23,19 +23,9 @@
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css" media="all" />
-	
-	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+		
 	<script type="text/javascript">
 		
-		$(document).ready( function(){
-
-			$('#links a').hover( function(){
-				$(this).parent().siblings('span').addClass('show');
-			}, function(){
-				$(this).parent().siblings('span').removeClass('show');
-			});
-		});
-
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-30127419-1']);
 	  _gaq.push(['_trackPageview']);
@@ -208,6 +198,20 @@
 	s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
 	(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 	})();
+	</script>
+	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready( function(){
+
+			$('#links a').hover( function(){
+				$(this).parent().siblings('span').addClass('show');
+			}, function(){
+				$(this).parent().siblings('span').removeClass('show');
+			})
+			
+		})
+
 	</script>
 </body>
 </html>

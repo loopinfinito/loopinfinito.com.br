@@ -35,19 +35,9 @@
 	{% for style in page.styles %}
 		<link rel="stylesheet" type="text/css" href="/styles/{{ style }}.css" media="all" />
 	{% endfor %}
-	{% endif %}
-	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+	{% endif %}	
 	<script type="text/javascript">
 		
-		$(document).ready( function(){
-
-			$('#links a').hover( function(){
-				$(this).parent().siblings('span').addClass('show');
-			}, function(){
-				$(this).parent().siblings('span').removeClass('show');
-			});
-		});
-
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-30127419-1']);
 	  _gaq.push(['_trackPageview']);
