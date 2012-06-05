@@ -222,6 +222,47 @@ strong {
 	background-color: #289678;
 }
 
+/* Paginação
+---------------------------------------- */
+#post-pagination {
+	width: 700px;
+	height: 30px;
+	position: relative;
+	margin: -50px 0 30px 0;
+
+	p {
+		position: absolute;
+		width: 150px;
+
+		a {
+			line-height: 25px;
+			text-decoration: none;
+			color: #666;
+			font-size:16px;
+			opacity: 0.5;					
+			text-shadow:0px 2px 0px white;
+			font-family: "Lucida Grande","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+			&:hover {
+				color: black;
+				opacity: 1;
+				text-decoration: underline;
+			}
+		}
+
+		&.anteriores {
+			left: 50px;
+		}
+
+		&.proximos {
+			right: 50px;
+			text-align: right;
+		}
+	}	
+}
+
+
+
 /* Nav
 ---------------------------------------- */
 header#main {
