@@ -33,6 +33,7 @@
 .icon.rss:hover{background-color:#FF6600;}
 .icon.speakerdeck{background-image:url(../images/icons/speakerdeck.png);}
 .icon.speakerdeck:hover{background-color:#289678;}
+#post-pagination p a{background-color:white;font-family:Lucida Grande;color:gray;padding:10px;box-shadow:3px 5px 0 rgba(0, 0, 0, 0.06);margin:10px;display:inline-block;}
 header#main{position:relative;height:165px;}
 header#main a#logo{text-indent:-9999px;background-image:url(../images/loop-infinito-logo.png);width:173px;height:30px;display:block;position:absolute;top:80px;}
 header#main nav{position:absolute;right:200px;top:10px;}

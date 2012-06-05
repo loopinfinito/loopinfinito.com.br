@@ -1,7 +1,7 @@
 ---
 layout: home
 ---
-{% for post in site.posts %}
+{% for post in paginator.posts %}
 <section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
 	<span class="hidden" itemprop="publisher">Loop Infinito</span>
 	<aside class="post-meta">
@@ -47,3 +47,29 @@ layout: home
 	</article>
 </section>
 {% endfor %}
+
+<div id="post-pagination">
+  {% if paginator.previous_page %}
+  <p class="anteriores">
+    {% if paginator.previous_page == 1 %}
+    <a href="/">Anteriores</a>
+    {% else %}
+    <a href="/page{{paginator.previous_page}}">Anteriores</a>
+    {% endif %}
+  </p>
+  {% else %}
+  <p class="anteriores disabled">
+    <span>Anteriores</span>
+  </p>
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <p class="proximos">
+    <a href="/page{{paginator.next_page}}">Próximos</a>
+  </p>
+  {% else %}
+  <p class="proximos disabled">
+    <span>Próximos</span>
+  </p>
+  {% endif %}
+</div>
