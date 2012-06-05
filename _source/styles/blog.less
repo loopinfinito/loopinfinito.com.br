@@ -11,6 +11,7 @@
 // -------------------------------------
 @images-url: '../images';
 @fonts-url: '../fonts';
+@icons-sprite: '@{images-url}/icons_sprite.png';
 
 /* Fontfaces
 ---------------------------------------- */
@@ -155,13 +156,11 @@ strong {
 
 /* Icons 
 ---------------------------------------- */
-@icons-url: '@{images-url}/icons';
-
 .icon {
 	display: inline-block;
 	width: 29px;
 	height: 29px;
-	background: center no-repeat #444;
+	background: url(@icons-sprite) no-repeat #444;
 	border-radius: 15px;
 	-webkit-transition: background-color 0.3s ease;
 
@@ -170,7 +169,7 @@ strong {
 	}
 
 	&.twitter {
-		background-image: url('@{icons-url}/twitter-white.png');
+		background-position: -219px -39px;
 
 		&:hover {
 			background-color: #32CCFE;
@@ -178,7 +177,7 @@ strong {
 	}
 
 	&.github {
-		background-image: url('@{icons-url}/github.png');
+		background-position: -38px -39px;
 	
 		&:hover {
 			background-color: #000;
@@ -186,7 +185,7 @@ strong {
 	}
 
 	&.email {
-		background-image: url('@{icons-url}/email.png');
+		background-position: -3px -40px;
 	
 		&:hover {
 			background-color: #FFCC00;
@@ -194,7 +193,7 @@ strong {
 	}
 
 	&.linkedin {
-		background-image: url('@{icons-url}/linkedin.png');
+		background-position: -75px -40px;
 
 		&:hover {
 			background-color: #006599;
@@ -202,7 +201,7 @@ strong {
 	}
 
 	&.coderwall {
-		background-image: url('@{icons-url}/coderwall.png');
+		background-position: -147px -40px;
 
 		&:hover {
 			background-color: #FF6600;
@@ -210,23 +209,15 @@ strong {
 	}
 
 	&.portfolio {
-		background-image: url('@{icons-url}/portfolio.png');
+		background-position: -111px -39px;
 
 		&:hover {
 			background-color: #99CC00;
 		}
 	}
 
-	&.rss {
-		background-image: url('@{icons-url}/rss.png');
-
-		&:hover {
-			background-color: #FF6600;
-		}
-	}
-
 	&.speakerdeck {
-		background-image: url('@{icons-url}/speakerdeck.png');
+		background-position: -255px -39px;
 
 		&:hover {
 			background-color: #289678;
@@ -333,13 +324,22 @@ header#main {
 					font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					font-weight: 100;
 					color: #999;
-					padding-left: 20px;
-					background: url('@{images-url}/tags.png') no-repeat center left;
 					margin-left: 5px;
 					text-decoration: none;
 
 					&:hover {
 						text-decoration: underline;
+					}
+
+					span {
+						width: 20px;
+						height: 20px;
+						margin-right: 6px;
+						display: inline-block;
+						background: url(@icons-sprite) no-repeat -7px -7px;
+						opacity: 0.5;
+						-moz-opacity: 0.5;
+						filter:alpha(opacity=5);
 					}
 				}
 			}
@@ -530,38 +530,73 @@ aside.post-meta {
 	li {
 		margin: 20px 0 0 0;
 		height: 20px;
-		padding: 0 0 0 35px;
 		line-height: 20px;
+		position: relative;
 
-		&.post-data {
-			background:url('@{images-url}/clock.png') no-repeat 3px center;
+		span.icon-aside {
+			width: 20px;
+			height: 16px;
+			position: absolute;
+			top: 3px;
+			background: url(@icons-sprite) no-repeat;
+			opacity: 0.5;
+			-moz-opacity: 0.5;
+			filter:alpha(opacity=5);
 		}
 
-		&.post-autor {
-			background:url('@{images-url}/author.png') no-repeat 2px center;
+		> a {
+			margin-left: 32px;
+			display: inline-block;
+		}
+
+		&.post-data {
+
+			span.icon-aside {
+				background-position: -189px -10px;
+			}
+
+			time {
+				margin-left: 32px;
+			}
+		}
+
+		&.post-autor span.icon-aside {
+			background-position: -153px -10px;
 		}
 
 		&.post-comentarios {
-			background:url('@{images-url}/comentarios.png') no-repeat 2px 4px;
 			height: auto;
 			min-height: 20px;
+
+			span.icon-aside {
+				background-position: -117px -10px;
+			}
 		}
 
-		&.post-compartilhar {
-			background:url('@{images-url}/compartilhar.png') no-repeat left top;
+		&.post-compartilhar span.icon-aside {
+			background-position: -79px -10px;
 		}
 
 		&.post-tags {
-			background:url('@{images-url}/tags.png') no-repeat 5px 6px;
 			margin-top: 15px;
 			padding-bottom: 2px;
 		
+			span.icon-aside {
+				background-position: -8px -10px;
+			}
+
+			ul {
+				margin-left: 32px;
+			}
+
 			li {
 				display: inline;
 				padding: 0px;
 				line-height: 24px;
 			
 				a {
+					margin-left: 0px;
+
 					span {
 						color: #555;
 					}

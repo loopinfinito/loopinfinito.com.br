@@ -2,7 +2,7 @@
 
 		<section id="content">
 
-			<h2 class="tagged">Posts com <a class="tag" href="/tag/{{ page.tag }}/">{{ page.tag }}</a></h2>
+			<h2 class="tagged">Posts com <a class="tag" href="/tag/{{ page.tag }}/"><span></span>{{ page.tag }}</a></h2>
 
 			{% for post in site.posts %}
 			{% for tag in post.tags %}
@@ -12,16 +12,22 @@
 				<aside class="post-meta">
 					<ul>
 						<li class="post-data">
+							<span class="icon-aside"></span>
 							<time itemprop="datePublished" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d/%m/%Y" }}</time>
 						</li>
 						<li class="post-autor">
+							<span class="icon-aside"></span>
 							<a href="{{ post.author_link }}" title="{{ post.author }}" alt="{{ post.author }}" rel="author" itemprop="author">{{ post.author }}</a>
 						</li>
 						{% if post.comments %}
-						<li class="post-comentarios"><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}" itemprop="interactionCount">Carregando...</a></li>
+						<li class="post-comentarios">
+							<span class="icon-aside"></span>
+							<a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}" itemprop="interactionCount">Carregando...</a>
+						</li>
 						{% endif %}
 						{% unless post.tags == empty %}
 						<li class="post-tags">
+							<span class="icon-aside"></span>
 							<ul>
 								{% for tag in post.tags %}
 								<li><a href="/tag/{{ tag }}"><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
