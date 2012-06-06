@@ -3,9 +3,20 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-06-05T22:34:42-03:00</updated>
+  <updated>2012-06-06T01:05:42-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
+  
+  <entry>
+    <id>http://loopinfinito.com.br/2012/06/10/capitalismo-basico-para-programadores</id>
+    <title>Capitalismo básico para programadores</title>
+    <updated>2012-06-10T00:00:00-03:00</updated>
+    <link href="http://loopinfinito.com.br/2012/06/10/capitalismo-basico-para-programadores/" />
+    <author>
+      <name>Caio Gondim</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt='Capitalismo básico para programadores' height='432' src='http://loopinfinito.com.br/images/posts/2012-06-12-capitalismo-basico-para-programadores.jpg' width='700' /&gt;&lt;/p&gt;</content>
+  </entry>
   
   <entry>
     <id>http://loopinfinito.com.br/2012/06/04/expressoes-matematicas-em-css-com-calc</id>
@@ -1774,46 +1785,6 @@ Item
 		&lt;li&gt;→&lt;a href='https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html'&gt;W3C&lt;/a&gt;&lt;/li&gt;
 	&lt;/ul&gt;
 &lt;/aside&gt;</content>
-  </entry>
-  
-  <entry>
-    <id>http://loopinfinito.com.br/2012/04/01/hello-web</id>
-    <title>console.log(‘Hello Web!’)</title>
-    <updated>2012-04-01T00:00:00-03:00</updated>
-    <link href="http://loopinfinito.com.br/2012/04/01/hello-web/" />
-    <author>
-      <name>Caio Gondim</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;img height='432' src='http://loopinfinito.com.br/images/posts/darth-vader-and-elvis.jpeg' width='700' /&gt;&lt;/p&gt;
-&lt;p&gt;O Loop Infinito é uma idéia antiga minha &lt;a href='http://twitter.com/caio_gondim'&gt;(@caio_gondim)&lt;/a&gt; e de Almir Filho &lt;a href='http://twitter.com/almirfilho'&gt;(@almirfilho)&lt;/a&gt;, onde queríamos começar um blog pra postar todas as nossas &amp;#8220;descobertas&amp;#8221; e experimentos sobre desenvolvimento web. Anos se passaram desde essa idéia, e hoje, finalmente, a idéia vira realidade.&lt;/p&gt;
-
-&lt;p&gt;Aqui no blog postaremos principalmente sobre desenvolvimento web, mas alguns outros tópicos como produtividade, interface de usuário e nerdices em geral podem surgir de forma mais esporádica.&lt;/p&gt;
-
-&lt;p&gt;A meta do blog é: tornar-se o melhor blog sobre desenvolvimento web em língua portuguesa. Sim, ela é bastante ambiciosa, e nós sabemos que nunca iremos alcançá-la sozinhos, por isso que precisamos da sua contribuição.&lt;/p&gt;
-
-&lt;h2 id='contribuindo'&gt;Contribuindo&lt;/h2&gt;
-
-&lt;p&gt;O Loop Infinito é gerenciado como um projeto de software livre, tendo todo o código disponível no &lt;a href='https://github.com/loopinfinito/loopinfinito.com.br'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Para contribuir com um post, basta dar um fork no nosso projeto, escrever seu post e nos enviar um pull request. &lt;strong&gt;Like a Hacker&lt;/strong&gt;. Não há banco de dados e muito menos linguagem no back-end. Todo o código é estático e totalmente aberto.&lt;/p&gt;
-
-&lt;p&gt;Então se você acha que tem algo a acrescentar para a comunidade de desenvolvimento web brasileira, por que não dar um fork agora no projeto, escrever o post e nos enviar um pull request?&lt;/p&gt;
-
-&lt;h2 id='melhor_feito_que_perfeito'&gt;Melhor feito que perfeito&lt;/h2&gt;
-
-&lt;p&gt;Um dos grandes motivos do blog ter demorado tanto tempo é essa busca pela perfeição, que estava atrasando o projeto indefinidamente, já que nunca estávamos satisfeitos com o design, a logo, as ferramentas usadas, etc.&lt;/p&gt;
-
-&lt;p&gt;Mas então se percebe que a perfeição não é um objetivo, já que é impossível alcançá-la. Mas sim um compromisso diário em sempre caminhar em sua direção. E este é o nosso compromisso. Não em sermos os melhores no dia 1, mas sim em sermos melhores que ontem, todos os dias. E é assim que o blog será gerenciado, com iterações constantes e graduais.&lt;/p&gt;
-
-&lt;p&gt;Então esperem coisas boas acontecerem por aqui. Sempre.&lt;/p&gt;
-
-&lt;h2 id='atualizao'&gt;Atualização&lt;/h2&gt;
-
-&lt;p&gt;Qualquer atualização no site iremos tuitar no &lt;a href='http://twitter.com/loopinfinito'&gt;@loopinfinito&lt;/a&gt;. E lá também postaremos notícias relacionadas ao mundo do desenvolvimento web.&lt;/p&gt;
-
-&lt;p&gt;Um feed RSS também será implementado.&lt;/p&gt;
-&lt;h2&gt;}&lt;/h2&gt;
-&lt;p&gt;Estamos muito empolgados e satisfeitos com o projeto finalmente estando no ar (ou nas nuvens). Esperamos que gostem do conteúdo e mandem idéias para posts, comentem e, principalmente, nos mandem pull requests no &lt;a href='https://github.com/loopinfinito/loopinfinito.com.br'&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
   
 </feed>
