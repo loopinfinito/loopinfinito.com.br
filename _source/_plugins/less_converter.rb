@@ -29,7 +29,7 @@ module Jekyll
     def convert(content)
       setup
       begin
-          Less::Parser.new().parse(content).to_css(:compress => true)
+          Less::Parser.new(:paths => ['./_source/styles']).parse(content).to_css(:compress => true)
       rescue => e
         puts "Less Exception: #{e.message}"
       end
