@@ -8,7 +8,6 @@ resumo: Ontem finalmente saímos da teoria e realizamos a marcação semântica 
 tags: SEO microdata schema.org HTML5 web-semantica
 keywords: SEO, microdata, schema.org, HTML5, marcacao semantica, web semantica, desenvolvimento web, crawler, visibilidade
 comments: true
-styles: [wombat]
 ---
 <style type="text/css">
 	

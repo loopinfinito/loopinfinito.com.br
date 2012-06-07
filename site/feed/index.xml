@@ -3,7 +3,7 @@
   <id>http://loopinfinito.com.br/</id>
   <title>Loop Infinito</title>
   <icon>http://loopinfinito.com.br/images/favicon.png</icon>
-  <updated>2012-06-05T19:46:26-03:00</updated>
+  <updated>2012-06-07T20:39:32-03:00</updated>
   <link rel="self" href="http://loopinfinito.com.br/feed/index.xml" />
   <link href="http://loopinfinito.com.br/" />
   
@@ -1177,6 +1177,11 @@ Item
 	#exemplo-filme {
 		border: 1px solid #ccc;
 		padding: 20px;
+		-webkit-box-shadow: 2px 3px 0px #ccc;
+		-khtml-box-shadow: 2px 3px 0px #ccc;
+		-moz-box-shadow: 2px 3px 0px #ccc;
+		-ms-box-shadow: 2px 3px 0px #ccc;
+		-o-box-shadow: 2px 3px 0px #ccc;
 		box-shadow: 2px 3px 0px #ccc;
 		font-family: &quot;Georgia&quot;, serif;
 		color: #333;
