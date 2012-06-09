@@ -7,7 +7,6 @@ resumo: Olá pessoal, continuando o papo do nosso <a href="/2012/04/26/marcacao-
 tags: web-semantica microdata schema.org SEO HTML5
 image: images/posts/2012-05-02-semantics-html5.jpg
 keywords: web semantica, microdata, schema.org, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web, vocabulario, seo
-styles: [wombat]
 comments: true
 ---
 <style type="text/css">
@@ -28,6 +27,11 @@ comments: true
 	#exemplo-filme {
 		border: 1px solid #ccc;
 		padding: 20px;
+		-webkit-box-shadow: 2px 3px 0px #ccc;
+		-khtml-box-shadow: 2px 3px 0px #ccc;
+		-moz-box-shadow: 2px 3px 0px #ccc;
+		-ms-box-shadow: 2px 3px 0px #ccc;
+		-o-box-shadow: 2px 3px 0px #ccc;
 		box-shadow: 2px 3px 0px #ccc;
 		font-family: "Georgia", serif;
 		color: #333;

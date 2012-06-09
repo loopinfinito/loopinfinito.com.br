@@ -8,7 +8,6 @@ image: images/posts/2012-05-13-piao-da-casa-propria-em-css-3d.jpg
 tags: CSS 3D HTML5
 keywords: silvio santos css3 3d html5 frontend web development
 comments: true
-styles: [wombat]
 ---
 
 Quem não lembra do __lendário__ programa do Silvio Santos [Pião da Casa Própria](http://www.youtube.com/watch?v=X0YAnNNK2OE)?

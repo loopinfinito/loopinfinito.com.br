@@ -8,7 +8,6 @@ resumo: A Adobe, Apple e Opera estão <a href="https://dvcs.w3.org/hg/FXTF/raw-f
 tags: CSS
 keywords: css, css filters, html5, adobe, apple, webkit, frontend, front end, webdev, desenvolvimento web
 comments: true
-styles: [wombat]
 ---
 <style>
 

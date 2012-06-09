@@ -8,7 +8,6 @@ image: images/posts/2012-06-04-isaac-newton.jpg
 tags: CSS
 keywords: css, css3, calc, matematica, calculo, unidades css
 comments: true
-styles: [wombat]
 ---
 <script type="text/javascript">
 $(document).ready( function(){
