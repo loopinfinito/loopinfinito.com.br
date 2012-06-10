@@ -1,7 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+
 {% include head.html %}
 
-		<section id="content">
+<body>
 
+	{% include links.html %}
+	
+	<div id="wrapper">
+
+		{% include nav.html %}
+		
+		<section id="content">
+			
 			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
 				<span class="hidden" itemprop="publisher">Loop Infinito</span>
 				<aside class="post-meta">
@@ -50,44 +61,40 @@
 				</article>
 			</section>
 
-			{% if page.comments %}
-				<section id="disqus-power">
-					<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-				</section>
-			{% endif %}
+		</section><!-- end #content -->
 
-		</section>
+	</div><!-- end #wrapper -->
 
-	</div>
 	{% if page.comments %}
-		<script type="text/javascript">
-		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-		    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
-		    var disqus_identifier = '{{page.id}}';
-		    // var disqus_developer = 1;
+	<script type="text/javascript">
 
-		    // callback do Disqus
-		    function disqus_callback() {
-		    	// modifica o título da caixa de comentários
-		    	$('#dsq-reply h3').html('Comentários')
+	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
+	    var disqus_identifier = '{{page.id}}';
+	    // var disqus_developer = 1;
 
-		    	//
-		    	// $('#dsq-comments').find('span.dsq-like-thumb').css({ position: 'relative', bottom: '5px' })
-		    }
+	    // callback do Disqus
+	    function disqus_callback() {
+	    	// modifica o título da caixa de comentários
+	    	$('#dsq-reply h3').html('Comentários')
+	    }
 
-		    /* * * DON'T EDIT BELOW THIS LINE * * */
-		    (function() {
-		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    /* * * DON'T EDIT BELOW THIS LINE * * */
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 
-		        // comment count
-		        var s = document.createElement('script'); s.async = true;
-		        s.type = 'text/javascript';
-		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-		    })();
-		</script>
+	        // comment count
+	        var s = document.createElement('script'); s.async = true;
+	        s.type = 'text/javascript';
+	        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	    })();
+
+	</script>
 	{% endif %}
+	{% include scripts-default.html %}
+	
 </body>
 </html>

@@ -1,0 +1,10 @@
+<header id="main">
+	<h1><a href="/" id="logo">Loop Infinito</a></h1>
+	<nav>
+		<ul>
+			<li><a href="/" {% if page.menu_current == null %}class="menu-ativo"{% endif %}>Posts</a></li>
+			<li><a href="/projetos" {% if page.menu_current == 'projetos' %}class="menu-ativo"{% endif %}>Projetos</a></li>
+			<li><a href="/sobre" {% if page.menu_current == 'sobre' %}class="menu-ativo"{% endif %}>Sobre</a></li>
+		</ul>
+	</nav>
+</header>

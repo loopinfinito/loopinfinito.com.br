@@ -6,7 +6,7 @@ module Jekyll
       @dir = dir
       @name = 'index.html'
       self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
+      self.read_yaml(File.join(base, '_layouts'), 'tags.html')
       self.data['tag'] = tag
       tag_title_prefix = site.config['tag_title_prefix'] || 'Posts com a tag &ldquo;'
       tag_title_suffix = site.config['tag_title_suffix'] || '&rdquo;'
@@ -16,7 +16,7 @@ module Jekyll
   class TagGenerator < Generator
     safe true
     def generate(site)
-      if site.layouts.key? 'tag_index'
+      if site.layouts.key? 'tags'
         dir = site.config['tag_dir'] || 'tag'
         site.tags.keys.each do |tag|
           write_tag_index(site, File.join(dir, tag), tag)

@@ -1,7 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+
 {% include head.html %}
 
-		<section id="content">
+<body>
 
+	{% include links.html %}
+	
+	<div id="wrapper">
+
+		{% include nav.html %}
+		
+		<section id="content">
+			
 			<h2 class="tagged">Posts com <a class="tag" href="/tag/{{ page.tag }}/"><span></span>{{ page.tag }}</a></h2>
 
 			{% for post in site.posts %}
@@ -57,6 +68,12 @@
 			{% endfor %}
 			{% endfor %}
 
-		</section><!-- #content -->
+		</section><!-- end #content -->
 
-{% include foot.html %}
+	</div><!-- end #wrapper -->
+
+	{% include disqus-preview.html %}
+	{% include scripts-default.html %}
+	
+</body>
+</html>
