@@ -4,6 +4,9 @@
 # task 'deploy'
 task 'deploy', 'Envia o diff do blog para o server', () ->
 
+  # minifify no código antes de enviar
+  invoke 'minify'
+
   # configurações de deploy do rsync
   # para poder dar o deploy com sucesso, é necessário que sua chave pública esteja no arquivo ~/.ssh/authorized_keys do servidor
   user = "loopinfinito"
@@ -11,6 +14,7 @@ task 'deploy', 'Envia o diff do blog para o server', () ->
   local_root = "./site/"
 
   # executa o deploy
+  console.log 'Upando arquivos...'
   rsync = spawn "rsync", [
     "-avz"
     "--stats"
@@ -22,7 +26,7 @@ task 'deploy', 'Envia o diff do blog para o server', () ->
 
   # evento disparado quando a tarefa imprime algo no stdout
   rsync.stdout.on 'data', (data) ->
-    console.log data.toString().trim()
+    # console.log data.toString().trim()
 
   # evento disparado caso ocorra um erro na tarefa
   rsync.stderr.on 'data', (data) ->
@@ -30,4 +34,9 @@ task 'deploy', 'Envia o diff do blog para o server', () ->
 
   # evento disparado quando a tarefa é terminada
   rsync.on 'exit', (code) ->
-    # console.log "exit code #{code}"
+    console.log "loopinfinito.com.br atualizado"
+
+# task de minify
+task 'minify', 'Minify nos arquivos HTML, CSS e JS', () ->
+  console.log 'Minifying...'
+  exec 'java -jar _source/_tools/htmlcompressor-1.5.2.jar --compress-css --compress-js -r -o site site'      
