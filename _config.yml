@@ -15,7 +15,7 @@ lsi:         false
 pygments:    true
 markdown:    maruku
 permalink:   pretty
-exclude:     code.less, disqus.less, projetos.less, sobre.less
+exclude:     [code.less, disqus.less, projetos.less, sobre.less]
 
 maruku:
   use_tex:    false
