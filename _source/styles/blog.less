@@ -139,6 +139,8 @@ a:active {
 	margin-left: -350px;
 }
 
+/* Links Twitter/Fork/RSS
+---------------------------------------- */
 #links {
 	position: fixed;
 	margin: 15px;
@@ -152,6 +154,18 @@ a:active {
 		width: 30px;
 		float: left;
 		text-align: center;
+	}
+
+	a {
+		display: block;
+		width: 30px;
+		background: url(@icons-sprite) no-repeat;
+		.opacity(0.2);
+		.transition(opacity, 0.5s, ease);
+	
+		&:hover {
+			.opacity(0.5);
+		}
 	}
 
 	li {
@@ -189,18 +203,6 @@ a:active {
 					background-position: -291px -8px;
 				}
 			}
-		}
-	}
-
-	a {
-		display: block;
-		width: 30px;
-		background: url(@icons-sprite) no-repeat;
-		.opacity(0.2);
-		.transition(opacity, 0.5s, ease);
-	
-		&:hover {
-			.opacity(0.5);
 		}
 	}
 
