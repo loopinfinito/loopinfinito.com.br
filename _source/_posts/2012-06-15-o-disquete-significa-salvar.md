@@ -112,3 +112,10 @@ afinal.
 <p><img src="/images/posts/2012-06-15-televisao.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
 
 TVs analógicas com "orelhas de coelho" e botões para mudar a frequência ainda são os atuais ícones para vídeo.
+
+<aside class="fonte">
+  <h3>Referência</h3>
+  <ul>
+  	<li>→<a href="http://www.hanselman.com/blog/TheFloppyDiskMeansSaveAnd14OtherOldPeopleIconsThatDontMakeSenseAnymore.aspx">The Floppy Disk means Save, and 14 other old people Icons that don't make sense anymore</a> inspirado e traduzido com a autorização do autor<a href="http://twitter.com/shanselman">@shanselman</a></li>
+  </ul>  
+</aside>
