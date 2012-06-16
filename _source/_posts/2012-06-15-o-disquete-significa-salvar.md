@@ -20,7 +20,7 @@ estão envoltas em mistério?
 
 <p><img src="/images/posts/2012-06-15-disquete.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
 
-Muitas das pessoas que hoje usam computadores (PC, Mac, iPhone, etc) nunca se quer viram um disquete na vida.
+Muitas das pessoas que hoje usam computadores (PC, Mac, iPhone, etc) nunca sequer viram um disquete na vida.
 E ele continua sendo o ícone padrão para ação de **salvar**.
 
 ## Radio buttons
