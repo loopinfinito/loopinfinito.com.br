@@ -7,7 +7,7 @@ resumo: Finalmente passamos a utilizar LESS aqui no blog, neste post irei falar 
 image: images/posts/2012-06-17-vida-boa.jpg
 tags: CSS LESS
 keywords: css, lesscss, less, less css, mixin, import, less portugues, portugues, br, pt, less br, less pt
-comments: false
+comments: true
 ---
 <style type="text/css">
 	.svg-title {
@@ -43,20 +43,19 @@ comments: false
 	}
 </style>
 
-<!-- ![{{ page.title }}](http://loopinfinito.com.br/{{ page.image }} "{{ page.title }}") -->
-![{{ page.title }}](/{{ page.image }} "{{ page.title }}")
+![{{ page.title }}](http://loopinfinito.com.br/{{ page.image }} "{{ page.title }}")
 
 Finalmente passamos a utilizar LESS aqui no blog, e neste post irei falar brevemente sobre esta ótima ferramenta, expor suas principais vantagens e mostrar como fizemos aqui no Loop Infinito.
 
 ## Pra quem ainda não conhece
 
-LESS é tida como *a linguagem dinâmica de estilos*, diferente de CSS – que é totalmente estática –, LESS estende vários recursos dinâmicos como **variáveis**, **mixins**, **operações** e **funções**.
+LESS é tida como *a linguagem dinâmica de estilos*, e diferente de CSS – que é totalmente estática –, LESS estende vários recursos dinâmicos como **variáveis**, **mixins**, **operações** e **funções**.
 
 ### "Mas como isto é possível?"
 
 Simples, há duas maneiras de colocar seu código LESS em produção numa página:
 
-1. **Compilando para CSS**: LESS possui um compilador, com ele é possível gerar arquivos `.css` equivalentes a partir de arquivos `.less`. É implementado em Node.js e chutado de rápido (também existem outros compiladores LESS em outras linguagens).
+1. **Compilando para CSS**: LESS possui um compilador, com ele é possível gerar arquivos `.css` equivalentes a partir de arquivos `.less` – é implementado em Node.js (também existem compiladores LESS em outras linguagens).
 2. **Utilizando o interpretador JS**: Também podemos apenas incluir arquivos `.less` em nossas páginas e utilizar o interpretador JavaScript que realizará uma análise do LESS e modificará os estilos dos elementos da página *on the fly*.
 
 ### "OK, mas então terei de aprender uma nova linguagem?"
