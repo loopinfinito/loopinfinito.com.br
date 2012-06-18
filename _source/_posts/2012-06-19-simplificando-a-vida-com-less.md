@@ -4,7 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 resumo: Finalmente passamos a utilizar LESS aqui no blog, neste post irei falar brevemente sobre LESS, expor suas principais vantagens e mostrar como fizemos aqui no Loop Infinito.
-image: images/posts/2012-06-17-vida-boa.jpg
+image: images/posts/2012-06-19-vida-boa.jpg
 tags: CSS LESS
 keywords: css, lesscss, less, less css, mixin, import, less portugues, portugues, br, pt, less br, less pt
 comments: true
@@ -43,7 +43,7 @@ comments: true
 	}
 </style>
 
-![{{ page.title }}](http://loopinfinito.com.br/{{ page.image }} "{{ page.title }}")
+<p><img src="http://loopinfinito.com.br/{{ page.image }}" height="432" title="{{ page.title | strip_html }}" alt="{{ page.title | strip_html }}" /></p>
 
 Finalmente passamos a utilizar LESS aqui no blog, e neste post irei falar brevemente sobre esta ótima ferramenta, expor suas principais vantagens e mostrar como fizemos aqui no Loop Infinito.
 
