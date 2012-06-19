@@ -13,38 +13,41 @@ comments: true
 <p><img src="/images/posts/2012-06-04-o-disquete-significa-salvar.jpg" alt="O disqute significa salvar" /></p>
 
 O que acontece quando todas as coisas em que nossos ícones são baseados não
-existem mais? Será que eles se tornam apenas símbolos emblemáticos cujas origens
-estão envoltas em mistério?
+existem mais? Será que eles se tornam apenas símbolos emblemáticos cujas
+origens estão envoltas em mistério?
 
 ## Disquete
 
 <p><img src="/images/posts/2012-06-15-disquete.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
 
-Muitas das pessoas que hoje usam computadores (PC, Mac, iPhone, etc) nunca sequer viram um disquete na vida.
-E ele continua sendo o ícone padrão para ação de **salvar**.
+Muitas das pessoas que hoje usam computadores (PC, Mac, iPhone, etc) nunca
+sequer viram um disquete na vida. E ele continua sendo o ícone padrão para
+ação de **salvar**.
 
 ## Radio buttons
 
 <p><img src="/images/posts/2012-06-15-radio-button.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
 
-Os radio buttons são assim chamados pois são inspirados nos antigos rádios para carro onde **apenas um botão 
-poderia estar pressionado ao mesmo tempo**.
+Os radio buttons são assim chamados pois são inspirados nos antigos rádios
+para carro onde **apenas um botão  poderia estar pressionado ao mesmo tempo**.
 Lembram dos rádios com botões fisícos de AM e FM?
 
 ## Bookmarks
 
 <p><img src="/images/posts/2012-06-15-bookmark.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
 
-No antigo mundo analógio (ainda presente para alguns), se usava marcadores de páginas (bookmarks) para **marcar o progresso de 
-leitura de um livro**, já que esses antigos dispositivos não salvavam a última página quando eram desligados.
+No antigo mundo analógio (ainda presente para alguns), se usava marcadores de
+páginas (bookmarks) para **marcar o progresso de  leitura de um livro**, já
+que esses antigos dispositivos não salvavam a última página quando eram
+desligados.
 
 ## Agenda e calendário
 
 <p><img src="/images/posts/2012-06-15-calendario-agenda.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
 
 Na época do meu avô, as pessoas carregavam os endereços e telefones de outras
-pessoas em um conjunto de papel. Alguns até utilizam os calendários da mesma forma.
-E tudo era mantido junto por um espiral de metal.
+pessoas em um conjunto de papel. Alguns até utilizam os calendários da mesma
+forma. E tudo era mantido junto por um espiral de metal.
 
 ## Caixa postal de voz
 
@@ -91,7 +94,8 @@ e-mail.
 
 <p><img src="/images/posts/2012-06-15-engrenagem.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
 
-Ainda os símbolos mais comuns para configurações, mesmo que a maior parte das pessoas nunca tenham visto alguma.
+Ainda os símbolos mais comuns para configurações, mesmo que a maior parte das
+pessoas nunca tenham visto alguma.
 
 ## Microfone
 <p><img src="/images/posts/2012-06-15-microfone.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
@@ -113,9 +117,32 @@ afinal.
 
 TVs analógicas com "orelhas de coelho" e botões para mudar a frequência ainda são os atuais ícones para vídeo.
 
+## Etimologia
+
+A origem da maioria das palavras usadas em nossa linguagem falada possui uma
+terminologia antiga que vem evoluindo há muitos anos e, algumas vezes, se
+distanciando do seu significado original.
+
+Como por exemplo, a palavra **trivial**. No Latim medieval, *trivia* significava
+o conjunto das 3 artes liberais básicas (lógica, retórica e gramática), que
+serviam de base para o *quadrivium* (aritmética, geometria, música e
+astronomia), sendo assim a educação básica. 
+
+O adjetivo trivial então significava algo pertencente a *trivia*, ou aos ensinos
+básicos. Logo, algo óbvio, fácil, dizemos que é trivial. Sua origem, no nosso
+dia-a-dia, se perdeu. Mas seu significado permanece.
+
+Os ícones, assim como nossas palavras, formam uma linguagem, porém visual. No
+caso dos apresentados acima, eles foram baseados em objetos reais para
+simbolizar uma ação virtual que de certa forma se assemelha ao uso daquele
+objeto que foi usado como metáfora. A sua origem, ou o objeto que serviu como
+metáfora, provavelmente irá sumir, porém o significado irá continuar. Nossos
+filhos irão interagir e entender o significado dos ícones pelo uso, mas
+provavelmente irão saber sua origem em algum livro, ou e-book.
+
 <aside class="fonte">
-  <h3>Referência</h3>
-  <ul>
-  	<li>→<a href="http://www.hanselman.com/blog/TheFloppyDiskMeansSaveAnd14OtherOldPeopleIconsThatDontMakeSenseAnymore.aspx">The Floppy Disk means Save, and 14 other old people Icons that don't make sense anymore</a> inspirado e traduzido com a autorização do autor<a href="http://twitter.com/shanselman">@shanselman</a></li>
-  </ul>  
+	<h3>Referência</h3>
+	<ul>
+		<li>→<a href="http://www.hanselman.com/blog/TheFloppyDiskMeansSaveAnd14OtherOldPeopleIconsThatDontMakeSenseAnymore.aspx">The Floppy Disk means Save, and 14 other old people Icons that don't make sense anymore</a> traduzido com a autorização do autor<a href="http://twitter.com/shanselman">@shanselman</a></li>
+	</ul>
 </aside>
