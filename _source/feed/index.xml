@@ -23,7 +23,7 @@ layout: nil
       {% capture img %}<p><img itemprop="thumbnailUrl" src="http://loopinfinito.com.br/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" width="700" height="432" /></p>{% endcapture %}
       {{ img | xml_escape }}
       {% endif %}
-      {{ post.content | xml_escape }}
+      {{ post.content | replace: "src='/images/", "src='http://loopinfinito.com.br/images/" | xml_escape }}
     </content>
   </entry>
   {% endfor %}
