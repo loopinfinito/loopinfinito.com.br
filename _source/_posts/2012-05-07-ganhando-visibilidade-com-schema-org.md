@@ -26,8 +26,6 @@ comments: true
 
 </style>
 
-<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt="" width="700" height="432" /></p>
-
 Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso blog usando **microdata** e os vocabulários **schema.org**.
 
 Hoje explicarei passo a passo como fiz isto aqui no Loop Infinito.

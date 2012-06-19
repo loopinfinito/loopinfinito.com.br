@@ -18,7 +18,13 @@ layout: nil
     <author>
       <name>{{ post.author }}</name>
     </author>
-    <content type="html">{{ post.content | xml_escape }}</content>
+    <content type="html">
+      {% if post.image and (post.has_inner_image == null or post.has_inner_image == true) %}
+      {% capture img %}<p><img itemprop="thumbnailUrl" src="http://loopinfinito.com.br/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" width="700" height="432" /></p>{% endcapture %}
+      {{ img | xml_escape }}
+      {% endif %}
+      {{ post.content | xml_escape }}
+    </content>
   </entry>
   {% endfor %}
 </feed>

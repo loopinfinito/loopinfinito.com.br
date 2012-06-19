@@ -10,8 +10,6 @@ keywords: rsync, deploy, deploy automático, cake task, coffeescript
 comments: true
 ---
 
-<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt="Automatizando o deploy com rsync" width="700" height="432" /></p>
-
 - Você sempre esquece de upar um arquivo para o servidor de produção?
 - Acha um saco ter que upar os arquivos um a um?
 - Acha o FTP lento?

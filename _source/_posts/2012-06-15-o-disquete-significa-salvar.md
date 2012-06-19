@@ -10,8 +10,6 @@ keywords: user interface, interface de usuário, ui, ux, experiência de usuári
 comments: true
 ---
 
-<p><img src="/images/posts/2012-06-04-o-disquete-significa-salvar.jpg" alt="O disqute significa salvar" /></p>
-
 O que acontece quando todas as coisas em que nossos ícones são baseados não
 existem mais? Será que eles se tornam apenas símbolos emblemáticos cujas
 origens estão envoltas em mistério?

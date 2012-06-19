@@ -94,7 +94,6 @@ $(document).ready( function(){
 		}
 
 </style>
-<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt="Expressões matemáticas em CSS com calc()" title="Isaac Newton" width="700" height="432" /></p>
 
 Um novo recurso bastante interessante do CSS3 é a função <code>calc()</code>. Com esta função agora é possível calcularmos 
 valores de **expressões matemáticas** diretamente no CSS! *Like a rockstar coder*.

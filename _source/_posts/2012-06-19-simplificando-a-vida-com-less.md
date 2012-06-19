@@ -43,8 +43,6 @@ comments: true
 	}
 </style>
 
-<p><img src="http://loopinfinito.com.br/{{ page.image }}" height="432" title="{{ page.title | strip_html }}" alt="{{ page.title | strip_html }}" /></p>
-
 Finalmente passamos a utilizar LESS aqui no blog, e neste post irei falar brevemente sobre esta ótima ferramenta, expor suas principais vantagens e mostrar como fizemos aqui no Loop Infinito.
 
 ## Pra quem ainda não conhece

@@ -51,6 +51,9 @@
 						<h1><a href="{{ page.url }}" itemprop="headline">{{ page.title }}</a></h1>
 					</header>
 					<section itemprop="articleBody">
+						{% if page.image and (page.has_inner_image == null or page.has_inner_image == true) %}
+						<p><img itemprop="thumbnailUrl" src="/{{ page.image }}" alt="{{ page.title | strip_html }}" title="{{ page.title | strip_html }}" width="700" height="432" /></p>
+						{% endif %}
 						{{ content }}				
 					</section>
 					{% if page.comments %}

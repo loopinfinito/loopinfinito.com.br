@@ -10,8 +10,6 @@ keywords: web semantica, microdata, schema.org, microformats, rdf, rdfa, marcaca
 comments: true
 ---
 
-<p><img src="http://loopinfinito.com.br/{{ page.image }}" alt="" width="700" height="432" /></p>
-
 Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto.
 Eu poderia começar a falar aqui de toda a bonita história da internet e de como tudo gradativamente está se tornando semântico na web, mas isto é assunto para o próximo post.
 
