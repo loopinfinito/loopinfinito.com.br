@@ -41,11 +41,11 @@ layout: home
 		</header>
 		<section>
 			{% if post.image %}
-			<p>
+			<figure>
 				<a href="{{ post.url }}">
 					<img itemprop="thumbnailUrl" src="/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" width="700" height="432" />
 				</a>
-			</p>
+			</figure>
 			{% endif %}
 			<div itemprop="description">{{ post.resumo }}</div>
 			<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo →</a>
