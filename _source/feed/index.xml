@@ -17,6 +17,7 @@ layout: nil
     <link href="http://loopinfinito.com.br{{ post.url }}" />
     <author>
       <name>{{ post.author }}</name>
+      <uri>{{ post.author_link }}</uri>
     </author>
     <content type="html">
       {% if post.image and (post.has_inner_image == null or post.has_inner_image == true) %}
