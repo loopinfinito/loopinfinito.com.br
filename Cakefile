@@ -39,4 +39,4 @@ task 'deploy', 'Envia o diff do blog para o server', () ->
 # task de minify
 task 'minify', 'Minify nos arquivos HTML, CSS e JS', () ->
   console.log 'Minifying...'
-  exec 'java -jar _source/_tools/htmlcompressor-1.5.2.jar --compress-css --compress-js -r -o site site'      
+  exec 'java -jar _source/_tools/htmlcompressor-1.5.2.jar --compress-css --compress-js --remove-intertag-spaces -r -o site site'
