@@ -3,10 +3,10 @@ title: Novos seletores <span>CSS4</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
-resumo: Nem metade da especificação (chutando) do CSS3 foi implementada e já estamos falando de CSS4. Mas temos que estar cientes sobre o que há por vir. Pois pior que um navegador ultrapassado é um programador desatualizado.
+resumo: Nem metade da especificação (chutando) do CSS3 foi implementada e já estamos falando de CSS4. Mas temos que estar cientes do que está por vir. Pois pior que um navegador ultrapassado é um programador desatualizado.
 image: images/posts/2012-06-24-novos-seletores-css4.png
 tags: CSS
-keywords: css
+keywords: css, css3, css4, stylesheet, style, webdev, html5, web, development, front-end
 comments: false
 ---
 
@@ -129,7 +129,7 @@ Fazemos a relação entre `label` e `input` através de um atributo que ficará 
 Este atributo deve ter o ID para o seletor a direita como valor.
 No exemplo acima um `input`.
 
-O interessante deste seletor é que o elemento a direita não precisa estar contido dentro do elemento a esquerda, como acontece com os seletores compostos, ou ser irmão, como acontece com os combinadores `+` ou `~`.
+O interessante deste seletor é que o elemento a direita não precisa estar contido dentro do elemento a esquerda (como acontece com os seletores compostos) ou ser irmão (como acontece com os combinadores `+` ou `~`).
 É um novo tipo de combinador que faz uma referência a um outro elemento independente de seu parentesco na árvore HTML.
 Chamamos este novo combinador de **combinador de referência**.
 
