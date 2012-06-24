@@ -3,14 +3,14 @@ title: Novos seletores <span>CSS4</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
-resumo: Nem metade da especificação (chutando) do CSS3 foi implementada e já estamos falando de CSS4, mas temos que estar cientes do que está por vir. Afinal, pior que um navegador ultrapassado é um programador desatualizado.
+resumo: Imagino que nem metade da especificação do CSS3 foi implementada e já estamos falando de CSS4, mas temos que estar cientes do que está por vir. Afinal, pior que um navegador ultrapassado é um programador desatualizado.
 image: images/posts/2012-06-24-novos-seletores-css4.png
 tags: CSS
 keywords: css, css3, css4, stylesheet, style, webdev, html5, web, development, front-end
-comments: false
+comments: true
 ---
 
-Nem metade da especificação (chutando) do CSS3 foi implementada e já estamos falando de CSS4,
+Imagino que nem metade da especificação do CSS3 foi implementada e já estamos falando de CSS4,
 mas temos que estar cientes do que está por vir.
 Afinal, pior que um navegador ultrapassado é um programador desatualizado.
 
