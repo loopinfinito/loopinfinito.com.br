@@ -3,7 +3,7 @@ title: Novos seletores <span>CSS4</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
-resumo: Nem metade da especificação (chutando) do CSS3 foi implementada e já estamos falando de CSS4. Mas temos que estar cientes do que está por vir. Pois pior que um navegador ultrapassado é um programador desatualizado.
+resumo: Nem metade da especificação (chutando) do CSS3 foi implementada e já estamos falando de CSS4, mas temos que estar cientes do que está por vir. Afinal, pior que um navegador ultrapassado é um programador desatualizado.
 image: images/posts/2012-06-24-novos-seletores-css4.png
 tags: CSS
 keywords: css, css3, css4, stylesheet, style, webdev, html5, web, development, front-end
@@ -12,7 +12,7 @@ comments: false
 
 Nem metade da especificação (chutando) do CSS3 foi implementada e já estamos falando de CSS4,
 mas temos que estar cientes do que está por vir.
-Pois pior que um navegador ultrapassado é um programador desatualizado.
+Afinal, pior que um navegador ultrapassado é um programador desatualizado.
 
 ## $E > F
 
@@ -77,9 +77,9 @@ input:matches(:focus, :hover) { ... }
 
 ## E\[foo="bar" i\]
 
-O mesmo que `E\[foo="bar"\]`, porém este é case-insensitive.
+O mesmo que `E\[foo="bar"\]`, porém este é *case-insensitive*.
 Reparem o `i` adicional.
-Não me vejo utilizando mas, se algum dia for necessário, é bom saber que existe.
+Não me vejo utilizando, mas se algum dia for necessário é bom saber que existe.
 
 {% highlight css %}
 /* seleciona os elementos <div data-user="JoAo">, <div data-user="JOAO"> e <div data-user="joao"> */
@@ -130,7 +130,7 @@ atributo que ficará entre as barras, no caso o atributo `for`. Este atributo
 deve conter o ID do elemento a direita como valor. No exemplo acima um
 `input`.
 
-O interessante deste seletor é que o elemento a direita não precisa estar contido dentro do elemento a esquerda (como acontece com os seletores compostos) ou ser irmão (como acontece com os combinadores `+` ou `~`).
+O interessante deste seletor é que o elemento a direita não precisa estar dentro do elemento a esquerda (como acontece com os seletores compostos) ou ser irmão (como acontece com os combinadores `+` ou `~`).
 É um novo tipo de combinador que faz uma referência a um outro elemento independente de seu parentesco na árvore HTML.
 Chamamos este novo combinador de **combinador de referência**.
 
@@ -140,7 +140,7 @@ A especificação dos seletores CSS4 ainda está em fase de [rascunho](http://ww
 Mas é interessante acompanhá-la e saber como será o futuro da nossa querida linguagem e o que este futuro tem a nos oferecer.
 
 E vocês, o que acharam dos novos seletores?
-Conseguem se imaginar usando-os?
+Conseguem se imaginar usando?
 Ou acham que é apenas mais uma nova tecnologia que o IE não vai nos permitir usar tão cedo?
 
 <aside class="fonte">
