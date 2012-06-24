@@ -119,10 +119,11 @@
   font-style: normal;
 }
 
-/* 
+/*
 ---------------------------------------- */
 body {
 	background: url('@{images-url}/bg.png') #F2F2F2;
+	background-attachment: fixed;
 	font-family: @fonts;
 	border-top: 5px solid #666;
 }
@@ -162,7 +163,7 @@ a:active {
 		background: url(@icons-sprite) no-repeat;
 		.opacity(0.2);
 		.transition(opacity, 0.5s, ease);
-	
+
 		&:hover {
 			.opacity(0.5);
 		}
@@ -248,7 +249,7 @@ strong {
 	display: none;
 }
 
-/* Icons 
+/* Icons
 ---------------------------------------- */
 .icon {
 	display: inline-block;
@@ -272,7 +273,7 @@ strong {
 
 	&.github {
 		background-position: -38px -39px;
-	
+
 		&:hover {
 			background-color: #000;
 		}
@@ -280,7 +281,7 @@ strong {
 
 	&.email {
 		background-position: -3px -40px;
-	
+
 		&:hover {
 			background-color: #FFCC00;
 		}
@@ -336,7 +337,7 @@ strong {
 			text-decoration: none;
 			color: #666;
 			font-size:16px;
-			opacity: 0.5;					
+			opacity: 0.5;
 			text-shadow:0px 2px 0px white;
 			font-family: "Lucida Grande","Helvetica Neue",Helvetica,Arial,sans-serif;
 
@@ -355,7 +356,7 @@ strong {
 			right: 50px;
 			text-align: right;
 		}
-	}	
+	}
 }
 
 
@@ -443,7 +444,7 @@ header#main {
 		a {
 			text-decoration: none !important;
 			color: #666;
-		
+
 			&:hover {
 				text-decoration: underline !important;
 			}
@@ -654,7 +655,7 @@ aside.post-meta {
 	a {
 		color: #999;
 		text-decoration: none;
-	
+
 		&:hover {
 			color: #333;
 			text-decoration: underline;
@@ -715,7 +716,7 @@ aside.post-meta {
 
 		&.post-tags {
 			padding-bottom: 2px;
-		
+
 			span.icon-aside {
 				background-position: -8px -10px;
 			}
@@ -728,7 +729,7 @@ aside.post-meta {
 				display: inline;
 				padding: 0px;
 				line-height: 24px;
-			
+
 				a {
 					margin-left: 0px;
 
@@ -746,7 +747,7 @@ aside.post-meta {
 		}
 	} // fim de li
 } // fim de aside.post-meta
- 
+
 /* comentarios do disqus
 ---------------------------------------------- */
 @import 'disqus';
