@@ -456,6 +456,7 @@ header#main {
 
 		&.tagged {
 			color: #ccc;
+			margin-top: 0px !important;
 			margin-bottom: 20px;
 			font-weight: 400;
 
@@ -578,6 +579,29 @@ header#main {
 					background-size: 30px 30px;
 					background-position: 0 0, 15px 15px;
 					.default-bg;
+				}
+
+				figure {
+					&.content {
+
+						line-height: 100%;
+						
+						img {
+							position: static;
+							left: 0;
+							width: auto;
+						}
+
+						&.left {
+							float: left;
+							margin-right: 30px;
+						}
+
+						&.right {
+							float: right;
+							margin-left: 30px;
+						}
+					}
 				}
 			}
 
