@@ -58,11 +58,13 @@
 					<section>
 						{% if post.image %}
 						<figure>
-							<img itemprop="thumbnailUrl" src="http://loopinfinito.com.br/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" />
+							<a href="{{ post.url }}">
+								<img itemprop="thumbnailUrl" src="/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" />
+							</a>
 						</figure>
 						{% endif %}
-						<div itemprop="description">{{ post.resumo }}</div>
-						<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>
+						<p itemprop="description">{{ post.resumo }}</p>
+						<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo →</a>
 					</section>
 				</article>
 			</section>
