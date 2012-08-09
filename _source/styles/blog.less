@@ -531,7 +531,7 @@ header#main {
 					background: none;
 					color: white;
 					line-height: 4px;
-					padding: 3px;
+					padding: 0px;
 					border: none;
 				}
 
@@ -547,6 +547,13 @@ header#main {
 			p {
 				margin: 25px 0;
 				.hyphens(auto);
+
+				&.obs {
+					color: #999;
+					font-size: 13px;
+					font-style: italic;
+					line-height: 170%;
+				}
 			}
 
 			> section {
@@ -571,6 +578,13 @@ header#main {
 					&.bordered {
 						border-top: 1px solid #ddd;
 						border-bottom: 1px solid #ddd;
+					}
+
+					&.example {
+						padding: 20px 50px;
+						width: 600px;
+						background-color: whiteSmoke;
+						margin: 25px 0px;
 					}
 				}
 
@@ -663,6 +677,111 @@ header#main {
 		} // fim de aside.fonte
 	} // fim de .post-container
 } // fim de #content
+
+@browsers-sprite: '@{images-url}/browsers_sprite.png';
+
+table.support {
+	position: relative;
+	width: 700px;
+	left: -50px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+
+	thead {
+		border-bottom: 1px solid #ccc;
+	}
+
+	tbody tr {
+
+		&:nth-child(even) {
+			background: whiteSmoke;
+		}
+
+		td:last-child {
+			padding-right: 25px;
+		}
+	}
+
+	tfoot {
+		font-size: 13px;
+	}
+
+	td {
+		text-align: center;
+		padding: 15px 0px;
+		line-height: 20px;
+		color: #999;
+
+		&.property {
+			color: #666;
+		}
+
+		code.small {
+			font-size: 9px !important;
+			background-color: #ccc !important;
+			color: white !important;
+			border: none !important;
+		}
+	}
+
+	.base {
+		background: #eee;
+		height: 30px;
+		border-radius: 7px 0px 0px 0px;
+	}
+
+	.subject {
+		width: 200px;
+		vertical-align: bottom;
+		text-align: left;
+		text-indent: 50px;
+
+		h2 {
+			margin: 0px !important;
+		}
+	}
+
+	.browser {
+		width: 95px;
+
+		&.safari .i {
+			width: 65px;
+		}
+
+		&.firefox .i {
+			width: 65px;
+			background-position: -130px 0px;
+		}
+
+		&.ie .i {
+			width: 69px;
+			background-position: -196px 0px;
+			top: 22px;
+		}
+
+		&.opera {
+			padding-right:25px;
+
+			.i {
+				width: 60px;
+				background-position: -265px 0px;
+			}
+		}
+
+		&.chrome .i {
+			width: 65px;
+			background-position: -65px 0px;
+		}
+
+		.i {
+			background: url(@browsers-sprite) no-repeat;
+			margin: auto;
+			position: relative;
+			top: 23px;
+			height: 79px;
+		}
+	}
+}
 
 /* Post Meta
 ---------------------------------------- */
