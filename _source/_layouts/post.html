@@ -6,13 +6,13 @@
 <body>
 
 	{% include links.html %}
-	
+
 	<div id="wrapper">
 
 		{% include nav.html %}
-		
+
 		<section id="content">
-			
+
 			<section class="post-container" itemscope itemtype="http://schema.org/BlogPosting">
 				<span class="hidden" itemprop="publisher">Loop Infinito</span>
 				<aside class="post-meta">
@@ -37,14 +37,14 @@
 							<ul>
 								{% for tag in page.tags %}
 								<li><a href="/tag/{{ tag }}"><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
-								{% endfor %}					
+								{% endfor %}
 							</ul>
 							{% if page.keywords %}
 							<span class="hidden" itemprop="keywords">{{ page.keywords }}</span>
 							{% endif %}
 						</li>
 						{% endunless %}
-					</ul>	
+					</ul>
 				</aside>
 				<article>
 					<header>
@@ -56,7 +56,7 @@
 							<img itemprop="thumbnailUrl" src="/{{ page.image }}" alt="{{ page.title | strip_html }}" title="{{ page.title | strip_html }}" width="700" height="432" />
 						</figure>
 						{% endif %}
-						{{ content }}				
+						{{ content }}
 					</section>
 					{% if page.comments %}
 					<footer id="disqus_thread">
@@ -100,6 +100,39 @@
 	</script>
 	{% endif %}
 	{% include scripts-default.html %}
-	
+	<script>
+
+		// .post-meta flutuando
+		// o .post-meta fica visível enquanto o post estiver visível
+		$(window).scroll(function(event) {
+
+			// vars
+			var $postContainer = $('.post-container')
+			var $postMeta = $('aside.post-meta')
+			var $postFonte = $('aside.fonte')
+
+			// zona 1
+			// scroll acima do início do post
+			if ($(window).scrollTop() < $postContainer.offset().top + 5) {
+				$postMeta.removeClass('post-meta-fixed')
+			}
+			// zona 2
+			// scroll entre o início do post e início da fonte do post menos a altura do .post-meta
+			else if ($(window).scrollTop() >= $postContainer.offset().top && ($(window).scrollTop() < $postFonte.offset().top - $postMeta.height() + 5)) {
+				$postMeta
+					.addClass('post-meta-fixed')
+					.css('top', 0)
+			}
+			// zona 3
+			// após a zona 2
+			else {
+				var topNew = $postFonte.offset().top - $postMeta.height() - $('article').offset().top
+				$postMeta
+					.removeClass('post-meta-fixed')
+					.css('top', topNew)
+			}
+		})
+
+	</script>
 </body>
 </html>

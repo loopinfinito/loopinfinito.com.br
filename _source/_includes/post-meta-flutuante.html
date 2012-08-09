@@ -1,0 +1,38 @@
+<script>
+
+	// .post-meta de cada post flutuando
+	// o .post-meta fica visível enquanto o resumo do post estiver visível
+	// para a interna do post é usado um script diferente
+	$(window).scroll(function(event) {
+
+		$('.post-container').each(function(index, element) {
+
+			// vars
+			var $postContainer = $(this)
+			var $postMeta = $postContainer.find('aside.post-meta')
+
+			// zona 1
+			// scroll acima do início do .post-container
+			if ($(window).scrollTop() < $postContainer.offset().top + 5) {
+				$postMeta.removeClass('post-meta-fixed')
+			}
+			// zona 2
+			// scroll entre o início do .post-container e o fim do .post-container menos a altura do .post-meta
+			else if (($(window).scrollTop() >= $postContainer.offset().top)
+			&& ($(window).scrollTop() < $postContainer.offset().top + $postContainer.height() - $postMeta.height() + 5)) {
+				$postMeta
+					.addClass('post-meta-fixed')
+					.css('top', 0)
+			}
+			// zona 3
+			// scroll após a zona 2
+			else {
+				var topNew = $postContainer.height() - $postMeta.height()
+				$postMeta
+					.removeClass('post-meta-fixed')
+					.css('top', topNew)
+			}
+		})
+	})
+
+</script>

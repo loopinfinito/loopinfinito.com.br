@@ -585,7 +585,7 @@ header#main {
 					&.content {
 
 						line-height: 100%;
-						
+
 						img {
 							position: static;
 							left: 0;
@@ -676,6 +676,13 @@ aside.post-meta {
 	.opacity(0.8);
 	font-size: 13px;
 
+	// classe adicionada quando o *post-meta* está colado no topo
+	&.post-meta-fixed {
+		position: fixed;
+		left: 50%;
+		margin-left: 380px;
+	}
+
 	a {
 		color: #999;
 		text-decoration: none;
@@ -740,6 +747,7 @@ aside.post-meta {
 
 		&.post-tags {
 			padding-bottom: 2px;
+			height: auto;
 
 			span.icon-aside {
 				background-position: -8px -10px;

@@ -6,13 +6,13 @@
 <body>
 
 	{% include links.html %}
-	
+
 	<div id="wrapper">
 
 		{% include nav.html %}
-		
+
 		<section id="content">
-			
+
 			<h2 class="tagged">Posts com <a class="tag" href="/tag/{{ page.tag }}/"><span></span>{{ page.tag }}</a></h2>
 
 			{% for post in site.posts %}
@@ -42,7 +42,7 @@
 							<ul>
 								{% for tag in post.tags %}
 								<li><a href="/tag/{{ tag }}"><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
-								{% endfor %}					
+								{% endfor %}
 							</ul>
 							{% if post.keywords %}
 							<span class="hidden" itemprop="keywords">{{ post.keywords }}</span>
@@ -78,6 +78,7 @@
 
 	{% include disqus-preview.html %}
 	{% include scripts-default.html %}
-	
+	{% include post-meta-flutuante.html %}
+
 </body>
 </html>
