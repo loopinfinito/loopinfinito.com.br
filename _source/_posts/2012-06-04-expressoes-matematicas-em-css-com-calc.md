@@ -9,7 +9,7 @@ tags: CSS
 keywords: css, css3, calc, matematica, calculo, unidades css
 comments: true
 ---
-<script type="text/javascript">
+<script>
 $(document).ready( function(){
 	$('#btn').click( function(){
 		$('.input').each( function( i, e ){
@@ -20,7 +20,7 @@ $(document).ready( function(){
 	});
 });
 </script>
-<style type="text/css">
+<style>
 
 #stage {
 	width: 700px;
@@ -95,10 +95,10 @@ $(document).ready( function(){
 
 </style>
 
-Um novo recurso bastante interessante do CSS3 é a função <code>calc()</code>. Com esta função agora é possível calcularmos 
+Um novo recurso bastante interessante do CSS3 é a função <code>calc()</code>. Com esta função agora é possível calcularmos
 valores de **expressões matemáticas** diretamente no CSS! *Like a rockstar coder*.
 
-Em CSS, sabemos que existem diversos tipos de valores e medidas: <code>px</code>, <code>%</code>, <code>em</code>, 
+Em CSS, sabemos que existem diversos tipos de valores e medidas: <code>px</code>, <code>%</code>, <code>em</code>,
 <code>in</code>, <code>cm</code>, <code>mm</code>, <code>pc</code>, <code>pt</code> e <code>ex</code>.
 Se quisermos atribuir qualquer valor numérico a uma determinada propriedade, apenas escolhemos uma destas unidades:
 
@@ -116,12 +116,12 @@ Contudo, em CSS **não** é permitido fazer isto:
 }
 {% endhighlight %}
 
-Ou seja, não é possível calcular nenhuma expressão matemática – mesmo que seja uma coisa totalmente desnecessária e tosca 
+Ou seja, não é possível calcular nenhuma expressão matemática – mesmo que seja uma coisa totalmente desnecessária e tosca
 como o exemplo acima. E desculpem-me por isto, no próximo melhora.
 
 ## Um exemplo decente
 
-Acho que boa parte das pessoas que trabalham com CSS já se depararam com o seguinte problema: precisar apenas centralizar 
+Acho que boa parte das pessoas que trabalham com CSS já se depararam com o seguinte problema: precisar apenas centralizar
 um elemento na tela. Isto é, independente da resolução que o cidadão esteja usando, o elemento terá que ficar centralizado.
 Dai você pensa, *"p!@# q%$ p%$!# como é que vou fazer esta m!@#$ funcionar?"*. E **sem trapacear com JS**.
 
@@ -140,21 +140,21 @@ A <span style="text-decoration:line-through;">gambiarra</span> solução para es
 {% endhighlight %}
 
 Hora do purismo: Ter que resolver um problema de posição de um elemento usando <code>margin</code> é **toscasso**!
-Se já existem as propriedades <code>top</code>, <code>left</code>, <code>right</code> e <code>bottom</code>, isto deveria 
-ser mais que suficiente, mas pela limitação do CSS de não permitir expressões matemáticas, infelizmente não poderíamos 
+Se já existem as propriedades <code>top</code>, <code>left</code>, <code>right</code> e <code>bottom</code>, isto deveria
+ser mais que suficiente, mas pela limitação do CSS de não permitir expressões matemáticas, infelizmente não poderíamos
 simplesmente fazer: <code>top: 50% - 75px</code>.
 
 ## Resolvendo a bronca da maneira correta
 
-Não seria legal se a expressão acima (<code>top: 50% - 75px</code>) funcionasse logo de cara, sem frescura? 
+Não seria legal se a expressão acima (<code>top: 50% - 75px</code>) funcionasse logo de cara, sem frescura?
 Pois é, por isso apresentamos... <code>calc()</code>!
 
-Com <code>calc()</code> poderemos calcular expressões matemáticas **simples** de boa. 
-Quando digo *simples* quer dizer apenas que não dá pra sair calculando integrais e diabo a quatro, os operadores suportados 
-por <code>calc()</code> são apenas os básicos – <code>+</code>, <code>-</code>, <code>*</code> e <code>/</code> – e também 
+Com <code>calc()</code> poderemos calcular expressões matemáticas **simples** de boa.
+Quando digo *simples* quer dizer apenas que não dá pra sair calculando integrais e diabo a quatro, os operadores suportados
+por <code>calc()</code> são apenas os básicos – <code>+</code>, <code>-</code>, <code>*</code> e <code>/</code> – e também
 podemos usar parênteses – <code>(</code> e <code>)</code>. Mais do que o suficiente por hora.
 
-O mais interessante é que podemos *misturar* valores relativos com valores absolutos, e valores de *diferentes unidades*. 
+O mais interessante é que podemos *misturar* valores relativos com valores absolutos, e valores de *diferentes unidades*.
 <code>calc()</code> automaticamente converte as diferentes unidades e calcula valores relativos (como <code>%</code>).
 
 ### Misturando valores relativos e absolutos
@@ -185,14 +185,14 @@ Também é possível usar valores de unidades diferentes numa mesma expressão:
 {% endhighlight %}
 
 ## Suporte
-No momento em que escrevo este post, os únicos navegadores que estão dando suporte a esta propriedade são o 
-**Google Chrome v.19** (o mais novo) através da propriedade prefixada <code>-webkit-calc()</code> e o **Mozilla Firefox**, 
-que já dá suporte desde sua versão 8 através da propriedade prefixada <code>-moz-calc()</code>. O **Internet Explorer 9** 
-e o **Webkit Nightly Build** são os únicos que dão suporte completo até o momento (<code>calc()</code>). 
+No momento em que escrevo este post, os únicos navegadores que estão dando suporte a esta propriedade são o
+**Google Chrome v.19** (o mais novo) através da propriedade prefixada <code>-webkit-calc()</code> e o **Mozilla Firefox**,
+que já dá suporte desde sua versão 8 através da propriedade prefixada <code>-moz-calc()</code>. O **Internet Explorer 9**
+e o **Webkit Nightly Build** são os únicos que dão suporte completo até o momento (<code>calc()</code>).
 Já o *Opera*, o *Safari* ainda não estão dando suporte algum.
 
 ## Se vira nos 30
-Agora é a sua vez =). Fiz este pequeno experimento abaixo onde é possível entrar com os valores de cada propriedade e 
+Agora é a sua vez =). Fiz este pequeno experimento abaixo onde é possível entrar com os valores de cada propriedade e
 visualizar o resultado.
 
 <section id="experiment">
@@ -219,7 +219,7 @@ visualizar o resultado.
 
 **OBS.:** Se alguma expressão matemática que você digitar não surtir efeito, é porque deve estar incorreta.
 
-**Dica 1:** sempre especifique uma unidade. Ex.: 
+**Dica 1:** sempre especifique uma unidade. Ex.:
 - INCORRETO: <code>0</code>
 - CORRETO: <code>0px</code>, <code>0em</code> ou <code>0%</code> etc.
 
@@ -231,7 +231,7 @@ That's all folks!
 
 <aside class="fonte">
   <h3>Referência</h3>
-  <ul>    
+  <ul>
     <li>→<a href="http://www.w3.org/TR/css3-values/#calc" alt="CSS Values and Units Module Level 3" title="CSS Values and Units Module Level 3">CSS Values and Units Module Level 3</a> <span class="comment">// W3C</span></li>
     <li>→<a href="http://www.w3schools.com/cssref/css_units.asp" alt="CSS Units" title="CSS Units">CSS Units</a> <span class="comment">// W3 Schools</span></li>
     <li>→<a href="http://updates.html5rocks.com/2012/03/CSS-layout-gets-smarter-with-calc" alt="CSS LAYOUT GETS SMARTER WITH CALC()" title="CSS LAYOUT GETS SMARTER WITH CALC()">CSS LAYOUT GETS SMARTER WITH CALC()</a> <span class="comment">// HTML5 Rocks</span></li>

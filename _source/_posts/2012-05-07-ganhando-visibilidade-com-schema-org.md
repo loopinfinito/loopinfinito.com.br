@@ -9,8 +9,8 @@ tags: SEO microdata schema.org HTML5 web-semantica
 keywords: SEO, microdata, schema.org, HTML5, marcacao semantica, web semantica, desenvolvimento web, crawler, visibilidade
 comments: true
 ---
-<style type="text/css">
-	
+<style>
+
 	circle {
 		-webkit-transition: fill 0.5s ease;
 		-khtml-transition: fill 0.5s ease;
@@ -146,7 +146,7 @@ Mesmo esquema aqui, dividi o código em blocos:
 <section class="post-container" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
     <!-- adicionamos esta tag <span> para o publicador do post -->
     <span class="hidden" itemprop="publisher">Loop Infinito</span>
-    
+
     <aside class="post-meta"> ... </aside>
     <article> ... </article>
 </section>
@@ -238,31 +238,31 @@ Fiz um teste com a URL da página inicial do blog (<a href="http://loopinfinito.
 Eis um destes itens:
 
 <pre>
-Item 
+Item
     Type: http://schema.org/blogposting
-    publisher = Loop Infinito 
-    datepublished = 2012-05-04 
+    publisher = Loop Infinito
+    datepublished = 2012-05-04
 
-    author 
-        text = Caio Gondim 
+    author
+        text = Caio Gondim
         href = http://twitter.com/caio_gondim
 
-    interactioncount 
-        text = Carregando... 
+    interactioncount
+        text = Carregando...
         href = http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/#disqus_thread
-    
-    keywords = javascript, js, web development, desenvolvimento web, html5, front-end, programação, oop, orientação a objetos, herança, orientação a protótipos, java 
-    
-    headline 
-        text = Herança em JavaScript parte I 
+
+    keywords = javascript, js, web development, desenvolvimento web, html5, front-end, programação, oop, orientação a objetos, herança, orientação a protótipos, java
+
+    headline
+        text = Herança em JavaScript parte I
         href = http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/
-    
-    thumbnailurl = http://loopinfinito.com.br/images/posts/2012-05-04-heranca-em-javascript.jpg 
-    
-    description = Uma das coisas que mais assusta programadores vindos de linguagens orientadas a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos, inclusive, tentam simular este comportamento... 
-    
-    url 
-        text = Continue lendo &rarrw; 
+
+    thumbnailurl = http://loopinfinito.com.br/images/posts/2012-05-04-heranca-em-javascript.jpg
+
+    description = Uma das coisas que mais assusta programadores vindos de linguagens orientadas a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos, inclusive, tentam simular este comportamento...
+
+    url
+        text = Continue lendo &rarrw;
         href = http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/
 </pre>
 
