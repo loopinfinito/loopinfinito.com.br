@@ -9,8 +9,8 @@ image: images/posts/2012-05-02-semantics-html5.jpg
 keywords: web semantica, microdata, schema.org, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web, vocabulario, seo
 comments: true
 ---
-<style type="text/css">
-	
+<style>
+
 	circle {
 		-webkit-transition: fill 0.5s ease;
 		-khtml-transition: fill 0.5s ease;
@@ -245,7 +245,7 @@ Agora identificamos as propriedades presentes deste filme e definimos cada uma c
     <h4 itemprop="name">Avatar</h4>
     <!-- adicionamos o atributo itemprop ao diretor do filme -->
     <p>
-        Diretor: 
+        Diretor:
         <span itemprop="director">James Cameron (16 de agosto de 1954)</span>
     </p>
     <!-- adicionamos o atributo itemprop ao gênero do filme -->
@@ -316,7 +316,7 @@ No caso da propriedade <code>director</code> por exemplo, um diretor é uma **pe
     <!-- movemos o atributo itemprop do diretor para o wrapper (<p>) -->
     <!-- e adicionamos os atributos itemscope e itemtype ao diretor -->
     <p itemprop="director" itemscope="itemscope" itemtype="http://schema.org/Person">
-        Diretor: 
+        Diretor:
         <span>James Cameron (16 de agosto de 1954)</span>
     </p>
     <p itemprop="genre">Ficção Científica</p>
@@ -333,9 +333,9 @@ Optei por fazer isto por quê <code>{{ '<time>' | escape }}</code> é uma <a hre
 <div itemscope="itemscope" itemtype="http://schema.org/Movie">
     <h4 itemprop="name">Avatar</h4>
     <p itemprop="director" itemscope="itemscope" itemtype="http://schema.org/Person">
-        Diretor: 
+        Diretor:
         <!-- adicionamos o atributo itemprop às seguintes propriedades da pessoa -->
-        <span itemprop="name">James Cameron</span> 
+        <span itemprop="name">James Cameron</span>
         <time itemprop="birthDate" datetime="1954-08-16">
             (16 de agosto de 1954)
         </time>

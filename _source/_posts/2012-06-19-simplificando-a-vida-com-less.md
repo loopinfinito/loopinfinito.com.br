@@ -9,7 +9,7 @@ tags: CSS LESS
 keywords: css, lesscss, less, less css, mixin, import, less portugues, portugues, br, pt, less br, less pt
 comments: true
 ---
-<style type="text/css">
+<style>
 	.svg-title {
 		font-family: Museo, MuseoRegular, Helvetica, Arial, sans-serif;
 	}
@@ -85,7 +85,7 @@ Então pessoal, sem desculpas! Tem tudo lá, e bem explicado. Visitem: [lesscss.
 - Mais **velocidade**
 - Mais **beleza**
 
-Aqui no Loop Infinito, como estava tudo escrito em CSS antes, tive que trabalhar todos os estilos novamente, 
+Aqui no Loop Infinito, como estava tudo escrito em CSS antes, tive que trabalhar todos os estilos novamente,
 transformando tudo em LESS.
 Mas é um pequeno esforço que vale totalmente a pena.
 Eis o *antes e o depois*:
@@ -219,22 +219,22 @@ Eis o *antes e o depois*:
 
 ### Antes
 
-Haviam 4 arquivos CSS: `blog.css` (estilos gerais), `code.css` (highlight de códigos), `projetos.css` 
+Haviam 4 arquivos CSS: `blog.css` (estilos gerais), `code.css` (highlight de códigos), `projetos.css`
 (página [Projetos](/projetos)) e `sobre.css` (página [Sobre](/sobre)).
-Isso quer dizer que basicamente qualquer página do blog incluía pelo menos 2 arquivos cada – `blog.css` tem que estar 
-presente em todas as páginas, já as páginas dos posts incluem `code.css`; Projetos e Sobre incluem `projetos.css` e 
+Isso quer dizer que basicamente qualquer página do blog incluía pelo menos 2 arquivos cada – `blog.css` tem que estar
+presente em todas as páginas, já as páginas dos posts incluem `code.css`; Projetos e Sobre incluem `projetos.css` e
 `sobre.css` respectivamente.
 Ou seja, **2 requisições a mais para cada clique de todo mundo que visita o blog**.
 
 ### Depois
 
-Transformamos cada arquivo CSS em LESS e em `blog.less` importamos todos os outros arquivos. Dessa forma, é gerado 
-apenas um arquivo `blog.css` que contém os estilos de todos os arquivos `.less`. Assim diminuímos o número de 
-requisições para apenas 1 – já que todas as páginas apenas incluirão `blog.css` agora. 
-Percebam também que devido ao *minify* depois da compilação, ainda conseguimos economia em bytes – saímos dos 19KB para 18KB –, e ainda que a economia seja mínima, isso serve para provar que só há o que ganhar 
+Transformamos cada arquivo CSS em LESS e em `blog.less` importamos todos os outros arquivos. Dessa forma, é gerado
+apenas um arquivo `blog.css` que contém os estilos de todos os arquivos `.less`. Assim diminuímos o número de
+requisições para apenas 1 – já que todas as páginas apenas incluirão `blog.css` agora.
+Percebam também que devido ao *minify* depois da compilação, ainda conseguimos economia em bytes – saímos dos 19KB para 18KB –, e ainda que a economia seja mínima, isso serve para provar que só há o que ganhar
 usando LESS.
 
-Recentemente comecei um novo projeto e não cometi o erro de postergar o uso do LESS novamente, já comecei utilizando-o 
+Recentemente comecei um novo projeto e não cometi o erro de postergar o uso do LESS novamente, já comecei utilizando-o
 desde o nascimento do projeto, e vou dizer uma coisa: **é muito mais melhor de bão**!
 
 <aside class="fonte">

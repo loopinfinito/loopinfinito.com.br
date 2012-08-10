@@ -9,7 +9,7 @@ tags: web-components HTML
 keywords: shadow-dom, shadow dom, web-components, web components, html, html5, component, widget, encapsulamento, componente
 comments: true
 ---
-<style type="text/css">
+<style>
 .back {
 	transition: fill 0.3s ease;
 	-o-transition: fill 0.3s ease;
@@ -181,7 +181,7 @@ No exemplo abaixo, temos 2 pontos de inserção (os 2 filhos de shadow host).
 
 ## Encapsulamento faz todo o sentido
 
-Uma das grandes razões para a implementação da Shadow DOM pelos navegadores é para poder manter seus widgets inalteráveis, 
+Uma das grandes razões para a implementação da Shadow DOM pelos navegadores é para poder manter seus widgets inalteráveis,
 isolando-os de todo tipo de acesso – ou seja, mantendo tudo dentro de uma **caixa preta**.
 
 Sabe esses componentes de interface que usamos em nossas aplicações como `<select>` (*combo box*) e `<input>` dos tipos `text`, `range`, `number`, `color`, `datetime` etc? Pois bem, estes componentes não passam de elementos HTML estilizados com CSS de acordo com o estilo de cada plataforma, acredite. A grande diferença é o **encapsulamento**.
