@@ -9,7 +9,7 @@ tags: CSS web-forms
 keywords: css, css3, web-forms, web forms, formulario web, formulario-web, webkit, customizacao, widget, range, radio, checkbox
 comments: true
 ---
-<style type="text/css">
+<style>
 #exemplo-radio input[type=radio] {
     appearance: checkbox;
     -o-appearance: checkbox;
@@ -172,18 +172,18 @@ input[type=radio].estilizado:checked:before {
 }
 </style>
 
-No [post anterior](http://loopinfinito.com.br/2012/07/17/sou-dom-shadow-dom/ "Sou DOM, Shadow DOM") falamos sobre *Shadow DOM* 
-e entendemos a razão pela qual não é possível estilizar **widgets de formulário** (*selects*, *radio buttons*, *checkboxes*, 
-*ranges*, etc). Contudo, não é necessário esperar que a API Shadow DOM seja disponibilizada para que já possamos começar a 
+No [post anterior](http://loopinfinito.com.br/2012/07/17/sou-dom-shadow-dom/ "Sou DOM, Shadow DOM") falamos sobre *Shadow DOM*
+e entendemos a razão pela qual não é possível estilizar **widgets de formulário** (*selects*, *radio buttons*, *checkboxes*,
+*ranges*, etc). Contudo, não é necessário esperar que a API Shadow DOM seja disponibilizada para que já possamos começar a
 brincar de estilizar nossos widgets, pois o CSS3 já define algumas propriedades e seletores específicos de vários componentes
 de formulário.
 
-Hoje vamos descobrir como estilizar elementos de formulário e os deixarmos assim, como essa máquina da foto acima, totalmente 
+Hoje vamos descobrir como estilizar elementos de formulário e os deixarmos assim, como essa máquina da foto acima, totalmente
 customizada.
 
 O CSS3 define a propriedade `appearance`, que nos permite fazer com que um elemento pareça com componentes de UI.
 
-<p class="obs"><strong>OBS.:</strong> Para visualizar os exemplos deste post corretamente, você tem que estar usando um navegador baseado em 
+<p class="obs"><strong>OBS.:</strong> Para visualizar os exemplos deste post corretamente, você tem que estar usando um navegador baseado em
 Webkit (<strong>Google Chrome</strong> ou <strong>Safari</strong>).</p>
 
 ## Show me the code
@@ -215,7 +215,7 @@ Este trecho de código gera os widgets abaixo:
 </div>
 
 Agora usaremos a propriedade `appearance` para alterar a aparência dos *radio buttons*.
-Dentre tantas opções, escolhi a que achei mais didática para este exemplo – o **checkbox** –, mas você pode escolher 
+Dentre tantas opções, escolhi a que achei mais didática para este exemplo – o **checkbox** –, mas você pode escolher
 outra opção qualquer.
 No CSS, precisamos apenas:
 
@@ -227,8 +227,8 @@ input[type=radio] {
 }
 {% endhighlight %}
 
-Como podemos ver a seguir, a aparência dos radio buttons mudou para a mesma aparência das checkboxes, mas não se enganem, 
-os widgets ainda são de fato radio buttons, podemos constatar isto pelo fato de que apenas uma das opções abaixo pode ser 
+Como podemos ver a seguir, a aparência dos radio buttons mudou para a mesma aparência das checkboxes, mas não se enganem,
+os widgets ainda são de fato radio buttons, podemos constatar isto pelo fato de que apenas uma das opções abaixo pode ser
 selecionada ao mesmo tempo. Teste você mesmo!
 
 <div class="img example bordered" id="exemplo-radio">
@@ -244,15 +244,15 @@ selecionada ao mesmo tempo. Teste você mesmo!
 
 ## Customizando o input range
 
-Show de bola! Agora, o próximo experimento será bem mais legal, desta vez iremos estilizar um **slider** de formulário 
+Show de bola! Agora, o próximo experimento será bem mais legal, desta vez iremos estilizar um **slider** de formulário
 como bem entendermos – `<input type="range">`, cuja aparência padrão é:
 
 <div class="img example bordered" style="text-align:center;">
 	<input type="range" />
 </div>
 
-O que devemos fazer primeiramente é **remover a aparência padrão** setando a propriedade `appearance` para `none`, isso nos 
-dará a liberdade de modificar qualquer propriedade do elemento, só assim poderemos começar a customização do widget. 
+O que devemos fazer primeiramente é **remover a aparência padrão** setando a propriedade `appearance` para `none`, isso nos
+dará a liberdade de modificar qualquer propriedade do elemento, só assim poderemos começar a customização do widget.
 Vamos então dar continuidade com os passos iniciais no nosso *widget de range* de *id* `#rolling-stones`:
 
 {% highlight css %}
@@ -270,11 +270,11 @@ input#rolling-stones {
 }
 {% endhighlight %}
 
-Após remover a aparência padrão com `-webkit-appearance: none`, nosso elemento vai ficar com um fundo branco, e é ai que 
+Após remover a aparência padrão com `-webkit-appearance: none`, nosso elemento vai ficar com um fundo branco, e é ai que
 as estilizações acima entram em cena.
-Mas podemos perceber que embora o fundo já tenha sido customizado, seu pequeno botão circular que desliza sobre a trilha (*slider thumb*) 
-ainda permanecerá com sua aparência padrão, isso ocorre porque este botão é um **outro elemento** padrão encapsulado dentro do  
-*input range*, e para mudarmos sua aparência padrão deveremos usar um seletor especial `::slider-thumb` – que por enquanto 
+Mas podemos perceber que embora o fundo já tenha sido customizado, seu pequeno botão circular que desliza sobre a trilha (*slider thumb*)
+ainda permanecerá com sua aparência padrão, isso ocorre porque este botão é um **outro elemento** padrão encapsulado dentro do
+*input range*, e para mudarmos sua aparência padrão deveremos usar um seletor especial `::slider-thumb` – que por enquanto
 apenas o Webkit (Chrome e Safari) dá suporte através da flag `-webkit`. Customizando o botão:
 
 {% highlight css %}
@@ -293,7 +293,7 @@ input#rolling-stones::-webkit-slider-thumb {
 {% endhighlight %}
 
 A parte seguinte é mais relacionada à interação do widget com o usuário.
-Especificamos os comportamentos para quando há foco (`:focus`), para quando passamos a seta do mouse em cima do botão (`:hover`) 
+Especificamos os comportamentos para quando há foco (`:focus`), para quando passamos a seta do mouse em cima do botão (`:hover`)
 e para quando clicamos e arrastamos o botão (`:active`):
 
 {% highlight css %}
@@ -364,15 +364,15 @@ E eis o resultado! Recomendo testar também o *focus* (aperte *tab* e depois ←
 </table>
 
 No momento em que escrevo este post, só os navegadores Mozilla Firefox, Google Chrome e Safari dão suporte (apenas parcial
-por enquanto) à propriedade `appearance`, ou seja, `-moz-appearance` (Firefox) e `-webkit-appearance` (Chrome e Safari). 
-O problema é que cada uma dessas implementações diferem bastante uma da outra, no Firefox por exemplo, `-moz-appearance` 
-pode assumir [106 valores](https://developer.mozilla.org/en/CSS/-moz-appearance "-moz-appearance") diferentes, enquanto 
+por enquanto) à propriedade `appearance`, ou seja, `-moz-appearance` (Firefox) e `-webkit-appearance` (Chrome e Safari).
+O problema é que cada uma dessas implementações diferem bastante uma da outra, no Firefox por exemplo, `-moz-appearance`
+pode assumir [106 valores](https://developer.mozilla.org/en/CSS/-moz-appearance "-moz-appearance") diferentes, enquanto
 que no Webkit (Chrome e Safari), `-webkit-appearance` reconhece apenas [43 valores](http://css-infos.net/property/-webkit-appearance "-webkit-appearance").
 Já o pseudo-elemento `::slider-thumb` é suportado apenas pelo Webkit e ainda não faz parte da especificação W3C.
 
 ## Customizando checkbox e radio button
 
-Agora é a vez de fazermos o mesmo com as checkboxes e radio buttons. 
+Agora é a vez de fazermos o mesmo com as checkboxes e radio buttons.
 Abaixo temos o HTML dos nossos widgets, criei a classe `.estilizado` apenas para enfatizar o reaproveitamento de CSS logo a seguir.
 
 {% highlight html %}
@@ -418,7 +418,7 @@ Abaixo o resultado padrão do código acima:
 	</div>
 </div>
 
-Agora vamos ao que interessa, CSS! Começamos definindo a classe `.estilizado`, ou seja, as propriedades inerentes tanto às 
+Agora vamos ao que interessa, CSS! Começamos definindo a classe `.estilizado`, ou seja, as propriedades inerentes tanto às
 *checkboxes* quanto aos *radio buttons*.
 
 {% highlight css %}
@@ -510,16 +510,16 @@ O resultado encontra-se abaixo, teste você mesmo (o *focus* também)!
 
 ## Futuramente
 
-Eu gostaria de continuar aqui com outros widgets como `<select>` e os *inputs* dos tipos `file`, `number`, `color`, `datetime` e 
-seus variantes, mas não encontrei mais seletores especiais – com exceção do seletor 
-`::-webkit-inner-spin-button` e `::-webkit-outer-spin-button` para `<input type="number">`, que infelizmente não nos 
+Eu gostaria de continuar aqui com outros widgets como `<select>` e os *inputs* dos tipos `file`, `number`, `color`, `datetime` e
+seus variantes, mas não encontrei mais seletores especiais – com exceção do seletor
+`::-webkit-inner-spin-button` e `::-webkit-outer-spin-button` para `<input type="number">`, que infelizmente não nos
 permitem fazer nada de muito legal.
 
-No caso do `<select>`, sabemos que este já é parcialmente customizável, pois podemos alterar a aparência do campo de texto, mas não 
-podemos ainda modificar a sua *lista de opções* e nem o seu *botão* – a não ser, colocando uma imagem de fundo para o elemento inteiro, como 
+No caso do `<select>`, sabemos que este já é parcialmente customizável, pois podemos alterar a aparência do campo de texto, mas não
+podemos ainda modificar a sua *lista de opções* e nem o seu *botão* – a não ser, colocando uma imagem de fundo para o elemento inteiro, como
 [nestes exemplos](http://37signals.com/svn/posts/2609-customizing-web-forms-with-css3-and-webkit/) (em inglês), mas não acho isso nada legal =P
 
-Acredito que o suporte a estes tipos de customização está melhorando muito rápido (em parte graças ao Webkit), 
+Acredito que o suporte a estes tipos de customização está melhorando muito rápido (em parte graças ao Webkit),
 e aos poucos estamos caminhando para finalmente ter o controle total de todas essas ferramentas que tanto usamos.
 
 <aside class="fonte">
