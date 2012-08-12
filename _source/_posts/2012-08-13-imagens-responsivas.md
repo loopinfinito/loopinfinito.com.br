@@ -3,7 +3,7 @@ title: Imagens <span>responsivas</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-resumo: --
+resumo: Hoje falaremos de um assunto bastante acalourado no momento, <strong>Imagens reponsivas</strong>. Apresentar-vos-ei várias alternativas que desenvolvedores têm encontrado para tentar resolver este problema. Falaremos também sobre os debates e propostas que já estão rolando há um certo tempo no W3C e o que vem por aí.
 image: images/posts/2012-08-13-imagens-responsivas.jpg
 tags: HTML imagem
 keywords: imagens reposnsivas, imagem, responsiva, responsive image, html5, html, srcset, picture element, picture, source, w3c, desktop, smartphone, tablet, adaptive images
