@@ -12,7 +12,7 @@ plugins:     ./_source/_plugins
 
 future:      true
 lsi:         false
-pygments:    false
+pygments:    true
 markdown:    maruku
 permalink:   pretty
 exclude:     [code.less, disqus.less, projetos.less, sobre.less]

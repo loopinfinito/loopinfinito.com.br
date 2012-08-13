@@ -59,6 +59,14 @@ module Jekyll
   CHANGE_FREQUENCY_CUSTOM_VARIABLE_NAME = "sitemap_frequency"
   PRIORITY_CUSTOM_VARIABLE_NAME = "sitemap_priority"
 
+  # Added by Almir Filho
+  # These are the default values of changefreq and priority for the posts only
+  # To make these values to be diferent for some post, just add the custom
+  # variables above (values of CHANGE_FREQUENCY_CUSTOM_VARIABLE_NAME and
+  # PRIORITY_CUSTOM_VARIABLE_NAME)
+  POST_DEFAULT_CHANGEFREQ = 'yearly'
+  POST_DEFAULT_PRIORITY = '1.0'
+
   class Post
     attr_accessor :name
 
@@ -115,8 +123,7 @@ module Jekyll
       sitemap = REXML::Document.new << REXML::XMLDecl.new("1.0", "UTF-8")
 
       urlset = REXML::Element.new "urlset"
-      urlset.add_attribute("xmlns", 
-        "http://www.sitemaps.org/schemas/sitemap/0.9")
+      urlset.add_attribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
 
       @last_modified_post_date = fill_posts(site, urlset)
       fill_pages(site, urlset)
@@ -146,7 +153,7 @@ module Jekyll
       last_modified_date = nil
       site.posts.each do |post|
         if !excluded?(post.name)
-          url = fill_url(site, post)
+          url = fill_url(site, post, 'post')
           urlset.add_element(url)
         end
 
@@ -167,7 +174,7 @@ module Jekyll
         if !excluded?(page.name)
           path = page.full_path_to_source
           if File.exists?(path)
-            url = fill_url(site, page)
+            url = fill_url(site, page, 'page')
             urlset.add_element(url)
           end
         end
@@ -178,7 +185,7 @@ module Jekyll
     # change frequency (optional), and priority.
     #
     # Returns url REXML::Element
-    def fill_url(site, page_or_post)
+    def fill_url(site, page_or_post, type)
       url = REXML::Element.new "url"
 
       loc = fill_location(site, page_or_post)
@@ -188,8 +195,7 @@ module Jekyll
       url.add_element(lastmod) if lastmod
 
       if (page_or_post.data[CHANGE_FREQUENCY_CUSTOM_VARIABLE_NAME])
-        change_frequency = 
-          page_or_post.data[CHANGE_FREQUENCY_CUSTOM_VARIABLE_NAME].downcase
+        change_frequency = page_or_post.data[CHANGE_FREQUENCY_CUSTOM_VARIABLE_NAME].downcase
 
         if (valid_change_frequency?(change_frequency))
           changefreq = REXML::Element.new "changefreq"
@@ -198,17 +204,27 @@ module Jekyll
         else
           puts "ERROR: Invalid Change Frequency In #{page_or_post.name}"
         end
+      # Insert default changefreq value for posts (Added by Almir Filho)
+      elsif (type == 'post')
+        changefreq = REXML::Element.new "changefreq"
+        changefreq.text = POST_DEFAULT_CHANGEFREQ
+        url.add_element(changefreq)
       end
 
       if (page_or_post.data[PRIORITY_CUSTOM_VARIABLE_NAME])
         priority_value = page_or_post.data[PRIORITY_CUSTOM_VARIABLE_NAME]
         if valid_priority?(priority_value)
           priority = REXML::Element.new "priority"
-          priority.text = page_or_post.data[PRIORITY_CUSTOM_VARIABLE_NAME]
+          priority.text = priority_value
           url.add_element(priority)
         else
           puts "ERROR: Invalid Priority In #{page_or_post.name}"
         end
+      # Insert default priority value for posts (Added by Almir Filho)
+      elsif (type == 'post')
+        priority = REXML::Element.new "priority"
+        priority.text = POST_DEFAULT_PRIORITY
+        url.add_element(priority)
       end
 
       url
