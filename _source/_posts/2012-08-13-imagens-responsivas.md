@@ -7,7 +7,7 @@ resumo: Hoje falaremos de um assunto bastante acalourado no momento, <strong>Ima
 image: images/posts/2012-08-13-imagens-responsivas.jpg
 tags: HTML imagem
 keywords: imagens reposnsivas, imagem, responsiva, responsive image, html5, html, srcset, picture element, picture, source, w3c, desktop, smartphone, tablet, adaptive images
-comments: false
+comments: true
 ---
 
 Web [*design responsivo*](http://www.alistapart.com/articles/responsive-web-design/) tem sido um tema **muito** recorrente desde 2010 até hoje graças ao grande crescimento e surgimento 
@@ -182,6 +182,7 @@ Agora é esperar pra ver, até mais!
 	<ul>
 		<li>→<a href="http://www.w3.org/community/respimg/" alt="Responsive Images Community Group" title="Responsive Images Community Group">Responsive Images Community Group</a> <span class="comment">//W3C Community</span></li>
 		<li>→<a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/" alt="Which responsive images solution should you use?" title="Which responsive images solution should you use?">Which responsive images solution should you use?</a> <span class="comment">//CSS Tricks</span></li>
+        <li>→<a href="http://5by5.tv/webahead/25" alt="Responsive Images with Mat Marquis" title="Responsive Images with Mat Marquis">The Web Ahead #25: Responsive Images with Mat Marquis (Podcast)</a> <span class="comment">//5by5</span></li>
 		<li>→<a href="http://www.w3.org/community/respimg/wiki/Picture_Element_Proposal" alt="Picture Element Proposal" title="Picture Element Proposal">Picture Element Proposal</a> <span class="comment">//W3C</span></li>
 		<li>→<a href="http://html5doctor.com/html5-adaptive-images-end-of-round-one/" alt="HTML5 adaptive images: end of round one" title="HTML5 adaptive images: end of round one">HTML5 adaptive images: end of round one</a> <span class="comment">//HTML5 Doctor</span></li>
 		<li>→<a href="http://viewportindustries.com/blog/automatic-responsive-images-in-wordpress/" alt="Automatic Responsive Images in Wordpress" title="Automatic Responsive Images in Wordpress">Automatic Responsive Images in Wordpress</a></li>
