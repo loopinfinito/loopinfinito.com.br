@@ -1,6 +1,8 @@
 ---
 title: <span>Customizando</span> widgets de formulários web
 layout: post
+sitemap_priority: 1.0
+sitemap_frequency: never
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 resumo: Hoje vamos descobrir como estilizar elementos de formulário e os deixarmos assim, como essa máquina da foto acima, totalmente customizada.
