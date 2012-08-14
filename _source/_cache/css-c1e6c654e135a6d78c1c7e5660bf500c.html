@@ -1,0 +1,54 @@
+<div class="highlight"><pre><span class="nf">#wrapper</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">margin-left</span><span class="o">:</span> <span class="m">-200px</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">-200px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#piao</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span> <span class="c">/* centraliza o pião */</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span> <span class="c">/* centraliza o pião */</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">330px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#piao</span> <span class="nc">.numero</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">6px</span> <span class="k">solid</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">320px</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="n">Impact</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">240px</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nf">#moldura</span> <span class="p">{</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">50px</span> <span class="k">solid</span> <span class="k">rgb</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">250px</span><span class="p">;</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">top</span><span class="o">:</span> <span class="m">-45px</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">-50px</span><span class="p">;</span>
+  <span class="c">/* </span>
+<span class="c">    1ª shadow: simula 3D no elemento, na parte interna</span>
+<span class="c">    2ª shadow: shadow interna para simular profundidade</span>
+<span class="c">    3ª shadow: simula 3D no elemento, na parte externa</span>
+<span class="c">    4ª shadow: shadow externa para simular profundidade </span>
+<span class="c">  */</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> 
+    <span class="k">inset</span> <span class="m">-1px</span> <span class="m">-2px</span> <span class="m">0px</span> <span class="m">3px</span> <span class="k">rgb</span><span class="p">(</span><span class="m">150</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">)</span><span class="o">,</span>
+    <span class="k">inset</span> <span class="m">-1px</span> <span class="m">-2px</span> <span class="m">10px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">)</span><span class="o">,</span> 
+    <span class="m">-2px</span> <span class="m">-2px</span> <span class="m">0px</span> <span class="m">3px</span> <span class="k">rgb</span><span class="p">(</span><span class="m">150</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">)</span><span class="o">,</span>
+    <span class="m">-4px</span> <span class="m">-4px</span> <span class="m">10px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+</div>
