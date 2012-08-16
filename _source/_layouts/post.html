@@ -64,6 +64,11 @@
 					</footer>
 					{% endif %}
 				</article>
+				<div id="post-number">
+					{% for post in site.posts %}
+					{% if post.title == page.title %}#{{ forloop.rindex }}{% endif %}
+					{% endfor %}
+				</div>
 			</section>
 
 		</section><!-- end #content -->
