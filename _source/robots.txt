@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://loopinfinito.com.br/sitemap.xml
