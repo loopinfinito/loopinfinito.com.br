@@ -345,9 +345,9 @@ Isto devido ao atributo _tag_.
 
 A [especificação do W3C](http://www.w3.org/TR/notifications/) define mais
 alguns parâmetros além dos citados acima, mas eles não são suportados pelo
-Safari ou Chrome no Mac e talvez nunca serão. Para não nos alongarmos muito
-decidi por não comentar sobre eles, mas caso queiram existe um link nas
-referências para a especificação completa.
+Safari ou Chrome no Mac e talvez nunca serão. Para não deixar muito longo
+decidi por não comentar sobre eles. Mas caso queiram se aprofundar na
+especificação existe um link nas referências.
 
 <aside class="fonte">
     <h3>Referência</h3>
