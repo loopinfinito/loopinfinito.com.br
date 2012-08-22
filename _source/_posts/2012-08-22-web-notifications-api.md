@@ -7,7 +7,7 @@ resumo: A Web Notifications é uma nova API para enviarmos notificações ao usu
 image: images/posts/2012-08-17-web-notification-api.jpg
 tags: html5 javascript
 keywords: web-notification, notificações, notificações-web, safari-6, chrome, notification-center, api
-comments: false
+comments: true
 ---
 <style>
     input[type=button] {
