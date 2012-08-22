@@ -1,0 +1,16 @@
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.pedir-permissao&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">Notification</span><span class="p">.</span><span class="nx">permissionLevel</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Notification</span><span class="p">.</span><span class="nx">requestPermission</span><span class="p">(</span><span class="nx">mostraNotificacao</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">Notification</span><span class="p">.</span><span class="nx">permissionLevel</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;granted&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">mostraNotificacao</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">Notification</span><span class="p">.</span><span class="nx">permissionLevel</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;denied&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="kd">function</span> <span class="nx">mostraNotificacao</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">notificacao</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notification</span><span class="p">(</span><span class="s1">&#39;Minha primeira notificação&#39;</span><span class="p">)</span>
+    <span class="nx">notificacao</span><span class="p">.</span><span class="nx">show</span><span class="p">()</span>
+<span class="p">}</span>
+</pre>
+</div>
