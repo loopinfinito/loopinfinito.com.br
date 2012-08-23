@@ -10,60 +10,60 @@ keywords: imagens reposnsivas, imagem, responsiva, responsive image, html5, html
 comments: true
 ---
 
-Web [*design responsivo*](http://www.alistapart.com/articles/responsive-web-design/) tem sido um tema **muito** recorrente desde 2010 até hoje graças ao grande crescimento e surgimento 
-de dispositivos móveis de variados tamanhos (situação agravada com o surgimento de telas retina como o iPhone 4 e o novo iPad), 
-e por isso, os desenvolvedores de *front-end* passaram a ter uma – apenas *uma*? – 
+Web [*design responsivo*](http://www.alistapart.com/articles/responsive-web-design/) tem sido um tema **muito** recorrente desde 2010 até hoje graças ao grande crescimento e surgimento
+de dispositivos móveis de variados tamanhos (situação agravada com o surgimento de telas retina como o iPhone 4 e o novo iPad),
+e por isso, os desenvolvedores de *front-end* passaram a ter uma – apenas *uma*? –
 responsabilidade adicional: desenvolver e manter mais uma penca de layouts.
 
-Neste contexto, basicamente quase toda a comunidade de desenvolvimento *front-end* passou a ansiar por um "código único" que 
-pudesse desempenhar os diversos papéis necessários em diferentes meios, ou seja, um código que fosse **responsivo**, e 
+Neste contexto, basicamente quase toda a comunidade de desenvolvimento *front-end* passou a ansiar por um "código único" que
+pudesse desempenhar os diversos papéis necessários em diferentes meios, ou seja, um código que fosse **responsivo**, e
 parafraseando O Senhor dos Anéis, *"Um código para a todos dominar"* =P
 
-Hoje sabemos que já existem diversas técnicas e melhores práticas para o desenvolvimento de interfaces responsivas – foi daí 
-que nasceram as [*media queries*](http://mediaqueri.es/about/ "Media Queries"), e que acabaram virando uma [recomendação W3C](http://www.w3.org/TR/css3-mediaqueries/ "Media Queries") 
-[muito recentemente](http://www.webmonkey.com/2012/06/its-official-css-media-queries-are-a-web-standard/ "CSS Media Queries are a Web Standard") –, 
+Hoje sabemos que já existem diversas técnicas e melhores práticas para o desenvolvimento de interfaces responsivas – foi daí
+que nasceram as [*media queries*](http://mediaqueri.es/about/ "Media Queries"), e que acabaram virando uma [recomendação W3C](http://www.w3.org/TR/css3-mediaqueries/ "Media Queries")
+[muito recentemente](http://www.webmonkey.com/2012/06/its-official-css-media-queries-are-a-web-standard/ "CSS Media Queries are a Web Standard") –,
 mas um problema que ainda persiste sem uma solução adequada (leia-se: padronizada) é a questão das **imagens responsivas**.
 
-Hoje apresentar-vos-ei não uma solução, mas várias alternativas que desenvolvedores têm encontrado para tentar resolver este 
-problema. Falaremos também sobre os debates e propostas que já estão rolando há um certo tempo no 
-[Grupo da Comunidade de Imagens Responsivas](http://www.w3.org/community/respimg/ "Responsive Images Community Group") (em inglês) 
+Hoje apresentar-vos-ei não uma solução, mas várias alternativas que desenvolvedores têm encontrado para tentar resolver este
+problema. Falaremos também sobre os debates e propostas que já estão rolando há um certo tempo no
+[Grupo da Comunidade de Imagens Responsivas](http://www.w3.org/community/respimg/ "Responsive Images Community Group") (em inglês)
 do W3C.
 
 ## O problema
 
-Por mais otimizadas que sejam as imagens de um site para desktops, na maioria das vezes estas imagens ainda são bastante 
+Por mais otimizadas que sejam as imagens de um site para desktops, na maioria das vezes estas imagens ainda são bastante
 pesadas para uma conexão móvel, e imagens otimizadas para mobile são de demasiada baixa qualidade para visualizadores de desktop.
-Isso sem contar as diferentes resoluções de monitores desktop que tempos hoje em dia no mercado, acredito que a resolução 
+Isso sem contar as diferentes resoluções de monitores desktop que tempos hoje em dia no mercado, acredito que a resolução
 800x600px já tenha morrido há algum tempo, mas a 1024x768px ainda vai durar um bom tempo por ai.
 
-Os monitores full HD já estão em cena há algum tempo também, e logo de cara, querer comparar uma tela de 1024px de largura com uma de 1920px revela uma 
-enorme discrepância, isto **apenas considerando as telas desktop**, para não mencionarmos as dimensões maiores que full HD 
-(como por exemplo o novo iPad Retina e o novo Macbook Pro 15,4" Retina que tem 2880x1800px) e os 
+Os monitores full HD já estão em cena há algum tempo também, e logo de cara, querer comparar uma tela de 1024px de largura com uma de 1920px revela uma
+enorme discrepância, isto **apenas considerando as telas desktop**, para não mencionarmos as dimensões maiores que full HD
+(como por exemplo o novo iPad Retina e o novo Macbook Pro 15,4" Retina que tem 2880x1800px) e os
 dispositivos móveis como celulares e tablets – cada qual com sua variação de tamanhos.
 
 <figure>
 	<img src="/images/posts/2012-08-13-imagens-responsivas1.jpg" alt="" />
 </figure>
 
-Então, diante desses fatos, como fazer com que uma imagem na minha aplicação web possa ser exibida com a qualidade ideal em 
-toda essa gama de dispositivos sem ocasionar um enorme desperdício de banda? E pior ainda, a **experiência 
-do usuário** que utiliza minha aplicação ou visita minha página através de um celular acaba indo **pro lixo** pela grande demora no download de 
+Então, diante desses fatos, como fazer com que uma imagem na minha aplicação web possa ser exibida com a qualidade ideal em
+toda essa gama de dispositivos sem ocasionar um enorme desperdício de banda? E pior ainda, a **experiência
+do usuário** que utiliza minha aplicação ou visita minha página através de um celular acaba indo **pro lixo** pela grande demora no download de
 imagens, e talvez eu acabe perdendo usuários/clientes por isso.
 
 ## O ideal
 
-Bem, o ideal, **IDEAL mesmo** seria que não precisássemos ter nenhum trabalho extra pra isso, que o servidor pudesse identificar 
+Bem, o ideal, **IDEAL mesmo** seria que não precisássemos ter nenhum trabalho extra pra isso, que o servidor pudesse identificar
 a resolução (ou a velocidade da banda) do usuário e, dinamicamente gerar uma imagem novinha em folha para aquela determinada configuração.
 **Mas é claro que isto não acontece**, e mesmo assim, seria totalmente inviável (pelo menos hoje em dia).
 Coitado dos servidores (ou do nosso bolso).
 
 ## O ideal cabível
 
-Então, se tratando de imagens de bitmap – pois não temos este problema com imagens vetorizadas como SVG –, a solução 
-ideal parece ser bem simples: servir uma imagem de tamanho diferente para cada grupo de resoluções, onde cada uma destas 
+Então, se tratando de imagens de bitmap – pois não temos este problema com imagens vetorizadas como SVG –, a solução
+ideal parece ser bem simples: servir uma imagem de tamanho diferente para cada grupo de resoluções, onde cada uma destas
 imagens seriam e adequadas para uma certa gama de dispositivos.
 
-Por exemplo: Podemos considerar um imagem que queremos servir de forma responsiva tanto para desktops quanto para celulares. 
+Por exemplo: Podemos considerar um imagem que queremos servir de forma responsiva tanto para desktops quanto para celulares.
 Poderíamos considerar 3 diferentes tamanhos para esta imagem para os determinados dispositivos:
 
 - 320px - Smartphones com resolução padrão;
@@ -80,9 +80,9 @@ O que mudaria para nós, desenvolvedores? Acho que duas coisas:
 
 ## <del>Gambiarras</del> Soluções atuais
 
-Sabemos que ainda não há padronização para isso, mas **o problema é atual**. Há um monte de técnicas que já tentam lidar com esse 
-problema, isto é, soluções que nos ajudam a servir a imagem correta para cada ocasião. Todas elas trabalham de uma forma um 
-pouco diferente uma da outra, e dependendo dos seus requisitos, é possível fazer a melhor escolha de acordo com o que você 
+Sabemos que ainda não há padronização para isso, mas **o problema é atual**. Há um monte de técnicas que já tentam lidar com esse
+problema, isto é, soluções que nos ajudam a servir a imagem correta para cada ocasião. Todas elas trabalham de uma forma um
+pouco diferente uma da outra, e dependendo dos seus requisitos, é possível fazer a melhor escolha de acordo com o que você
 precisa para o seu projeto.
 Abaixo coloquei uma lista de 8 dessas técnicas com seus respectivos links caso você queira saber mais sobre cada uma delas.
 
@@ -105,7 +105,7 @@ Não irei entrar em detalhes sobre isto pois este não é o intuito do post, mas
 Beleza, agora vamos falar do que interessa mesmo, a pergunta que não quer calar: **quando vamos ter esse poder nativamente?**
 
 Como falei no início do post, existe um [Grupo da Comunidade de Imagens Responsivas](http://www.w3.org/community/respimg/ "Responsive Images Community Group")
-no W3C que discute sobre algumas alternativas a serem incluídas no **HTML.next** (próxima versão do HTML) que serão 
+no W3C que discute sobre algumas alternativas a serem incluídas no **HTML.next** (próxima versão do HTML) que serão
 responsáveis por resolver o problema das imagens responsivas.
 Vamos falar das 2 principais idéias discutidas no grupo: o atributo `srcset` e o elemento `<picture>`.
 
@@ -121,7 +121,7 @@ Veja o exemplo abaixo:
      srcset="heineken_media.jpg 2x, heineken_grande.jpg 3x" />
 {% endhighlight %}
 
-No código acima temos então a imagem `heineken_pequena.jpg` como sendo a padrão em `src` – no caso de a imagem estar sendo enviada para um 
+No código acima temos então a imagem `heineken_pequena.jpg` como sendo a padrão em `src` – no caso de a imagem estar sendo enviada para um
 celular –, e em `srcset` temos as outras imagens de tamanhos diferentes: `heineken_media.jpg` é 2 vezes maior e `heineken_grande.jpg`
 é 3 vezes maior que a imagem padrão.
 
@@ -176,6 +176,18 @@ elemento `<picture>` mais simples.
 
 Contudo, de qualquer forma é bom saber que o assunto está sendo discutido e que estão procurando a melhor solução.
 Agora é esperar pra ver, até mais!
+
+<h2 id="atualizacoes">Atualizações</h2>
+<div class="update">
+    <h3>23/08/2012</h3>
+    <p><strong>Ótimas notícias!</strong>
+        De acordo com <a href="http://filamentgroup.com/lab/thetwospecs/" alt="The two specs" title="The two specs">este post</a>
+        do Filament Group, o elemento <code>&lt;picture&gt;</code> está provisioramente marcado para ser
+        <a href="http://www.w3.org/community/respimg/2012/08/04/picture-in-the-html5-spec/">incluso ao HTML5</a>,
+        em vez do <em>HTML.next</em>. Ou seja, parece que veremos uma solução nativa para imagens responsivas logo logo, visto que
+        o HTML WG (Grupo do HTML5 do W3C) já está trabalhando numa especificação formal que deverá ficar pronta nas <strong>próximas
+        semanas</strong>.</p>
+</div>
 
 <aside class="fonte">
 	<h3>Referência</h3>
