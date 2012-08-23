@@ -23,12 +23,12 @@
 						</li>
 						<li class="post-autor">
 							<span class="icon-aside"></span>
-							<a href="{{ page.author_link }}" title="{{ page.author }}" alt="{{ page.author }}" rel="author" itemprop="author">{{ page.author }}</a>
+							<a href="{{ page.author_link }}" title="{{ page.author }}" alt="{{ page.author }}" rel="author" itemprop="author" onclick="_gaq.push(['_trackEvent', 'post_author', 'Post View', '{{ post.author }}'])">{{ page.author }}</a>
 						</li>
 						{% if page.comments %}
 						<li class="post-comentarios">
 							<span class="icon-aside"></span>
-							<a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.id}}" itemprop="interactionCount">Carregando...</a>
+							<a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{page.id}}" itemprop="interactionCount" onclick="_gaq.push(['_trackEvent', 'post_comments', 'Post View', '{{ post.url }}'])">Carregando...</a>
 						</li>
 						{% endif %}
 						{% unless page.tags == empty %}

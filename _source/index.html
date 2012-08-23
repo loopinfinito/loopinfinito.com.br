@@ -13,12 +13,12 @@ sitemap_frequency: weekly
 			</li>
 			<li class="post-autor">
 				<span class="icon-aside"></span>
-				<a href="{{ post.author_link }}" title="{{ post.author }}" alt="{{ post.author }}" rel="author" itemprop="author">{{ post.author }}</a>
+				<a href="{{ post.author_link }}" title="{{ post.author }}" alt="{{ post.author }}" rel="author" itemprop="author" onclick="_gaq.push(['_trackEvent', 'post_author', 'Home View', '{{ post.author }}'])">{{ post.author }}</a>
 			</li>
 			{% if post.comments %}
 			<li class="post-comentarios">
 				<span class="icon-aside"></span>
-				<a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}" itemprop="interactionCount">Carregando...</a>
+				<a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{post.id}}" itemprop="interactionCount" onclick="_gaq.push(['_trackEvent', 'post_comments', 'Home View', '{{ post.url }}'])">Carregando...</a>
 			</li>
 			{% endif %}
 			{% unless post.tags == empty %}
@@ -27,7 +27,7 @@ sitemap_frequency: weekly
 				<ul>
 					{% for tag in post.tags %}
 					<li><a href="/tag/{{ tag }}"><span>#</span>{{ tag }}</a></li>{% if forloop.last == false %},{% endif %}
-					{% endfor %}					
+					{% endfor %}
 				</ul>
 				{% if post.keywords %}
 				<span class="hidden" itemprop="keywords">{{ post.keywords }}</span>
