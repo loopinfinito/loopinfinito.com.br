@@ -5,8 +5,8 @@ author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 resumo: A Web Notifications é uma nova API para enviarmos notificações ao usuário fora do contexto de uma página web. Para quem usa Mac, imaginem que Web Notifications é o Growl para a web. Uma API simples que nos dá acesso a features antes só disponíveis para aplicações nativas.
 image: images/posts/2012-08-17-web-notification-api.jpg
-tags: html5 javascript
-keywords: web-notification, notificações, notificações-web, safari-6, chrome, notification-center, api
+tags: HTML5 javascript
+keywords: web-notification, notificações, notificações-web, safari-6, chrome, notification-center, api, html5, webkit
 comments: true
 ---
 <style>
