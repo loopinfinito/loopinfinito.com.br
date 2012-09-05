@@ -65,15 +65,23 @@ ainda em tempo de evitar uma morte humana.
 
 ### Release
 
-Versão estável. Atualizada a cada 6 semanas.
+Versão estável. Grandes _releases_ com melhorias na performance, segurança
+e/ou novas funcionalidades ocorrem a cada 6 semanas. Pequenos _fixes_ são
+liberados de forma mais constante.
 
 ### Beta
 
-Versão de testes para a versão estável. Também atualizada a cada 6 semanas.
+Versão de testes para a versão estável. Aqui ocorrem pequenos ajustes para
+torná-la estável. Grandes melhorias são liberadas a cada 6 semanas, e _fixes_
+são liberados assim que prontos.
 
 ### Aurora
 
-Indicada para desenvolvedores _web_ e _early adopters_. Atualizada a cada 6 semanas.
+Indicada para desenvolvedores _web_ e _early adopters_. Acompanha o ciclo de
+lançamentos de grandes _releases_ de 6 semanas das versões **Beta** e
+**Release**. Nesta versão se tem acesso a funcionalidades experimentais que,
+de acordo com o _feedback_ dos usuários, irá ou não aterrisar na versão
+**Beta**.
 
 ### Nightly
 
