@@ -188,6 +188,13 @@ Agora é esperar pra ver, até mais!
         o HTML WG (Grupo do HTML5 do W3C) já está trabalhando numa especificação formal que deverá ficar pronta nas <strong>próximas
         semanas</strong>.</p>
 </div>
+<div class="update">
+    <h3>29/08/2012</h3>
+    <p><strong>Publicado o Draft no W3C.</strong>
+        Saindo do forno, pessoal! Hoje finalmente foi publicado o <em>draft</em> da proposta para imagens responsivas no W3C.
+        <a href="http://dvcs.w3.org/hg/html-proposals/raw-file/tip/responsive-images/responsive-images.html">Clique aqui para ver</a>.
+    </p>
+</div>
 
 <aside class="fonte">
 	<h3>Referência</h3>
