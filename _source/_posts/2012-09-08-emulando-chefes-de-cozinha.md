@@ -5,8 +5,8 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 resumo: Teste
 image: images/posts/2012-09-08-emulando-chefes-de-cozinha.jpg
-tags:
-keywords:
+tags: lifestyle
+keywords: lifestyle, produtividade, chef, estilo de vida, compartilhar, conhecimento, livro, receita
 comments: false
 ---
 
@@ -65,10 +65,3 @@ E o que você faz? Quais são suas "receitas"? Qual é seu "livro de receitas"?
 O que você pode contar ao mundo sobre como você lidá com informação, educação, promoção ou desenvolvimento web?
 
 O Loop Infinito é o **nosso livro de receitas**. E o seu?
-
-<!-- <aside class="fonte">
-    <h3>Referência</h3>
-    <ul>
-        <li>→<a href="http://37signals.com/rework" alt="Rework" title="Rework">Rework</a></li>
-    </ul>
-</aside> -->
