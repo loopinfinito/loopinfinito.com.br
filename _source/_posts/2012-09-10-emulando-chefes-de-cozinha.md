@@ -3,11 +3,11 @@ title: Emulando <span>chefes de cozinha</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-resumo: Teste
-image: images/posts/2012-09-08-emulando-chefes-de-cozinha.jpg
+resumo: Hoje falaremos da importância do compartilhamento de conhecimento, traçando um paralelo com os chefes de cozinha famosos.
+image: images/posts/2012-09-10-emulando-chefes-de-cozinha.jpg
 tags: lifestyle
 keywords: lifestyle, produtividade, chef, estilo de vida, compartilhar, conhecimento, livro, receita
-comments: false
+comments: true
 ---
 
 Como alguns já devem saber, o Loop Infinito não se trata apenas de um blog que só
@@ -23,7 +23,7 @@ da [37signals](http://37signals.com "37signals").
 
 ## Hora de cozinhar
 
-Se você assite a programas de culinária, provavelmente já ouviu falar de
+Se você assiste a programas de culinária, provavelmente já ouviu falar de
 [Emeril Lagasse](http://en.wikipedia.org/wiki/Emeril_Lagasse "Emeril Lagasse"),
 [Mario Batali](http://en.wikipedia.org/wiki/Mario_Batali "Mario Batali"),
 [Bobby Flay](http://en.wikipedia.org/wiki/Bobby_Flay "Bobby Flay"),
@@ -40,7 +40,7 @@ culinária, de modo que qualquer pessoa possa ter acesso aos seus conhecimentos.
 
 Como um proprietário de um negócio, você também deveria compartilhar tudo o que sabe.
 Mas isso é uma **abominação** para a maioria das empresas no mundo de hoje.
-Empresas geralmente são paranóicas e reservadas.
+Empresas geralmente são paranoicas e reservadas.
 Elas acham que que têm propriedade sobre *isto* e vantagem competitiva *naquilo*.
 Talvez umas poucas e raras realmente tenham, mas a grande maioria, não.
 E aquelas que não têm, deveriam parar de agir como aqueles que têm.
@@ -62,6 +62,6 @@ competidores aprenderem como eles fazem as coisas. Deixe isto de lado e **supere
 
 Então, emule *chefs* famosos. Eles cozinham, e assim escrevem um livro de receitas.
 E o que você faz? Quais são suas "receitas"? Qual é seu "livro de receitas"?
-O que você pode contar ao mundo sobre como você lidá com informação, educação, promoção ou desenvolvimento web?
+O que você pode contar ao mundo sobre como você lida com informação, educação, promoção ou desenvolvimento web?
 
 O Loop Infinito é o **nosso livro de receitas**. E o seu?
