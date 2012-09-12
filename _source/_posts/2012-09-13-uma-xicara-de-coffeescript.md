@@ -1,13 +1,13 @@
 ---
-title: Um pouco de <span>CoffeeScript</span>
+title: Uma xícara de <span>CoffeeScript</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-resumo: teste
+resumo: CoffeeScript é uma linda linguagem que traz o que há de melhor (sintaticamente falando) em outras linguagens como Python e Ruby, e pra completar, também é compilável para JavaScript.
 image: images/posts/2012-09-13-coffeescript.jpg
-tags:
-keywords:
-comments: false
+tags: coffeescript javascript
+keywords: coffeescript, javascript, documentacao, script, ruby, python, string, interpolacao, classe, class, list, compreenshion, compreensao, lista, prototype
+comments: true
 ---
 
 Programador tem fama de gostar de café. Se você pertence a este distinto
@@ -28,13 +28,12 @@ recentemente traduzimos para o português:
 
 - É a 11ª liguagem mais usada no GitHub no momento. Ultrapassou C# recentemente. [GitHub Languages](https://github.com/languages/CoffeeScript)
 - O GitHub usa CoffeeScript em suas aplicações. [GitHub Styleguide](https://github.com/styleguide/javascript)
-- É a linguagem de *script* padrão do Ruby on Rails.
+- É a linguagem de *front-end* padrão do Ruby on Rails.
 
 ## Adeus ; e {}'s
 
 Quem programa em Python ou Ruby, acaba detestando esse papo de ter que usar
-`;` ao final das linhas (JavaScript também não exige mais seu uso).
-Outra coisa que também é chata – e sintaticamente
+`;` ao final das linhas. Outra coisa que também é chata – e sintaticamente
 feia – é usar `{}` para delimitar blocos de comando, nesse caso, CoffeeScript
 apenas considera a indentação do código (assim como em Python).
 
@@ -173,7 +172,7 @@ console.log numero for numero in [0...5]
 
 ## Operador existencial
 
-Verificar a exitência de variáveis em JavaScript é um pouco chato, pois precisa-se
+Verificar a existência de variáveis em JavaScript é um pouco chato, pois precisa-se
 efetuar 2 testes. CoffeeScript tem um operador `?` que torna essa tarefa
 muito simples:
 
@@ -192,8 +191,47 @@ if ((typeof guitarra !== "undefined" && guitarra !== null) && !(typeof sertanejo
 }
 {% endhighlight %}
 
-Eu poderia continuar falando das **N** coisas legais de CoffeeScript – como definições de
-classes, herança, funções, *splats*, atribuições de troca, *switchs*, comparações em cadeia,
+## Classes
+
+Taí uma coisa que qualquer programador OO sente bastante falta em JavaScript: declarações de
+classes de maneira mais clara. Isso ocorre porque JavaScript é uma linguagem orientada a
+protótipos, e trabalhar com prototipação e herança prototipada é um pouco confuso pra quem
+vem da orientação à objetos. CoffeeScript oferece uma maneira simples de definição de classes
+e herança, inclusive com construtores mais simples.
+
+{% highlight coffeescript %}
+class Animal
+  constructor: (@nome) ->
+
+  mover: (metros) ->
+    alert @nome + " moveu-se #{metros}m."
+
+class Cachorro extends Animal
+  mover: ->
+    alert "Au au!"
+    super 5
+
+class Gato extends Animal
+  mover: ->
+    alert "Miau!"
+    super 45
+
+toto = new Cachorro "Totó, o cachorro"
+tom  = new Gato "Tom, o gato"
+
+toto.mover()
+tom.mover()
+{% endhighlight %}
+
+Quer adicionar propriedades ou métodos à sua classe (protótipo) em tempo de execução?
+
+{% highlight coffeescript %}
+Animal::morrer = ->
+  alert "#{@nome} morreu =("
+{% endhighlight %}
+
+Eu poderia continuar falando das **N** coisas legais de CoffeeScript – como herança,
+funções, *splats*, atribuições de troca, *switchs*, comparações em cadeia,
 etc –, mas simplesmente não há necessidade, visto que temos um ótimo e completo guia da
 linguagem aqui: [coffeescript.com.br](http://coffeescript.com.br "CoffeeScript BR").
 
@@ -203,8 +241,8 @@ linguagem aqui: [coffeescript.com.br](http://coffeescript.com.br "CoffeeScript B
     <img src="/images/posts/2012-09-13-haters-gonna-hate.jpg" width="700" height="200" alt="Haters Gonna Hate" title="Haters Gonna Hate" />
 </figure>
 
-Ah, eis um [link que achei bem engraçado](https://github.com/rails/rails/compare/9333ca7...23aa7da).
-Trata-se da discussão sobre o *commit* que adiciona o CoffeeScript como padrão no Ruby on Rails.
+CoffeeScript é um assunto muito polêmico. Eis um [link que achei bem engraçado](https://github.com/rails/rails/compare/9333ca7...23aa7da),
+trata-se da discussão sobre o *commit* que adiciona o CoffeeScript como padrão no Ruby on Rails.
 Salientando que esse foi um dos *commits* mais polêmicos da **história do GitHub**.
 Vale dar uma olhada, os nerds se atracaram num grande bate boca com imagens bastante divertidas.
 
