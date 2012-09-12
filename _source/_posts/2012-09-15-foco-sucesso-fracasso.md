@@ -3,7 +3,7 @@ title: Foco. Sucesso. Fracasso
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
-resumo: Lorem ipsum
+resumo: Foco nos leva ao sucesso. Sucesso nos traz mais oportunidades. E essas oportunidades podem nos tirar o foco que uma vez nos levou ao sucesso. Abraçar todas as oportunidades que o sucesso irá nos proporcionar só irá tirar nosso foco e, por consequência, o sucesso. Dizer não é esencial.
 image: images/posts/2012-09-15-foco-sucesso-fracasso.jpg
 tags: lifestyle produtividade
 keywords: lorem
