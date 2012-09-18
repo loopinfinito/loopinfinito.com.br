@@ -26,7 +26,7 @@ recentemente traduzimos para o português:
 
 ## Curiosidades
 
-- É a 11ª liguagem mais usada no GitHub no momento. Ultrapassou C# recentemente. [GitHub Languages](https://github.com/languages/CoffeeScript)
+- É a 11ª linguagem mais usada no GitHub no momento. Ultrapassou C# recentemente. [GitHub Languages](https://github.com/languages/CoffeeScript)
 - O GitHub usa CoffeeScript em suas aplicações. [GitHub Styleguide](https://github.com/styleguide/javascript)
 - É a linguagem de *front-end* padrão do Ruby on Rails.
 - O Dropbox recentemente [reescreveu todo o seu *front-end* em CoffeeScript](https://tech.dropbox.com/?p=361 "Dropbox dives into CoffeeScript"), tendo uma economia de mais de **5000 linhas** de código.
