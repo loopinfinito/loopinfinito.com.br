@@ -114,7 +114,12 @@
 			// vars
 			var $postContainer = $('.post-container')
 			var $postMeta = $('aside.post-meta')
-			var $postFonte = $('aside.fonte')
+			var $postBase = $('aside.fonte')
+
+			// caso o post não tenha referência, usa o <footer> como base
+			if ($postBase.length == 0) {
+				$postBase = $('article footer')
+			}
 
 			// zona 1
 			// scroll acima do início do post
@@ -123,7 +128,7 @@
 			}
 			// zona 2
 			// scroll entre o início do post e início da fonte do post menos a altura do .post-meta
-			else if ($(window).scrollTop() >= $postContainer.offset().top && ($(window).scrollTop() < $postFonte.offset().top - $postMeta.height() + 5)) {
+			else if ($(window).scrollTop() >= $postContainer.offset().top && ($(window).scrollTop() < $postBase.offset().top - $postMeta.height() + 5)) {
 				$postMeta
 					.addClass('post-meta-fixed')
 					.css('top', 0)
@@ -131,7 +136,7 @@
 			// zona 3
 			// após a zona 2
 			else {
-				var topNew = $postFonte.offset().top - $postMeta.height() - $('article').offset().top
+				var topNew = $postBase.offset().top - $postMeta.height() - $('article').offset().top
 				$postMeta
 					.removeClass('post-meta-fixed')
 					.css('top', topNew)
