@@ -4,7 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 resumo: CoffeeScript é uma linda linguagem que traz o que há de melhor (sintaticamente falando) em outras linguagens como Python e Ruby, e pra completar, também é compilável para JavaScript.
-image: images/posts/2012-09-13-coffeescript.jpg
+image: images/posts/2012-09-18-coffeescript.jpg
 tags: coffeescript javascript
 keywords: coffeescript, javascript, documentacao, script, ruby, python, string, interpolacao, classe, class, list, compreenshion, compreensao, lista, prototype
 comments: true
@@ -29,6 +29,7 @@ recentemente traduzimos para o português:
 - É a 11ª liguagem mais usada no GitHub no momento. Ultrapassou C# recentemente. [GitHub Languages](https://github.com/languages/CoffeeScript)
 - O GitHub usa CoffeeScript em suas aplicações. [GitHub Styleguide](https://github.com/styleguide/javascript)
 - É a linguagem de *front-end* padrão do Ruby on Rails.
+- O Dropbox recentemente [reescreveu todo o seu *front-end* em CoffeeScript](https://tech.dropbox.com/?p=361 "Dropbox dives into CoffeeScript"), tendo uma economia de mais de **5000 linhas** de código.
 
 ## Adeus ; e {}'s
 
@@ -70,7 +71,7 @@ bandas = {
 ## Interpolação de strings
 
 JavaScript não tem interpolação de strings, então CoffeeScript nos traz esse
-rescurso super útil no estilo de Ruby, usando `#{}` dentro da *string*:
+recurso super útil no estilo de Ruby, usando `#{}` dentro da *string*:
 
 {% highlight coffeescript %}
 numero = 42
@@ -135,7 +136,7 @@ funcoes = for funcao, integrante of nirvana
     "#{integrante} é #{funcao}"
 {% endhighlight %}
 
-Perceba a diferença (quantidade de linhas e legibilidade) entre essas útimas 2
+Perceba a diferença (quantidade de linhas e legibilidade) entre essas últimas 2
 linhas do código acima e as 9 últimas linhas de JavaScript geradas abaixo:
 
 {% highlight javascript %}
@@ -238,7 +239,7 @@ linguagem aqui: [coffeescript.com.br](http://coffeescript.com.br "CoffeeScript B
 ## Por enquanto é isso
 
 <figure>
-    <img src="/images/posts/2012-09-13-haters-gonna-hate.jpg" width="700" height="200" alt="Haters Gonna Hate" title="Haters Gonna Hate" />
+    <img src="/images/posts/2012-09-18-haters-gonna-hate.jpg" width="700" height="200" alt="Haters Gonna Hate" title="Haters Gonna Hate" />
 </figure>
 
 CoffeeScript é um assunto muito polêmico. Eis um [link que achei bem engraçado](https://github.com/rails/rails/compare/9333ca7...23aa7da),
