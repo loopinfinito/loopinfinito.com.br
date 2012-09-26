@@ -31,6 +31,23 @@ Um ícone irá aparecer na sua *menubar* indicando que a ferramenta está em uso
 Por padrão, o Network Link Conditioner vem com 11 diferentes tipos de perfis, mas se mesmo assim isso for pouco para seu espírito *hardcore*, é possível também adicionar perfis customizados.
 Neles podemos fazer ajustes mais finos das condições da rede que desejamos simular, como banda, latência e quantidade de pacotes perdidos.
 
+<h2 id="atualizacoes">Atualizações</h2>
+<div class="update">
+    <h3>26/09/2012</h3>
+    <p>
+    	Tentei instalar ainda a pouco o Network Link Conditioner no meu Mac com Mountain Lion e
+    	esses mesmos passos não funcionaram.
+    	O <a href="http://stackoverflow.com/questions/11699805/where-is-network-link-conditioner-prefpane-in-osx-mountain-lion-and-xcode-4-4">StackOverflow</a>
+    	me salvou de novo.
+    </p>
+    <p>
+    	No OS X 10.8 com Xcode 4.4 o Network Link Conditioner passou a ser um pacote opcional.
+    	Para instalá-lo abra o Xcode, vá no menu <code>Xcode > Open Developer Tool > More Developer Tools</code>,
+    	faça o download do <strong>Hardware IO Tools for Xcode</strong> e depois dê um clique duplo no
+    	<strong>Network Link Conditioner.prefpane</strong> para instalá-lo.
+    </p>
+</div>
+
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
