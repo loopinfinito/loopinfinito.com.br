@@ -1,0 +1,15 @@
+<div class="highlight"><pre><span class="c1">// no Chrome, obtendo a orientação</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s1">&#39;devicemotion&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">orientData</span> <span class="p">){</span>
+    <span class="c1">// seta o próximo impulso na bola</span>
+    <span class="nx">ball</span><span class="p">.</span><span class="nx">impulse</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">orientData</span><span class="p">.</span><span class="nx">gamma</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="nx">scale</span>
+    <span class="nx">ball</span><span class="p">.</span><span class="nx">impulse</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">orientData</span><span class="p">.</span><span class="nx">beta</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="nx">scale</span>
+<span class="p">})</span>
+
+<span class="c1">// no Firefox, obtendo a aceleração</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s1">&#39;devicemotion&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">eventData</span> <span class="p">){</span>
+    <span class="c1">// seta o próximo impulso na bola</span>
+    <span class="nx">ball</span><span class="p">.</span><span class="nx">impulse</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">eventData</span><span class="p">.</span><span class="nx">accelerationIncludingGravity</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="nx">scale</span>
+    <span class="nx">ball</span><span class="p">.</span><span class="nx">impulse</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">eventData</span><span class="p">.</span><span class="nx">accelerationIncludingGravity</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="nx">scale</span>
+<span class="p">})</span>
+</pre>
+</div>
