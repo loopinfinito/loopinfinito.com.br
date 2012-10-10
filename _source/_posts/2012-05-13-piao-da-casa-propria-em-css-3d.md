@@ -6,8 +6,8 @@ author_link: http://twitter.com/caio_gondim
 resumo: Quem não lembra do <strong>lendário</strong> programa do Silvio Santos <a href="http://www.youtube.com/watch?v=X0YAnNNK2OE">Pião da Casa Própria</a>? Neste post vamos trazer esta lenda de volta a vida, desta vez encarnado em puro código HTML5, sem imagens ou plugins.
 image: images/posts/2012-05-13-piao-da-casa-propria-em-css-3d.jpg
 has_inner_image: false
-tags: CSS 3D HTML5
-keywords: silvio santos css3 3d html5 frontend web development
+tags: CSS 3D experimento
+keywords: silvio santos, css3, 3d, html5, frontend, web, development, desenvolvimento, web development, animacao, piao da casa propria
 comments: true
 ---
 
@@ -33,7 +33,7 @@ Apenas uma <code>div</code> contendo 6 outras <code>div</code>, uma para cada fa
     <div class="numero tres">3</div>
     <div class="numero quatro">4</div>
     <div class="numero cinco">5</div>
-    <div class="numero seis">6</div>        
+    <div class="numero seis">6</div>
   </div>
   <div id="moldura"> </div>
 </div>
@@ -82,15 +82,15 @@ Agora vamos dar um pouco de estilo ao pião e à moldura.
   position: absolute;
   top: -45px;
   left: -50px;
-  /* 
+  /*
     1ª shadow: simula 3D no elemento, na parte interna
     2ª shadow: shadow interna para simular profundidade
     3ª shadow: simula 3D no elemento, na parte externa
-    4ª shadow: shadow externa para simular profundidade 
+    4ª shadow: shadow externa para simular profundidade
   */
-  box-shadow: 
+  box-shadow:
     inset -1px -2px 0px 3px rgb(150, 0, 0),
-    inset -1px -2px 10px 10px rgba(0, 0, 0, 0.5), 
+    inset -1px -2px 10px 10px rgba(0, 0, 0, 0.5),
     -2px -2px 0px 3px rgb(150, 0, 0),
     -4px -4px 10px 10px rgba(0, 0, 0, 0.5);
 }
@@ -116,7 +116,7 @@ Agora entendendo um pouco sobre o plano 3D, vamos organizar os elementos a fim d
 
 {% highlight css %}
 #piao > .numero.um {
-  /* 
+  /*
     a rotação deste elemento é 0, o que já é o valor padrão
     então não há necessidade de redeclarar sua rotação
    */
@@ -194,8 +194,8 @@ O efeito que queremos ver é o do pião rodando em relação ao seu eixo Y, o me
 Para isso iremos criar uma animação com o estado inicial no ponto 0 graus do eixo Y e estado final no 360 graus, ou seja, uma volta completa.
 
 {% highlight css %}
-/* 
-  animação para o pião rodar 
+/*
+  animação para o pião rodar
   uma animação básica ao redor do eixo Y
 */
 @-webkit-keyframes rodando {
@@ -218,7 +218,7 @@ Aqui dizemos que queremos animar o elemento pião, utilizando a animação "roda
 
 Agora se checarmos no navegador, iremos finalmente ter nosso pião da casa própria em HTML5. E rodandooo.
 
-## One more thing...  
+## One more thing...
 
 O Pião da Casa Própria não seria o mesmo sem a __clássica__ trilha sonnora. Então vamos adicioná-la ao experimento.
 Iremos usar a nova tag <code>audio</code> para reproduzir a música sem a nececissade do Flash.
@@ -234,22 +234,17 @@ Basta declarar a tag <code>audio</code> e dentro dela as tags <code>source</code
 </audio>
 {% endhighlight %}
 
-
 O navegador irá tentar de cima para baixo executar os formatos, e quando achar um que possa reproduzir, irá carregar e não irá mais procurar por outros <code>source</code>.
 O uso desta tag é necessário pois cada navegador dá suporte a um [diferente conjunto de codecs](http://html5doctor.com/native-audio-in-the-browser/).
 
 Caso queiram escutar a trilha sonora agora e ver o pião rodando é só apertar o botão play no lado direito superior dentro do experimento, no [início](#experimento-piao) do post.
 Utilizei a API JavaScript para controlar o comportamento da tag <code>audio</code>, mas para não perdemos o foco, essa API fica para um próximo post.
-<!-- 
-Existe também uma API JavaScript para controlar por programação o áudio, mas para não perdemos o foco do post não vamos entrar em detalhes.
-Se quiser escutar a trilha sonora, basta apertar o botão _play_ no experimento logo no começo do post.
-É necessário esperar fazer o download da música. -->
 
 <aside class="fonte">
   <h3>Referência</h3>
-  <ul>    
+  <ul>
     <li>→<a href="https://developer.mozilla.org/En/HTML/Element/Audio" alt="Mozilla Developer Network" title="Mozilla Developer Network">Mozilla Developer Network: audio</a></li>
     <li>→<a href="https://developer.mozilla.org/en/CSS/transform-style" alt="Mozilla Developer Network" title="Mozilla Developer Network">Mozilla Developer Network: transform style</a></li>
-    <li>→<a href="http://www.webkit.org/blog-files/3d-transforms/morphing-cubes.html" alt="Webkit Morphing Cubes" title="Webkit Morphing Cubes">WebKit blog</a></li>  
+    <li>→<a href="http://www.webkit.org/blog-files/3d-transforms/morphing-cubes.html" alt="Webkit Morphing Cubes" title="Webkit Morphing Cubes">WebKit blog</a></li>
   </ul>
 </aside>
