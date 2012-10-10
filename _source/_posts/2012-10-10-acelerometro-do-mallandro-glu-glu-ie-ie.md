@@ -3,7 +3,7 @@ title: <span>Acelerômetro</span> do Mallandro, <br />Glu glu <span class="light
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-resumo: Quem nunca brincou daquele joguinho com uma bolinha num labirinto? O objetivo era basicamente desviar dos buracos e chegar até o final. Hoje vamos entender como funciona a nova <strong>API de Acelerômetro</strong> do HTML5, que usei num experimento bem legal chamado <strong>Cilada do Mallandro</strong>.
+resumo: Hoje vamos entender como funciona a nova <strong>API de Acelerômetro</strong> do HTML5, que usei num experimento bem legal chamado <strong>Cilada do Mallandro</strong>.
 image: images/posts/2012-10-10-acelerometro-do-mallandro-ie-ie.jpg
 has_inner_image: false
 tags: javascript experimento
