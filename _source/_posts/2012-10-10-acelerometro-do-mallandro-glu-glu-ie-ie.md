@@ -8,7 +8,7 @@ image: images/posts/2012-10-10-acelerometro-do-mallandro-ie-ie.jpg
 has_inner_image: false
 tags: javascript experimento
 keywords: javascript, html5, api, acelerometro, aceleracao, orientacao, jogo, chrome, firefox, orientation, acceleration, gravity, gravidade, serginho, mallandro, malandro, box2d, webaudio, rotacao
-comments: false
+comments: true
 ---
 <style>
 	iframe {
