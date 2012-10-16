@@ -3,7 +3,7 @@ title: Foco. Sucesso. Fracasso
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
-resumo: Foco nos leva ao sucesso. Sucesso nos traz mais oportunidades. E essas oportunidades podem nos tirar o foco que uma vez nos levou ao sucesso. Abraçar todas as oportunidades que o sucesso irá nos proporcionar só irá distribuir nossos esforços e, por consequência, nos levar ao fracasso. Dizer não é esencial.
+resumo: Foco nos leva ao sucesso. Sucesso nos traz mais oportunidades. E essas oportunidades podem nos tirar o foco que uma vez nos levou ao sucesso. Abraçar todas as oportunidades que o sucesso irá nos proporcionar só irá distribuir nossos esforços e, por consequência, nos levar ao fracasso. Dizer não é essencial.
 image: images/posts/2012-10-16-foco-sucesso-fracasso.jpg
 tags: lifestyle produtividade
 keywords: foco, sucesso, fracasso, minimalismo, objetivo, planejamento, carreira
@@ -17,7 +17,7 @@ Me senti na responsabilidade de repassar isto a todos que
 pudesse, e logo mandei um e-mail para o [Greg McKeow](http://gregmckeown.com/)
 pedindo permissão para traduzir o post. E com a permissão concedida eis um _tutorial_
 sobre o minimalismo aplicado em sua vida.
-Espere que gostem.
+Espero que gostem.
 
 ## ...
 
@@ -63,7 +63,7 @@ sucesso o havia distraído. Depois de alguns anos, ele novamente optou por
 trilhar um novo caminho para então ser o que sempre sonhou: um
 explorador-residente na National Geographic, gastando boa parte de seu tempo mergulhando
 nos locais mais remotos do mundo, usando seu talento em ciência e comunicação
-para influenciar a política em uma escala global. (A Enric Sala deu uma
+para influenciar a política em uma escala global. (Enric Sala deu uma
 [palestra no TED](http://www.ted.com/talks/enric_sala.html), falando sobre a
 importância de seu trabalho ). O preço de seu emprego dos sonhos foi dizer
 não a várias oportunidades boas, paralelas que lhe foram apresentadas.
