@@ -49,6 +49,10 @@ Ao todo vão rolar 7 palestras e 3 *lightning talks*, além dos
 *workshops* do Bernard e do Suissa, [veja programação completa](http://frontinmaceio.com.br).
 O evento tá muito legal, e vai ser do cacete.
 
+<div class="img">
+	<iframe width="700" height="480" src="http://www.youtube.com/embed/B9dSYgd5Elk" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
+</div>
+
 **P.S.:** <em>Ao final do evento vamos tomar <strong>aquela gelada</strong> nas lindas praias de Maceió. Nos vemos lá, hein!</em>
 
-**P.P.S.:** <em>Na verdade eu tô indo pra lá só pra curtir a cidade e as praias. A palestra é só uma desculpa esfarrapada.</em>
+**P.P.S.:** <em>Na verdade eu tô indo pra lá só pra curtir a cidade e as praias. A palestra é só uma desculpa esfarrapada. =X</em>
