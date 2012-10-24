@@ -23,7 +23,7 @@
 						</li>
 						<li class="post-autor">
 							<span class="icon-aside"></span>
-							<a href="{{ page.author_link }}" title="{{ page.author }}" alt="{{ page.author }}" rel="author" itemprop="author" onclick="_gaq.push(['_trackEvent', 'post_author', 'Post View', '{{ post.author }}'])">{{ page.author }}</a>
+							<a href="{{ page.author_profile }}" data-link="{{ page.author_link }}" title="{{ page.author }}" alt="{{ page.author }}" rel="author" itemprop="author" onclick="_gaq.push(['_trackEvent', 'post_author', 'Post View', '{{ page.author }}'])">{{ page.author }}</a>
 						</li>
 						{% if page.comments %}
 						<li class="post-comentarios">

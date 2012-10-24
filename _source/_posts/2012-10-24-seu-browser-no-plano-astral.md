@@ -3,6 +3,7 @@ title: Seu browser no <span>plano astral</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+author_profile: https://plus.google.com/111718150595519513871/
 resumo: <em>Mas que papo é esse de browser no plano astral? HTML5 Sensitivo? Como assim? Essa galera do Loop Infinito deve tá ficando maluca mesmo, só pode ser isso.</em>
 image: images/posts/2012-10-24-seu-browser-no-plano-astral.jpg
 tags: palestra

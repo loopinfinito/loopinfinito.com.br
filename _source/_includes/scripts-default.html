@@ -9,6 +9,11 @@
 			$(this).parent().siblings('span').removeClass('show')
 		})
 
+		//
+		$('.post-autor a').each( function(){
+			$(this).attr( 'href', $(this).attr('data-link') )
+		})
+
 	})
 
 </script>
