@@ -3,6 +3,7 @@ title: O disquete significa <span>salvar</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 resumo: O que acontece quando todas as coisas em que nossos ícones são baseados não existem mais? Será que eles se tornam apenas símbolos emblemáticos cujas origens estão envoltas em mistério?
 image: images/posts/2012-06-04-o-disquete-significa-salvar.jpg
 tags: user-interface
@@ -52,7 +53,7 @@ forma. E tudo era mantido junto por um espiral de metal.
 <p><img src="/images/posts/2012-06-15-voicemail.jpg" alt="" height="200" width="700" style="height: 200px !important;" /></p>
 
 Acredito que os ícones de caixa postal de voz são inspirados em fitas de
-[bobina](http://en.wikipedia.org/wiki/Reel-to-reel_audio_tape_recording). 
+[bobina](http://en.wikipedia.org/wiki/Reel-to-reel_audio_tape_recording).
 Eu sinceramente nunca vi uma, e acredito também que a minha
 caixa postal de voz não seja mais guardada nisso.
 
@@ -124,7 +125,7 @@ distanciando do seu significado original.
 Como por exemplo, a palavra **trivial**. No Latim medieval, *trivia* significava
 o conjunto das 3 artes liberais básicas (lógica, retórica e gramática), que
 serviam de base para o *quadrivium* (aritmética, geometria, música e
-astronomia), sendo assim a educação básica. 
+astronomia), sendo assim a educação básica.
 
 O adjetivo trivial então significava algo pertencente a *trivia*, ou aos ensinos
 básicos. Logo, algo óbvio, fácil, dizemos que é trivial. Sua origem, no nosso

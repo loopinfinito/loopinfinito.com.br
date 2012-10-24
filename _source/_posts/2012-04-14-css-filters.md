@@ -3,6 +3,7 @@ title: CSS Filters
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2012-04-14-css-filters.jpg
 resumo: A Adobe, Apple e Opera estão <a href="https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html">trabalhando juntas</a> para trazer alguns efeitos no estilo Photoshop para o CSS. Esses efeitos, chamados de filtros, irão nos permitir modificar a renderização de qualquer elemento DOM, de um simples <code>p</code>, até elementos mais complexos como <code>image</code> ou <code>video</code>.
 tags: CSS
@@ -67,7 +68,7 @@ img {
 
 ## Saturate
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-saturate.png" width="700" height="200" /></p>
-Com o <code>saturate</code> modificamos o canal saturação da cores do elemento. 
+Com o <code>saturate</code> modificamos o canal saturação da cores do elemento.
 Quanto maior a saturação, mais vivas as cores estarão, e quanto menor a saturação, mais próximas do cinza elas estarão.
 Com o <ceode>saturate</ceode> em 0, obtemos o mesmo resultado que o <code>grayscale</code> em 100%
 
@@ -100,7 +101,7 @@ img {
 
 ## Contrast
 <p><img src="http://loopinfinito.com.br/images/posts/jeri-contrast.png" width="700" height="200" /></p>
-Também bastante óbvio. Aqui alteramos a saturação do elemento. 
+Também bastante óbvio. Aqui alteramos a saturação do elemento.
 O valor desse filtro pode ser expresso em unidades (0, 1, 3, 4, ...) ou em percentagem (0%, 100%, 1500%).
 
 {% highlight css %}

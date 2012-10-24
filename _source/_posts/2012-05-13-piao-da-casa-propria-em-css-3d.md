@@ -3,6 +3,7 @@ title: Pião da Casa Própria em <span>CSS 3D</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 resumo: Quem não lembra do <strong>lendário</strong> programa do Silvio Santos <a href="http://www.youtube.com/watch?v=X0YAnNNK2OE">Pião da Casa Própria</a>? Neste post vamos trazer esta lenda de volta a vida, desta vez encarnado em puro código HTML5, sem imagens ou plugins.
 image: images/posts/2012-05-13-piao-da-casa-propria-em-css-3d.jpg
 has_inner_image: false

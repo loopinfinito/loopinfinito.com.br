@@ -3,6 +3,7 @@ title: Automatizando o deploy com <span>rsync</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 resumo: O rsync é uma ferramenta de sincronização de pastas/arquivos muito comum no mundo Unix para realizar backups. Neste post vamos aprender como utilizá-lo para a tarefa de deploy de forma automatizada, segura e veloz.
 image: images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg
 tags: automatizacao coffeescript
@@ -44,11 +45,11 @@ Então o comando usado foi:
 $ rsync -avz -e ssh ./site loopinfinito@bugsy.dreamhost.com:~/loopinfinito.com.br
 {% endhighlight %}
 
-**Calma**! Não se apavore (ainda). 
+**Calma**! Não se apavore (ainda).
 
-O nosso comando de deploy segue o mesmo princípio do exemplo mais básico que demos logo acima: o de deixar duas pasta sincronizadas. 
+O nosso comando de deploy segue o mesmo princípio do exemplo mais básico que demos logo acima: o de deixar duas pasta sincronizadas.
 A diferença aqui é que estamos deixando duas pastas sincronizadas em diferentes máquinas.
-Parece complicado, mas vamos quebrar o comando acima e entendê-lo por completo. 
+Parece complicado, mas vamos quebrar o comando acima e entendê-lo por completo.
 <ul>
   <li><code>-a</code> archive mode. esta flag habilita o modo recursivo e preserva links simbólicos, permissões e timestamps</li>
   <li><code>-v</code> verbose. nos dá mais feedback sobre o que está acontecendo</li>
@@ -76,7 +77,7 @@ Para quem quisermos dar acesso ao server, basta colar a chave pública no arquiv
 E para revogar o acesso também é muito fácil, é só retirar a chave pública do mesmo arquivo, sem a necessidade de mudar de senha e reenviar a senha para todas as pessoas do projeto.
 
 ## E não é só isso
-Seria um saco termos que sempre digitar esse comando gigante quando fossemos dar um deploy. 
+Seria um saco termos que sempre digitar esse comando gigante quando fossemos dar um deploy.
 Para isso nós criamos uma tarefa com o <code>cake</code>, um sistema de build do CoffeeScript (nós amamos CoffeeScript) parecido com o rake (de Ruby) e make (de C).
 
 É só criar um arquivo chamado Cakefile na raiz do projeto e por este trecho de código:
@@ -89,7 +90,7 @@ Para isso nós criamos uma tarefa com o <code>cake</code>, um sistema de build d
 task 'deploy', 'Envia o diff do blog para o server', () ->
 
   # configurações de deploy do rsync
-  # para poder dar o deploy com sucesso, é necessário que sua chave pública 
+  # para poder dar o deploy com sucesso, é necessário que sua chave pública
   # esteja no arquivo ~/.ssh/authorized_keys do servidor
   user = "caiogondim"
   remote_root = "~/tmp.caiogondim.com"
@@ -179,8 +180,8 @@ Então não há mais motivos para upar arquivos como se ainda vivéssemos na dé
 
 <aside class="fonte">
   <h3>Referência</h3>
-  <ul>    
-    <li>→<a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/" alt="How to Backup Linux? 15 rsync Command Examples" title="How to Backup Linux? 15 rsync Command Examples">Geek Stuff: How to Backup Linux? 15 rsync Command Examples</a></li>    
-    <li>→<a href="http://coffeescript.org/#cake" alt="CoffeeScript: Cake, and Cakefiles" title="CoffeeScript: Cake, and Cakefiles">CoffeeScript: Cake, and Cakefiles</a></li>    
+  <ul>
+    <li>→<a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/" alt="How to Backup Linux? 15 rsync Command Examples" title="How to Backup Linux? 15 rsync Command Examples">Geek Stuff: How to Backup Linux? 15 rsync Command Examples</a></li>
+    <li>→<a href="http://coffeescript.org/#cake" alt="CoffeeScript: Cake, and Cakefiles" title="CoffeeScript: Cake, and Cakefiles">CoffeeScript: Cake, and Cakefiles</a></li>
   </ul>
 </aside>

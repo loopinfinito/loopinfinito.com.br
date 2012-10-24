@@ -3,6 +3,7 @@ title: Foco. Sucesso. Fracasso
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 resumo: Foco nos leva ao sucesso. Sucesso nos traz mais oportunidades. E essas oportunidades podem nos tirar o foco que uma vez nos levou ao sucesso. Abraçar todas as oportunidades que o sucesso irá nos proporcionar só irá distribuir nossos esforços e, por consequência, nos levar ao fracasso. Dizer não é essencial.
 image: images/posts/2012-10-16-foco-sucesso-fracasso.jpg
 tags: lifestyle produtividade

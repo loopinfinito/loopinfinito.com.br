@@ -3,6 +3,7 @@ title: Imagens <span>responsivas</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+author_profile: https://plus.google.com/111718150595519513871/
 resumo: Hoje falaremos de um assunto bastante acalourado no momento, <strong>Imagens reponsivas</strong>. Apresentar-vos-ei várias alternativas que desenvolvedores têm encontrado para tentar resolver este problema. Falaremos também sobre os debates e propostas que já estão rolando há um certo tempo no W3C e o que vem por aí.
 image: images/posts/2012-08-13-imagens-responsivas.jpg
 tags: HTML imagem

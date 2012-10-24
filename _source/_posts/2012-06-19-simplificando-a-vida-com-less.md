@@ -3,6 +3,7 @@ title: Simplificando a vida com <span>LESS</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+author_profile: https://plus.google.com/111718150595519513871/
 resumo: Finalmente passamos a utilizar LESS aqui no blog, neste post irei falar brevemente sobre LESS, expor suas principais vantagens e mostrar como fizemos aqui no Loop Infinito.
 image: images/posts/2012-06-19-vida-boa.jpg
 tags: CSS LESS

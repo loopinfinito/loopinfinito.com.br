@@ -3,6 +3,7 @@ title: Marcação Semântica
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2012-04-26-marcacao-semantica.jpg
 resumo: Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto. Neste post, apresentamos as principais formas de marcação semântica de dados usadas na web de hoje e fazemos alguns comparativos.
 tags: web-semantica microdata schema.org SEO

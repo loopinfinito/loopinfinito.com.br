@@ -3,6 +3,7 @@ title: Simulando conexões no <span>Mac</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 resumo: O Network Link Conditioner é uma ferramenta que acompanha o Xcode 4.1 ou superior. Com ela é possível simular diferentes tipos e condições de conexão, tanto em relação a velocidade como qualidade. Uma mão na roda para testarmos sites em conexões móveis sem precisar sair do computador.
 image: images/posts/2012-07-11-simulando-conexoes-no-mac.jpg
 tags: Mac

@@ -3,6 +3,7 @@ title: Novos seletores <span>CSS4</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 resumo: Imagino que nem metade da especificação do CSS3 foi implementada e já estamos falando de CSS4, mas temos que estar cientes do que está por vir. Afinal, pior que um navegador ultrapassado é um programador desatualizado.
 image: images/posts/2012-06-24-novos-seletores-css4.jpg
 tags: CSS

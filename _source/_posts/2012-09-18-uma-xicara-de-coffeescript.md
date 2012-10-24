@@ -3,6 +3,7 @@ title: Uma xícara de <span>CoffeeScript</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+author_profile: https://plus.google.com/111718150595519513871/
 resumo: CoffeeScript é uma linda linguagem que traz o que há de melhor (sintaticamente falando) em outras linguagens como Python e Ruby, e pra completar, também é compilável para JavaScript.
 image: images/posts/2012-09-18-coffeescript.jpg
 tags: coffeescript javascript

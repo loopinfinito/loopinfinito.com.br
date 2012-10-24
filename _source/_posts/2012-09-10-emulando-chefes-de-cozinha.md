@@ -3,6 +3,7 @@ title: Emulando <span>chefes de cozinha</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+author_profile: https://plus.google.com/111718150595519513871/
 resumo: Hoje falaremos da importância do compartilhamento de conhecimento, traçando um paralelo com os chefes de cozinha famosos.
 image: images/posts/2012-09-10-emulando-chefes-de-cozinha.jpg
 tags: lifestyle

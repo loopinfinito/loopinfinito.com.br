@@ -3,6 +3,7 @@ title: Herança em JavaScript <span class="light">parte I</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2012-05-04-heranca-em-javascript.jpg
 resumo: Uma das coisas que mais assusta programadores vindos de linguagens orientadas a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos, inclusive, tentam simular este comportamento no JavaScript, mas poucos conseguem com sucesso. Neste post numa série de 2, iremos relembrar o que é herança, a cadeia de protótipos e como era feito a herança em JavaScript.
 tags: javascript
@@ -10,7 +11,7 @@ keywords: javascript, js, web development, desenvolvimento web, html5, front-end
 comments: true
 ---
 
-Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo. 
+Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo.
 Mas antes de entrarmos em detalhes, vamos primeiro relembrar o que é a herança clássica nas linguagens orientadas a objetos.
 
 ## Herança clássica
@@ -44,7 +45,7 @@ public abstract class Animal {
 Agora definimos as classes Gato e Cachorro, que irão herdar de Animal e implementar métodos que só fazem sentido em seu próprio escopo, como miar no caso de Gato e latir no caso de Cachorro.
 
 {% highlight java %}
-// além do método miar, os objetos do tipo Gato 
+// além do método miar, os objetos do tipo Gato
 // terão também, devido a herança, os métodos de Animal
 class Gato extends Animal {
   public void miar() {
@@ -121,8 +122,8 @@ Quando chamamos a propriedade de um objeto, o interpretador/VM JavaScript primei
 
 O método mais difundido e crossbrowser de criação de objetos e herança em JavaScript é através de funções que funcionam como construtores. Nesse método, definimos funções que irão se comportar como construtores em linguagens clássicas orientadas a objeto. Depois de definida a função, podemos instanciar objetos do tipo definido usando <code>new</code>.
 
-Em JavaScript, uma função também é um objeto, e ela possui a propriedade <code>prototype</code>. 
-Nesta propriedade definimos o prototipo da função, ou todas as propriedades que os objetos deste tipo irão ter se invocarmos <code>new</code>. 
+Em JavaScript, uma função também é um objeto, e ela possui a propriedade <code>prototype</code>.
+Nesta propriedade definimos o prototipo da função, ou todas as propriedades que os objetos deste tipo irão ter se invocarmos <code>new</code>.
 
 Ok, pode parecer complicado falando, mas fica bem fácil olhando o código.
 
@@ -196,13 +197,13 @@ rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos 
 
 Um dos perigos dessa abordagem é que caso se esqueça de usar <code>new</code>, o <code>this</code> dentro da <code>function</code> irá se referenciar ao objeto global, e poderá sobreescrever algumas variáveis já declaradas antes.
 
-Eu particularmente não sou a favor do uso do <code>new</code> pois ele torna ambíguo o uso de funções. 
+Eu particularmente não sou a favor do uso do <code>new</code> pois ele torna ambíguo o uso de funções.
 Pois algumas funcionam como construtores e outras como funções normais. E sintaticamente o <code>new</code> pode ser usado em qualquer tipo de função.
 
 ### Continua...
 
 Este é o método padrão de herança em JavaScript.
-Grande parte desta bagunça é devido ao JavaScript ter sido lançado __muito__ às pressas. 
+Grande parte desta bagunça é devido ao JavaScript ter sido lançado __muito__ às pressas.
 Porém o ECMAscript, o grupo que padroniza o JavaScript, vem adicionado várias funções para tornar o trabalho com herança mais simples e finalmente abraçando a orientação a protótipo.
 
 E é sobre este novo método de trabalhar com herança no ECMAscript 5 que iremos discutir na 2ª parte do post.

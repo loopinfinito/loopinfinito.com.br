@@ -3,6 +3,7 @@ title: Expressões matemáticas em CSS com <span class="light">calc()</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+author_profile: https://plus.google.com/111718150595519513871/
 resumo: Um novo recurso bastante interessante do CSS3 é a função <code>calc()</code>. Com esta função agora é possível calcularmos valores de <strong>expressões matemáticas</strong> diretamente no CSS! <em>Like a rockstar coder</em>.
 image: images/posts/2012-06-04-isaac-newton.jpg
 tags: CSS

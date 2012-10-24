@@ -3,6 +3,7 @@ title: Sou DOM, <span>Shadow DOM</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
+author_profile: https://plus.google.com/111718150595519513871/
 resumo: Shadow DOM é uma especificação (ainda em status de rascunho) que faz parte do recente trabalho <strong>Web Components</strong> da W3C. Neste post vamos entender o que é, como funciona e o que muda com esta novidade.
 image: images/posts/2012-07-17-shadow-dom.jpg
 tags: web-components HTML
