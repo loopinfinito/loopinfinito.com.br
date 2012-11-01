@@ -26,6 +26,10 @@ desculpas para um possível fracasso do evento, mas sim de fazer acontecer. **E
 fizeram**. Parabéns a todos da organização. [Davidson](http://twitter.com/davidsonfellipe) e [Juarez](http://twitter.com/juarezpaf), parabéns pela
 idéia, vontade e esforço. Foi animal!
 
+<figure>
+    <img src="/images/posts/2012-10-31-palestrantes.jpg" width="700" height="200" alt="Palestrantes" title="Palestrantes" />
+</figure>
+
 Além das palestras de altíssimo nível, ainda tivemos a oportunidade de bater um
 papo com grandes figuras. [Bernard](http://twitter.com/bernarddeluna),
 [Suissa](http://twitter.com/osuissa), [Giovanni](http://twitter.com/keppelen),
@@ -42,6 +46,10 @@ onda e muitas cervejas que rolaram. Foi foda!
 Maceió foi outro ponto alto do evento. A cidade é simplesmente fantástica. Com
 um dos litorais mais bonitos que já conheci na vida (talvez o mais bonito  que
 já conheci na vida). Povo receptivo, tranquilo e engraçado. Nos sentimos em casa.
+
+<figure>
+    <img src="/images/posts/2012-10-31-pajucara.jpg" width="700" height="200" alt="Pajuçara" title="Pajuçara" />
+</figure>
 
 Essa foi a nossa primeira palestra em um evento de front-end, e também a nossa primeira
 palestra com o título [HTML5 Sensitivo](http://loopinfinito.com.br/2012/10/24/seu-browser-no-plano-astral/).
