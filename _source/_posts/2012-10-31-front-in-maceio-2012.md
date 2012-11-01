@@ -8,7 +8,7 @@ resumo: Ter a oportunidade de participar palestrando no evento, conhecer grandes
 image: images/posts/2012-10-31-front-in-maceio-2012.jpg
 tags: evento
 keywords: evento, palestra, maceio, alagoas, frontinmaceio, front in maceio, front-end, nordeste
-comments: false
+comments: true
 ---
 
 Hoje não vamos falar de nada muito técnico, mas sim compartilhar com vocês um
@@ -32,7 +32,8 @@ papo com grandes figuras. [Bernard](http://twitter.com/bernarddeluna),
 [Zeno](http://twitter.com/zenorocha), [Davidson](http://twitter.com/davidsonfellipe),
 [Juarez](http://twitter.com/juarezpaf),
 [Ícaro](http://twitter.com/icaromedeiros), [Nicholas](http://twitter.com/nicholasfazio) (Justin),
-Cirdes, Dennis, [Chico](http://say2me.com.br), [Luiz Tiago](http://twitter.com/luiztiago),
+[Cirdes](http://twitter.com/cirdesbhf), [Dennis](http://twitter.com/dannnish),
+[Chico](http://say2me.com.br), [Luiz Tiago](http://twitter.com/luiztiago),
 [Ramon Victor](http://twitter.com/ramonvictor), ...
 Nós com certeza estamos esquecendo o nome de muita gente. Desculpa de verdade a
 aqueles que nós esquecemos de pôr o nome aqui. E obrigado pelo papo, tiração de
