@@ -6,17 +6,17 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 resumo: Ter a oportunidade de participar palestrando no evento, conhecer grandes figuras da nossa industria e, de quebra, acordar e olhar praquela maravilha que é o litoral de Alagoas, foi único para nós.
 image: images/posts/2012-10-31-front-in-maceio-2012.jpg
-tags: palestra
-keywords: lorem, ipsum
+tags: evento
+keywords: evento, palestra, maceio, alagoas, frontinmaceio, front in maceio, front-end, nordeste
 comments: false
 ---
 
 Hoje não vamos falar de nada muito técnico, mas sim compartilhar com vocês um
-pouco da nossa experiência no [Front in Maceío 2012](http://frontinmaceio.com.br/), que foi o 1º evento focado em
+pouco da nossa experiência no [Front in Maceió 2012](http://frontinmaceio.com.br/), que foi o 1º evento focado em
 desenvolvimento front-end do Nordeste.
 
 Ter a oportunidade de participar palestrando no evento, conhecer grandes figuras
-da nossa industria e, de quebra, acordar e olhar praquela maravilha que é o litoral
+da nossa industria e, de quebra, acordar e olhar para aquela maravilha que é o litoral
 de Alagoas, foi único para nós.
 
 [Davidson](http://twitter.com/davidsonfellipe) falou algo ao final do evento que me deixou pensando durante horas.
@@ -50,7 +50,7 @@ gostado e se empolgado um pouco mais sobre o assunto. Acreditem, foi
 feito com muito cuidado e carinho para esse evento. Que essa seja a
 nossa primeira de muitas palestras.
 
-Parabéns de novo a todos da organização do [Front in Maceío](http://frontinmaceio.com.br/). Parabéns a todos os
+Parabéns de novo a todos da organização do [Front in Maceió](http://frontinmaceio.com.br/). Parabéns a todos os
 palestrantes, o nível estava altíssimo. E parabéns ao [BrazilJS](http://braziljs.org) por liderar de
 forma tão bonita toda a comunidade. É um prazer fazer parte e sentir que, com
 certeza, **unidos nós crescemos**.
