@@ -656,11 +656,68 @@ header#main {
 				}
 
 				&.leia-mais {
-					display: block;
+					display: inline-block;
 					color: #333;
 					font-weight: bold;
 					margin-top: 20px;
+					&:hover {
+						color: #999;
+					}
 				}
+			}
+
+			.roll {
+				display: inline-block;
+				overflow: hidden;
+
+				vertical-align: top;
+
+				-webkit-perspective: 400px;
+				-moz-perspective: 400px;
+
+				-webkit-perspective-origin: 50% 50%;
+				-moz-perspective-origin: 50% 50%;
+			}
+
+			.roll span {
+				display: block;
+				position: relative;
+				padding: 0 2px;
+
+				-webkit-transition: all 400ms ease;
+				-moz-transition: all 400ms ease;
+
+				-webkit-transform-origin: 50% 0%;
+				-moz-transform-origin: 50% 0%;
+
+				-webkit-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+			}
+
+			.roll:hover span {
+				background: #111;
+
+				-webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+				-moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+			}
+
+			.roll span:after {
+				content: attr(data-title);
+
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				padding: 0 2px;
+
+				color: #fff;
+				background: #999;
+
+				-webkit-transform-origin: 50% 0%;
+				-moz-transform-origin: 50% 0%;
+
+				-webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+				-moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
 			}
 		} // fim de article
 
