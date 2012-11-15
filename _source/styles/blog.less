@@ -348,11 +348,11 @@ strong {
 			}
 		}
 
-		&.anteriores {
+		&.recentes {
 			left: 50px;
 		}
 
-		&.proximos {
+		&.antigos {
 			right: 50px;
 			text-align: right;
 		}
@@ -656,10 +656,14 @@ header#main {
 				}
 
 				&.leia-mais {
-					display: block;
-					color: #333;
+					display: inline-block;
+					color: #666;
 					font-weight: bold;
 					margin-top: 20px;
+
+					&:hover {
+						color: #000;
+					}
 				}
 			}
 		} // fim de article

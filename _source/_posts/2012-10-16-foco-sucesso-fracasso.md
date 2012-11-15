@@ -53,7 +53,7 @@ verdade não só para empresas, mas também para indivíduos.
 
 Este é um exemplo mais pessoal: Por anos, [Enric
 Sala](http://www.nationalgeographic.com/explorers/bios/enric-sala/) foi um
-professor na consagrada Scripps Institution of Oceanography na cidade de La
+professor na consagrada [Scripps Institution of Oceanography](http://sio.ucsd.edu/) na cidade de La
 Jolla, Califórnia. Mas não conseguia se livrar do sentimento de que sua atual
 profissão era apenas uma imitação próxima daquilo que realmente deveria ter
 sido. Então ele abandonou a academia e foi trabalhar para a National
@@ -121,8 +121,8 @@ que uma em que você já está engajado.
 
 O efeito da dotação ([endowment effect](http://en.wikipedia.org/wiki/Endowment_effect))
 se refere a nossa tendência de valorizar mais um item depois que o possuimos. Em um
-[estudo](http://www.jstor.org/discover/10.2307/2937761?uid=3737664&uid=2&uid=4&sid=21101175913691)
-bastante interessante, objetos de consumo (ex.: canecas de café) foram
+[estudo bastante interessante](http://www.jstor.org/discover/10.2307/2937761?uid=3737664&uid=2&uid=4&sid=21101175913691)
+, objetos de consumo (ex.: canecas de café) foram
 distribuídos de forma randômica para metade das pessoas do experimento,
 enquanto que para a outra metade foram dadas canetas do mesmo valor.
 De acordo com a teoria econômica tradicional (o [Teorema de Coase](http://pt.wikipedia.org/wiki/Teorema_de_Coase)),
