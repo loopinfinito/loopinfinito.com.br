@@ -11,7 +11,7 @@ sitemap_frequency: monthly
 		</header>
 		<section>
 
-			<section class="project" itemscope itemtype="http://schema.org/WebPage">
+			<section class="project" itemscope itemtype="http://schema.org/WebPage" id="lesscssBR">
 				<span class="hidden" itemprop="creator">Loop Infinito</span>
 				<a class="project-icon" href="http://lesscss.com.br" target="_blank" onclick="_gaq.push(['_trackEvent', 'project_less_br'])">
 					<img width="207" height="207" src="/images/projects/less.jpg" alt="lesscss.com.br" itemprop="thumbnailUrl" />
@@ -27,7 +27,7 @@ sitemap_frequency: monthly
 				<div class="clear"></div>
 			</section>
 
-			<section class="project" itemscope itemtype="http://schema.org/WebPage">
+			<section class="project" itemscope itemtype="http://schema.org/WebPage" id="coffeescriptBR">
 				<span class="hidden" itemprop="creator">Loop Infinito</span>
 				<a class="project-icon" href="http://coffeescript.com.br" target="_blank">
 					<img width="207" height="207" src="/images/projects/coffeescript.jpg" alt="coffeescript.com.br" itemprop="thumbnailUrl" />
@@ -42,16 +42,23 @@ sitemap_frequency: monthly
 				</div>
 				<div class="clear"></div>
 			</section>
-			{% comment %}
-			<section class="project">
-				<div id="sugestao" class="project-icon">?</div>
+
+			<section class="project" itemscope itemtype="http://schema.org/WebPage" id="wiredin">
+				<span class="hidden" itemprop="creator">Loop Infinito</span>
+				<a class="project-icon" href="http://wiredin.loopinfinito.com.br" target="_blank">
+					<img width="207" height="207" src="/images/projects/wiredin.jpg" alt=".wiredIn()" itemprop="thumbnailUrl" />
+				</a>
 				<div class="content">
-					<h2>alguma sugestão?</h2>
-					<p>Se você tem alguma idéia de algo que pode virar um projeto legal, nos mande sua sugestão e vamos trabalhar juntos nela.</p>
+					<h2 itemprop="name"><a href="http://wiredin.loopinfinito.com.br" itemprop="url" target="_blank">.wiredIn()</a></h2>
+					<p itemprop="description">
+						Somos loucos por música. Somos loucos por desenvolvimento.<br />
+						.wiredIn() é uma coletânea periódica de músicas pra te ajudar a se manter focado e mais produtivo.
+						Aperte o <em>play</em> e deixe seus <em>commits</em> fluírem.
+					</p>
 				</div>
 				<div class="clear"></div>
 			</section>
-
+			{% comment %}
 			<section class="project" itemscope itemtype="http://schema.org/WebPage">
 				<span class="hidden" itemprop="creator">Loop Infinito</span>
 				<a class="project-icon" href="http://lesscss.com.br" target="_blank">
