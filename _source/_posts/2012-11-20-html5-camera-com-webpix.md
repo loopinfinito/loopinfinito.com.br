@@ -8,7 +8,7 @@ resumo: Hoje vamos falar de coisa boa. Vamos falar de como usar sua câmera apen
 image: images/posts/2012-11-20-webpix.jpg
 tags: HTML5 javascript câmera
 keywords: camera, getusermedia, api, javascript, html5, video, canvas, browser, navegador
-comments: false
+comments: true
 has_inner_image: false
 ---
 
