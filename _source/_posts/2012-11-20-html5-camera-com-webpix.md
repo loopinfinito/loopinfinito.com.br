@@ -5,9 +5,9 @@ author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 resumo: Hoje vamos falar de coisa boa. Vamos falar de como usar sua câmera apenas com HTML5. E para mostrar isso na prática de um jeito menos chato, fizemos um pequeno experimento para ensinar melhor como funciona essa nova API de acesso à câmera do seu computador através do navegador.
-image: images/posts/2012-11-11-webpix.jpg
-tags: evento
-keywords: lorem, ipsum
+image: images/posts/2012-11-20-webpix.jpg
+tags: HTML5 javascript câmera
+keywords: camera, getusermedia, api, javascript, html5, video, canvas, browser, navegador
 comments: false
 has_inner_image: false
 ---
@@ -21,10 +21,17 @@ has_inner_image: false
 
 <iframe src="http://caiogondim.github.com/webpix" frameborder="0" class="img"> </iframe>
 
-Hoje vamos falar de coisa boa. Vamos falar de como usar sua câmera apenas com
+Hoje vamos falar de coisa boa. Vamos falar de <span style="text-decoration: line-through;">TekPix</span> como usar sua câmera apenas com
 HTML5. E para mostrar isso na prática de um jeito menos chato, fizemos um
 pequeno experimento para ensinar melhor como funciona essa nova API de
 acesso à câmera do seu computador através do navegador.
+
+<p class="obs"><strong>OBS.:</strong> O experimento deste post foi
+testado na versão <strong>25.0 dev do Chrome para Mac</strong>. No
+<strong>Firefox 17.0 para Mac</strong>, mesmo
+ele informando que suporta a API <strong>getUserMedia()</strong> com o prefixo
+ <strong>moz</strong>, não consegui fazer rodar o experimento e também
+não achei nenhum experimento na web que rodasse nele.</p>
 
 ## A câmera mais popular da web
 
@@ -32,8 +39,13 @@ Antes de começarmos a falar mais tecnicamente sobre o experimento, vamos
 primeiro brincar com ele para então entendermos como foi feito. Esta imagem que
 você vê ai em cima é na verdade o próprio experimento. Para começar a brincar
 com ele, primeiro libere o acesso à câmera do seu computador. Deve ter aparecido
-uma barra (caso você esteja no Chrome) perguntando se você permite ou não o
-acesso a câmera. Libere o acesso para começar a tirar algumas fotos de qualidade.
+uma barra embaixo da barra de endereço (caso você esteja no Chrome) perguntando
+se você permite ou não o acesso a câmera. Libere o acesso para começar a tirar
+algumas fotos de qualidade com esta fantástica câmera.
+
+<figure>
+    <img src="/images/posts/2012-11-20-permissao-camera.jpg" width="700" height="200" alt="Palestrantes" title="Palestrantes" />
+</figure>
 
 Depois de ter liberado o acesso, você provavelmente deve estar se vendo
 na tela de **altíssima** resolução da WebPix. Ótimo. Agora é só fazer um
@@ -48,13 +60,6 @@ da foto. Ou então descartá-la apertando o botão com ícone de lixeira e tenta
 
 Já sabendo como brincar com a WebPix, vamos ver como ela funciona.
 A primeira coisa que temos que fazer é pedir ao usuário permissão para usar a câmera.
-
-<p class="obs"><strong>OBS.:</strong> O experimento deste post foi
-testado na versão <strong>25.0 dev do Chrome para Mac</strong>. No
-<strong>Firefox 17.0 para Mac</strong>, mesmo
-ele informando que suporta a API <strong>getUserMedia()</strong> com o prefixo
- <strong>moz</strong>, não consegui fazer rodar o experimento e também
-não achei nenhum experimento na web que rodasse nele.</p>
 
 {% highlight javascript %}
 
@@ -75,7 +80,7 @@ Recebe um objeto do tipo `stream` com o fluxo de dados do microfone e/ou câmera
 devemos sempre testar se o navegador nos dá suporte a API que queremos usar.
 Para não tornar o exemplo mais complexo, não vamos testar o suporte.</p>
 
-Quando o usuário liberar o acesso, a função de sucesso de callback irá disparar.
+Quando o usuário liberar o acesso, a função de callback de sucesso irá disparar.
 Com acesso à câmera, agora vamos direcionar o *stream* da câmera para um elemento
 `video`.
 
@@ -89,8 +94,8 @@ function sucessoCallback( stream ) {
 
 {% endhighlight %}
 
-Imaginem que já temos uma *tag* `video` em nosso HTML. No código acima estamos
-apenas setando o `src` da *tag* `video` como sendo o *stream* da nossa câmera e
+Imaginem que já temos uma *tag*&nbsp;`video` em nosso HTML. No código acima estamos
+apenas setando o `src` da *tag*&nbsp;`video` como sendo o *stream* da nossa câmera e
 logo depois executamos o método `play` para que ele mostre o que a câmera
 está capturando. Acabamos de codificar um espelho. Simples, ok?
 
@@ -113,18 +118,17 @@ var ctx.drawImage( video, 0, 0 )
 No código acima capturamos a referência ao elemento `canvas` definido em nosso HTML,
 setamos sua altura e largura com sendo iguais ao do vídeo, setamos o contexto do
 `canvas` como 2D (o único contexto até o momento implementado) e desenhamos uma
-imagem no canvas, sendo esta imagem um *frame* da *tag* `video`.
+imagem no canvas, sendo esta imagem um *frame* da *tag*&nbsp;`video`.
 
 Não é possível modificar diretamente o *stream* da câmera, já que não temos acesso
 binário a ela.
-Mas, a partir do monento que a imagem está no `canvas`, nós temos acesso pixel a
-pixel.
+Mas, a partir do momento que a imagem está no `canvas`, nós temos acesso a nível de pixel.
 
 No momento que o botão **tirar foto** é clicado, nós capturamos um *frame* do
 vídeo, jogamos no `canvas` e, depois disso, jogamos o que está no `canvas` para
-uma *tag* `img` que estava anteriormente escondida. Então quando você acha que
+uma *tag*&nbsp;`img` que estava anteriormente escondida. Então quando você acha que
 está vendo o vídeo pausado, aquilo é na verdade uma `img` com o `src` de um
-frame da *tag* `video`.
+frame da *tag*&nbsp;`video`.
 
 {% highlight javascript %}
 
@@ -133,7 +137,7 @@ img.src = canvas.toDataURL('image/png')
 
 {% endhighlight %}
 
-Poderíamos obter o mesmo efeito apenas chamando o método `pause()` da *tag* `video`,
+Poderíamos obter o mesmo efeito apenas chamando o método `pause()` da *tag*&nbsp;`video`,
 mas já vamos explicar porque precisamos dessa imagem escondida.
 
 Como agora temos o nosso *frame* no `canvas`, podemos manipular a imagem e aplicar
@@ -148,18 +152,18 @@ se aprofundar no assunto aconselho o
 Neste experimento também é possível fazer o download da sua foto. Você deve estar
 se perguntando: *"E daí?"*. O diferencial aqui é que este download está acontecendo
 sem **nenhum back-end**. Ou seja, esta imagem que você esta fazendo download está
-sendo gerada e disponibilizada diretamente no navegador.
+sendo gerada e disponibilizada diretamente pelo navegador.
 
 Com o novo atributo `download`, nós informamos ao navegador que não queremos visitar
 aquele link, e sim fazer o *download* daquele *link*.
 
-{% highlight javascript %}
+{% highlight html %}
 
 <a download="minha-foto-na-webpix.png" href="#" class="download"> </a>
 
 {% endhighlight %}
 
-E toda vez que a foto e modificada, nós dinamicamente setamos o `href` da *tag* `a` que
+E toda vez que a foto é modificada, nós dinamicamente setamos o `href` da *tag*&nbsp;`a` que
 acabamos de ver.
 
 {% highlight javascript %}
@@ -197,7 +201,7 @@ está disponível no [GitHub](https://github.com/caiogondim/webpix).
     </thead>
     <tbody>
         <tr>
-            <td class="property"><code>window.Notification</code></td>
+            <td class="property"><code>navigator.getUserMedia</code></td>
             <td>22.0</td>
             <td>--</td>
             <td>--</td>
@@ -207,13 +211,13 @@ está disponível no [GitHub](https://github.com/caiogondim/webpix).
     </tbody>
 </table>
 
-O suporte a esta API ainda não está presente em todos os browsers e mesmo nos
-que já possuem, como no Firefox, elas simplesmente não funciona. Mas com certeza
-não vai demorar muito para que todos os navegadores a implemente de forma
-confiável.
+O suporte a esta API ainda não está presente em todos os *browsers* e mesmo nos
+que já apresentam o objeto `navigator.getUserMedia`, como no Firefox, ela
+simplesmente não funciona. Mas com certeza não vai demorar muito para que todos
+os navegadores a implemente de forma confiável.
 
 E se tiverem qualquer dúvida ou melhoria a respeito do experimento, vamos bater
-um papo aqui nos comentários =)
+um papo aqui nos comentários.
 
 <aside class="fonte">
     <h3>Referência</h3>
