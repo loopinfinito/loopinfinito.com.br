@@ -144,6 +144,18 @@ E vocês, o que acharam dos novos seletores?
 Conseguem se imaginar usando?
 Ou acham que é apenas mais uma nova tecnologia que o IE não vai nos permitir usar tão cedo?
 
+<h2 id="atualizacoes">Atualizações</h2>
+<div class="update">
+	<h3>20/11/2012</h3>
+	<p>
+		Uma correção ao post. <strong>Não existe CSS4</strong>.
+	</p>
+	<p>
+		Com o HTML5, o CSS foi dividido em módulos e este que tratamos aqui no post é
+		o <a href="http://dev.w3.org/csswg/selectors4/">módulo de seletores level 4</a>.
+	</p>
+</div>
+
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
