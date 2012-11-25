@@ -1,5 +1,5 @@
 ---
-title: Mude tudo com a <span>Fullscreen API</span>
+title: Veja mais com a <span>Fullscreen API</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
@@ -18,6 +18,7 @@ comments: false
 :-webkit-full-screen #content .post-container{margin-bottom:0 !important;}:-webkit-full-screen #content .post-container article{width:auto;background:none;border:none;padding:70px 100px 0px 100px;}:-webkit-full-screen #content .post-container article section{-webkit-column-count:2;-webkit-column-rule:1px solid #ccc;-webkit-column-gap:100px;-moz-column-count:2;-moz-column-rule:1px solid #ccc;-moz-column-gap:100px;-ms-column-count:2;-ms-column-rule:1px solid #ccc;-ms-column-gap:100px;-o-column-count:2;-o-column-rule:1px solid #ccc;-o-column-gap:100px;column-count:2;column-rule:1px solid #ccc;column-gap:100px;margin-bottom:30px;}:-webkit-full-screen #content .post-container article section img{position:static;width:100%;height:auto;left:auto;border-radius:4px;}:-webkit-full-screen #content .post-container article section img.post-image{box-shadow:1px 1px 0px white;}
 :-webkit-full-screen #content .post-container article code{background-color:white;}
 :-webkit-full-screen #content .post-container article pre{width:auto;position:static;left:auto;padding:20px;border-radius:4px;box-shadow:1px 1px 0px white;}:-webkit-full-screen #content .post-container article pre code{background-color:#333;}
+:-webkit-full-screen #content .post-container article .img.example{position:static;left:auto;width:auto;border:1px solid #DDD;border-radius:4px;box-shadow:1px 1px 0px white;}
 :-webkit-full-screen #content .post-container article table.support{width:auto;left:auto;position:static;}
 :-webkit-full-screen #content .post-container aside.fonte{width:auto;position:static;left:auto;margin-bottom:0;padding:30px 0px 0px 0px;background:none;}
 :-webkit-full-screen footer#disqus_thread{position:static;left:auto;margin:auto;background:none;padding:50px 0 0 0;width:100%;border-top:1px solid #CCC;}:-webkit-full-screen footer#disqus_thread iframe{width:700px !important;margin:auto;display:block;}
@@ -27,6 +28,7 @@ comments: false
 :-moz-full-screen #content .post-container{margin-bottom:0 !important;}:-moz-full-screen #content .post-container article{width:auto;background:none;border:none;padding:70px 100px 0px 100px;}:-moz-full-screen #content .post-container article section{-webkit-column-count:2;-webkit-column-rule:1px solid #ccc;-webkit-column-gap:100px;-moz-column-count:2;-moz-column-rule:1px solid #ccc;-moz-column-gap:100px;-ms-column-count:2;-ms-column-rule:1px solid #ccc;-ms-column-gap:100px;-o-column-count:2;-o-column-rule:1px solid #ccc;-o-column-gap:100px;column-count:2;column-rule:1px solid #ccc;column-gap:100px;margin-bottom:30px;}:-moz-full-screen #content .post-container article section img{position:static;width:100%;height:auto;left:auto;border-radius:4px;}:-moz-full-screen #content .post-container article section img.post-image{box-shadow:1px 1px 0px white;}
 :-moz-full-screen #content .post-container article code{background-color:white;}
 :-moz-full-screen #content .post-container article pre{width:auto;position:static;left:auto;padding:20px;border-radius:4px;box-shadow:1px 1px 0px white;}:-moz-full-screen #content .post-container article pre code{background-color:#333;}
+:-moz-full-screen #content .post-container article .img.example{position:static;left:auto;width:auto;border:1px solid #DDD;border-radius:4px;box-shadow:1px 1px 0px white;}
 :-moz-full-screen #content .post-container article table.support{width:auto;left:auto;position:static;}
 :-moz-full-screen #content .post-container aside.fonte{width:auto;position:static;left:auto;margin-bottom:0;padding:30px 0px 0px 0px;background:none;}
 :-moz-full-screen footer#disqus_thread{position:static;left:auto;margin:auto;background:none;padding:50px 0 0 0;width:100%;border-top:1px solid #CCC;}:-moz-full-screen footer#disqus_thread iframe{width:700px !important;margin:auto;display:block;}
@@ -36,6 +38,7 @@ comments: false
 :-ms-full-screen #content .post-container{margin-bottom:0 !important;}:-ms-full-screen #content .post-container article{width:auto;background:none;border:none;padding:70px 100px 0px 100px;}:-ms-full-screen #content .post-container article section{-webkit-column-count:2;-webkit-column-rule:1px solid #ccc;-webkit-column-gap:100px;-moz-column-count:2;-moz-column-rule:1px solid #ccc;-moz-column-gap:100px;-ms-column-count:2;-ms-column-rule:1px solid #ccc;-ms-column-gap:100px;-o-column-count:2;-o-column-rule:1px solid #ccc;-o-column-gap:100px;column-count:2;column-rule:1px solid #ccc;column-gap:100px;margin-bottom:30px;}:-ms-full-screen #content .post-container article section img{position:static;width:100%;height:auto;left:auto;border-radius:4px;}:-ms-full-screen #content .post-container article section img.post-image{box-shadow:1px 1px 0px white;}
 :-ms-full-screen #content .post-container article code{background-color:white;}
 :-ms-full-screen #content .post-container article pre{width:auto;position:static;left:auto;padding:20px;border-radius:4px;box-shadow:1px 1px 0px white;}:-ms-full-screen #content .post-container article pre code{background-color:#333;}
+:-ms-full-screen #content .post-container article .img.example{position:static;left:auto;width:auto;border:1px solid #DDD;border-radius:4px;box-shadow:1px 1px 0px white;}
 :-ms-full-screen #content .post-container article table.support{width:auto;left:auto;position:static;}
 :-ms-full-screen #content .post-container aside.fonte{width:auto;position:static;left:auto;margin-bottom:0;padding:30px 0px 0px 0px;background:none;}
 :-ms-full-screen footer#disqus_thread{position:static;left:auto;margin:auto;background:none;padding:50px 0 0 0;width:100%;border-top:1px solid #CCC;}:-ms-full-screen footer#disqus_thread iframe{width:700px !important;margin:auto;display:block;}
@@ -45,6 +48,7 @@ comments: false
 :-o-full-screen #content .post-container{margin-bottom:0 !important;}:-o-full-screen #content .post-container article{width:auto;background:none;border:none;padding:70px 100px 0px 100px;}:-o-full-screen #content .post-container article section{-webkit-column-count:2;-webkit-column-rule:1px solid #ccc;-webkit-column-gap:100px;-moz-column-count:2;-moz-column-rule:1px solid #ccc;-moz-column-gap:100px;-ms-column-count:2;-ms-column-rule:1px solid #ccc;-ms-column-gap:100px;-o-column-count:2;-o-column-rule:1px solid #ccc;-o-column-gap:100px;column-count:2;column-rule:1px solid #ccc;column-gap:100px;margin-bottom:30px;}:-o-full-screen #content .post-container article section img{position:static;width:100%;height:auto;left:auto;border-radius:4px;}:-o-full-screen #content .post-container article section img.post-image{box-shadow:1px 1px 0px white;}
 :-o-full-screen #content .post-container article code{background-color:white;}
 :-o-full-screen #content .post-container article pre{width:auto;position:static;left:auto;padding:20px;border-radius:4px;box-shadow:1px 1px 0px white;}:-o-full-screen #content .post-container article pre code{background-color:#333;}
+:-o-full-screen #content .post-container article .img.example{position:static;left:auto;width:auto;border:1px solid #DDD;border-radius:4px;box-shadow:1px 1px 0px white;}
 :-o-full-screen #content .post-container article table.support{width:auto;left:auto;position:static;}
 :-o-full-screen #content .post-container aside.fonte{width:auto;position:static;left:auto;margin-bottom:0;padding:30px 0px 0px 0px;background:none;}
 :-o-full-screen footer#disqus_thread{position:static;left:auto;margin:auto;background:none;padding:50px 0 0 0;width:100%;border-top:1px solid #CCC;}:-o-full-screen footer#disqus_thread iframe{width:700px !important;margin:auto;display:block;}
@@ -54,9 +58,16 @@ comments: false
 :fullscreen #content .post-container{margin-bottom:0 !important;}:fullscreen #content .post-container article{width:auto;background:none;border:none;padding:70px 100px 0px 100px;}:fullscreen #content .post-container article section{-webkit-column-count:2;-webkit-column-rule:1px solid #ccc;-webkit-column-gap:100px;-moz-column-count:2;-moz-column-rule:1px solid #ccc;-moz-column-gap:100px;-ms-column-count:2;-ms-column-rule:1px solid #ccc;-ms-column-gap:100px;-o-column-count:2;-o-column-rule:1px solid #ccc;-o-column-gap:100px;column-count:2;column-rule:1px solid #ccc;column-gap:100px;margin-bottom:30px;}:fullscreen #content .post-container article section img{position:static;width:100%;height:auto;left:auto;border-radius:4px;}:fullscreen #content .post-container article section img.post-image{box-shadow:1px 1px 0px white;}
 :fullscreen #content .post-container article code{background-color:white;}
 :fullscreen #content .post-container article pre{width:auto;position:static;left:auto;padding:20px;border-radius:4px;box-shadow:1px 1px 0px white;}:fullscreen #content .post-container article pre code{background-color:#333;}
+:fullscreen #content .post-container article .img.example{position:static;left:auto;width:auto;border:1px solid #DDD;border-radius:4px;box-shadow:1px 1px 0px white;}
 :fullscreen #content .post-container article table.support{width:auto;left:auto;position:static;}
 :fullscreen #content .post-container aside.fonte{width:auto;position:static;left:auto;margin-bottom:0;padding:30px 0px 0px 0px;background:none;}
 :fullscreen footer#disqus_thread{position:static;left:auto;margin:auto;background:none;padding:50px 0 0 0;width:100%;border-top:1px solid #CCC;}:fullscreen footer#disqus_thread iframe{width:700px !important;margin:auto;display:block;}
+
+div.highlight:-webkit-full-screen pre{position: static !important;left: auto !important;}
+div.highlight:-moz-full-screen pre{position: static !important;left: auto !important;}
+div.highlight:-ms-full-screen pre{position: static !important;left: auto !important;}
+div.highlight:-o-full-screen pre{position: static !important;left: auto !important;}
+div.highlight:fullscreen pre{position: static !important;left: auto !important;}
 </style>
 
 A cada dia que passa mais APIs surgem no HTML5, e estas APIs estão ficando
@@ -79,7 +90,25 @@ A API de Fullscreen nos permite mostrar uma página web (que termozinho mais 199
 em tela cheia de maneira programática simplesmente chamando o método
 `requestFullscreen()` e, analogamente, `exitFullscreen()` para sair dela (dããa).
 
-Se você estiver usando o Chrome
+Se você estiver usando o Google Chrome ou Mozilla Firefox atualizado, clique
+no botão abaixo:
+
+<div class="img example bordered">
+	<input type="button" class="center" value="Entrar em Tela cheia" id="enter-fullscreen" />
+</div>
+
+Após clicar no botão acima, será mostrada uma pequena caixa pedindo permissão
+para permanecer em tela cheia. Se você estiver no Google Chrome:
+
+<figure>
+	<img src="/images/posts/2012-11-27-chrome-fullscreen.jpg" width="700" height="200" alt="Prompt de permissão do Google Chrome" />
+</figure>
+
+Se você estiver no Firefox:
+
+<figure>
+	<img src="/images/posts/2012-11-27-firefox-fullscreen.jpg" width="700" height="200" alt="Prompt de permissão do Mozilla Firefox" />
+</figure>
 
 ## Entrando em tela cheia
 
@@ -92,8 +121,10 @@ Então, sabendo disso, se quisermos entrar em tela cheia com a página inteira:
 document.documentElement.requestFullscreen()
 {% endhighlight %}
 
+<span id="video-js"> </span>
+
 Onde `document.documentElement` é o elemento `<html>` da página.
-Agora se quisermos, por exemplo, entrar no modo tela cheia com um elemento
+Agora se quisermos, por exemplo, entrar no modo tela cheia apenas com um elemento
 `<video>`:
 
 {% highlight javascript %}
@@ -107,6 +138,15 @@ Quando entramos em tela cheia com apenas um elemento, o comportamento padrão
 do navegador (até onde testei com o Chrome e o Firefox) é isolar o elemento
 em questão, mostrando um fundo preto com elemento centralizado na página
 (e seu tamanho original mantido).
+
+Para testar, clique no botão abaixo para entrarmos em tela cheia apenas com
+o **trecho de código** acima (se você já estiver em tela cheia, clique no
+botão para primeiramente sair dela. Depois clique novamente):
+
+<div class="img example bordered">
+	<input type="button" class="center" value="Entrar em Tela cheia com um elemento" id="enter-fullscreen-code" />
+</div>
+
 Veremos mais adiante como fazer para modificar o tamanho e outras propriedades
 de elementos em tela cheia.
 
@@ -195,23 +235,89 @@ document.addEventListener( 'fullscreenerror', function( event ){
 
 ## CSS! \o/
 
-Olha só que legal, existe uma nova pseudo-classe (`:full-screen`) e um
+Olha só que legal, existe uma nova pseudo-classe (`:fullscreen`) e um
 novo pseudo-elemento (`::backdrop`) em CSS para quando estivermos em tela cheia.
 
-### Pseudo-classe :full-screen
+### Pseudo-classe :fullscreen
 
-Ao entrar em tela cheia com qualquer elemento, a pseudo-classe ':full-screen'
+Ao entrar em tela cheia com qualquer elemento, a pseudo-classe `:fullscreen`
 é aplicada ao elemento em questão, e com isso podemos definir um estilo
 diferenciado para qualquer parte da nossa página (ou até mesmo para ela
 inteira) quando estivermos visualizando-a em tela cheia.
 
+{% highlight css %}
+/* aumenta o tamanho da fonte, quando em tela cheia */
+:fullscreen {
+    font-size: 1.2em;
+}
+
+/* esconde o cabeçalho da página, quando em tela cheia */
+:fullscreen header {
+    display: none;
+}
+{% endhighlight %}
+
+No trecho de CSS acima nós apenas aumentamos o tamanho de fonte padrão e
+escondemos o elemento `<header>`.
+
+Agora, se quisermos aplicar a tela cheia em apenas um elemento `<video>` –
+como no [exemplo anterior](#video-js) –, ele irá manter suas dimensões originais,
+ou seja, o vídeo centralizado na tela. Para fazê-lo preencher toda a tela,
+precisamos definir um simples CSS:
+
+{% highlight css %}
+/* vídeo em tela cheia */
+video:fullscreen {
+    width: 100%;
+    height: 100%;
+}
+{% endhighlight %}
+
+O pequeno trecho acima fará com que o elemento `<video>` preencha toda a tela
+quando o mesmo estiver em tela cheia.
+
+Perceba que ao [entrar em tela cheia](#enter-fullscreen) nesta página,
+quase toda a aparência muda, pois escrevi um CSS para adaptar os elementos deste post
+quando estiver em tela cheia (estou pensando seriamente em adicionar um botão
+de *fullscreen* padrão pro blog inteiro).
+
 ### Pseudo-elemento ::backdrop
 
-dasdasdasda
+Segundo a [especificação W3C](http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html),
+`::backdrop` é um pseudo-elemento que é inserido **imediatamente abaixo** do elemento
+que está em tela cheia – o restante dos elementos da página ficam abaixo de
+`::backdrop`, ou seja, considere `::backdrop` como se fosse um *overlay* que
+serve para isolar visualmente o elemento principal em questão.
 
-## iframe
+Obviamente, `::backdrop` apenas se tornará visível quando estivermos aplicando
+tela cheia em apenas **um elemento** específico – e nao na página inteira.
+No nosso [exemplo do trecho de código](#enter-fullscreen-code), perceba que
+há um fundo preto abaixo do elemento que esconde todo o resto do conteúdo
+da página, este é o `::backdrop`.
 
-allowfullscreen
+Infelizmente não tenho como demonstrar um exemplo ainda porque os navegadores
+parecem não ter implementado isso até o momento atual, mas imagino que será
+possível sim, mudar a aparência desse fundo preto.
+
+## Aplicações de terceiros com &lt;iframe&gt;
+
+O elemento `<iframe>` ganhou um monte de novos atributos ultimamente, e um deles
+é justamente o `allowfullscreen`. Com este atributo, podemos dar ou não permissão
+aos *scripts* que estão dentro do `<iframe>` para que os mesmos possam ou não
+executar a função de tela cheia.
+
+{% highlight html %}
+<iframe allowfullscreen="false">
+    <script>
+        // ...
+        document.documentElement.requestFullscreen();
+        // ...
+    </script>
+</iframe>
+{% endhighlight %}
+
+O *script* acima não conseguirá entrar em modo de tela cheia (e irá disparar o
+evento [fullscreenerror](#fullscreenerror)).
 
 <table class="support">
 	<thead>
@@ -230,62 +336,100 @@ allowfullscreen
 	</thead>
 	<tbody>
 		<tr>
-			<td class="property"><code>requestFullScreen()</code>, <code>cancelFullScreen()</code></td>
-			<td>20<br /><code class="small">-webkit</code></td>
-			<td>6<br /><code class="small">-webkit</code></td>
-			<td>10<br /><code class="small">-moz</code></td>
-			<td>--</td>
-			<td>--</td>
-		</tr>
-		<!-- <tr>
-			<td class="property"><code>exitFullScreen()</code></td>
-			<td>20<br /><code class="small">-webkit</code></td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-		</tr> -->
-		<tr>
-			<td class="property"><code>fullScreenElement</code></td>
-			<td>20 **<br /><code class="small">-webkit</code></td>
-			<td>6<br /><code class="small">-webkit</code></td>
-			<td>10<br /><code class="small">-moz</code></td>
+			<td class="property">
+				<span class="small">Método</span><br />
+				<code>requestFullscreen()</code>
+			</td>
+			<td>20<br /><code class="small">webkit</code></td>
+			<td>6<br /><code class="small">webkit</code></td>
+			<td>10 <code class="obs">*1</code><br /><code class="small">moz</code></td>
 			<td>--</td>
 			<td>--</td>
 		</tr>
 		<tr>
-			<td class="property"><code>fullScreenEnabled</code></td>
-			<td>20 **<br /><code class="small">-webkit</code></td>
-			<td>6<br /><code class="small">-webkit</code></td>
-			<td>10<br /><code class="small">-moz</code></td>
+			<td class="property">
+				<span class="small">Método</span><br />
+				<code>exitFullscreen()</code>
+			</td>
+			<td>20<br /><code class="small">webkit</code></td>
+			<td>6<br /><code class="small">webkit</code></td>
+			<td>10 <code class="obs">*2</code><br /><code class="small">moz</code></td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td class="property">
+				<span class="small">Propriedade</span><br />
+				<code>fullscreenElement</code>
+			</td>
+			<td>20<br /><code class="small">webkit</code></td>
+			<td>6<br /><code class="small">webkit</code></td>
+			<td>10 <code class="obs">*3</code><br /><code class="small">moz</code></td>
 			<td>--</td>
 			<td>--</td>
 		</tr>
 		<tr>
-			<td class="property"><code>:full-screen</code></td>
-			<td>20<br /><code class="small">-webkit</code></td>
-			<td>6<br /><code class="small">-webkit</code></td>
-			<td>10<br /><code class="small">-moz</code></td>
+			<td class="property">
+				<span class="small">Propriedade</span><br />
+				<code>fullscreenEnabled</code>
+			</td>
+			<td>20<br /><code class="small">webkit</code></td>
+			<td>6<br /><code class="small">webkit</code></td>
+			<td>10 <code class="obs">*4</code><br /><code class="small">moz</code></td>
+			<td>--</td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td class="property">
+				<span class="small">Pseudo-classe</span><br />
+				<code>:fullscreen</code>
+			</td>
+			<td>20 <code class="obs">*5</code><br /><code class="small">-webkit</code></td>
+			<td>6 <code class="obs">*5</code><br /><code class="small">-webkit</code></td>
+			<td>10 <code class="obs">*5</code><br /><code class="small">-moz</code></td>
+			<td>--</td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td class="property">
+				<span class="small">Pseudo-elemento</span><br />
+				<code>::backdrop</code>
+			</td>
+			<td>--</td>
+			<td>--</td>
+			<td>--</td>
+			<td>--</td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td class="property">
+				<span class="small">Atributo</span><br />
+				<code>allowfullscreen</code>
+			</td>
+			<td>17<br /><code class="small">webkit</code></td>
+			<td>5.1<br /><code class="small">webkit</code></td>
+			<td>9<br /><code class="small">moz</code></td>
 			<td>--</td>
 			<td>--</td>
 		</tr>
 	</tbody>
-	<tfoot>
-		<tr>
-			<td colspan="6">* Suporte parcial</td>
-		</tr>
-	</tfoot>
 </table>
 
-nomes diferentes
+### Observações
+
+1. O Firefox implementa o método `mozRequestFullScreen()` (com o `S` maiúsculo);
+2. O Firefox implementa o método `mozCancelFullScreen()` (com o `S` maiúsculo);
+3. O Firefox implementa a propriedade `mozFullScreenElement()` (com o `S` maiúsculo);
+4. O Firefox implementa a propriedade `mozFullScreenEnabled()` (com o `S` maiúsculo);
+5. O Google Chrome e Safari implementam `:-webkit-full-screen` (com um `-` no meio), e
+o Firefox implementa `:-moz-full-screen` (também com um `-` no meio).
 
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
         <li>→<a href="http://davidwalsh.name/fullscreen" alt="Fullscreen API" title="Fullscreen API">Fullscreen API</a> <span class="comment">// The David Walsh Blog</span></li>
         <li>→<a href="https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode" alt="Using fullscreen mode" title="Using fullscreen mode">Using fullscreen mode</a> <span class="comment">// MDN</span></li>
-        <li>→<a href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html" alt="Fullscreen" title="Fullscreen">Fullscreen</a> <span class="comment">// W3C</span></li>
-        <li>→<a href="" alt="" title="">ad</a> <span class="comment">// </span></li>
+        <li>→<a href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html" alt="Fullscreen" title="Fullscreen">Fullscreen</a> <span class="comment">// Especificação W3C</span></li>
     </ul>
 </aside>
 
@@ -295,6 +439,9 @@ document.documentElement.requestFullscreen = (function(){
 	       document.documentElement.mozRequestFullscreen || document.documentElement.mozRequestFullScreen ||
 	       document.documentElement.msRequestFullscreen || document.documentElement.oRequestFullscreen;
 })()
+
+var codeElement = $('div.highlight').get(1)
+codeElement.requestFullscreen = document.documentElement.requestFullscreen
 
 document.exitFullscreen = (function(){
 	return document.exitFullscreen || document.webkitExitFullscreen || document.mozExitFullscreen ||
@@ -308,33 +455,66 @@ var getFullscreenElement = function(){
 	       document.mozFullScreenElement || document.msFullscreenElement || document.oFullscreenElement;
 }
 
-$('h1').click( function( event ){
-	event.preventDefault();
+$('#enter-fullscreen').click( function( event ){
+	event.preventDefault()
 
 	if( document.documentElement.requestFullscreen != null ){
 
 		if( getFullscreenElement() == null )
-			document.documentElement.requestFullscreen();
+			document.documentElement.requestFullscreen()
 		else
-			document.exitFullscreen();
+			document.exitFullscreen()
 
 	} else
 		alert( 'Seu navegador ainda não suporta Fullscreen =(' )
-});
+})
 
-if( document.documentElement.webkitRequestFullscreen != null ){
-	document.addEventListener("webkitfullscreenchange", function( event ){
-		console.log(event)
-		console.log(document.webkitFullscreenElement);
-		console.log(document.webkitFullscreenEnabled);
+$('#enter-fullscreen-code').click( function( event ){
+	event.preventDefault()
+
+	if( document.documentElement.requestFullscreen != null ){
+
+		if( getFullscreenElement() == null )
+			codeElement.requestFullscreen()
+		else
+			document.exitFullscreen()
+
+	} else
+		alert( 'Seu navegador ainda não suporta Fullscreen =(' )
+})
+
+var toggleFullscreenButton = function(){
+
+	if( getFullscreenElement() != null ){
+		$('#enter-fullscreen').val( 'Sair de Tela cheia' )
+		$('#enter-fullscreen-code').val( 'Saia de Tela cheia primeiro' )
+	} else {
+		$('#enter-fullscreen').val( 'Entrar em Tela cheia' )
+		$('#enter-fullscreen-code').val( 'Entrar em Tela cheia com um elemento' )
+	}
+}
+
+var setEventListener = function( eventName ){
+	document.addEventListener( eventName, function( event ){
+		toggleFullscreenButton()
 	})
 }
 
-if( document.documentElement.mozRequestFullScreen != null ){
-	document.addEventListener("mozfullscreenchange", function( event ){
-		console.log(event)
-		console.log(document.mozFullScreenElement);
-		console.log(document.mozFullScreenEnabled);
-	})
+if( document.documentElement.requestFullscreen != null ){
+
+	if( document.documentElement.webkitRequestFullscreen != null )
+		setEventListener( 'webkitfullscreenchange' )
+
+	else if( document.documentElement.mozRequestFullScreen != null )
+		setEventListener( 'mozfullscreenchange' )
+
+	else if( document.documentElement.msRequestFullscreen != null )
+		setEventListener( 'msfullscreenchange' )
+
+	else if( document.documentElement.oRequestFullscreen != null )
+		setEventListener( 'ofullscreenchange' )
+
+	else
+		setEventListener( 'fullscreenchange' )
 }
 </script>
