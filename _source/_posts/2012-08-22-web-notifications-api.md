@@ -10,107 +10,6 @@ tags: HTML5 javascript
 keywords: web-notification, notificações, notificações-web, safari-6, chrome, notification-center, api, html5, webkit
 comments: true
 ---
-<style>
-    input[type=button] {
-        -webkit-appearance: none;
-        -webkit-border-horizontal-spacing: 0px;
-
-        -webkit-border-image: none;
-        -moz-border-image: none;
-        border-image: none;
-        -webkit-border-vertical-spacing: 0px;
-
-        -webkit-box-align: center;
-        -moz-box-align: center;
-        -ms-box-align: center;
-        box-align: center;
-
-        -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
-        box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0470588) 0px 1px 2px 0px;
-
-        -webkit-transition-delay: 0s;
-        -moz-transition-delay: 0s;
-        -o-transition-delay: 0s;
-        -ms-transition-delay: 0s;
-        transition-delay: 0s;
-
-        -webkit-transition-duration: 0s;
-        -moz-transition-duration: 0s;
-        -o-transition-duration: 0s;
-        -ms-transition-duration: 0s;
-        transition-duration: 0s;
-
-        -webkit-transition-property: all;
-        -moz-transition-property: all;
-        -o-transition-property: all;
-        -ms-transition-property: all;
-        transition-property: all;
-
-        -webkit-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-        -moz-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-        -o-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-        -ms-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-        transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-        background-color: whiteSmoke;
-
-        background-image: -webkit-linear-gradient(top, white, #E6E6E6);
-        background-image: -moz-linear-gradient(top, white, #E6E6E6);
-        background-image: -o-linear-gradient(top, white, #E6E6E6);
-        background-image: -ms-linear-gradient(top, white, #E6E6E6);
-        background-image: linear-gradient(top, white, #E6E6E6);
-        background-position: 0% 0%;
-        background-repeat: repeat-x;
-        border-bottom-color: rgba(0, 0, 0, 0.247059);
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-collapse: separate;
-        border-left-color: rgba(0, 0, 0, 0.14902);
-        border-left-style: solid;
-        border-left-width: 1px;
-        border-right-color: rgba(0, 0, 0, 0.14902);
-        border-right-style: solid;
-        border-right-width: 1px;
-        border-top-color: rgba(0, 0, 0, 0.14902);
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        border-top-style: solid;
-        border-top-width: 1px;
-
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-        box-sizing: border-box;
-        color: #333;
-        cursor: pointer;
-        display: block;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        font-weight: normal;
-        height: 30px;
-        letter-spacing: normal;
-        line-height: 20px;
-        margin: auto;
-        max-width: none;
-        padding-bottom: 4px;
-        padding-left: 14px;
-        padding-right: 14px;
-        padding-top: 4px;
-        text-align: center;
-        text-decoration: none;
-        text-indent: 0px;
-        text-shadow: rgba(255, 255, 255, 0.74902) 0px 1px 1px;
-        text-transform: none;
-        vertical-align: middle;
-        word-spacing: 0px;
-    }
-
-    input[type=button]:active {
-        position: relative;
-        top: 1px;
-    }
-</style>
 
 A _Web Notifications_ é uma nova API para enviarmos notificações ao usuário
 fora do contexto de uma página _web_. Para quem usa Mac, imaginem que _Web
@@ -198,7 +97,7 @@ para o uso de notificações no site atual. E lembrem de conceder permissão par
 continuarmos visualizando outros exemplos mais avançados do post.
 
 <div class="img example bordered">
-    <input type="button" value="Pedir permissão" class="pedir-permissao" />
+    <input type="button" value="Pedir permissão" class="pedir-permissao center" />
     <script>
         $('.pedir-permissao').click(function(event) {
             if (!window.Notification) {
@@ -244,7 +143,7 @@ como argumento. Depois de criado, basta executar o método `show` para que a
 notificação seja enviada. O botão abaixo executa este exemplo.
 
 <div class="img bordered example">
-    <input type="button" value="Disparar notificação" class="notificacao-basica" />
+    <input type="button" value="Disparar notificação" class="notificacao-basica center" />
     <script>
         $('.notificacao-basica').click(function() {
             if (!window.Notification) {

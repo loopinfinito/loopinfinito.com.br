@@ -119,7 +119,7 @@
   font-style: normal;
 }
 
-/*
+/* Estrutura geral
 ---------------------------------------- */
 body {
 	background: url('@{images-url}/noise.png') #fbfbfb;
@@ -161,7 +161,6 @@ a:active {
 		display: block;
 		width: 30px;
 		background: url(@icons-sprite) no-repeat;
-		// .opacity(0.2);
 		.transition(opacity, 0.5s, ease);
 
 		&:hover {
@@ -338,8 +337,8 @@ strong {
 			color: #666;
 			font-size:16px;
 			opacity: 0.5;
-			text-shadow:0px 2px 0px white;
-			font-family: "Lucida Grande","Helvetica Neue",Helvetica,Arial,sans-serif;
+			font-family: @fonts;
+			.text-shadow(0px, 2px, 0px, white);
 
 			&:hover {
 				color: black;
@@ -359,7 +358,43 @@ strong {
 	}
 }
 
+/* Form elements
+---------------------------------------- */
 
+input[type=button] {
+	font-family: @fonts-article;
+	background-color: whiteSmoke;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-bottom-color: rgba(0, 0, 0, 0.25);
+	border-collapse: separate;
+	color: #555;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	height: 30px;
+	line-height: 20px;
+	padding: 4px 14px;
+	text-align: center;
+	.box-shadow(0px, 2px, 1px, rgba(0, 0, 0, 0.05));
+	.text-shadow(0px, 1px, 0px, white);
+	.border-radius(4px);
+	.linear-gradient(white, #e5e5e5);
+	.transition(all, 1s, ease);
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+
+	&:hover {
+		.box-shadow(0px, 2px, 3px, rgba(0, 0, 0, 0.15));
+		.linear-gradient(#fdfdfd, #e0e0e0);
+	}
+
+	&.center {
+		margin: auto;
+	}
+}
 
 /* Nav
 ---------------------------------------- */
@@ -413,7 +448,8 @@ header#main {
 	}
 }
 
-/* ------ Content ------------------------------------*/
+/* Content
+---------------------------------------- */
 
 #content {
 
