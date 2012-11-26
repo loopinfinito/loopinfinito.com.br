@@ -4,7 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: lorem
+resumo: A <strong>Fullscreen API</strong> é nova no HTML5 e nos permite entrar em modo de <strong>tela cheia</strong> programaticamente através de JavaScript. Vamos entender quais são suas limitações e algumas funcionalidades super legais.
 image: images/posts/2012-11-27-fullscreen-api.jpg
 tags: html5 javascript css
 keywords: full, screen, fullscreen, html5, html, javascript, api, fullscreen api, tela cheia, tela-cheia, tela, cheia, css, css3
@@ -70,16 +70,15 @@ div.highlight:-o-full-screen pre{position: static !important;left: auto !importa
 div.highlight:fullscreen pre{position: static !important;left: auto !important;}
 </style>
 
-A cada dia que passa mais APIs surgem no HTML5, e estas APIs estão ficando
+A cada dia que passa, mais APIs surgem no HTML5, e estas APIs estão ficando
 cada vez mais específicas no contexto do desenvolvimento front-end.
-É o caso desta nova API que iremos abordar hoje – a **API Fullscreen** –
+É o caso desta nova API que iremos abordar hoje – a **Fullscreen API** –
 que nos dá o poder de entrar em modo de tela cheia através de simples
 chamadas em JavaScript.
 
 Confesso que quando comecei a pesquisar sobre a Fullscreen API não achei
 lá muita graça, talvez por ser uma API que propõe algo muito simples –
-como de fato ela é muito simples –, talvez não valesse a pena fazer um
-post totalmente dedicado a ela.
+como de fato é –, talvez não valesse a pena fazer um post totalmente dedicado a ela.
 Entretanto tive uma idéia de caso de uso para aplicar neste post, o que
 tornou as coisas bem mais interessantes.
 Bem, chega de papo furado. Espero que gostem.
@@ -90,21 +89,21 @@ A API de Fullscreen nos permite mostrar uma página web (que termozinho mais 199
 em tela cheia de maneira programática simplesmente chamando o método
 `requestFullscreen()` e, analogamente, `exitFullscreen()` para sair dela (dããa).
 
-Se você estiver usando o Google Chrome ou Mozilla Firefox atualizado, clique
-no botão abaixo:
+Se você estiver usando o Google Chrome, Safari ou Mozilla Firefox (atualizados), clique
+no botão abaixo (se estiver no Firefox, [leia isso](#bug_no_firefox) antes):
 
 <div class="img example bordered">
-	<input type="button" class="center" value="Entrar em Tela cheia" id="enter-fullscreen" />
+	<input type="button" class="big center" value="Entrar em Tela cheia" id="enter-fullscreen" />
 </div>
 
 Após clicar no botão acima, será mostrada uma pequena caixa pedindo permissão
-para permanecer em tela cheia. Se você estiver no Google Chrome:
+para permanecer em tela cheia. Se você estiver no **Google Chrome**:
 
 <figure>
-	<img src="/images/posts/2012-11-27-chrome-fullscreen.jpg" width="700" height="200" alt="Prompt de permissão do Google Chrome" />
+	<img src="/images/posts/2012-11-27-chrome-fullscreen.jpg" width="700" height="100" alt="Prompt de permissão do Google Chrome" />
 </figure>
 
-Se você estiver no Firefox:
+Se você estiver no **Firefox**:
 
 <figure>
 	<img src="/images/posts/2012-11-27-firefox-fullscreen.jpg" width="700" height="200" alt="Prompt de permissão do Mozilla Firefox" />
@@ -112,8 +111,9 @@ Se você estiver no Firefox:
 
 ## Entrando em tela cheia
 
-Antes de mais nada, `requestFullscreen()` é um método do objeto DOM `element`.
-Ou seja, nós podemos sim, entrar em *fullscreen* com **qualquer elemento**.
+Antes de mais nada, `requestFullscreen()` é um método pertencente a interface
+`Element` do DOM.
+Ou seja, nós podemos sim entrar em *fullscreen* com **qualquer elemento**.
 
 Então, sabendo disso, se quisermos entrar em tela cheia com a página inteira:
 
@@ -135,7 +135,7 @@ $('video').get(0).requestFullscreen()
 {% endhighlight %}
 
 Quando entramos em tela cheia com apenas um elemento, o comportamento padrão
-do navegador (até onde testei com o Chrome e o Firefox) é isolar o elemento
+do navegador (até onde testei com o Chrome, Safari e Firefox) é isolar o elemento
 em questão, mostrando um fundo preto com elemento centralizado na página
 (e seu tamanho original mantido).
 
@@ -144,7 +144,7 @@ o **trecho de código** acima (se você já estiver em tela cheia, clique no
 botão para primeiramente sair dela. Depois clique novamente):
 
 <div class="img example bordered">
-	<input type="button" class="center" value="Entrar em Tela cheia com um elemento" id="enter-fullscreen-code" />
+	<input type="button" class="big center" value="Entrar em Tela cheia com um elemento" id="enter-fullscreen-code" />
 </div>
 
 Veremos mais adiante como fazer para modificar o tamanho e outras propriedades
@@ -152,7 +152,7 @@ de elementos em tela cheia.
 
 ## Saindo da tela cheia
 
-Como mensionado, para sair do modo de tela cheia – uma vez estando nele –, basta
+Como mencionado, para sair do modo de tela cheia – uma vez estando nele –, basta
 chamarmos o método `exitFullscreen()` – que pertence apenas a `document`.
 
 {% highlight javascript %}
@@ -162,8 +162,6 @@ document.exitFullscreen()
 Não importa se estamos em tela cheia com a página inteira ou com apenas um
 elemento específico, o navegador deve identificar o estado e o elemento
 com *fullscreen* ativado e voltar ao estado normal – saindo da tela cheia.
-
--cancelFullscreen
 
 ## Propriedades
 
@@ -209,7 +207,7 @@ document.addEventListener( 'fullscreenchange', function( event ){
     if( document.fullscreenElement != null )
         console.log( 'Entramos em tela cheia' )
     else
-        console.log( 'Saimos de tela cheia' )
+        console.log( 'Saímos de tela cheia' )
 })
 {% endhighlight %}
 
@@ -290,7 +288,7 @@ que está em tela cheia – o restante dos elementos da página ficam abaixo de
 serve para isolar visualmente o elemento principal em questão.
 
 Obviamente, `::backdrop` apenas se tornará visível quando estivermos aplicando
-tela cheia em apenas **um elemento** específico – e nao na página inteira.
+tela cheia em apenas **um elemento** específico – e não na página inteira.
 No nosso [exemplo do trecho de código](#enter-fullscreen-code), perceba que
 há um fundo preto abaixo do elemento que esconde todo o resto do conteúdo
 da página, este é o `::backdrop`.
@@ -423,6 +421,12 @@ evento [fullscreenerror](#fullscreenerror)).
 4. O Firefox implementa a propriedade `mozFullScreenEnabled()` (com o `S` maiúsculo);
 5. O Google Chrome e Safari implementam `:-webkit-full-screen` (com um `-` no meio), e
 o Firefox implementa `:-moz-full-screen` (também com um `-` no meio).
+
+### BUG no Firefox
+
+Ao testar no **Firefox v.16** (no Mac OS X 10.8.2), notei um
+*bug* nojento em que **não dá pra rolar a página** depois que entramos em tela cheia.
+Já na versão atual – **Firefox v.17** –, este *bug* já foi resolvido.
 
 <aside class="fonte">
     <h3>Referência</h3>
