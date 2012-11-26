@@ -8,7 +8,7 @@ resumo: A <strong>Fullscreen API</strong> é nova no HTML5 e nos permite entrar 
 image: images/posts/2012-11-27-fullscreen-api.jpg
 tags: html5 javascript css
 keywords: full, screen, fullscreen, html5, html, javascript, api, fullscreen api, tela cheia, tela-cheia, tela, cheia, css, css3
-comments: false
+comments: true
 ---
 <style>
 /* compilado com o less para todos os prefixos */
@@ -431,9 +431,9 @@ Já na versão atual – **Firefox v.17** –, este *bug* já foi resolvido.
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://davidwalsh.name/fullscreen" alt="Fullscreen API" title="Fullscreen API">Fullscreen API</a> <span class="comment">// The David Walsh Blog</span></li>
-        <li>→<a href="https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode" alt="Using fullscreen mode" title="Using fullscreen mode">Using fullscreen mode</a> <span class="comment">// MDN</span></li>
         <li>→<a href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html" alt="Fullscreen" title="Fullscreen">Fullscreen</a> <span class="comment">// Especificação W3C</span></li>
+        <li>→<a href="https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode" alt="Using fullscreen mode" title="Using fullscreen mode">Using fullscreen mode</a> <span class="comment">// MDN</span></li>
+        <li>→<a href="http://davidwalsh.name/fullscreen" alt="Fullscreen API" title="Fullscreen API">Fullscreen API</a> <span class="comment">// The David Walsh Blog</span></li>
     </ul>
 </aside>
 
