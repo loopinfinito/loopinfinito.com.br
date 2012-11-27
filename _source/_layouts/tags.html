@@ -59,7 +59,7 @@
 						{% if post.image %}
 						<figure>
 							<a href="{{ post.url }}">
-								<img itemprop="thumbnailUrl" src="/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" />
+								<img itemprop="thumbnailUrl" src="/{{ post.image }}" class="post-image" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" />
 							</a>
 						</figure>
 						{% endif %}

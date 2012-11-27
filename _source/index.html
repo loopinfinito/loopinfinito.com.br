@@ -44,7 +44,7 @@ sitemap_frequency: weekly
 			{% if post.image %}
 			<figure>
 				<a href="{{ post.url }}">
-					<img itemprop="thumbnailUrl" src="/{{ post.image }}" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" width="700" height="432" />
+					<img itemprop="thumbnailUrl" src="/{{ post.image }}" class="post-image" alt="{{ post.title | strip_html }}" title="{{ post.title | strip_html }}" width="700" height="432" />
 				</a>
 			</figure>
 			{% endif %}
