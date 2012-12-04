@@ -89,8 +89,8 @@ A API de Fullscreen nos permite mostrar uma página web (que termozinho mais 199
 em tela cheia de maneira programática simplesmente chamando o método
 `requestFullscreen()` e, analogamente, `exitFullscreen()` para sair dela (dããa).
 
-Se você estiver usando o Google Chrome, Safari ou Mozilla Firefox (atualizados), clique
-no botão abaixo (se estiver no Firefox, [leia isso](#bug_no_firefox) antes):
+Se você estiver usando o Google Chrome, Safari, Opera ou Mozilla Firefox (atualizados), clique
+no botão abaixo (se estiver no Firefox ou no Opera, [leia isso](#bug_no_firefox_e_opera) antes):
 
 <div class="img example bordered">
 	<input type="button" class="big center" value="Entrar em Tela cheia" id="enter-fullscreen" />
@@ -342,7 +342,7 @@ evento [fullscreenerror](#fullscreenerror)).
 			<td>6<br /><code class="small">webkit</code></td>
 			<td>10 <code class="obs">*1</code><br /><code class="small">moz</code></td>
 			<td>--</td>
-			<td>--</td>
+			<td>12.1</td>
 		</tr>
 		<tr>
 			<td class="property">
@@ -353,7 +353,7 @@ evento [fullscreenerror](#fullscreenerror)).
 			<td>6<br /><code class="small">webkit</code></td>
 			<td>10 <code class="obs">*2</code><br /><code class="small">moz</code></td>
 			<td>-</td>
-			<td>-</td>
+			<td>12.1</td>
 		</tr>
 		<tr>
 			<td class="property">
@@ -364,7 +364,7 @@ evento [fullscreenerror](#fullscreenerror)).
 			<td>6<br /><code class="small">webkit</code></td>
 			<td>10 <code class="obs">*3</code><br /><code class="small">moz</code></td>
 			<td>--</td>
-			<td>--</td>
+			<td>12.1</td>
 		</tr>
 		<tr>
 			<td class="property">
@@ -375,7 +375,7 @@ evento [fullscreenerror](#fullscreenerror)).
 			<td>6<br /><code class="small">webkit</code></td>
 			<td>10 <code class="obs">*4</code><br /><code class="small">moz</code></td>
 			<td>--</td>
-			<td>--</td>
+			<td>12.1</td>
 		</tr>
 		<tr>
 			<td class="property">
@@ -386,7 +386,7 @@ evento [fullscreenerror](#fullscreenerror)).
 			<td>6 <code class="obs">*5</code><br /><code class="small">-webkit</code></td>
 			<td>10 <code class="obs">*5</code><br /><code class="small">-moz</code></td>
 			<td>--</td>
-			<td>--</td>
+			<td>12.1</td>
 		</tr>
 		<tr>
 			<td class="property">
@@ -397,7 +397,7 @@ evento [fullscreenerror](#fullscreenerror)).
 			<td>--</td>
 			<td>--</td>
 			<td>--</td>
-			<td>--</td>
+			<td>12.1</td>
 		</tr>
 		<tr>
 			<td class="property">
@@ -408,10 +408,12 @@ evento [fullscreenerror](#fullscreenerror)).
 			<td>5.1<br /><code class="small">webkit</code></td>
 			<td>9<br /><code class="small">moz</code></td>
 			<td>--</td>
-			<td>--</td>
+			<td>11</td>
 		</tr>
 	</tbody>
 </table>
+
+Como visto, o **Opera** é o único que dá suporte completo e estável por enquanto.
 
 ### Observações
 
@@ -422,11 +424,12 @@ evento [fullscreenerror](#fullscreenerror)).
 5. O Google Chrome e Safari implementam `:-webkit-full-screen` (com um `-` no meio), e
 o Firefox implementa `:-moz-full-screen` (também com um `-` no meio).
 
-### BUG no Firefox
+### BUG no Firefox e Opera
 
-Ao testar no **Firefox v.16** (no Mac OS X 10.8.2), notei um
+Ao testar no **Firefox v.16** e no **Opera v.12.11** (no Mac OS X 10.8.2), notei um
 *bug* nojento em que **não dá pra rolar a página** depois que entramos em tela cheia.
-Já na versão atual – **Firefox v.17** –, este *bug* já foi resolvido.
+Já na versão atual – **Firefox v.17** –, este *bug* já foi resolvido, mas persiste
+no Opera.
 
 <aside class="fonte">
     <h3>Referência</h3>
