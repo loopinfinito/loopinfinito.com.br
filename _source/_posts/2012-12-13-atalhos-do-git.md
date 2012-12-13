@@ -3,14 +3,14 @@ title: Atalhos para o <span>git</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
-resumo: Usado por grandes projetos como <a href="https://github.com/jquery/jquery">jQuery</a>, <a href="https://github.com/joyent/node">Node.js</a>, <a href="https://github.com/twitter/bootstrap">Bootstrap</a> e <a href="https://github.com/loopinfinito/loopinfinito.com.br">Loop Infinito</a> (rá), o Git é hoje o padrão da indústria quando se fala de <a href="http://pt.wikipedia.org/wiki/Sistema_de_controle_de_vers%C3%A3o">sistemas de controle deversão</a>. Neste post vamos aprender como criar atalhos para o Git e aumentar nossa produtividade com a ferramenta.
+resumo: Usado por grandes projetos como <a href="https://github.com/jquery/jquery">jQuery</a>, <a href="https://github.com/joyent/node">Node.js</a>, <a href="https://github.com/twitter/bootstrap">Bootstrap</a> e <a href="https://github.com/loopinfinito/loopinfinito.com.br">Loop Infinito</a> (rá), o Git é hoje o padrão da indústria quando se fala de <a href="http://pt.wikipedia.org/wiki/Sistema_de_controle_de_vers%C3%A3o">sistemas de controle de versão</a>. Neste post vamos aprender como criar atalhos para o Git e aumentar nossa produtividade com a ferramenta.
 image: images/posts/2012-10-19-segredos-do-git.jpg
 tags: git
 keywords: git
 comments: false
 ---
 
-Com os atalhos no Git, ou _alias_, nós podemos mapear aquele enorme comando que
+Com os atalhos no Git, ou _alias_, nós podemos mapear aqueles enormes comandos que
 repetidamente usamos durante o dia para algumas poucas teclas. Ou, até mesmo,
 criar um atalho para um comando com várias _flags_ para que seja  mas fácil de
 lembrar e digitar. Eles podem ser criados de dois modos. Através do comando no
@@ -52,20 +52,6 @@ No exemplo anterior, o nosso status mais simples ficaria assim.
 <img src="/images/posts/2012-12-13-git-status-st.png"
 		alt="Git Status padrão" class="img" width="700" height="432" />
 
-## Commit, checkout, branch, diff, ...
-
-Logo depois de `status`, alguns dos comandos mais comuns no dia-a-dia são
-`commit`, `checkout`, `branch` e `diff`. Já que os digitamos várias vezes ao
-dia, por que não criar atalhos de duas letras apenas, assim como fizemos com
-`status`?
-
-{% highlight bash %}
-$ git config --global alias.ci commit
-$ git config --global alias.co checkout
-$ git config --global alias.br branch
-$ git config --global alias.df diff
-{% endhighlight %}
-
 ## Pretty Log
 
 O log do Git é bastante verboso por padrão.
@@ -105,7 +91,7 @@ Para saber de forma rápida o número de _commits_ de cada um no projeto, ordena
 de forma decrescente.
 
 {% highlight bash %}
-$ git config --global alias.who = shortlog -sn
+$ git config --global alias.who "shortlog -sn"
 {% endhighlight %}
 
 Esse é o `git who` do Loop Infinito.
@@ -119,7 +105,7 @@ Para voltarmos, de forma rápida, o repositório para o exato modo como estava n
 último _commit_.
 
 {% highlight bash %}
-$ git config --global alias.undo "reset --har HEAD"
+$ git config --global alias.undo "reset --hard HEAD"
 {% endhighlight %}
 
 ## Serve
