@@ -66,7 +66,7 @@ o nosso `git log` mais compacto, simples e bonito.
 $ git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 {% endhighlight %}
 
-O exemplo anterior com o nosso novo _alias_ `git lg` fica assim:
+O exemplo anterior com o nosso novo _alias_&nbsp;`git lg` fica assim:
 
 <img src="/images/posts/2012-12-13-git-status-lg.jpg"
 		alt="Git Status padrão" class="img" width="700" height="432" />
@@ -122,7 +122,7 @@ outra aba no terminal e agora digite `git ls-remote git://127.0.0.1/` e veja que
 o repositório do seu projeto está sendo servido. Apenas comandos de leitura são
 permitidos. Então um `git fetch` e `git clone` estão liberados.
 
-Se quiser compartihar com alguém o seu repositório basta verificar o seu
+Se quiser compartihar o seu repositório basta verificar o seu
 endereço <abbr title="Internet Protocol">IP</abbr> e passar para alguém em sua
 rede local.
 
