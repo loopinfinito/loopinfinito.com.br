@@ -7,7 +7,7 @@ resumo: Usado por grandes projetos como <a href="https://github.com/jquery/jquer
 image: images/posts/2012-10-19-segredos-do-git.jpg
 tags: git
 keywords: git
-comments: false
+comments: true
 ---
 
 Com os atalhos no Git, ou _alias_, nós podemos mapear aqueles enormes comandos que
