@@ -37,7 +37,7 @@ O comando `status` do git é, por padrão, um pouco verboso demais para quem já
 usa há algum tempo.
 Não faz sentido vermos essas intruções todas as vezes.
 
-<img src="/images/posts/2012-12-13-git-status-normal.png"
+<img src="/images/posts/2012-12-13-git-status-normal.jpg"
 		alt="Git Status padrão" class="img" width="700" height="432" />
 
 Vamos criar um atalho com uma saída mais simples
@@ -49,14 +49,14 @@ $ git config --global alias.st "status -s"
 Agora toda vez que digitarmos `git st` veremos um status mais simplificado.
 No exemplo anterior, o nosso status mais simples ficaria assim.
 
-<img src="/images/posts/2012-12-13-git-status-st.png"
+<img src="/images/posts/2012-12-13-git-status-st.jpg"
 		alt="Git Status padrão" class="img" width="700" height="432" />
 
 ## Pretty Log
 
 O log do Git é bastante verboso por padrão.
 
-<img src="/images/posts/2012-12-13-git-log-padrao.png"
+<img src="/images/posts/2012-12-13-git-log-padrao.jpg"
 		alt="Git Status padrão" class="img" width="700" height="432" />
 
 Mas é também bastante flexível. Usando uma infinidade de _flags_, podemos fazer
@@ -68,7 +68,7 @@ $ git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(
 
 O exemplo anterior com o nosso novo _alias_ `git lg` fica assim:
 
-<img src="/images/posts/2012-12-13-git-status-lg.png"
+<img src="/images/posts/2012-12-13-git-status-lg.jpg"
 		alt="Git Status padrão" class="img" width="700" height="432" />
 
 No _screenshot_ acima, cada asterisco é um _commit_. As linhas de diferentes
@@ -96,7 +96,7 @@ $ git config --global alias.who "shortlog -sn"
 
 Esse é o `git who` do Loop Infinito.
 
-<img src="/images/posts/2012-12-13-git-who.png"
+<img src="/images/posts/2012-12-13-git-who.jpg"
 		alt="Git Status padrão" class="img" width="700" height="200" />
 
 ## Undo
