@@ -3,6 +3,7 @@ title: Atalhos para o <span>git</span>
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 resumo: Usado por grandes projetos como <a href="https://github.com/jquery/jquery">jQuery</a>, <a href="https://github.com/joyent/node">Node.js</a>, <a href="https://github.com/twitter/bootstrap">Bootstrap</a> e <a href="https://github.com/loopinfinito/loopinfinito.com.br">Loop Infinito</a> (rá), o Git é hoje o padrão da indústria quando se fala de <a href="http://pt.wikipedia.org/wiki/Sistema_de_controle_de_vers%C3%A3o">sistemas de controle de versão</a>. Neste post vamos aprender como criar atalhos para o Git e aumentar nossa produtividade com a ferramenta.
 image: images/posts/2012-10-19-segredos-do-git.jpg
 tags: git
