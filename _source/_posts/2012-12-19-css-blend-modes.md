@@ -365,8 +365,8 @@ Para mais detalhes, [leia isso](http://www.w3.org/TR/compositing/#isolationblend
 
 ## Blend-modes no background!
 
-No próximo *post* falarei sobre como é possível aplicar tudo o que vimos aqui hoje
-apenas aos *backgrounds* dos elementos (o post já está grande demais).
+No **próximo post** falarei sobre como é possível aplicar tudo o que vimos aqui hoje
+apenas aos *backgrounds* dos elementos (este *post* já está grande demais).
 Então podem aguardar mais coisa boa vindo por ai.
 
 ## Suporte
@@ -391,25 +391,25 @@ Eu fiz o teste e é show de bola.
 
 É isso ai pessoal, só me resta desejar um feliz natal pra todos os *frond-enders* –
 e claro, pra todos os *back-enders* também! E aproveitando a deixa, segue o vídeo
-publicado ontem pela [BrazilJS Foundation](http://braziljs.org) como uma galera
+publicado ontem pela [BrazilJS Foundation](http://braziljs.org) com uma galera
 cantando (muito toscamente) a música "*Então é Natal*" – não é a toa que não estamos
-no ramo artístico, né.
+no ramo fonográfico, né.
 
 Tosqueiras à parte, esta **ótima iniciativa** foi do [Bernard de Luna](http://twitter.com/bernarddeluna),
-e uma galerona aparece no vídeo: O
-[Felipe Nascimento](),
-[Giovanni Keppelen](),
-[Bernard de Luna](),
-[Caio Gondim](),
-[Almir Filho]() (até eu, cara ;D),
-[Jaydson Gomes](),
-[Juarez Filho](),
-[Leonardo Alberto](),
-[Leonardo Balter](),
-[Maujor](),
-[Reinaldo Ferraz](),
-[Renato Mangini]() e
-[Zeno Rocha]().
+e uma galerona participou: O
+[Felipe Nascimento](http://twitter.com/felipenmoura) (que tinha acabado de acordar, ou não),
+[Giovanni Keppelen](http://twitter.com/keppelen) (animadíssimo como sempre),
+[Bernard de Luna](http://twitter.com/bernarddeluna) (com os óculos da irmã),
+[Caio Gondim](http://twitter.com/caio_gondim) (com sua vibe reggaera),
+[Almir Filho](http://twitter.com/almirfilho) (até eu, cara ;D),
+[Jaydson Gomes](http://twitter.com/jaydson) (com seu solo de guitarra destruidor),
+[Juarez Filho](http://twitter.com/juarezpaf) (pregando a palavra aos fiéis da Igreja do Front-End),
+[Leonardo Alberto](http://twitter.com/leobetosouza) (Ed Motta Jr.),
+[Leonardo Balter](http://twitter.com/leobalter) (o único que sabe cantar),
+[Maujor](http://twitter.com/maujor) (falando sua mensagem linda de final de ano),
+[Reinaldo Ferraz](http://twitter.com/reinaldoferraz) (do W3C),
+[Renato Mangini](http://twitter.com/renatomangini) (do Google) e claro,
+[Zeno Rocha](http://twitter.com/zenorocha) (que estava fora do país e mesmo assim não ficou de fora).
 
 <aside class="fonte">
     <h3>Referência</h3>
