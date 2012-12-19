@@ -383,6 +383,34 @@ Se você estiver afim de testar, faça o download do Chromium deles
 [essa página de testes](http://adobe.github.com/web-platform/demos/compositing/blend-photogallery/index.html).
 Eu fiz o teste e é show de bola.
 
+## E um feliz natal! Hohoho!
+
+<div class="img">
+	<iframe width="700" height="480" src="http://www.youtube.com/embed/AENBG8HUsvs" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
+</div>
+
+É isso ai pessoal, só me resta desejar um feliz natal pra todos os *frond-enders* –
+e claro, pra todos os *back-enders* também! E aproveitando a deixa, segue o vídeo
+publicado ontem pela [BrazilJS Foundation](http://braziljs.org) como uma galera
+cantando (muito toscamente) a música "*Então é Natal*" – não é a toa que não estamos
+no ramo artístico, né.
+
+Tosqueiras à parte, esta **ótima iniciativa** foi do [Bernard de Luna](http://twitter.com/bernarddeluna),
+e uma galerona aparece no vídeo: O
+[Felipe Nascimento](),
+[Giovanni Keppelen](),
+[Bernard de Luna](),
+[Caio Gondim](),
+[Almir Filho]() (até eu, cara ;D),
+[Jaydson Gomes](),
+[Juarez Filho](),
+[Leonardo Alberto](),
+[Leonardo Balter](),
+[Maujor](),
+[Reinaldo Ferraz](),
+[Renato Mangini]() e
+[Zeno Rocha]().
+
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
