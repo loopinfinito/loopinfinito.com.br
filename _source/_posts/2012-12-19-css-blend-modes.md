@@ -383,50 +383,6 @@ Se você estiver afim de testar, faça o download do Chromium deles
 [essa página de testes](http://adobe.github.com/web-platform/demos/compositing/blend-photogallery/index.html).
 Eu fiz o teste e é show de bola.
 
-## Blend modes no *background*?
-
-<figure>
-	<img src="/images/bottini.jpg" title="Não tem problema!" alt="Não tem problema!" height="200" />
-</figure>
-
-Também é possível aplicar um *blend mode* apenas no **background** de um elemento.
-Por exemplo, se tivermos uma `<div>` com uma imagem de fundo e que contenha outros
-elementos:
-
-{% highlight html %}
-<div>
-    <h1>Título</h1>
-    <p>Lorem Ipsum</p>
-</div>
-{% endhighlight %}
-
-E com o CSS:
-
-{% highlight css %}
-div {
-    background-image: url(imagem.jpg);
-    background-blend-mode: hard-light;
-}
-{% endhighlight %}
-
-O *blend mode*&nbsp;`hard-light` será aplicado apenas à imagem de fundo da `<div>`,
-e não ao seu conteúdo (`<h1>` e `<p>`).
-
-### Mas Bottini, e multiplos backgrounds?
-
-**Também não tem problema!**
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## E um feliz natal! Hohoho!
-
-É isso ai pessoal, este foi o meu último post ano. Espero ter fechado com chave de ouro =D
-Boas festas a todos, e nos encontramos por aqui em 2013! o/
-
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
