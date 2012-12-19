@@ -4,11 +4,11 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: --
+resumo: Essa é quente. Os <strong>blend modes</strong> estão vindo para o CSS através de uma nova especificação! No post de hoje conheceremos suas novas propriedades e saberemos como vamos utilizar estas novas funcionalidades.
 image: images/posts/2012-12-19-css-blend-modes.jpg
-tags: css
-keywords: css, css3, blend mode, blend, blend-mode, w3c, grafico, filter, filtros, mistura, backdrop, overlay, elemento, imagem
-comments: false
+tags: CSS
+keywords: css, css3, blend mode, blend, blend-mode, w3c, grafico, filter, filtros, mistura, backdrop, overlay, elemento, imagem, backdrop, composicao, calculo, alpha-compositing, knock-out, isolation
+comments: true
 ---
 <style>
 	div.image-code pre { margin-top: -9px !important; }
@@ -20,12 +20,12 @@ provavelmente já sabe do que se trata.
 E como acontece no Photoshop ou no Fireworks, muitas dessas composições já
 estão pré-definidas e prontas para uso, essas composições são os **blend modes**, que agora
 estão vindo a fazer parte do CSS – graças ao trabalho da **Adobe** –, assim como
-já acontenceu com os [filtros CSS](http://loopinfinito.com.br/2012/04/14/css-filters/).
+já aconteceu com os [filtros CSS](http://loopinfinito.com.br/2012/04/14/css-filters/).
 
 ## Novas propriedades
 
 Uma série de novas propriedades foram definidas: `alpha-compositing`, `blend-mode`, `isolation`,
-e `knock-out`. Falarei sobre cada uma delas posteriormente, primeiro vamos começar pelo
+e `knock-out`. Falarei sobre cada uma delas posteriormente. Primeiro vamos começar pelo
 óbvio: a propriedade `blend-mode`.
 
 Vamos começar a brincadeira aplicando um *blend mode* a um determinado elemento:
@@ -40,7 +40,7 @@ img.blend {
 
 Agora toda `img` com a classe `.blend` será renderizada como *overlay* (o veremos a seguir).
 
-Com o intúito de melhorar a didática (vocês sabem como é aqui no Loop), iremos utilizar
+Com o intuito de melhorar a didática (vocês sabem como é aqui no Loop), iremos utilizar
 a imagem abaixo como exemplo no decorrer deste post.
 
 <figure>
@@ -400,7 +400,7 @@ e uma galerona participou: O
 [Felipe Nascimento](http://twitter.com/felipenmoura) (que tinha acabado de acordar, ou não),
 [Giovanni Keppelen](http://twitter.com/keppelen) (animadíssimo como sempre),
 [Bernard de Luna](http://twitter.com/bernarddeluna) (com os óculos da irmã),
-[Caio Gondim](http://twitter.com/caio_gondim) (com sua vibe reggaera),
+[Caio Gondim](http://twitter.com/caio_gondim) (com sua vibe regueira),
 [Almir Filho](http://twitter.com/almirfilho) (até eu, cara ;D),
 [Jaydson Gomes](http://twitter.com/jaydson) (com seu solo de guitarra destruidor),
 [Juarez Filho](http://twitter.com/juarezpaf) (pregando a palavra aos fiéis da Igreja do Front-End),
