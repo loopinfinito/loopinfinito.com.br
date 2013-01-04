@@ -36,6 +36,7 @@ task 'deploy', 'Envia o diff do blog para o server', () ->
   # evento disparado quando a tarefa é terminada
   rsync.on 'exit', (code) ->
     console.log "loopinfinito.com.br atualizado".green
+    exec 'open http://loopinfinito.com.br'
 
 # task 'deploy:staging'
 task 'deploy:staging', 'Envia o diff do blog para o server de teste', () ->
@@ -71,6 +72,7 @@ task 'deploy:staging', 'Envia o diff do blog para o server de teste', () ->
   # evento disparado quando a tarefa é terminada
   rsync.on 'exit', (code) ->
     console.log "staging.loopinfinito.com.br atualizado".green
+    exec 'open http://staging.loopinfinito.com.br'
 
 # task de minify
 task 'minify', 'Minify nos arquivos HTML, CSS e JS', () ->
