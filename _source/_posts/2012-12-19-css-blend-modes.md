@@ -10,9 +10,6 @@ tags: CSS
 keywords: css, css3, blend mode, blend, blend-mode, w3c, grafico, filter, filtros, mistura, backdrop, overlay, elemento, imagem, backdrop, composicao, calculo, alpha-compositing, knock-out, isolation
 comments: true
 ---
-<style>
-	div.image-code pre { margin-top: -9px !important; }
-</style>
 
 Quem trabalha com imagens em aplicativos gráficos como Photoshop, Fireworks, etc.,
 provavelmente já sabe do que se trata.
