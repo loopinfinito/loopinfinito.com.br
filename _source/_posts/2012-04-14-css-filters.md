@@ -32,10 +32,10 @@ Mas de qualquer forma, vamos explorar cada filtro, um a um.
 Em todos os exemplos, iremos usar a imagem abaixo como base.
 Para verificar se o seu navegador suporta o CSS Filter, apenas passe o mouse por cima da imagem. Se ela modificar (saturar), quer dizer que o seu navegador suporta e já está aplicando um filtro no evento hover desta imagem.
 
-<p><img src="http://loopinfinito.com.br/images/posts/jeri.jpg" id="cssfilter-img-base" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri.jpg" id="cssfilter-img-base" width="700" height="200" /></p>
 
 ## Grayscale
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-grayscale.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-grayscale.png" width="700" height="200" /></p>
 Com o filtro <code>grayscale</code> nós indicamos o quão preto-e-branco queremos que o elemento fique, numa escala de 0 a 1 ou 0% 100%.
 
 {% highlight css %}
@@ -45,7 +45,7 @@ img {
 {% endhighlight %}
 
 ## Blur
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-blur.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-blur.png" width="700" height="200" /></p>
 Com o filtro <code>blur</code> podemos embaçar um elemento. Algo parecido como ver uma foto sem óculos (eu imagino que seja assim).
 Os valores são definidos em pixels. Quanto maior o valor, mais embaçado o elemento.
 
@@ -56,7 +56,7 @@ img {
 {% endhighlight %}
 
 ## Sepia
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-sepia.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-sepia.png" width="700" height="200" /></p>
 Este efeito é normamelmente usado em fotos, dando a elas um efeito de fotos antigas.
 Os valores do efeito vão de 0 a 1.
 
@@ -67,7 +67,7 @@ img {
 {% endhighlight %}
 
 ## Saturate
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-saturate.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-saturate.png" width="700" height="200" /></p>
 Com o <code>saturate</code> modificamos o canal saturação da cores do elemento.
 Quanto maior a saturação, mais vivas as cores estarão, e quanto menor a saturação, mais próximas do cinza elas estarão.
 Com o <ceode>saturate</ceode> em 0, obtemos o mesmo resultado que o <code>grayscale</code> em 100%
@@ -79,7 +79,7 @@ img {
 {% endhighlight %}
 
 ## Opacity
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-opacity.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-opacity.png" width="700" height="200" /></p>
 Ok, esse é bastante fácil. Simplesmente mude a opacidade do elemento.
 Os valores vão de 0 a 1. 0 deixa o elemento invisível.
 
@@ -90,7 +90,7 @@ img {
 {% endhighlight %}
 
 ## Brightness
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-brightness.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-brightness.png" width="700" height="200" /></p>
 O <code>brightness</code> altera o brilho do elemento. Os valores vão de 100% a 0%. Em 100%, com o brilho no máximo, o elemento fica totalmente branco.
 
 {% highlight css %}
@@ -100,7 +100,7 @@ img {
 {% endhighlight %}
 
 ## Contrast
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-contrast.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-contrast.png" width="700" height="200" /></p>
 Também bastante óbvio. Aqui alteramos a saturação do elemento.
 O valor desse filtro pode ser expresso em unidades (0, 1, 3, 4, ...) ou em percentagem (0%, 100%, 1500%).
 
@@ -111,7 +111,7 @@ img {
 {% endhighlight %}
 
 ## Hue Rotate
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-hue-rotate.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-hue-rotate.png" width="700" height="200" /></p>
 Neste filtro podemos mover todas as cores do elemento em graus dentro da roda de cores.
 Com 0deg não iremos realizar nenhuma alteração, enquanto com 180deg iremos inverter todas as cores.
 
@@ -122,7 +122,7 @@ img {
 {% endhighlight %}
 
 ## Invert
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-invert.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-invert.png" width="700" height="200" /></p>
 Com o <code>invert</code> invertemos todas as cores.
 Na verdade a inversão completa acontece apenas se usarmos o valor 100%.
 Com 50% as cores estarão no meio caminho entre suas cores invertidas, o que significa que estarão com um tom de cinza.
@@ -135,7 +135,7 @@ img {
 {% endhighlight %}
 
 ## Vários filtros
-<p><img src="http://loopinfinito.com.br/images/posts/jeri-various.png" width="700" height="200" /></p>
+<p><img src="/images/posts/2012-04-14-jeri-various.png" width="700" height="200" /></p>
 Também é possível o uso de vários filtros em conjunto, para obtermos um efeito mais único.
 Na imagem acima usamos <code>hue-rotate</code> e <code>sepia</code>.
 
