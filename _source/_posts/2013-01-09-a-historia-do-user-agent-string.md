@@ -38,7 +38,8 @@ baile de máscaras.
 ## Mosaic
 
 <figure>
-	<img src="/images/posts/2013-01-09-mosaic.jpg" width="700" height="200" alt="Mosaic 1.0 para Windows" title="Mosaic 1.0 para Windows" />
+	<img src="/images/posts/2013-01-09-mosaic.jpg" width="700" height="200"
+			alt="Mosaic 1.0 para Windows" title="Mosaic 1.0 para Windows" />
 </figure>
 
 O primeiro browser, o
@@ -58,20 +59,21 @@ Até então não existia a mentira.
 ## Netscape
 
 <figure>
-	<img src="/images/posts/2013-01-09-netscape.jpg" width="700" height="200" alt="Netscape" title="Netscape" />
+	<img src="/images/posts/2013-01-09-netscape.jpg" width="700" height="200"
+			alt="Netscape" title="Netscape" />
 </figure>
 
-Logo depois a Netscape Communications iniciou o desenvolvimento de seu _browser_,
-o Mozilla. Seu nome é uma abreviação de **Mosaic Killer**. Houveram alguns
-problemas com o Mosaic devido ao nome, então o projeto Mozilla foi renomeado
-para Netscape e se identificava como `Mozilla/1.0 (Win3.1)`.
+Logo depois a Netscape Communications iniciou o desenvolvimento de seu
+_browser_, o Mozilla. Seu nome é uma abreviação de **Mosaic Killer**. Houveram
+alguns problemas com o Mosaic devido ao nome, então o projeto Mozilla foi
+renomeado para Netscape e se identificava como `Mozilla/1.0 (Win3.1)`.
 
 <quote>
 	O nome Mozilla é uma abreviação de <strong>Mosaic Killer</strong>
 </quote>
 
-A Netscape usou um _user-agent string_ similar ao do Mosaic, mas adicionou algumas
-informações como língua, plataforma e encriptação.
+A Netscape usou um _user-agent string_ similar ao do Mosaic, mas adicionou
+algumas informações como língua, plataforma e encriptação.
 
 <div class="highlight">
 	<pre><code class="javascript"><span class="c1">// Netscape 3.0 user-agent string</span>
@@ -81,7 +83,7 @@ informações como língua, plataforma e encriptação.
 O exemplo acima é de um navegador Netscape rodando em sua versão 3.0 rodando no
 Windows 95 com uma encriptação de 128-bits (o último "U" na _string_).
 
-O Netscape foi o primeiro a suportar frames, e esta tecnologia se
+O Netscape foi o primeiro a suportar _frames_, e esta tecnologia se
 tornou bastante popular. O Mosaic não suportava _frames_ e, então, deu-se
 início ao "user agent sniffing", a detecção do navegador do usuário
 no back-end. Para o Netscape eram enviados _frames_, e para o Mosaic não.
@@ -89,7 +91,8 @@ no back-end. Para o Netscape eram enviados _frames_, e para o Mosaic não.
 ## Internet Explorer
 
 <figure>
-	<img src="/images/posts/2013-01-09-ie2.jpg" width="700" height="200" alt="Internet Explorer 2.0" title="Internet Explorer 2.0" />
+	<img src="/images/posts/2013-01-09-ie2.jpg" width="700" height="200"
+			alt="Internet Explorer 2.0" title="Internet Explorer 2.0" />
 </figure>
 
 Logo depois surgiu o Internet Explorer. Ele suportava _frames_, mas não era o
@@ -107,24 +110,26 @@ recebendo assim _frames_.
 ## Gecko
 
 <figure>
-	<img src="/images/posts/2013-01-09-firefox2.jpg" width="700" height="200" alt="Firefox 2.0" title="Firefox 2.0" />
+	<img src="/images/posts/2013-01-09-firefox2.jpg" width="700" height="200"
+			alt="Firefox 2.0" title="Firefox 2.0" />
 </figure>
 
-A Microsoft então começou a incluir o IE junto com o Windows, matando eventualmente o
-Netscape. O Netscape renasceu como Mozilla (o navegador). O Mozilla
-construiu o Gecko, seu motor de renderização _open source_.
-E para ele foi feito uma especificação de como o _user-agent string_ deveria ser
-escrito a partir de agora, a tornando ainda mais complexa.
+A Microsoft então começou a incluir o IE junto com o Windows, matando
+eventualmente o Netscape. O Netscape renasceu como Mozilla (o navegador). O
+Mozilla construiu o Gecko, seu motor de renderização _open source_. E para ele
+foi feito uma especificação de como o _user-agent string_ deveria ser escrito a
+partir de agora, a tornando ainda mais complexa.
 
 <div class="highlight">
 	<pre><code class="javascript"><span class="c1">// Padrão de user-agent string do Gecko</span>
 <span class="nx">Mozilla/MozillaVersion (Platform; Encryption; OS-or-CPU; Language; PrereleaseVersion)Gecko/GeckoVersion ApplicationProduct/ApplicationProductVersion</span></code></pre>
 </div>
 
-O Mozilla então se tornou o Firefox, e vários outros navegadores começaram a usar
-o Gecko como _render engine_. Abaixo temos exemplos de _user-agent strings_ de
-navegadores baseados no Gecko. A versão do Mozilla nunca foi alterada da versão
-5.0 desde o primeiro _browser_ baseado no Gecko. E provavelmente nunca irá.
+O Mozilla então se tornou o Firefox, e vários outros navegadores começaram a
+usar o Gecko como _render engine_. Abaixo temos exemplos de _user-agent strings_
+de navegadores baseados no Gecko. A versão do Mozilla nunca foi alterada da
+versão 5.0 desde o primeiro _browser_ baseado no Gecko. E provavelmente nunca
+irá.
 
 <div class="highlight">
 	<pre><code class="javascript"><span class="c1">// SeaMonkey 1.1a no Linux</span>
@@ -140,11 +145,12 @@ navegadores baseados no Gecko. A versão do Mozilla nunca foi alterada da versã
 ## Konqueror
 
 <figure>
-	<img src="/images/posts/2013-01-09-konqueror35.jpg" width="700" height="200" alt="Konqueror 3.5" title="Konqueror 3.5" />
+	<img src="/images/posts/2013-01-09-konqueror35.jpg" width="700"
+			height="200" alt="Konqueror 3.5" title="Konqueror 3.5" />
 </figure>
 
-No mundo Linux a equipe do KDE estava trabalhando no Konqueror. Seu nome
-é uma referência ao Netscape e IE, os dois grandes browsers da história até o momento.
+No mundo Linux a equipe do KDE estava trabalhando no Konqueror. Seu nome é uma
+referência ao Netscape e IE, os dois grandes browsers da história até o momento.
 "First comes the Navigator, then Explorer, and then the Konqueror".
 
 <quote>
@@ -163,7 +169,8 @@ apresentar como "Gecko like".
 ## Opera
 
 <figure>
-	<img src="/images/posts/2013-01-09-opera.jpg" width="700" height="200" alt="Opera" title="Opera" />
+	<img src="/images/posts/2013-01-09-opera.jpg" width="700" height="200"
+			alt="Opera" title="Opera" />
 </figure>
 
 O Opera, um pouco de saco cheio do **user-agent sniffing**, achou justo dar
@@ -185,13 +192,14 @@ Por que não bagunçar mais ainda?
 ## Safari
 
 <figure>
-	<img src="/images/posts/2013-01-09-safari.jpg" width="700" height="200" alt="Safari" title="Safari" />
+	<img src="/images/posts/2013-01-09-safari.jpg" width="700" height="200"
+			alt="Safari" title="Safari" />
 </figure>
 
 A Apple começou o desenvolvimento do Safari e utilizou o KHTML como base,
-criando um _fork_ do projeto conhecido como WebKit. Mas como era compatível
-com o KHTML, também se passava por tal. O KHTML por sua vez se passava por Gecko,
-e todos se passavam por Mozilla. Efeito cascata.
+criando um _fork_ do projeto conhecido como WebKit. Mas como era compatível com
+o KHTML, também se passava por tal. O KHTML por sua vez se passava por Gecko, e
+todos se passavam por Mozilla. Efeito cascata.
 
 <div class="highlight">
 	<pre><code class="javascript"><span class="c1">// Safari no OS X</span>
@@ -201,18 +209,19 @@ e todos se passavam por Mozilla. Efeito cascata.
 ## Chrome
 
 <figure>
-	<img src="/images/posts/2013-01-09-chrome.jpg" width="700" height="200" alt="Chrome" title="Chrome" />
+	<img src="/images/posts/2013-01-09-chrome.jpg" width="700" height="200"
+			alt="Chrome" title="Chrome" />
 </figure>
 
-Depois o Google decidiu fazer seu próprio navegador, e utilizou o WebKit como base.
-Mas como era um navegador novo e muito compatível com o Safari, se passava por tal.
-O WebKit por sua vez se passava por KHTML, o KHTML se passava por Gecko e, todos
-os outros se passavam por Mozilla. Então o Chrome foi batizado com esta enorme
-e complexa _user-agent string_.
+Depois o Google decidiu fazer seu próprio navegador, e utilizou o WebKit como
+base. Mas como era um navegador novo e muito compatível com o Safari, se passava
+por tal. O WebKit por sua vez se passava por KHTML, o KHTML se passava por Gecko
+e, todos os outros se passavam por Mozilla. Então o Chrome foi batizado com esta
+enorme e complexa _user-agent string_.
 
 <div class="highlight">
 	<pre><code class="javascript"><span class="c1">// Chrome no OS X</span>
-<span class="nx">Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13</span></code></pre>
+<span class="nx">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.26 Safari/537.22</span></code></pre>
 </div>
 
 E é por isso que hoje temos essa _string_ gigantesca e aparentemente
