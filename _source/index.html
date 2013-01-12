@@ -48,7 +48,7 @@ sitemap_frequency: weekly
 				</a>
 			</figure>
 			{% endif %}
-			<p itemprop="description">{{ post.resumo }}</p>
+			<p itemprop="description">{{ post.resumo | markdownify }}</p>
 			<a href="{{ post.url }}" class="leia-mais" itemprop="url">Continue lendo →</a>
 		</section>
 	</article>
