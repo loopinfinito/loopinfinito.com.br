@@ -4,11 +4,17 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: Essa é quente. Os <strong>blend modes</strong> estão vindo para o CSS através de uma nova especificação! No post de hoje conheceremos suas novas propriedades e saberemos como vamos utilizar estas novas funcionalidades.
 image: images/posts/2012-12-19-css-blend-modes.jpg
 tags: CSS
-keywords: css, css3, blend mode, blend, blend-mode, w3c, grafico, filter, filtros, mistura, backdrop, overlay, elemento, imagem, backdrop, composicao, calculo, alpha-compositing, knock-out, isolation
 comments: true
+keywords: >
+  css, css3, blend mode, blend, blend-mode, w3c, grafico, filter, filtros,
+  mistura, backdrop, overlay, elemento, imagem, backdrop, composicao, calculo,
+  alpha-compositing, knock-out, isolation
+resumo: >
+  Essa é quente. Os **blend modes** estão vindo para o CSS através de uma nova
+  especificação! No post de hoje conheceremos suas novas propriedades e saberemos
+  como vamos utilizar estas novas funcionalidades.
 ---
 <style>
 	div.image-code pre { margin-top: -9px !important; }

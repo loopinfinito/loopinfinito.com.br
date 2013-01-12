@@ -4,12 +4,20 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: Olá pessoal, continuando o papo do nosso <a href="/2012/04/26/marcacao-semantica/">último post</a>, hoje continuarei falando de marcação semântica, com a diferença de que focarei em microdata e mostrarei também como realizar a marcação semântica de conteúdo usando os vocabulários <strong>Schema.org</strong>.
 tags: web-semantica microdata schema.org SEO HTML5
 image: images/posts/2012-05-02-semantics-html5.jpg
-keywords: web semantica, microdata, schema.org, marcacao, marcacao semantica, html, html5, webdev, desenvolvimento web, vocabulario, seo
 comments: true
+keywords: >
+  web semantica, microdata, schema.org, marcacao, marcacao semantica, html,
+  html5, webdev, desenvolvimento web, vocabulario, seo
+resumo: >
+  Olá pessoal, continuando o papo do nosso
+  [último post](http://loopinfinito.com.br/2012/04/26/marcacao-semantica/),
+  hoje continuarei falando de marcação semântica, com a diferença de que focarei
+  em microdata e mostrarei também como realizar a marcação semântica de conteúdo
+  usando os vocabulários **Schema.org**.
 ---
+
 <style>
 
 	circle {

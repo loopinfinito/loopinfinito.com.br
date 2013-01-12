@@ -4,11 +4,16 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: <em>Mas que papo é esse de browser no plano astral? HTML5 Sensitivo? Como assim? Essa galera do Loop Infinito deve tá ficando maluca mesmo, só pode ser isso.</em>
 image: images/posts/2012-10-24-seu-browser-no-plano-astral.jpg
 tags: palestra
-keywords: palestra, talk, html, html5, javascript, api, loop, infinito, evento, acesso, dispositivos, web, astral, navegador, browser, plano, almir filho, caio gondim, lsd, sensitivo
 comments: true
+keywords: >
+  palestra, talk, html, html5, javascript, api, loop, infinito, evento, acesso,
+  dispositivos, web, astral, navegador, browser, plano, almir filho, caio gondim,
+  lsd, sensitivo
+resumo: >
+  *Mas que papo é esse de browser no plano astral? HTML5 Sensitivo? Como assim?
+  Essa galera do Loop Infinito deve tá ficando maluca mesmo, só pode ser isso.*
 ---
 
 *Mas que papo é esse de browser no plano astral? HTML5 Sensitivo? Como assim?

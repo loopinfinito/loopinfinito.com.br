@@ -5,11 +5,17 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2012-05-07-ganhando-visibilidade-com-schema-org.jpg
-resumo: Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso blog usando <strong>microdata</strong> e os vocabulários <strong>schema.org</strong>. Hoje explicarei passo a passo como fiz isto aqui no Loop Infinito.
 tags: SEO microdata schema.org HTML5 web-semantica
-keywords: SEO, microdata, schema.org, HTML5, marcacao semantica, web semantica, desenvolvimento web, crawler, visibilidade
 comments: true
+keywords: >
+  SEO, microdata, schema.org, HTML5, marcacao semantica, web semantica,
+  desenvolvimento web, crawler, visibilidade
+resumo: >
+  Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso
+  blog usando **microdata** e os vocabulários **schema.org**.
+  Hoje explicarei passo a passo como fiz isto aqui no Loop Infinito.
 ---
+
 <style>
 
 	circle {
