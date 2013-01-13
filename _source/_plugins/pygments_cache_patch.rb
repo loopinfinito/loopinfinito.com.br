@@ -22,5 +22,5 @@ Jekyll::HighlightBlock.class_eval do
     output = output + context["pygments_suffix"] if context["pygments_suffix"]
     output
   end
-  
+
 end
