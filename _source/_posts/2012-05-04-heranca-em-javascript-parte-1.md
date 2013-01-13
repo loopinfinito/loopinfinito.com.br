@@ -5,10 +5,17 @@ author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2012-05-04-heranca-em-javascript.jpg
-resumo: Uma das coisas que mais assusta programadores vindos de linguagens orientadas a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos, inclusive, tentam simular este comportamento no JavaScript, mas poucos conseguem com sucesso. Neste post numa série de 2, iremos relembrar o que é herança, a cadeia de protótipos e como era feito a herança em JavaScript.
 tags: javascript
-keywords: javascript, js, web development, desenvolvimento web, html5, front-end, programação, oop, orientação a objetos, herança, orientação a protótipos, java
 comments: true
+keywords: >
+  javascript, js, web development, desenvolvimento web, html5, front-end,
+  programação, oop, orientação a objetos, herança, orientação a protótipos, java
+resumo: >
+  Uma das coisas que mais assusta programadores vindos de linguagens orientadas
+  a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos,
+  inclusive, tentam simular este comportamento no JavaScript, mas poucos
+  conseguem com sucesso. Neste post numa série de 2, iremos relembrar o que é
+  herança, a cadeia de protótipos e como era feito a herança em JavaScript.
 ---
 
 Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo.

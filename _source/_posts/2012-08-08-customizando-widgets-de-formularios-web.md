@@ -4,11 +4,15 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: Hoje vamos descobrir como estilizar elementos de formulário e os deixarmos assim, como essa máquina da foto acima, totalmente customizada.
 image: images/posts/2012-08-08-customizando-widgets-de-formularios-web.jpg
 tags: CSS web-forms
-keywords: css, css3, web-forms, web forms, formulario web, formulario-web, webkit, customizacao, widget, range, radio, checkbox
 comments: true
+keywords: >
+  css, css3, web-forms, web forms, formulario web, formulario-web, webkit,
+  customizacao, widget, range, radio, checkbox
+resumo: >
+  Hoje vamos descobrir como estilizar elementos de formulário e os deixarmos
+  assim, como essa máquina da foto acima, totalmente customizada.
 ---
 <style>
 #exemplo-radio input[type=radio] {

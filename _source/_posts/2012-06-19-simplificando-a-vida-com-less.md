@@ -4,12 +4,18 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: Finalmente passamos a utilizar LESS aqui no blog, neste post irei falar brevemente sobre LESS, expor suas principais vantagens e mostrar como fizemos aqui no Loop Infinito.
 image: images/posts/2012-06-19-vida-boa.jpg
 tags: CSS LESS
-keywords: css, lesscss, less, less css, mixin, import, less portugues, portugues, br, pt, less br, less pt
 comments: true
+keywords: >
+  css, lesscss, less, less css, mixin, import, less portugues, portugues, br,
+  pt, less br, less pt
+resumo: >
+  Finalmente passamos a utilizar LESS aqui no blog, neste post irei falar
+  brevemente sobre LESS, expor suas principais vantagens e mostrar como fizemos
+  aqui no Loop Infinito.
 ---
+
 <style>
 	.svg-title {
 		font-family: Museo, MuseoRegular, Helvetica, Arial, sans-serif;

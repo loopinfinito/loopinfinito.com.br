@@ -4,12 +4,17 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-resumo: Hoje vamos falar de coisa boa. Vamos falar de como usar sua câmera apenas com HTML5. E para mostrar isso na prática de um jeito menos chato, fizemos um pequeno experimento para ensinar melhor como funciona essa nova API de acesso à câmera do seu computador através do navegador.
 image: images/posts/2012-11-20-webpix.jpg
 tags: HTML5 javascript câmera
-keywords: camera, getusermedia, api, javascript, html5, video, canvas, browser, navegador
-comments: true
 has_inner_image: false
+comments: true
+keywords: >
+  camera, getusermedia, api, javascript, html5, video, canvas, browser, navegador
+resumo: >
+  Hoje vamos falar de coisa boa. Vamos falar de como usar sua câmera apenas com
+  HTML5. E para mostrar isso na prática de um jeito menos chato, fizemos um
+  pequeno experimento para ensinar melhor como funciona essa nova API de acesso
+  à câmera do seu computador através do navegador.
 ---
 
 <style>

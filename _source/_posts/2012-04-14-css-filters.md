@@ -5,11 +5,20 @@ author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2012-04-14-css-filters.jpg
-resumo: A Adobe, Apple e Opera estão <a href="https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html">trabalhando juntas</a> para trazer alguns efeitos no estilo Photoshop para o CSS. Esses efeitos, chamados de filtros, irão nos permitir modificar a renderização de qualquer elemento DOM, de um simples <code>p</code>, até elementos mais complexos como <code>image</code> ou <code>video</code>.
 tags: CSS
-keywords: css, css filters, html5, adobe, apple, webkit, frontend, front end, webdev, desenvolvimento web
 comments: true
+keywords: >
+  css, css filters, html5, adobe, apple, webkit, frontend, front end, webdev,
+  desenvolvimento web
+resumo: >
+  A Adobe, Apple e Opera estão
+  [trabalhando juntas](https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html)
+  para trazer alguns efeitos no estilo Photoshop para o CSS.
+  Esses efeitos, chamados de filtros, irão nos permitir modificar a renderização
+  de qualquer elemento DOM, de um simples `p`, até elementos mais complexos como
+  `image` ou `video`.
 ---
+
 <style>
 
 	#cssfilter-img-base:hover {

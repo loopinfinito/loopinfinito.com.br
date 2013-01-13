@@ -4,12 +4,18 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: Hoje vamos entender como funciona a nova <strong>API de Acelerômetro</strong> do HTML5, que usei num experimento bem legal chamado <strong>Cilada do Mallandro</strong>.
 image: images/posts/2012-10-10-acelerometro-do-mallandro-ie-ie.jpg
 has_inner_image: false
 tags: javascript experimento
-keywords: javascript, html5, api, acelerometro, aceleracao, orientacao, jogo, chrome, firefox, orientation, acceleration, gravity, gravidade, serginho, mallandro, malandro, box2d, webaudio, rotacao
 comments: true
+keywords: >
+  javascript, html5, api, acelerometro, aceleracao, orientacao, jogo, chrome,
+  firefox, orientation, acceleration, gravity, gravidade, serginho, mallandro,
+  malandro, box2d, webaudio, rotacao
+resumo: >
+  Hoje vamos entender como funciona a nova **API de Acelerômetro** do HTML5, que
+  usei num experimento bem legal chamado
+  [**Cilada do Mallandro**](http://almirfilho.github.com/cilada/).
 ---
 <style>
 	iframe {
@@ -30,7 +36,8 @@ desse mesmo jogo – só que, claro, numa versão *web* que funcionasse diretame
 no navegador.
 
 Hoje vamos entender como funciona a nova **API de Acelerômetro do HTML5**.
-Mas antes de começarmos a nerdice, peço que tentem jogar um pouco a **Cilada do Mallandro**! (tem som)
+Mas antes de começarmos a nerdice, peço que tentem jogar um pouco a
+**Cilada do Mallandro**! (tem som)
 
 <iframe src="http://almirfilho.github.com/cilada/" frameborder="0" class="img">frame do jogo</iframe>
 
@@ -39,8 +46,9 @@ Mas antes de começarmos a nerdice, peço que tentem jogar um pouco a **Cilada d
 - Os únicos navegadores que dão suporte são o *Google Chrome* e *Mozilla Firefox*.
 
 ### Observações
-- Pode ser melhor jogar diretamente da [página do projeto](), pois aqui pelo post pode ficar
-meio lento (pra você que não tem uma Ferrari como processador, assim como eu).
+- Pode ser melhor jogar diretamente da [página do projeto](http://almirfilho.github.com/cilada/),
+pois aqui pelo post pode ficar meio lento (pra você que não tem uma Ferrari como
+processador, assim como eu).
 - Quem conseguir vencer, ganha um *brinde*.
 
 ## Cilada do Mallandro!

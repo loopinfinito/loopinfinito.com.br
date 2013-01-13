@@ -4,11 +4,15 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: É fácil se conformar, baixar a cabeça e apenas trabalhar no que você <strong>pensa</strong> ser importante. Difícil é levantar sua cabeça e se perguntar o <strong>porquê</strong>. Aqui estão algumas perguntas importantes para você indagar a si mesmo e poder ter certeza de que você está investindo seu tempo em algo que importa.
 image: images/posts/2012-05-20-saiba-a-hora-de-ejetar.jpg
 tags: produtividade lifestyle
-keywords: produtividade, lifestyle, rework, 37signals, porque, decisao, ejetar
 comments: true
+keywords: produtividade, lifestyle, rework, 37signals, porque, decisao, ejetar
+resumo: >
+  É fácil se conformar, baixar a cabeça e apenas trabalhar no que você **pensa**
+  ser importante. Difícil é levantar sua cabeça e se perguntar o **porquê**.
+  Aqui estão algumas perguntas importantes para você indagar a si mesmo e poder
+  ter certeza de que você está investindo seu tempo em algo que importa.
 ---
 
 Já fazia um tempinho que queria postar algo sobre produtividade, afinal de contas o Loop Infinito não se trata apenas

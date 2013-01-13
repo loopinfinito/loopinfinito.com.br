@@ -4,11 +4,14 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-resumo: O rsync é uma ferramenta de sincronização de pastas/arquivos muito comum no mundo Unix para realizar backups. Neste post vamos aprender como utilizá-lo para a tarefa de deploy de forma automatizada, segura e veloz.
 image: images/posts/2012-05-27-automatizando-deploy-com-rsync.jpg
 tags: automatizacao coffeescript
-keywords: rsync, deploy, deploy automático, cake task, coffeescript
 comments: true
+keywords: rsync, deploy, deploy automático, cake task, coffeescript
+resumo: >
+  O rsync é uma ferramenta de sincronização de pastas/arquivos muito comum no
+  mundo Unix para realizar backups. Neste post vamos aprender como utilizá-lo
+  para a tarefa de deploy de forma automatizada, segura e veloz.
 ---
 
 - Você sempre esquece de upar um arquivo para o servidor de produção?

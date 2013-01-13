@@ -4,11 +4,19 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-resumo: O novo método de desenvolvimento do Chrome, com releases mais rápidos e constantes causou um forte impacto no método de desenvolvimento de todos os grandes navegadores. Hoje, Firefox, Opera e até mesmo o Internet Explorer de certa forma migraram para um calendário de releases mais curto, com vários canais de distribuição. Vamos entender os canais de cada navegador, sua finalidade e seu ciclo de vida.
 image: images/posts/2012-09-05-entendendo-as-diferentes-distribuicoes-dos-navegadores.jpg
 tags: navegadores
-keywords: desenvolvimento, release, beta, alpha, chrome, safari, firefox, opera, aurora, nightly, webkit, canary, dev, estável, stable, channel, distribuições, browsers
 comments: true
+keywords: >
+  desenvolvimento, release, beta, alpha, chrome, safari, firefox, opera, aurora,
+  nightly, webkit, canary, dev, estável, stable, channel, distribuições, browsers
+resumo: >
+  O novo método de desenvolvimento do Chrome, com releases mais rápidos e
+  constantes causou um forte impacto no método de desenvolvimento de todos os
+  grandes navegadores. Hoje, Firefox, Opera e até mesmo o Internet Explorer de
+  certa forma migraram para um calendário de releases mais curto, com vários
+  canais de distribuição. Vamos entender os canais de cada navegador, sua
+  finalidade e seu ciclo de vida.
 ---
 
 O novo método de desenvolvimento do Chrome, com _releases_ mais rápidos e

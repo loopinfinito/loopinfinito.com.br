@@ -4,11 +4,15 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: Hoje falaremos da importância do compartilhamento de conhecimento, traçando um paralelo com os chefes de cozinha famosos.
 image: images/posts/2012-09-10-emulando-chefes-de-cozinha.jpg
-tags: lifestyle
-keywords: lifestyle, produtividade, chef, estilo de vida, compartilhar, conhecimento, livro, receita
 comments: true
+tags: lifestyle
+keywords: >
+  lifestyle, produtividade, chef, estilo de vida, compartilhar, conhecimento,
+  livro, receita
+resumo: >
+  Hoje falaremos da importância do compartilhamento de conhecimento, traçando um
+  paralelo com os chefes de cozinha famosos.
 ---
 
 Como alguns já devem saber, o Loop Infinito não se trata apenas de um blog que só

@@ -4,16 +4,21 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-resumo: Ter a oportunidade de participar palestrando no evento, conhecer grandes figuras da nossa industria e, de quebra, acordar e olhar praquela maravilha que é o litoral de Alagoas, foi único para nós.
 image: images/posts/2012-10-31-front-in-maceio-2012.jpg
 tags: evento
-keywords: evento, palestra, maceio, alagoas, frontinmaceio, front in maceio, front-end, nordeste
 comments: true
+keywords: >
+  evento, palestra, maceio, alagoas, frontinmaceio, front in maceio, front-end,
+  nordeste
+resumo: >
+  Ter a oportunidade de participar palestrando no evento, conhecer grandes
+  figuras da nossa industria e, de quebra, acordar e olhar praquela maravilha
+  que é o litoral de Alagoas, foi único para nós.
 ---
 
 Hoje não falaremos de nada muito técnico, mas, sim, compartilharemos um
-pouco da nossa experiência no [Front in Maceió 2012](http://frontinmaceio.com.br/), que foi o 1º evento focado em
-desenvolvimento front-end do Nordeste.
+pouco da nossa experiência no [Front in Maceió 2012](http://frontinmaceio.com.br/),
+que foi o 1º evento focado em desenvolvimento front-end do Nordeste.
 
 Tivemos a oportunidade de participar como palestrante, conhecer grandes figuras
 da nossa industria e, de quebra, acordar e olhar pr'aquela maravilha que é o litoral

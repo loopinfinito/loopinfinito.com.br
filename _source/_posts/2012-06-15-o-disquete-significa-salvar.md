@@ -4,11 +4,16 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-resumo: O que acontece quando todas as coisas em que nossos ícones são baseados não existem mais? Será que eles se tornam apenas símbolos emblemáticos cujas origens estão envoltas em mistério?
 image: images/posts/2012-06-04-o-disquete-significa-salvar.jpg
 tags: user-interface
-keywords: user interface, interface de usuário, ui, ux, experiência de usuário
 comments: true
+keywords: >
+  user, interface, user interface, interface de usuário, ui, ux, experiência de
+  usuário
+resumo:
+  O que acontece quando todas as coisas em que nossos ícones são baseados não
+  existem mais? Será que eles se tornam apenas símbolos emblemáticos cujas
+  origens estão envoltas em mistério?
 ---
 
 O que acontece quando todas as coisas em que nossos ícones são baseados não

@@ -3,11 +3,19 @@ title: A história do <span>user-agent</span> string
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
-resumo: No início da história da <em>web</em>, era uma prática comum se fazer uma detecção do navegador usado, através da <em>user-agent string</em>, para enviar um código otimizado aos <em>browsers</em> mais modernos. Mas cada novo navegador que surgia também desejava esse código, e então começaram a se disfarçar de navegadores tidos como modernos na época, em efeito cascata. E assim começa o baile de máscaras.
 image: images/posts/2013-01-09-a-historia-do-user-agent-string.jpg
 tags: navegadores
-keywords: navegadores, navegador, browser, user-agent string, user-agent, mosaic, netscape, mozilla, firefox, gecko, safari, webkit, konqueror, opera, internet explorer, trident, chrome, história
 comments: true
+keywords: >
+  navegadores, navegador, browser, user-agent string, user-agent, mosaic,
+  netscape, mozilla, firefox, gecko, safari, webkit, konqueror, opera,
+  internet explorer, trident, chrome, história
+resumo: >
+  No início da história da *web*, era uma prática comum se fazer uma detecção do
+  navegador usado, através da *user-agent string*, para enviar um código otimizado
+  aos *browsers* mais modernos. Mas cada novo navegador que surgia também desejava
+  esse código, e então começaram a se disfarçar de navegadores tidos como modernos
+  na época, em efeito cascata. E assim começa o baile de máscaras.
 ---
 
 <style>
