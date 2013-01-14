@@ -9,9 +9,15 @@
 			$(this).parent().siblings('span').removeClass('show')
 		})
 
-		//
+		// substitui o link do Google+ pelo link do autor (geralmente twitter)
 		$('.post-autor a').each( function(){
 			$(this).attr( 'href', $(this).attr('data-link') )
+		})
+
+		// dispara um evento do Google Analytics para qualquer erro JS
+		$(window).on( 'error', function( event ){
+			var errorMsg = '[Line ' + event.lineno + '] ' + event.message;
+			_gaq.push(['_trackEvent', 'Error', event.filename, errorMsg]);
 		})
 
 	})
