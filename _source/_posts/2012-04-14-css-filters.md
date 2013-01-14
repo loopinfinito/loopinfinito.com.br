@@ -154,9 +154,42 @@ img {
 }
 {% endhighlight %}
 
+## Drop shadow
+
+<figure>
+	<img src="/images/posts/2012-04-14-jeri-drop-shadow.jpg" width="700" height="200"
+			alt="Drop Shadow" title="Drop Shadow" />
+</figure>
+
+Similar a propriedade `box-shadow`, porém um pouco mais poderoso. Com este
+filtro podemos aplicar sombra de forma adequada em PNGs com transparência, o que
+é impossível de se conseguir com o `box-shadow`. No exemplo acima criei o nome
+"Jericoacora" com transparência, e apliquei um `drop-shadow`. Observem que a
+sombra acompanha os extremos da imagem, exatamente como no Photoshop.
+
+Os argumentos do filtro são:
+
+- __offset horizontal__: distância horizontal da sombra em relação ao elemento.
+caso seja um valor negativo, ela irá para a esquerda.
+- __offset vertical__: distância vertical. um valor negativo joga a sombra para
+cima do elemento.
+- __blur__: valor opcional. indica o quão "embaçado" ou "desfocado" a sombra
+irá ficar. `0` deixa a sombra sólida.
+
+{% highlight css %}
+img {
+    -webkit-filter: drop-shadow(5px 5px 6px #000);
+}
+{% endhighlight %}
+
 Como podemos ver o CSS Filters vem adicionar ainda mais poder ao HTML5. E isto é só uma prévia do que há por vir, como os <a href="http://www.youtube.com/watch?v=NZRqnohI3m4">CSS Shaders</a>.
 
 No momento em que escrevo este post, os CSS Filters rodam no <a href="http://tools.google.com/dlpage/chromesxs">Google Chrome Canary</a>, <a href="http://www.google.com/chrome/intl/en/eula_dev.html">Google Chrome dev channel</a> e <a href="http://nightly.webkit.org/">WebKit Nightly Build</a>.
+
+<div class="update">
+	<h3>13/01/2013</h3>
+	<p>Adicionado o filtro <code>drop-shadow</code></p>
+</div>
 
 <aside class="fonte">
 	<h3>Referência</h3>
