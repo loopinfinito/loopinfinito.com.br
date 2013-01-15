@@ -1,7 +1,29 @@
-# Arquivos invisiveis
-.DS_Store
-.cake_task_cache
-
-#Diretorio 'site' (o site compilado para deployment)
+# Jekyll #
+#########
 site/*
 site/**/*
+.cake_task_cache
+
+# Packages #
+############
+# é recomendável descompactar os arquivos e comitar os arquivos originais
+# o git possui seus próprios métodos de compressão
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Arquivos gerados pelo SO #
+############################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
