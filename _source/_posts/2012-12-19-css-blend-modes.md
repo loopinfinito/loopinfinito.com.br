@@ -16,9 +16,6 @@ resumo: >
   especificação! No post de hoje conheceremos suas novas propriedades e saberemos
   como vamos utilizar estas novas funcionalidades.
 ---
-<style>
-	div.image-code pre { margin-top: -9px !important; }
-</style>
 
 Quem trabalha com imagens em aplicativos gráficos como Photoshop, Fireworks, etc.,
 provavelmente já sabe do que se trata.
