@@ -1,14 +1,21 @@
 ---
-title: CSS <span>blend modes</span> <span class="light">parte 2</span>
+title: CSS <span>blend modes</span> parte 2
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-resumo: Esta é uma continuação do nosso <em>post</em>&nbsp;<a href="http://loopinfinito.com.br/2012/12/19/css-blend-modes/">CSS blend modes</a>, pois iremos falar sobre como será possível aplicar os mesmos <em>blend modes</em> em outros lugares como <strong>backgrounds</strong> e <strong>shadows</strong>.
 image: images/posts/2013-01-16-css-blend-modes-parte-2.jpg
 tags: CSS
-keywords: css, css3, blend mode, blend, blend-mode, background, fundo, w3c, grafico, filter, filtros, mistura, backdrop, overlay, elemento, imagem, composicao, calculo, alpha-compositing, knock-out, isolation
 comments: false
+keywords: >
+  css, css3, blend mode, blend, blend-mode, background, fundo, w3c, grafico,
+  filter, filtros, mistura, backdrop, overlay, elemento, imagem, composicao,
+  calculo, alpha-compositing, knock-out, isolation
+resumo: >
+  Esta é uma continuação do nosso *post*&nbsp;
+  [CSS blend modes](http://loopinfinito.com.br/2012/12/19/css-blend-modes/),
+  pois iremos falar sobre como será possível aplicar os mesmos *blend modes* em
+  outros lugares como **backgrounds** e **shadows**.
 ---
 
 Se você ainda não viu, no meu último *post* falei sobre a novidade
@@ -202,6 +209,14 @@ O mesmo serve para `background-blend-mode` e `box-shadow-blend-mode`.
 Nenhum navegador ainda se atreveu em implementar nada sobre *blend modes*,
 afinal de contas a especificação ainda tem que amadurecer um pouco.
 E também não há previsões disso.
+
+### Como testar?
+
+A Adobe fez um *fork* do **Chromium**, implementou algumas funcionalidades e
+disponibilizou para demonstrar o uso dos *blend modes*. Se você estiver afim de
+testar, faça o *download* do Chromium deles aqui e teste acessando
+[essa página de testes](http://adobe.github.com/web-platform/demos/compositing/blend-photogallery/index.html).
+Eu fiz o teste e é show de bola.
 
 Por hoje é isso aê!
 
