@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-01-16-css-blend-modes-parte-2.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   css, css3, blend mode, blend, blend-mode, background, fundo, w3c, grafico,
   filter, filtros, mistura, backdrop, overlay, elemento, imagem, composicao,

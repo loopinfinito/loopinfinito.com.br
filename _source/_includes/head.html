@@ -16,7 +16,7 @@
 		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend, loop, loop infinito, l8p, crista da onda" />
 	{% endif %}
 	{% if page.resumo %}
-		<meta name="description" content="{{ page.resumo | strip_html | escape }}" />
+		<meta name="description" content="{{ page.resumo | markdownify | strip_html | escape }}" />
 	{% else %}
 		<meta name="description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
 	{% endif %}
