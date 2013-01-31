@@ -26,11 +26,15 @@
 		var toggleSearch = function(){
 
 			if( $('#search').hasClass( 'show' ) ){
-				$('#search').removeClass( 'show' )
+				hideSearch()
 			} else {
 				$('#search').addClass( 'show' )
 				$inputSearch.focus()
 			}
+		}
+
+		var hideSearch = function() {
+			$('#search').removeClass( 'show' )
 		}
 
 		// polling para detectar quando o form do google search foi carregado
@@ -43,8 +47,13 @@
 				$inputSearch
 					.attr( 'placeholder', 'Digite sua busca' )
 					.blur( function(){
-						toggleSearch()
+						hideSearch()
 						$inputSearch.val('')
+					})
+					.keydown( function( event ){
+						if( event.keyCode == 13 ){ // enter key
+							hideSearch()
+						}
 					})
 
 				// botao de busca

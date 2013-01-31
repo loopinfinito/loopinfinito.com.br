@@ -5,12 +5,13 @@
 
 <body>
 
+	{% include search.html %}
 	{% include links.html %}
-	
+
 	<div id="wrapper">
 
 		{% include nav.html %}
-		
+
 		<section id="content">
 			{{ content }}
 		</section>
@@ -18,6 +19,6 @@
 	</div>
 
 	{% include scripts-default.html %}
-	
+
 </body>
 </html>

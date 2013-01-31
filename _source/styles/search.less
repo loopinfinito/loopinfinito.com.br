@@ -25,9 +25,10 @@
 	}
 
 	.gsc-input-box {
+		position: relative;
+		top: 11px;
 		background: none;
 		border: none;
-		margin: 10px 0px 12px 0px;
 		height: auto;
 	}
 
@@ -52,7 +53,12 @@
 		text-indent: 5px;
 		color: rgba(255,255,255,0.6);
 
-		&::-webkit-input-placeholder {
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&:-moz-placeholder,
+		&:-ms-input-placeholder,
+		&::placeholder,
+		&::input-placeholder {
 			color: rgba(255,255,255,0.2);
 		}
 	}
@@ -69,5 +75,52 @@
 
 	.gsc-search-button {
 		display: none;
+	}
+
+	// resultados da busca -----------------------------------------------------
+
+	.gsc-results-wrapper-overlay {
+		background: url('@{images-url}/noise.png') #ddd;
+		font-family: @fonts-article;
+		width: 640px;
+		left: auto;
+	}
+
+	.gsc-orderby {
+		display: none;
+	}
+
+	.gsc-webResult.gsc-result {
+		border: none;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #dedede;
+		padding: 20px 0;
+	}
+
+	.gs-title {
+		height: auto;
+		font-family: @fonts-title;
+		font-weight: 200;
+		font-size: 22px;
+		color: #555;
+
+		b {
+			color: #666;
+		}
+	}
+
+	div.gs-title {
+		margin-bottom: 4px;
+	}
+
+	.gs-bidi-start-align.gs-snippet {
+		font-family: @fonts-article;
+		font-size: 15px;
+		font-weight: 200;
+		color: #666;
+	}
+
+	.gs-visibleUrl-long {
+		color: #999;
 	}
 }
