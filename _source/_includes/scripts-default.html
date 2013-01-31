@@ -20,6 +20,17 @@
 			_gaq.push(['_trackEvent', 'Error', event.filename, errorMsg]);
 		})
 
+		// polling para detectar quando o form do google search foi carregado
+		googleSearchPolling = setInterval( function(){
+
+			$input = $('#search input[type=text]')
+
+			if( $input.length > 0 ){
+				$input.attr( 'placeholder', 'Digite sua pesquisa aqui' ).focus()
+				clearInterval( googleSearchPolling )
+			}
+		}, 200)
+
 	})
 
 </script>

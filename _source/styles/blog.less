@@ -49,7 +49,7 @@
 	filter: ~'alpha(opacity=@{ie})';
 }
 
-.transition (@property, @duration, @effect) {
+.transition (@property, @duration, @effect: ease) {
 	transition: @arguments;
 	-o-transition: @arguments;
 	-ms-transition: @arguments;
@@ -1026,6 +1026,10 @@ aside.post-meta {
 		}
 	} // fim de li
 } // fim de aside.post-meta
+
+/* form de busca do google
+---------------------------------------------- */
+@import 'search';
 
 /* comentarios do disqus
 ---------------------------------------------- */

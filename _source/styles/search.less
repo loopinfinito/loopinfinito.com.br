@@ -1,0 +1,73 @@
+#search {
+	background: url('@{images-url}/noise.png') #666;
+	height: 0px;
+	overflow: hidden;
+	.transition( height, 1s );
+
+	&.show {
+		height: 62px;
+		border-bottom: 2px solid rgba(0,0,0,0.3);
+	}
+
+	.search-form {
+		width: 700px;
+		margin: auto;
+	}
+
+	/* Seletores do Google
+	------------------------------------------------------------ */
+
+	.gsc-control-cse {
+		background: none;
+		border: none;
+		padding: 0;
+		height: auto;
+	}
+
+	.gsc-input-box {
+		background: none;
+		border: none;
+		margin: 10px 0px 12px 0px;
+		height: auto;
+	}
+
+	.gsc-input-box-hover {
+		box-shadow: none;
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	.gsc-input-box-focus {
+		box-shadow: none;
+		background: none;
+		border: none;
+	}
+
+	.gsc-input {
+		padding-right: 0;
+		background: none !important;
+		font-size: 30px;
+		font-family: @fonts-article;
+		font-weight: 100;
+		font-style: italic;
+		text-indent: 5px;
+		color: rgba(255,255,255,0.6);
+
+		&::-webkit-input-placeholder {
+			color: rgba(255,255,255,0.2);
+		}
+	}
+
+	.gsib_a {
+		padding-top: 0;
+		padding-left: 0;
+	}
+
+	// cor do X
+	.gscb_a {
+		color: #999;
+	}
+
+	.gsc-search-button {
+		display: none;
+	}
+}
