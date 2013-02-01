@@ -59,6 +59,7 @@
 				// botao de busca
 				$('.search-button').click( function(){
 					toggleSearch()
+					_gaq.push(['_trackEvent', 'search', 'Botão de busca', 'Botão de busca']);
 				})
 
 				clearInterval( googleSearchPolling )
