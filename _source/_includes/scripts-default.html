@@ -20,6 +20,51 @@
 			_gaq.push(['_trackEvent', 'Error', event.filename, errorMsg]);
 		})
 
+		// google custom search:
+		var $inputSearch = null;
+
+		var toggleSearch = function(){
+
+			if( $('#search').hasClass( 'show' ) ){
+				hideSearch()
+			} else {
+				$('#search').addClass( 'show' )
+				$inputSearch.focus()
+			}
+		}
+
+		var hideSearch = function() {
+			$('#search').removeClass( 'show' )
+		}
+
+		// polling para detectar quando o form do google search foi carregado
+		googleSearchPolling = setInterval( function(){
+
+			$inputSearch = $('#search input[type=text]')
+
+			if( $inputSearch.length > 0 ){
+
+				$inputSearch
+					.attr( 'placeholder', 'Digite sua busca' )
+					.blur( function(){
+						hideSearch()
+						$inputSearch.val('')
+					})
+					.keydown( function( event ){
+						if( event.keyCode == 13 ){ // enter key
+							hideSearch()
+						}
+					})
+
+				// botao de busca
+				$('.search-button').click( function(){
+					toggleSearch()
+					_gaq.push(['_trackEvent', 'search', 'Botão de busca', 'Botão de busca']);
+				})
+
+				clearInterval( googleSearchPolling )
+			}
+		}, 200 )
 	})
 
 </script>

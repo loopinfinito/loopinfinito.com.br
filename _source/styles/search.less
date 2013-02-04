@@ -1,0 +1,126 @@
+#search {
+	background: url('@{images-url}/noise.png') #666;
+	height: 0px;
+	overflow: hidden;
+	.transition( height, 0.4s );
+
+	&.show {
+		height: 62px;
+		border-bottom: 2px solid rgba(0,0,0,0.3);
+	}
+
+	.search-form {
+		width: 700px;
+		margin: auto;
+	}
+
+	/* Seletores do Google
+	------------------------------------------------------------ */
+
+	.gsc-control-cse {
+		background: none;
+		border: none;
+		padding: 0;
+		height: auto;
+	}
+
+	.gsc-input-box {
+		position: relative;
+		top: 11px;
+		background: none;
+		border: none;
+		height: auto;
+	}
+
+	.gsc-input-box-hover {
+		box-shadow: none;
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	.gsc-input-box-focus {
+		box-shadow: none;
+		background: none;
+		border: none;
+	}
+
+	.gsc-input {
+		padding-right: 0;
+		background: none !important;
+		font-size: 30px;
+		font-family: @fonts-article;
+		font-weight: 100;
+		font-style: italic;
+		text-indent: 5px;
+		color: rgba(255,255,255,0.6);
+
+		&::-webkit-input-placeholder,
+		&::-moz-placeholder,
+		&:-moz-placeholder,
+		&:-ms-input-placeholder,
+		&::placeholder,
+		&::input-placeholder {
+			color: rgba(255,255,255,0.2);
+		}
+	}
+
+	.gsib_a {
+		padding-top: 0;
+		padding-left: 0;
+	}
+
+	// cor do X
+	.gscb_a {
+		color: #999;
+	}
+
+	.gsc-search-button {
+		display: none;
+	}
+
+	// resultados da busca -----------------------------------------------------
+
+	.gsc-results-wrapper-overlay {
+		background: url('@{images-url}/noise.png') #ddd;
+		font-family: @fonts-article;
+		width: 640px;
+		left: auto;
+	}
+
+	.gsc-orderby {
+		display: none;
+	}
+
+	.gsc-webResult.gsc-result {
+		border: none;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #dedede;
+		padding: 20px 0;
+	}
+
+	.gs-title {
+		height: auto;
+		font-family: @fonts-title;
+		font-weight: 200;
+		font-size: 22px;
+		color: #555;
+
+		b {
+			color: #666;
+		}
+	}
+
+	div.gs-title {
+		margin-bottom: 4px;
+	}
+
+	.gs-bidi-start-align.gs-snippet {
+		font-family: @fonts-article;
+		font-size: 15px;
+		font-weight: 200;
+		color: #666;
+	}
+
+	.gs-visibleUrl-long {
+		color: #999;
+	}
+}
