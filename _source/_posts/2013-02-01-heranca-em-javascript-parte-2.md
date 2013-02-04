@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-02-01-heranca-em-javascript-parte-2.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
   javascript, js, web development, desenvolvimento web, html5, front-end,
   programação, oop, orientação a objetos, herança, orientação a protótipos, java
@@ -252,6 +252,12 @@ funcionem (ou parcialmente funcionem) em navegadores antigos.
         Object.getPrototypeOf
       </a>
       <span class="comment">// John Resig</span>
+    </li>
+    <li>
+      <a href="http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/">
+        Herança em JavaScript parte I
+      </a>
+      <span class="comment">// Loop Infinito</span>
     </li>
     <li>
       <a href="http://ejohn.org/blog/ecmascript-5-objects-and-properties/">
