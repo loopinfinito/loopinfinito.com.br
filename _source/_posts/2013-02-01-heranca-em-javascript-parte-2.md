@@ -24,7 +24,7 @@ O JavaScript é uma linguagem orientada a objetos baseada em protótipos mas
 que, ao longo de seu desenvolvimento, foi forçada a "parecer" uma
 linguagem baseada em classes. Com o ECMAScript 5 é finalmente possível
 programar em JavaScript utilizando os conceitos de prototipação, herdando
-propriedades diretamente de um objeto, ou de nenhum.
+propriedades diretamente de um objeto.
 
 ## Clonando
 
@@ -58,6 +58,7 @@ usa nenhum outro como protótipo. O que era impossível antes.
 {% highlight javascript %}
 var obj = {}
 obj.toString() // método herdado de Object
+
 var objVirgem = Object.create(null)
 objVirgem.toString() // não possui nenhum método
 {% endhighlight %}
@@ -84,6 +85,7 @@ var cachorro = Object.create(animal, {
     }
   }
 })
+
 cachorro.respirar() // método herdado
 cachorro.latir() // método adicionado
 {% endhighlight %}
@@ -111,12 +113,12 @@ Object.defineProperty(cachorro, 'dormir', {
 
 Os _descriptors_ de uma propriedade podem ser:
 
-- __value__: o valor da propriedade. poder ser uma função, um objeto, um número, ...
-- __writable__: se __false__ o valor não pode ser alterado.
-- __configurable__: se __false__, não é possível deletar a propriedade ou modificar seus atributos (`writable`, `configurable` ou `enumerable`)
-- __enumerable__: se __true__, a propriedade será iterada em um _loop_ `for (var prop in obj) { }`
+- __value__: o valor da propriedade. pode ser uma função, um objeto, um número, ...
+- __writable__: se `false`, o valor não pode ser alterado.
+- __configurable__: se `false`, não é possível deletar a propriedade ou modificar seus atributos (`writable`, `configurable` ou `enumerable`)
+- __enumerable__: se `true`, a propriedade será iterada em um _loop_&nbsp;`for (var prop in obj){}`
 
-Além disso é possivel setarmos _getters_ and _setters_ que irão ser disparados
+Além disso é possivel definir _getters_ and _setters_ que irão ser disparados
 de forma transparente toda vez que a propriedade for acessada ou modificada.
 
 {% highlight javascript %}
@@ -171,6 +173,7 @@ como protótipo terão este método disponível.
 
 {% highlight javascript %}
 cachorro.morrer() // undefined
+
 Object.defineProperty(animal, 'morrer', {
   value: function() {  }
 })
@@ -194,11 +197,52 @@ _features_ do JavaScript. E sabemos que o IE 9 não roda no Windows XP, então a
 temos algum tempo para aprender e dominar este novo jeito de desenvolver com
 JavaScript.
 
+<table class="support">
+  <thead>
+    <tr>
+      <th class="subject"><h2>Suporte</h2></th>
+      <th class="browser chrome"><div class="i"></div></th>
+      <th class="browser safari"><div class="i"></div></th>
+      <th class="browser firefox"><div class="i"></div></th>
+      <th class="browser ie"><div class="i"></div></th>
+      <th class="browser opera"><div class="i"></div></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="5" class="base"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="property"><code>Object.create()</code></td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>9.0</td>
+      <td>11.60</td>
+    </tr>
+    <tr>
+      <td class="property"><code>Object.defineProperty()</code></td>
+      <td>5.0</td>
+      <td>5.1</td>
+      <td>4.0</td>
+      <td>9.0</td>
+      <td>11.60</td>
+    </tr>
+    <tr>
+      <td class="property"><code>Object.getPrototypeOf()</code></td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>9.0</td>
+      <td>--</td>
+    </tr>
+  </tbody>
+</table>
+
 Mas caso você tenha espiríto aventureiro, existe um
 [_shim_](https://github.com/kriskowal/es5-shim) para que estes novos métodos
 funcionem (ou parcialmente funcionem) em navegadores antigos.
-
-
 
 <aside class="fonte">
   <h3>Referência</h3>
