@@ -36,15 +36,15 @@ Vamos implementar o cenário acima em Java. Como desejamos representar gatos e c
 // especializados como Gato ou Cachorro podem ser instânciados
 public abstract class Animal {
   public void nascer() {
-    ...
+    // ...
   }
 
   public void morrer() {
-    ...
+    // ...
   }
 
   public void respirar() {
-    ...
+    // ...
   }
 }
 {% endhighlight %}
@@ -56,12 +56,12 @@ Agora definimos as classes Gato e Cachorro, que irão herdar de Animal e impleme
 // terão também, devido a herança, os métodos de Animal
 class Gato extends Animal {
   public void miar() {
-    ...
+    // ...
   }
 
   // construtor
   public Gato() {
-    ...
+    // ...
   }
 }
 
@@ -70,12 +70,12 @@ class Gato extends Animal {
 // ele irá herdar os métodos nascer, morrer e respirar
 class Cachorro extends Animal {
   public void latir() {
-    ..
+    // ...
   }
 
   // construtor
   public Cachorro() {
-    ...
+    // ...
   }
 }
 {% endhighlight %}
@@ -111,7 +111,7 @@ Object.getPrototypeOf(Object.getPrototypeOf(frutas)) // retorna Object
 
 // validarCPF irá herdar propriedades de Function
 function validarCPF() {
-  ...
+  // ...
   return true
 }
 // aqui vemos uma função se comportando como um objeto
@@ -139,13 +139,13 @@ Ok, pode parecer complicado falando, mas fica bem fácil olhando o código.
 function Animal() {
 }
 Animal.prototype.nascer = function() {
-  ...
+  // ...
 }
 Animal.prototype.morrer = function() {
-  ...
+  // ...
 }
 Animal.prototype.respirar = function() {
-  ...
+  // ...
 }
 {% endhighlight %}
 
@@ -159,7 +159,7 @@ function Gato(nome) {
 Gato.prototype = new Animal() // definimos que Gato usa Animal como protótipo
 Gato.prototype.constructor = Gato // para que não fique com o valor do construtor do objeto usado como protótipo
 Gato.prototype.miar = function() { // método miar apenas para Gato
-  ...
+  // ...
 }
 
 // criamos o construtor Cachorro
@@ -169,7 +169,7 @@ function Cachorro(nome) {
 Cachorro.prototype = new Animal() // definimos que Cachorro usa Animal como protótipo
 Cachorro.prototype.constructor = Cachorro()
 Cachorro.prototype.latir = function() {
-  ...
+  // ...
 }
 
 var rex = new Cachorro('rex') // criamos um objeto do tipo Cachorro
@@ -197,7 +197,7 @@ Por ser uma linguagem orientada a protótipos, nós podemos definir um novo ao m
 
 {% highlight javascript %}
 Cachorro.prototype.morder = function() {
-  ...
+  // ...
 }
 rex.morder() // rex mesmo depois de instanciado terá acesso aos novos métodos definidos no protótipo de Cachorro
 {% endhighlight %}
@@ -213,17 +213,13 @@ Este é o método padrão de herança em JavaScript.
 Grande parte desta bagunça é devido ao JavaScript ter sido lançado __muito__ às pressas.
 Porém o ECMAscript, o grupo que padroniza o JavaScript, vem adicionado várias funções para tornar o trabalho com herança mais simples e finalmente abraçando a orientação a protótipo.
 
-E é sobre este novo método de trabalhar com herança no ECMAscript 5 que iremos discutir na 2ª parte do post.
+E é sobre este novo método de trabalhar com herança no ECMAscript 5 que iremos discutir na [2ª parte do post](http://loopinfinito.com.br/2013/02/01/heranca-em-javascript-parte-2/).
 
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>
-      <a href="https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain">
-        Mozilla Developer Network: Inheritance and the Prototype Chain
-      </a>
-    </li>
-    <li><a href="http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new">StackOverflow: Using Object.create() instead of new</a></li>
-    <li><a href="http://joost.zeekat.nl/constructors-considered-mildly-confusing.html">code.h(oe)kje: Constructors considered mildly confusing</a></li>
+    <li>→<a href="https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain">Mozilla Developer Network: Inheritance and the Prototype Chain</a></li>
+    <li>→<a href="http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new">StackOverflow: Using Object.create() instead of new</a></li>
+    <li>→<a href="http://joost.zeekat.nl/constructors-considered-mildly-confusing.html">code.h(oe)kje: Constructors considered mildly confusing</a></li>
   </ul>
 </aside>

@@ -247,31 +247,31 @@ funcionem (ou parcialmente funcionem) em navegadores antigos.
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>
+    <li>→
       <a href="http://ejohn.org/blog/objectgetprototypeof/">
         Object.getPrototypeOf
       </a>
       <span class="comment">// John Resig</span>
     </li>
-    <li>
+    <li>→
       <a href="http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/">
         Herança em JavaScript parte I
       </a>
       <span class="comment">// Loop Infinito</span>
     </li>
-    <li>
+    <li>→
       <a href="http://ejohn.org/blog/ecmascript-5-objects-and-properties/">
         ECMAScript 5 Objects and Properties
       </a>
       <span class="comment">// John Resig</span>
     </li>
-    <li>
+    <li>→
       <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/create">
         Object.create
       </a>
       <span class="comment">// MDN</span>
     </li>
-    <li>
+    <li>→
       <a href="http://wikipedia.qwika.com/en2pt/Prototype-based_programming">
         Prototype-based Programming
       </a>
