@@ -4,7 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-image: images/posts/2013-02-04-podcasts.jpg
+image: images/posts/2013-02-14-podcasts-sobre-desenvolvimento.jpg
 tags:
 comments: false
 keywords: podcast
