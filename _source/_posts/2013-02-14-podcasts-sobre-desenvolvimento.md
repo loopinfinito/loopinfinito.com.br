@@ -5,19 +5,23 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-02-14-podcasts-sobre-desenvolvimento.jpg
-tags:
+tags: podcasts
 comments: false
-keywords: podcast
-resumo:
+keywords: >
+  podcast, desenvolvimento, web, tecnologia, entrevista, apresentador, 5by5,
+  html, css, semanal, conversa
+resumo: >
+  Bons *podcasts* sobre desenvolvimento são uma raridade, por isso, resolvemos
+  compartilhar com vocês dicas sobre os melhores *podcasts* que conhecemos.
 ---
 
 Ouvir uns *podcasts* no trajeto de casa pro trabalho ou pra faculdade é sempre
 uma boa alternativa para aproveitar esse tempo morto e se manter informado,
 ainda mais quando os *podcasts* em questão se tratam sobre desenvolvimento.
 Bons *podcasts* sobre desenvolvimento são uma raridade, por isso, resolvemos
-criar este *post* para compartilhar com vocês dicas sobre os melhores *podcasts*
-que conhecemos – e boa parte deles são em **inglês** (uma boa oportunidade
-para treinar o seu ~*listening*~ ;D).
+compartilhar com vocês dicas sobre os melhores *podcasts* que conhecemos –
+e boa parte deles são em **inglês** (uma boa oportunidade para treinar o seu
+~*listening*~ ;D).
 
 Caso alguém queira dar mais dicas de *podcasts* bons e que tenham a ver com o
 assunto, fique à vontade para adicioná-las aos comentários deste *post*.
@@ -28,7 +32,7 @@ Seria bastante útil.
 [![Podcasts do 5by5](/images/posts/2013-02-04-podcasts-1.jpg)](http://5by5.tv)
 
 O [5by5](http://5by5.tv) é um "canal" de transmissão de vários *podcasts*, sendo
-que a grande maioria deles sobre tecnologia e desenvolvimento – se não, sempre é
+a grande maioria deles sobre tecnologia e desenvolvimento – se não, sempre é
 sobre algo do mundo *nerd* (como cinema ou afins).
 Os *podcasts* do 5by5 são transmitidos ao vivo (além de, claro, possuirem seus
 *feeds* RSS para assinatura).
@@ -152,8 +156,8 @@ Esse é mais um brasileiro. **Bia Kunze** – mais conhecida como *Garota sem Fi
 ([@garotasemfio](http://twitter.com/garotasemfio)) – fala tudo o que você
 precisa saber sobre tecnologia móvel, ou seja, tudo sobre *smartphones* (odeio
 esse termo), *tablets*, operadoras de telefonia sacanas, Android, iPhone, iPad,
-etc. De vez em quando o co-apresentador do *podcast* fala umas besteiras MUITO
-GRANDES, mas ainda assim o *podcast* é legal pra caramba.
+etc. De vez em quando o co-apresentador do *podcast* fala umas besteiras muito
+grandes (na minha humilde opinião), mas ainda assim o *podcast* é bem legal.
 É uma boa ficar sempre informado sobre um assunto do qual surgem coisas novas
 praticamente todos os dias (principalmente se você não tem a mínima paciência
 pra ficar lendo sobre os celulares da Samsung =P).
