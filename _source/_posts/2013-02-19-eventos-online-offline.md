@@ -16,24 +16,81 @@ resumo: >
   officia et.
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ex voluptatum
-exercitationem quos consequatur accusantium consequuntur ipsa ea at similique
-rem sint! Nesciunt debitis nisi ipsa eligendi sint fuga mollitia.
+Mais uma <abbr title="Application Program Interface">API</abbr> simples e útil
+do HTML5. Com ela temos acesso, de forma nativa, ao status da conexão do
+navegador, ou seja, se ele tem acesso ou não à internet. Muito útil caso você
+queira deixar seu _webapp_ funcionando enquanto estiver _offline_ e sincronizar
+todas as mudanças feitas quando estiver _online_ novamente.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate suscipit
-veritatis odio vero repudiandae similique minima aperiam incidunt consequuntur
-commodi. Voluptate numquam eveniet nihil officia incidunt repellendus inventore
-harum accusamus.
+O que melhor que um exemplo para demonstrar a nova
+<abbr title="Application Program Interface">API</abbr>? desconecte a sua máquina
+da internet desligando o seu Wi-Fi ou desplugando o cabo _ethernet_ e você verá
+uma animação informando que a conexão foi perdida. Conecte de novo e, quando a
+conexão retornar, o aviso irá sumir. Simples e lindo, hein?
+
+## API
+
+A <abbr title="Application Program Interface">API</abbr> é bem direta ao ponto.
+Basta adicionarmos _listeners_ aos objetos `window`, `document` ou ao elemento
+`body` e passarmos a função que será executada uma vez que esses eventos forem
+disparados.
+
+{% highlight javascript %}
+// javascript puro
+window.addEventListener('online', function() {
+  // ...
+})
+window.addEventListener('offline', function() {
+  // ...
+})
+{% endhighlight %}
+
+No exemplo acima estamos escutando o evento através em JavaScript puro. No
+exemplo abaixo estamos usando jQuery. O método `on` é agora o método padrão para
+escutar eventos no jQuery, inclusive para os eventos clássicos como `click`,
+`hover`, etc. Os dois códigos são semânticamente idênticos. A diferença é que o
+primeiro usa a sintaxe nativa do JavaScript, e o outro a sintaxe jQuery.
+
+{% highlight javascript %}
+// jQuery style
+$(window)
+  .on('online', function() {
+    // ...
+  })
+  .on('offline', function() {
+    // ...
+  })
+{% endhighlight %}
+
+## Propriedade online
+
+Também é possível detectar se o navegador está _online_ de forma síncrona.
+Basta checar a propriedade `navigator.onLine`. Se ela retornar `true`, significa
+que estamos com conexão à internet, se retornar `false`...vocês entenderam.
+
+{% highlight javascript %}
+if (navigator.onLine) {
+  // está online
+} else {
+  // está offline
+}
+{% endhighlight %}
 
 
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
     <li>→
-      <a href="#">
-			Lorem Ipsum
+      <a href="https://developer.mozilla.org/en-US/docs/Online_and_offline_events">
+			Online and offline events
       </a>
-      <span class="comment">// Lorem </span>
+      <span class="comment">// Mozilla Developer Network </span>
+    </li>
+    <li>→
+      <a href="https://developer.mozilla.org/en-US/docs/Online_and_offline_events">
+      Online and offline events
+      </a>
+      <span class="comment">// Mozilla Developer Network </span>
     </li>
   </ul>
 </aside>
@@ -141,16 +198,21 @@ harum accusamus.
 </style>
 
 <div class="widget-conexao-status">
-  <img class="widget-plug widget-plug-macho" src="/images/posts/2013-02-19-plug-macho.png" alt="" />
-  <img class="widget-plug widget-plug-femea" src="/images/posts/2013-02-19-plug-femea.png" alt="" />
+  <img class="widget-plug widget-plug-macho"
+      src="/images/posts/2013-02-19-plug-macho.png" alt="Plug Macho" />
+  <img class="widget-plug widget-plug-femea"
+      src="/images/posts/2013-02-19-plug-femea.png" alt="Plug Fêmea" />
 </div>
 
 <script>
-  $(function() {
+  $(document).ready(function() {
     $('body')
       .addClass('online')
 
     $(window)
+      .add(navigator)
+      .add(document)
+      .add(document.body)
       .on('online', function(event) {
         $('body')
           .removeClass('offline')
