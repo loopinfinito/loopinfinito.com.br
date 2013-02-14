@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-02-14-podcasts-sobre-desenvolvimento.jpg
 tags: podcasts
-comments: false
+comments: true
 keywords: >
   podcast, desenvolvimento, web, tecnologia, entrevista, apresentador, 5by5,
   html, css, semanal, conversa
