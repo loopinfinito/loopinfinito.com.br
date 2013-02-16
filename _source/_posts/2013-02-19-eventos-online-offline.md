@@ -276,20 +276,6 @@ _post_.
       left: 140px !important;
     }
 
-    /* Quotation
-   -------------------- */
-    blockquote {
-      padding-left: 20px;
-      border-left: 10px #ccc solid;
-      color: #999;
-      display: block;
-    }
-
-      blockquote footer {
-        font-size: 14px;
-      }
-
-
 </style>
 
 <div class="widget-conexao-status">
