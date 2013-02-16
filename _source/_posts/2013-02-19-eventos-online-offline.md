@@ -86,11 +86,23 @@ novo e, quando a conexão retornar, o aviso irá sumir. Simples e lindo, hein?
 Cada navegador interpreta o termo _offline_ de maneiradiferente. A especificação
 do <aabr title="HyperText Markup Language 5">HTML5</aabr> informa que o evento
 _offline_ deve ser disparado quando o computador perder conexão com a rede, e
-não necessariamente com a internet. O que significa que, se apenas a conexão
-entre seu _access point_ e seu provedor de internet for perdida, o evento
-offline não será disparado. Mas caso a conexão entre o computador e o _access
-point_ for perdida e esta for a única interface de rede de sua máquina, o evento
-_offline_ será disparado.
+não necessariamente com a internet.
+
+<blockquote>
+  <p>
+    Returns false if the user agent is definitely offline (disconnected from
+    the network). Returns true if the user agent might be online. The events
+    online and offline are fired when the value of this attribute changes.
+  </p>
+  <footer>
+    – WHATWG Browser state spec
+  </footer>
+</blockquote>
+
+O que significa que, se apenas a conexão entre seu _access point_ e seu provedor
+de internet for perdida, o evento offline não será disparado. Mas caso a conexão
+entre o computador e o _access point_ for perdida e esta for a única interface
+de rede de sua máquina, o evento _offline_ será disparado.
 
 O Firefox não implementa a API como definida na especificação e apenas dispara
 o evento quando explicitamente optamos que ele trabalhe no modo _offline_, como
@@ -127,8 +139,10 @@ conexão com a rede.
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="6">A versões dos navegadores acima foram as usadas nos testes,
-        mas não quer dizer que a API foi implementada desde a versão informada.</td>
+      <td colspan="6">
+        A versões dos navegadores acima foram as usadas nos testes,
+        mas não quer dizer que a API foi implementada desde a versão informada.
+      </td>
     </tr>
   </tfoot>
 </table>
@@ -152,6 +166,12 @@ _post_.
       How to detect online/offline event cross-browser?
       </a>
       <span class="comment">// Stack Overflow</span>
+    </li>
+    <li>→
+      <a href="http://www.whatwg.org/specs/web-apps/current-work/#browser-state">
+      Browser State
+      </a>
+      <span class="comment">// WHATWG HTML5 Spec</span>
     </li>
   </ul>
 </aside>
@@ -255,6 +275,20 @@ _post_.
       top: 20px !important;
       left: 140px !important;
     }
+
+    /* Quotation
+   -------------------- */
+    blockquote {
+      padding-left: 20px;
+      border-left: 10px #ccc solid;
+      color: #999;
+      display: block;
+    }
+
+      blockquote footer {
+        font-size: 14px;
+      }
+
 
 </style>
 
