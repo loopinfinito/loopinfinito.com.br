@@ -17,7 +17,7 @@ resumo: >
 ---
 
 Mais uma <abbr title="Application Program Interface">API</abbr> simples e útil
-do <aabr title="HyperText Markup Language 5">HTML5</aabr>. Com ela temos acesso,
+do <abbr title="HyperText Markup Language 5">HTML5</abbr>. Com ela temos acesso,
 de forma nativa, ao __status da conexão do navegador__, ou seja, se ele tem
 acesso ou não à rede. Não confundir com acesso à internet, já que é possível
 estarmos conectados em uma rede local sem acesso externo à internet.
@@ -84,7 +84,7 @@ novo e, quando a conexão retornar, o aviso irá sumir. Simples e lindo, hein?
 ## Suporte e Inconsistências
 
 Cada navegador interpreta o termo _offline_ de maneiradiferente. A especificação
-do <aabr title="HyperText Markup Language 5">HTML5</aabr> informa que o evento
+do <abbr title="HyperText Markup Language 5">HTML5</abbr> informa que o evento
 _offline_ deve ser disparado quando o computador perder conexão com a rede, e
 não necessariamente com a internet.
 
@@ -95,7 +95,8 @@ não necessariamente com a internet.
     online and offline are fired when the value of this attribute changes.
   </p>
   <footer>
-    – WHATWG Browser state spec
+    – <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>
+    Browser state spec
   </footer>
 </blockquote>
 
@@ -104,9 +105,10 @@ de internet for perdida, o evento offline não será disparado. Mas caso a conex
 entre o computador e o _access point_ for perdida e esta for a única interface
 de rede de sua máquina, o evento _offline_ será disparado.
 
-O Firefox não implementa a API como definida na especificação e apenas dispara
-o evento quando explicitamente optamos que ele trabalhe no modo _offline_, como
-fizemos anteriormente no _demo_.
+O Firefox não implementa a <abbr title="Application Program Interface">API</abbr>
+como definida na especificação e apenas dispara o evento quando explicitamente
+optamos que ele trabalhe no modo _offline_, como fizemos anteriormente no
+_demo_.
 
 O Opera, apesar de apresentar a propriedade `navigator.onLine`, parece não
 implementar os eventos. E nem mesmo a propriedade é atualizada quando perdemos
@@ -141,7 +143,8 @@ conexão com a rede.
     <tr>
       <td colspan="6">
         A versões dos navegadores acima foram as usadas nos testes,
-        mas não quer dizer que a API foi implementada desde a versão informada.
+        mas não quer dizer que a <abbr title="Application Program Interface">API</abbr>
+        foi implementada desde a versão informada.
       </td>
     </tr>
   </tfoot>
