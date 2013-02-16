@@ -5,35 +5,31 @@ author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-02-19-eventos-online-offline.jpg
-tags: html
+tags: HTML5 javascript
 comments: false
 keywords: >
-  html5, eventos, events
+  html5, eventos, events, javascript, online, offline, rede, internet, net,
+  conexão, connection
 resumo: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet ex
-  voluptas asperiores reiciendis ipsum voluptate natus voluptatibus hic
-  cum fugiat fugit beatae consectetur est! Optio laboriosam dolorum praesentium
-  officia et.
+  Mais uma <abbr title="Application Program Interface">API</abbr> simples e útil
+  do HTML5. Com ela temos acesso, de forma nativa, ao __status da conexão do
+  navegador__, ou seja, se ele tem acesso ou não à rede.
 ---
 
 Mais uma <abbr title="Application Program Interface">API</abbr> simples e útil
-do HTML5. Com ela temos acesso, de forma nativa, ao status da conexão do
-navegador, ou seja, se ele tem acesso ou não à internet. Muito útil caso você
-queira deixar seu _webapp_ funcionando enquanto estiver _offline_ e sincronizar
-todas as mudanças feitas quando estiver _online_ novamente.
-
-O que melhor que um exemplo para demonstrar a nova
-<abbr title="Application Program Interface">API</abbr>? desconecte a sua máquina
-da internet desligando o seu Wi-Fi ou desplugando o cabo _ethernet_ e você verá
-uma animação informando que a conexão foi perdida. Conecte de novo e, quando a
-conexão retornar, o aviso irá sumir. Simples e lindo, hein?
+do <aabr title="HyperText Markup Language 5">HTML5</aabr>. Com ela temos acesso,
+de forma nativa, ao __status da conexão do navegador__, ou seja, se ele tem
+acesso ou não à rede. Não confundir com acesso à internet, já que é possível
+estarmos conectados em uma rede local sem acesso externo à internet.
 
 ## API
 
 A <abbr title="Application Program Interface">API</abbr> é bem direta ao ponto.
 Basta adicionarmos _listeners_ aos objetos `window`, `document` ou ao elemento
 `body` e passarmos a função que será executada uma vez que esses eventos forem
-disparados.
+disparados. O evento irá, na verdade, acontecer no elemento `body`, mas irá
+propagar até o objeto `window`, passando por `document`. Por isso podemos por o
+_listener_ em qualquer um.
 
 {% highlight javascript %}
 // javascript puro
@@ -45,11 +41,10 @@ window.addEventListener('offline', function() {
 })
 {% endhighlight %}
 
-No exemplo acima estamos escutando o evento através em JavaScript puro. No
+No exemplo acima estamos escutando o evento através de JavaScript puro. No
 exemplo abaixo estamos usando jQuery. O método `on` é agora o método padrão para
 escutar eventos no jQuery, inclusive para os eventos clássicos como `click`,
-`hover`, etc. Os dois códigos são semânticamente idênticos. A diferença é que o
-primeiro usa a sintaxe nativa do JavaScript, e o outro a sintaxe jQuery.
+`hover`, etc. Os dois códigos são equivalentes.
 
 {% highlight javascript %}
 // jQuery style
@@ -66,7 +61,7 @@ $(window)
 
 Também é possível detectar se o navegador está _online_ de forma síncrona.
 Basta checar a propriedade `navigator.onLine`. Se ela retornar `true`, significa
-que estamos com conexão à internet, se retornar `false`...vocês entenderam.
+que estamos com conexão à rede, se retornar `false`...vocês entenderam.
 
 {% highlight javascript %}
 if (navigator.onLine) {
@@ -76,6 +71,72 @@ if (navigator.onLine) {
 }
 {% endhighlight %}
 
+## Demo
+
+O que melhor que um exemplo para demonstrar a nova
+<abbr title="Application Program Interface">API</abbr>? Caso esteja usando o
+Chrome, Safari ou Internet Explorer, __desconecte a sua máquina da rede desligando
+o _Wi-Fi___ ou desplugando o cabo _ethernet_ para então ver uma animação
+informando que a conexão foi perdida. Caso esteja no Firefox, vá no menu
+_File_ > _Work Offline_ para que o evento _offline_ seja disparado. Conecte de
+novo e, quando a conexão retornar, o aviso irá sumir. Simples e lindo, hein?
+
+## Suporte e Inconsistências
+
+Cada navegador interpreta o termo _offline_ de maneiradiferente. A especificação
+do <aabr title="HyperText Markup Language 5">HTML5</aabr> informa que o evento
+_offline_ deve ser disparado quando o computador perder conexão com a rede, e
+não necessariamente com a internet. O que significa que, se apenas a conexão
+entre seu _access point_ e seu provedor de internet for perdida, o evento
+offline não será disparado. Mas caso a conexão entre o computador e o _access
+point_ for perdida e esta for a única interface de rede de sua máquina, o evento
+_offline_ será disparado.
+
+O Firefox não implementa a API como definida na especificação e apenas dispara
+o evento quando explicitamente optamos que ele trabalhe no modo _offline_, como
+fizemos anteriormente no _demo_.
+
+O Opera, apesar de apresentar a propriedade `navigator.onLine`, parece não
+implementar os eventos. E nem mesmo a propriedade é atualizada quando perdemos
+conexão com a rede.
+
+<table class="support">
+  <thead>
+    <tr>
+      <th class="subject"><h2>Suporte</h2></th>
+      <th class="browser chrome"><div class="i"></div></th>
+      <th class="browser safari"><div class="i"></div></th>
+      <th class="browser firefox"><div class="i"></div></th>
+      <th class="browser ie"><div class="i"></div></th>
+      <th class="browser opera"><div class="i"></div></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="5" class="base"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="property"><code>Eventos online/offline</code></td>
+      <td>26.0</td>
+      <td>6.0.2</td>
+      <td>18.0</td>
+      <td>10</td>
+      <td>--</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6">A versões dos navegadores acima foram as usadas nos testes,
+        mas não quer dizer que a API foi implementada desde a versão informada.</td>
+    </tr>
+  </tfoot>
+</table>
+
+Infelizmente não achei, nem mesmo no [Can I Use](http://caniuse.com/), uma
+tabela de suporte a estes eventos. Então na tabela acima estão todos os
+_browsers_ com suas respectivas versões que usei para testar o experimento do
+_post_.
 
 <aside class="fonte">
   <h3>Referência</h3>
@@ -87,10 +148,10 @@ if (navigator.onLine) {
       <span class="comment">// Mozilla Developer Network </span>
     </li>
     <li>→
-      <a href="https://developer.mozilla.org/en-US/docs/Online_and_offline_events">
-      Online and offline events
+      <a href="http://stackoverflow.com/questions/3181080/how-to-detect-online-offline-event-cross-browser">
+      How to detect online/offline event cross-browser?
       </a>
-      <span class="comment">// Mozilla Developer Network </span>
+      <span class="comment">// Stack Overflow</span>
     </li>
   </ul>
 </aside>
@@ -210,9 +271,6 @@ if (navigator.onLine) {
       .addClass('online')
 
     $(window)
-      .add(navigator)
-      .add(document)
-      .add(document.body)
       .on('online', function(event) {
         $('body')
           .removeClass('offline')
