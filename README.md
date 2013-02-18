@@ -20,15 +20,17 @@ Para instalar o [Jekyll](https://github.com/mojombo/jekyll), digite o comando:
 $ gem install jekyll
 ```
 
+E a _gem_ do [LESS](http://lesscss.loopinfinito.com.br/) e
+[therubyracer](https://rubygems.org/gems/therubyracer) para
+compilar os arquivos `.less` no momento do _build_:
+```bash
+$ gem install less
+$ gem install therubyracer
+```
+
 Instale o [Pygments](http://pygments.org/) para o _syntax highlight_:
 ```bash
 $ sudo easy_install Pygments
-```
-
-E a _gem_ do [LESS](http://lesscss.loopinfinito.com.br/) para compilar os
-arquivos `.less` no momento do _build_:
-```bash
-$ gem install less
 ```
 
 Depois, faça um clone do blog:
