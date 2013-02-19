@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-02-19-eventos-online-offline.jpg
 tags: HTML5 javascript
-comments: false
+comments: true
 keywords: >
   html5, eventos, events, javascript, online, offline, rede, internet, net,
   conexão, connection
