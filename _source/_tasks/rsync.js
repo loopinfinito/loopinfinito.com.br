@@ -1,8 +1,7 @@
 module.exports = function(grunt) {
-	grunt.registerTask('deploy', 'Envia o diff do blog para o server de staging', function(ambiente) {
+	grunt.registerTask('rsync', 'Envia o diff do blog para o server de staging', function(ambiente) {
 		var spawn = require('child_process').spawn
 		var exec = require('child_process').exec
-
 		var done = this.async()
 
 		// configurações de deploy do rsync
@@ -18,7 +17,6 @@ module.exports = function(grunt) {
 			var remoteRoot = '~/' + blogUrl + '/'
 		}
 
-		grunt.log.writeln('Upando arquivos...')
 		var rsync = spawn('rsync', [
 			'-avz',
 			'--stats',
@@ -40,7 +38,6 @@ module.exports = function(grunt) {
 
 		// evento disparado quando a tarefa é terminada
 		rsync.on('exit', function(code) {
-			grunt.log.ok(blogUrl + ' atualizado')
 			exec('open http://' + blogUrl)
 			done(true)
 		})
