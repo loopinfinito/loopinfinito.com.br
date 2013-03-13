@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('rsync', 'Envia o diff do blog para o server de staging', function(ambiente) {
 		var spawn = require('child_process').spawn
 		var exec = require('child_process').exec
+		var S = require('string')
 		var done = this.async()
 		var ambiente = ambiente || 'production'
 
@@ -22,7 +23,7 @@ module.exports = function(grunt) {
 		exec('git branch', function(error, stdout, stderr) {
 
 			// só permite deploy em *production* se estiver na branch *master*
-			if (ambiente == 'production' && stdout.trim() != '* master') {
+			if (ambiente == 'production' && !S(stdout).contains('* master') ) {
 				grunt.log.errorlns('Você deve estar na branch master para dar deploy para production')
 				done(true)
 			}
