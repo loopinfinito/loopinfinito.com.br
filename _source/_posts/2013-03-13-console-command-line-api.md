@@ -4,11 +4,11 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-image: images/posts/2013-03-07-console-api.jpg
+image: images/posts/2013-03-13-console-api.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
-  lorem, ipsum
+  console, command line, terminal, debug, depurar, código, javascript
 resumo: >
   Antes, para _debugar_ código, enchiamos nosso código de `alert()`. Hoje temos
   várias ferramentas que nos auxiliam a melhor debugar, e entre elas estão
@@ -16,7 +16,7 @@ resumo: >
 ---
 
 Antes, para _debugar_ código, enchiamos nosso código de `alert()`. Hoje temos
-várias ferramentas que nos auxiliam a melhor debugar, e entre elas estãp
+várias ferramentas que nos auxiliam a melhor debugar, e entre elas estão
 o Console e a Command Line <abbr title="Application Program Interface">API</abbr>.
 
 Neste _post_ vamos focar no __Chrome__. Mas a maior
@@ -34,7 +34,7 @@ aparece um ícone amarelo de alerta ao lado da mensagem, com _error_ um
 ícone e mensagem em vermelho. Com _log_ apenas uma mensagem normal.
 
 <figure>
-  <img src="/images/posts/2013-03-07-console-log-warn-error.jpg"
+  <img src="/images/posts/2013-03-13-console-log-warn-error.jpg"
       title="console.log(), console.warn(), console.error()"
       alt="console.log(), console.warn(), console.error()" height="200" />
 </figure>
@@ -45,7 +45,7 @@ Funciona de modo similar à função `$` do jQuery. Retorna um _array_ de elemen
 de acordo com o seletor <abbr title="Cascading Style Sheets">CSS</abbr> passado.
 
 <figure>
-  <img src="/images/posts/2013-03-07-console-$$.jpg" title="$$()" alt="$$()" />
+  <img src="/images/posts/2013-03-13-console-$$.jpg" title="$$()" alt="$$()" />
 </figure>
 
 ## $0, $1, $3 e $4
@@ -55,7 +55,7 @@ __Elements__. Já `$1` é o atalho para o penúltimo elemento. E assim por diant
 até o `$4`.
 
 <figure>
-  <img src="/images/posts/2013-03-07-console-$0.jpg" title="$_" alt="$_" />
+  <img src="/images/posts/2013-03-13-console-$0.jpg" title="$_" alt="$_" />
 </figure>
 
 <h2>$_</h2>
@@ -63,7 +63,7 @@ até o `$4`.
 Atalho para o último valor computado, ou retornado. Mais fácil com um exemplo.
 
 <figure>
-  <img src="/images/posts/2013-03-07-console-$_.jpg" title="$_" alt="$_" />
+  <img src="/images/posts/2013-03-13-console-$_.jpg" title="$_" alt="$_" />
 </figure>
 
 No exemplo acima, antes de chamarmos `$_`, o último valor computado foi o da
@@ -84,7 +84,7 @@ objetos')` e, quando quiser finalizar a medição, chamar o método
 `console.log('100.000 objetos')` com a mesma _string_ passada anteriormente.
 
 <figure>
-  <img src="/images/posts/2013-03-07-console-time.jpg" title="console.time()"
+  <img src="/images/posts/2013-03-13-console-time.jpg" title="console.time()"
       alt="console.time()" />
 </figure>
 
@@ -94,10 +94,23 @@ A função `monitorEvents()` fica monitorando um objeto por um ou mais eventos
 especificados. Quando um evento ocorre, ele imprime o objeto `Event` no console.
 
 <figure>
-  <img src="/images/posts/2013-03-07-monitor-events.jpg" title="monitorEvents()"
+  <img src="/images/posts/2013-03-13-monitor-events.jpg" title="monitorEvents()"
       alt="monitorEvents()" height="200" />
 </figure>
 
+## Snippets para Sublime Text
+
+<figure>
+  <img src="/images/posts/2013-03-13-sublime-package.jpg" title="Sublime Text package"
+      alt="Sublime Text package" height="200" />
+</figure>
+
+E para facilitar ainda mais, eu acabei criando um _package_ do Sublime Text.
+Ele pode ser instalado pelo próprio _Package Control_. O nome do pacote é
+__JavaScript Console__ e as instruções de uso estão na página do
+projeto no [GitHub](https://github.com/caiogondim/js-console-sublime-snippets#javascript-console-sublime-text-snippets).
+Qualquer dúvida, melhoria ou elogio, por favor, não hesitem de abrir uma _issue_
+ou falar aqui embaixo nos comentários.
 
 <aside class="fonte">
   <h3>Referência</h3>
