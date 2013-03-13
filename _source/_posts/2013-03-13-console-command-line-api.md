@@ -70,7 +70,7 @@ No exemplo acima, antes de chamarmos `$_`, o último valor computado foi o da
 expresssão `$$()`. Então quando chamamos `$_.length`, obtemos o mesmo valor que
 `$$('.post-container h2').length`.
 
-## Limpando console
+## Limpando o console
 
 Para limpar o console o atalho é ⌘K no Mac e Control + L no Windows e
 Linux. Você pode também usar o método `console.clear()` caso queira limpar o
@@ -91,7 +91,7 @@ objetos')` e, quando quiser finalizar a medição, chamar o método
 ## Monitorando eventos
 
 A função `monitorEvents()` fica monitorando um objeto por um ou mais eventos
-especificados. Quando um evento ocorre, ele imprime o objeto `Event` no console.
+especificados. Quando um evento ocorre, ela imprime o objeto `Event` no console.
 
 <figure>
   <img src="/images/posts/2013-03-13-monitor-events.jpg" title="monitorEvents()"
