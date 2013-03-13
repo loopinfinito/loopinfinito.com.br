@@ -103,7 +103,7 @@ especificados. Quando um evento ocorre, ela imprime o objeto `Event` no console.
 ## Snippets para Sublime Text
 
 <figure>
-  <img src="/images/posts/2013-03-13-sublime-package.jpg" title="Sublime Text package"
+  <img src="/images/posts/2013-03-13-sublime-package.gif" title="Sublime Text package"
       alt="Sublime Text package" height="200" />
 </figure>
 
