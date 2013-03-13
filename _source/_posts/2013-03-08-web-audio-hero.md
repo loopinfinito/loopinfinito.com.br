@@ -12,15 +12,17 @@ keywords: >
   processamento, efeitos, aplicacao,
 resumo: >
   Fala pessoal! **Web Audio Hero** é a minha nova palestra que ministrarei amanhã
-  no primeiro [Rio.JS](http://riojs.org "Rio.JS"). Abordarei os princípios e as
-  técnicas de uso essenciais desta nova API para processamento e sintetização de
-  audio diretamente do seu navegador – a **Web Audio API**.
+  no primeiro [Rio.JS](http://riojs.org "Rio.JS") (desconsiderando os *meetings*).
+  Abordarei os princípios e as técnicas de uso essenciais desta nova API para
+  processamento e sintetização de audio diretamente do seu navegador –
+  a **Web Audio API**.
 ---
 
 Fala pessoal! **Web Audio Hero** é a minha nova palestra que ministrarei amanhã
-no primeiro [Rio.JS](http://riojs.org "Rio.JS"). Abordarei os princípios e as
-técnicas de uso essenciais desta nova API para processamento e sintetização de
-audio diretamente do seu navegador – a **Web Audio API**.
+no primeiro [Rio.JS](http://riojs.org "Rio.JS") (desconsiderando os *meetings*).
+Abordarei os princípios e as técnicas de uso essenciais desta nova API para
+processamento e sintetização de audio diretamente do seu navegador –
+a **Web Audio API**.
 
 Sempre gostei muito de música, e isto me dá uma motivação adicional pra falar
 de um assunto como este. Mesmo sendo um leigo no que se diz respeito a filtros e
