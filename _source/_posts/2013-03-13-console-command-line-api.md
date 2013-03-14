@@ -83,7 +83,7 @@ console de tempos em tempos de forma programática.
 Ótimo para verificar quanto tempo determinada parte do código está
 demorando para ser executada. Basta chamar `console.time('100.000
 objetos')` e, quando quiser finalizar a medição, chamar o método
-`console.log('100.000 objetos')` com a mesma _string_ passada anteriormente.
+`console.timeEnd('100.000 objetos')` com a mesma _string_ passada anteriormente.
 
 <figure>
   <img src="/images/posts/2013-03-13-console-time.jpg" title="console.time()"
