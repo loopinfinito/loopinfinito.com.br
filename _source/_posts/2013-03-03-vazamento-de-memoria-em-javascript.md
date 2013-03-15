@@ -15,6 +15,12 @@ resumo: >
   ducimus. Illum nihil magni consequuntur maiores nemo eligendi!
 ---
 
+<style>
+  .post-container video {
+    margin-left: -50px;
+  }
+</style>
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta atque laboriosam
 perferendis fugiat voluptatibus praesentium dolor impedit doloribus porro
 architecto ducimus aperiam cumque iste ipsum nihil. Rerum saepe natus nihil.
@@ -22,6 +28,19 @@ architecto ducimus aperiam cumque iste ipsum nihil. Rerum saepe natus nihil.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illo nulla
 doloribus incidunt ducimus voluptate natus iste rerum distinctio sequi! Fuga
 saepe sequi inventore libero veritatis soluta numquam deleniti eaque.
+
+<figure>
+  <img src="/images/posts/2013-03-03-mark-and-sweep.gif"
+      title="Mark and Sweep" alt="Mark and Sweep" />
+</figure>
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id tempora debitis
+aliquam itaque laboriosam rem ut sunt dolor veritatis porro modi ipsa. Commodi
+saepe ex. Quae quas recusandae commodi libero.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia reiciendis at
+adipisci voluptate veniam porro recusandae est veritatis ipsam obcaecati facilis
+ad autem eum illum facere dolores vel neque distinctio.
 
 <aside class="fonte">
   <h3>Referência</h3>
