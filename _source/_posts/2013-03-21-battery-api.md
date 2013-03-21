@@ -7,7 +7,7 @@ author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-03-21-battery-api.png
 has_inner_image: false
 tags: HTML5 javascript experimento
-comments: false
+comments: true
 keywords: >
   bateria, battery, api, html5, javascript, js, charging, carregar, tempo,
   eventos, experimento, nivel, level, descarregar, chargingTime, dischargingTime,
@@ -197,7 +197,7 @@ do usuário**.
 ### Um exemplo
 
 Vamos imaginar que desenvolvemos uma *web app* para o novíssimo Firefox OS.
-Nossa *app* deverá realizar *pooling*, isto é, deverá, de tempos em tempos, acessar
+Nossa *app* deverá realizar *polling*, isto é, deverá, de tempos em tempos, acessar
 uma determinada fonte de dados para checar se há informação nova disponível –
 digamos, por exemplo que nossa *app* pergunta ao Facebook de 5 em 5 segundos
 se há algo de novo. Em um intervalo de 1 hora, nossa aplicação fará 720
