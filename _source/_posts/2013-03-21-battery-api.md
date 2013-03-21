@@ -4,14 +4,19 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-image: images/posts/2013-03-20-battery-api.png
+image: images/posts/2013-03-21-battery-api.png
 has_inner_image: false
-tags:
+tags: HTML5 javascript experimento
 comments: false
 keywords: >
-  lorem
+  bateria, battery, api, html5, javascript, js, charging, carregar, tempo,
+  eventos, experimento, nivel, level, descarregar, chargingTime, dischargingTime,
+  onchargingtimechange, onchargingchange, ondischargingtimechange, onlevelchange
 resumo: >
-  lorem
+  A **Battery API** permite que tenhamos acesso a informações sobre a bateria do
+  nosso dispositivo – seja ele um dispositivo móvel (*smartphone* ou *tablet*) ou
+  um *laptop*. Veja o *status* da sua bateria neste pequeno exeperimento que
+  desenvolvi *a la windows 8*.
 ---
 
 Eis mais uma nova API HTML5 de **acesso à dispositivos**.
