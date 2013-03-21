@@ -212,9 +212,44 @@ Com a Battery API será possível aos desenvolvedores ter um *feedback* mais
 apurado em relação a este tipo de problema, o que auxiliará na tomada de decisão
 e consequentemente na melhora da qualidade de *software*.
 
+<table class="support">
+  <thead>
+    <tr>
+      <th class="subject"><h2>Suporte</h2></th>
+      <th class="browser chrome"><div class="i"></div></th>
+      <th class="browser safari"><div class="i"></div></th>
+      <th class="browser firefox"><div class="i"></div></th>
+      <th class="browser ie"><div class="i"></div></th>
+      <th class="browser opera"><div class="i"></div></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="5" class="base"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="property">Battery API</td>
+      <td>--</td>
+      <td>--</td>
+      <td>16 *</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6">
+        * O Firefox já dava suporte prefixado desde a versão 10 (<code>mozBattery</code>)
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
         <li>→<a href="http://www.w3.org/TR/battery-status/" alt="Battery Status API" title="Battery Status API">Battery Status API</a> <span class="comment">// W3C</span></li>
+        <li>→<a href="https://developer.mozilla.org/en-US/docs/DOM/window.navigator.battery" alt="window.navigator.battery" title="window.navigator.battery">window.navigator.battery</a> <span class="comment">// MDN</span></li>
     </ul>
 </aside>
