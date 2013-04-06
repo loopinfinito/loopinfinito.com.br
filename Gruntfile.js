@@ -10,22 +10,10 @@ module.exports = function(grunt) {
 				server: true,
 				server_port: 4000,
 				auto: true,
-				baseurl: '/',
-				paginate: 5,
-				url: 'http://loopinfinito.com.br',
-				future: true,
-				pygments: true,
-				permalink: 'pretty'
 			},
 			build: {
 				src: '_source',
 				dest: 'site',
-				baseurl: '/',
-				paginate: 5,
-				url: 'http://loopinfinito.com.br',
-				future: true,
-				pygments: true,
-				permalink: 'pretty'
 			}
 		}
 	})
