@@ -4,7 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-image: images/posts/2013-03-19-propagacao-de-eventos-no-dom.jpg
+image: images/posts/2013-04-23-entendendo-a-propagacao-de-eventos-no-dom.jpg
 tags:
 comments: false
 keywords: >
