@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		// para poder dar o deploy com sucesso, é necessário que sua chave
 		// pública esteja no arquivo ~/.ssh/authorized_keys do servidor
 		var user = 'loopinfinito'
-		var localRoot = '../../site/'
+		var localRoot = '../site/'
 		if (ambiente == 'staging') {
 			var blogUrl = 'staging.loopinfinito.com.br'
 			var remoteRoot = '~/' + blogUrl + '/'
