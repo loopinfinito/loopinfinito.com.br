@@ -53,9 +53,11 @@
 					</header>
 					<section itemprop="articleBody">
 						{% if page.image and (page.has_inner_image == null or page.has_inner_image == true) %}
-						<figure>
-							<img itemprop="thumbnailUrl" src="/{{ page.image }}" class="post-image" alt="{{ page.title | strip_html }}" title="{{ page.title | strip_html }}" width="700" height="432" />
-						</figure>
+							<figure>
+								<img itemprop="thumbnailUrl" src="/{{ page.image }}" class="post-image" alt="{{ page.title | strip_html }}" title="{{ page.title | strip_html }}" width="700" height="432" />
+							</figure>
+						{% elsif page.image %}
+							<meta itemprop="thumbnailUrl" content="{{ site.url }}/{{ page.image }}" />
 						{% endif %}
 						{{ content }}
 					</section>
