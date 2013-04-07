@@ -2,8 +2,10 @@
 	<meta charset="UTF-8" />
 	{% if page.title %}
 		<title>{{ page.title | strip_html }} – Loop Infinito</title>
+		<meta property="og:title" content="{{ page.title | strip_html }} – Loop Infinito" />
 	{% else %}
 		<title>Loop Infinito</title>
+		<meta property="og:title" content="Loop Infinito" />
 	{% endif %}
 	{% if page.author %}
 		<meta name="author" content="{{ page.author }}" />
@@ -17,14 +19,33 @@
 	{% endif %}
 	{% if page.resumo %}
 		<meta name="description" content="{{ page.resumo | markdownify | strip_html | escape }}" />
+		<meta property="og:description" content="{{ page.resumo | markdownify | strip_html | escape }}" />
 	{% else %}
 		<meta name="description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
+		<meta property="og:description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
 	{% endif %}
+
 	<meta name="language" content="pt" />
 	<meta name="content-language" content="pt-BR" />
 	<meta name="robots" content="all" />
 	<meta name="distribution" content="Global" />
 	<meta name="resource-type" content="document" />
+
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:site_name" content="Loop Infinito" />
+	<meta property="fb:app_id" content="267105710038464" />
+
+	{% if page.image %}
+		<meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
+	{% else %}
+		<meta property="og:image" content="{{ site.url }}/images/loop-infinito-icon.jpg" />
+	{% endif %}
+	{% if page.layout == 'post' %}
+		<meta property="og:type" content="article" />
+	{% else %}
+		<meta property="og:type" content="blog" />
+	{% endif %}
 
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
