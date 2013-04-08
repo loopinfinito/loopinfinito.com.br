@@ -1,25 +1,10 @@
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@loopinfinito">
-<meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@loopinfinito" />
+<meta name="twitter:url" content="{{ var_url }}" />
+<meta name="twitter:title" content="{{ var_title }}" />
+<meta name="twitter:description" content="{{ var_description }}" />
+<meta name="twitter:image" content="{{ var_image }}" />
 
 {% if page.author_link %}
 	<meta name="twitter:creator" content="@{{ page.author_link | split:'/' | last }}">
-{% endif %}
-
-{% if page.title %}
-	<meta name="twitter:title" content="{{ page.title | strip_html }} – Loop Infinito">
-{% else %}
-	<meta name="twitter:title" content="Loop Infinito">
-{% endif %}
-
-{% if page.resumo %}
-	<meta name="description" content="{{ page.resumo | markdownify | strip_html | escape }}" />
-{% else %}
-	<meta name="twitter:description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
-{% endif %}
-
-{% if page.image %}
-	<meta name="twitter:image" content="{{ site.url }}/{{ page.image }}" />
-{% else %}
-	<meta name="twitter:image" content="{{ site.url }}/images/loop-infinito-icon.jpg" />
 {% endif %}
