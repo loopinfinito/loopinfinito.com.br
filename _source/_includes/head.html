@@ -2,27 +2,26 @@
 	<meta charset="UTF-8" />
 	{% if page.title %}
 		<title>{{ page.title | strip_html }} – Loop Infinito</title>
-		<meta property="og:title" content="{{ page.title | strip_html }} – Loop Infinito" />
 	{% else %}
 		<title>Loop Infinito</title>
-		<meta property="og:title" content="Loop Infinito" />
 	{% endif %}
+
 	{% if page.author %}
 		<meta name="author" content="{{ page.author }}" />
 	{% else %}
 		<meta name="author" content="Almir Filho, Caio Gondim" />
 	{% endif %}
+
 	{% if page.keywords %}
 		<meta name="keywords" content="{{ page.keywords }}" />
 	{% else %}
 		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend, loop, loop infinito, l8p, crista da onda" />
 	{% endif %}
+
 	{% if page.resumo %}
 		<meta name="description" content="{{ page.resumo | markdownify | strip_html | escape }}" />
-		<meta property="og:description" content="{{ page.resumo | markdownify | strip_html | escape }}" />
 	{% else %}
 		<meta name="description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
-		<meta property="og:description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
 	{% endif %}
 
 	<meta name="language" content="pt" />
@@ -31,21 +30,7 @@
 	<meta name="distribution" content="Global" />
 	<meta name="resource-type" content="document" />
 
-	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-	<meta property="og:locale" content="pt_BR" />
-	<meta property="og:site_name" content="Loop Infinito" />
-
-	{% if page.image %}
-		<meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
-	{% else %}
-		<meta property="og:image" content="{{ site.url }}/images/loop-infinito-icon-og.jpg" />
-	{% endif %}
-	{% if page.layout == 'post' %}
-		<meta property="og:type" content="article" />
-	{% else %}
-		<meta property="og:type" content="blog" />
-	{% endif %}
-
+	{% include open-graph.html %}
 	{% include twitter-cards.html %}
 
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
