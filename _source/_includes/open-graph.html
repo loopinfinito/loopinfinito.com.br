@@ -1,0 +1,27 @@
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="Loop Infinito" />
+
+{% if page.title %}
+	<meta property="og:title" content="{{ page.title | strip_html }} – Loop Infinito" />
+{% else %}
+	<meta property="og:title" content="Loop Infinito" />
+{% endif %}
+
+{% if page.resumo %}
+	<meta property="og:description" content="{{ page.resumo | markdownify | strip_html | escape }}" />
+{% else %}
+	<meta property="og:description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
+{% endif %}
+
+{% if page.image %}
+	<meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
+{% else %}
+	<meta property="og:image" content="{{ site.url }}/images/loop-infinito-icon-og.jpg" />
+{% endif %}
+
+{% if page.layout == 'post' %}
+	<meta property="og:type" content="article" />
+{% else %}
+	<meta property="og:type" content="blog" />
+{% endif %}
