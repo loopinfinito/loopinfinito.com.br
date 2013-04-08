@@ -46,6 +46,8 @@
 		<meta property="og:type" content="blog" />
 	{% endif %}
 
+	{% include twitter-cards.html %}
+
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css?{{ site.time | date: "%Y-%m-%d" }}" media="all" />
