@@ -8,31 +8,93 @@ image: images/posts/2013-03-03-vazamento-de-memoria-em-javascript.jpg
 tags: javascript
 comments: false
 keywords: >
-  javascript, js
+  javascript, js, vazamento de memória, memory leak, alocação de memória,
+  garbage collector, coletor de lixo, mark and sweep
 resumo: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nihil et
-  unde quam ratione quisquam dicta blanditiis sint quod sit veritatis labore
-  ducimus. Illum nihil magni consequuntur maiores nemo eligendi!
+  Isso não é um problema apenas de linguagens baixo nível como C ou Objective-C.
+  Também há vazamento de memória em JavaScript. Neste post vamos entender
+  como funciona o mecanismo de liberação automática de memória e como evitar
+  _memory leaks_ para que nossa aplicação não se torne uma devorada de memória _RAM_.
 ---
 
-<style>
-  .post-container video {
-    margin-left: -50px;
-  }
-</style>
+Acredito que a maioria das pessoas não saiba que é possível termos vazamento de
+memória em JavaScript. Afinal, nós não alocamos explicitamente memória como em
+linguagens mais baixo nível como C, C++ ou Objective-C. Então, se nós não somos
+responsáveis por essa alocação de memória, se houver um _leak_ a culpa será da
+linguagem, e não do programador.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta atque laboriosam
-perferendis fugiat voluptatibus praesentium dolor impedit doloribus porro
-architecto ducimus aperiam cumque iste ipsum nihil. Rerum saepe natus nihil.
+Certo?
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illo nulla
-doloribus incidunt ducimus voluptate natus iste rerum distinctio sequi! Fuga
-saepe sequi inventore libero veritatis soluta numquam deleniti eaque.
+__Errado  __.
+
+É importante sabermos como a liberação automática de memória funciona
+para evitarmos alguns casos específicos onde a memória pode nunca ser liberada.
+Mas antes de falarmos sobre vazamento de memória vamos
+utilizar a técnica [Jack Estripador](http://pt.wikipedia.org/wiki/Jack,_o_Estripador)
+e vamos dividir o problema em partes.
+Primeiro vamos entender um pouco do ciclo de vida da memória, depois como funciona a
+liberação automática de memória no JavaScript para, só então, sairmos da teoria
+e vermos um experimento mostrando um _memory leak_.
+
+## Ciclo de vida da memória
+
+O ciclo de vida da memória é praticamente o mesmo não importando a linguagem.
+Ele se dá em 3 passos:
+
+- Alocação
+- Uso
+- Liberação
+
+Nós __alocamos__ memória quando declaramos uma variável, declaramos uma função,
+aumentamos o tamanho de nosso _array_, etc. Nós __usamos__ aquele trecho de
+memória quando acessamos ou escrevemos algo nele. E nós devemos liberar memória
+para dar espaço para futuras alocações pois, caso contrário, iriamos consumir
+rapidamente toda a memória do computador.
+
+Esses dois primeiros passos acontecem de forma explícita em todas
+as linguagens, ou seja, o programador que define quando (não como) a memória
+será alocada e usada. Já o terceiro passo é explícito apenas em linguagens de baixo nível, onde o
+programador tem que fazer todo o trabalho de sempre liberar memória que não está
+mais sendo usada. E implícito em linguagens de alto nível como JavaScript, Ruby
+e Python, onde a própria linguagem cuidará disso.
+
+## Garbage Collection
+
+Como foi dito, a liberação de memória no JavaScript é feita de forma implícita
+(automática, transparente). A própria linguagem se encarrega de fazer esse
+trabalho sujo para nós. Esta mágica é chamada de _garbage collection_, ou
+coleção de lixo.
+
+Existem algumas maneiras dferentes de se implementar um coletor de lixo, mas
+hoje todos os grandes navegadores utilizam um algoritmo (heurística) chamado de
+_Mark and Sweep_ para marcar trechos de memória que não estão mais sendo
+utilizados, ou dizer o que é ou não lixo para que seja recolhido pelo coletor.
+
+### _Mark and Sweep_
+
+Descendo um pouco mais na toca do coelho, vamos entender como funciona o _Mark
+and Sweep_. Na primeira etapa, ele sai varrendo todos os objetos alocados em
+memória. A varredura é iniciada pelos objetos raízes, que no caso do JavaScript
+no _browser_ é o objeto `window`. A partir dele, ele sai visitando todos os
+objetos a que `window` faz referência. E depois todos os objetos que os objetos
+referenciados por `window` fazem referência, e assim por diante.
+
+No final desta varredura, todos os objetos que não foram visitados são marcados
+como lixo e o no próximo evento de _garbage collection_ essa memória será
+liberada. Talvez tudo fique mais claro com o passo-a-passo abaixo do algoritmo.
 
 <figure>
   <img src="/images/posts/2013-03-03-mark-and-sweep.gif"
       title="Mark and Sweep" alt="Mark and Sweep" />
 </figure>
+
+## Vacilos da vida real
+
+Sabendo como funciona a mágica da liberação automática de memória, vamos agora ver
+como é possível termos
+
+## lorem
+
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id tempora debitis
 aliquam itaque laboriosam rem ut sunt dolor veritatis porro modi ipsa. Commodi
@@ -65,10 +127,10 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   <h3>Referência</h3>
   <ul>
     <li>→
-      <a href="#">
-        Lorem Ipsum
+      <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Memory_Management">
+        Memory Management
       </a>
-      <span class="comment">// Lorem</span>
+      <span class="comment">// Mozilla Developer Network</span>
     </li>
   </ul>
 </aside>
