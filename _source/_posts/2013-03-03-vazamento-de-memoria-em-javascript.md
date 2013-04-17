@@ -88,10 +88,74 @@ liberada. Talvez tudo fique mais claro com o passo-a-passo abaixo do algoritmo.
       title="Mark and Sweep" alt="Mark and Sweep" />
 </figure>
 
-## Vacilos da vida real
+## Exemplo de vazamento
 
-Sabendo como funciona a mágica da liberação automática de memória, vamos agora ver
-como é possível termos
+Acredito que a melhor forma de aprender é sempre pondo em prática o que se aprende.
+Pra isso fiz um experimento pra que fique mais fácil de mostrar um _memory leak_
+e como detectar. Ele está no [Github](http://caiogondim.github.io/vazamento-memoria-js-experimento/)
+e eu aconselho que vocês tentem repetir os passos que vamos fazer para ver na real
+como detectar um vazamento de memória.
+
+### O experimento
+
+O experimento é uma aplicação onde temos várias fotos em miniatura e quando
+clicamos em uma das miniaturas, podemos vê-la em um tamanho maior. O _GIF_
+tosco abaixo vai ajudar a entender a quem ainda não clicou no link do
+[Github](http://caiogondim.github.io/vazamento-memoria-js-experimento/).
+
+<figure>
+  <img src="/images/posts/2013-04-23-vazamento-memoria-js-experimento.gif"
+      title="Experimento" alt="Experimento" />
+</figure>
+
+A principal parte do código é esta que segue:
+
+{% highlight javascript %}
+$('.miniatura').on('click', function(event) {
+  var img = $('<img />')
+    .addClass('lightbox')
+    .attr('src', $(this).attr('src'))
+    .on('click', function(event) {
+      $(this).remove()
+    })
+    .appendTo('body')
+
+  $(window).on('resize', function() {
+    resizeImg(img)
+  })
+})
+
+function resizeImg(img) {
+  console.log(img)
+}
+{% endhighlight %}
+
+Vamos entender o código passo-a-passo. Estou definindo que ao clicar em uma
+miniatura, é criada um novo elemento `img` com o mesmo `src` da imagem clicada.
+E nessa imagem que acabamos de criar, adicionamos a classe __lightbox__ para
+deixar ela maior e centralizada por CSS. E ao final disso tudo, inserimos ela no
+DOM com o método `appendTo('body')`. E, no _click_ desta imagem recém-criada, ela
+é removida do _DOM_.
+
+Logo depois setamos um evento `resize` à `window` que dispara a função
+`resizeImg` passando a imagem criada há pouco como parâmetro. Imaginem que
+gostariamos de mudar as dimensões da imagem de acordo com o tamanho do
+_viewport_. Aqui não implementamos isso para deixar o experimento simples e
+porque não iria fazer nenhuma diferença para demonstrar o _leak_.
+
+Até aqui tudo bem. Quando clicamos em uma imagem de miniatura ela cria uma imagem
+de forma dinâmica. E quando clicamos nela novamente, ela é removida. Nenhum _leak_
+aparente. Estamos alocando, usando e liberando a memória, pois estamos removendo
+a imagem do DOM, permintindo assim que ela seja coletada pelo coletor de lixo.
+
+Vamos analisar o comportamento do experimento com a ajuda do Chrome Dev Tools.
+Abrindo a aba _Timeline_, vamos gravar uma sessão de uso com o seguinte cenário:
+Vamos clicar uma vez em uma miniatura para abrir uma imagem maior, logo depois
+na imagem maior para que ele seja removida do _DOM, e vamos repetir isto 5 vezes.
+
+
+
+### O código
 
 ## lorem
 
