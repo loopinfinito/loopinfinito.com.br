@@ -100,7 +100,10 @@ img {
 
 ## Brightness
 <p><img src="/images/posts/2012-04-14-jeri-brightness.jpg" width="700" height="200" /></p>
-O <code>brightness</code> altera o brilho do elemento. Os valores vão de 100% a 0%. Em 100%, com o brilho no máximo, o elemento fica totalmente branco.
+O <code>brightness</code> altera o brilho do elemento.
+100% é o valor padrão. Diminuindo esse valor ele ficará mais escuro,
+ficando totalmente preto em 0%.
+Aumentando o valor para mais de 100%, ele irá ficar cada vez mais claro.
 
 {% highlight css %}
 img {
@@ -189,6 +192,8 @@ No momento em que escrevo este post, os CSS Filters rodam no <a href="http://too
 <div class="update">
 	<h3>13/01/2013</h3>
 	<p>Adicionado o filtro <code>drop-shadow</code></p>
+  <h3>14/03/2013</h3>
+  <p>Correção na seção sobre <code>brightness</code></p>
 </div>
 
 <aside class="fonte">

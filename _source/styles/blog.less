@@ -554,6 +554,10 @@ header#main {
 		position: relative;
 		margin-bottom: 100px;
 
+		.post-image {
+			border-width: 0; // retira borda que aparece no IE
+		}
+
 		article {
 			width: 600px;
 			background-color: white;
@@ -740,6 +744,23 @@ header#main {
 					border-color: #ddd;
 				}
 			}
+
+			blockquote {
+				padding-left: 20px;
+				border-left: 10px #ccc solid;
+				color: #999;
+				display: block;
+
+				footer {
+					font-size: 14px;
+				}
+			}
+
+			abbr {
+				border-bottom: 1px dotted #CCC;
+				padding-bottom: 1px;
+			}
+
 		} // fim de article
 
 		#post-number {

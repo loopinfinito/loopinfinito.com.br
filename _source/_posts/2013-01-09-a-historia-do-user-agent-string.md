@@ -3,6 +3,7 @@ title: A história do <span>user-agent</span> string
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
+author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-01-09-a-historia-do-user-agent-string.jpg
 tags: navegadores
 comments: true
