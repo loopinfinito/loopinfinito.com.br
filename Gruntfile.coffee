@@ -10,9 +10,11 @@ module.exports = (grunt) ->
 				server: true
 				server_port: 4000
 				auto: true
+				future: true
 			build:
 				src: '_source'
 				dest: 'site'
+				future: true
 	)
 
 	grunt.registerTask('run', ['jekyll:dev'])
