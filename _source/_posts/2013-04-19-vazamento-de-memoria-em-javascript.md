@@ -4,21 +4,22 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-image: images/posts/2013-04-23-vazamento-de-memoria-em-javascript.jpg
+image: images/posts/2013-04-19-vazamento-de-memoria-em-javascript.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
   javascript, js, vazamento de memória, memory leak, alocação de memória,
   garbage collector, coletor de lixo, mark and sweep
 resumo: >
-  Isso não é um problema apenas de linguagens baixo nível como C ou Objective-C.
-  Também há vazamento de memória em JavaScript. Neste post vamos entender
-  como funciona o mecanismo de liberação automática de memória e como evitar
-  _memory leaks_ para que nossa aplicação não se torne uma devorada de memória _RAM_.
+  Vazamento de memória é um problema apenas de linguagens de baixo nível, como C
+  ou C++. Nós não precisamos nos preocupar com isso, afinal, a linguagem possui
+  um lindíssimo coletor de lixo e `malloc` é coisa do passado. Então, se houver
+  vazamento de memória em JS, será um problema de implementação da linguagem, e
+  não do programador. __Certo?__
 ---
 
 Acredito que a maioria das pessoas não saiba que é possível termos vazamento de
-memória em JavaScript. Afinal, nós não alocamos explicitamente memória como em
+memória em JavaScript. Afinal, nós não alocamos memória explicitamente como em
 linguagens de baixo nível como C, C++ ou Objective-C. Então, se nós não somos
 responsáveis por essa alocação de memória, se houver um _leak_ a culpa será da
 linguagem, e não do programador.
@@ -38,7 +39,7 @@ e vermos um experimento.
 
 ## Ciclo de vida da memória
 
-O ciclo de vida da memória é praticamente o mesmo não importando a linguagem.
+O ciclo de vida da memória é praticamente o mesmo, não importando a linguagem.
 Ele se dá em 3 passos:
 
 - Alocação
@@ -48,7 +49,7 @@ Ele se dá em 3 passos:
 Nós __alocamos__ memória quando declaramos uma variável, declaramos uma função,
 aumentamos o tamanho de nosso _array_, etc. Nós __usamos__ aquele trecho de
 memória quando acessamos ou escrevemos algo nele. E nós devemos __liberar__ memória
-para dar espaço para futuras alocações pois, caso contrário, iriamos consumir
+para dar espaço para futuras alocações pois, caso contrário, iríamos consumir
 rapidamente toda a memória do computador.
 
 Esses dois primeiros passos acontecem de forma __explícita__ em todas as
@@ -63,7 +64,7 @@ como JavaScript, Ruby e Python, onde a própria linguagem cuidará disso.
 Como foi dito, a liberação de memória no JavaScript é feita de forma __implícita__
 (automática, transparente). E esta mágica é chamada de _garbage collection_, ou
 coleta de lixo.
-Existem algumas maneiras dferentes de se implementar um coletor de lixo, mas
+Existem algumas maneiras diferentes de se implementar um coletor de lixo, mas
 hoje todos os grandes navegadores utilizam um algoritmo (heurística) chamado de
 _Mark and Sweep_ para marcar trechos de memória que não estão mais sendo
 utilizados. Em outras palavras, ele que diz o que é e o que não é lixo para que
@@ -82,11 +83,11 @@ como lixo e o no próximo evento de _garbage collection_ essa memória será
 liberada.
 
 Na animação abaixo temos um exemplo do algoritmo _Mark and Sweep_ fazendo a
-varredura, marcando um objeto como lixo (o círculo laranja) e desse objeto sendo
-recolhido pelo _Garbage Collector_.
+varredura, marcando um objeto como lixo (o círculo laranja) e esse mesmo objeto
+sendo recolhido pelo _Garbage Collector_.
 
 <figure>
-  <img src="/images/posts/2013-04-23-mark-and-sweep.gif"
+  <img src="/images/posts/2013-04-19-mark-and-sweep.gif"
       title="Mark and Sweep" alt="Mark and Sweep" />
 </figure>
 
@@ -94,7 +95,7 @@ recolhido pelo _Garbage Collector_.
 
 Acredito que a melhor forma de aprender é sempre pondo em prática o que se aprende.
 Pra isso fiz um experimento pra que fique mais fácil de mostrar um _memory leak_
-e como detectar. Ele está no [Github](http://caiogondim.github.io/vazamento-memoria-js-experimento/)
+e como detectá-lo. Ele está no [Github](http://caiogondim.github.io/vazamento-memoria-js-experimento/)
 e eu aconselho que vocês tentem repetir os passos que vamos fazer para ver na real
 como detectar um vazamento de memória.
 
@@ -106,7 +107,7 @@ abaixo vai ajudar a explicar o experimento a quem ainda não clicou no link do
 [Github](http://caiogondim.github.io/vazamento-memoria-js-experimento/).
 
 <figure>
-  <img src="/images/posts/2013-04-23-vazamento-memoria-js-experimento.gif"
+  <img src="/images/posts/2013-04-19-vazamento-memoria-js-experimento.gif"
       title="Experimento" alt="Experimento" />
 </figure>
 
@@ -163,7 +164,7 @@ na imagem maior para que ele seja removida do _DOM_, e repetir este processo 5
 vezes.
 
 <figure>
-  <img src="/images/posts/2013-04-23-timeline.jpg"
+  <img src="/images/posts/2013-04-19-timeline.jpg"
       title="Chrome Dev Tools Timeline" alt="Chrome Dev Tools Timeline" />
 </figure>
 
@@ -187,7 +188,7 @@ evitando que o _mark and sweep_ a marque como lixo para que seja recolhida pelo
 coletor de lixo.
 
 <figure>
-  <img src="/images/posts/2013-04-23-leak-passo-a-passo.gif"
+  <img src="/images/posts/2013-04-19-leak-passo-a-passo.gif"
       title="Vazamento passo-a-passo" alt="Vazamento passo-a-passo" />
 </figure>
 
@@ -203,6 +204,15 @@ evento possui uma referência para a imagem.
 Quando removemos a imagem do _DOM_, `body` não aponta mais para a imagem, porém
 o evento `resize` do `window` continua. O que torna a imagem inelegível para
 ser marcada como lixo. E por isso ela nunca será liberada da memória.
+
+## Pra quê isso tudo?
+
+Em _sites_ convencioanais, um _refresh_ faz com que toda a memória alocada para
+aquela página seja liberada. O que não acontece em _web apps_, como Gmail. É
+verdade que alguns _frameworks_ como [Ember](http://emberjs.com/) e
+[AngularJS](http://angularjs.org) tentam resolver esses casos especiais de
+retenção de memória, mas nem sempre seu uso é justificado e, principalmente, é
+importante que o artesão domine suas ferramentas e seja mestre no que faz.
 
 <aside class="fonte">
   <h3>Referência</h3>
