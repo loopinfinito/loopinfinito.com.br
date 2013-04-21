@@ -64,7 +64,7 @@
 							<aside class="fonte">
 								<h3>Referência</h3>
 								<ul>
-								{% for rel in page.related %}
+									{% for rel in page.related %}
 									<li itemprop="mentions" itemscope itemtype="http://schema.org/Thing">→
 										<a itemprop="url" href="{{ rel.url }}" alt="{{ rel.title }}" title="{{ rel.title }}">
 											<span itemprop="name">{{ rel.title }}</span>
@@ -73,7 +73,7 @@
 											<span class="comment">// {{ rel.from }}</span>
 										{% endif %}
 									</li>
-								{% endfor %}
+									{% endfor %}
 								</ul>
 							</aside>
 						{% endif %}
