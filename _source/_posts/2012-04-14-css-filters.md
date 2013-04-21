@@ -17,18 +17,28 @@ resumo: >
   Esses efeitos, chamados de filtros, irão nos permitir modificar a renderização
   de qualquer elemento DOM, de um simples `p`, até elementos mais complexos como
   `image` ou `video`.
+related:
+  - title: Say Hello to CSS3 Filters
+    url: http://net.tutsplus.com/tutorials/html-css-techniques/say-hello-to-css3-filters/
+    from: NetTuts
+  - title: CSS Filters
+    url: http://davidwalsh.name/css-filters
+    from: David Walsh
+  - title: CSS Filter Effects Landing in Webkit
+    url: http://updates.html5rocks.com/2011/12/CSS-Filter-Effects-Landing-in-WebKit
+    from: HTML5 Rocks
+  - title: Filters Effects 1.0
+    url: https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html
+    from: W3C
 ---
 
 <style>
-
 	#cssfilter-img-base:hover {
 		-webkit-transition: all 1s linear;
 	}
-
 	#cssfilter-img-base:hover {
 		-webkit-filter: saturate(4);
 	}
-
 </style>
 
 A Adobe, Apple e Opera estão <a href="https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html">trabalhando juntas</a> para trazer alguns efeitos no estilo Photoshop para o CSS.
@@ -195,13 +205,3 @@ No momento em que escrevo este post, os CSS Filters rodam no <a href="http://too
   <h3>14/03/2013</h3>
   <p>Correção na seção sobre <code>brightness</code></p>
 </div>
-
-<aside class="fonte">
-	<h3>Referência</h3>
-	<ul>
-		<li>→<a href="http://net.tutsplus.com/tutorials/html-css-techniques/say-hello-to-css3-filters/">NetTuts</a></li>
-		<li>→<a href="http://davidwalsh.name/css-filters">David Walsh</a></li>
-		<li>→<a href="http://updates.html5rocks.com/2011/12/CSS-Filter-Effects-Landing-in-WebKit">HTML5 Rocks</a></li>
-		<li>→<a href="https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html">W3C</a></li>
-	</ul>
-</aside>
