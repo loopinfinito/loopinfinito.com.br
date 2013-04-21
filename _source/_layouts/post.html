@@ -60,6 +60,21 @@
 							<meta itemprop="thumbnailUrl" content="{{ site.url }}/{{ page.image }}" />
 						{% endif %}
 						{{ content }}
+						{% unless page.related == empty %}
+							<aside class="fonte">
+								<h3>Referência</h3>
+								<ul>
+								{% for rel in page.related %}
+									<li>→
+										<a href="{{ rel.url }}" alt="{{ rel.title }}" title="{{ rel.title }}">{{ rel.title }}</a>
+										{% if rel.from %}
+											<span class="comment">// {{ rel.from }}</span>
+										{% endif %}
+									</li>
+								{% endfor %}
+								</ul>
+							</aside>
+						{% endunless %}
 					</section>
 					{% if page.comments %}
 					<footer id="disqus_thread">
