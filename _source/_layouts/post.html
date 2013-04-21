@@ -60,7 +60,7 @@
 							<meta itemprop="thumbnailUrl" content="{{ site.url }}/{{ page.image }}" />
 						{% endif %}
 						{{ content }}
-						{% unless page.related == empty %}
+						{% if page.related %}
 							<aside class="fonte">
 								<h3>Referência</h3>
 								<ul>
@@ -74,7 +74,7 @@
 								{% endfor %}
 								</ul>
 							</aside>
-						{% endunless %}
+						{% endif %}
 					</section>
 					{% if page.comments %}
 					<footer id="disqus_thread">
