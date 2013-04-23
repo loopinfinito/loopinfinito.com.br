@@ -34,11 +34,12 @@ a _pixel_, em estilos de _forms_, escolhendo a melhor tipografia, e deixando
 aqueles ícones sem serrilhas. Nota 10, mandaram bem, continuem com o trabalho
 classe A.
 
-...mas é gasto pouco tempo em como tudo isso se junta fora de uma composição
-estática. Você clica em um botão e o _form_ simplesmente...__aparece__? Você dá
-um _swipe_ pra deletar um item e ele simplesmente __some__? Isso é superestranho
-e nada natural. Praticamente nada no mundo real faz algo tão abrupto como
-simplesmente mudar de estado. Iria parecer que algo está errado.
+...mas pouco tempo é gasto arquitetando como tudo isso se junta no final, fora
+de uma composição estática. Você clica em um botão e o _form_
+simplesmente...<strong>aparece</strong>? Você dá um _swipe_ pra deletar um item
+e ele simplesmente __some__? Isso é superestranho e nada natural. Praticamente
+nada no mundo real muda de estado tão abruptamente. Iria parecer que algo está
+errado.
 
 Ahh, mas o designer deixou uma observação: "Isto tem um efeito de slide".
 
@@ -127,7 +128,7 @@ Para que um novo item seja adicionado a lista é preciso primeiro criar espaço
 para que, só então, o item (que vem do além) preencha o espaço recém-criado.
 __Muito__ mais óbvio. Existe também _ease-in_ e _ease-out_ para suavizar a
 mudança. Desta forma a mudança parece mais natural pois nós temos um gancho
-contextual no espaço - espelhando o modo que adicionariamos algo a uma pilha de
+contextual no espaço - espelhando o modo que adicionaríamos algo a uma pilha de
 coisas reais.
 
 ### Entrando (<em>drilling down</em>) em uma lista de itens
@@ -162,8 +163,8 @@ fazer com que tudo sumisse dentro da mesma _view_:
       alt="Drilldown em uma lista" />
 </figure>
 
-Usar > <em>breadcrumb</em> > para > chegar > até > a > <em>view</em> > desejada é
-um método fácil de se perder.
+Usar > <em>breadcrumb</em> > para > chegar > até > a > <em>view</em> > é um
+ótimo método para fazer com que o usuário se perca.
 
 Uma vantagem de permanecer _inline_ é que você pode remover a explicação sobre o
 quão fundo o usuário está dentro de uma _sub-view_. Você pode retirar a
