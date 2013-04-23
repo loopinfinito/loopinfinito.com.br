@@ -4,7 +4,7 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-image: images/posts/2013-04-26-interfaces-transitorias.gif
+image: images/posts/2013-04-30-interfaces-transitorias.gif
 tags: user-interface
 comments: false
 keywords: >
@@ -65,17 +65,17 @@ se comportar. Vamos pegar esses 25 _frames_ interpolados, onde o _frame_ 13 muda
 de posição.
 
 <figure>
-  <img src="/images/posts/2013-04-26-linear-computer-garbage.gif"
+  <img src="/images/posts/2013-04-30-linear-computer-garbage.gif"
       title="Linear Computer Garbage" alt="Linear Computer Garbage" />
 </figure>
 
 <figure>
-  <img src="/images/posts/2013-04-26-ease-in.gif"
+  <img src="/images/posts/2013-04-30-ease-in.gif"
       title="Ease-in" alt="Ease-in" />
 </figure>
 
 <figure>
-  <img src="/images/posts/2013-04-26-ease-out.gif"
+  <img src="/images/posts/2013-04-30-ease-out.gif"
       title="Ease-out" alt="Ease-out" />
 </figure>
 
@@ -102,7 +102,7 @@ adoraria popular essa lista com dados reais. Se você desse esse trabalho a um
 computador, teria um resultado parecido com isto:
 
 <figure>
-  <img src="/images/posts/2013-04-26-insert-an-item-into-a-list-without-transition.gif"
+  <img src="/images/posts/2013-04-30-insert-an-item-into-a-list-without-transition.gif"
       title="Inserção de item na lista sem transição"
       alt="Inserção de item na lista sem transição" />
 </figure>
@@ -113,13 +113,13 @@ Suavizar isto só requer alguns _frames_ adicionais de animação. O que acha de
 uma dica ao seu cérebro sobre o que está acontecendo na lista?
 
 <figure>
-  <img src="/images/posts/2013-04-26-insert-an-item-into-a-list-with-transition-1.gif"
+  <img src="/images/posts/2013-04-30-insert-an-item-into-a-list-with-transition-1.gif"
       title="Inserção de item na lista com transição"
       alt="Inserção de item na lista com transição" />
 </figure>
 
 <figure>
-  <img src="/images/posts/2013-04-26-insert-an-item-into-a-list-with-transition-2.gif"
+  <img src="/images/posts/2013-04-30-insert-an-item-into-a-list-with-transition-2.gif"
       title="Inserção de item na lista com transição"
       alt="Inserção de item na lista com transição" />
 </figure>
@@ -137,7 +137,7 @@ Existe a abordagem clássica de dar um _slide_ para um item. Um padrão bastante
 usado, mas que não faz muito sentido espacialmente:
 
 <figure>
-  <img src="/images/posts/2013-04-26-list-item-1.gif"
+  <img src="/images/posts/2013-04-30-list-item-1.gif"
       title="Drilldown em uma lista"
       alt="Drilldown em uma lista" />
 </figure>
@@ -149,7 +149,7 @@ E se considerarmos um item como um container que expandimos para mostrar mais
 detalhes, _inline_?
 
 <figure>
-  <img src="/images/posts/2013-04-26-list-item-2.gif"
+  <img src="/images/posts/2013-04-30-list-item-2.gif"
       title="Drilldown em uma lista"
       alt="Drilldown em uma lista" />
 </figure>
@@ -158,7 +158,7 @@ Se o objetivo é entrar na lista e dar atenção e foco total ao item, nós pode
 fazer com que tudo sumisse dentro da mesma _view_:
 
 <figure>
-  <img src="/images/posts/2013-04-26-list-item-3.gif"
+  <img src="/images/posts/2013-04-30-list-item-3.gif"
       title="Drilldown em uma lista"
       alt="Drilldown em uma lista" />
 </figure>
@@ -177,7 +177,7 @@ pode levar a soluções mais elegantes sobre como conectar o fluxo de informaç�
 ## Thinglist - um exemplo implementado
 
 <figure>
-  <img src="/images/posts/2013-04-26-thing-list.gif"
+  <img src="/images/posts/2013-04-30-thing-list.gif"
       title="Thinglist"
       alt="Thinglist" />
 </figure>
