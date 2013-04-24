@@ -258,8 +258,8 @@ especificação existe um link nas referências.
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://caniuse.com/#search=notification" alt="When can I use..." title="When can i use...">When can i use Web Notifications</a> <span class="comment">// When can I use...</span></li>
-        <li>→<a href="http://www.w3.org/TR/notifications/" alt="W3C" title="W3C">Web Notifications</a> <span class="comment">// W3C</span></li>
-        <li>→<a href="https://developer.apple.com/library/safari/#documentation/AppleApplications/Conceptual/SafariJSProgTopics/Articles/SendingNotifications.html#//apple_ref/doc/uid/TP40001483-CH23-SW1" alt="W3C" title="W3C">Sending Notifications</a> <span class="comment">// Apple Safari Developer Library</span></li>
+        <li><a href="http://caniuse.com/#search=notification" alt="When can I use..." title="When can i use...">When can i use Web Notifications</a> <span class="comment">// When can I use...</span></li>
+        <li><a href="http://www.w3.org/TR/notifications/" alt="W3C" title="W3C">Web Notifications</a> <span class="comment">// W3C</span></li>
+        <li><a href="https://developer.apple.com/library/safari/#documentation/AppleApplications/Conceptual/SafariJSProgTopics/Articles/SendingNotifications.html#//apple_ref/doc/uid/TP40001483-CH23-SW1" alt="W3C" title="W3C">Sending Notifications</a> <span class="comment">// Apple Safari Developer Library</span></li>
     </ul>
 </aside>

@@ -163,7 +163,7 @@ Ou acham que é apenas mais uma nova tecnologia que o IE não vai nos permitir u
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://www.w3.org/TR/2011/WD-selectors4-20110929/#overview" alt="W3C Selectors Level 4" title="W3C Selectors Level 4">W3C Selectors Level 4</a></li>
-		<li>→<a href="http://davidwalsh.name/css4-preview" alt="David Walsh: CSS4 preview" title="David Walsh: CSS4 preview">David Walsh: CSS4 preview</a></li>
+		<li><a href="http://www.w3.org/TR/2011/WD-selectors4-20110929/#overview" alt="W3C Selectors Level 4" title="W3C Selectors Level 4">W3C Selectors Level 4</a></li>
+		<li><a href="http://davidwalsh.name/css4-preview" alt="David Walsh: CSS4 preview" title="David Walsh: CSS4 preview">David Walsh: CSS4 preview</a></li>
 	</ul>
 </aside>

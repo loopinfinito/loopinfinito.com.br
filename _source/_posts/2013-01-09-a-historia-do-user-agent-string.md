@@ -239,8 +239,8 @@ sem lógica nos browsers modernos.
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://www.nczonline.net/blog/2010/01/12/history-of-the-user-agent-string/" alt="Git Aliases" title="History of the user-agent string">History of the user-agent string</a> <span class="comment">// WebAIM</span> </li>
-		<li>→<a href="http://webaim.org/blog/user-agent-string-history/" alt="Git Aliases" title="History of the browser user-agent string">History of the browser user-agent string</a> <span class="comment">// NCZ online</span> </li>
-		<li>→<a href="http://en.wikipedia.org/wiki/Konqueror" alt="Git Aliases" title="History of the browser user-agent string">Konqueror</a> <span class="comment">// Wikipedia</span> </li>
+		<li><a href="http://www.nczonline.net/blog/2010/01/12/history-of-the-user-agent-string/" alt="Git Aliases" title="History of the user-agent string">History of the user-agent string</a> <span class="comment">// WebAIM</span> </li>
+		<li><a href="http://webaim.org/blog/user-agent-string-history/" alt="Git Aliases" title="History of the browser user-agent string">History of the browser user-agent string</a> <span class="comment">// NCZ online</span> </li>
+		<li><a href="http://en.wikipedia.org/wiki/Konqueror" alt="Git Aliases" title="History of the browser user-agent string">Konqueror</a> <span class="comment">// Wikipedia</span> </li>
 	</ul>
 </aside>

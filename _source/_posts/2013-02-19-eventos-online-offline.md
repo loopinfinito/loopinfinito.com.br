@@ -158,19 +158,19 @@ _post_.
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>→
+    <li>
       <a href="https://developer.mozilla.org/en-US/docs/Online_and_offline_events">
 			Online and offline events
       </a>
       <span class="comment">// Mozilla Developer Network </span>
     </li>
-    <li>→
+    <li>
       <a href="http://stackoverflow.com/questions/3181080/how-to-detect-online-offline-event-cross-browser">
       How to detect online/offline event cross-browser?
       </a>
       <span class="comment">// Stack Overflow</span>
     </li>
-    <li>→
+    <li>
       <a href="http://www.whatwg.org/specs/web-apps/current-work/#browser-state">
       Browser State
       </a>
