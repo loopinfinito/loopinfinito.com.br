@@ -217,13 +217,13 @@ importante que o artesão domine suas ferramentas e seja mestre no que faz.
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>→
+    <li>
       <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Memory_Management">
         Memory Management
       </a>
       <span class="comment">// Mozilla Developer Network</span>
     </li>
-    <li>→
+    <li>
       <a href="http://vimeo.com/53073654">
         Secrets of the Chrome Dev Tools
       </a>

@@ -250,8 +250,8 @@ Utilizei a API JavaScript para controlar o comportamento da tag <code>audio</cod
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>→<a href="https://developer.mozilla.org/En/HTML/Element/Audio" alt="Mozilla Developer Network" title="Mozilla Developer Network">Mozilla Developer Network: audio</a></li>
-    <li>→<a href="https://developer.mozilla.org/en/CSS/transform-style" alt="Mozilla Developer Network" title="Mozilla Developer Network">Mozilla Developer Network: transform style</a></li>
-    <li>→<a href="http://www.webkit.org/blog-files/3d-transforms/morphing-cubes.html" alt="Webkit Morphing Cubes" title="Webkit Morphing Cubes">WebKit blog</a></li>
+    <li><a href="https://developer.mozilla.org/En/HTML/Element/Audio" alt="Mozilla Developer Network" title="Mozilla Developer Network">Mozilla Developer Network: audio</a></li>
+    <li><a href="https://developer.mozilla.org/en/CSS/transform-style" alt="Mozilla Developer Network" title="Mozilla Developer Network">Mozilla Developer Network: transform style</a></li>
+    <li><a href="http://www.webkit.org/blog-files/3d-transforms/morphing-cubes.html" alt="Webkit Morphing Cubes" title="Webkit Morphing Cubes">WebKit blog</a></li>
   </ul>
 </aside>

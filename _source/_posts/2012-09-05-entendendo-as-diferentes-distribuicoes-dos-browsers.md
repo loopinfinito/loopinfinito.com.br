@@ -138,8 +138,8 @@ em um mesmo dia.
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://www.chromium.org/getting-involved/dev-channel" alt="Chrome Release Channels" title="Chrome Release Channels">Chrome Release Channels</a></li>
-        <li>→<a href="https://hacks.mozilla.org/2012/05/firefox-and-the-release-channels/" alt="https://hacks.mozilla.org/2012/05/firefox-and-the-release-channels/" title="Firefox and the release channels">Firefox and the release channels</a></li>
-        <li>→<a href="http://www.opera.com/support/kb/view/991/" alt="http://www.opera.com/support/kb/view/991/" title="What is Opera Next?">What is Opera Next?</a></li>
+        <li><a href="http://www.chromium.org/getting-involved/dev-channel" alt="Chrome Release Channels" title="Chrome Release Channels">Chrome Release Channels</a></li>
+        <li><a href="https://hacks.mozilla.org/2012/05/firefox-and-the-release-channels/" alt="https://hacks.mozilla.org/2012/05/firefox-and-the-release-channels/" title="Firefox and the release channels">Firefox and the release channels</a></li>
+        <li><a href="http://www.opera.com/support/kb/view/991/" alt="http://www.opera.com/support/kb/view/991/" title="What is Opera Next?">What is Opera Next?</a></li>
     </ul>
 </aside>
