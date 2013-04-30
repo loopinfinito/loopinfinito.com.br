@@ -18,6 +18,26 @@ resumo: >
   não do programador. __Certo?__
 ---
 
+<style>
+  .post-animation-static {
+    position: relative;
+    left: -50px;
+    width: 700px;
+    height: 432px;
+  }
+
+  .post-animation {
+    opacity: 0;
+    left: 0 !important;
+    width: 700px;
+    height: 432px;
+  }
+
+  .post-animation-visible {
+    opacity: 1;
+  }
+</style>
+
 Acredito que a maioria das pessoas não saiba que é possível termos vazamento de
 memória em JavaScript. Afinal, nós não alocamos memória explicitamente como em
 linguagens de baixo nível como C, C++ ou Objective-C. Então, se nós não somos
@@ -84,11 +104,13 @@ liberada.
 
 Na animação abaixo temos um exemplo do algoritmo _Mark and Sweep_ fazendo a
 varredura, marcando um objeto como lixo (o círculo laranja) e esse mesmo objeto
-sendo recolhido pelo _Garbage Collector_.
+sendo recolhido pelo _Garbage Collector_. __Para que a animação inicie, deixe
+seu _mouse_ em cima da imagem__.
 
-<figure>
-  <img src="/images/posts/2013-04-19-mark-and-sweep.gif"
-      title="Mark and Sweep" alt="Mark and Sweep" />
+<figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-19-mark-and-sweep-static.jpg);">
+  <img class="post-animation" src="/images/posts/2013-04-19-mark-and-sweep.gif"
+      title="Mark and Sweep" alt="Mark and Sweep"
+      data-title-backup="Mark and Sweep" data-alt-backup="Mark and Sweep" />
 </figure>
 
 ## Exemplo de vazamento
@@ -104,10 +126,13 @@ como detectar um vazamento de memória.
 O experimento é uma aplicação onde temos várias fotos em miniatura e quando
 clicamos em uma das miniaturas, podemos vê-la em um tamanho maior. O _GIF_ tosco
 abaixo vai ajudar a explicar o experimento a quem ainda não clicou no link do
-[Github](http://caiogondim.github.io/vazamento-memoria-js-experimento/).
+[Github](http://caiogondim.github.io/vazamento-memoria-js-experimento/). Da
+mesma forma que na animação anterior, __deixe seu _mouse_ sobre a imagem para
+que a animação inicie__.
 
-<figure>
-  <img src="/images/posts/2013-04-19-vazamento-memoria-js-experimento.gif"
+<figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-19-vazamento-memoria-js-experimento-static.jpg)">
+  <img class="post-animation" src="/images/posts/2013-04-19-vazamento-memoria-js-experimento.gif"
+      data-title-backup="Experimento" data-alt-backup="Experimento"
       title="Experimento" alt="Experimento" />
 </figure>
 
@@ -164,8 +189,7 @@ na imagem maior para que ele seja removida do _DOM_, e repetir este processo 5
 vezes.
 
 <figure>
-  <img src="/images/posts/2013-04-19-timeline.jpg"
-      title="Chrome Dev Tools Timeline" alt="Chrome Dev Tools Timeline" />
+  <img src="/images/posts/2013-04-19-timeline.jpg" title="Chrome Dev Tools Timeline" alt="Chrome Dev Tools Timeline" />
 </figure>
 
 Na imagem acima, o gráfico verde corresponde ao número de nós na árvore DOM na
@@ -185,10 +209,11 @@ que acabamos de criar. Por que?
 O erro acontece quando setamos o evento `resize` da `window`. Quando
 removemos a imagem do _DOM_, o evento continua a ter uma referência à imagem,
 evitando que o _mark and sweep_ a marque como lixo para que seja recolhida pelo
-coletor de lixo.
+coletor de lixo. __Deixe seu _mouse_ sobre a imagem abaixo para ver uma animação do
+que aconteceu__.
 
-<figure>
-  <img src="/images/posts/2013-04-19-leak-passo-a-passo.gif"
+<figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-19-leak-passo-a-passo-static.jpg)">
+  <img class="post-animation" src="/images/posts/2013-04-19-leak-passo-a-passo.gif"
       title="Vazamento passo-a-passo" alt="Vazamento passo-a-passo" />
 </figure>
 
@@ -231,3 +256,22 @@ importante que o artesão domine suas ferramentas e seja mestre no que faz.
     </li>
   </ul>
 </aside>
+
+<script>
+  // no mouseenter, reseta o src do GIF para que ele reinicie a animação
+  $('.post-animation-static')
+    .on('mouseenter', function(event) {
+      var $postAnimation = $(this).find('.post-animation')
+      $postAnimation
+        .addClass('post-animation-visible')
+        .attr('src', $postAnimation.attr('data-src-backup'))
+        .attr('title', '') // remove title para que não apareça o hover tooltip
+    })
+    .on('mouseleave', function(event) {
+      var $postAnimation = $(this).find('.post-animation')
+      $postAnimation
+        .removeClass('post-animation-visible')
+        .attr('src', '')
+        .attr('title', $postAnimation.attr('data-title-backup'))
+    })
+</script>
