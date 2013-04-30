@@ -117,13 +117,13 @@ ou falar aqui embaixo nos comentários.
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>→
+    <li>
       <a href="http://getfirebug.com/wiki/index.php/Console_API">
         Console API
       </a>
       <span class="comment">// Firebug </span>
     </li>
-    <li>→
+    <li>
       <a href="https://developers.google.com/chrome-developer-tools/docs/console">
         Using the Console
       </a>

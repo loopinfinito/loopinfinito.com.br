@@ -227,7 +227,7 @@ um papo aqui nos comentários.
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://www.html5rocks.com/en/tutorials/canvas/imagefilters/" alt="Image Filters" title="Image Filters">Image Filters</a> <span class="comment">// HTML5 Rocks</span></li>
-        <li>→<a href="http://dev.opera.com/articles/view/playing-with-html5-video-and-getusermedia-support/" alt="Playing with HTML5 video &amp; getUserMedia support" title="Playing with HTML5 video &amp; getUserMedia support">Playing with HTML5 video &amp; getUserMedia support</a> <span class="comment">// Dev.Opera</span></li>
+        <li><a href="http://www.html5rocks.com/en/tutorials/canvas/imagefilters/" alt="Image Filters" title="Image Filters">Image Filters</a> <span class="comment">// HTML5 Rocks</span></li>
+        <li><a href="http://dev.opera.com/articles/view/playing-with-html5-video-and-getusermedia-support/" alt="Playing with HTML5 video &amp; getUserMedia support" title="Playing with HTML5 video &amp; getUserMedia support">Playing with HTML5 video &amp; getUserMedia support</a> <span class="comment">// Dev.Opera</span></li>
     </ul>
 </aside>

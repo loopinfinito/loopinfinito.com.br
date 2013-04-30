@@ -417,6 +417,6 @@ e uma galerona participou: O
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://www.w3.org/TR/compositing/" alt="Compositing and Blending 1.0" title="Compositing and Blending 1.0">Compositing and Blending 1.0</a> <span class="comment">// W3C</span></li>
+        <li><a href="http://www.w3.org/TR/compositing/" alt="Compositing and Blending 1.0" title="Compositing and Blending 1.0">Compositing and Blending 1.0</a> <span class="comment">// W3C</span></li>
     </ul>
 </aside>

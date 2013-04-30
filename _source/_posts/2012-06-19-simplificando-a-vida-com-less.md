@@ -247,7 +247,7 @@ desde o nascimento do projeto, e vou dizer uma coisa: **é muito mais melhor de 
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://lesscss.org" alt="LESS" title="LESS">LESS (documentação original em inglês)</a></li>
-		<li>→<a href="http://lesscss.com.br" alt="LESS em Português" title="LESS em Português">LESS (documentação em português)</a></li>
+		<li><a href="http://lesscss.org" alt="LESS" title="LESS">LESS (documentação original em inglês)</a></li>
+		<li><a href="http://lesscss.com.br" alt="LESS em Português" title="LESS em Português">LESS (documentação em português)</a></li>
 	</ul>
 </aside>

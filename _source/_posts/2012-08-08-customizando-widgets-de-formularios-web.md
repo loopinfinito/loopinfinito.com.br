@@ -530,10 +530,10 @@ e aos poucos estamos caminhando para finalmente ter o controle total de todas es
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://loopinfinito.com.br/2012/07/17/sou-dom-shadow-dom/" alt="Sou DOM, Shadow DOM" title="Sou DOM, Shadow DOM">Sou DOM, Shadow DOM</a> <span class="comment">//loop infinito</span></li>
-		<li>→<a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp" alt="CSS3 appearance property" title="CSS3 appearance property">CSS3 appearance property</a> <span class="comment">//w3schools</span></li>
-		<li>→<a href="https://developer.mozilla.org/en-US/docs/CSS/-moz-appearance" alt="-moz-appearance" title="-moz-appearance">-moz-appearance</a> <span class="comment">//MDN</span></li>
-		<li>→<a href="http://css-infos.net/property/-webkit-appearance" alt="-webkit-appearance" title="-webkit-appearance">-webkit-appearance</a></li>
-		<li>→<a href="http://37signals.com/svn/posts/2609-customizing-web-forms-with-css3-and-webkit/" alt="Customizing web forms with CSS3 and Webkit" title="Customizing web forms with CSS3 and Webkit">Customizing web forms with CSS3 and Webkit</a> <span class="comment">//37signals</span></li>
+		<li><a href="http://loopinfinito.com.br/2012/07/17/sou-dom-shadow-dom/" alt="Sou DOM, Shadow DOM" title="Sou DOM, Shadow DOM">Sou DOM, Shadow DOM</a> <span class="comment">//loop infinito</span></li>
+		<li><a href="http://www.w3schools.com/cssref/css3_pr_appearance.asp" alt="CSS3 appearance property" title="CSS3 appearance property">CSS3 appearance property</a> <span class="comment">//w3schools</span></li>
+		<li><a href="https://developer.mozilla.org/en-US/docs/CSS/-moz-appearance" alt="-moz-appearance" title="-moz-appearance">-moz-appearance</a> <span class="comment">//MDN</span></li>
+		<li><a href="http://css-infos.net/property/-webkit-appearance" alt="-webkit-appearance" title="-webkit-appearance">-webkit-appearance</a></li>
+		<li><a href="http://37signals.com/svn/posts/2609-customizing-web-forms-with-css3-and-webkit/" alt="Customizing web forms with CSS3 and Webkit" title="Customizing web forms with CSS3 and Webkit">Customizing web forms with CSS3 and Webkit</a> <span class="comment">//37signals</span></li>
 	</ul>
 </aside>

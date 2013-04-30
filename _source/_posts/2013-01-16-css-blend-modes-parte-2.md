@@ -223,7 +223,7 @@ Por hoje é isso aê!
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://loopinfinito.com.br/2012/12/19/css-blend-modes/" alt="CSS Blend Modes" title="CSS Blend Modes">CSS Blend Modes parte 1</a> <span class="comment">// Loop Infinito</span></li>
-        <li>→<a href="http://www.w3.org/TR/compositing/" alt="Compositing and Blending 1.0" title="Compositing and Blending 1.0">Compositing and Blending 1.0</a> <span class="comment">// W3C</span></li>
+        <li><a href="http://loopinfinito.com.br/2012/12/19/css-blend-modes/" alt="CSS Blend Modes" title="CSS Blend Modes">CSS Blend Modes parte 1</a> <span class="comment">// Loop Infinito</span></li>
+        <li><a href="http://www.w3.org/TR/compositing/" alt="Compositing and Blending 1.0" title="Compositing and Blending 1.0">Compositing and Blending 1.0</a> <span class="comment">// W3C</span></li>
     </ul>
 </aside>

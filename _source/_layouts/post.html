@@ -65,7 +65,7 @@
 								<h3>Referência</h3>
 								<ul>
 									{% for rel in page.related %}
-									<li itemprop="mentions" itemscope itemtype="http://schema.org/Thing">→
+									<li itemprop="mentions" itemscope itemtype="http://schema.org/Thing">
 										<a itemprop="url" href="{{ rel.url }}" alt="{{ rel.title }}" title="{{ rel.title }}">
 											<span itemprop="name">{{ rel.title }}</span>
 										</a>

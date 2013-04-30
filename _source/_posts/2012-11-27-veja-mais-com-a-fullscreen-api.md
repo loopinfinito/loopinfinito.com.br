@@ -439,9 +439,9 @@ no Opera.
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html" alt="Fullscreen" title="Fullscreen">Fullscreen</a> <span class="comment">// Especificação W3C</span></li>
-        <li>→<a href="https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode" alt="Using fullscreen mode" title="Using fullscreen mode">Using fullscreen mode</a> <span class="comment">// MDN</span></li>
-        <li>→<a href="http://davidwalsh.name/fullscreen" alt="Fullscreen API" title="Fullscreen API">Fullscreen API</a> <span class="comment">// The David Walsh Blog</span></li>
+        <li><a href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html" alt="Fullscreen" title="Fullscreen">Fullscreen</a> <span class="comment">// Especificação W3C</span></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/DOM/Using_fullscreen_mode" alt="Using fullscreen mode" title="Using fullscreen mode">Using fullscreen mode</a> <span class="comment">// MDN</span></li>
+        <li><a href="http://davidwalsh.name/fullscreen" alt="Fullscreen API" title="Fullscreen API">Fullscreen API</a> <span class="comment">// The David Walsh Blog</span></li>
     </ul>
 </aside>
 

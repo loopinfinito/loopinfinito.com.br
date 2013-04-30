@@ -249,7 +249,7 @@ e consequentemente na melhora da qualidade de *software*.
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://www.w3.org/TR/battery-status/" alt="Battery Status API" title="Battery Status API">Battery Status API</a> <span class="comment">// W3C</span></li>
-        <li>→<a href="https://developer.mozilla.org/en-US/docs/DOM/window.navigator.battery" alt="window.navigator.battery" title="window.navigator.battery">window.navigator.battery</a> <span class="comment">// MDN</span></li>
+        <li><a href="http://www.w3.org/TR/battery-status/" alt="Battery Status API" title="Battery Status API">Battery Status API</a> <span class="comment">// W3C</span></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/DOM/window.navigator.battery" alt="window.navigator.battery" title="window.navigator.battery">window.navigator.battery</a> <span class="comment">// MDN</span></li>
     </ul>
 </aside>

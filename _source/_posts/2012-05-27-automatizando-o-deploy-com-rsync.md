@@ -184,7 +184,7 @@ Então não há mais motivos para upar arquivos como se ainda vivéssemos na dé
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>→<a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/" alt="How to Backup Linux? 15 rsync Command Examples" title="How to Backup Linux? 15 rsync Command Examples">Geek Stuff: How to Backup Linux? 15 rsync Command Examples</a></li>
-    <li>→<a href="http://coffeescript.org/#cake" alt="CoffeeScript: Cake, and Cakefiles" title="CoffeeScript: Cake, and Cakefiles">CoffeeScript: Cake, and Cakefiles</a></li>
+    <li><a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/" alt="How to Backup Linux? 15 rsync Command Examples" title="How to Backup Linux? 15 rsync Command Examples">Geek Stuff: How to Backup Linux? 15 rsync Command Examples</a></li>
+    <li><a href="http://coffeescript.org/#cake" alt="CoffeeScript: Cake, and Cakefiles" title="CoffeeScript: Cake, and Cakefiles">CoffeeScript: Cake, and Cakefiles</a></li>
   </ul>
 </aside>
