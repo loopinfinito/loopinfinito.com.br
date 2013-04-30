@@ -10,6 +10,10 @@ comments: false
 keywords: >
 resumo: >
   lorem.
+related:
+  - title: teste
+    url: http://l8p.com.br
+    from: teste
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -18,10 +22,3 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-<aside class="fonte">
-    <h3>Referência</h3>
-    <ul>
-        <li>→<a href="#" alt="" title="">dsada</a> <span class="comment">// </span></li>
-    </ul>
-</aside>
