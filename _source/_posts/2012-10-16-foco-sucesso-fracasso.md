@@ -162,6 +162,6 @@ organizações de sucesso entre os muito bem sucedidos.
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://blogs.hbr.org/cs/2012/08/the_disciplined_pursuit_of_less.html" alt="The Disciplined Pursuit of Less" title="The Disciplined Pursuit of Less">The Disciplined Pursuit of Less</a> <span class="comment">// post original traduzido com permissão</span></li>
+        <li><a href="http://blogs.hbr.org/cs/2012/08/the_disciplined_pursuit_of_less.html" alt="The Disciplined Pursuit of Less" title="The Disciplined Pursuit of Less">The Disciplined Pursuit of Less</a> <span class="comment">// post original traduzido com permissão</span></li>
     </ul>
 </aside>

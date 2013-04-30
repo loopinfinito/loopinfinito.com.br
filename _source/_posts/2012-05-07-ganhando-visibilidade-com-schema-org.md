@@ -281,9 +281,9 @@ Por hoje é só, até a próxima!
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://loopinfinito.com.br/2012/04/26/marcacao-semantica/" alt="Marcação Semântica (Loop Infinito)" title="Marcação Semântica (Loop Infinito)">Marcação Semântica</a> <span class="comment">//loop infinito</span></li>
-		<li>→<a href="http://loopinfinito.com.br/2012/05/02/microdata/" alt="Microdata (Loop Infinito)" title="Microdata (Loop Infinito)">Microdata: Como usar</a> <span class="comment">//loop infinito</span></li>
-		<li>→<a href="http://schema.org" alt="Schema.org" title="Schema.org">Schema.org</a></li>
-		<li>→<a href="http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm" alt="Rel=author Authorship Markup in HTML5" title="Rel=author Authorship Markup in HTML5">Rel=author Authorship Markup in HTML5</a> <span class="comment">//about.com</span></li>
+		<li><a href="http://loopinfinito.com.br/2012/04/26/marcacao-semantica/" alt="Marcação Semântica (Loop Infinito)" title="Marcação Semântica (Loop Infinito)">Marcação Semântica</a> <span class="comment">//loop infinito</span></li>
+		<li><a href="http://loopinfinito.com.br/2012/05/02/microdata/" alt="Microdata (Loop Infinito)" title="Microdata (Loop Infinito)">Microdata: Como usar</a> <span class="comment">//loop infinito</span></li>
+		<li><a href="http://schema.org" alt="Schema.org" title="Schema.org">Schema.org</a></li>
+		<li><a href="http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm" alt="Rel=author Authorship Markup in HTML5" title="Rel=author Authorship Markup in HTML5">Rel=author Authorship Markup in HTML5</a> <span class="comment">//about.com</span></li>
 	</ul>
 </aside>

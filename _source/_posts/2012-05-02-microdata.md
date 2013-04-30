@@ -433,9 +433,9 @@ No próximo post irei realizar a marcação semântica aqui no Loop Infinito e m
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a> <span class="comment">//wikipedia</span></li>
-		<li>→<a href="http://schema.org">Schema.org</a></li>
-		<li>→<a href="http://schema.org/docs/gs.html">Getting started</a> <span class="comment">//schema.org</span></li>
-		<li>→<a href="http://desenvolvimentoparaweb.com/html/microdata-api-schema-org-significado-html/">Microdata API e Schema.org: dando significado ao HTML</a> <span class="comment">//dpw</span></li>
+		<li><a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a> <span class="comment">//wikipedia</span></li>
+		<li><a href="http://schema.org">Schema.org</a></li>
+		<li><a href="http://schema.org/docs/gs.html">Getting started</a> <span class="comment">//schema.org</span></li>
+		<li><a href="http://desenvolvimentoparaweb.com/html/microdata-api-schema-org-significado-html/">Microdata API e Schema.org: dando significado ao HTML</a> <span class="comment">//dpw</span></li>
 	</ul>
 </aside>

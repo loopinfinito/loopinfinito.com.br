@@ -218,8 +218,8 @@ E é sobre este novo método de trabalhar com herança no ECMAscript 5 que iremo
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>→<a href="https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain">Mozilla Developer Network: Inheritance and the Prototype Chain</a></li>
-    <li>→<a href="http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new">StackOverflow: Using Object.create() instead of new</a></li>
-    <li>→<a href="http://joost.zeekat.nl/constructors-considered-mildly-confusing.html">code.h(oe)kje: Constructors considered mildly confusing</a></li>
+    <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain">Mozilla Developer Network: Inheritance and the Prototype Chain</a></li>
+    <li><a href="http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new">StackOverflow: Using Object.create() instead of new</a></li>
+    <li><a href="http://joost.zeekat.nl/constructors-considered-mildly-confusing.html">code.h(oe)kje: Constructors considered mildly confusing</a></li>
   </ul>
 </aside>

@@ -244,9 +244,9 @@ No próximo post falarei sobre estilização de widgets de formulário com CSS a
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://www.w3.org/TR/components-intro/#shadow-dom-section" alt="Shadow DOM" title="Shadow DOM">Web Components: Shadow DOM Section</a> <span class="comment">//W3C</span></li>
-		<li>→<a href="http://www.w3.org/TR/shadow-dom/#api-shadow-root" alt="ShadowRoot API" title="ShadowRoot API">ShadowRoot API</a> <span class="comment">//W3C</span></li>
-		<li>→<a href="http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/" alt="What the Heck is Shadow DOM?" title="What the Heck is Shadow DOM?">What the Heck is Shadow DOM?</a></li>
-		<li>→<a href="http://chemicaloliver.net/programming/inspecting-the-shadow-dom-in-google-chrome-inspector/" alt="Inspecting the Shadow DOM in Google Chrome Inspector" title="Inspecting the Shadow DOM in Google Chrome Inspector">Inspecting the Shadow DOM in Google Chrome Inspector</a></li>
+		<li><a href="http://www.w3.org/TR/components-intro/#shadow-dom-section" alt="Shadow DOM" title="Shadow DOM">Web Components: Shadow DOM Section</a> <span class="comment">//W3C</span></li>
+		<li><a href="http://www.w3.org/TR/shadow-dom/#api-shadow-root" alt="ShadowRoot API" title="ShadowRoot API">ShadowRoot API</a> <span class="comment">//W3C</span></li>
+		<li><a href="http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/" alt="What the Heck is Shadow DOM?" title="What the Heck is Shadow DOM?">What the Heck is Shadow DOM?</a></li>
+		<li><a href="http://chemicaloliver.net/programming/inspecting-the-shadow-dom-in-google-chrome-inspector/" alt="Inspecting the Shadow DOM in Google Chrome Inspector" title="Inspecting the Shadow DOM in Google Chrome Inspector">Inspecting the Shadow DOM in Google Chrome Inspector</a></li>
 	</ul>
 </aside>

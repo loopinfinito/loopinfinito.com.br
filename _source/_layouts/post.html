@@ -60,6 +60,23 @@
 							<meta itemprop="thumbnailUrl" content="{{ site.url }}/{{ page.image }}" />
 						{% endif %}
 						{{ content }}
+						{% if page.related %}
+							<aside class="fonte">
+								<h3>Referência</h3>
+								<ul>
+									{% for rel in page.related %}
+									<li itemprop="mentions" itemscope itemtype="http://schema.org/Thing">
+										<a itemprop="url" href="{{ rel.url }}" alt="{{ rel.title }}" title="{{ rel.title }}">
+											<span itemprop="name">{{ rel.title }}</span>
+										</a>
+										{% if rel.from %}
+											<span class="comment">// {{ rel.from }}</span>
+										{% endif %}
+									</li>
+									{% endfor %}
+								</ul>
+							</aside>
+						{% endif %}
 					</section>
 					{% if page.comments %}
 					<footer id="disqus_thread">
@@ -80,31 +97,31 @@
 
 	{% if page.comments %}
 	<script>
+		if(window.location.host.indexOf('loopinfinito.com.br') == 0){
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
+		    var disqus_identifier = '{{page.id}}';
+		    // var disqus_developer = 1;
 
-	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	    var disqus_shortname = 'loopinfinito'; // required: replace example with your forum shortname
-	    var disqus_identifier = '{{page.id}}';
-	    // var disqus_developer = 1;
+		    // callback do Disqus
+		    function disqus_callback() {
+		    	// modifica o título da caixa de comentários
+		    	$('#dsq-reply h3').html('Comentários')
+		    }
 
-	    // callback do Disqus
-	    function disqus_callback() {
-	    	// modifica o título da caixa de comentários
-	    	$('#dsq-reply h3').html('Comentários')
-	    }
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 
-	    /* * * DON'T EDIT BELOW THIS LINE * * */
-	    (function() {
-	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-	        // comment count
-	        var s = document.createElement('script'); s.async = true;
-	        s.type = 'text/javascript';
-	        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-	    })();
-
+		        // comment count
+		        var s = document.createElement('script'); s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    })();
+		}
 	</script>
 	{% endif %}
 	{% include scripts-default.html %}

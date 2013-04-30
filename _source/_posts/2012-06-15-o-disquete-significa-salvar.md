@@ -147,6 +147,6 @@ provavelmente irão saber sua origem em algum livro, ou e-book.
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://www.hanselman.com/blog/TheFloppyDiskMeansSaveAnd14OtherOldPeopleIconsThatDontMakeSenseAnymore.aspx">The Floppy Disk means Save, and 14 other old people Icons that don't make sense anymore</a> traduzido com a autorização do autor<a href="http://twitter.com/shanselman">@shanselman</a></li>
+		<li><a href="http://www.hanselman.com/blog/TheFloppyDiskMeansSaveAnd14OtherOldPeopleIconsThatDontMakeSenseAnymore.aspx">The Floppy Disk means Save, and 14 other old people Icons that don't make sense anymore</a> traduzido com a autorização do autor<a href="http://twitter.com/shanselman">@shanselman</a></li>
 	</ul>
 </aside>

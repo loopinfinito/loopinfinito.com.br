@@ -311,10 +311,10 @@ de dispositivos móveis. O [caniuse.com](http://caniuse.com) informa que:
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="https://developer.mozilla.org/en-US/docs/Detecting_device_orientation" alt="Detecting Device Orientation" title="Detecting Device Orientation">Detecting Device Orientation</a> <span class="comment">// MDN</span></li>
-        <li>→<a href="https://developer.mozilla.org/en-US/docs/DOM/Orientation_and_motion_data_explained" alt="Orientation and Motion Data Explained" title="Orientation and Motion Data Explained">Orientation and Motion Data Explained</a> <span class="comment">// MDN</span></li>
-        <li>→<a href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/deviceorientation" alt="DeviceOrientationEvent" title="DeviceOrientationEvent">DeviceOrientationEvent</a> <span class="comment">// MDN</span></li>
-        <li>→<a href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/devicemotion" alt="DeviceMotionEvent" title="DeviceMotionEvent">DeviceMotionEvent</a> <span class="comment">// MDN</span></li>
-        <li>→<a href="http://dev.w3.org/geo/api/spec-source-orientation.html" alt="DeviceOrientation Event Specification" title="DeviceOrientation Event Specification">DeviceOrientation Event Specification</a> <span class="comment">// W3C</span></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Detecting_device_orientation" alt="Detecting Device Orientation" title="Detecting Device Orientation">Detecting Device Orientation</a> <span class="comment">// MDN</span></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/DOM/Orientation_and_motion_data_explained" alt="Orientation and Motion Data Explained" title="Orientation and Motion Data Explained">Orientation and Motion Data Explained</a> <span class="comment">// MDN</span></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/deviceorientation" alt="DeviceOrientationEvent" title="DeviceOrientationEvent">DeviceOrientationEvent</a> <span class="comment">// MDN</span></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/devicemotion" alt="DeviceMotionEvent" title="DeviceMotionEvent">DeviceMotionEvent</a> <span class="comment">// MDN</span></li>
+        <li><a href="http://dev.w3.org/geo/api/spec-source-orientation.html" alt="DeviceOrientation Event Specification" title="DeviceOrientation Event Specification">DeviceOrientation Event Specification</a> <span class="comment">// W3C</span></li>
     </ul>
 </aside>

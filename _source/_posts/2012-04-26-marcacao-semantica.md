@@ -15,6 +15,22 @@ resumo: >
   ainda é conseguir isto de forma que seu conteúdo chegue ao público correto.
   Neste post, apresentamos as principais formas de marcação semântica de dados
   usadas na web de hoje e fazemos alguns comparativos.
+related:
+  - title: RDF
+    url: http://en.wikipedia.org/wiki/Resource_Description_Framework
+    from: wikipedia
+  - title: RDFa
+    url: http://en.wikipedia.org/wiki/RDFa
+    from: wikipedia
+  - title: Microformats
+    url: http://microformats.org/about
+  - title: Microdata
+    url: http://en.wikipedia.org/wiki/Microdata_(HTML)
+    from: wikipedia
+  - title: Schema.org
+    url: http://schema.org
+  - title: Why Microdata, Not RDF, Will Power the Semantic Web
+    url: http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/
 ---
 
 Uma das coisas mais importantes na web é ter visibilidade, mas mais importante ainda é conseguir isto de forma que seu conteúdo chegue ao público correto.
@@ -44,7 +60,7 @@ Foi criado pelo WHATWG (os caras do HTML5/WebApplications 1.0) e tornou-se o pad
 Os principais motores de busca se baseiam nos vocabulários do schema.org para melhor indexar, classificar e refinar seus resultados de busca, visto que o schema.org é na verdade um consórcio entre os grandes buscadores da web – Google, Bing e Yahoo! – para "*criar e suportar um grupo de esquemas em comum para dados de marcação estruturados em páginas web*". A iniciativa começou com um pequeno número de formatos (esquemas ou tipos), mas o objetivo a longo prazo é suportar uma ampla gama de formatos. No momento em que escrevo este post, já se encontram em torno de **450 formatos** definidos no schema.org – <a href="http://schema.org/docs/full.html">Lista completa</a>. Existem desde os tipos mais básicos como pessoa (*Person*), evento (*Event*) ou organização (*Organization*) até os mais específicos como dentista (*Dentist*), parada de ônibus (*BusStop*) e até mesmo templo hindu (*HinduTemple*).
 
 
-Beleza, mas por quê Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de <a href="http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/">Roy Tennant</a>, com o qual concordo plenamente e também recomendo a leitura.
+Beleza, mas por que Microdata, e não o super-bombado RDF/RDFa? Abaixo coloquei uma pequena lista com as razões mais óbvias, que apenas traduzi deste post de <a href="http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/">Roy Tennant</a>, com o qual concordo plenamente e também recomendo a leitura.
 
 <span id="razoes-microdata"> </span>
 - **Há um claro incentivo à utilização de microdata** – Ao contrário de RDF, há um claro incentivo hoje para utilizar microdata em suas páginas web. *As grandes armas estão por trás do microdata*. Se você tivesse que nomear as maiores empresas da internet, é muito provável que o Google, Yahoo! e Microsoft estivessem nesta lista. Eles têm aparentemente ignorado RDF ​​e RDFa em favor do Schema.org.
@@ -86,15 +102,3 @@ Os três primeiros resultados foram dos sites: FoodNetwork.com, MarthaStewart.co
 Apesar de não ter detectado o uso de microdata/schema.org nos exemplos acima, nós optamos por esta forma de marcação para aplicar aqui no Loop Infinito pelas mesmas <a href="#razoes-microdata">razões que citei anteriormente</a>.
 
 No <a href="http://loopinfinito.com.br/2012/05/02/microdata/">próximo post</a> falarei mais detalhadamente sobre **microdata** e **schema.org**, e também explicarei detalhadamente como marcamos conteúdo HTML usando os vocabulários do schema.org. Até a próxima! o/
-
-<aside class="fonte">
-	<h3>Referência</h3>
-	<ul>
-		<li>→<a href="http://en.wikipedia.org/wiki/Resource_Description_Framework">RDF</a> <span class="comment">//wikipedia</span></li>
-		<li>→<a href="http://en.wikipedia.org/wiki/RDFa">RDFa</a> <span class="comment">//wikipedia</span></li>
-		<li>→<a href="http://microformats.org/about">Microformats</a></li>
-		<li>→<a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a> <span class="comment">//wikipedia</span></li>
-		<li>→<a href="http://schema.org">Schema.org</a></li>
-		<li>→<a href="http://www.thedigitalshift.com/2012/02/roy-tennant-digital-libraries/why-microdata-not-rdf-will-power-the-semantic-web/">Why Microdata, Not RDF, Will Power the Semantic Web</a></li>
-	</ul>
-</aside>

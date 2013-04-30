@@ -256,7 +256,7 @@ Vale dar uma olhada, os nerds se atracaram num grande bate boca com imagens bast
 <aside class="fonte">
     <h3>Referência</h3>
     <ul>
-        <li>→<a href="http://coffeescript.com.br" alt="CoffeeScript em português" title="CoffeeScript em português">CoffeeScript: documentação em português</a></li>
-        <li>→<a href="http://coffeescript.org" alt="CoffeeScript" title="CoffeeScript">CoffeeScript: documentação em inglês</a></li>
+        <li><a href="http://coffeescript.com.br" alt="CoffeeScript em português" title="CoffeeScript em português">CoffeeScript: documentação em português</a></li>
+        <li><a href="http://coffeescript.org" alt="CoffeeScript" title="CoffeeScript">CoffeeScript: documentação em inglês</a></li>
     </ul>
 </aside>
