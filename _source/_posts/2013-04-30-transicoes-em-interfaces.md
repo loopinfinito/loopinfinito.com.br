@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-04-30-interfaces-transitorias.gif
 tags: user-interface
-comments: false
+comments: true
 keywords: >
   lorem, ipsum
 resumo: >
@@ -24,14 +24,12 @@ resumo: >
     position: relative;
     left: -50px;
     width: 700px;
-    /*height: 432px;*/
   }
 
   .post-animation {
     opacity: 0;
     left: 0 !important;
     width: 700px;
-    /*height: 432px;*/
   }
 
   .post-animation-visible {
