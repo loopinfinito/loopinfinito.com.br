@@ -138,6 +138,6 @@ rede local.
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="https://git.wiki.kernel.org/index.php/Aliases" alt="Git Aliases" title="Git Aliases">Git Aliases</a></li>
+		<li><a href="https://git.wiki.kernel.org/index.php/Aliases" alt="Git Aliases" title="Git Aliases">Git Aliases</a></li>
 	</ul>
 </aside>

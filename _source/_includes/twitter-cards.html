@@ -1,0 +1,10 @@
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@loopinfinito" />
+<meta name="twitter:url" content="{{ var_url }}" />
+<meta name="twitter:title" content="{{ var_title }}" />
+<meta name="twitter:description" content="{{ var_description }}" />
+<meta name="twitter:image" content="{{ var_image }}" />
+
+{% if page.author_link %}
+	<meta name="twitter:creator" content="@{{ page.author_link | split:'/' | last }}">
+{% endif %}

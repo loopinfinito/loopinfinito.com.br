@@ -1,0 +1,14 @@
+exclude: [
+  code.less,
+  disqus.less,
+  projetos.less,
+  sobre.less,
+  palestras.less,
+  search.less
+]
+permalink: pretty
+pygments: true
+future: true
+url: 'http://loopinfinito.com.br'
+paginate: 5
+baseurl: '/'

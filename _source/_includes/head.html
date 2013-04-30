@@ -1,47 +1,65 @@
+{% if page.title %}
+	{% capture var_title %}{{ page.title | strip_html }} – Loop Infinito{% endcapture %}
+{% else %}
+	{% capture var_title %}Loop Infinito{% endcapture %}
+{% endif %}
+
+{% if page.resumo %}
+	{% capture var_description %}{{ page.resumo | markdownify | strip_html | escape }}{% endcapture %}
+{% else %}
+	{% capture var_description %}Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade.{% endcapture %}
+{% endif %}
+
+{% if page.image %}
+	{% capture var_image %}{{ site.url }}/{{ page.image }}{% endcapture %}
+{% else %}
+	{% capture var_image %}{{ site.url }}/images/loop-infinito-icon.jpg{% endcapture %}
+{% endif %}
+
+{% capture var_url %}{{ site.url }}{{ page.url | remove:'index.html' }}{% endcapture %}
+
 <head>
 	<meta charset="UTF-8" />
-	{% if page.title %}
-		<title>{{ page.title | strip_html }} – Loop Infinito</title>
-	{% else %}
-		<title>Loop Infinito</title>
-	{% endif %}
+	<title>{{ var_title }}</title>
+
 	{% if page.author %}
 		<meta name="author" content="{{ page.author }}" />
 	{% else %}
 		<meta name="author" content="Almir Filho, Caio Gondim" />
 	{% endif %}
+
 	{% if page.keywords %}
 		<meta name="keywords" content="{{ page.keywords }}" />
 	{% else %}
 		<meta name="keywords" content="html, html5, css, css3, javascript, webkit, jquery, usabilidade, web, desenvolvimento, produtividade, frontend, loop, loop infinito, l8p, crista da onda" />
 	{% endif %}
-	{% if page.resumo %}
-		<meta name="description" content="{{ page.resumo | markdownify | strip_html | escape }}" />
-	{% else %}
-		<meta name="description" content="Web na crista da onda: HTML5, CSS3, JavaScript, Web Semântica, Web em Tempo Real, Usabilidade e Produtividade." />
-	{% endif %}
+
+	<meta name="description" content="{{ var_description }}" />
 	<meta name="language" content="pt" />
 	<meta name="content-language" content="pt-BR" />
 	<meta name="robots" content="all" />
 	<meta name="distribution" content="Global" />
 	<meta name="resource-type" content="document" />
 
+	{% include open-graph.html %}
+	{% include twitter-cards.html %}
+
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="alternate" type="application/atom+xml" href="http://feeds.feedburner.com/l8p" title="Loop Infinito" />
 	<link rel="stylesheet" type="text/css" href="/styles/blog.css?{{ site.time | date: "%Y-%m-%d" }}" media="all" />
 	<script>
+		if(window.location.host.indexOf('loopinfinito.com.br') == 0){
+			// google analytics
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-30127419-1']);
+			_gaq.push(['_trackPageview']);
 
-		// google analytics
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-30127419-1']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		}
 	</script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<!-- Fallback para jQuery local caso o Google CDN esteja offline -->

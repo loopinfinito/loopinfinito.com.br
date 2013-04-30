@@ -58,6 +58,6 @@ Neles podemos fazer ajustes mais finos das condições da rede que desejamos sim
 <aside class="fonte">
 	<h3>Referência</h3>
 	<ul>
-		<li>→<a href="http://osxdaily.com/2011/08/10/simulate-internet-connectivity-bandwidth-speeds-network-link-conditioner/" alt="Simulate Internet Connection &amp; Bandwidth Speeds with Network Link Conditioner" title="Simulate Internet Connection &amp; Bandwidth Speeds with Network Link Conditioner">OS X Daily: Simulate Internet Connection &amp; Bandwidth Speeds with Network Link Conditioner</a></li>
+		<li><a href="http://osxdaily.com/2011/08/10/simulate-internet-connectivity-bandwidth-speeds-network-link-conditioner/" alt="Simulate Internet Connection &amp; Bandwidth Speeds with Network Link Conditioner" title="Simulate Internet Connection &amp; Bandwidth Speeds with Network Link Conditioner">OS X Daily: Simulate Internet Connection &amp; Bandwidth Speeds with Network Link Conditioner</a></li>
 	</ul>
 </aside>

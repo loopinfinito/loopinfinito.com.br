@@ -237,8 +237,8 @@ That's all folks!
 <aside class="fonte">
   <h3>Referência</h3>
   <ul>
-    <li>→<a href="http://www.w3.org/TR/css3-values/#calc" alt="CSS Values and Units Module Level 3" title="CSS Values and Units Module Level 3">CSS Values and Units Module Level 3</a> <span class="comment">// W3C</span></li>
-    <li>→<a href="http://www.w3schools.com/cssref/css_units.asp" alt="CSS Units" title="CSS Units">CSS Units</a> <span class="comment">// W3 Schools</span></li>
-    <li>→<a href="http://updates.html5rocks.com/2012/03/CSS-layout-gets-smarter-with-calc" alt="CSS LAYOUT GETS SMARTER WITH CALC()" title="CSS LAYOUT GETS SMARTER WITH CALC()">CSS LAYOUT GETS SMARTER WITH CALC()</a> <span class="comment">// HTML5 Rocks</span></li>
+    <li><a href="http://www.w3.org/TR/css3-values/#calc" alt="CSS Values and Units Module Level 3" title="CSS Values and Units Module Level 3">CSS Values and Units Module Level 3</a> <span class="comment">// W3C</span></li>
+    <li><a href="http://www.w3schools.com/cssref/css_units.asp" alt="CSS Units" title="CSS Units">CSS Units</a> <span class="comment">// W3 Schools</span></li>
+    <li><a href="http://updates.html5rocks.com/2012/03/CSS-layout-gets-smarter-with-calc" alt="CSS LAYOUT GETS SMARTER WITH CALC()" title="CSS LAYOUT GETS SMARTER WITH CALC()">CSS LAYOUT GETS SMARTER WITH CALC()</a> <span class="comment">// HTML5 Rocks</span></li>
   </ul>
 </aside>
