@@ -8,7 +8,8 @@ image: images/posts/2013-04-30-interfaces-transitorias.gif
 tags: user-interface
 comments: true
 keywords: >
-  lorem, ipsum
+  interface, transição, ui, user experience, user interface, usuário, ux, ihc,
+  hci, transition, animation
 resumo: >
   Transições em interfaces podem ser mais do que algo "bonitinho". Se usadas de
   forma correta, elas não só melhoram a aparência da aplicação como também sua
