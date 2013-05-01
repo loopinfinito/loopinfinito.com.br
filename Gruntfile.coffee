@@ -18,6 +18,6 @@ module.exports = (grunt) ->
 	)
 
 	grunt.registerTask('run', ['jekyll:dev'])
-	grunt.registerTask('build', ['jekyll:build'])
-	grunt.registerTask('deploy', ['jekyll:build', 'minify', 'rsync'])
-	grunt.registerTask('deploy:staging', ['jekyll:build', 'minify', 'rsync:staging'])
+	grunt.registerTask('build', ['jekyll:build', 'fix_permissions'])
+	grunt.registerTask('deploy', ['jekyll:build', 'fix_permissions', 'minify', 'rsync'])
+	grunt.registerTask('deploy:staging', ['jekyll:build', 'fix_permissions', 'minify', 'rsync:staging'])
