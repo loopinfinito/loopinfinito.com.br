@@ -16,6 +16,16 @@ resumo: >
   inclusive, tentam simular este comportamento no JavaScript, mas poucos
   conseguem com sucesso. Neste post numa série de 2, iremos relembrar o que é
   herança, a cadeia de protótipos e como era feito a herança em JavaScript.
+related:
+  - title: Inheritance and the Prototype Chain
+    url: https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain
+    from: MDN
+  - title: Using Object.create() instead of new
+    url: http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new
+    from: StackOverflow
+  - title: Constructors considered mildly confusing
+    url: http://joost.zeekat.nl/constructors-considered-mildly-confusing.html
+    from: code.h(oe)kje
 ---
 
 Diferente das linguagens mais conhecidas, como Java ou C++ que utilizam a orientação a objetos clássica, JavaScript utiliza uma abordagem diferente para compartilhar código entre entidades, chamada de orientação a protótipo.
@@ -214,12 +224,3 @@ Grande parte desta bagunça é devido ao JavaScript ter sido lançado __muito__ 
 Porém o ECMAscript, o grupo que padroniza o JavaScript, vem adicionado várias funções para tornar o trabalho com herança mais simples e finalmente abraçando a orientação a protótipo.
 
 E é sobre este novo método de trabalhar com herança no ECMAscript 5 que iremos discutir na [2ª parte do post](http://loopinfinito.com.br/2013/02/01/heranca-em-javascript-parte-2/).
-
-<aside class="fonte">
-  <h3>Referência</h3>
-  <ul>
-    <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain">Mozilla Developer Network: Inheritance and the Prototype Chain</a></li>
-    <li><a href="http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new">StackOverflow: Using Object.create() instead of new</a></li>
-    <li><a href="http://joost.zeekat.nl/constructors-considered-mildly-confusing.html">code.h(oe)kje: Constructors considered mildly confusing</a></li>
-  </ul>
-</aside>
