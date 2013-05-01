@@ -14,6 +14,19 @@ resumo: >
   Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso
   blog usando **microdata** e os vocabulários **schema.org**.
   Hoje explicarei passo a passo como fiz isto aqui no Loop Infinito.
+related:
+  - title: Marcação Semântica
+    url: http://loopinfinito.com.br/2012/04/26/marcacao-semantica/
+    from: Loop Infinito
+  - title: Microdata
+    url: http://loopinfinito.com.br/2012/05/02/microdata/
+    from: Loop Infinito
+  - title: Schema.org
+    url: http://schema.org
+    from: Schema.org
+  - title: Rel=author Authorship Markup in HTML5
+    url: http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm
+    from: about.com
 ---
 
 <style>
@@ -277,13 +290,3 @@ Com isto, vemos que o Google está extraindo nossos metadados de forma correta.
 Aconselho que façam o mesmo teste com as nossas outras páginas marcadas com schema.org (interna do post e Sobre) para quem possam ver as direfenças entre elas.
 A diferença entre a página inicial e a interna do post é mínima: no resumo da página inicial temos as propriedades <code>thumbnailurl</code>, <code>description</code> e <code>url</code>, enquanto que na interna temos a propriedade <code>articleBody</code> substituindo essas 3.
 Por hoje é só, até a próxima!
-
-<aside class="fonte">
-	<h3>Referência</h3>
-	<ul>
-		<li><a href="http://loopinfinito.com.br/2012/04/26/marcacao-semantica/" alt="Marcação Semântica (Loop Infinito)" title="Marcação Semântica (Loop Infinito)">Marcação Semântica</a> <span class="comment">//loop infinito</span></li>
-		<li><a href="http://loopinfinito.com.br/2012/05/02/microdata/" alt="Microdata (Loop Infinito)" title="Microdata (Loop Infinito)">Microdata: Como usar</a> <span class="comment">//loop infinito</span></li>
-		<li><a href="http://schema.org" alt="Schema.org" title="Schema.org">Schema.org</a></li>
-		<li><a href="http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm" alt="Rel=author Authorship Markup in HTML5" title="Rel=author Authorship Markup in HTML5">Rel=author Authorship Markup in HTML5</a> <span class="comment">//about.com</span></li>
-	</ul>
-</aside>
