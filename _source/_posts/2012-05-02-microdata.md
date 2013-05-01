@@ -16,6 +16,18 @@ resumo: >
   hoje continuarei falando de marcação semântica, com a diferença de que focarei
   em microdata e mostrarei também como realizar a marcação semântica de conteúdo
   usando os vocabulários **Schema.org**.
+related:
+  - title: Microdata
+    url: http://en.wikipedia.org/wiki/Microdata
+    from: wikipedia
+  - title: Schema.org
+    url: http://schema.org
+  - title: Getting started
+    url: http://schema.org/docs/gs.html
+    from: schema.org
+  - title: "Microdata API e Schema.org: dando significado ao HTML"
+    url: http://desenvolvimentoparaweb.com/html/microdata-api-schema-org-significado-html/
+    from: dpw
 ---
 
 <style>
@@ -429,13 +441,3 @@ Com isso, uma representação gráfica da semântica passaria a ser algo como:
 E não para por ai galera, você pode sair especificando qualquer coisa a adicional conforme achar necessário, mas acho isso aqui já é o necessário pra dar uma boa sacada na idéia né. Estou bastante satisfeito de ter finalmente terminado este post, pois além de tudo, minha dívida de Heinekens com <a href="http://twitter.com/caio_gondim">Caio Gondim</a> para de aumentar hoje (um dia explico essa história)!
 
 No próximo post irei realizar a marcação semântica aqui no Loop Infinito e mostrarei o que mudou. Até lá!
-
-<aside class="fonte">
-	<h3>Referência</h3>
-	<ul>
-		<li><a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a> <span class="comment">//wikipedia</span></li>
-		<li><a href="http://schema.org">Schema.org</a></li>
-		<li><a href="http://schema.org/docs/gs.html">Getting started</a> <span class="comment">//schema.org</span></li>
-		<li><a href="http://desenvolvimentoparaweb.com/html/microdata-api-schema-org-significado-html/">Microdata API e Schema.org: dando significado ao HTML</a> <span class="comment">//dpw</span></li>
-	</ul>
-</aside>
