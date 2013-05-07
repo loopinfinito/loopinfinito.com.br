@@ -31,6 +31,7 @@ resumo: >
     opacity: 0;
     left: 0 !important;
     width: 700px;
+    display: block;
   }
 
   .post-animation-visible {
@@ -90,21 +91,21 @@ se comportar. Vamos pegar esses 25 _frames_ interpolados, onde o _frame_ 13 muda
 de posição.
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-linear-computer-garbage-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-linear-computer-garbage.gif"
-      title="Linear Computer Garbage" alt="Linear Computer Garbage"
-      data-title-backup="Linear Computer Garbage" data-alt-backup="Linear Computer Garbage" />
+  <img class="post-animation" style="height: 350px;"
+      src="/images/posts/2013-04-30-linear-computer-garbage.gif"
+      title="Linear Computer Garbage" alt="Linear Computer Garbage" />
 </figure>
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-ease-in-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-ease-in.gif"
-      title="Ease-in" alt="Ease-in"
-      data-title-backup="Ease-in" data-alt-backup="Ease-in" />
+  <img class="post-animation" style="height: 350px;"
+      src="/images/posts/2013-04-30-ease-in.gif"
+      width="700" height="350" title="Ease-in" alt="Ease-in" />
 </figure>
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-ease-out-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-ease-out.gif"
-      title="Ease-out" alt="Ease-out"
-      data-title-backup="Ease-out" data-alt-backup="Ease-out" />
+  <img class="post-animation" style="height: 350px;"
+      src="/images/posts/2013-04-30-ease-out.gif"
+      width="700" height="350" title="Ease-out" alt="Ease-out"/>
 </figure>
 
 Olha isso! Você acabou de aprender <em>easing</em>/<em>cushioning</em>.
@@ -130,9 +131,9 @@ adoraria popular essa lista com dados reais. Se você desse esse trabalho a um
 computador, teria um resultado parecido com isto:
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-insert-an-item-into-a-list-without-transition-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-insert-an-item-into-a-list-without-transition.gif"
-      title="Inserção de item na lista sem transição" alt="Inserção de item na lista sem transição"
-      data-title-backup="Inserção de item na lista sem transição" data-alt-backup="Inserção de item na lista sem transição" />
+  <img class="post-animation" style="height: 350px;"
+      src="/images/posts/2013-04-30-insert-an-item-into-a-list-without-transition.gif"
+      title="Inserção de item na lista sem transição" alt="Inserção de item na lista sem transição" />
 </figure>
 
 Ahhh, isso tá muito ruim.
@@ -141,15 +142,15 @@ Suavizar isto só requer alguns _frames_ adicionais de animação. O que acha de
 uma dica ao seu cérebro sobre o que está acontecendo na lista?
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-insert-an-item-into-a-list-with-transition-1-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-insert-an-item-into-a-list-with-transition-1.gif"
-      title="Inserção de item na lista com transição" alt="Inserção de item na lista com transição"
-      data-title-backup="Inserção de item na lista com transição" data-alt-backup="Inserção de item na lista com transição" />
+  <img class="post-animation" style="height: 350px;"
+      src="/images/posts/2013-04-30-insert-an-item-into-a-list-with-transition-1.gif"
+      title="Inserção de item na lista com transição" alt="Inserção de item na lista com transição" />
 </figure>
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-insert-an-item-into-a-list-with-transition-2-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-insert-an-item-into-a-list-with-transition-2.gif"
-      title="Inserção de item na lista com transição" alt="Inserção de item na lista com transição"
-      data-title-backup="Inserção de item na lista com transição" data-alt-backup="Inserção de item na lista com transição" />
+  <img class="post-animation" style="height: 350px;"
+      src="/images/posts/2013-04-30-insert-an-item-into-a-list-with-transition-2.gif"
+      title="Inserção de item na lista com transição" alt="Inserção de item na lista com transição" />
 </figure>
 
 Para que um novo item seja adicionado a lista é preciso primeiro criar espaço
@@ -177,18 +178,18 @@ E se considerarmos um item como um container que expandimos para mostrar mais
 detalhes, _inline_?
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-list-item-2-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-list-item-2.gif"
-      title="Drilldown em uma lista" alt="Drilldown em uma lista"
-      data-title-backup="Drilldown em uma lista" data-alt-backup="Drilldown em uma lista" />
+  <img class="post-animation" style="height: 400px;"
+      src="/images/posts/2013-04-30-list-item-2.gif"
+      title="Drilldown em uma lista" alt="Drilldown em uma lista" />
 </figure>
 
 Se o objetivo é entrar na lista e dar atenção e foco total ao item, nós poderiamos
 fazer com que tudo sumisse dentro da mesma _view_:
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-list-item-3-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-list-item-3.gif"
-      title="Drilldown em uma lista" alt="Drilldown em uma lista"
-      data-title-backup="Drilldown em uma lista" data-alt-backup="Drilldown em uma lista" />
+  <img class="post-animation" style="height: 400px;"
+      src="/images/posts/2013-04-30-list-item-3.gif"
+      title="Drilldown em uma lista" alt="Drilldown em uma lista" />
 </figure>
 
 Usar > <em>breadcrumb</em> > para > chegar > até > a > <em>view</em> > é um
@@ -205,9 +206,9 @@ pode levar a soluções mais elegantes sobre como conectar o fluxo de informaç�
 ## Thinglist - um exemplo implementado
 
 <figure class="post-animation-static" style="background-image: url(/images/posts/2013-04-30-thing-list-static.jpg)">
-  <img class="post-animation" src="/images/posts/2013-04-30-thing-list.gif"
-      title="Thinglist" alt="Thinglist"
-      data-title-backup="Thinglist" data-alt-backup="Thinglist" />
+  <img class="post-animation" style="height: 450px;"
+      src="/images/posts/2013-04-30-thing-list.gif"
+      title="Thinglist" alt="Thinglist" />
 </figure>
 
 O [Thinglist](http://appstore.com/thinglist),  um produto da
@@ -256,10 +257,16 @@ cuidado especial sobre como e porque elas se movem.
 </aside>
 
 <script>
-  // no mouseenter, reseta o src do GIF para que ele reinicie a animação
+  // no mouseenter, reseta o src do GIF para que ele reinicie a animationimação
   $('.post-animation-static')
     .on('mouseenter', function(event) {
       var $postAnimation = $(this).find('.post-animation')
+
+      if ($postAnimation.attr('data-src-backup') === undefined) {
+        $postAnimation.attr('data-src-backup', $postAnimation.attr('src'))
+        $postAnimation.attr('data-title-backup', $postAnimation.attr('title'))
+      }
+
       $postAnimation
         .addClass('post-animation-visible')
         .attr('src', $postAnimation.attr('data-src-backup'))
