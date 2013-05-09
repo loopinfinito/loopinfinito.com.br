@@ -5,9 +5,12 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-05-14-entendendo-a-propagacao-de-eventos-no-dom.jpg
-tags:
+tags: javascript
 comments: false
 keywords: >
+  javascript, evento, event, dom, propagacao, captura, bubbling, capturing, listener,
+  manipulador, registrado, addEventListener, stopPropagation, navegador, w3c,
+  netscape, ie, ie8, ie9, ancestral, disparar, varredura, clique, click
 resumo: >
   Se um elemento e um de seus ancestrais tiverem ambos _listeners_ definidos
   para o __mesmo__ evento, qual deles deverá ser disparado __primeiro__?
