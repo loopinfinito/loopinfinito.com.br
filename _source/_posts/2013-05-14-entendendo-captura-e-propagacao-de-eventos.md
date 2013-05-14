@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-05-14-entendendo-a-propagacao-de-eventos-no-dom.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
   javascript, evento, event, dom, propagacao, captura, bubbling, capturing, listener,
   manipulador, registrado, addEventListener, stopPropagation, navegador, w3c,
