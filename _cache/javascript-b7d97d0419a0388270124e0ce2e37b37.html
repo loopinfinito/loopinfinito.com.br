@@ -1,0 +1,17 @@
+<div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="s1">&#39;tres&#39;</span> <span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">event</span> <span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="s1">&#39;#tres clicado&#39;</span> <span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="s1">&#39;um&#39;</span> <span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">event</span> <span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="s1">&#39;#um clicado&#39;</span> <span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// ou, jQuery like</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tres&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">event</span> <span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="s1">&#39;#tres clicado&#39;</span> <span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#um&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">event</span> <span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="s1">&#39;#um clicado&#39;</span> <span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
