@@ -13,7 +13,7 @@ resumo: >
   O <code>sticky</code> é um novo valor da propriedade <code>position</code> do CSS.
   Com ele é possível criarmos elementos que se comportam ora como
   <code>position:fixed</code>, ora como <code>position:relative</code> dependendo
-  de um valor de <em>offset</em> definido. <strong>É o quê?</strong>
+  de um valor de <em>offset</em> definido. <strong>Hein?</strong>
 related:
   - title: "Stick your landings! position: sticky lands in WebKit"
     url: http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit
@@ -51,7 +51,7 @@ O <code>sticky</code> é um novo valor da propriedade <code>position</code> do
 <abbr title="Cascading Style Sheet">CSS</abbr>. Com ele é possível criarmos
 elementos que se comportam ora como <code>position:fixed</code>, ora
 como <code>position:relative</code> dependendo de um valor de <em>offset</em>
-definido. <strong>É o quê?</strong>
+definido. <strong>Hein?</strong>
 
 <div class="section-with-title-sticky">
   <h2 class="title-sticky">O efeito</h2>
@@ -63,7 +63,7 @@ definido. <strong>É o quê?</strong>
     títulos deste <em>post</em> estão usando o <code>position:sticky</code>. Basta dar <em>scroll</em>
     na página até que os subtítulos do <em>post</em> batam no topo. Quando batem, ficam fixos no
     topo até que o elemento em que ele está contido (o elemento pai) suma por completo. No Chrome
-    versão estável também é possível brincar com esse novo valor de <code>position</code>. Basta digitar
+    versão estável (atualmente 26.0.1410.65) também é possível brincar com esse novo valor de <code>position</code>. Basta digitar
     <strong>chrome://flags</strong> na barra de endereços, e habilitar
     o experimento <strong>Experimental WebKit features</strong>, como na imagem
     abaixo.
@@ -77,16 +77,6 @@ definido. <strong>É o quê?</strong>
 
   <p>
     Caso tenha habilitado o experimento, é preciso reiniciar o navegador.
-  </p>
-
-  <p>
-    Este efeito é muito comum no iOS,
-    como nas <em>apps</em> de música e agenda do iPhone. Quando estamos vendo os
-    contatos começados com a letra
-    <strong>A</strong>, o cabeçalho que indica que estamos nesta letra fica sempre
-    visível. Quando vamos para a próxima letra, a letra <strong>B</strong> neste
-    caso, ela empurra a anterior e se mantém visivél enquanto houver contatos que
-    comecem com ela.
   </p>
 </div>
 
@@ -121,7 +111,7 @@ definido. <strong>É o quê?</strong>
   </p>
 
   <p>
-    É péssimo explicar essa <em>feature</em>. E super simples de entender
+    É um pouco confuso explicar essa <em>feature</em>. E super simples de entender
     experimentando no navegador. Por favor, <strong>testem</strong>.
   </p>
 </div>
@@ -142,8 +132,8 @@ definido. <strong>É o quê?</strong>
     da computação que você está fazendo quando o evento é disparado, pode
     tornar a página pesada. Uma simples busca por elementos no
     <abbr title="Document Object Model">DOM</abbr>
-    com jQuery já pode diminuir consideravelmente o número de <em>frames</em> por
-    segundos da renderização da nossa página.
+    com jQuery já pode diminuir consideravelmente o número de <em>frames</em>
+    por segundos da renderização da nossa página.
   </p>
 
   <p>
