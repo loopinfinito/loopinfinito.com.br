@@ -83,7 +83,7 @@ novo e, quando a conexão retornar, o aviso irá sumir. Simples e lindo, hein?
 
 ## Suporte e Inconsistências
 
-Cada navegador interpreta o termo _offline_ de maneiradiferente. A especificação
+Cada navegador interpreta o termo _offline_ de maneira diferente. A especificação
 do <abbr title="HyperText Markup Language 5">HTML5</abbr> informa que o evento
 _offline_ deve ser disparado quando o computador perder conexão com a rede, e
 não necessariamente com a internet.
