@@ -1,0 +1,7 @@
+<div class="highlight"><pre><span class="nx">cachorro</span><span class="p">.</span><span class="nx">morrer</span><span class="p">()</span> <span class="c1">// undefined</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">animal</span><span class="p">,</span> <span class="s1">&#39;morrer&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="p">})</span>
+<span class="nx">cachorro</span><span class="p">.</span><span class="nx">morrer</span><span class="p">()</span> <span class="c1">// dispara função definida em animal</span>
+</pre></div>
