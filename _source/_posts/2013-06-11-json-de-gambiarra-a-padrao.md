@@ -71,6 +71,23 @@ Dolorum excepturi fuga itaque maiores voluptas hic deserunt praesentium sapiente
 id impedit. Quaerat, neque, omnis ab praesentium numquam totam odio quibusdam
 consequatur.
 
+![JSON card](/images/posts/2013-06-11-json-card.jpg)
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, itaque
+reprehenderit accusamus cum illum quos ipsam sed consequatur ea dolor enim
+tenetur fuga quasi dolorem commodi impedit molestiae quam laudantium! Lorem
+ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, tempora modi atque
+inventore numquam consequatur quo sunt quod natus itaque. Quod, a, error itaque
+fugit tempore dolorem veritatis pariatur fugiat.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, debitis,
+laudantium, excepturi tempore veritatis nesciunt ipsa eveniet officiis
+necessitatibus et non perferendis magnam natus magni mollitia hic consequatur
+aliquam explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Perspiciatis, cupiditate, atque. Ipsam, corporis sint iste? Aperiam nostrum
+quasi nesciunt maxime excepturi inventore sapiente? Molestiae est deleniti amet
+cupiditate obcaecati voluptatibus.
+
 
 
 <aside class="fonte">
