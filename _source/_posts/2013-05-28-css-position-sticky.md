@@ -4,9 +4,9 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-image: images/posts/2013-05-23-css-position-sticky.jpg
+image: images/posts/2013-05-28-css-position-sticky.jpg
 tags: css
-comments: false
+comments: true
 keywords: >
   css, position sticky, webkit, google chrome, chrome canary
 resumo: >
@@ -70,7 +70,7 @@ definido. <strong>Hein?</strong>
   </p>
 
   <figure>
-    <img src="/images/posts/2013-05-23-enable-webkit-experimental-features.jpg"
+    <img src="/images/posts/2013-05-28-enable-webkit-experimental-features.jpg"
       title="Habilitar experimentos do WebKit"
       alt="Habilitar experimentos do WebKit" height="200" />
   </figure>
