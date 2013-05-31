@@ -5,121 +5,202 @@ author: Caio Gondim
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-image: images/posts/2013-04-30-json.jpg
+image: images/posts/2013-06-11-json.jpg
 tags: javascript
 comments: false
 keywords: >
-  tags
+  javascript, json, js, crockford, javascript object notation
 resumo: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  O JSON começou como uma alternativa mais simples ao XML para ser um formato
+  de troca de dados entre cliente e servidor. Nasceu como uma gambiarra e hoje
+  é o **padrão**, sendo implementado nativamente em todos os grandes *browsers*,
+  inclusive o <abbr title="Internet Explorer">IE</abbr>.
+related:
+  - title: The JSON Saga
+    url: http://youtu.be/-C-JoyNuQJs
+    from: YUI Library Youtube channel
+  - title: JSON license
+    url: http://www.json.org/license.html
+    from: JSON.org
 ---
 
 <style>
-  .parallax {
-    width: 700px;
-    height: 432px;
-    background-image: url(/images/posts/2013-06-11-json-sample-bg.jpg);
-    margin-left: -50px;
+
+  quote {
+    text-transform: uppercase;
+    font-size: 28px;
+    color: #ccc;
+    letter-spacing: -2px;
+    display: inline-block;
+    font-style: italic;
   }
 
-  .json-logo {
-    background-color: transparent !important;
-    background-image: none !important;
-    width: 349px !important;
-    left: 50% !important;
-    margin-left: -175px;
-    top: 50%;
-    margin-top: -175px;
+  quote strong {
+    font-weight: normal;
+    color: #aaa;
   }
+
 </style>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Crockford fala que não **inventou** o <abbr title="JavaScript Object
+Notation">JSON</abbr>, mas sim o **descobriu** e formalizou. Em 1996, algo em
+torno de 5 anos antes da formalização do <abbr title="JavaScript Object
+Notation">JSON</abbr> por Crockford, alguns desenvolvedors do Netscape já usavam
+*arrays literals* de JavaScript para troca de dados. O que ele fez foi dar uma
+especificação e um site ao formato. O restante aconteceu por conta própria.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## A primeira mensagem <abbr title="JavaScript Object Notation">JSON</abbr>
 
-<div class="parallax">
-  <img class="json-logo" src="/images/posts/2013-06-11-json-logo.png" alt="JSON logo" />
-</div>
+Em 2001, Crockford fundou a empresa Veil e nela trabalhava em aplicações *web*
+que hoje chamaríamos de aplicações <abbr title="Assynchronous JavaScript and
+XML">Ajax</abbr>. Em 2002 a empresa teve o nome alterado para State Software.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+![Veil logo](/images/posts/2013-06-11-veil-logo.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, libero,
-sapiente, voluptatum dignissimos nihil nisi ut qui veritatis reprehenderit
-similique expedita officia eius officiis voluptates dolore. Aperiam assumenda
-iste molestias. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-Dolorum excepturi fuga itaque maiores voluptas hic deserunt praesentium sapiente
-id impedit. Quaerat, neque, omnis ab praesentium numquam totam odio quibusdam
-consequatur.
+No código abaixo nós temos a primeira mensagem <abbr title="JavaScript Object
+Notation">JSON</abbr> trafegada na Veil. Ela foi enviada em abril de 2001, como
+resposta (*response*) a um *submit* de um *form* enviado pelo *laptop* de
+Crockford.
+
+{% highlight html %}
+<html><head><script>
+  document.domain = 'fudco.com';
+  parent.session.receive(
+    {to: "session", do: "test",
+    "text": "Hello world"}
+  );
+</script></head></html>
+{% endhighlight %}
+
+Uma breve descrição de como funciona esse código: ele era encapsulado por *tag*s
+<abbr title="HyperText Markup Language">HTML</abbr> pois deveria funcionar no
+Internet Explorer e Netscape; na segunda linha é redefinido o domínio para que a
+política de "same-origin policy" não barrasse a requisição; e, logo depois, o
+método `receive` do frame que recebe a mensagem é executado para, de fato,
+tratar os dados recebidos. Uma bela **gambiarra**.
+
+Mas o envio da mensagem **falhou**. E o motivo da falha foi o uso da palavra
+reservada `do` do JavaScript. Palavras reservadas no JavaScript devem ser
+*quoted*, e Crockford então optou por fazer com que, no padrão <abbr
+title="JavaScript Object Notation">JSON</abbr>, todas as *keys* fossem *quoted*
+ao invés de fazer e atualizar uma lista de todas as palavras reservadas da
+linguagem. Assim ficaria mais simples. E, além disso, seguia o mesmo padrão do
+Python.
+
+E é por isso que todas as *keys* do <abbr title="JavaScript Object
+Notation">JSON</abbr> são *quoted*.
+
+## <abbr title="Java Speech Markup Language">JSML</abbr>, o quase-nome
+
+O segundo óbvio passo era escolher um nome para o futuro padrão. **<abbr
+title="Java Speech Markup Language">JSML</abbr>** foi o nome escolhido. Mas já
+havia uma linguagem, que ninguém nunca tinha ouvido falar, no mundo Java que
+usava esse acrônimo, a Java Speech Markup Language.
+
+Com esse empecílio optaram por mudar de nome e então batizaram o novo padrão de
+**<abbr title="JavaScript Object Notation">JSON</abbr>**, ou JavaScript Object
+Notation.
+
+## Isso não é um padrão
+
+Os clientes da empresa de Crockford se recusaram a usar <abbr title="JavaScript
+Object Notation">JSON</abbr> pois alegavam que ele não era um padrão. Então
+Crockford **fez dele um padrão**. Ele comprou o domínio
+[json.org](http://json.org), definiu a gramática e implementou um *parser* em
+Java, para servir de referência. E, desde então, o site está *online* com a
+especificação. Praticamente do mesmo jeito desde que foi lançado.
+
+## <abbr title="Assynchronous JavaScript and XML">Ajax</abbr>
+
+O formato começou a ganhar bastante popularidade com o advento do <abbr
+title="Assynchronous JavaScript and XML">Ajax</abbr>, popularizado por [Jesse
+James Garrett](http://www.adaptivepath.com/ideas/ajax-new-approach-web-
+applications) a partir de 2005. As pessoas achavam trabalhar com <abbr
+title="Extensible Markup Language">XML</abbr> algo muito complexo e verboso, e
+logo descobriram que as tarefas ficavam mais simples se feitas com <abbr
+title="JavaScript Object Notation">JSON</abbr>.
+
+<quote>“ <abbr title="JavaScript Object Notation">JSON</abbr> is the
+<strong>intersection</strong> of modern programming languages ”</quote>
+
+Mesmo com a sigla <abbr title="Assynchronous JavaScript and XML">Ajax</abbr>
+significando **Assynchronous JavaScript and XML**, foi o <abbr title="JavaScript
+Object Notation">JSON</abbr> que acabou se tornando o padrão de troca de dados
+entre cliente e servidor.
+
+## O logo
+
+![JSON logo in the business card](/images/posts/2013-06-11-json-logo-card.jpg)
+
+O logo foi desenhado pelo próprio Crockford. Ele é basedo em uma ilusão de ótica
+chamada de *Impossible Torus*. É uma imagem 2D que representa algo 3D que é
+impossível de existir em um mundo tridimensional (na verdade, há pouco tempo
+provaram o [contrário](http://io9.com/5905144/the-bizarre-object-we-thought-it-
+was-impossible-to-visualize)).
+
+## Sem comentários
+
+Com a popularização, algumas pessoas começaram a usar os comentários
+para adicionar instruções ao *parser*, gerando uma complexidade desnecessária
+e quebrando a interoperabilidade, já que as instruções eram escritas
+para *parsers* específicos.
+
+<quote>
+  “ The <strong>least</strong> we've to agree to
+  <strong>interoperate</strong>, the more likely we're gonna be able to
+  <strong>do it well</strong> ”
+</quote>
+
+E retirar comentários JavaScript do <abbr title="JavaScript Object
+Notation">JSON</abbr> nos *ports* dos *parsers* de outras linguagens além de
+JavaScript estava adicionando, também, muita complexidade na implementação.
+
+Além disso, com a retirada dos comentários, <abbr title="JavaScript Object
+Notation">JSON</abbr> ficava também mais alinhado com a especificação do <abbr
+title="YAML Ain't Markup Language">YAML</abbr>, uma outra linguagem de marcação
+muito similar com <abbr title="JavaScript Object Notation">JSON</abbr> e que
+estava começando a ganhar popularidade.
+
+## Minimalismo
 
 ![JSON card](/images/posts/2013-06-11-json-card.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, itaque
-reprehenderit accusamus cum illum quos ipsam sed consequatur ea dolor enim
-tenetur fuga quasi dolorem commodi impedit molestiae quam laudantium! Lorem
-ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, tempora modi atque
-inventore numquam consequatur quo sunt quod natus itaque. Quod, a, error itaque
-fugit tempore dolorem veritatis pariatur fugiat.
+O formato <abbr title="JavaScript Object Notation">JSON</abbr> foi desenhado
+desde o início para ser simples. E sua especificação é tão simples que ela toda
+cabe em um cartão de visitas, que Crockford sempre distribui em suas palestras.
+Ele defende a idéia de que quanto menos tivermos de concordar em algo para
+interoperar, mais provável isso será de acontecer.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, debitis,
-laudantium, excepturi tempore veritatis nesciunt ipsa eveniet officiis
-necessitatibus et non perferendis magnam natus magni mollitia hic consequatur
-aliquam explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-Perspiciatis, cupiditate, atque. Ipsam, corporis sint iste? Aperiam nostrum
-quasi nesciunt maxime excepturi inventore sapiente? Molestiae est deleniti amet
-cupiditate obcaecati voluptatibus.
+## Versionamento
 
+Não há versão 1.0, 1.1 ou nem 2.0 no <abbr title="JavaScript Object
+Notation">JSON</abbr>. Na verdade, não existe e não irá existir nunca uma
+versão. O que significa que o formato nunca irá mudar. Para Crockford a
+estabilidade é mais importante que qualquer nova *feature* que por ventura venha
+a ser adicionada. Daí sua decisão em não versionar a especificação.
 
+Talvez um dia o <abbr title="JavaScript Object Notation">JSON</abbr> deixe de
+ser o padrão de troca de dados entre diferentes aplicações. Mas <abbr
+title="JavaScript Object Notation">JSON</abbr> continuará sendo o mesmo <abbr
+title="JavaScript Object Notation">JSON</abbr>. Para sempre.
 
-<aside class="fonte">
-  <h3>Referência</h3>
-  <ul>
-    <li>→
-      <a href="http://google.com">
-        Lorem Ipsum
-      </a>
-      <span class="comment">// Lorem </span>
-    </li>
-  </ul>
-</aside>
+## Licença
 
+Ao escolher por uma licença, Crockford pensou em usar a <abbr
+title="Massachusetts Institute of Technology">MIT</abbr>, por ser bastante
+flexível. Mas era 2002, menos de um anos após os atentados terroristas de 11 de
+setembro. E ele se sentia na obrigação de "fazer sua parte". Então adicionou uma
+linha à licença <abbr title="Massachusetts Institute of Technology">MIT</abbr>:
+**The Software shall be used for Good, not Evil.**
 
-<script>
-  (function () {
-    'use strict';
+<quote>
+  This software shall be used for <strong>Good</strong>, not
+  <strong>Evil</strong>
+</quote>
 
-    var $parallax = $('.parallax')
-    var parallaxInit = $('.parallax').offset().top - $(document).height()
+E até hoje recebe e-mails de algumas pessoas perguntando: "Como vou saber se o
+que faço é mal?". E outras mesmo dizendo: "Não vou usar seu *software* caso não
+mude a licença." Parece que Crockford conseguiu "fazer sua parte" =).
 
-    $(window).on('scroll', function(event) {
-
-      var documentScrollTop = $(document).scrollTop()
-      var bgPos = 0
-
-      if (documentScrollTop > parallaxInit) {
-        bgPos = ($(document).scrollTop() - parallaxInit) * 0.8
-        $('.parallax').css('background-position', '0 -' + bgPos + 'px')
-      }
-
-    })
-  }())
-</script>
+E é por isso, meus caros, que o <abbr title="JavaScript Object
+Notation">JSON</abbr> é o que é hoje.
