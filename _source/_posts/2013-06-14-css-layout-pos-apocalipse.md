@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-06-14-css-layout-pos-apocalipse.gif
 tags: palestra
-comments: false
+comments: true
 keywords: >
   css, layout, futuro, palestra, grid, grid layout, flexbox, flex-box, flex box,
   css3, css exclusions, css regions, exclusions, regions, cyberpunk
