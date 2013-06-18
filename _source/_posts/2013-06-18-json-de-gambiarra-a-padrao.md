@@ -2,12 +2,11 @@
 title: <span>JSON</span>. De gambiarra a padrão
 layout: post
 author: Caio Gondim
-author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-06-18-json.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
   javascript, json, js, crockford, javascript object notation
 resumo: >
