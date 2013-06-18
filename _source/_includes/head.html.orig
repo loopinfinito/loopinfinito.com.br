@@ -41,7 +41,10 @@
 	<meta name="distribution" content="Global" />
 	<meta name="resource-type" content="document" />
 
+<<<<<<< HEAD
+=======
 	{% include windows-8.html %}
+>>>>>>> master
 	{% include open-graph.html %}
 	{% include twitter-cards.html %}
 
