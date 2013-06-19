@@ -96,7 +96,7 @@ title="Java Speech Markup Language">JSML</abbr>** foi o nome escolhido. Mas já
 havia uma linguagem, que ninguém nunca tinha ouvido falar, no mundo Java que
 usava esse acrônimo, a Java Speech Markup Language.
 
-Com esse empecílio optaram por mudar de nome e então batizaram o novo padrão de
+Com esse empecílho optaram por mudar de nome e então batizaram o novo padrão de
 **<abbr title="JavaScript Object Notation">JSON</abbr>**, ou JavaScript Object
 Notation.
 
@@ -151,8 +151,9 @@ para *parsers* específicos.
 </quote>
 
 E retirar comentários JavaScript do <abbr title="JavaScript Object
-Notation">JSON</abbr> nos *ports* dos *parsers* de outras linguagens além de
-JavaScript estava adicionando, também, muita complexidade na implementação.
+Notation">JSON</abbr> nos *ports* dos *parsers* escritos em outras linguagens
+estava, também, adicionando muita complexidade na implementação destes mesmos
+*parsers*.
 
 Além disso, com a retirada dos comentários, <abbr title="JavaScript Object
 Notation">JSON</abbr> ficava também mais alinhado com a especificação do <abbr
