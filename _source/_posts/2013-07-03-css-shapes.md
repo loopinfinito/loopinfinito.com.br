@@ -5,10 +5,13 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-07-03-css-shapes.jpg
-tags:
+tags: CSS
 comments: false
 keywords: >
-
+  css, css3, css shapes, shapes, retangulo, circulo, poligono, elipse,
+  especificacao, contorno, limite, flutua, float, forma, shape-inside,
+  shape-outside, shape-margin, shape-image-threshold, shape-padding, grafico,
+  revista, texto, imagem, rectangle, polygon, circle, ellipse
 resumo: >
   Sabe quando você vai ler uma revista, e no meio do texto há uma imagem
   irregular, mas o texto elegantemente a _contorna_, respeitando sua forma?
