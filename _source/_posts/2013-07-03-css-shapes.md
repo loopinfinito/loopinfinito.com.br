@@ -11,7 +11,7 @@ keywords: >
 
 resumo: >
   Sabe quando você vai ler uma revista, e no meio do texto há uma imagem
-  irregular, mas o texto elegantemente a _contorna_, respeitanto sua forma?
+  irregular, mas o texto elegantemente a _contorna_, respeitando sua forma?
   Ou quando aparece por exemplo, um gráfico de pizza, e dentro de cada fatia tem
   um texto que se _adequa_ a forma dela?
   Pois é, agora podemos fazer o mesmo com CSS.
@@ -62,7 +62,7 @@ related:
   width: 100px;
   height: 88px;
   border: none;
-  border-radius: none;
+  border-radius: 0;
   -webkit-shape-outside: polygon(0 0, 100% 100%, 0 100%);
   -moz-shape-outside: polygon(0 0, 100% 100%, 0 100%);
   -ms-shape-outside: polygon(0 0, 100% 100%, 0 100%);
@@ -116,11 +116,11 @@ related:
 </style>
 
 Sabe quando você vai ler uma revista, e no meio do texto há uma imagem
-irregular, mas o texto elegantemente a _contorna_, respeitanto sua forma?
+irregular, mas o texto elegantemente a _contorna_, respeitando sua forma?
 Ou quando aparece por exemplo, um gráfico de pizza, e dentro de cada fatia tem
 um texto que se _adequa_ a forma dela?
 
-Pois é, eu não faço a mínima idéia de como eles fazem isso.
+Pois é, eu não faço a mínima ideia de como eles fazem isso.
 Só sei que agora podemos fazer o mesmo com CSS!
 
 Se você ainda não entendeu nada, dê uma boa olhada na imagem a seguir.
@@ -182,7 +182,7 @@ ser absolutos (`px`, `in`, `pt`, `cm`, etc.) ou relativos (`%`, `em`, `rem`,
 - `x` e `y`: coordenadas do ponto inicial nos _eixos X e Y_ (horizontal e vertical);
 - `width` e `height`: largura e altura;
 - `rx` e `ry`: raio dos cantos nas direções horizontal e vertical
-(para bordas arredondadas) (opcional);
+(para bordas arredondadas) (opcional).
 
 ### inset-rectangle()
 
@@ -194,7 +194,7 @@ ser absolutos (`px`, `in`, `pt`, `cm`, etc.) ou relativos (`%`, `em`, `rem`,
 - `top`, `right`, `bottom` e `left`: Define o retângulo em relação ao seu
 elemento ancestral;
 - `rx` e `ry`: raio dos cantos nas direções horizontal e vertical
-(para bordas arredondadas) (opcional);
+(para bordas arredondadas) (opcional).
 
 ### circle()
 
@@ -216,7 +216,7 @@ elemento ancestral;
 
 - `cx` e `cy`: coordenadas do ponto central nos _eixos X e Y_
 (horizontal e vertical);
-- `rx` e `ry`: raios nos _eixos X e Y_ (horizontal e vertical);
+- `rx` e `ry`: raios nos _eixos X e Y_ (horizontal e vertical).
 
 ### polygon()
 
@@ -227,7 +227,7 @@ elemento ancestral;
 
 - `xn` e `yn`: tuplas com as coordenadas dos pontos do polígono no _eixos X e Y_
 (horizontal e vertical). O polígono será fechado automaticamente ligando-se o
-primeiro ao último ponto da lista;
+primeiro ao último ponto da lista.
 
 ## Aplicando as shapes
 
@@ -280,13 +280,14 @@ E `.flutua` definido no CSS abaixo, vamos ter algo parecido como isto:
 </div>
 
 Perceba que, apesar do elemento `.flutua` ter sua aparência circular, o seu
-_layout_ é retangular. Todos os elementos HTML são assim – no final das contas,
-tudo é um monte de quadrado pro navegador –, com excessão aos elementos gráficos
-SVG.
+_layout_ é retangular. Todos os elementos
+<abbr title="HyperText Markup Language">HTML</abbr> são assim – no final das
+contas, tudo é um monte de quadrado pro navegador –, com exceção aos elementos
+gráficos <abbr title="Scalable Vector Graphics">SVG</abbr>.
 
 Como já foi dito, a propriedade `shape-outside` permite definir um contorno
 externo de maneira um pouco _diferente_. Vamos definir um círculo do mesmo
-tamanho e localização que o ilustrado por `.flutua`. E voilá!
+tamanho e localização que o ilustrado por `.flutua`, e veremos o que acontece.
 
 ### shape-outside: circle()
 
@@ -313,6 +314,7 @@ tamanho e localização que o ilustrado por `.flutua`. E voilá!
 {% endhighlight %}
 </div>
 
+Voilà! Agora o texto acompanha a forma definida!
 Como o tamanho de `.flutua` é 100x100px, seu ponto central é (`50px`, `50px`), e
 seu raio também é `50px`, de modo a preencher toda a largura e altura do elemento.
 Hora de brincar com outras formas:
@@ -443,9 +445,9 @@ a URL da imagem como valor da propriedade `shape-outside`.
 
 O problema disso é que o navegador vai usar heurísticas e algoritmos para
 processamento de imagens que não são perfeitos.
-Os resultados podem ser bastante divergentes de acordo com a imagem e sua
+Os resultados podem ser bastante divergentes dependendo da imagem e da sua
 qualidade gráfica.
-Então foi preciso deixar isso um pouco no controle do desenvolvedor, que pode
+Por isso, foi preciso deixar isso um pouco no controle do desenvolvedor, que pode
 utilizar-se da propriedade `shape-image-threshold` para controlar a aplicação da
 _shape_.
 
@@ -465,7 +467,7 @@ implementada em nenhum navegador até o momento.</p>
 Com `shape-inside` é possível realizar o oposto de `shape-outside`, ou seja, é
 possível definir __limites internos__ ao elemento.
 Podemos dizer que uma _shape_ definida em `shape-inside` vai _"empacotar"_ o
-conteúdo do elemento em sí.
+conteúdo do elemento em si. Dois exemplos:
 
 <div class="img example normal bordered" id="exemplo-shape-inside">
   <div class="inside-circle">
@@ -500,14 +502,15 @@ conteúdo do elemento em sí.
 
 ## shape-padding
 
-Simplesmente aplica um padding interior à _shape_. Funcionando no Chrome.
+Simplesmente aplica um _padding_ interior à _shape_. Funcionando no Chrome.
 
 ## Lindo, né? Mas...
 
 Apesar de já estar implementada com prefixo no Google Chrome
 (`-webkit-shape-inside`), esta propriedade foi removida da
 [Especificação _Level 1_](http://www.w3.org/TR/css-shapes/), pois optou-se por
-apenas incluí-la em especificações futuras.
+apenas incluí-la em especificações futuras. O mesmo se aplica à propriedade
+`shape-padding`.
 
 <blockquote>
   <p>A future level of CSS Shapes will define a shape-inside property, which will define a shape to wrap content within the element.</p>
