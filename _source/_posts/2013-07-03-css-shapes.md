@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-07-03-css-shapes.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   css, css3, css shapes, shapes, retangulo, circulo, poligono, elipse,
   especificacao, contorno, limite, flutua, float, forma, shape-inside,
