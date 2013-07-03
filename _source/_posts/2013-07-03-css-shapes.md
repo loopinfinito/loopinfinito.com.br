@@ -19,7 +19,80 @@ related:
   - title: CSS Shapes Module Level 1 (draft)
     url: http://www.w3.org/TR/css-shapes/
     from: W3C
+  - title: Freeing the Floats of the Future from the Tyranny of the rectangle
+    url: http://blogs.adobe.com/webplatform/2013/03/27/freeing-the-floats-of-the-future-from-the-tyranny-of-the-rectangle/
+    from: Adobe
 ---
+
+<style>
+.example.normal {
+  font-size: 13px;
+  line-height: 140%;
+  font-style: italic;
+}
+.example.normal .flutua {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 1px dashed #ccc;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 50%;
+  font-style: normal;
+}
+#exemplo-shape-outside .flutua,
+#exemplo-shape-margin .flutua {
+  -webkit-shape-outside: circle(50px, 50px, 50px);
+}
+#exemplo-shape-outside-ellipse .flutua {
+  width: 200px;
+  height: 60px;
+  -webkit-shape-outside: ellipse(50%, 50%, 50%, 50%);
+}
+#exemplo-shape-outside-polygon .flutua {
+  width: 100px;
+  height: 88px;
+  border: none;
+  border-radius: none;
+  -webkit-shape-outside: polygon(0 0, 100% 100%, 0 100%);
+}
+#exemplo-shape-margin .margin {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 14px;
+}
+.rolling-stones {
+  float: left;
+  width: auto !important;
+  background: none !important;
+  position: static !important;
+}
+#exemplo-imagem .rolling-stones {
+  -webkit-shape-outside: polygon(0 0, 123px 0, 134px 36px, 155px 56px, 134px 78px, 109px 129px, 62px 164px, 0 164px);
+}
+#exemplo-shape-inside {
+  height: 200px;
+}
+#exemplo-shape-inside div {
+  width: 200px;
+  height: 200px;
+  text-align: justify;
+  overflow: hidden;
+}
+.inside-circle {
+  float: left;
+  margin-left: 50px;
+  -webkit-shape-inside: circle(50%, 50%, 50%);
+}
+.inside-hexagon {
+  float: right;
+  margin-right: 50px;
+  -webkit-shape-inside: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+</style>
 
 Sabe quando você vai ler uma revista, e no meio do texto há uma imagem
 irregular, mas o texto elegantemente a _contorna_, respeitanto sua forma?
@@ -125,49 +198,291 @@ elemento ancestral;
 (horizontal e vertical). O polígono será fechado automaticamente ligando-se o
 primeiro ao último ponto da lista;
 
-## Propriedades
+## Aplicando as shapes
 
-dasdasdas
+Agora que conhecemos os 4 tipos de formas básicas, podemos começar a utilizá-las
+através das propriedades `shape-outside` e `shape-inside`.
+Há também outras propriedades relacionadas às _shapes_, como `shape-margin`,
+`shape-padding` e `shape-image-threshold`. Vamos a elas.
 
-### shape-outside
+## shape-outside
 
-dasdasdas
+Com `shape-outside` é possível definir o contorno externo de um elemento.
+Atualmente apenas funciona em elementos flutuantes (com `float: left` ou
+`float: right`).
 
-### shape-margin
+Por exemplo, podemos ter uma `<div>` de tamanho 100x100px que flutua à esquerda de
+um texto, e ainda ter a forma de um círculo (com a propriedade `border-radius`):
 
-dadasdasd
+{% highlight html %}
+<article>
+    <div class="flutua"></div>
+    Vou mostrando como sou e vou sendo como posso (...)
+</article>
+{% endhighlight %}
 
-### shape-image-threshold
+E `.flutua` definido no CSS abaixo, vamos ter algo parecido como isto:
 
-dasdasaad
-
-## Propriedades que saíram da spec
-
-dasdasdasd
-
-### shape-inside
-
-dasdasdas
-
-### shape-padding
-
-dsadasd
-
-## Voltando ao exemplo inicial
-
-Como prometido, agora que já sabemos tudo sobre CSS Shapes, vamos implementar
-o exemplo inicial deste _post_. Abaixo temos a mesma foto com seu texto removido
-(obrigado Photoshop):
-
-![Penhasco sem texto](/images/posts/2013-07-03-css-shapes1.jpg)
-
-Vamos utlizar esta imagem como fundo de uma `<div>` qualquer que contenha algum
-conteúdo textual:
-
-<div class="img example" id="exemplo">
-fazer css =P
+<div class="img example normal bordered" id="exemplo-float">
+  <div class="flutua"><code>.flutua</code></div>
+  Vou mostrando como sou e vou sendo como posso.
+  Jogando meu corpo no mundo, andando por todos os cantos.
+  E pela lei natural dos encontros, eu deixo e recebo um tanto.
+  E passo aos olhos nus ou vestidos de lunetas.
+  Passado, presente, participo sendo o mistério do planeta.
+  O tríplice mistério do stop, que eu passo por e sendo ele no que fica em cada um.
+  No que sigo o meu caminho e no ar que fez e assistiu.
+  Abra um parênteses, não esqueça que independente disso eu não passo de um malandro.
+  De um moleque do Brasil, que peço e dou esmolas.
+  Mas ando e penso sempre com mais de um, por isso ninguém vê minha sacola.
 </div>
+
+<div class="example-code">
+{% highlight css %}
+.flutua {
+    width: 100px;
+    height: 100px;
+    float: left;
+    border-radius: 50%;
+}
+{% endhighlight %}
+</div>
+
+Perceba que, apesar do elemento `.flutua` ter sua aparência circular, o seu
+_layout_ é retangular. Todos os elementos HTML são assim – no final das contas,
+tudo é um monte de quadrado pro navegador –, com excessão aos elementos gráficos
+SVG.
+
+Como já foi dito, a propriedade `shape-outside` permite definir um contorno
+externo de maneira um pouco _diferente_. Vamos definir um círculo do mesmo
+tamanho e localização que o ilustrado por `.flutua`. E voilá!
+
+### shape-outside: circle()
+
+<div class="img example normal bordered" id="exemplo-shape-outside">
+  <div class="flutua"><code>.flutua</code></div>
+  Vou mostrando como sou e vou sendo como posso.
+  Jogando meu corpo no mundo, andando por todos os cantos.
+  E pela lei natural dos encontros, eu deixo e recebo um tanto.
+  E passo aos olhos nus ou vestidos de lunetas.
+  Passado, presente, participo sendo o mistério do planeta.
+  O tríplice mistério do stop, que eu passo por e sendo ele no que fica em cada um.
+  No que sigo o meu caminho e no ar que fez e assistiu.
+  Abra um parênteses, não esqueça que independente disso eu não passo de um malandro.
+  De um moleque do Brasil, que peço e dou esmolas.
+  Mas ando e penso sempre com mais de um, por isso ninguém vê minha sacola.
+</div>
+
+<div class="example-code">
+{% highlight css %}
+.flutua {
+    /* ... */
+    shape-outside: circle(50px, 50px, 50px);
+}
+{% endhighlight %}
+</div>
+
+Como o tamanho de `.flutua` é 100x100px, seu ponto central é (`50px`, `50px`), e
+seu raio também é `50px`, de modo a preencher toda a largura e altura do elemento.
+Hora de brincar com outras formas:
+
+### shape-outside: ellipse()
+
+<div class="img example normal bordered" id="exemplo-shape-outside-ellipse">
+  <div class="flutua"><code>.flutua</code></div>
+  Vou mostrando como sou e vou sendo como posso.
+  Jogando meu corpo no mundo, andando por todos os cantos.
+  E pela lei natural dos encontros, eu deixo e recebo um tanto.
+  E passo aos olhos nus ou vestidos de lunetas.
+  Passado, presente, participo sendo o mistério do planeta.
+  O tríplice mistério do stop, que eu passo por e sendo ele no que fica em cada um.
+  No que sigo o meu caminho e no ar que fez e assistiu.
+  Abra um parênteses, não esqueça que independente disso eu não passo de um malandro.
+  De um moleque do Brasil, que peço e dou esmolas.
+  Mas ando e penso sempre com mais de um, por isso ninguém vê minha sacola.
+</div>
+
+<div class="example-code">
+{% highlight css %}
+.flutua {
+    width: 200px;
+    height: 60px;
+    /* ... */
+    shape-outside: ellipse(50%, 50%, 50%, 50%);
+}
+{% endhighlight %}
+</div>
+
+### shape-outside: polygon()
+
+<div class="img example normal bordered" id="exemplo-shape-outside-polygon">
+  <div class="flutua"> </div>
+  Vou mostrando como sou e vou sendo como posso.
+  Jogando meu corpo no mundo, andando por todos os cantos.
+  E pela lei natural dos encontros, eu deixo e recebo um tanto.
+  E passo aos olhos nus ou vestidos de lunetas.
+  Passado, presente, participo sendo o mistério do planeta.
+  O tríplice mistério do stop, que eu passo por e sendo ele no que fica em cada um.
+  No que sigo o meu caminho e no ar que fez e assistiu.
+  Abra um parênteses, não esqueça que independente disso eu não passo de um malandro.
+  De um moleque do Brasil, que peço e dou esmolas.
+  Mas ando e penso sempre com mais de um, por isso ninguém vê minha sacola.
+</div>
+
+<div class="example-code">
+{% highlight css %}
+.flutua {
+    width: 100px;
+    height: 88px;
+    /* um triângulo: */
+    shape-outside: polygon(0 0, 100% 100%, 0 100%);
+}
+{% endhighlight %}
+</div>
+
+## shape-margin
+
+Esta propriedade é bem simples, apenas define uma margem para a _shape_ definida
+(o resultado é o mesmo da propriedade `margin` em elementos comuns).
+
+<p class="obs"><strong>OBS.:</strong> Tentei testar esta propriedade no Chrome
+Stable 27 e no Chrome Canary 30, mas o resultado ainda não é o esperado nas
+implementações atuais. O exemplo abaixo é apenas uma representação do que
+deveria acontecer.</p>
+
+<div class="img example normal bordered" id="exemplo-shape-margin">
+  <div class="flutua">
+    <div class="margin"><code>.flutua</code></div>
+  </div>
+  Vou mostrando como sou e vou sendo como posso.
+  Jogando meu corpo no mundo, andando por todos os cantos.
+  E pela lei natural dos encontros, eu deixo e recebo um tanto.
+  E passo aos olhos nus ou vestidos de lunetas.
+  Passado, presente, participo sendo o mistério do planeta.
+  O tríplice mistério do stop, que eu passo por e sendo ele no que fica em cada um.
+  No que sigo o meu caminho e no ar que fez e assistiu.
+  Abra um parênteses, não esqueça que independente disso eu não passo de um malandro.
+  De um moleque do Brasil, que peço e dou esmolas.
+  Mas ando e penso sempre com mais de um, por isso ninguém vê minha sacola.
+</div>
+
+<div class="example-code">
+{% highlight css %}
+.flutua {
+    /* ... */
+    shape-outside: circle(50%, 50%, 50%);
+    shape-margin: 15px;
+}
+{% endhighlight %}
+</div>
+
+## Contornando imagens
+
+Uma ótima aplicação das CSS Shapes é contornar imagens. Da mesma maneira que
+fizemos há pouco, a diferença é que o elemento em questão é uma imagem – e
+imagens são quadradas como qualquer outro elemento.
+
+<div class="img example normal bordered" id="exemplo-imagem">
+  <img class="rolling-stones" src="/images/posts/2013-07-03-rolling-stones.png" />
+  Childhood living is easy to do<br />
+  The things you wanted I bought them for you<br />
+  Graceless lady, you know who I am<br />
+  You know I can't let you slide through my hands<br />
+  Wild horses couldn't drag me away<br />
+  Wild, wild horses couldn't drag me away<br />
+  I watched you suffer a dull aching pain<br />
+  Now you decided to show me the same<br />
+  No sweeping exits or offstage lines
+</div>
+
+<div class="example-code">
+{% highlight css %}
+.rolling-stones {
+    float: left;
+    shape-outside: polygon(0 0, 123px 0, 134px 36px, 155px 56px, 134px 78px, 109px 129px, 62px 164px, 0 164px);
+}
+{% endhighlight %}
+</div>
+
+### Contornando imagens automaticamente
+
+A [especificação](http://www.w3.org/TR/css-shapes/) define também que deve ser
+possível realizar o contorno de uma imagem de maneira automática apenas passando
+a URL da imagem como valor da propriedade `shape-outside`.
+
+O problema disso é que o navegador vai usar heurísticas e algoritmos para
+processamento de imagens que não são perfeitos.
+Os resultados podem ser bastante divergentes de acordo com a imagem e sua
+qualidade gráfica.
+Então foi preciso deixar isso um pouco no controle do desenvolvedor, que pode
+utilizar-se da propriedade `shape-image-threshold` para controlar a aplicação da
+_shape_.
+
+<p class="obs"><strong>OBS.:</strong> Esta funcionalidade ainda não foi
+implementada em nenhum navegador até o momento.</p>
+
+{% highlight css %}
+.rolling-stones {
+    float: left;
+    shape-outside: url('rolling_stones.png');
+    shape-image-threshold: 0.3;
+}
+{% endhighlight %}
+
+## shape-inside
+
+Com `shape-inside` é possível realizar o oposto de `shape-outside`, ou seja, é
+possível definir __limites internos__ ao elemento.
+Podemos dizer que uma _shape_ definida em `shape-inside` vai _"empacotar"_ o
+conteúdo do elemento em sí.
+
+<div class="img example normal bordered" id="exemplo-shape-inside">
+  <div class="inside-circle">
+    Childhood living is easy to do. The things you wanted I bought them for you.
+    Graceless lady, you know who I am. You know I can't let you slide through my
+    hands.
+    Wild horses couldn't drag me away. Wild, wild horses couldn't drag me away.
+    I watched you suffer a dull aching pain. Now you decided to show me the same.
+    No sweeping exits or offstage lines.
+  </div>
+  <div class="inside-hexagon">
+    Childhood living is easy to do. The things you wanted I bought them for you.
+    Graceless lady, you know who I am. You know I can't let you slide through my
+    hands.
+    Wild horses couldn't drag me away. Wild, wild horses couldn't drag me away.
+    I watched you suffer a dull aching pain. Now you decided to show me the same.
+    No sweeping exits or offstage lines.
+  </div>
+</div>
+
+<div class="example-code">
+{% highlight css %}
+.inside-circle {
+    shape-inside: circle(50%, 50%, 50%);
+}
+
+.inside-hexagon {
+    shape-inside: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+{% endhighlight %}
+</div>
+
+### Lindo, né? Mas...
+
+Apesar de já estar implementada com prefixo no Google Chrome
+(`-webkit-shape-inside`), esta propriedade foi removida da
+[Especificação _Level 1_](http://www.w3.org/TR/css-shapes/), pois optou-se por
+apenas incluí-la em especificações futuras.
+
+<blockquote>
+  <p>A future level of CSS Shapes will define a shape-inside property, which will define a shape to wrap content within the element.</p>
+  <footer> – <abbr title="World Wide Web Consortium">W3C</abbr> Public Working Draft 20 June 2013</footer>
+</blockquote>
 
 ## Suporte
 
 dasdasdsa
+
+### Propriedades que saíram da spec
+
+dasdasdasd `shape-inside` dasd `shape-padding` dasdas
