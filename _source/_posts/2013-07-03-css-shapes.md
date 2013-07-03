@@ -22,6 +22,9 @@ related:
   - title: Freeing the Floats of the Future from the Tyranny of the rectangle
     url: http://blogs.adobe.com/webplatform/2013/03/27/freeing-the-floats-of-the-future-from-the-tyranny-of-the-rectangle/
     from: Adobe
+  - title: Wrap text around ou inside any shape
+    url: http://html.adobe.com/webplatform/layout/shapes/
+    from: Adobe
 ---
 
 <style>
@@ -43,11 +46,17 @@ related:
 #exemplo-shape-outside .flutua,
 #exemplo-shape-margin .flutua {
   -webkit-shape-outside: circle(50px, 50px, 50px);
+  -moz-shape-outside: circle(50px, 50px, 50px);
+  -ms-shape-outside: circle(50px, 50px, 50px);
+  shape-outside: circle(50px, 50px, 50px);
 }
 #exemplo-shape-outside-ellipse .flutua {
   width: 200px;
   height: 60px;
   -webkit-shape-outside: ellipse(50%, 50%, 50%, 50%);
+  -moz-shape-outside: ellipse(50%, 50%, 50%, 50%);
+  -ms-shape-outside: ellipse(50%, 50%, 50%, 50%);
+  shape-outside: ellipse(50%, 50%, 50%, 50%);
 }
 #exemplo-shape-outside-polygon .flutua {
   width: 100px;
@@ -55,6 +64,9 @@ related:
   border: none;
   border-radius: none;
   -webkit-shape-outside: polygon(0 0, 100% 100%, 0 100%);
+  -moz-shape-outside: polygon(0 0, 100% 100%, 0 100%);
+  -ms-shape-outside: polygon(0 0, 100% 100%, 0 100%);
+  shape-outside: polygon(0 0, 100% 100%, 0 100%);
 }
 #exemplo-shape-margin .margin {
   width: 70px;
@@ -72,6 +84,9 @@ related:
 }
 #exemplo-imagem .rolling-stones {
   -webkit-shape-outside: polygon(0 0, 123px 0, 134px 36px, 155px 56px, 134px 78px, 109px 129px, 62px 164px, 0 164px);
+  -moz-shape-outside: polygon(0 0, 123px 0, 134px 36px, 155px 56px, 134px 78px, 109px 129px, 62px 164px, 0 164px);
+  -ms-shape-outside: polygon(0 0, 123px 0, 134px 36px, 155px 56px, 134px 78px, 109px 129px, 62px 164px, 0 164px);
+  shape-outside: polygon(0 0, 123px 0, 134px 36px, 155px 56px, 134px 78px, 109px 129px, 62px 164px, 0 164px);
 }
 #exemplo-shape-inside {
   height: 200px;
@@ -86,11 +101,17 @@ related:
   float: left;
   margin-left: 50px;
   -webkit-shape-inside: circle(50%, 50%, 50%);
+  -moz-shape-inside: circle(50%, 50%, 50%);
+  -ms-shape-inside: circle(50%, 50%, 50%);
+  shape-inside: circle(50%, 50%, 50%);
 }
 .inside-hexagon {
   float: right;
   margin-right: 50px;
   -webkit-shape-inside: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  -moz-shape-inside: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  -ms-shape-inside: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  shape-inside: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 }
 </style>
 
@@ -109,12 +130,22 @@ Se você ainda não entendeu nada, dê uma boa olhada na imagem a seguir.
 Não estou falando das colunas, isso é assunto para outro _post_ ;)
 Perceba como o texto da coluna direita acompanha a forma do penhasco.
 
-Mas antes de falar das aplicações das _CSS shapes_, vamos primeiramente
-entender do que se tratam estas entidades.
+## Antes de continuar
+
+Para visualizar os exemplos deste _post_ corretamente, você deve estar utilizando
+o navegador __Google Chrome__ e é preciso habilitar uma _flag_ dele primeiro.
+Na versão estável (atualmente 27) basta digitar chrome://flags na barra de
+endereços, e habilitar a opção __Experimental WebKit features__, como na imagem
+abaixo. Depois reinicie o navegador.
+
+![Experimental WebKit features](/images/posts/2013-05-28-enable-webkit-experimental-features.jpg)
 
 ## CSS shapes
 
-_Shapes_ são formas geométricas que definem contornos os quais conteúdos
+Antes de falar das aplicações das _CSS shapes_, vamos primeiramente
+entender do que se tratam estas entidades.
+
+_Shapes_ são formas geométricas que definem __contornos__ os quais conteúdos
 _inline_ flutuam – ou seja, conteúdo textual e inicialmente imagens e elementos
 definidos com `display: inline` ou `display: inline-block`.
 
@@ -179,8 +210,8 @@ elemento ancestral;
 ### ellipse()
 
 {% highlight css %}
-/* circle(cx, cy, rx, ry) */
-   circle(50%, 50%, 80px, 200px)
+/* ellipse(cx, cy, rx, ry) */
+   ellipse(50%, 50%, 80px, 200px)
 {% endhighlight %}
 
 - `cx` e `cy`: coordenadas do ponto central nos _eixos X e Y_
@@ -467,7 +498,11 @@ conteúdo do elemento em sí.
 {% endhighlight %}
 </div>
 
-### Lindo, né? Mas...
+## shape-padding
+
+Simplesmente aplica um padding interior à _shape_. Funcionando no Chrome.
+
+## Lindo, né? Mas...
 
 Apesar de já estar implementada com prefixo no Google Chrome
 (`-webkit-shape-inside`), esta propriedade foi removida da
@@ -479,10 +514,69 @@ apenas incluí-la em especificações futuras.
   <footer> – <abbr title="World Wide Web Consortium">W3C</abbr> Public Working Draft 20 June 2013</footer>
 </blockquote>
 
-## Suporte
-
-dasdasdsa
-
-### Propriedades que saíram da spec
-
-dasdasdasd `shape-inside` dasd `shape-padding` dasdas
+<table class="support">
+  <thead>
+    <tr>
+      <th class="subject"><h2>Suporte</h2></th>
+      <th class="browser chrome"><div class="i"></div></th>
+      <th class="browser safari"><div class="i"></div></th>
+      <th class="browser firefox"><div class="i"></div></th>
+      <th class="browser ie"><div class="i"></div></th>
+      <th class="browser opera"><div class="i"></div></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="5" class="base"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="property"><code>shape-outside</code></td>
+      <td>25 <code class="obs">*1</code><br /><code class="small">-webkit-</code></td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td class="property"><code>shape-margin</code></td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td class="property"><code>shape-image-threshold</code></td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td class="property"><code>shape-inside</code></td>
+      <td>25 <code class="obs">*1</code> <code class="obs">*2</code><br /><code class="small">-webkit-</code></td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td class="property"><code>shape-padding</code></td>
+      <td>25 <code class="obs">*1</code> <code class="obs">*2</code><br /><code class="small">-webkit-</code></td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6">
+        *1 – Features habilitadas através de uma flag<br />
+        *2 – Propriedades removidas da spec por hora
+      </td>
+    </tr>
+  </tfoot>
+</table>
