@@ -197,7 +197,7 @@ ser absolutos (`px`, `in`, `pt`, `cm`, etc.) ou relativos (`%`, `em`, `rem`,
 - `top`, `right`, `bottom` e `left`: Define o retângulo em relação ao seu
 elemento ancestral;
 - `rx` e `ry`: raio dos cantos nas direções horizontal e vertical
-(para bordas arredondadas) (opcional).
+(para bordas arredondadas) – opcionais.
 
 ### circle()
 
@@ -317,7 +317,7 @@ tamanho e localização que o ilustrado por `.flutua`, e veremos o que acontece.
 {% endhighlight %}
 </div>
 
-Voilà! Agora o texto acompanha a forma definida!
+_Voilà!_ Agora o texto acompanha a forma definida!
 Como o tamanho de `.flutua` é 100x100px, seu ponto central é (`50px`, `50px`), e
 seu raio também é `50px`, de modo a preencher toda a largura e altura do elemento.
 Hora de brincar com outras formas:
