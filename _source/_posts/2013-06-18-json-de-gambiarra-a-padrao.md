@@ -113,8 +113,8 @@ especificação. Praticamente do mesmo jeito desde que foi lançado.
 
 O formato começou a ganhar bastante popularidade com o advento do <abbr
 title="Assynchronous JavaScript and XML">Ajax</abbr>, popularizado por [Jesse
-James Garrett](http://www.adaptivepath.com/ideas/ajax-new-approach-web-
-applications) a partir de 2005. As pessoas achavam trabalhar com <abbr
+James Garrett](http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications)
+a partir de 2005. As pessoas achavam trabalhar com <abbr
 title="Extensible Markup Language">XML</abbr> algo muito complexo e verboso, e
 logo descobriram que as tarefas ficavam mais simples se feitas com <abbr
 title="JavaScript Object Notation">JSON</abbr>.
