@@ -29,6 +29,8 @@ module.exports = (grunt) ->
 				'--stats'
 				'-e'
 				'ssh'
+				'--exclude'
+				'.htpasswd'
 				"#{ __dirname }/#{ localRoot }"
 				"#{ user }@bugsy.dreamhost.com:#{ remoteRoot }"
 			])
