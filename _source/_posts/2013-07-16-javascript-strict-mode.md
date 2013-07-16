@@ -182,7 +182,7 @@ a um objeto específico, ele aponta para o objeto global `window`.
 
 No modo _strict_, caso o `this` seja usado em uma função que é definida no escopo
 global, ele retorna o valor `undefined`. Caso uma função pertença a um objeto,
-ele continua a apontar ao objeto, com acontecia anteriormente.
+ele continua a apontar para o objeto, como acontecia anteriormente.
 
 {% highlight javascript %}
 // retorna "undefined"
@@ -264,13 +264,14 @@ alert(foo); // gera um erro de sintaxe no "strict mode"
 {% endhighlight %}
 
 
-### Números octal
+### Números no sistema __octal__
 
-Números octais são números representados na base 8. Ou seja, 10 em octal
-equivale a 8 em decimal. Em JavaScript, e em várias outras linguagens, os
-números octais são representados com um 0 na frente do número. 023 em JavaScript
-equivale a 19 em decimal. Isso gerava muita confusão, já que muitos achavam que
-um zero a esquerda não iria fazer nenhuma diferença na representação do número.
+Números no sistema octal são números representados na base 8. Ou seja, 10 em
+octal equivale a 8 em decimal. Em JavaScript, e em várias outras linguagens, os
+números no sistema octal são representados com um 0 na frente do número. 023 em
+JavaScript equivale a 19 em decimal. Isso gerava muita confusão, já que muitos
+achavam que um zero a esquerda não iria fazer nenhuma diferença na representação
+do número.
 
 {% highlight javascript %}
 "use strict";
@@ -279,9 +280,9 @@ um zero a esquerda não iria fazer nenhuma diferença na representação do núm
 var foo = 023;
 {% endhighlight %}
 
-No modo _strict_ o uso de números octais não é permitido. Caso um 0 seja posto
-na frente de um número octal válido, será gerado um erro de sintaxe. Caso
-contrário ele será simplesmente tratado como decimal.
+No modo _strict_ o uso de números no sistema octal não é permitido. Caso um 0
+seja posto na frente de um número octal válido, será gerado um erro de sintaxe.
+Caso contrário ele será simplesmente tratado como decimal.
 
 {% highlight javascript %}
 "use strict";
@@ -293,10 +294,10 @@ var foo = 023;
 var bar = 08;
 {% endhighlight %}
 
-Como o número 08 não é um número octal válido, já que números octais vão de 0 a
-7, ele é tratado como um número decimal. No caso do número 023, por ser um octal
-válido, um erro de sintaxe é gerado. Caso você não saiba o que um octal é,
-ande pela sombra evitando o uso de 0's na frente de números.
+Como o número 08 não é um número octal válido, já que números no sistema octal
+vão de 0 a 7, ele é tratado como um número decimal. No caso do número 023, por
+ser um octal válido, um erro de sintaxe é gerado. Caso você não saiba o que um
+octal é, ande pela sombra evitando o uso de 0's na frente de números.
 
 
 <table class="support">
