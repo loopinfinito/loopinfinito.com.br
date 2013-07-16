@@ -45,8 +45,9 @@ qualidade e ajudando a capturar _bugs_ mais precocemente.
 ## Habilitando
 
 A primeira forma de habilitar o modo _strict_ é a nível de arquivo. Para isso,
-basta por a string `"use strict";` ou `'use strict';` no começo de um arquivo JS para que todo o
-código deste arquivo seja executado no modo _strict_.
+basta por a string `"use strict";` ou `'use strict';` no começo de um arquivo
+<abbr title="JavaScript">JS</abbr> para que todo o código deste arquivo seja
+executado no modo _strict_.
 
 Nenhum código pode vir antes da declaração `"use strict";` (apenas _whitespace_
 e comentários são permitidos). Caso um trecho de código apareça antes, o modo
@@ -77,10 +78,6 @@ function bar() {
 }
 {% endhighlight %}
 
-Uma boa prática para o uso do _strict mode_ é o declarando dentro de uma função
-de invocação imediata. Assim você consegue mesclar código em modo _strict_ com
-código que não foi testado no modo _strict_.
-
 Hoje é muito comum concatenarmos arquivos para diminuir a quantidade de dados
 trafegados e o número de requisições. Para não disparar o modo _strict_ em
 código que não foi testado neste modo, é interessante deixarmos o código que
@@ -96,23 +93,15 @@ imediata são perfeitas para isso.
 // código no modo "não strict"
 {% endhighlight %}
 
-A Amazon teve um problema ao concatenar um arquivo JS que tinha `"use strict";`
-declarado de forma global no arquivo com outros arquivos JS que não eram _strict
-compliant_. Como o arquivo que continha a declaração de modo _strict_ global era
-o primeiro da fila de concatenação, ele fez com que o código dos outros arquivos
-também rodassem no modo _strict_, disparando vários erros que normalmente seriam
-silenciados. Esse episódio gerou, inclusive, uma abertura de
-[_ticket_](https://bugzilla.mozilla.org/show_bug.cgi?id=579119) no Bugzilla do
-Firefox — e com certeza alguns milhões foram pelo ralo.
-
-O _strict mode_ pode ser usado sem medo em todos os navegadores. Caso um
-navegador que não o implemente passe pela declaração `"use strict";`, ele irá
-tratá-la como uma _string_ e não irá afetar o comportamento do código seguinte.
-
-O cenário contrário também é compatível. Caso você desenvolva JavaScript em modo
-_strict_ em um navegador que o implementa, o código válido no modo _strict_
-deste navegador é retrocompatível com qualquer outro que implemente o ECMAScript
-3. Ou seja, irá rodar até no IE.
+A Amazon teve um problema ao concatenar um arquivo
+<abbr title="JavaScript">JS</abbr> que tinha `"use strict";` declarado de forma
+global no arquivo com outros arquivos <abbr title="JavaScript">JS</abbr> que não
+eram _strict compliant_. Como o arquivo que continha a declaração de modo
+_strict_ global era o primeiro da fila de concatenação, ele fez com que o código
+dos outros arquivos também rodassem no modo _strict_, disparando vários erros
+que normalmente seriam silenciados. Esse episódio gerou, inclusive, uma abertura
+de [_ticket_](https://bugzilla.mozilla.org/show_bug.cgi?id=579119) no Bugzilla
+do Firefox — e com certeza alguns milhões foram pelo ralo.
 
 
 ## O que muda?
@@ -140,7 +129,7 @@ with (location) {
 {% endhighlight %}
 
 
-### Declaração implícita de variáveis globais
+### Declaração implícita de __variáveis globais__
 
 Um dos erros mais comuns em JavaScript. Sem o _strict mode_, uma nova variável
 global é criada sempre que atribuimos um valor a uma variável não declarada. No
@@ -187,7 +176,7 @@ Entre elas estão:
 
 ### Uso do __this__
 
-O uso do `this` foi levement modificado. Quando usado dentro de uma função, o
+O uso do `this` foi levemente modificado. Quando usado dentro de uma função, o
 `this` aponta para o objeto que contem a função. Porém quando a função não pertence
 a um objeto específico, ele aponta para o objeto global `window`.
 
@@ -223,7 +212,7 @@ var blog = Blog('Loop Infinito');
 {% endhighlight %}
 
 
-### Parâmetros e propriedades duplicadas
+### Parâmetros e propriedades __duplicadas__
 
 O JavaScript não reclama caso você declare duas propriedades de um objeto com o
 mesmo nome. A última declaração vai simplesmente sobreescrever a anterior. O modo
@@ -255,9 +244,11 @@ function foo(param1, param1) {
 
 ### Variáveis do contexto _eval()_
 
-O `eval`, em código não _strict_, pode adicionar variáveis ao contexto em que ele
-está inserido. E antes do JSON ser nativamente implementado nos _browsers_, o
-`eval` era muito usado para construir objetos a partir de _strings_.
+O `eval`, em código não _strict_, pode adicionar variáveis ao contexto em que
+ele está inserido. E antes do
+<abbr title="JavaScript Object Notation">JSON</abbr> ser nativamente
+implementado nos _browsers_, o `eval` era muito usado para construir objetos a
+partir de _strings_ e os inserir no contexto externo ao `eval`.
 
 Com o _strict mode_, o `eval` não pode mais adicionar variáveis fora de seu
 contexto. Variáveis adicionadas no `eval` ficam contidas no contexto do `eval`.
@@ -306,3 +297,40 @@ Como o número 08 não é um número octal válido, já que números octais vão
 7, ele é tratado como um número decimal. No caso do número 023, por ser um octal
 válido, um erro de sintaxe é gerado. Caso você não saiba o que um octal é,
 ande pela sombra evitando o uso de 0's na frente de números.
+
+
+<table class="support">
+  <thead>
+    <tr>
+      <th class="subject"><h2>Suporte</h2></th>
+      <th class="browser chrome"><div class="i"></div></th>
+      <th class="browser safari"><div class="i"></div></th>
+      <th class="browser firefox"><div class="i"></div></th>
+      <th class="browser ie"><div class="i"></div></th>
+      <th class="browser opera"><div class="i"></div></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="5" class="base"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="property"><code>'use strict';</code></td>
+      <td>26.0</td>
+      <td>6.0</td>
+      <td>21.0</td>
+      <td>10.0</td>
+      <td>15.0</td>
+    </tr>
+  </tbody>
+</table>
+
+O _strict mode_ pode ser usado sem medo em todos os navegadores. Caso um
+navegador que não o implemente passe pela declaração `"use strict";`, ele irá
+tratá-la como uma _string_ e não irá afetar o comportamento do código seguinte.
+
+O cenário contrário também é compatível. Caso você desenvolva JavaScript em modo
+_strict_ em um navegador que o implementa, o código válido no modo _strict_
+deste navegador é retrocompatível com qualquer outro que implemente o ECMAScript
+3. Ou seja, irá rodar até no IE.
