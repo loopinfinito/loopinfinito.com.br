@@ -6,9 +6,9 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-07-16-javascript-strict-mode.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
-  javascript
+  javascript, strict mode, parser, navegador, browser, js, ecmascript, amazon, firefox
 resumo: >
   O __strict mode__ é uma nova _feature_ do ECMAScript 5 que permite que
   o código JavaScript rode em um modo mais rigoroso. Nele, a _engine_ de
