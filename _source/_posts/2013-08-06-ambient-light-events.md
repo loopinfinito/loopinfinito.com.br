@@ -35,3 +35,38 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur,
 mollitia, possimus ea praesentium quasi vel aut! Cum, veritatis, quos,
 architecto, eveniet voluptatum odit assumenda enim quas quam molestias nesciunt
 dolores?
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, illo omnis
+adipisci libero eligendi unde fugit tenetur ad sit sed dolorem ut veritatis?
+Porro, inventore fuga dolor nostrum dicta iure.
+
+<table class="support">
+    <thead>
+        <tr>
+            <th class="subject"><h2>Suporte</h2></th>
+            <th class="browser chrome"><div class="i"></div></th>
+            <th class="browser safari"><div class="i"></div></th>
+            <th class="browser firefox"><div class="i"></div></th>
+            <th class="browser ie"><div class="i"></div></th>
+            <th class="browser opera"><div class="i"></div></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th colspan="5" class="base"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="property"><code>window.ondevicelight</code></td>
+            <td>--</td>
+            <td>--</td>
+            <td>22.0</td>
+            <td>--</td>
+            <td>--</td>
+        </tr>
+    </tbody>
+</table>
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, perspiciatis
+inventore cupiditate adipisci quas. Nulla, nemo, esse laboriosam accusantium
+harum sint dicta sed nostrum tenetur possimus at consequatur pariatur fugiat.
