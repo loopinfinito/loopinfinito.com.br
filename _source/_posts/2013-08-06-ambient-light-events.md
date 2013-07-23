@@ -12,9 +12,12 @@ keywords: >
 resumo: >
   lorem ipsum
 related:
-  - title: ECMAScript 5 Strict Mode, JSON, and More
-    url: http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/
-    from: John Resig blog
+  - title: Ambient Light Events
+    url: https://dvcs.w3.org/hg/dap/raw-file/default/light/Overview.html
+    from: W3C
+  - title: Light Bulb
+    url: http://cssdeck.com/labs/light-bulb
+    from: CSS Deck
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, autem commodi
