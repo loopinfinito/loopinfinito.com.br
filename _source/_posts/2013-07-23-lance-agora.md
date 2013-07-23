@@ -5,10 +5,11 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-07-23-lance-agora.jpg
-tags:
-comments: false
+tags: produtividade
+comments: true
 keywords: >
-  lorem
+  mvp, minimum viable product, lancar, lancamento, produto, produto minimo
+  viavel, estrategia, mercado,
 resumo: >
   Quando seu produto ou serviço ficará __pronto__? Quando você deverá
   disponibilizá-lo no mercado? Quando é seguro deixar que as pessoas o usem?
@@ -132,6 +133,11 @@ Não confunda esta abordagem para poupar qualidade, também.
 Você ainda quer fazer algo excelente.
 Esta abordagem apenas reconhece que a melhor maneira de _chegar lá_ é através de
 iterações curtas.
-Pare de imaginar o que vai ou não funcionar de primeira.
+Pare de imaginar o que vai ou não funcionar _de primeira_.
 
-Descubra de verdade.
+__Descubra de verdade.__
+
+<p class="obs">
+  Parte deste post foi <strong>baseada</strong> em um capítulo do livro
+  <a href="http://37signals.com/rework">Rework</a>.
+</p>
