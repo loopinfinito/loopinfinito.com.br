@@ -23,24 +23,6 @@ related:
     url: http://www.ashmaurya.com/2009/10/how-i-built-my-minimum-viable-product/
 ---
 
-<style>
-
-  quote {
-    text-transform: uppercase;
-    font-size: 28px;
-    color: #ccc;
-    letter-spacing: -2px;
-    display: inline-block;
-    font-style: italic;
-  }
-
-  quote strong {
-    font-weight: normal;
-    color: #aaa;
-  }
-
-</style>
-
 Quando seu produto ou serviço ficará __pronto__?
 Quando você deverá disponibilizá-lo no mercado?
 Quando é seguro deixar que as pessoas o usem?
@@ -124,10 +106,10 @@ Tipicamente, o produto se torna acessível apenas para um subgrupo de possíveis
 clientes, tais como _early adopters_, com o intuito também de receber _feedbacks_
 para melhorias do mesmo.
 
-<quote>
+<q class="pushing-quotes">
   A idéia básica é maximizar <strong>feedback validado</strong> com o mínimo de
   esforço.
-</quote>
+</q>
 
 Não confunda esta abordagem para poupar qualidade, também.
 Você ainda quer fazer algo excelente.

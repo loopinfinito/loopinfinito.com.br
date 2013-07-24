@@ -23,24 +23,6 @@ related:
     from: JSON.org
 ---
 
-<style>
-
-  quote {
-    text-transform: uppercase;
-    font-size: 28px;
-    color: #ccc;
-    letter-spacing: -2px;
-    display: inline-block;
-    font-style: italic;
-  }
-
-  quote strong {
-    font-weight: normal;
-    color: #aaa;
-  }
-
-</style>
-
 Crockford fala que não **inventou** o <abbr title="JavaScript Object
 Notation">JSON</abbr>, mas sim o **descobriu** e formalizou. Em 1996, algo em
 torno de 5 anos antes da formalização do <abbr title="JavaScript Object
@@ -48,7 +30,7 @@ Notation">JSON</abbr> por Crockford, alguns desenvolvedors do Netscape já usava
 *arrays literals* de JavaScript para troca de dados. O que ele fez foi dar uma
 especificação e um site ao formato. O restante aconteceu por conta própria.
 
-## A primeira mensagem <abbr title="JavaScript Object Notation">JSON</abbr>
+## A primeira mensagem JSON
 
 Em 2001, Crockford fundou a empresa Veil e nela trabalhava em aplicações *web*
 que hoje chamaríamos de aplicações <abbr title="Assynchronous JavaScript and
@@ -89,7 +71,7 @@ Python.
 E é por isso que todas as *keys* do <abbr title="JavaScript Object
 Notation">JSON</abbr> são *quoted*.
 
-## <abbr title="Java Speech Markup Language">JSML</abbr>, o quase-nome
+## JSML, o quase-nome
 
 O segundo óbvio passo era escolher um nome para o futuro padrão. **<abbr
 title="Java Speech Markup Language">JSML</abbr>** foi o nome escolhido. Mas já
@@ -109,7 +91,7 @@ Crockford **fez dele um padrão**. Ele comprou o domínio
 Java, para servir de referência. E, desde então, o site está *online* com a
 especificação. Praticamente do mesmo jeito desde que foi lançado.
 
-## <abbr title="Assynchronous JavaScript and XML">Ajax</abbr>
+## Ajax
 
 O formato começou a ganhar bastante popularidade com o advento do <abbr
 title="Assynchronous JavaScript and XML">Ajax</abbr>, popularizado por [Jesse
@@ -119,8 +101,9 @@ title="Extensible Markup Language">XML</abbr> algo muito complexo e verboso, e
 logo descobriram que as tarefas ficavam mais simples se feitas com <abbr
 title="JavaScript Object Notation">JSON</abbr>.
 
-<quote>“ <abbr title="JavaScript Object Notation">JSON</abbr> is the
-<strong>intersection</strong> of modern programming languages ”</quote>
+<q class="pushing-quotes">
+  JSON is the <strong>intersection</strong> of modern programming languages
+</q>
 
 Mesmo com a sigla <abbr title="Assynchronous JavaScript and XML">Ajax</abbr>
 significando **Assynchronous JavaScript and XML**, foi o <abbr title="JavaScript
@@ -144,11 +127,11 @@ para adicionar instruções ao *parser*, gerando uma complexidade desnecessária
 e quebrando a interoperabilidade, já que as instruções eram escritas
 para *parsers* específicos.
 
-<quote>
-  “ The <strong>least</strong> we've to agree to
+<q class="pushing-quotes">
+  The <strong>least</strong> we've to agree to
   <strong>interoperate</strong>, the more likely we're gonna be able to
-  <strong>do it well</strong> ”
-</quote>
+  <strong>do it well</strong>
+</q>
 
 E retirar comentários JavaScript do <abbr title="JavaScript Object
 Notation">JSON</abbr> nos *ports* dos *parsers* escritos em outras linguagens
@@ -193,10 +176,10 @@ setembro. E ele se sentia na obrigação de "fazer sua parte". Então adicionou 
 linha à licença <abbr title="Massachusetts Institute of Technology">MIT</abbr>:
 **The Software shall be used for Good, not Evil.**
 
-<quote>
+<q class="pushing-quotes">
   This software shall be used for <strong>Good</strong>, not
   <strong>Evil</strong>
-</quote>
+</q>
 
 E até hoje recebe e-mails de algumas pessoas perguntando: "Como vou saber se o
 que faço é mal?". E outras mesmo dizendo: "Não vou usar seu *software* caso não
