@@ -11,12 +11,12 @@ keywords: >
   javascript, w3c, js, eventos, events, ambiente, luz, iluminacao, lux, navegador, browser
 resumo: >
   Esta nova especificação da <abbr title="World Wide Web Consortium">W3C</abbr>
-  define dois novos eventos capazes de detectar mudança na iluminação do
-  ambiente: os __Ambient Light Events__. Antes parte da
-  [Sensors API](https://dvcs.w3.org/hg/dap/raw-file/default/sensor-api/Overview.html),
-  eles foram desmembrados para que fossem mais fáceis de serem implementados.
-  E com estas novas APIs, que já estão inclusive presentes no Firefox, que vamos
-  nos divertir hoje.
+  define dois novos eventos capazes de detectar mudanças na iluminação do
+  ambiente: os __Ambient Light Events__. Antes eles faziam parte da [Sensors
+  API](https://dvcs.w3.org/hg/dap/raw-file/default/sensor-api/Overview.html), mas
+  foram desmembrados em uma especificação independente de menor escopo. E será com
+  estas novas <abbr title="Application Programming Interface">API</abbr>s que
+  vamos nos divertir hoje.
 related:
   - title: Ambient Light Events
     url: https://dvcs.w3.org/hg/dap/raw-file/default/light/Overview.html
@@ -27,24 +27,24 @@ related:
 ---
 
 Esta nova especificação da <abbr title="World Wide Web Consortium">W3C</abbr>
-define dois novos eventos capazes de detectar mudança na iluminação do
-ambiente: os __Ambient Light Events__. Antes parte da
-[Sensors API](https://dvcs.w3.org/hg/dap/raw-file/default/sensor-api/Overview.html),
-eles foram desmembrados para que fossem mais fáceis de serem implementados.
-E com estas novas APIs, que já estão inclusive presentes no Firefox, que vamos
-nos divertir hoje.
+define dois novos eventos capazes de detectar mudanças na iluminação do
+ambiente: os __Ambient Light Events__. Antes eles faziam parte da [Sensors
+API](https://dvcs.w3.org/hg/dap/raw-file/default/sensor-api/Overview.html), mas
+foram desmembrados em uma especificação independente de menor escopo. E será com
+estas novas <abbr title="Application Programming Interface">API</abbr>s que
+vamos nos divertir hoje.
 
 
 ## Experimento
 
-A idéia desta nova API é bem simples: __medir a iluminação do
-ambiente__. Mas caso tudo ainda continue confuso, vamos vê-la em ação para
-melhor compreender o que estou falando. Infelizmente, no momento que escrevo
-este _post_, apenas o Firefox 22 do Mac implementa os eventos _Ambient Light_ no
-_desktop_.
+A idéia desta nova <abbr title="Application Programming Interface">API</abbr> é
+bem simples: __medir a iluminação do ambiente__. Para melhor ilustrar o uso e
+entendimento da <abbr title="Application Programming Interface">API</abbr>, fiz
+um experimento. Infelizmente, no momento que escrevo este _post_, apenas o
+Firefox 22 do Mac implementa os eventos _Ambient Light_ no _desktop_.
 
-No experimento abaixo, a lampâda foi totalmente feita com CSS3 (e muita
-gambiarra). Além disso, ela também responde a mudanças de iluminação do
+No experimento abaixo, a lampâda foi totalmente feita com CSS3 (e
+muita gambiarra). Além disso, ela também responde a mudanças de iluminação do
 ambiente. Experimente apagar a luz do seu quarto ou cobrir o sensor de
 luminosidade do seu Mac (dica: ele fica na câmera).
 
@@ -57,8 +57,8 @@ luminosidade do seu Mac (dica: ele fica na câmera).
 >
 </iframe>
 
-Para quem não pôde rodar o experimento, eis o que acontede: a luz acende e o
-_background_ fica preto __quando o ambiente fica escuro__; __quando há
+Para quem não pôde rodar o experimento, eis o que acontede: __quando o ambiente
+fica escuro__ a luz acende e o _background_ fica preto ; __quando há
 luminosidade suficiente__, a luz se apaga e o _background_ volta a ser claro.
 Como de praxe, o experimento está disponível no
 [GitHub](https://github.com/caiogondim/css3-lightbulb-with-ambient-light-sensor)
@@ -74,15 +74,16 @@ que acarrete em uma mudança de estado __entre os que foram definidos__
 anteriormente, o evento é disparado.
 
 Cabe aos navegadores implementarem o intervalo em lux (medida de
-iluminação) que define cada um dos três estados. Porém a especificação da W3C
-recomenda que o __dim__ corresponda a ambientes com iluminação menores que 50
-lux — escuro o suficiente para que uma luz produzida por um fundo branco seja
-uma distração —, __normal__ corresponda a um valor entre 50 e 10.000 lux — uma
-sala de escritório, o nascer ou pôr do sol em uma dia claro — e o __bright__ a
-uma iluminação acima de 10.000 lux — algo como luz solar direta.
+iluminação) que define cada um dos três estados. Porém a especificação da
+<abbr title="World Wide Web Consortium">W3C</abbr> recomenda que o __dim__
+corresponda a ambientes com iluminação menores que 50 lux — escuro o suficiente
+para que uma luz produzida por um fundo branco seja uma distração —, __normal__
+corresponda a um valor entre 50 e 10.000 lux — uma sala de escritório, o nascer
+ou pôr do sol em uma dia claro — e o __bright__ a uma iluminação acima de 10.000
+lux — algo como luz solar direta.
 
-Neste evento temos o _event handler_ `onlightevent` e o _event handler event
-type_ `lightlevel`. E são eles que usamos para executar nossa lógica toda vez
+Neste evento temos o _event handler_  `onlightevent` e o _event handler event
+type_  `lightlevel`. E são eles que usamos para executar nossa lógica toda vez
 que o evento for disparado. Lembrando que, usando o _event handler_, apenas uma
 função pode ser disparada a cada evento. Caso seja usado o _event handler event
 type_, pode se usar quantas funções forem necessárias como _listeners_ do
@@ -148,20 +149,28 @@ window.addEventListener('devicelight', function(event) {
             <td>--</td>
             <td>--</td>
         </tr>
+        <tr>
+            <td class="property"><code>window.onlightlevel</code></td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+            <td>--</td>
+        </tr>
     </tbody>
 </table>
 
-Infelizmente, até o momento, no _desktop_ o Firefox é o único navegador que
-implementa essa nova especificação. E de forma muito restrita ainda, pois só
-roda em Mac's e apenas o evento _Device Light_ de fato funciona.
+Infelizmente, até o momento, o Firefox é o único navegador que implementa essa
+nova especificação no _desktop_. E de forma muito restrita ainda, pois só roda
+em Macs e apenas o evento _Device Light_ de fato funciona.
 
 {% highlight javascript %}
 if ('ondevicelight' in window) {
   // seu navegador dá suporte ao evento *Device Light*
 })
 
-if ('ondevicelevel' in window) {
-  // seu navegador dá suporte ao evento *Device Level*
+if ('onlightlevel' in window) {
+  // seu navegador dá suporte ao evento *Light Level*
 })
 {% endhighlight %}
 
