@@ -8,9 +8,15 @@ image: images/posts/2013-08-06-ambient-light-events.jpg
 tags: javascript
 comments: false
 keywords: >
-  lorem, ipsum
+  javascript, w3c, js, eventos, events, ambiente, luz, iluminacao, lux, navegador, browser
 resumo: >
-  lorem ipsum
+  Esta nova especificação da <abbr title="World Wide Web Consortium">W3C</abbr>
+  define dois novos eventos capazes de detectar mudança na iluminação do
+  ambiente: os __Ambient Light Events__. Antes parte da
+  [Sensors API](https://dvcs.w3.org/hg/dap/raw-file/default/sensor-api/Overview.html),
+  eles foram desmembrados para que fossem mais fáceis de serem implementados.
+  E com estas novas APIs, que já estão inclusive presentes no Firefox, que vamos
+  nos divertir hoje.
 related:
   - title: Ambient Light Events
     url: https://dvcs.w3.org/hg/dap/raw-file/default/light/Overview.html
@@ -20,10 +26,27 @@ related:
     from: CSS Deck
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, autem commodi
-placeat quod illum sint voluptatibus. Consectetur, consequuntur, neque, beatae,
-voluptatum voluptas reiciendis dolore velit reprehenderit aut repudiandae
-consequatur et.
+Esta nova especificação da <abbr title="World Wide Web Consortium">W3C</abbr>
+define dois novos eventos capazes de detectar mudança na iluminação do
+ambiente: os __Ambient Light Events__. Antes parte da
+[Sensors API](https://dvcs.w3.org/hg/dap/raw-file/default/sensor-api/Overview.html),
+eles foram desmembrados para que fossem mais fáceis de serem implementados.
+E com estas novas APIs, que já estão inclusive presentes no Firefox, que vamos
+nos divertir hoje.
+
+
+## Experimento
+
+A idéia desta nova API é bem simples: __medir a iluminação do
+ambiente__. Mas caso tudo ainda continue confuso, vamos vê-la em ação para
+melhor compreender o que estou falando. Infelizmente, no momento que escrevo
+este _post_, apenas o Firefox 22 do Mac implementa os eventos _Ambient Light_ no
+_desktop_.
+
+No experimento abaixo, a lampâda foi totalmente feita com CSS3 (e muita
+gambiarra). Além disso, ela também responde a mudanças de iluminação do
+ambiente. Experimente apagar a luz do seu quarto ou cobrir o sensor de
+luminosidade do seu Mac (dica: ele fica na câmera).
 
 <iframe
   src="http://caiogondim.github.io/css3-lightbulb-with-ambient-light-sensor/"
@@ -34,14 +57,72 @@ consequatur et.
 >
 </iframe>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur,
-mollitia, possimus ea praesentium quasi vel aut! Cum, veritatis, quos,
-architecto, eveniet voluptatum odit assumenda enim quas quam molestias nesciunt
-dolores?
+Para quem não pôde rodar o experimento, eis o que acontede: a luz acende e o
+_background_ fica preto __quando o ambiente fica escuro__; __quando há
+luminosidade suficiente__, a luz se apaga e o _background_ volta a ser claro.
+Como de praxe, o experimento está disponível no
+[GitHub](https://github.com/caiogondim/css3-lightbulb-with-ambient-light-sensor)
+e _[pull requests](https://github.com/caiogondim/css3-lightbulb-with-ambient-light-sensor/pulls)_
+são sempre bem-vindos.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, illo omnis
-adipisci libero eligendi unde fugit tenetur ad sit sed dolorem ut veritatis?
-Porro, inventore fuga dolor nostrum dicta iure.
+
+## Light Level Event
+
+Este novo evento descreve a iluminação do ambiente em três possíveis estados:
+__dim__, __normal__ e __bright__. Toda vez que houver __mudança na iluminação__
+que acarrete em uma mudança de estado __entre os que foram definidos__
+anteriormente, o evento é disparado.
+
+Cabe aos navegadores implementarem o intervalo em lux (medida de
+iluminação) que define cada um dos três estados. Porém a especificação da W3C
+recomenda que o __dim__ corresponda a ambientes com iluminação menores que 50
+lux — escuro o suficiente para que uma luz produzida por um fundo branco seja
+uma distração —, __normal__ corresponda a um valor entre 50 e 10.000 lux — uma
+sala de escritório, o nascer ou pôr do sol em uma dia claro — e o __bright__ a
+uma iluminação acima de 10.000 lux — algo como luz solar direta.
+
+Neste evento temos o _event handler_ `onlightevent` e o _event handler event
+type_ `lightlevel`. E são eles que usamos para executar nossa lógica toda vez
+que o evento for disparado. Lembrando que, usando o _event handler_, apenas uma
+função pode ser disparada a cada evento. Caso seja usado o _event handler event
+type_, pode se usar quantas funções forem necessárias como _listeners_ do
+evento.
+
+{% highlight javascript %}
+// event handler
+window.onlightlevel = function(event) {
+  console.log(event.value)
+}
+
+// event handler event type
+window.addEventListener('lightlevel', function(event) {
+  console.log(event.value)
+})
+{% endhighlight %}
+
+
+## Device Light Event
+
+Este evento é bem similar ao _Light Event_, a diferença está na granularidade.
+Com o _Light Event_ temos apenas três possíveis estados (<em>dim</em>,
+<em>normal</em> e <em>bright</em>). Já no _Device Light_ temos acesso direto ao
+valor de iluminação do ambiente expresso em lux.
+
+Ele também expõe uma interface comum de evento, com o _event handler_
+`ondevicelight` e o _event handler event type_ `devicelight`.
+
+{% highlight javascript %}
+// event handler
+window.ondevicelight = function(event) {
+  console.log(event.value)
+}
+
+// event handler event type
+window.addEventListener('devicelight', function(event) {
+  console.log(event.value)
+})
+{% endhighlight %}
+
 
 <table class="support">
     <thead>
@@ -63,13 +144,27 @@ Porro, inventore fuga dolor nostrum dicta iure.
             <td class="property"><code>window.ondevicelight</code></td>
             <td>--</td>
             <td>--</td>
-            <td>22.0</td>
+            <td>22.0*</td>
             <td>--</td>
             <td>--</td>
         </tr>
     </tbody>
 </table>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, perspiciatis
-inventore cupiditate adipisci quas. Nulla, nemo, esse laboriosam accusantium
-harum sint dicta sed nostrum tenetur possimus at consequatur pariatur fugiat.
+Infelizmente, até o momento, no _desktop_ o Firefox é o único navegador que
+implementa essa nova especificação. E de forma muito restrita ainda, pois só
+roda em Mac's e apenas o evento _Device Light_ de fato funciona.
+
+{% highlight javascript %}
+if ('ondevicelight' in window) {
+  // seu navegador dá suporte ao evento *Device Light*
+})
+
+if ('ondevicelevel' in window) {
+  // seu navegador dá suporte ao evento *Device Level*
+})
+{% endhighlight %}
+
+Caso queiram testar programaticamente se o navegador onde seu código está sendo
+executado dá suporte aos novos eventos, basta verificar pela propriedade
+`ondevicelight` ou `onlightlevel` do objeto `window`.
