@@ -58,7 +58,7 @@ luminosidade do seu Mac (dica: ele fica na câmera).
 </iframe>
 
 Para quem não pôde rodar o experimento, eis o que acontede: __quando o ambiente
-fica escuro__ a luz acende e o _background_ fica preto ; __quando há
+fica escuro__ a luz acende e o _background_ fica preto; __quando há
 luminosidade suficiente__, a luz se apaga e o _background_ volta a ser claro.
 Como de praxe, o experimento está disponível no
 [GitHub](https://github.com/caiogondim/css3-lightbulb-with-ambient-light-sensor)
@@ -82,8 +82,8 @@ corresponda a um valor entre 50 e 10.000 lux — uma sala de escritório, o nasc
 ou pôr do sol em uma dia claro — e o __bright__ a uma iluminação acima de 10.000
 lux — algo como luz solar direta.
 
-Neste evento temos o _event handler_  `onlightevent` e o _event handler event
-type_  `lightlevel`. E são eles que usamos para executar nossa lógica toda vez
+Neste evento temos o _event handler_&nbsp;`onlightevent` e o _event handler event
+type_&nbsp;`lightlevel`. E são eles que usamos para executar nossa lógica toda vez
 que o evento for disparado. Lembrando que, usando o _event handler_, apenas uma
 função pode ser disparada a cada evento. Caso seja usado o _event handler event
 type_, pode se usar quantas funções forem necessárias como _listeners_ do
@@ -109,8 +109,8 @@ Com o _Light Event_ temos apenas três possíveis estados (<em>dim</em>,
 <em>normal</em> e <em>bright</em>). Já no _Device Light_ temos acesso direto ao
 valor de iluminação do ambiente expresso em lux.
 
-Ele também expõe uma interface comum de evento, com o _event handler_
-`ondevicelight` e o _event handler event type_ `devicelight`.
+Ele também expõe uma interface comum de evento, com o _event handler_&nbsp;
+`ondevicelight` e o _event handler event type_&nbsp;`devicelight`.
 
 {% highlight javascript %}
 // event handler
