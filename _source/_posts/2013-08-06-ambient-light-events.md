@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-08-06-ambient-light-events.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
   javascript, w3c, js, eventos, events, ambiente, luz, iluminacao, lux, navegador, browser
 resumo: >
