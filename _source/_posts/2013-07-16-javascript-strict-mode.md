@@ -192,7 +192,7 @@ function() {
 }
 {% endhighlight %}
 
-Isso evita erros comuns com funções usadas como contrutores. No código abaixo
+Isso evita erros comuns com funções usadas como construtores. No código abaixo
 chamamos uma função construtora sem o uso do `new`. No modo não _strict_, o
 `this` apontaria para `window` e uma variável global `nome` seria criada.
 

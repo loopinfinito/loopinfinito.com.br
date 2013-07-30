@@ -19,24 +19,6 @@ resumo: >
   na época, em efeito cascata. E assim começa o baile de máscaras.
 ---
 
-<style>
-
-quote {
-	text-transform: uppercase;
-	font-size: 28px;
-	color: #ccc;
-	letter-spacing: -2px;
-	display: inline-block;
-	font-style: italic;
-}
-
-quote strong {
-	font-weight: normal;
-	color: #aaa;
-}
-
-</style>
-
 No início da história da web, era uma prática comum se fazer uma detecção do
 navegador usado, através da <em>user-agent string</em>, para enviar um código
 otimizado aos <em>browsers</em> mais modernos. Mas cada novo navegador que
@@ -77,9 +59,9 @@ _browser_, o Mozilla. Seu nome é uma abreviação de **Mosaic Killer**. Houvera
 alguns problemas com o Mosaic devido ao nome, então o projeto Mozilla foi
 renomeado para Netscape e se identificava como `Mozilla/1.0 (Win3.1)`.
 
-<quote>
+<q class="pushing-quotes">
 	O nome Mozilla é uma abreviação de <strong>Mosaic Killer</strong>
-</quote>
+</q>
 
 A Netscape usou um _user-agent string_ similar ao do Mosaic, mas adicionou
 algumas informações como língua, plataforma e encriptação.
@@ -162,9 +144,9 @@ No mundo Linux a equipe do KDE estava trabalhando no Konqueror. Seu nome é uma
 referência ao Netscape e IE, os dois grandes browsers da história até o momento.
 "First comes the Navigator, then Explorer, and then the Konqueror".
 
-<quote>
+<q class="pushing-quotes">
 	First comes the Navigator, then Explorer, and then the <strong>Konqueror</strong>
-</quote>
+</q>
 
 Sua engine, a KHTML, era excelente. Mas não era o Gecko e por isso
 não recebia o código mais moderno. Então ele, também, começou a se
