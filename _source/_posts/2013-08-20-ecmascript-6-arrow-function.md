@@ -11,9 +11,10 @@ keywords: >
   javascript, arrow function, função seta, ecmascript, ecmascript 6, js, coffeescript, firefox
 resumo: >
   Inspirado no CoffeeScript, a versão 6 do ECMAScript nos traz um jeito mais
-  simples e elegante de definirmos funções, as chamadas **arrow function**. Não só
-  _syntatic sugar_, elas vêem para resolve (de forma elegante) o problema do
-  `this` dinâmico que todos já enfrentamos ao passarmos funções como _callback_.
+  simples e elegante de definirmos funções, as chamadas **arrow functions**.
+  Não só _syntatic sugar_, elas vêm para resolve (de forma elegante) o problema
+  do `this` dinâmico que todos já enfrentamos ao passarmos funções como
+  _callback_.
 related:
   - title: Thoughts on ECMAScript 6 and new syntax
     url: http://www.nczonline.net/blog/2012/07/24/thoughts-on-ecmascript-6-and-new-syntax/
@@ -33,21 +34,21 @@ related:
 ---
 
 Inspirado no CoffeeScript, a versão 6 do ECMAScript nos traz um jeito mais
-simples e elegante de definirmos funções, as chamadas **arrow function**. Não só
-_syntatic sugar_, elas vêem para resolve (de forma elegante) o problema do
+simples e elegante de definirmos funções, as chamadas **arrow functions**. Não
+só _syntatic sugar_, elas vêm para resolve (de forma elegante) o problema do
 `this` dinâmico que todos já enfrentamos ao passarmos funções como _callback_.
 
 
 ## _this_ léxico
 
 No JavaScript o valor do `this` é setado dinamicamente em tempo de execução. Ele
-sempre faz referência ao objeto ao qual a função atual é um método. Em outras
+sempre faz referência ao objeto o qual a função atual é um método. Em outras
 palavras, ele faz referência ao objeto dono da função. Caso a função não
 pertença a nenhum objeto (não seja método de nenhum objeto) ele aponta para o
 objeto global — `window` no caso dos navegadores.
 
 Nas funções passadas como _callback_, o valor do `this` é igual ao da `window`,
-uma vez que estamos passamos uma função como argumento e nenhum objeto a possui.
+uma vez que estamos passando uma função como argumento e nenhum objeto a possui.
 No _strict mode_ o `this` é igual a `undefined` dentro de uma função passada
 como _callback_.
 
@@ -56,20 +57,23 @@ var armazem = {
   estabelecimentoNome: 'Armazém do Chico',
 
   logVendaDeCerveja: function(cervejas) {
+    // não gera erro
+    console.log(this.estabelecimentoNome.toUpperCase() + '\n\n');
     cervejas.forEach(function(cerveja) {
+      // gera erro, *this* aponta para *window*
       console.log(this.estabelecimentoNome + ' vendeu ' + cerveja);
     });
   }
 }
 
-armazem.logVendaDeCerveja(cervejas); // gera um erro
+armazem.logVendaDeCerveja(cervejas);
 {% endhighlight %}
 
 No exemplo acima um erro é gerado, uma vez que `this` aponta para `window` e não
-ao objeto `armazem`, como é esperado. Temos alguns jeitos de contornar isso,
+para objeto `armazem`, como é esperado. Temos alguns jeitos de contornar isso,
 claro. Mas não vamos entrar em detalhes sobre isso agora.
 
-As _arrow functions_ vêem solucionar principalmante esse tipo de cenário. Com
+As _arrow functions_ vêm solucionar principalmante esse tipo de cenário. Com
 elas, o valor do `this` deixa de ser dinâmico e passa a ser estático. O que as
 tornam perfeitas para uso em _callbacks_. O exemplo acima poderia ser reescrito
 da seguinte forma:
@@ -79,6 +83,7 @@ var armazem = {
   estabelecimentoNome: 'Armazém do Chico',
 
   logVendaDeCerveja: function(cervejas) {
+    console.log(this.estabelecimentoNome.toUpperCase() + '\n\n');
     cervejas.forEach(cerveja => {
       console.log(this.estabelecimentoNome + ' vendeu ' + cerveja);
     });
@@ -124,7 +129,7 @@ a => { return 2 * a } // bloco
 a => 2 * a // expressão, equivalente à linha anterior
 {% endhighlight %}
 
-Por baixo dos panos, as _arrow function_ são apenas _syntatic sugar_ para o
+Por baixo dos panos, as _arrow functions_ são apenas _syntatic sugar_ para o
 método `Function.prototype.bind`.
 
 
@@ -156,7 +161,7 @@ var foo = new () => {}; // gera um erro
   </thead>
   <tbody>
     <tr>
-      <td class="property"><code>arrow function</code></td>
+      <td class="property">arrow function</td>
       <td>--</td>
       <td>--</td>
       <td>22.0</td>
