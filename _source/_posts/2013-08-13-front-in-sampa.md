@@ -5,10 +5,12 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-08-13-front-in-sampa.jpg
-tags:
-comments: false
+tags: evento
+comments: true
 keywords: >
-  lorem
+  front in sampa, front-end, sampa, evento, 2013, são paulo, palestra, lea,
+  lea verou, almir filho, caio gondim, reinaldo ferraz, felipe moura, camilo
+  coutinho, eduardo shiota, dhiego bicudo, inferno club, rua augusta
 resumo: >
   Como já deve ser do conhecimento de muitos de vocês, em setembro vai rolar a
   2ª edição do [Front in Sampa](http://frontinsampa.com.br/), e agora é a nossa
@@ -49,7 +51,7 @@ prestigiar o Front in Sampa 2013.
 
 ![Aprender, compartilhar e se divertir](/images/posts/2013-08-13-front-in-sampa-1.jpg "Aprender, compartilhar e se divertir")
 
-Eu gosto muito de nos eventos de _front-end_.
+Eu gosto muito de ir nos eventos de _front-end_.
 Não pelo fato de ir palestrar, mas pelo fato de ir assistir a palestras de alto
 nível, ter acesso a informação de qualidade e ainda reencontrar muitos amigos,
 __fazer novos__, conhecer novos lugares e claro, tomar __aquela gelada__ com os
@@ -58,12 +60,11 @@ Sem contar que tudo isso vai acontecer na
 [Inferno Club](http://www.infernoclub.com.br/) (Rua Augusta, _mano_), ou seja,
 quando o evento encerrar você já estará automaticamente no olho do furacão.
 
-Como será o Front in Sampa 2013, nas palavras resumidas de um amigo _mano_:
+## Olha a promoção ae!
 
-<blockquote>
-  <p>Táquepariu manooo! Esse evento vai arregaçar a p&amp;#*$ toda!<br />
-  E quem tiver achando ruim, vá tomar no seu c*, mano!</p>
-  <footer>— Suissa</footer>
-</blockquote>
+Quem fizer sua inscrição no evento usando o código promocional
+__DESCONTOLOOPFINITO__ vai ter um desconto de R$30.
+Isso dá em média umas __6 longnecks__ — o que pra mim mesmo, já basta pra ficar
+meio _grogue_.
 
-_Au revoir, motherfuckers_.
+_Au revoir!_
