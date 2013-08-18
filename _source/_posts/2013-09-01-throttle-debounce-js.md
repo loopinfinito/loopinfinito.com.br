@@ -28,6 +28,15 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, quia,
 libero, maiores, sapiente corporis voluptatibus sed numquam dolorum odio quis
 incidunt dolores vitae mollitia quod tempora. Quasi autem labore fugiat!
 
+<iframe
+  src="http://caiogondim.github.io/js-debounce-throttle-visual-explanation/"
+  height="432"
+  width="700"
+  class="img"
+  frameborder="0"
+>
+</iframe>
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, voluptatibus
 maiores aliquam facilis maxime. Unde, numquam, nemo, obcaecati, atque
 praesentium laudantium quibusdam accusantium consequuntur id pariatur possimus
