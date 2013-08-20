@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-08-20-ecmascript-6-arrow-function.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
   javascript, arrow function, função seta, ecmascript, ecmascript 6, js, coffeescript, firefox
 resumo: >
