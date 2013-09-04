@@ -8,39 +8,48 @@ image: images/posts/2013-09-01-throttle-e-debounce-patterns-em-js.png
 tags: javascript
 comments: false
 keywords: >
-  javascript
+  javascript, debounce, throttle, eventos, ajax, usuários, UI, interface
 resumo: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores,
-  quibusdam, modi nisi laudantium provident dolores vel a officia qui non
-  impedit officiis temporibus eveniet corporis earum rem reiciendis dignissimos
-  ipsa.
+  Alguns eventos do _browser_ acontecem de forma mais rápida e com mais
+  frequência do que gostaríamos, como o evento _resize_ e _scroll_ da _window_.
+  Outras vezes nossos queridos usuários disparam mais eventos do que havíamos
+  previsto em nossa aplicação, como um duplo-clique em um botão de _submit_ de
+  um _form_ AJAX. Neste _post_ iremos aprender a como controlar a frequência de
+  execução de um determinado trecho de código JavaScript, a diferença entre
+  _debounce_ e _throttle_ e quando e porque usá-las.
 related:
-  - title: Lorem
-    url: http://loopinfinito.com.br
-    from: Loop Infinito
+  - title: Debounce and Throttle. A visual explanation
+    url: http://drupalmotion.com/article/debounce-and-throttle-visual-explanation
+    from: Drupal Motion
+  - title: Learning from Twitter
+    url: http://ejohn.org/blog/learning-from-twitter/
+    from: John Resig's blog
+  - title: jQuery throttle / debounce. Sometimes, less is more!
+    url: http://benalman.com/projects/jquery-throttle-debounce-plugin/
+    from: Ben Alman's blog
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis rerum numquam
-veniam. Quae, incidunt ut molestias nesciunt quod natus eius eos totam iure quam
-modi neque veniam animi alias mollitia.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, quia,
-libero, maiores, sapiente corporis voluptatibus sed numquam dolorum odio quis
-incidunt dolores vitae mollitia quod tempora. Quasi autem labore fugiat!
+Alguns eventos do _browser_ acontecem de forma mais rápida e com mais frequência
+do que gostaríamos, como o evento _resize_ e _scroll_ da _window_. Outras vezes
+nossos queridos usuários disparam mais eventos do que havíamos previsto em nossa
+aplicação, como um duplo-clique em um botão de _submit_ de um _form_ AJAX. Neste
+_post_ iremos aprender a como controlar a frequência de execução de um
+determinado trecho de código JavaScript, a diferença entre _debounce_ e
+_throttle_ e quando e porque usá-las.
 
 
 ## Throttle
 
 Imaginem o _throttle_ como uma válvula (na verdade essa é a tradução) que regula
-a quantidade (o fluxo) de eventos que acontece durante um determinado espaço de
+a quantidade (o fluxo) de eventos que acontecem durante um determinado espaço de
 tempo. Com esta técnica podemos garantir que determinado trecho de código não
 será executado mais que 1 vez a cada X milisegundos.
 
-Casos de uso comuns para o _throttle_ são no controle do disparo dos eventos
-_scroll_ e resize_. Normalmente são disparados vários desses eventos em um curto
-espaço de tempo e, caso estejamos executando qualquer computação quando estes
-eventos são disparados,  provavelmente vamos acabar causando uma lentidão na
-renderização de nossa aplicação, já que será executado várias vezes o mesmo
+Um caso de uso comum para o _throttle_ é no controle do disparo dos eventos
+_scroll_ e _resize_. Normalmente são disparados vários desses eventos em um
+curto espaço de tempo e, caso estejamos executando qualquer computação quando
+estes eventos são disparados,  provavelmente vamos acabar causando uma lentidão
+na renderização de nossa aplicação, já que será executado várias vezes o mesmo
 trecho de código JavaScript e a renderização no _browser_ acontece em apenas uma
 _thread_.
 
@@ -56,7 +65,7 @@ invocado novemente em menos de X segundos.
 Esta técnica é bastante útil para decidirmos, por exemplo, quando devemos chamar
 uma função AJAX de um _input_ com _autocomplete_. Imaginem que estamos fazendo
 uma consulta à API de _autocomplete_ da nossa aplicação em todo evento _keydown_
-do _input_. Muito provavelmente, o usuário dispara eventos _keydown_ mais rápido
+do _input_. Muito provavelmente o usuário dispara eventos _keydown_ mais rápido
 que o nosso servidor é capaz de entregar para o _browser_ as sugestões de
 _autocomplete_. Com isso, podemos estar entregando uma sugestão desatualizada ao
 usuário. Com o _debounce_, podemos disparar esta mesma função de _autocomplete_
@@ -74,15 +83,7 @@ do _submit_ via AJAX para, por exemplo, depois de 200 milisegundos depois do
 
 ## Experimento
 
-<!-- Nada melhor que demonstrarmos de forma visual como funciona um evento com
-_throttle_, com _debounce_ e um não tratado. No experimento abaixo, o evento
-__mousemove__ está sendo usado para demonstrarmos essas 2 técnicas de limitarmos
-o número de execuções de uma função e compararmos com um cenário sem tratamento.
-
-Continue movendo seu _mouse_ no experimento abaixo e repare como funcionam o
-_throttle_ e _debounce_. Cada barra abaixo equivale a 200 milisegundos. -->
-
-No experimento abaixo vamos tentar explicar de uma forma masi visual como
+No experimento abaixo vamos tentar explicar de uma forma mais visual como
 funciona o _throttle_ e _debounce_. Nele estamos limitando o disparo do
 _handler_ do evento _mousemove_. Cada barra equivale a 200 milisegundos, e uma
 barra maior significa que o _handler_ foi disparado.
@@ -109,3 +110,28 @@ executado mais de 1 vez a cada 400 milisegundos (uma vez a cada 2 barras).
 O _debounce_ posterga a execução do _handler_ caso ele seja chamado novamente em
 menos de 200 milisegundos. Você deve parar um pouco de mexer o _mouse_ para
 parar de postergar o _handler_ _debounced_.
+
+
+## Como usar
+
+Algumas bibliotecas JavaScript, como o [underscore.js](http://underscorejs.org/),
+já trazem implementados algoritmos para aplicarmos _throttle_ e _debounce_ em
+funções já existentes.
+
+{% highlight javascript %}
+// função que será disparada no evento "onresize" da window
+function onResizeHandler() {
+  // ...
+}
+
+// throttle com underscore.js
+// garante que a função "onResizeHandler" não será executada
+// mais que uma vez a cada 200ms
+$(window).on('resize', _.throttle(onResizeHandler, 200));
+{% endhighlight %}
+
+Mas caso você não queira fazer mais um _request_ de uma _lib_ inteira para
+usar o _throttle_ e _debounce_, você pode também usar este
+[_package_](https://github.com/caiogondim/js-patterns-sublime-snippets) para
+Sublime Text que eu desenvolvi — jabá — onde nele você tem vários padrões
+(_patterns_) de JavaScript, inclusive o _throttle_ e _debounce_.
