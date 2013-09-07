@@ -35,7 +35,7 @@ related:
 
 Inspirado no CoffeeScript, a versão 6 do ECMAScript nos traz um jeito mais
 simples e elegante de definirmos funções, as chamadas **arrow functions**. Não
-só _syntatic sugar_, elas vêm para resolve (de forma elegante) o problema do
+só _syntatic sugar_, elas vêm para resolver (de forma elegante) o problema do
 `this` dinâmico que todos já enfrentamos ao passarmos funções como _callback_.
 
 
@@ -60,7 +60,7 @@ var armazem = {
     // não gera erro
     console.log(this.estabelecimentoNome.toUpperCase() + '\n\n');
     cervejas.forEach(function(cerveja) {
-      // gera erro, *this* aponta para *window*
+      // gera erro, `this` aponta para `window`
       console.log(this.estabelecimentoNome + ' vendeu ' + cerveja);
     });
   }
