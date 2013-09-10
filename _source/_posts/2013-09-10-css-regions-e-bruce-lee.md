@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-09-10-css-regions-e-bruce-lee.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   css regions, bruce lee, css, css3, regions, conteudo, flow-into, flow-from,
   layout, coluna, multi coluna, água, disforme, experimento
