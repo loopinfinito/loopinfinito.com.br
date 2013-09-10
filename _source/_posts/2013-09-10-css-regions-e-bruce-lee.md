@@ -49,7 +49,7 @@ related:
   #experimento {
     position: relative;
     height: 432px;
-    background: url(/../images/posts/2013-09-10-css-regions.jpg);
+    background: url(/../images/posts/2013-09-10-the-loop-infinito-times.jpg);
     padding: 0 !important;
     width: 700px !important;
   }
