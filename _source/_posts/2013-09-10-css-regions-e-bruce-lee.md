@@ -5,10 +5,11 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-09-10-css-regions-e-bruce-lee.jpg
-tags:
+tags: CSS
 comments: false
 keywords: >
-  lorem
+  css regions, bruce lee, css, css3, regions, conteudo, flow-into, flow-from,
+  layout, coluna, multi coluna, água, disforme, experimento
 resumo: >
   Eu acho Bruce Lee muito foda e inspirador, então viajei geral nesse _post_.
   Hoje vamos aprender o que as __CSS Regions__ têm a ver com __Bruce Lee__.
