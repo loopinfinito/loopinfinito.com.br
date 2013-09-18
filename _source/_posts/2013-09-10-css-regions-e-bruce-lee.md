@@ -290,7 +290,7 @@ outra coisa através da propriedade `flow-from`:
 
 {% highlight css %}
 .content {
-    flow-flow: bruce-lee-fodao;
+    flow-from: bruce-lee-fodao;
 }
 {% endhighlight %}
 
