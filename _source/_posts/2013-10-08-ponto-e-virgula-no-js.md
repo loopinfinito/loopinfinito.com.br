@@ -14,9 +14,27 @@ resumo: >
   voluptatibus, hic maxime autem at debitis tenetur eveniet minima odit saepe
   praesentium magnam est ipsa nostrum voluptatum dicta odio.
 related:
-  - title: Thoughts on ECMAScript 6 and new syntax
-    url: http://www.nczonline.net/blog/2012/07/24/thoughts-on-ecmascript-6-and-new-syntax/
-    from: NCZOnline
+  - title: Semicolons in JavaScript are optional
+    url: http://mislav.uniqpath.com/2010/05/semicolons/
+    from: Mislav Marohnić
+  - title: An Open Letter to JavaScript Leaders Regarding Semicolons
+    url: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
+    from: Isaac Schlueter
+  - title: Actual drawbacks to omitting semi-colons?
+    url: https://groups.google.com/forum/#!msg/nodejs/MWaivVTirPY/0pnRjKsggkIJ
+    from: Node.js Google Groups
+  - title: JavaScript and Semicolons
+    url: http://dailyjs.com/2012/04/19/semicolons/
+    from: DailyJS
+  - title: Bootstrap issue about semicolon
+    url: https://github.com/twbs/bootstrap/issues/3057
+    from: GitHub Issues
+  - title: Rules of Automatic Semicolon Insertion
+    url: http://es5.github.io/#x7.9.1
+    from: Annotated ECMAScript 5.1
+  - title: JavaScript Semicolon Insertion
+    url: http://inimino.org/~inimino/blog/javascript_semicolons
+    from: ~inimino/blog
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, magnam,
@@ -43,3 +61,4 @@ maiores ipsum odit excepturi corporis rerum eos omnis veniam.
     – Isaacs
   </footer>
 </blockquote>
+
