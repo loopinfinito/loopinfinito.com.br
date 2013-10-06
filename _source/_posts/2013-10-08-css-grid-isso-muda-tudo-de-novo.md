@@ -5,12 +5,22 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-10-08-css-grid-isso-muda-tudo-de-novo.jpg
-tags:
+tags: CSS
 comments: false
 keywords: >
-  lorem
+  css grid, grid, css, layout, independencia, estrutura, html, especificacao,
+  spec, w3c, linhas, colunas, região, area, tabela, display, display grid,
+  conteúdo, associação de conteúdo, grid-template-rows, grid-template-columns,
+  grid-area, grid-row, grid-column, grid-row-start, grid-column-start, fr,
+  unidade fr, grid-row-end, grid-column-end, grid-template-areas, espaço livre,
+  flexivel, template, grid template, responsivo, grid responsivo, template
+  responsivo, media queries, ie, ie10, ie11, internet explorer, suporte, colspan
 resumo: >
-  lorem
+  Esta nova especificação nos permitirá construir e manter _layouts_ de forma
+  fácil e __independente__ da estrutura HTML. Enfim teremos realmente
+  apresentação separada do conteúdo. Mas atenção, se você tem problemas
+  cardíacos, melhor não ler este _post_, pois seu conteúdo é altamente
+  empolgante e pode ser perigoso principalmente para pessoas hipertensas.
 related:
   - title: CSS Grid Layout
     url: http://www.w3.org/TR/css3-grid-layout/
