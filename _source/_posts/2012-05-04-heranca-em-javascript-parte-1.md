@@ -223,4 +223,4 @@ Este é o método padrão de herança em JavaScript.
 Grande parte desta bagunça é devido ao JavaScript ter sido lançado __muito__ às pressas.
 Porém o ECMAscript, o grupo que padroniza o JavaScript, vem adicionado várias funções para tornar o trabalho com herança mais simples e finalmente abraçando a orientação a protótipo.
 
-E é sobre este novo método de trabalhar com herança no ECMAscript 5 que iremos discutir na [2ª parte do post](http://loopinfinito.com.br/2013/02/01/heranca-em-javascript-parte-2/).
+E é sobre este novo método de trabalhar com herança no ECMAscript 5 que iremos discutir na [2ª parte do post](http://loopinfinito.com.br/2013/02/05/heranca-em-javascript-parte-2/).

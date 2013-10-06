@@ -1,0 +1,15 @@
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">armazem</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">estabelecimentoNome</span><span class="o">:</span> <span class="s1">&#39;Armazém do Chico&#39;</span><span class="p">,</span>
+
+  <span class="nx">logVendaDeCerveja</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cervejas</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// não gera erro</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">estabelecimentoNome</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;\n\n&#39;</span><span class="p">);</span>
+    <span class="nx">cervejas</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">cerveja</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// gera erro, `this` aponta para `window`</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">estabelecimentoNome</span> <span class="o">+</span> <span class="s1">&#39; vendeu &#39;</span> <span class="o">+</span> <span class="nx">cerveja</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">armazem</span><span class="p">.</span><span class="nx">logVendaDeCerveja</span><span class="p">(</span><span class="nx">cervejas</span><span class="p">);</span>
+</pre></div>

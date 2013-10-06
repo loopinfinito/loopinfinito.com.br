@@ -1,0 +1,18 @@
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">onResize</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">timeWindow</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span> <span class="c1">// tempo em ms</span>
+  <span class="kd">var</span> <span class="nx">lastExecution</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">timeWindow</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">onResize</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// nosso código é escrito nessa função</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">((</span><span class="nx">lastExecution</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">+</span> <span class="nx">timeWindow</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">())</span> <span class="p">{</span>
+      <span class="nx">lastExecution</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nx">onResize</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}());</span>
+</pre></div>
