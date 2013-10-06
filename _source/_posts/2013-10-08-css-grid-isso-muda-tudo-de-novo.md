@@ -40,6 +40,13 @@ Atenção, se você tem problemas cardíacos, melhor não ler este _post_, pois 
 conteúdo é altamente empolgante e pode ser perigoso principalmente para pessoas
 hipertensas.
 
+Este conteúdo foi abordado em nossa palestra
+[__CSS Layout: o ontem, o hoje e o depois__](http://loopinfinito.com.br/2013/06/14/css-layout-pos-apocalipse/ "CSS Layout: o ontem, o hoje e o depois"),
+juntamente com o _Flexbox_, as _Exclusions_, as
+[_Shapes_](http://loopinfinito.com.br/2013/07/03/css-shapes/ "CSS Shapes"), as
+[_Regions_](http://loopinfinito.com.br/2013/09/10/css-regions-e-bruce-lee/ "CSS Regions e Bruce Lee"),
+o _Box Model_ e as Tabelas.
+
 ## Não confundir
 
 Quando falo de __CSS Grid Layout__, não estou falando sobre como desenvolver
@@ -53,29 +60,32 @@ usar que o atual e mais conhecido modelo [Box model](http://www.w3.org/TR/CSS2/b
 
 ## Quem se lembra?
 
-Quem é das antigas lembra que os _layouts_ de páginas eram feitos com `<table>`,
-ou seja, a porra do _site_ inteiro era um grande tabelão, e ainda tinham tabelas
-aninhadas.
+Quem é das antigas lembra que os _layouts_ de páginas eram feitos geralmente com
+`<table>`, ou seja, o _site_ inteiro era um grande tabelão, e isso sem contar
+com as tabelas aninhadas.
+
 Algo como o [site da BOL em 2000](http://web.archive.org/web/20001018115733/http://www.bol.com.br/home1.jsp;target=_top)
 (olhem o código fonte, eu mesmo achei tabelas aninhadas em 3 níveis).
 
 Depois das tabelas, surgiu o [Tableless](http://pt.wikipedia.org/wiki/Tableless),
-que é uma metodologia de desenvolvimento _front-end_ que sugere a utilização do
+que é uma metodologia de construção de _layouts_ que sugere a utilização do
 _box model_ — e não mais as tabelas — para _layouts_.
 Mas isso tudo, é claro que vocês já sabiam.
 
-## Grid
+## CSS Grid
 
-Com as _grids_ CSS será possível definir o nosso espaço em tela em __regiões__.
-Estas regiões poderão ser flexíveis de várias maneiras, de acordo com a situação.
+Com as _grids_ <abbr title="Cascading Style Sheets">CSS</abbr> será possível
+definir o nosso espaço em tela em __regiões__. Estas regiões poderão ser
+flexíveis de várias maneiras, de acordo com a situação.
 
 ### Independência estrutural = liberdade
 
 Similarmente às tabelas, as regiões de uma _grid_ são definidas através de
 __linhas e colunas__, mas diferente das tabelas, não dependemos de elementos
-HTML para isto, ou seja, toda a definição da _grid_ e de como seu conteúdo
-deverá se organizar no _layout_ é feito apenas e diretamente por CSS — tornando
-enfim a apresentação de conteúdo independente de marcações estruturais.
+<abbr title="HyperText Markup Language">HTML</abbr> para isto, ou seja, toda a
+definição da _grid_ e de como seu conteúdo deverá se organizar no _layout_ é
+feito apenas via CSS — tornando enfim a apresentação de conteúdo independente de
+marcações estruturais.
 
 ## Crie a grid
 
@@ -103,8 +113,8 @@ Simples.
 
 Depois, só precisamos executar __2 passos__:
 
-1. Definir as regiões da _grid_
-2. Associar o conteúdo à _grid_
+1. Definir as regiões da _grid_;
+2. Associar o conteúdo à _grid_.
 
 ## 1. Defina as regiões
 
@@ -134,9 +144,11 @@ Podemos também definir as dimensões com qualquer unidade CSS (`px`, `em`, `%`,
 
 ### Regiões flexíveis com fr
 
-Eis uma nova unidade CSS: `fr` é uma unidade flexível, e que representa uma
-determinada fração do __espaço livre__ de uma _grid_.
-`fr` funciona de forma similar às unidades flexíveis da especificação Flexbox.
+Eis uma nova unidade CSS: [`fr`](http://www.w3.org/TR/css3-grid-layout/#fr-unit)
+(<em>free space</em>) é uma unidade flexível, e que representa uma determinada fração
+do __espaço livre__ de uma _grid_.
+`fr` funciona de forma similar às unidades flexíveis da especificação
+[Flexbox](http://www.w3.org/TR/css3-flexbox/ "Especificação do Flexbox").
 
 Para que uma região possa ocupar todo o espaço horizontal livre, por exemplo,
 podemos especificar sua coluna com `1fr` — que nesse caso representará 100% do
@@ -185,7 +197,7 @@ basta atribuir o mesmo valor a elas (`1fr`):
 
 Para que uma coluna tenha o dobro da outra (o qualquer outra proporção), os
 valores serão calculados proporcionalmente de acordo com suas definições.
-No exemplo abaixo, as acolunas 2 e 3 ocupam todo o espaço livre, de modo que a
+No exemplo abaixo, as colunas 2 e 3 ocupam todo o espaço livre, de modo que a
 coluna 3 tenha o dobro da largura da coluna 2.
 
 <figure>
@@ -200,7 +212,7 @@ coluna 3 tenha o dobro da largura da coluna 2.
 {% endhighlight %}
 </div>
 
-E é claro, tudo isso podem também ser aplicado às alturas das linhas:
+E é claro, tudo isso pode também ser aplicado às alturas das linhas:
 
 <figure>
   <img src="/images/posts/2013-10-08-grid-flexivel-5.png" alt="regiões flexíveis 5" width="700" height="200" />
@@ -252,7 +264,7 @@ Seja a _grid_ definida da seguinte maneira:
 </div>
 
 É preciso decidir qual conteúdo _X_ vai estar localizado na região _Y_, e para
-isso vamo utilizar as novas propriedades `grid-row`, `grid-row-start`,
+isso vamos utilizar as novas propriedades `grid-row`, `grid-row-start`,
 `grid-row-end`, `grid-column`, `grid-column-start` e `grid-column-end`.
 
 <figure>
@@ -292,18 +304,18 @@ fazendo __span__ entre suas regiões (`colspan`&nbsp;_feelings_?).
 - `grid-column-start` e `grid-column-end`: colunas de onde começa e termina o conteúdo.
 
 No trecho CSS acima, `#page-header` está localizado na linha 1, começando na
-coluna 1 e terminando na coluna 2.
+coluna 1 e se estendendo pela coluna 2.
 
 ### grid-row e grid-column
 
 Há duas possibilidades para utilizar estas propriedades:
 
 1. Definir a linha/coluna;
-2. Definir o começo e término na linha/coluna (sendo assim um atalho para
+2. Definir o começo e término da linha/coluna (sendo assim um atalho para
 _start_ e _end_).
 
 Por exemplo, no trecho CSS acima, `#page-footer` está localizado na linha 3
-(começo e término), começando na coluna 1 e terminando na coluna 2.
+(começo e término), começando na coluna 1 e se estendendo pela coluna 2.
 
 É importante notar que aqui fizemos apenas associações de __1 para 1__.
 Mas nada impede de termos associações de __N para 1__, ou seja, vários conteúdos
@@ -334,14 +346,14 @@ _grid_ com nomes — em vez de números — através da propriedade
 
 O uso de `grid-template-areas` é bem simplificado, basta definirmos uma _string_
 para cada linha, e dentro de cada _string_ definimos um identificador para cada
-região, separados por um espaço em branco.
+região, separados por espaço em branco.
 
 Dessa maneira, definimos uma _grid_ de forma mais visual e sem a necessidade de
 usar as duas propriedades `grid-template-rows` e `grid-template-columns`.
 
 O legal dessa abordagem é que ela já torna mais fácil de fazer _span_ de
 regiões, perceba que as regiões __cabecalho__ e __rodape__ fazem _span_ nas
-duas colunas presentes na _grid_.
+duas colunas presentes da _grid_.
 E isso é facilmente alcançado apenas repetindo o mesmo nome da região em suas
 adjacências.
 
@@ -365,13 +377,14 @@ Muito simples, não?
 Que tal tornar responsivo o _layout_ de uma aplicação do jeito mais fácil
 possível?
 Com os templates nomeados e _media queries_, isso se torna muito fácil.
-Vamos implementar agora um _layout mobile_ simples:
+Vamos implementar agora um _layout mobile_ simples para nossa _grid_:
 
 <figure>
   <img src="/images/posts/2013-10-08-grid-template-2.png" alt="grid template responsivo" width="700" height="300" />
 </figure>
 <div class="image-code">
 {% highlight css %}
+/* definição normal da grid */
 #container {
     display: grid;
     grid-template-areas: "cabecalho cabecalho"
@@ -384,6 +397,7 @@ Vamos implementar agora um _layout mobile_ simples:
 #page-content { grid-area: conteudo; }
 #page-footer  { grid-area: rodape; }
 
+/* definição responsiva da grid */
 @media screen and (max-device-width: 800px), screen and (max-width: 800px) {
     #container {
         grid-template-areas: "cabecalho"
@@ -391,7 +405,7 @@ Vamos implementar agora um _layout mobile_ simples:
                              "rodape";
     }
 
-    #page-menu { grid-area: cabecalho; }
+    #page-menu { grid-area: cabecalho; } /* reassocia o conteúdo a outra região */
 }
 {% endhighlight %}
 </div>
@@ -403,10 +417,14 @@ Perceba que a região __menu__ deixou de existir, então se ainda quisermos exib
 o conteúdo de `#page-menu`, será preciso associá-lo a outra região — no nosso
 caso, o menu foi para a região __cabecalho__.
 
-## E não é só isso!
+Acredite, é __apenas isso__. Não esqueça que o resto do conteúdo já está
+associado às suas respectivas regiões, de modo que não precisamos mais nos
+preocupar com isso.
+
+## Quer mais? Então pega!
 
 Há ainda muita coisa sobre esta especificação, como alinhamento vertical e
-horizontal automático de conteúdo, regiões flúidas, reordenação de conteúdo com
+horizontal automático de conteúdo, regiões fluidas, reordenação de conteúdo com
 `order`, _grids_ implícitas com linhas e colunas automáticas, _subgrids_,
 _inline grids_, etc.
 Decidi não discorrer sobre nenhum desses assuntos pois o _post_ já se encontra
@@ -430,7 +448,7 @@ demasiado grande, mas caso queira saber mais, clique
     </thead>
     <tbody>
         <tr>
-            <td class="property">Grid Layout box Model</td>
+            <td class="property">Grid Layout box model</td>
             <td>--</td>
             <td>--</td>
             <td>--</td>
@@ -443,8 +461,9 @@ demasiado grande, mas caso queira saber mais, clique
     </tfoot>
 </table>
 
-Esse é o momento em que todo mundo fala: __WAT! Só o IE?__
-Pois é, amigos, apenas o IE à partir da sua versão 10 é que dá suporte (ainda
+Esse é o momento em que todo mundo fala:
+__Só o IE?__ O que será que está acontecendo com este mundo?
+Pois é, amigos, apenas o IE é que dá suporte à partir da sua versão 10 (ainda
 que seja parcial).
-E se você usa Windows e tem o IE 10 — ou 11 —, pode testar a CSS Grid com
+E se você usa Windows e tem o IE10 — ou IE11 —, pode testar a CSS Grid com
 [__esse experimento__](http://ie.microsoft.com/testdrive/Graphics/hands-on-css3/hands-on_grid.htm)!
