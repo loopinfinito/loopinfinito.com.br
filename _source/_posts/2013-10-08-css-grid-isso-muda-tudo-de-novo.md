@@ -4,7 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-image: images/posts/grid.jpg
+image: images/posts/2013-10-08-css-grid-isso-muda-tudo-de-novo.jpg
 tags:
 comments: false
 keywords: >
@@ -81,7 +81,7 @@ Simples.
 </p>
 
 <figure>
-  <img src="/images/posts/grid-1.png" alt="display: grid" width="700" height="200" />
+  <img src="/images/posts/2013-10-08-grid-1.png" alt="display: grid" width="700" height="200" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -103,7 +103,7 @@ Para definir as regiões da nossa _grid_, utilizaremos as novas propriedades
 menos que as linhas e colunas da nossa _grid_.
 
 <figure>
-  <img src="/images/posts/grid-linhas-colunas.png" alt="regiões da grid" width="700" height="200" />
+  <img src="/images/posts/2013-10-08-grid-linhas-colunas.png" alt="regiões da grid" width="700" height="200" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -133,7 +133,7 @@ podemos especificar sua coluna com `1fr` — que nesse caso representará 100% d
 espaço horizontal livre:
 
 <figure>
-  <img src="/images/posts/grid-flexivel-1.png" alt="regiões flexíveis" width="700" height="200" />
+  <img src="/images/posts/2013-10-08-grid-flexivel-1.png" alt="regiões flexíveis" width="700" height="200" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -147,7 +147,7 @@ espaço horizontal livre:
 A mesma coisa para a coluna do meio:
 
 <figure>
-  <img src="/images/posts/grid-flexivel-2.png" alt="regiões flexíveis 2" width="700" height="200" />
+  <img src="/images/posts/2013-10-08-grid-flexivel-2.png" alt="regiões flexíveis 2" width="700" height="200" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -162,7 +162,7 @@ Se quisermos que o espaço livre seja dividido igualmente entre mais colunas,
 basta atribuir o mesmo valor a elas (`1fr`):
 
 <figure>
-  <img src="/images/posts/grid-flexivel-3.png" alt="regiões flexíveis 3" width="700" height="200" />
+  <img src="/images/posts/2013-10-08-grid-flexivel-3.png" alt="regiões flexíveis 3" width="700" height="200" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -179,7 +179,7 @@ No exemplo abaixo, as acolunas 2 e 3 ocupam todo o espaço livre, de modo que a
 coluna 3 tenha o dobro da largura da coluna 2.
 
 <figure>
-  <img src="/images/posts/grid-flexivel-4.png" alt="regiões flexíveis 4" width="700" height="200" />
+  <img src="/images/posts/2013-10-08-grid-flexivel-4.png" alt="regiões flexíveis 4" width="700" height="200" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -193,7 +193,7 @@ coluna 3 tenha o dobro da largura da coluna 2.
 E é claro, tudo isso podem também ser aplicado às alturas das linhas:
 
 <figure>
-  <img src="/images/posts/grid-flexivel-5.png" alt="regiões flexíveis 5" width="700" height="200" />
+  <img src="/images/posts/2013-10-08-grid-flexivel-5.png" alt="regiões flexíveis 5" width="700" height="200" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -229,7 +229,7 @@ _post_, isto é, sem modificá-lo.
 Seja a _grid_ definida da seguinte maneira:
 
 <figure>
-  <img src="/images/posts/grid-content-1.png" alt="grid content" width="700" height="300" />
+  <img src="/images/posts/2013-10-08-grid-content-1.png" alt="grid content" width="700" height="300" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -246,7 +246,7 @@ isso vamo utilizar as novas propriedades `grid-row`, `grid-row-start`,
 `grid-row-end`, `grid-column`, `grid-column-start` e `grid-column-end`.
 
 <figure>
-  <img src="/images/posts/grid-content-2.png" alt="grid content" width="700" height="300" />
+  <img src="/images/posts/2013-10-08-grid-content-2.png" alt="grid content" width="700" height="300" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -309,7 +309,7 @@ _grid_ com nomes — em vez de números — através da propriedade
 `grid-template-areas`.
 
 <figure>
-  <img src="/images/posts/grid-template.png" alt="grid template" width="700" height="300" />
+  <img src="/images/posts/2013-10-08-grid-template.png" alt="grid template" width="700" height="300" />
 </figure>
 <div class="image-code">
 {% highlight css %}
@@ -358,7 +358,7 @@ Com os templates nomeados e _media queries_, isso se torna muito fácil.
 Vamos implementar agora um _layout mobile_ simples:
 
 <figure>
-  <img src="/images/posts/grid-template-2.png" alt="grid template responsivo" width="700" height="300" />
+  <img src="/images/posts/2013-10-08-grid-template-2.png" alt="grid template responsivo" width="700" height="300" />
 </figure>
 <div class="image-code">
 {% highlight css %}
