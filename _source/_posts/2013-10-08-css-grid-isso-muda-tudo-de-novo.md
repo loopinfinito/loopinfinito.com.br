@@ -52,7 +52,7 @@ o _Box Model_ e as Tabelas.
 Quando falo de __CSS Grid Layout__, não estou falando sobre como desenvolver
 _sistemas de grids_, tais como o do [Bootstrap](http://getbootstrap.com/css/#grid)
 ou [Foundation](http://foundation.zurb.com/docs/components/grid.html).
-_CSS Grid Layout_ é uma __novíssima__
+_CSS Grid Layout_ é uma __novíssima__&nbsp;
 [especificação W3C](http://www.w3.org/TR/css3-grid-layout/) (ainda em andamento)
 que propõe uma nova maneira de _"leiautar"_ na Web.
 Dentre suas várias vantagens, _CSS grid_ é muito mais simples e fácil de
@@ -74,7 +74,7 @@ Mas isso tudo, é claro que vocês já sabiam.
 
 ## CSS Grid
 
-Com as _grids_ <abbr title="Cascading Style Sheets">CSS</abbr> será possível
+Com as _grids_ &nbsp;<abbr title="Cascading Style Sheets">CSS</abbr> será possível
 definir o nosso espaço em tela em __regiões__. Estas regiões poderão ser
 flexíveis de várias maneiras, de acordo com a situação.
 
@@ -195,7 +195,7 @@ basta atribuir o mesmo valor a elas (`1fr`):
 {% endhighlight %}
 </div>
 
-Para que uma coluna tenha o dobro da outra (o qualquer outra proporção), os
+Para que uma coluna tenha o dobro da outra (ou qualquer outra proporção), os
 valores serão calculados proporcionalmente de acordo com suas definições.
 No exemplo abaixo, as colunas 2 e 3 ocupam todo o espaço livre, de modo que a
 coluna 3 tenha o dobro da largura da coluna 2.
@@ -297,7 +297,7 @@ isso vamos utilizar as novas propriedades `grid-row`, `grid-row-start`,
 
 ### grid-row-start|end e grid-column-start|end
 
-Podemos especificar como um determinado conteúdo vai de comportar numa _grid_
+Podemos especificar como um determinado conteúdo vai se comportar numa _grid_
 fazendo __span__ entre suas regiões (`colspan`&nbsp;_feelings_?).
 
 - `grid-row-start` e `grid-row-end`: linhas de onde começa e termina o conteúdo.
@@ -410,7 +410,7 @@ Vamos implementar agora um _layout mobile_ simples para nossa _grid_:
 {% endhighlight %}
 </div>
 
-E voilà!
+E _voilà_!
 Mudamos praticamente todo o _layout_ sem precisar mexer numa cacetada de
 propriedades.
 Perceba que a região __menu__ deixou de existir, então se ainda quisermos exibir
