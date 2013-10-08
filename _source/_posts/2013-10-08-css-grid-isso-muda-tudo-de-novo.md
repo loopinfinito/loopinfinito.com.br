@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-10-08-css-grid-isso-muda-tudo-de-novo.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   css grid, grid, css, layout, independencia, estrutura, html, especificacao,
   spec, w3c, linhas, colunas, região, area, tabela, display, display grid,
@@ -74,7 +74,7 @@ Mas isso tudo, é claro que vocês já sabiam.
 
 ## CSS Grid
 
-Com as _grids_ &nbsp;<abbr title="Cascading Style Sheets">CSS</abbr> será possível
+Com as _grids_&nbsp;<abbr title="Cascading Style Sheets">CSS</abbr> será possível
 definir o nosso espaço em tela em __regiões__. Estas regiões poderão ser
 flexíveis de várias maneiras, de acordo com a situação.
 
