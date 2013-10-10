@@ -64,31 +64,35 @@ related:
   }
 </style>
 
-Em JavaScript o `;` é, assim como em outras linguagens sintaticamente similares
-a C, um delimitador de _statements_, expressões e construtores. Nele (JavaScript),
-o `;` tem uma função similar ao `\n` em linguagens que são _white-space
-significant_, como Ruby e Python.
+Em JavaScript o `;` é um delimitador de _statements_, expressões e construtores,
+assim como em outras linguagens sintaticamente similares a C. Nele (JavaScript),
+o `;` tem uma função similar ao `\n` (quebrar linha) em linguagens que são
+_white-space significant_, como Ruby e Python.
 
-Porém, em JavaScript, temos o — querido por uns, odiado por outros — ASI. Ele é
+Porém, em JavaScript, temos o ASI — querido por uns, odiado por outros. Ele é
 o responsável por inserir automaticamente `;` em determinadas situações. E é
-aqui onde mora todo o terror. Alguns programadores, como @fat — co-criador do
-Bootstrap — e @izs — _maintainer_ do Node.js e criador do npm — preferem por
-não usar (ou evitar ao máximo) `;`. Já outros dizem que este não é um caminho
-seguro.
+aqui que mora o terror. Alguns programadores, como o [@fat](http://twitter.com/fat)
+— co-criador do [Bootstrap](http://getbootstrap.com/) — e o [@izs](http://twitter.com/izs)
+— _maintainer_ do [Node.js](http://nodejs.org/) e criador do [npm](https://npmjs.org/)
+— preferem por não usar (ou evitar ao máximo) `;`. Já outros dizem que este não
+é um caminho seguro.
 
 ## A grande polêmica
 
-Uma das mais polêmicas discussões no GitHub se deu a cerca da omissão do `;` no
-código do Bootstrap. Como o código do Bootstrap não utiliza `;`, era gerado um
-erro quando era minificado pelo JSMin, escrito por Crockford. @fat disse que o
-problema não estava no código e que, na verdade, isto era um _bug_ do JSMin.
-@douglascrockford rebate dizendo que o código é estupido e que não iria
-“emburrecer” o JSMin para que gerasse um código válido para este caso.
+[Uma das mais polêmicas discussões no GitHub](https://github.com/twitter/bootstrap/issues/3057)
+se deu acerca da omissão do `;` no código do Bootstrap. Como o código do Bootstrap
+não utiliza `;`, era gerado um erro quando era minificado pelo
+[JSMin](http://www.crockford.com/javascript/jsmin.html),
+escrito por [Crockford](http://www.crockford.com/). @fat disse que o problema
+não estava no código e que, na verdade, isto era um _bug_ do JSMin.
+[@douglascrockford](http://github.com/douglascrockford) rebate dizendo que o
+código é estupido e que não iria “emburrecer” o JSMin para que gerasse um código
+válido para este caso.
 
 ![Crockford and Fat discutindo sobre o uso de ponto e vírgula em uma issue do Bootstrap](/images/posts/2013-10-22-github-issue-fat-vc-crockford-1.jpg)
 
-Essa homérica discussão se alongou durante meses, tendo quase 300 _replies_
-(dentre eles vários _memes_) até o momento. Mas afinal, quem é o vilão dessa
+Essa homérica discussão se alongou durante meses, tendo quase 300 _replies_ até
+o momento (dentre eles, vários _memes_). Mas, afinal, quem é o vilão dessa
 novela mexicana?
 
 Vamos voltar ao básico e entender as regras do
@@ -100,12 +104,12 @@ mais embasada a respeito do polêmico assunto.
 
 Como dissemos antes, o `;` serve como um delimitador de _statements_. Mas devido
 ao <abbr title="Automatic Semicolon Insertion">ASI</abbr>, o `\n` também irá
-funcionar como delimitador de _statement_, a não ser nos seguintes casos:
+funcionar como delimitador de _statement_, exceto nos seguintes casos:
 
-1. O _statement_ possui um parênteses, _array_ literal ou objeto literal não
+1. O _statement_ possui um parêntese, _array_ literal ou objeto literal não
   fechado ou acaba de qualquer outra forma a qual não seja um modo válido de
   finalizar um _statement_.
-2. A linha inteira é um `--` ou `++` (neste caso irá incrementar/decrementar o
+2. A linha inteira é um `--` ou `++` (neste caso, irá incrementar/decrementar o
   próximo _token_)
 3. É um `for()`, `while()`, `do`, `if()` ou `else` e não existe `{`
 4. A próxima linha começa com `[`, `(`, `+`, `-`, `*`, `/`, `,`, `.`, ou qualquer
@@ -116,8 +120,8 @@ Vamo analisar caso a caso.
 
 ### 1º caso
 
-Este caso é bastante óbvio. Caso a linha acabe com um parênteses ou chaves não
-fechado ou caso acabe de uma forma que não faça sentindo, o ASI não irá inserir
+Este caso é bastante óbvio. Caso a linha acabe sem fechar parêntesis ou chaves
+ou caso acabe de uma forma que não faça sentindo, o ASI não irá inserir
 automaticamente um `;`.
 
 {% highlight javascript %}
@@ -151,15 +155,15 @@ i;
 ++j;
 {% endhighlight %}
 
-Reparem que se um incrementador/decrementador ocupa toda uma linha (o que não
+Percebam que se um incrementador/decrementador ocupa toda uma linha (o que não
 faz o menor sentido), ele não irá modificar a variável anterior, e sim a posterior.
 Funcionando, na prática, como um incrementador pré-fixo, e não pós-fixo.
 
 ### 3º caso
 
-Este caso também é um caso de uso da ASI bem comum até entre os que costumam
-nunca omitir `;`. Caso a linha acabe com a definição de um bloco `if`, `else`,
-`for`, `while` ou `do` e não haja `{` no final da linha, o interpretador só irá
+Este também é um caso de uso da ASI bem comum até entre os que costumam nunca
+omitir `;`. Caso a linha acabe com a definição de um bloco `if`, `else`, `for`,
+`while` ou `do` e não haja `{` no final da linha, o interpretador só irá
 terminar a declaração do bloco quando achar um outro bloco ou _statement_.
 
 {% highlight javascript %}
@@ -174,7 +178,7 @@ if (foo) {
 
 ### 4º caso
 
-Este caso é a raiz de todo o mal. Reparem no exemplo abaixo:
+Este caso é a raiz de todo o mal. Vejam no exemplo abaixo:
 
 {% highlight javascript %}
 foo()
@@ -184,9 +188,9 @@ foo()
 foo()[1, 2, 3].forEach(bar)
 {% endhighlight %}
 
-O perigo aqui está onde as próximas linhas começam com `[` ou `(`, já que o
-interpretador pode juntar as duas linhas e fazer com que elas façam parte de um
-único _statement_. Para quem não utiliza ponto-e-vírgula é comum utilizar sempre
+O perigo está onde as próximas linhas começam com `[` ou `(`, já que o
+interpretador pode juntar as duas linhas e fazer com que elas sejam parte de um
+único _statement_. Para quem não utiliza ponto-e-vírgula, é comum utilizar sempre
 um `;` no começo de linhas que precedem um `[` ou `(` e assim se prevenir.
 
 ## Restricted productions
@@ -221,7 +225,7 @@ break;
 
 Com o `throw` acontece o mesmo. Caso tenhamos um `throw` seguido por um `\n`,
 o _statement_ é logo finalizado. O que irá gerar um erro de sintaxe, pois um
-`throw` sempre deve "lançar" alguma coisa (dã).
+`throw` sempre deve "lançar" alguma coisa (duh).
 
 {% highlight javascript %}
 throw
@@ -282,11 +286,11 @@ essas pausas e reavaliação do código.
   </footer>
 </blockquote>
 
-Isso não é verdade, uma vez que os interpretadores modernos
-simplesmente acabam um _statement_ quando o ASI entra em ação, sem precisar
-"inserir um ponto-e-vírgula". O _benchmark_ de velocidade de um código com `;`
-e do mesmo código sem `;` pode ser visto [aqui](http://jsperf.com/asi-versus-msi)
-(nos meus testes, o código sem `;` se saiu mais rápido).
+Isso não é verdade, uma vez que os interpretadores modernos simplesmente acabam
+um _statement_ quando o ASI entra em ação, sem precisar "inserir um
+ponto-e-vírgula". O _benchmark_ de velocidade de um código com `;` e do mesmo
+código sem `;` pode ser visto [aqui](http://jsperf.com/asi-versus-msi) (nos meus
+testes, o código sem `;` foi mais rápido).
 
 ### ASI pode te surpreender
 
@@ -326,8 +330,8 @@ function foo() {
 }
 {% endhighlight %}
 
-Mas reparem que aqui o problema não está na falta de ponto-e-vírgula, mas sim
-no excesso de `\n`. Mesmo pondo `;`, iremos obter o mesmo resultado.
+Mas vejam que, nesse caso, o problema não está na falta de ponto-e-vírgula, mas,
+sim, no excesso de `\n`. Mesmo pondo `;`, iremos obter o mesmo resultado.
 
 
 ## Afinal, é seguro?
@@ -343,7 +347,7 @@ Assim você estará seguro e seu código continua _hipster_.
     Yes, it's all FUD.  In my own code, I don't use semicolons except in a few
     specific instances, and then as a prefix or separator.  They're actually not
     terminators in the JavaScript language, and I think it's silly to treat them
-    as such.  In fact, I'd go so far as to say that my style is *less* error-
+    as such. In fact, I'd go so far as to say that my style is *less* error-
     prone, because forgotten semicolons are so much more immediately apparent
     (since they come at the start of the lines where they are relevant.)
   </p>
@@ -353,15 +357,15 @@ Assim você estará seguro e seu código continua _hipster_.
 </blockquote>
 
 Provavelmente, entre os que não utilizam `;` (como eu), o estilo de código
-do Isaacs Schlueter seja o mais popular. Caso você sempre sonhou em nunca mais
-usar `;` e agora achou uma razão para tal, vale a pena dar uma lida no
+do Isaacs Schlueter seja o mais popular. Caso você sonhe em nunca mais usar `;`
+e agora achou uma razão para tal, vale a pena dar uma lida no
 [_coding style_](https://npmjs.org/doc/coding-style.html#Semicolons) do npm.
 
 
 ## Bom senso. Sempre
 
 Apesar de seguro programarmos em JS sem `;`, devemos ter bom senso. Muitas
-pessoas não se sentem confortáveis programando dessa forma, e a sua escolha de
+pessoas não se sentem confortáveis programando dessa forma, e sua escolha de
 não usar `;` em seu projeto _open source_ pode ter um impacto em como seus
 contribuidores se sentirão.
 
@@ -378,7 +382,7 @@ contribuidores se sentirão.
     A questão é, eu não ponho ponto-e-vírgula no código do npm, mas eu os ponho
     no código do node.js. Porque Ryan Dahl usa calças, e o node.js é a sua casa.
 
-    Em sua própria casa, você decide os estilos e costumes. Mas tenha cuidado
+    Em sua própria casa, você decide os estilos e costumes. Mas tenha cuidado,
     pois isso pode ter um efeito em quem irá se sentir confortável em suas
     festas.
   </p>
@@ -387,9 +391,8 @@ contribuidores se sentirão.
   </footer>
 </blockquote>
 
-Na sua casa, você define os costumes. Na casa alheia, você respeita.
-Usar ou não `;` é apenas uma decisão __estética__. Ambos os modos são seguros.
-É puro <a href="http://www.unixguide.net/freebsd/faq/16.19.shtml" title="bikeshedding">
-<em>bikeshedding</em></a>.
+Na sua casa, você define os costumes. Na casa alheia, você os respeita.
+Usar ou não `;` é apenas uma decisão __estética__. Ambos modos são seguros.
+É puro [bikeshedding](http://www.unixguide.net/freebsd/faq/16.19.shtml).
 
 Até mais;
