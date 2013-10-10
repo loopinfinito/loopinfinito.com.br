@@ -1,5 +1,5 @@
 ---
-title: Ponto, vírgula e bikeshedding
+title: Mamilos, <span>pontos</span> e <span>vírgulas</span> em JavaScript
 layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
