@@ -8,7 +8,9 @@ image: images/posts/2013-10-22-ponto-e-virgula-js.jpg
 tags: javascript
 comments: false
 keywords: >
-  javascript, ponto e vírgula, semicolons
+  javascript, ponto e vírgula, semicolons, ASI, Automatic Semicolon Insertion,
+  Crockford, "@fat", "@izs", JSMin, GitHub, Bootstrap, npm, Nodejs, Node,
+  Restricted Productions, bom senso
 resumo: >
   Provavelmente um dos assuntos mais polêmicos na comunidade
   <abbr title="JavaScript">JS</abbr> seja a omissão do `;`. Esse simples
@@ -69,19 +71,21 @@ assim como em outras linguagens sintaticamente similares a C. Nele (JavaScript),
 o `;` tem uma função similar ao `\n` (quebrar linha) em linguagens que são
 _white-space significant_, como Ruby e Python.
 
-Porém, em JavaScript, temos o ASI — querido por uns, odiado por outros. Ele é
-o responsável por inserir automaticamente `;` em determinadas situações. E é
-aqui que mora o terror. Alguns programadores, como o [@fat](http://twitter.com/fat)
-— co-criador do [Bootstrap](http://getbootstrap.com/) — e o [@izs](http://twitter.com/izs)
-— _maintainer_ do [Node.js](http://nodejs.org/) e criador do [npm](https://npmjs.org/)
-— preferem por não usar (ou evitar ao máximo) `;`. Já outros dizem que este não
-é um caminho seguro.
+Porém, em JavaScript, temos o
+<abbr title="Automatic Semicolon Insertion">ASI</abbr> — querido por uns, odiado
+por outros. Ele é o responsável por inserir automaticamente `;` em determinadas
+situações. E é aqui que mora o terror. Alguns programadores, como o
+[@fat](http://twitter.com/fat) — co-criador do
+[Bootstrap](http://getbootstrap.com/) — e o [@izs](http://twitter.com/izs)
+— _maintainer_ do [Node.js](http://nodejs.org/) e criador do
+[npm](https://npmjs.org/) — preferem por não usar (ou evitar ao máximo) `;`.
+Já outros dizem que este não é um caminho seguro.
 
 ## A grande polêmica
 
 [Uma das mais polêmicas discussões no GitHub](https://github.com/twitter/bootstrap/issues/3057)
-se deu acerca da omissão do `;` no código do Bootstrap. Como o código do Bootstrap
-não utiliza `;`, era gerado um erro quando era minificado pelo
+se deu acerca da omissão do `;` no código do Bootstrap. Como o código do
+Bootstrap não utiliza `;`, era gerado um erro quando era minificado pelo
 [JSMin](http://www.crockford.com/javascript/jsmin.html),
 escrito por [Crockford](http://www.crockford.com/). @fat disse que o problema
 não estava no código e que, na verdade, isto era um _bug_ do JSMin.
@@ -89,7 +93,7 @@ não estava no código e que, na verdade, isto era um _bug_ do JSMin.
 código é estupido e que não iria “emburrecer” o JSMin para que gerasse um código
 válido para este caso.
 
-![Crockford and Fat discutindo sobre o uso de ponto e vírgula em uma issue do Bootstrap](/images/posts/2013-10-22-github-issue-fat-vc-crockford-1.jpg)
+![Crockford e Fat discutindo sobre o uso de ponto e vírgula em uma issue do Bootstrap](/images/posts/2013-10-22-github-issue-fat-vc-crockford-1.jpg)
 
 Essa homérica discussão se alongou durante meses, tendo quase 300 _replies_ até
 o momento (dentre eles, vários _memes_). Mas, afinal, quem é o vilão dessa
@@ -112,16 +116,17 @@ funcionar como delimitador de _statement_, exceto nos seguintes casos:
 2. A linha inteira é um `--` ou `++` (neste caso, irá incrementar/decrementar o
   próximo _token_)
 3. É um `for()`, `while()`, `do`, `if()` ou `else` e não existe `{`
-4. A próxima linha começa com `[`, `(`, `+`, `-`, `*`, `/`, `,`, `.`, ou qualquer
-  outro operador binário que só pode ser encontrado entre dois _tokens_ em uma
-  única expressão.
+4. A próxima linha começa com `[`, `(`, `+`, `-`, `*`, `/`, `,`, `.`, ou
+  qualquer outro operador binário que só pode ser encontrado entre dois _tokens_
+  em uma única expressão.
 
 Vamo analisar caso a caso.
 
 ### 1º caso
 
 Este caso é bastante óbvio. Caso a linha acabe sem fechar parêntesis ou chaves
-ou caso acabe de uma forma que não faça sentindo, o ASI não irá inserir
+ou caso acabe de uma forma que não faça sentindo, o
+<abbr title="Automatic Semicolon Insertion">ASI</abbr> não irá inserir
 automaticamente um `;`.
 
 {% highlight javascript %}
@@ -156,8 +161,9 @@ i;
 {% endhighlight %}
 
 Percebam que se um incrementador/decrementador ocupa toda uma linha (o que não
-faz o menor sentido), ele não irá modificar a variável anterior, e sim a posterior.
-Funcionando, na prática, como um incrementador pré-fixo, e não pós-fixo.
+faz o menor sentido), ele não irá modificar a variável anterior, e sim a
+posterior. Funcionando, na prática, como um incrementador pré-fixo, e não
+pós-fixo.
 
 ### 3º caso
 
@@ -190,15 +196,16 @@ foo()[1, 2, 3].forEach(bar)
 
 O perigo está onde as próximas linhas começam com `[` ou `(`, já que o
 interpretador pode juntar as duas linhas e fazer com que elas sejam parte de um
-único _statement_. Para quem não utiliza ponto-e-vírgula, é comum utilizar sempre
-um `;` no começo de linhas que precedem um `[` ou `(` e assim se prevenir.
+único _statement_. Para quem não utiliza ponto-e-vírgula, é comum utilizar
+sempre um `;` no começo de linhas que precedem um `[` ou `(` e assim se
+prevenir.
 
 ## Restricted productions
 
 Existe mais uma regra sobre ASI na linguagem que cobre casos especiais. Esses
-são chamados de <strong><em>restricted productions</em></strong>. Esta regra fala que,
-caso exista um `\n` logo após um `return`, `throw`, `break` ou `continue`,
-o _statement_ sempre será finalizado, sem exceções.
+são chamados de <strong><em>restricted productions</em></strong>. Esta regra
+fala que, caso exista um `\n` logo após um `return`, `throw`, `break` ou
+`continue`, o _statement_ sempre será finalizado, sem exceções.
 
 Embora não muito comum em JavaScript, o `continue` e `break` podem vir
 acompanhados de um _label_, que indica para onde devemos "pular". Caso você
@@ -263,8 +270,9 @@ dos que defendem o uso de `;`.
 
 ## Mythbuster
 
-Agora que já conhecemos o ASI e suas regras, vamos quebrar alguns mitos em
-relação a omissão de `;` no código JavaScript.
+Agora que já conhecemos o <abbr title="Automatic Semicolon Insertion">ASI</abbr>
+e suas regras, vamos quebrar alguns mitos em relação a omissão de `;` no código
+JavaScript.
 
 ### Código com `;` é mais rápido
 
@@ -295,15 +303,16 @@ testes, o código sem `;` foi mais rápido).
 ### ASI pode te surpreender
 
 O ASI é um algoritmo determinístico, ou seja, para o mesmo _input_, o algoritmo
-sempre gerará o mesmo _output_. Então, se o ASI ainda o surpreende, melhor
-estudar como ele funciona.
+sempre gerará o mesmo _output_. Então, se o
+<abbr title="Automatic Semicolon Insertion">ASI</abbr> ainda o surpreende,
+melhor estudar como ele funciona.
 
 <q class="pushing-quotes">
   I have <strong>learned</strong> to use them, that's why there isn't one
   present. — @fat
 </q>
 
-Pelas palavras do @izs, o ASI não é um algoritmo bem arquitetado, mas também não
+Parafraseando o @izs: o ASI não é um algoritmo bem arquitetado, mas também não
 é um algoritmo difícil de entender.
 
 ### _Strict mode_ irá reclamar da falta de `;`
@@ -336,11 +345,13 @@ sim, no excesso de `\n`. Mesmo pondo `;`, iremos obter o mesmo resultado.
 
 ## Afinal, é seguro?
 
-Sim, é seguro, uma vez que você entende como funciona o ASI. Mas se, mesmo depois
-de todo esse papo sobre a importância de aprender e dominar como funciona o ASI,
-você está com preguiça de usar `;` e quer fazer parte da "vanguarda" do
-JavaScript, siga a regra de ouro: __Sempre utilize `;` antes de `(` ou `[`__.
-Assim você estará seguro e seu código continua _hipster_.
+Sim, é seguro, uma vez que você entende como funciona o
+<abbr title="Automatic Semicolon Insertion">ASI</abbr>. Mas se, mesmo depois
+de todo esse papo sobre a importância de aprender e dominar como funciona o
+<abbr title="Automatic Semicolon Insertion">ASI</abbr>, você está com preguiça
+de usar `;` e quer fazer parte da "vanguarda" do JavaScript, siga a regra de
+ouro: __Sempre utilize `;` antes de `(` ou `[`__. Assim você estará seguro e seu
+código continua _hipster_.
 
 <blockquote>
   <p>
@@ -394,5 +405,7 @@ contribuidores se sentirão.
 Na sua casa, você define os costumes. Na casa alheia, você os respeita.
 Usar ou não `;` é apenas uma decisão __estética__. Ambos modos são seguros.
 É puro [bikeshedding](http://www.unixguide.net/freebsd/faq/16.19.shtml).
+E o resultado final será o mesmo, uma vez que o código que irá para produção
+será a versão minificada.
 
 Até mais;
