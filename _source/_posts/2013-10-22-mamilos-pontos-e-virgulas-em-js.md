@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-10-22-ponto-e-virgula-js.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
   javascript, ponto e vírgula, semicolons, ASI, Automatic Semicolon Insertion,
   Crockford, "@fat", "@izs", JSMin, GitHub, Bootstrap, npm, Nodejs, Node,
