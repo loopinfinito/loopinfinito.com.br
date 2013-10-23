@@ -120,7 +120,7 @@ funcionar como delimitador de _statement_, exceto nos seguintes casos:
   qualquer outro operador binário que só pode ser encontrado entre dois _tokens_
   em uma única expressão.
 
-Vamo analisar caso a caso.
+Vamos analisar caso a caso.
 
 ### 1º caso
 
@@ -167,10 +167,12 @@ pós-fixo.
 
 ### 3º caso
 
-Este também é um caso de uso da ASI bem comum até entre os que costumam nunca
-omitir `;`. Caso a linha acabe com a definição de um bloco `if`, `else`, `for`,
-`while` ou `do` e não haja `{` no final da linha, o interpretador só irá
-terminar a declaração do bloco quando achar um outro bloco ou _statement_.
+Este também é um caso de uso da
+<abbr title="Automatic Semicolon Insertion">ASI</abbr> bem comum até entre os
+que costumam nunca omitir `;`. Caso a linha acabe com a definição de um bloco
+`if`, `else`, `for`, `while` ou `do` e não haja `{` no final da linha, o
+interpretador só irá terminar a declaração do bloco quando achar um outro bloco
+ou _statement_.
 
 {% highlight javascript %}
 if (foo)
@@ -202,10 +204,12 @@ prevenir.
 
 ## Restricted productions
 
-Existe mais uma regra sobre ASI na linguagem que cobre casos especiais. Esses
-são chamados de <strong><em>restricted productions</em></strong>. Esta regra
-fala que, caso exista um `\n` logo após um `return`, `throw`, `break` ou
-`continue`, o _statement_ sempre será finalizado, sem exceções.
+Existe mais uma regra sobre
+<abbr title="Automatic Semicolon Insertion">ASI</abbr> na linguagem que cobre
+casos especiais. Esses são chamados de
+<strong><em>restricted productions</em></strong>. Esta regra fala que, caso
+exista um `\n` logo após um `return`, `throw`, `break` ou `continue`, o
+_statement_ sempre será finalizado, sem exceções.
 
 Embora não muito comum em JavaScript, o `continue` e `break` podem vir
 acompanhados de um _label_, que indica para onde devemos "pular". Caso você
@@ -217,7 +221,7 @@ continue
   foo
 
 // é o mesmo que
-continue
+continue;
   foo;
 
 // ----------
@@ -232,7 +236,7 @@ break;
 
 Com o `throw` acontece o mesmo. Caso tenhamos um `throw` seguido por um `\n`,
 o _statement_ é logo finalizado. O que irá gerar um erro de sintaxe, pois um
-`throw` sempre deve "lançar" alguma coisa (duh).
+`throw` sempre deve "lançar" alguma coisa (dã).
 
 {% highlight javascript %}
 throw
@@ -246,7 +250,7 @@ throw;
 
 Na prática, essa regra costuma causar mais confusão com `return`, pois pode
 acarretar em alguns _bugs_ não muito óbvios ao programador que desconhece a
-malícia do ASI.
+malícia do <abbr title="Automatic Semicolon Insertion">ASI</abbr>.
 
 {% highlight javascript %}
 function foo() {
