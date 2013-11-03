@@ -29,7 +29,7 @@ module.exports = (grunt) ->
 		watch:
 			jekyll:
 				files: ['_source/**/*', '!_source/styles/*.less']
-				tasks: ['jekyll:build']
+				tasks: ['build']
 			less:
 				files: ['_source/styles/*.less']
 				tasks: ['less']
@@ -42,6 +42,6 @@ module.exports = (grunt) ->
 
 	grunt.registerTask('default', ['concurrent:dev'])
 	grunt.registerTask('run', ['concurrent:dev'])
-	grunt.registerTask('build', ['jekyll:build', 'fix_permissions'])
-	grunt.registerTask('deploy', ['jekyll:build', 'fix_permissions', 'minify', 'rsync'])
-	grunt.registerTask('deploy:staging', ['jekyll:build', 'fix_permissions', 'minify', 'rsync:staging'])
+	grunt.registerTask('build', ['jekyll:build', 'less', 'fix_permissions'])
+	grunt.registerTask('deploy', ['jekyll:build', 'less', 'fix_permissions', 'minify', 'rsync'])
+	grunt.registerTask('deploy:staging', ['jekyll:build', 'less', 'fix_permissions', 'minify', 'rsync:staging'])
