@@ -24,7 +24,6 @@ module.exports = (grunt) ->
 			default:
 				options:
 					paths: ['_source/styles/']
-					cleancss: true
 				files:
 					'site/styles/blog.css': '_source/styles/blog.less'
 		watch:
