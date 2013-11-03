@@ -1,0 +1,10 @@
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">CSS</span><span class="p">.</span><span class="nx">supports</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;flex&#39;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="c1">// temos suporte ao flexbox</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// aqui não temos suporte ao flexbox</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">CSS</span><span class="p">.</span><span class="nx">supports</span><span class="p">(</span><span class="s1">&#39;(display: flexbox) and (not (display: inline-grid))&#39;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="c1">// temos suporte ao flexbox, mas não ao inline-grid</span>
+<span class="p">}</span>
+</pre></div>
