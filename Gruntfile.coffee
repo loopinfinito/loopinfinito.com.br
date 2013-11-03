@@ -3,6 +3,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-jekyll'
 	grunt.loadNpmTasks 'grunt-concurrent'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
+	grunt.loadNpmTasks 'grunt-contrib-connect'
 
 	grunt.initConfig(
 		jekyll:
@@ -10,18 +11,20 @@ module.exports = (grunt) ->
 				src: '_source'
 				dest: 'site'
 				future: true
+		connect:
 			server:
-				src: '_source'
-				dest: 'site'
-				future: true
-				server: true
+				options:
+					port: 4000
+					keepalive: true
+					base: 'site'
+					hostname: '*'
 		watch:
 			jekyll:
 				files: ['_source/**/*']
 				tasks: ['jekyll:build']
 		concurrent:
 			dev:
-				tasks: ['jekyll:server', 'watch:jekyll']
+				tasks: ['connect', 'watch:jekyll']
 				options:
 					logConcurrentOutput: true
 	)
