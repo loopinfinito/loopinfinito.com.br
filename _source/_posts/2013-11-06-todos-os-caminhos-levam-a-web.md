@@ -1,20 +1,19 @@
 ---
-title: Todos os caminhos levam à web
+title: Todos os caminhos levam à <span>web</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-image: images/posts/2013-11-05-porque-a-web-br-e-a-maior-conferencia-web-do-brasil.jpg
-tags:
+image: images/posts/2013-11-06-todos-os-caminhos-levam-a-web.jpg
+tags: evento
 comments: false
 keywords: >
   lorem
 resumo: >
-  lorem ipsum
-related:
-  - title: CSS Exclusions Module Level 1
-    url: http://www.w3.org/TR/css3-exclusions/
-    from: W3C
+  A [__Web.br__](http://conferenciaweb.w3c.br/) é uma conferência focada em
+  toda a Plataforma _Web_, que promete reunir expoentes da comunidade _web_
+  brasileira em um só local, e nos trará palestras sobre os mais variados
+  assuntos que envolvem nosso dia-a-dia em contato com o mundo _web_.
 ---
 
 Que ano maravinhoso em termos de eventos _front-end_ está se saindo esse 2013,
@@ -24,28 +23,32 @@ _keynotes_, me preparando para palestrar, me deslocando pro aeroporto
 (acreditem, onde eu moro isso tem muito peso), vivendo em aeroportos, dormindo
 durante os vôos, pegando conexões, participando dos eventos, assistindo às
 palestras dos colegas, conversando com a galera, conhecendo novas pessoas, indo
-aos _happy hours_ pós evento e tudo mais, ainda digo que espero que 2014 seja no
-mínimo tão bom.
+aos _happy hours_ pós evento e tudo mais, tem sido muito gratificante.
+
+![Palestrantes da Web.br 2013 (1)](/images/posts/2013-11-06-webbr-palestrantes1.jpg)
 
 Este ano com certeza está sendo explêndido para a comunidade _web_ brasileira,
 as pessoas estão mais conectadas e tudo anda funcionando de maneira cada vez
-mais organizada. Pra muita gente o ano já "acabou", mes espera, ainda
+mais organizada — graças (em parte) aos eventos regionais. E digo mais, ainda
 __tem coisa boa vindo por ai!__
 
-## Web.br é a maior conferência web do Brasil
+## Porque a Web.br é a maior conferência web do Brasil
 
 No Brasil temos
 [a maior conferência de JavaScript do universo](http://braziljs.com.br "BrazilJS Conf"),
 que é um evento que passou __obrigatoriamente__ a fazer parte da minha agenda (e
 da de muita gente) de eventos anuais. Entretanto, como o próprio nome indica, é
 um evento focado em JavaScript — claro que, acompanhando o JS, temos também
-várias palestras sobre as tecnologias _web_ adjascentes — mas repito, este não é
-o foco da conferência.
+algumas palestras sobre as tecnologias _web_ adjascentes — mas repito, este não
+é o foco da conferência.
 
 Já a [__Web.br__](http://conferenciaweb.w3c.br/) é uma conferência focada em
-toda a Plataforma _Web_, que promete reunir expoentes da comunidade _web_
-brasileira em um só local, e nos trará palestras sobre os mais variados assuntos
-que envolvem nosso dia-a-dia em contato com o mundo da _web_.
+toda a Plataforma _Web_, que promete reunir
+[expoentes da comunidade _web_ brasileira](http://conferenciaweb.w3c.br/#palestrantes)
+em um só local, e nos trará palestras sobre os mais variados assuntos que
+envolvem nosso dia-a-dia em contato com o mundo _web_.
+
+![Palestrantes da Web.br 2013 (2)](/images/posts/2013-11-06-webbr-palestrantes2.jpg)
 
 Sendo organizada por nada mais nada menos que a [W3C Brasil](http://www.w3c.br),
 a Web.br pode sim ser considerada como a maior conferência _web_ do Brasil.
@@ -59,16 +62,31 @@ processos de desenvolvimento, jogos, novas APIs, _Web Sockets_, _Web Components_
 acessibilidade, mercado, _e-commerce_, semântica, git, internacionalização,
 PhoneGap, privacidade, _networking_, diversão e muito mais.
 
+![Palestrantes da Web.br 2013 (3)](/images/posts/2013-11-06-webbr-palestrantes3.jpg)
+
+Serão __2 dias__ e __4 trilhas__ simultâneas recheadas de novidades.
 Esta será minha primeira participação no evento, e tenho certeza de que ela
 também ocupará um lugar obrigatório na minha agenda de eventos anuais (só de
 olhar o [lindo site](http://conferenciaweb.w3c.br/) que eles fizeram dá pra ter
 uma noção de como vai ser épico).
 
-## promocao
+## Estamos sorteando 2 entradas!
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Quer ganhar uma entrada para o Web.br 2013 da W3C? Estamos sorteando 2
+cortesias! Há duas formas de participar:
+
+### Pelo Twitter
+
+Para concorrer pelo Twitter, basta _retweetar_ (RT)
+[__este tweet__](#) e estar seguindo o
+[@loopinfinito](http://twitter.com/loopinfinito).
+
+### Pelo Facebook
+
+Para concorrer pelo Facebook, basta compartilhar
+[__este post__](#) e dar _like_ na
+[nossa página](http://fb.com/l8pinfinito).
+
+Realizaremos o sorteio amanhã (07/11) ao meio dia (horário de Brasília) e
+divulgaremos os vencedores no Twitter e Facebook. Aos que não ganharem, não
+deixem de ir mesmo assim! Nos vemos lá!
