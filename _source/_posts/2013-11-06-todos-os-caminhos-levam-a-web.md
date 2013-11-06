@@ -75,7 +75,7 @@ Esta será minha primeira participação no evento, e tenho certeza de que ela
 também ocupará um lugar obrigatório na minha agenda de eventos anuais (só de
 olhar o [lindo site](http://conferenciaweb.w3c.br/) que eles fizeram dá pra ter
 uma noção de como vai ser épico).
-{% comment %}
+
 ## Estamos sorteando 2 entradas!
 
 Quer ganhar uma entrada para o Web.br 2013 da W3C? Estamos sorteando 2
@@ -84,16 +84,15 @@ cortesias! Há duas formas de participar:
 ### Pelo Twitter
 
 Para concorrer pelo Twitter, basta _retweetar_ (RT)
-[__este tweet__](#) e estar seguindo o
-[@loopinfinito](http://twitter.com/loopinfinito).
+[__este tweet__](https://twitter.com/loopinfinito/status/398060636074409984) e
+estar seguindo o [@loopinfinito](http://twitter.com/loopinfinito).
 
 ### Pelo Facebook
 
 Para concorrer pelo Facebook, basta compartilhar
-[__este post__](#) e dar _like_ na
-[nossa página](http://fb.com/l8pinfinito).
+[__este post__](https://www.facebook.com/l8pinfinito/posts/546951395387226) e
+dar _like_ na [nossa página](http://fb.com/l8pinfinito).
 
 Realizaremos o sorteio amanhã (07/11) ao meio dia (horário de Brasília) e
 divulgaremos os vencedores no Twitter e Facebook. Aos que não ganharem, não
 deixem de ir mesmo assim! Nos vemos lá!
-{% endcomment %}
