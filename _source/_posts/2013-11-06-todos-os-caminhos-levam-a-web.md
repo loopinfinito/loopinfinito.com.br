@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-11-06-todos-os-caminhos-levam-a-web.jpg
 tags: evento
-comments: false
+comments: true
 keywords: >
   web.br, web br, w3c, w3c brasil, conferência, web, front-end, brasil, loop
   infinito, palestras, braziljs, html, css, javascript, jquery, svg,
@@ -75,7 +75,7 @@ Esta será minha primeira participação no evento, e tenho certeza de que ela
 também ocupará um lugar obrigatório na minha agenda de eventos anuais (só de
 olhar o [lindo site](http://conferenciaweb.w3c.br/) que eles fizeram dá pra ter
 uma noção de como vai ser épico).
-
+{% comment %}
 ## Estamos sorteando 2 entradas!
 
 Quer ganhar uma entrada para o Web.br 2013 da W3C? Estamos sorteando 2
@@ -96,3 +96,4 @@ Para concorrer pelo Facebook, basta compartilhar
 Realizaremos o sorteio amanhã (07/11) ao meio dia (horário de Brasília) e
 divulgaremos os vencedores no Twitter e Facebook. Aos que não ganharem, não
 deixem de ir mesmo assim! Nos vemos lá!
+{% endcomment %}
