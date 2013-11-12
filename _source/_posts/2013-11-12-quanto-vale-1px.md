@@ -4,9 +4,9 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-image: images/posts/2013-11-05-pixel.jpg
+image: images/posts/2013-11-12-pixel.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   css, cascading stylesheets, pixel, em, ex, in, pt, pc, px, cm, mm,
   pixel referência, diâmetro angular, unidades absolutas, unidades relativas
@@ -177,7 +177,7 @@ referência. Então, quanto mais longe um dispositivo, maior será seu _pixel_
 referência. Quanto mais perto, menor será.
 
 <figure>
-  <img src="/images/posts/2013-11-05-pixel-referencia.jpg"
+  <img src="/images/posts/2013-11-12-pixel-referencia.jpg"
        alt="Pixel Referência"
        width="700"
        height="300" />
@@ -203,7 +203,7 @@ tem 24,3px de altura (e largura, por ser uma esfera). A torre Eiffel, vista a
 uma distância de 1 milha, tem 550,5px de altura.
 
 <figure>
-  <img src="/images/posts/2013-11-05-torre-eiffel-e-lua-em-pixels.jpg"
+  <img src="/images/posts/2013-11-12-torre-eiffel-e-lua-em-pixels.jpg"
        alt="Torre Eiffel e Lua em pixels"
        width="700"
        height="300" />
