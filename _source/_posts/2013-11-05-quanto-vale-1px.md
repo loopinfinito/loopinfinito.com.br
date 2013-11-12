@@ -8,7 +8,8 @@ image: images/posts/2013-11-05-pixel.jpg
 tags: CSS
 comments: false
 keywords: >
-  lorem, ipsum
+  css, cascading stylesheets, pixel, em, ex, in, pt, pc, px, cm, mm,
+  pixel referência, diâmetro angular, unidades absolutas, unidades relativas
 resumo: >
   Em CSS, as unidades de medidas absolutas — como `in` (polegadas), `cm`
   (centímetros), `mm` (milímetros), `pt` (pontos), `pc` (picas (epa)) e `px`
