@@ -1,10 +1,10 @@
 ---
-title: Media queries matadoras nível 4
+title: <span>@media</span> queries {<span class="light">nível:</span> 4}
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-image: images/posts/2013-11-26-media-queries-matadoras-nivel-4.jpg
+image: images/posts/2013-11-26-media-queries-nivel-4.jpg
 tags:
 comments: false
 keywords: >
