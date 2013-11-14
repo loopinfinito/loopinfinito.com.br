@@ -71,7 +71,7 @@ O _debounce_, assim como o _throttle_, limita a quantidade de vezes que um
 determinado trecho de código é executado em relação ao tempo. Mas diferentemente
 do _throttle_ — que assegura que aconteçam no máximo 1 execução a cada X
 milisegundos —, o _debounce_ irá __postergar a execução__ do código caso ele
-seja invocado novemente em menos de X segundos.
+seja invocado novamente em menos de X segundos.
 
 Esta técnica é bastante útil para decidirmos, por exemplo, quando devemos chamar
 uma função <abbr title="Assynchronous JavaScript and XML">AJAX</abbr> de um
