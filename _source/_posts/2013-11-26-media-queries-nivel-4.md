@@ -5,12 +5,20 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-11-26-media-queries-nivel-4.jpg
-tags:
+tags: CSS
 comments: false
 keywords: >
-  css
+  css, media queries, media query, 4, nivel 4, level 4, media, @media, script,
+  pointer, hover, luminosity, luminosidade, iluminação, lux, acessibilide,
+  mobile, feature, javascript, web, mouse, trackpad, air view, touch, dropdown,
+  menu, contraste, suporte, firefox
 resumo: >
-  lorem
+  A nova especificação
+  [_media queries_ nível 4](http://dev.w3.org/csswg/mediaqueries4/)
+  introduz __4 novas e interessantes__&nbsp;_features_ de mídia, além das
+  13 já existentes: `script`, `pointer`, `hover` e `luminosity`. Veremos que
+  estas novas _features_ de mídia vêm para beneficiar primordialmente questões
+  sobre acessibilide e _mobile_.
 related:
   - title: Media Queries Level 4 (draft)
     url: http://dev.w3.org/csswg/mediaqueries4/
@@ -22,14 +30,14 @@ related:
     url: http://www.jordanm.co.uk/post/65776639602/responding-to-environmental-lighting-with-css-media
 ---
 
-A nova especificação de
+A nova especificação
 [_media queries_ nível 4](http://dev.w3.org/csswg/mediaqueries4/)
 introduz __4 novas e interessantes__&nbsp;_features_ de mídia, além das
 [13 já existentes](http://www.w3.org/TR/css3-mediaqueries/).
 
-São elas: `script`, `pointer`, `hover` e `luminosity`.
-Eu diria que estas novas _features_ vêm para beneficiar primordialmente questões
-sobre acessibilide e _mobile_. Veremos porque.
+São elas: `script`, `pointer`, `hover` e `luminosity`. Eu diria que estas novas
+_features_ de mídia vêm para beneficiar primordialmente questões sobre
+acessibilide e _mobile_. Veremos porque.
 
 ## @media script
 
@@ -242,7 +250,7 @@ de cada um.
     </thead>
     <tbody>
         <tr>
-            <td class="property"><code>script</code></td>
+            <td class="property"><code>@media script</code></td>
             <td>--</td>
             <td>--</td>
             <td>--</td>
@@ -250,7 +258,7 @@ de cada um.
             <td>--</td>
         </tr>
         <tr>
-            <td class="property"><code>pointer</code></td>
+            <td class="property"><code>@media pointer</code></td>
             <td>--</td>
             <td>--</td>
             <td>--</td>
@@ -258,7 +266,7 @@ de cada um.
             <td>--</td>
         </tr>
         <tr>
-            <td class="property"><code>hover</code></td>
+            <td class="property"><code>@media hover</code></td>
             <td>--</td>
             <td>--</td>
             <td>--</td>
@@ -266,7 +274,7 @@ de cada um.
             <td>--</td>
         </tr>
         <tr>
-            <td class="property"><code>luminosity</code></td>
+            <td class="property"><code>@media luminosity</code></td>
             <td>--</td>
             <td>--</td>
             <td>--</td>
