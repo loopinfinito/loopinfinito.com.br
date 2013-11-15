@@ -3,6 +3,7 @@
 site/*
 site/**/*
 .cake_task_cache
+node_modules/*
 
 # Packages #
 ############

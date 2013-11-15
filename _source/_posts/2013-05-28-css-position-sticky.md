@@ -180,8 +180,8 @@ definido. <strong>Hein?</strong>
       <tr>
         <td class="property">position:sticky;</td>
         <td>23 *</td>
-        <td>--</td>
-        <td>--</td>
+        <td>6.1</td>
+        <td>Nightly</td>
         <td>--</td>
         <td>--</td>
       </tr>
@@ -198,10 +198,16 @@ definido. <strong>Hein?</strong>
   <p>
     Mas nós sempre podemos encher o saco dos programadores dos nossos queridos
     navegadores
-    <a href="https://bugzilla.mozilla.org/page.cgi?id=productdashboard.html&amp;tab=&amp;product=Firefox&amp;bug_status=open">abrindo</a>
-    <a href="http://www.chromium.org/blink"><em>issues</em></a> em seus
-    <a href="http://www.webkit.org/quality/reporting.html">projetos</a>.
+    <a href="https://bugzilla.mozilla.org/page.cgi?id=productdashboard.html&amp;tab=&amp;product=Firefox&amp;bug_status=open">abrindo</a>&nbsp;<a href="http://www.chromium.org/blink"><em>issues</em></a>
+    em seus <a href="http://www.webkit.org/quality/reporting.html">projetos</a>.
     Apenas naqueles que forem <em>open source</em>, claro.
   </p>
 </div>
 
+<h2 id="atualizacoes">Atualizações</h2>
+<div class="update">
+  <h3>15/10/2013</h3>
+  <p>
+    Safari 6.1 e Firefox Nightly já apresentam suporte.
+  </p>
+</div>
