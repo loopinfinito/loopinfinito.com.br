@@ -9,7 +9,7 @@ tags: CSS
 comments: false
 keywords: >
   css, media queries, media query, 4, nivel 4, level 4, media, @media, script,
-  pointer, hover, luminosity, luminosidade, iluminação, lux, acessibilide,
+  pointer, hover, luminosity, luminosidade, iluminação, lux, acessibilidade,
   mobile, feature, javascript, web, mouse, trackpad, air view, touch, dropdown,
   menu, contraste, suporte, firefox
 resumo: >
@@ -18,7 +18,7 @@ resumo: >
   introduz __4 novas e interessantes__&nbsp;_features_ de mídia, além das
   13 já existentes: `script`, `pointer`, `hover` e `luminosity`. Veremos que
   estas novas _features_ de mídia vêm para beneficiar primordialmente questões
-  sobre acessibilide e _mobile_.
+  sobre acessibilidade e _mobile_.
 related:
   - title: Media Queries Level 4 (draft)
     url: http://dev.w3.org/csswg/mediaqueries4/
@@ -37,7 +37,7 @@ introduz __4 novas e interessantes__&nbsp;_features_ de mídia, além das
 
 São elas: `script`, `pointer`, `hover` e `luminosity`. Eu diria que estas novas
 _features_ de mídia vêm para beneficiar primordialmente questões sobre
-acessibilide e _mobile_. Veremos porque.
+acessibilidade e _mobile_. Veremos porque.
 
 ## @media script
 
@@ -48,7 +48,7 @@ e nem todo agente de usuário é um navegador _web_ na maneira como conhecemos. 
 leitor de _feeds_, por exemplo, geralmente ignora qualquer _script_ que esteja
 numa página de um artigo.
 
-Se quisermos moficicar algum estilo ou comportamento CSS caso o usuário __não__
+Se quisermos modificar algum estilo ou comportamento CSS caso o usuário __não__
 tenha suporte ou JavaScript ativado, como por exemplo, mostrar as opções de um
 menu _dropdown_ que apenas responde ao evento _mouse over_ por JavaScript
 (prática muito comum).
@@ -68,19 +68,20 @@ menu _dropdown_ que apenas responde ao evento _mouse over_ por JavaScript
 {% endhighlight %}
 
 Este caso é interessante pois um usuário poderá nunca ter acesso às opções do
-seu menu. Esta _feature_ com certeza beneficia a acessibilide, e pode ser bem
-útil se for preciso apenas modificar seu CSS, tornando desnessário o uso do
+seu menu. Esta _feature_ com certeza beneficia a acessibilidade, e pode ser bem
+útil se for preciso apenas modificar seu CSS, tornando desnecessário o uso do
 elemento `<noscript>` em seu <abbr title="HyperText Markup Language">HTML</abbr>.
 Agora resolvemos esse problema __puramente com CSS__. _How nice!_
 
 ## @media pointer
 
 Esta _feature_ fornece a presença e a precisão de um dispositivo apontador
-(<em>pointer device</em>). Por dispositivo apontador entende-se um meio de
-indicar pontos no sistema de  coordenadas da tela. São disposivitos apontadores:
-_mouse_, _trackpad_, telas sensíveis ao toque, telas sensíveis a _Pen Stylus_
-(como por exemplo, o [Palm](http://en.wikipedia.org/wiki/Palm_PDA)). Três
-valores são possíveis para `pointer`:
+(<em>pointer device</em>). Por dispositivo apontador entende-se um dispositivo
+que fornece um meio ou capacidade de indicar pontos no sistema de coordenadas da
+tela. São disposivitos apontadores: _mouse_, _trackpad_, telas sensíveis ao
+toque, telas sensíveis a _Pen Stylus_ (como por exemplo, o
+[Palm](http://en.wikipedia.org/wiki/Palm_PDA)). Três valores são possíveis para
+`pointer`:
 
 - `none`: Não há dispositivo apontador;
 - `coarse`: Há dispositivo apontador de baixa precisão (tela sensível ao toque);
@@ -98,7 +99,7 @@ e tela sensível a _Pen Stylus_).
 }
 {% endhighlight %}
 
-No exemplo acima estamos melhorando a acessibilide principalmente para os
+No exemplo acima estamos melhorando a acessibilidade principalmente para os
 usuários _mobile_, que podem ter dificuldade para marcar _checkboxes_ com
 precisão.
 
@@ -112,7 +113,7 @@ _trackpad_.
 
 Considerando o exemplo anterior do menu _dropdown_ com a
 _feature_&nbsp;`script`, podemos refiná-lo ainda mais com `hover`, pois o menu
-só deverá aprecer aberto se o usuário __não__ for capaz de realizar o evento
+só deverá aparecer aberto se o usuário __não__ for capaz de realizar o evento
 _mouse over_ (ou não ter JavaScript ativado).
 
 {% highlight css %}
