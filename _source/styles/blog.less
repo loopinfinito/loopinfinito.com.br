@@ -627,6 +627,23 @@ header#main {
 				}
 			}
 
+			hr {
+				display: block;
+				border: none;
+
+				&::before {
+					display: block;
+					width: 100px;
+					content: '• • •';
+					margin: auto;
+					text-align: center;
+					font-size: 13px;
+					height: 10px;
+					line-height: 10px;
+					color: #ccc;
+				}
+			}
+
 			div.update {
 				background: #FFFCE5;
 				border: 1px solid #FCF3B8;
