@@ -19,6 +19,15 @@ resumo: >
   toda a Plataforma _Web_, que promete reunir expoentes da comunidade _web_
   brasileira em um só local, e nos trará palestras sobre os mais variados
   assuntos que envolvem nosso dia-a-dia em contato com o mundo _web_.
+related:
+  - title: Fique por dentro do que vai rolar na 5ª edição da Conferência Web W3C Brasil
+    url: http://conferenciaweb.w3c.br/fique-por-dentro-do-que-vai-rolar-na-5a-edicao-da-conferencia-web-w3c-brasil/
+  - title: Destaques da 5ª edição da Conferência Web W3C Brasil
+    url: http://tableless.com.br/destaques-da-5a-edicao-da-conferencia-web-w3c-brasil/
+    from: Tableless
+  - title: "Por dentro da Web.br 2013: Web's Got Talent"
+    url: http://tableless.com.br/por-dentro-da-web-br-2013-webs-got-talent/
+    from: Tableless
 ---
 
 Que ano maravilhoso em termos de eventos _front-end_ está se saindo esse 2013,
@@ -96,3 +105,24 @@ dar _like_ na [nossa página](http://fb.com/l8pinfinito).
 Realizaremos o sorteio amanhã (07/11) ao meio dia (horário de Brasília) e
 divulgaremos os vencedores no Twitter e Facebook. Aos que não ganharem, não
 deixem de ir mesmo assim! Nos vemos lá!
+
+## Atualizações
+
+<div class="update">
+  <h3>08/11/2013 — Vencedores do sorteio</h3>
+  <p>
+    Os vencedores foram
+    <a href="http://twitter.com/victorkurauchi">@victorkurauchi</a> e
+    <a href="http://twitter.com/Dild">@Dild</a>.
+    Parabéns e bom evento! Nos vemos por lá.
+  </p>
+</div>
+
+<div class="update">
+  <h3>22/11/2013 — Reviews sobre o evento</h3>
+  <ul>
+    <li><a href="http://conferenciaweb.w3c.br/1o-dia-da-5a-edicao-da-conferencia-web-w3c-brasil/">1º dia da 5ª Conferência Web W3C Brasil</a></li>
+    <li><a href="http://conferenciaweb.w3c.br/2o-dia-da-5a-edicao-da-conferencia-web-w3c-brasil/">2º dia da 5ª Conferência Web W3C Brasil</a></li>
+    <li><a href="http://tableless.com.br/conferencia-w3c-webbr-2013-primeiro-dia/">Conferência W3C Web.br 2013 – Dia 1</a></li>
+  </ul>
+</div>
