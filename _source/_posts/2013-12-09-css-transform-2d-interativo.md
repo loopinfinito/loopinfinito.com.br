@@ -49,12 +49,12 @@ prática.
 Com o lançamento do primeiro iPhone em 2007, seu rápido ganho em popularidade e
 sua falta de suporte ao Adobe Flash, ficou claro que era necessário uma
 tecnologia _web_ nativa — sem plug-ins de terceiros — para animações mais
-avançadas e de alta performance. Então, em 2007, um engenheiro da Apple enviou
-para a _mailing list_ da <abbr title="World Wide Web Consortium">W3C</abbr> a
-proposta para CSS Transforms. Esta especificação foi primeiramente implementada
-no WebKit, pois era de interesse da Apple, mas foi ganhando popularidade aos
-poucos, por se mostrar uma tecnologia mais performática, livre e
-_cross-browser_.
+avançadas e de alta performance. Então, no mesmo ano de 2007, um engenheiro da
+Apple enviou para a _mailing list_ da
+<abbr title="World Wide Web Consortium">W3C</abbr> a proposta para CSS
+Transforms. Esta especificação foi primeiramente implementada no WebKit, pois
+era de interesse da Apple, mas foi ganhando popularidade aos poucos, por se
+mostrar uma tecnologia mais performática, livre e _cross-browser_.
 
 Hoje o CSS Trasforms já está implementado em todos os grandes navegadores e seu
 uso em produção é bem comum e, inclusive, aconselhado. Ele torna possível
@@ -85,9 +85,18 @@ será equivalente a dimensão do elemento no eixo em que vamos efetuar o
 `translate`. Em outras palavras: se vamos movimentar o elemento no eixo X, 100%
 será igual a sua largura; se a movimentação ocorrer no eixo Y, 100% equivalerá a
 altura do elemento. No experimento abaixo vocês podem ver a função `translate`
-em ação de uma forma mais interativa e menos abstrata.
+em ação de uma forma mais interativa e menos abstrata, basta mover os _handlers_
+dos _inputs_ do Translate X e Translate Y.
 
-<iframe src="http://localhost:3000/#translate" height="432" width="700" class="img" frameborder="0">&nbsp;</iframe>
+<iframe
+  src="http://localhost:3000/#translate"
+  height="432"
+  width="700"
+  class="img"
+  frameborder="0"
+>
+&nbsp;
+</iframe>
 
 Reparem que valores negativos também são aceitos. Valores negativos em X
 movimentam o elemento para a esquerda. Valores negativos em Y movimentam o
@@ -111,7 +120,15 @@ As funções usadas para efetuarmos o _skew_ são `skewX` e `skewY`. Cada uma
 recebe apenas um parâmetro, estes expressos em graus (`deg`). No experimento
 abaixo fica bem mais fácil entender o que acontece quando aplicamos o `skew`.
 
-<iframe src="http://localhost:3000/#skew" height="432" width="700" class="img" frameborder="0">&nbsp;</iframe>
+<iframe
+  src="http://localhost:3000/#skew"
+  height="432"
+  width="700"
+  class="img"
+  frameborder="0"
+>
+&nbsp;
+</iframe>
 
 Também existe uma função `skew`, que, na teoria, funcionaria como um atalho para
 as funções `skewX` e `skewY`. Mas o seu resultado final não é o mesmo que o
@@ -139,7 +156,15 @@ Valores positivos rotacionam o elemento no sentido horário, enquanto que valore
 negativos rotacionam o elemento no sentido anti-horário. O experimento abaixo
 mostra o `rotate` em ação.
 
-<iframe src="http://localhost:3000/#rotate" height="432" width="700" class="img" frameborder="0">&nbsp;</iframe>
+<iframe
+  src="http://localhost:3000/#rotate"
+  height="432"
+  width="700"
+  class="img"
+  frameborder="0"
+>
+&nbsp;
+</iframe>
 
 
 ## Scale
@@ -150,7 +175,7 @@ alteração irá ocorrer tanto na altura como na largura. Caso sejam passados do
 o primeiro argumento irá alterar a largura e o segundo irá alterar a altura.
 
 Os valores passados como parâmetros não possuem unidades. Eles funcionam como
-“multiplicadoes” do tamanho do elemento. Um `transform: scale(2)` irá duplicar
+“multiplicadores” do tamanho do elemento. Um `transform: scale(2)` irá duplicar
 o tamanho do elemento. Um `transform: scale(0.5)` irá reduzí-lo pela metade.
 
 {% highlight css %}
@@ -166,7 +191,15 @@ Além da função `scale`, podemos usar as funções específicas de cada eixo: 
 o eixo X a `scaleX` e para o eixo Y a `scaleY`. Abaixo também podemos interagir
 com esta função e ver na prática como se comporta.
 
-<iframe src="http://localhost:3000/#scale" height="432" width="700" class="img" frameborder="0">&nbsp;</iframe>
+<iframe
+  src="http://localhost:3000/#scale"
+  height="432"
+  width="700"
+  class="img"
+  frameborder="0"
+>
+&nbsp;
+</iframe>
 
 Observem no experimento acima que, ao passarmos valores negativos, nós
 invertemos a imagem. Se passarmos um valor de -1 para `scaleX`, é como se
@@ -192,30 +225,30 @@ Cuidado para não declarar várias regras `transform` no mesmo elemento, pois
 dessa forma a última regra sobreescreve todas as outras declaradas
 
 <table class="support">
-    <thead>
-        <tr>
-            <th class="subject"><h2>Suporte</h2></th>
-            <th class="browser chrome"><div class="i"></div></th>
-            <th class="browser safari"><div class="i"></div></th>
-            <th class="browser firefox"><div class="i"></div></th>
-            <th class="browser ie"><div class="i"></div></th>
-            <th class="browser opera"><div class="i"></div></th>
-        </tr>
-        <tr>
-            <th></th>
-            <th colspan="5" class="base"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="property">transform</td>
-            <td>4 <code class="small">-webkit-</code></td>
-            <td>3.1 <code class="small">-webkit-</code></td>
-            <td>3.5</td>
-            <td>9.0</td>
-            <td>10.5 <code class="small">-webkit-</code></td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th class="subject"><h2>Suporte</h2></th>
+      <th class="browser chrome"><div class="i"></div></th>
+      <th class="browser safari"><div class="i"></div></th>
+      <th class="browser firefox"><div class="i"></div></th>
+      <th class="browser ie"><div class="i"></div></th>
+      <th class="browser opera"><div class="i"></div></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="5" class="base"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="property">transform</td>
+      <td>4 <code class="small">-webkit-</code></td>
+      <td>3.1 <code class="small">-webkit-</code></td>
+      <td>3.5</td>
+      <td>9.0</td>
+      <td>10.5 <code class="small">-webkit-</code></td>
+    </tr>
+  </tbody>
 </table>
 
 Com a exceção do Internet Explorer (alguém surpreso?), o CSS Transform já é
