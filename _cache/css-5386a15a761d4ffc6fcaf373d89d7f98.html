@@ -1,0 +1,23 @@
+<div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#513B2C</span><span class="p">;</span> <span class="c">/* marrom */</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#FBF0D9</span><span class="p">;</span> <span class="c">/* bege */</span>
+<span class="p">}</span>
+
+<span class="c">/* ambiente escuro */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">luminosity</span><span class="o">:</span> <span class="nt">dim</span><span class="o">)</span> <span class="p">{</span>
+    <span class="c">/* diminui o contraste do texto */</span>
+    <span class="nt">body</span> <span class="p">{</span>
+        <span class="k">color</span><span class="o">:</span> <span class="m">#E2E2E2</span><span class="p">;</span> <span class="c">/* cinza claro */</span>
+        <span class="k">background-color</span><span class="o">:</span> <span class="m">#252525</span><span class="p">;</span> <span class="c">/* cinza escuro */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* ambiente muito claro */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">luminosity</span><span class="o">:</span> <span class="nt">washed</span><span class="o">)</span> <span class="p">{</span>
+    <span class="c">/* aumenta o contraste do texto */</span>
+    <span class="nt">body</span> <span class="p">{</span>
+        <span class="k">color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
