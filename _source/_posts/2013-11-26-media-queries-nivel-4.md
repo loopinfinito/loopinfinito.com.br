@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2013-11-26-media-queries-nivel-4.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   css, media queries, media query, 4, nivel 4, level 4, media, @media, script,
   pointer, hover, luminosity, luminosidade, iluminação, lux, acessibilidade,
