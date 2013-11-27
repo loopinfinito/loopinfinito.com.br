@@ -119,10 +119,11 @@ deixem de ir mesmo assim! Nos vemos lá!
 </div>
 
 <div class="update">
-  <h3>22/11/2013 — Reviews sobre o evento</h3>
+  <h3>27/11/2013 — Reviews sobre o evento</h3>
   <ul>
     <li><a href="http://conferenciaweb.w3c.br/1o-dia-da-5a-edicao-da-conferencia-web-w3c-brasil/">1º dia da 5ª Conferência Web W3C Brasil</a></li>
     <li><a href="http://conferenciaweb.w3c.br/2o-dia-da-5a-edicao-da-conferencia-web-w3c-brasil/">2º dia da 5ª Conferência Web W3C Brasil</a></li>
     <li><a href="http://tableless.com.br/conferencia-w3c-webbr-2013-primeiro-dia/">Conferência W3C Web.br 2013 – Dia 1</a></li>
+    <li><a href="http://tableless.com.br/conferencia-w3c-web-br-2013-dia-2/">Conferência W3C Web.br 2013 – Dia 2</a></li>
   </ul>
 </div>
