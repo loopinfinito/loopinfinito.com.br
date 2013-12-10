@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2013-12-10-css-supports.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   css, suporte, supports, progressive enhancement, graceful degradation,
   chrome, firefox, css object model, javascript css api
