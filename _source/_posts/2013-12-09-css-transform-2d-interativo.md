@@ -11,44 +11,39 @@ keywords: >
   css, transform, vicki murley, css transforms an interactive guide, rotate,
   skew, scale, translate, apple
 resumo: >
-  Hoje o CSS Trasforms já está implementado em todos os grandes navegadores e seu
-  uso em produção é bem comum e, inclusive, aconselhado. Ele torna possível
+  Hoje o CSS Trasforms já está implementado em todos os grandes navegadores e
+  seu uso em produção é bem comum e, inclusive, aconselhado. Ele torna possível
   adicionarmos efeitos visuais à _web_ que antes só podiam ser implementados
-  através de _plug-ins_ de terceiros. Também servem de base para animações
-  mais complexas e podem ser aplicados em qualquer elemento HTML. E é sobre eles
-  que vamos estudar e experimentar na prática como funcionam.
+  através de _plug-ins_ de terceiros. Também servem de base para animações mais
+  complexas e podem ser aplicados em qualquer elemento HTML. E é sobre eles que
+  vamos estudar e experimentar na prática como funcionam.
 related:
   - title: "CSS Transforms An Interactive Guide"
     url: http://csstransforms.com/
     from: CSS Transforms An Interactive Guide e-book
-  - title: "@supports"
-    url: https://developer.mozilla.org/en-US/docs/Web/CSS/@supports
-    from: Mozilla Developer Network
   - title: "CSS Transform"
     url: http://css-tricks.com/almanac/properties/t/transform/
     from: CSS Tricks
 ---
 
-Há pouco tempo li o excelente livro
-[CSS Transforms: An Interactive Guide](http://csstransforms.com/) escrito pela
-[Vicki Murley](http://twitter.com/vickimurley), uma Web Evangelista ex-Apple.
-Este foi uma das melhores e mais fáceis leituras que já fiz relacionado a CSS.
-Além de tratar com muito domínio sobre o assunto, o que mais me
-chamou atenção foi o modo em que é demonstrado cada nova função. Tornarndo um
-assunto por vezes muito abstrato, em algo prático e fácil de ser
-entendido.
+Há pouco tempo li o excelente livro [CSS Transforms: An Interactive
+Guide](http://csstransforms.com/) escrito pela
+[Vicki Murley](http://twitter.com/vickimurley), uma evangelista web ex-Apple.
+Esta foi uma das __melhores__ e mais __fáceis__ leituras que já fiz relacionado
+a CSS. Além de tratar com muito domínio sobre o assunto, o que mais me chamou
+atenção foi o modo como é demonstrado cada nova função, tornando um assunto por
+vezes muito abstrato em algo prático e fácil de ser entendido.
 
-Então, fortemente inspirado em seu livro e com sua permissão, vou
-agora tentar explicar CSS Transforms de um modo similar ao modo que Vicki aborda
-em seu livro e, também, da mesma forma que sempre tentamos fazer por aqui: na
-prática.
+Então, fortemente inspirado em seu livro, vou agora tentar explicar CSS
+Transforms de um modo similar ao modo que Vicki aborda em seu livro e, também,
+da mesma forma que sempre tentamos fazer por aqui: __na prática__.
 
 
 ## Breve introdução
 
 Com o lançamento do primeiro iPhone em 2007, seu rápido ganho em popularidade e
-sua falta de suporte ao Adobe Flash, ficou claro que era necessário uma
-tecnologia _web_ nativa — sem plug-ins de terceiros — para animações mais
+sua __falta de suporte ao Adobe Flash__, ficou claro que era necessário uma
+tecnologia _web_ nativa — sem _plug-ins_ de terceiros — para animações mais
 avançadas e de alta performance. Então, no mesmo ano de 2007, um engenheiro da
 Apple enviou para a _mailing list_ da
 <abbr title="World Wide Web Consortium">W3C</abbr> a proposta para CSS
@@ -56,20 +51,20 @@ Transforms. Esta especificação foi primeiramente implementada no WebKit, pois
 era de interesse da Apple, mas foi ganhando popularidade aos poucos, por se
 mostrar uma tecnologia mais performática, livre e _cross-browser_.
 
-Hoje o CSS Trasforms já está implementado em todos os grandes navegadores e seu
+Hoje o CSS Transforms já está implementado em todos os grandes navegadores e seu
 uso em produção é bem comum e, inclusive, aconselhado. Ele torna possível
 adicionarmos efeitos visuais à _web_ que antes só podiam ser implementados
 através de _plug-ins_ de terceiros. Também servem de base para animações
-mais complexas e podem ser aplicados em qualquer elemento HTML. E é sobre eles
+mais complexas e podem ser aplicados em qualquer elemento HTML. E são eles
 que vamos estudar e experimentar na prática como funcionam.
 
 
 ## Translate
 
-A função `translate` é usada para movermos um elemento nos eixos X, Y, ou ambos.
-Caso seja passado apenas um parâmetro para a função, o elemento será movido em
-relação ao eixo X. Já com dois parâmetros, o primeiro será o valor usado para a
-movimentação no eixo X, e o segundo para o eixo Y.
+A função `translate` é usada para __movermos__ um elemento nos eixos X, Y, ou
+ambos. Caso seja passado apenas um parâmetro para a função, o elemento será
+movido em relação ao eixo X. Já com dois parâmetros, o primeiro será o valor
+usado para a movimentação no eixo X, e o segundo para o eixo Y.
 
 {% highlight css %}
 img {
@@ -89,7 +84,7 @@ em ação de uma forma mais interativa e menos abstrata, basta mover os _handler
 dos _inputs_ do Translate X e Translate Y.
 
 <iframe
-  src="http://localhost:3000/#translate"
+  src="http://caiogondim.github.io/css-transform-interactive/#translate"
   height="432"
   width="700"
   class="img"
@@ -100,14 +95,14 @@ dos _inputs_ do Translate X e Translate Y.
 
 Reparem que valores negativos também são aceitos. Valores negativos em X
 movimentam o elemento para a esquerda. Valores negativos em Y movimentam o
-elemento para cima. Um `transform: translate(-10px);` moverá o elemento 10
-_pixels_ para a esquerda. Enquanto um `transform: translate(-5px);` moverá o
+elemento para cima. Um `transform: translateX(-10px);` moverá o elemento 10
+_pixels_ para a esquerda. Enquanto um `transform: translateY(-5px);` moverá o
 elemento 5 _pixels_ para cima.
 
 
 ## Skew
 
-A função `skew` irá “entortar” um elemento em relação a um dos eixos.
+A função `skew` irá __“entortar”__ um elemento em relação a um dos eixos.
 
 {% highlight css %}
 img {
@@ -119,9 +114,11 @@ img {
 As funções usadas para efetuarmos o _skew_ são `skewX` e `skewY`. Cada uma
 recebe apenas um parâmetro, estes expressos em graus (`deg`). No experimento
 abaixo fica bem mais fácil entender o que acontece quando aplicamos o `skew`.
+Assim como no experimento acima, basta mover os _handlers_ da parte esquerda
+inferior para alterar os valores e ver o efeito desta mudança na direita.
 
 <iframe
-  src="http://localhost:3000/#skew"
+  src="http://caiogondim.github.io/css-transform-interactive/#skew"
   height="432"
   width="700"
   class="img"
@@ -140,8 +137,9 @@ de `skew`. O próprio
 
 ## Rotate
 
-A função `rotate`...rotaciona. Simples assim. Ela recebe um único parâmetro que
-pode ser expresso em graus (`deg`), radianos (`rad`) ou voltas (`turn`).
+A função `rotate` ... __rotaciona__. Simples assim. Ela recebe um único
+parâmetro que pode ser expresso em graus (`deg`), radianos (`rad`) ou voltas
+(`turn`).
 
 {% highlight css %}
 img {
@@ -157,7 +155,7 @@ negativos rotacionam o elemento no sentido anti-horário. O experimento abaixo
 mostra o `rotate` em ação.
 
 <iframe
-  src="http://localhost:3000/#rotate"
+  src="http://caiogondim.github.io/css-transform-interactive/#rotate"
   height="432"
   width="700"
   class="img"
@@ -169,19 +167,20 @@ mostra o `rotate` em ação.
 
 ## Scale
 
-Altera o tamanho do elemento em ambos os eixos ou apenas em um eixo específico.
-Esta função aceita um ou dois parâmetros. Caso seja passado apenas um, a
-alteração irá ocorrer tanto na altura como na largura. Caso sejam passados dois,
-o primeiro argumento irá alterar a largura e o segundo irá alterar a altura.
+Altera o __tamanho__ do elemento em ambos os eixos ou apenas em um eixo
+específico. Esta função aceita um ou dois parâmetros. Caso seja passado apenas
+um, a alteração irá ocorrer tanto na altura como na largura. Caso sejam passados
+dois, o primeiro argumento irá alterar a largura e o segundo irá alterar a
+altura.
 
 Os valores passados como parâmetros não possuem unidades. Eles funcionam como
 “multiplicadores” do tamanho do elemento. Um `transform: scale(2)` irá duplicar
-o tamanho do elemento. Um `transform: scale(0.5)` irá reduzí-lo pela metade.
+o tamanho do elemento. Um `transform: scale(0.5)` irá reduzi-lo pela metade.
 
 {% highlight css %}
 img {
   transform: scale(2); /* dobra o tamanho do elemento em todas as direções */
-  transform: scale(2, 3); /* dobra a largura e deixa o elemento 3 vezes mais alto */
+  transform: scale(2, 3); /* dobra a largura e triplica a altura */
   transform: scaleX(0.5); /* reduz largura do elemento pela metade */
   transform: scaleY(2); /* deixa o elemento duas vezes mais alto */
 }
@@ -192,7 +191,7 @@ o eixo X a `scaleX` e para o eixo Y a `scaleY`. Abaixo também podemos interagir
 com esta função e ver na prática como se comporta.
 
 <iframe
-  src="http://localhost:3000/#scale"
+  src="http://caiogondim.github.io/css-transform-interactive/#scale"
   height="432"
   width="700"
   class="img"
@@ -203,7 +202,7 @@ com esta função e ver na prática como se comporta.
 
 Observem no experimento acima que, ao passarmos valores negativos, nós
 invertemos a imagem. Se passarmos um valor de -1 para `scaleX`, é como se
-estivessemos espelhando o elemento. -1 para `scaleY` e o elemento irá ficar de
+estivéssemos espelhando o elemento. -1 para `scaleY` e o elemento irá ficar de
 cabeça para baixo (invertido na vertical).
 
 
@@ -216,13 +215,13 @@ por um espaço.
 {% highlight css %}
 img {
   transform: translateX(2px);
-  transform: skewX(45deg); /* sobreescreve a transformação acima */
+  transform: skewX(45deg); /* sobrescreve a transformação acima */
   transform: rotate(0.5turn) scale(2); /* rotaciona em 180º e duplica o tamanho */
 }
 {% endhighlight %}
 
 Cuidado para não declarar várias regras `transform` no mesmo elemento, pois
-dessa forma a última regra sobreescreve todas as outras declaradas
+dessa forma a última regra sobrescreve todas as outras declaradas
 
 <table class="support">
   <thead>
