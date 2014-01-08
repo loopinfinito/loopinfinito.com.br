@@ -4,7 +4,7 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-image: images/posts/2013-12-09-css-transform.jpg
+image: images/posts/2014-01-08-css-transform.jpg
 tags: CSS
 comments: false
 keywords: >
@@ -259,3 +259,7 @@ comprem o livro
 [__CSS Transforms: An Interactive Guide__](http://csstransforms.com/) da Vicki
 Murley. Nele, além de CSS Transforms 2D, também é abordado o assunto CSS
 Transforms 3D.
+
+O código de todos os experimentos acima estão, como de costume, disponíveis no
+[Github](https://github.com/caiogondim/css-transform-interactive). Gostou?
+Dá uma estrela pro projeto =).
