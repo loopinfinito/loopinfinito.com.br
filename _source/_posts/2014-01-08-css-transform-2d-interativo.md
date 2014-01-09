@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2014-01-08-css-transform.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   css, transform, vicki murley, css transforms an interactive guide, rotate,
   skew, scale, translate, apple
@@ -131,7 +131,7 @@ Também existe uma função `skew`, que, na teoria, funcionaria como um atalho p
 as funções `skewX` e `skewY`. Mas o seu resultado final não é o mesmo que o
 das funções `skewX` e `skewY` usadas de forma separada com os mesmos parâmetros
 de `skew`. O próprio
-<abbr title="Mozilla Developer Network">MDN</abbr>
+<abbr title="Mozilla Developer Network">MDN</abbr>&nbsp;
 [desaconselha seu uso](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function).
 
 
