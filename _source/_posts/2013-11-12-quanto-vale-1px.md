@@ -227,7 +227,7 @@ Caso o browser utilize o _pixel_ referência como unidade de ancoragem, todas as
 outras serão calculadas com base nele. Usando ainda o iPhone como exemplo, vamos
 calcular quanto vale 1 polegada no Safari dele.
 
-Sabemos quem 1 CSS _pixel_ equivale a 2 _pixels_ no iPhone. E que 1 CSS px é
+Sabemos que 1 CSS _pixel_ equivale a 2 _pixels_ no iPhone. E que 1 CSS px é
 igual a 0,75pt. 1 pt por sua vez é igual a 1/72 de CSS polegada. Então, com um
 pouco de matemática podemos chegar a conclusão de que, no iPhone, 1 CSS pt é
 igual a 2,66 _pixels_ nativos. 1 uma polegada em CSS no iPhone equivale a 192
