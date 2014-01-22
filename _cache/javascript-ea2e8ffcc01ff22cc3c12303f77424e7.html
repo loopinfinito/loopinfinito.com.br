@@ -1,0 +1,23 @@
+<div class="highlight"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-traceur&#39;</span><span class="p">);</span>
+
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+      <span class="nx">traceur</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">blockBinding</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nx">custom</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;static/app.js&#39;</span><span class="o">:</span> <span class="p">[</span>
+              <span class="s1">&#39;assets/character.js&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;assets/monster.js&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;assets/main.js&#39;</span>
+            <span class="p">]</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+</pre></div>
