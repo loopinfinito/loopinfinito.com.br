@@ -3,36 +3,51 @@
 	// .post-meta de cada post flutuando
 	// o .post-meta fica visível enquanto o resumo do post estiver visível
 	// para a interna do post é usado um script diferente
-	$(window).scroll(function(event) {
+	var floatPostMeta = (function () {
+		'use strict'
 
-		$('.post-container').each(function(index, element) {
+		var timeWindow = 25 // time in ms
+		var lastExecution = new Date((new Date()).getTime() - timeWindow)
+		var $posts = $('.post-container')
 
-			// vars
-			var $postContainer = $(this)
-			var $postMeta = $postContainer.find('aside.post-meta')
+		var floatPostMeta = function () {
+			$posts.each(function(index, element) {
+				var $postContainer = $(this)
+				var $postMeta = $postContainer.find('aside.post-meta')
 
-			// zona 1
-			// scroll acima do início do .post-container
-			if ($(window).scrollTop() < $postContainer.offset().top + 5) {
-				$postMeta.removeClass('post-meta-fixed')
+				// zona 1
+				// scroll acima do início do .post-container
+				if ($(window).scrollTop() < $postContainer.offset().top + 5) {
+					$postMeta.removeClass('post-meta-fixed')
+				}
+				// zona 2
+				// scroll entre o início do .post-container e o fim do .post-container
+				// menos a altura do .post-meta
+				else if (($(window).scrollTop() >= $postContainer.offset().top)
+						&& ($(window).scrollTop() < $postContainer.offset().top + $postContainer.height() - $postMeta.height() + 5)) {
+					$postMeta
+						.addClass('post-meta-fixed')
+						.css('top', 0)
+				}
+				// zona 3
+				// scroll após a zona 2
+				else {
+					var topNew = $postContainer.height() - $postMeta.height()
+					$postMeta
+						.removeClass('post-meta-fixed')
+						.css('top', topNew)
+				}
+			})
+		}
+
+		return function () {
+			if ((lastExecution.getTime() + timeWindow) <= (new Date()).getTime()) {
+				lastExecution = new Date()
+				return floatPostMeta.apply(this, arguments)
 			}
-			// zona 2
-			// scroll entre o início do .post-container e o fim do .post-container menos a altura do .post-meta
-			else if (($(window).scrollTop() >= $postContainer.offset().top)
-			&& ($(window).scrollTop() < $postContainer.offset().top + $postContainer.height() - $postMeta.height() + 5)) {
-				$postMeta
-					.addClass('post-meta-fixed')
-					.css('top', 0)
-			}
-			// zona 3
-			// scroll após a zona 2
-			else {
-				var topNew = $postContainer.height() - $postMeta.height()
-				$postMeta
-					.removeClass('post-meta-fixed')
-					.css('top', topNew)
-			}
-		})
-	})
+		}
+	}())
+
+	$(window).on('scroll', floatPostMeta)
 
 </script>
