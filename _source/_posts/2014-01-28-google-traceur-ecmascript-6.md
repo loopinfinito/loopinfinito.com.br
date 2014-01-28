@@ -5,7 +5,7 @@ author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2014-01-28-traceur.jpg
-tags: JavaScript
+tags: javascript
 comments: true
 keywords: >
   javascript, js, google traceur, ecmascript 6, grunt, gulp, classes,
