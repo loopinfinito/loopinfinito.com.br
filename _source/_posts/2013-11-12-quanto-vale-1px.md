@@ -138,7 +138,7 @@ _user agent_ decidir qual será a unidade usada como âncora.
 Para dispositivos de alta resolução, a especificação recomenda que a unidade
 âncora seja um valor padrão da física, como <abbr title="centímetro">cm</abbr>
 ou <abbr title="polegadas">in</abbr>. Então, em dispositivos como
-uma impressora que é um dispositivo de alta reslução, 1px será calculado em
+uma impressora que é um dispositivo de alta resolução, 1px será calculado em
 relação a 1cm real. Aqui podemos dizer que 1px será o equivalente a
 0,26458333mm.
 
