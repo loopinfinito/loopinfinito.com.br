@@ -63,7 +63,7 @@ class Monstro extends Personagem {
     super.attack(personagem)
   }
 
-  get isVivo() { return this.life > 0 }
+  get isVivo() { return this.life_ > 0 }
   get life() { return this.life_ }
   set life(valor) {
     if (valor < 0) {
@@ -105,7 +105,7 @@ console.log(x1, y1, x2, y2) // imprime 3 4 5 6
 Aqui temos escopo a nível de bloco, e não mais apenas a nível de função e
 global. Isto assegura que as variáveis não vazem de um escopo sem a necessidade
 de usarmos
-[funções de execução imediata](https://github.com/caiogondim/js-patterns-sublime-snippets#immediate-function)
+[funções de execução imediata](https://github.com/caiogondim/js-patterns-sublime-snippets#immediate-function).
 
 {% highlight javascript %}
 {
@@ -189,8 +189,8 @@ console.log(restante.join(', ')) // imprime o “Yao Ming, Allyson Felix”
 
 ### Atalho para inicializar objeto
 
-Um ótimo atalho para, principalmente, funções construtoras. Evita o repetitivo
-código `{x: x, y: y, z: z}` quando estamos definindo um objeto.
+Evita o repetitivo código `{x: x, y: y, z: z}` quando estamos definindo um
+objeto cujo a chave possui o valor da variável de mesmo nome.
 
 {% highlight javascript %}
 var obj = {x, y}
@@ -200,6 +200,21 @@ var obj = {x: x, y: y}
 function f(x, y) { return {x: x, y: y} }
 // o mesmo que o código acima
 function f(x, y) { return {x, y} }
+{% endhighlight %}
+
+Reparem que na primeira linha do trecho de código acima, inicializamos a
+variável `obj` com o valor `{x, y}`, o que é sintaticamente errado no
+ECMAScript 3. O que este “atalho” faz é _setar_ um objeto com chave `x` com o
+valor da variável `x`. Falando em JS, ele evita que você digite repetidamente
+este trecho: `var obj = {x: x, y: y}`, dando um atalho para tal, desta forma:
+`var obj = {x, y}`. Dificil de explicar, mas fácil de entender. Tenta
+acompanhar esse outro exemplo.
+
+{% highlight javascript %}
+var nome = "Joao"
+var sobrenome = "Silva"
+
+var pessoa = {nome, sobrenome} // o mesmo que `var pessoa = {nome: nome, sobrenome: sobrenome}`
 {% endhighlight %}
 
 
@@ -267,10 +282,10 @@ npm install grunt --save-dev
 npm install grunt-traceur --save-dev
 {% endhighlight %}
 
-Algumas considerações sobre os comandos usados acima: a _flag_ `-g` usada para
+Algumas considerações sobre os comandos usados acima: a _flag_&nbsp;`-g` usada para
 instalar o Grunt é para que o **grunt-cli** seja instalado de forma global, que
 é um passo necessário para usar o grunt no terminal sem informamos o `PATH` do
-seu executável; a _flag_ `--save- dev` para que as dependências sejam
+seu executável; a _flag_&nbsp;`--save-dev` para que as dependências sejam
 automaticamente inseridas no seu arquivo **package.json**.
 
 Com Grunt e grunt-traceur instalados, agora podemos configurar nosso Gruntfile.
