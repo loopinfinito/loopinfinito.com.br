@@ -1,16 +1,23 @@
 ---
-title: Vibration API
+title: <span>Vibration</span> API
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-02-11-vibration-api.jpg
-tags:
+tags: HTML5 javascript
 comments: false
 keywords: >
-  lorem
+  vibration api, vibration, html5, javascript, api, vibrator, vibrate, acesso a
+  dispositivos, dispositivo, mobile, movel, vibrar, suporte, navegadore,
+  browser, firefox os, firefox, chrome, safari, ie, opera, html
 resumo: >
-  lorem
+  Embora __ainda__ não seja possível provocar terremotos de escala geográfica,
+  já podemos fazer dispositivos vibrar com
+  <abbr title="HyperText Markup Language">HTML5</abbr>. Uma
+  <abbr title="Application Programming Interface">API</abbr> bastante simples e
+  que possibilita algumas funcinoalidades bem interessantes no contexto
+  _mobile_.
 related:
   - title: Vibration API (recommendation)
     url: http://www.w3.org/TR/vibration/
@@ -21,11 +28,11 @@ related:
     url: http://www.smartjava.org/content/html5-remotely-vibrate-phone-morse-code-using-web-sockets-and-vibrate-api
 ---
 
-Enquanto __ainda__ não é possível provocar terremotos de escala geográfica, já
-podemos fazer dispositos vibrar com HTML5. Entenda por dispositivo qualquer
-meio de acesso que possua um _hardware_ específico que possibilite isso — como
-os dispositivos móveis, pois não faria o mínimo sentido seu computador vibrar
-(ou não?).
+Embora __ainda__ não seja possível provocar terremotos de escala geográfica, já
+podemos fazer dispositivos vibrar com  <abbr title="HyperText Markup
+Language">HTML5</abbr>. Entenda por dispositivo qualquer meio de acesso que
+possua um _hardware_ específico que possibilite isso — como os dispositivos
+móveis, pois não faria o mínimo sentido seu computador vibrar (ou não?).
 
 Muitas dessas novas APIs de acesso a dispositivos são focadas em utilidades
 _mobile_ (assim como a
@@ -34,10 +41,16 @@ e eu diria que a Mozilla é a entidade que mais investe nessas especificações,
 pelo simples fato de que ela mantém o Firefox OS, cuja proposta é funcionar
 totalmente em cima dos padrões abertos da _web_.
 
+## Curiosidade
+
+Originalmente, o nome dessa <abbr title="Application Programming
+Interface">API</abbr> seria __Vibrator__ (vibrador), mas, por questões óbvias,
+preferiram mudar para _Vibration_. #tr00l
+
 ## Uma API enorme
 
-Essa API é tão extensa que dá até medo, eis a listagem de todas as suas
-propriedades e métodos:
+Essa <abbr title="Application Programming Interface">API</abbr> é tão extensa
+que dá até medo, eis a listagem de todas as suas propriedades e métodos:
 
 ### navigator.vibrate()
 
@@ -81,12 +94,13 @@ if('vibrate' in navigator){
 
 ## Utilidades
 
-Tá, mas o que faço com essa API? Bem, considerando que o mecanismo de vibração
-causa um simples _feedback_ tátil, existem algumas utilidades que podem ser de
-interesse para uma aplicação móvel. As mais comuns são, por exemplo, alertar o
-usuário ao disparar uma notificação, mensagem ou ligação e vibrar em momentos
-específicos ao decorrer de um jogo (uma bomba explodindo, talvez) — causando uma
-maior imerssão para o jogador.
+Tá, mas o que faço com essa <abbr title="Application Programming
+Interface">API</abbr>? Bem, considerando que o mecanismo de vibração causa um
+simples _feedback_ tátil, existem algumas utilidades que podem ser de interesse
+para uma aplicação móvel. As mais comuns são, por exemplo, alertar o usuário ao
+disparar uma notificação, mensagem ou ligação e vibrar em momentos específicos
+ao decorrer de um jogo (uma bomba explodindo, talvez) — causando uma maior
+imersão para o jogador.
 
 Outras utilidades não tão óbvias poderiam ser, por exemplo, guiar um usuário
 portador de deficiência visual em um ambiente, onde cada tipo de vibração
@@ -94,8 +108,9 @@ poderia corresponder a direcionamentos como 'esquerda', 'direita', 'trás',
 'frente', etc. Um experimente que achei bastante criativo foi um que consiste
 num
 [comunicador em código morse](http://www.smartjava.org/content/html5-remotely-vibrate-phone-morse-code-using-web-sockets-and-vibrate-api)
-entre dois dispositivos utilizando a API de vibração e _Web Sockets_. A partir
-daí vai de acordo com a criatividade de cada um.
+entre dois dispositivos utilizando a <abbr title="Application Programming
+Interface">API</abbr> de vibração e _Web Sockets_. A partir daí vai de acordo
+com a criatividade de cada um.
 
 <table class="support">
     <thead>
@@ -125,8 +140,8 @@ daí vai de acordo com a criatividade de cada um.
     <tfoot>
         <td colspan="6">
             * Ainda não há nenhuma informação no <a href="http://caniuse.com/">caniuse</a>
-            à respeito da Vibration API, então fiz essa verificação nos
-            navegadores que tenho atualmente.
+            à respeito da Vibration <abbr title="Application Programming Interface">API</abbr>,
+            então fiz essa verificação nos navegadores que tenho atualmente.
         </td>
     </tfoot>
 </table>
