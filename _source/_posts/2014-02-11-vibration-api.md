@@ -21,7 +21,81 @@ related:
     url: http://www.smartjava.org/content/html5-remotely-vibrate-phone-morse-code-using-web-sockets-and-vibrate-api
 ---
 
-sadsadasdass
+Enquanto __ainda__ não é possível provocar terremotos de escala geográfica, já
+podemos fazer dispositos vibrar com HTML5. Entenda por dispositivo qualquer
+meio de acesso que possua um _hardware_ específico que possibilite isso — como
+os dispositivos móveis, pois não faria o mínimo sentido seu computador vibrar
+(ou não?).
+
+Muitas dessas novas APIs de acesso a dispositivos são focadas em utilidades
+_mobile_ (assim como a
+[Battery API](http://loopinfinito.com.br/2013/03/21/battery-api/ "Battery API")),
+e eu diria que a Mozilla é a entidade que mais investe nessas especificações,
+pelo simples fato de que ela mantém o Firefox OS, cuja proposta é funcionar
+totalmente em cima dos padrões abertos da _web_.
+
+## Uma API enorme
+
+Essa API é tão extensa que dá até medo, eis a listagem de todas as suas
+propriedades e métodos:
+
+### navigator.vibrate()
+
+Pronto. É isso. Já podemos ir pra praia? Sério, só tem esse método. Legal né?
+(aposto que tem muita gente comemorando agora.) De acordo com a
+[spec](http://www.w3.org/TR/vibration/#vibration-interface), esse método recebe
+apenas um parâmetro que representa uma duração de tempo que o dispositivo deve
+permanecer vibrando.
+
+{% highlight javascript %}
+navigator.vibrate(1000); // vibra por 1000ms (1s)
+{% endhighlight %}
+
+Esse parâmetro também pode ser uma lista representando um padrão de toques, onde
+cada item da lista alterna entre tempo de duração de uma vibração e tempo de
+duração de uma intervalo. Com um exemplo fica mais fácil de entender:
+
+{% highlight javascript %}
+navigator.vibrate([500, 1000, 800, 500, 1000]);
+{% endhighlight %}
+
+No trecho acima o dispositivo começará vibrando por 500ms, depois pausa por
+1000ms, vibra novamente por 800ms, pausa por 500ms e termina vibrando por mais
+1000ms.
+
+Caso uma chamada de vibração já tenha sido disparada, também é possível
+cancelá-la passando um zero ou um _array_ vazio como parâmetro.
+
+{% highlight javascript %}
+navigator.vibrate(0); // cancela qualquer vibração em execução
+navigator.vibrate([]); // mesma coisa que o anterior
+{% endhighlight %}
+
+Quer testar o suporte?
+
+{% highlight javascript %}
+if('vibrate' in navigator){
+    // tann namm!
+}
+{% endhighlight %}
+
+## Utilidades
+
+Tá, mas o que faço com essa API? Bem, considerando que o mecanismo de vibração
+causa um simples _feedback_ tátil, existem algumas utilidades que podem ser de
+interesse para uma aplicação móvel. As mais comuns são, por exemplo, alertar o
+usuário ao disparar uma notificação, mensagem ou ligação e vibrar em momentos
+específicos ao decorrer de um jogo (uma bomba explodindo, talvez) — causando uma
+maior imerssão para o jogador.
+
+Outras utilidades não tão óbvias poderiam ser, por exemplo, guiar um usuário
+portador de deficiência visual em um ambiente, onde cada tipo de vibração
+poderia corresponder a direcionamentos como 'esquerda', 'direita', 'trás',
+'frente', etc. Um experimente que achei bastante criativo foi um que consiste
+num
+[comunicador em código morse](http://www.smartjava.org/content/html5-remotely-vibrate-phone-morse-code-using-web-sockets-and-vibrate-api)
+entre dois dispositivos utilizando a API de vibração e _Web Sockets_. A partir
+daí vai de acordo com a criatividade de cada um.
 
 <table class="support">
     <thead>
@@ -40,38 +114,19 @@ sadsadasdass
     </thead>
     <tbody>
         <tr>
-            <td class="property"><code>@media script</code></td>
+            <td class="property"><code>navigator.vibrate()</code></td>
+            <td>32 *</td>
             <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td class="property"><code>@media pointer</code></td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td class="property"><code>@media hover</code></td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-        </tr>
-        <tr>
-            <td class="property"><code>@media luminosity</code></td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
+            <td>26 *</td>
+            <td>?</td>
             <td>--</td>
         </tr>
     </tbody>
+    <tfoot>
+        <td colspan="6">
+            * Ainda não há nenhuma informação no <a href="http://caniuse.com/">caniuse</a>
+            à respeito da Vibration API, então fiz essa verificação nos
+            navegadores que tenho atualmente.
+        </td>
+    </tfoot>
 </table>
-
-dasdasd
