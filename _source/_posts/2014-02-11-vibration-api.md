@@ -105,8 +105,7 @@ imersão para o jogador.
 Outras utilidades não tão óbvias poderiam ser, por exemplo, guiar um usuário
 portador de deficiência visual em um ambiente, onde cada tipo de vibração
 poderia corresponder a direcionamentos como 'esquerda', 'direita', 'trás',
-'frente', etc. Um experimente que achei bastante criativo foi um que consiste
-num
+'frente', etc. Um experimento que achei bastante criativo foi um
 [comunicador em código morse](http://www.smartjava.org/content/html5-remotely-vibrate-phone-morse-code-using-web-sockets-and-vibrate-api)
 entre dois dispositivos utilizando a <abbr title="Application Programming
 Interface">API</abbr> de vibração e _Web Sockets_. A partir daí vai de acordo
