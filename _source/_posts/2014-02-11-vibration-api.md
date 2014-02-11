@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-02-11-vibration-api.jpg
 tags: HTML5 javascript
-comments: false
+comments: true
 keywords: >
   vibration api, vibration, html5, javascript, api, vibrator, vibrate, acesso a
   dispositivos, dispositivo, mobile, movel, vibrar, suporte, navegadore,
