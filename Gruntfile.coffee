@@ -40,8 +40,8 @@ module.exports = (grunt) ->
 					logConcurrentOutput: true
 	)
 
-	grunt.registerTask('default', ['concurrent:dev'])
-	grunt.registerTask('run', ['concurrent:dev'])
-	grunt.registerTask('build', ['jekyll:build', 'less', 'fix_permissions', 'remove_cdata'])
-	grunt.registerTask('deploy', ['jekyll:build', 'less', 'fix_permissions', 'remove_cdata', 'minify', 'rsync'])
-	grunt.registerTask('deploy:staging', ['jekyll:build', 'less', 'fix_permissions', 'remove_cdata', 'minify', 'rsync:staging'])
+	grunt.registerTask 'run',            ['concurrent:dev']
+	grunt.registerTask 'build',          ['jekyll:build', 'less', 'fix_permissions', 'remove_cdata']
+	grunt.registerTask 'deploy',         ['jekyll:build', 'less', 'fix_permissions', 'remove_cdata', 'minify', 'remove_nbsp', 'rsync']
+	grunt.registerTask 'deploy:staging', ['jekyll:build', 'less', 'fix_permissions', 'remove_cdata', 'minify', 'remove_nbsp', 'rsync:staging']
+	grunt.registerTask 'default',        ['run']
