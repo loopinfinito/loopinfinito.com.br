@@ -124,6 +124,7 @@ body {
 	background-attachment: fixed;
 	font-family: @fonts;
 	border-top: 5px solid #666;
+	overflow-x: hidden;
 }
 
 a:active {
@@ -132,14 +133,7 @@ a:active {
 }
 
 #wrapper {
-	// position: absolute;
-	// left: 50%;
-	// width: 900px;
-	// margin-left: -350px;
-	// width: auto;
 	max-width: 700px;
-	// position: static;
-	// left: auto;
 	margin: 0 auto;
 }
 
@@ -420,7 +414,6 @@ input[type=button] {
 header#main {
 	position: relative;
 	height: 165px;
-	// height: 120px;
 
 	a#logo {
 		text-indent: -9999px;
@@ -430,17 +423,14 @@ header#main {
 		display: block;
 		position: absolute;
 		top: 80px;
-		// top: 50px;
 		left: 0;
 		.transition(left, .5s);
 	}
 
 	nav {
 		position: absolute;
-		// right: 200px;
 		right: -15px;
 		top: 10px;
-		// top: 20px;
 		.transition(right, .5s);
 
 		ul {
@@ -448,7 +438,6 @@ header#main {
 
 			li {
 				float: left;
-				// margin: 0 0 0 30px;
 				margin: 0 15px;
 				color: #666;
 				.transition(margin, .5s);
@@ -484,7 +473,6 @@ header#main {
 		cursor: pointer;
 		right: -50px;
 		top: 12px;
-		// top: 22px;
 		.transition(right, .5s)
 	}
 }
@@ -575,23 +563,20 @@ header#main {
 		}
 
 		article {
-			// width: 600px;
 			width: auto;
 			background-color: white;
-			// padding: 45px 50px 0px 50px;
 			padding: 40px 5%;
-			// line-height: 200%;
 			line-height: 2em;
 			color: #666;
 			border: 1px solid #CCCCCC;
 			font-family: @fonts-article;
 			font-weight: 300;
-			// font-size: 15px;
 			font-size: 1em;
 			.box-shadow(3px, 5px, 0, rgba(0, 0, 0, 0.06));
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
+			.transition(padding, .5s, ease);
 
 			code {
 				background-color: #EFEFEF;
@@ -703,7 +688,6 @@ header#main {
 			}
 
 			> section {
-				// padding-bottom: 45px;
 				padding-bottom: 25px;
 
 				> ul, > ol {
@@ -719,12 +703,11 @@ header#main {
 				.img,
 				img {
 					position: relative;
-					// left: -50px;
 					left: -5.5%;
-					// width: 700px;
 					width: 111%;
 					height: auto;
 					display: block;
+					.transition(left, .5s, ease);
 
 					&.bordered {
 						border-top: 1px solid #ddd;
@@ -1020,7 +1003,6 @@ table.support {
 aside.post-meta {
 	width: 170px;
 	position: absolute;
-	// right: 0px;
 	right: -200px;
 	font-size: 14px;
 	color: #999999;
