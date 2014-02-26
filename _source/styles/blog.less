@@ -334,14 +334,15 @@ strong {
 /* Paginação
 ---------------------------------------- */
 #post-pagination {
-	width: 700px;
+	max-width: 700px;
 	height: 30px;
 	position: relative;
 	margin: -50px 0 30px 0;
 
 	p {
 		position: absolute;
-		width: 150px;
+		// width: 150px;
+		width: 33%;
 
 		a {
 			line-height: 25px;
@@ -360,11 +361,11 @@ strong {
 		}
 
 		&.recentes {
-			left: 50px;
+			left: 5%;
 		}
 
 		&.antigos {
-			right: 50px;
+			right: 5%;
 			text-align: right;
 		}
 	}
