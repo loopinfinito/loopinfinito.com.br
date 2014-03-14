@@ -21,10 +21,11 @@ related:
     from: Google Developers
 ---
 
-Inspecionar elemento, _breakpoints_ em JavaScript e `console` API já virou
-_mainstream_ na comunidade _front-end_. Neste _post_ vamos explorar algumas
-ferramentas pouco conhecidas — porém bastante úteis — dentro do Chrome Developer
-Tools.
+Inspecionar elemento, _breakpoints_ em JavaScript e `console` API já virou muito
+_mainstream_. Vamos conhecer neste _post_ algumas _features_ mais _hipsters_ —
+porém úteis — do Chrome Developer Tools que vão melhorar seu o dia-a-dia de
+caçador de _bugs_.
+
 
 ## Compartilhar e analisar uma Timeline gravada por outro
 
@@ -34,8 +35,10 @@ na sua aplicação, _deadline_ aproximando e você tem certeza que se fosse
 possível enviar os dados da sua _timeline_ para aquele seu amigo que manja de
 todos os paranauês do front-end, ele iria te ajudar.
 
-**Seus problemas se acabaram-se**. Agora você pode compartilhar sua _timeline_ e
-analisar uma gravação alheia.
+__Seus problemas se acabaram-se__. Agora você pode compartilhar sua _timeline_ e
+analisar uma gravação alheia. Na aba __Timeline__ clique com o botão secundário
+do _mouse_ em qualquer lugar e aparecerá uam opção para salvar e uma outra para
+carregar dados de uma _Timeline_ gravada.
 
 <figure>
   <img
@@ -49,8 +52,20 @@ analisar uma gravação alheia.
 ## Emulando dispositivos
 
 Permite emular o tamanho da tela, _pixel ratio_ e _user agent string_ dos
-dispositivos móveis mais populares. Caso o aparelho que você deseja emular não
-esteja na lista, é possível inserir todos os dados de forma manual.
+dispositivos móveis mais populares. Para acessar essa _feature_, chame o
+**Console drawer** como indicado na figura abaixo.
+
+<figure>
+  <img
+    src="/images/posts/2014-02-26-console-drawer.png"
+    alt="Console drawer"
+    width="700"
+  />
+</figure>
+
+Uma vez no _drawer_, vá na aba **Emulation** e escolha o aparelho que deseja
+emular. Caso o aparelho não esteja na lista, é possível inserir todos os dados
+de forma manual.
 
 <figure>
   <img
@@ -63,11 +78,11 @@ esteja na lista, é possível inserir todos os dados de forma manual.
 
 ## Emulando acelerômetro
 
-Além de emular dispositivos móveis, podemos emular alguns de seus sensores.
-Para emular o acelerômetro, por exemplo, vá ao _drawer_, depois na aba
-_Emulation_ e clique no _checkbox_ _Accelerometer_. Você pode mexer a
-representação 3D do dispositivo para emular uma determinada posição ou por
-valores diretamente em  cada eixo.
+Além de emular dispositivos móveis, podemos emular alguns de seus sensores. Para
+emular o acelerômetro, por exemplo, vá ao _drawer_ (o mesmo do item anterior),
+depois na aba _Emulation_ e clique no _checkbox_ _Accelerometer_. Você pode
+mexer a representação 3D do dispositivo para emular uma determinada posição ou
+pôr valores diretamente em cada eixo.
 
 <figure>
   <img
@@ -80,22 +95,33 @@ valores diretamente em  cada eixo.
 
 ## Contador de FPS
 
-Útil para visualizar, em tempo real, o _frame rate_ de sua aplicação.
-Quando ativo, irá aparecer uma caixa preta no topo a direita com detalhes sobre
+Útil para visualizar, em tempo real, o _frame rate_ de sua aplicação. Para
+ativá-lo, vá no _drawer_, depois na aba **Rendering** e clique no _checkbox_
+**Show FPS meter**.
+
+<figure>
+  <img
+    src="/images/posts/2014-02-26-como-habilitar-o-contador-de-fps.png"
+    alt="Como habilitar o contador de FPS"
+    width="700"
+  />
+</figure>
+
+Quando ativo, irá aparecer uma caixa preta no topo à direita com detalhes sobre
 a quantidade de _frames_ que estão sendo renderizados por segundo.
 
 <figure>
   <img
     src="/images/posts/2014-02-26-show-fps-meter.png"
-      alt="Contador de FPS"
-      width="700"
+    alt="Contador de FPS"
+    width="700"
   />
 </figure>
 
 
 ## Debugar requisições Ajax de forma mais fácil
 
-Na aba _**Sources**_, do lado direito, é possível adicionar _breakpoints_
+Na aba _**Sources**_, ao lado direito, é possível adicionar _breakpoints_
 dinâmicos para que o código pare a execução toda vez que uma chamada XHR possua
 uma dada _string_ em sua URL.
 
@@ -106,6 +132,7 @@ uma dada _string_ em sua URL.
     width="700"
   />
 </figure>
+
 
 ## Procure por uma string entre todos os arquivos
 
@@ -126,7 +153,10 @@ entre **todos** os arquivos carregados.
 
 Já pensou ter que refazer sempre aquele fluxo enorme na sua aplicação só para
 disparar novamente aquela requisição Ajax (XHR)? Com esse atalho você pode dar
-um _replay_ em qualquer chamda Ajax.
+um _replay_ em qualquer chamada Ajax.
+
+Na aba __Network__, clique com o botão secundário em cima de qualquer requisição
+XHR e escolha a opção **Replay XHR**.
 
 <figure>
   <img
