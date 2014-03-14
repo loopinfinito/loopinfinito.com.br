@@ -37,7 +37,7 @@ todos os paranauês do front-end, ele iria te ajudar.
 
 __Seus problemas se acabaram-se__. Agora você pode compartilhar sua _timeline_ e
 analisar uma gravação alheia. Na aba __Timeline__ clique com o botão secundário
-do _mouse_ em qualquer lugar e aparecerá uam opção para salvar e uma outra para
+do _mouse_ em qualquer lugar e aparecerá uma opção para salvar e uma outra para
 carregar dados de uma _Timeline_ gravada.
 
 <figure>
@@ -80,9 +80,9 @@ de forma manual.
 
 Além de emular dispositivos móveis, podemos emular alguns de seus sensores. Para
 emular o acelerômetro, por exemplo, vá ao _drawer_ (o mesmo do item anterior),
-depois na aba _Emulation_ e clique no _checkbox_ _Accelerometer_. Você pode
-mexer a representação 3D do dispositivo para emular uma determinada posição ou
-pôr valores diretamente em cada eixo.
+depois na aba _Emulation_ e clique no _checkbox Accelerometer_. Você pode mexer
+a representação 3D do dispositivo para emular uma determinada posição ou pôr
+valores diretamente em cada eixo.
 
 <figure>
   <img
@@ -97,7 +97,7 @@ pôr valores diretamente em cada eixo.
 
 Útil para visualizar, em tempo real, o _frame rate_ de sua aplicação. Para
 ativá-lo, vá no _drawer_, depois na aba **Rendering** e clique no _checkbox_
-**Show FPS meter**.
+&nbsp;**Show FPS meter**.
 
 <figure>
   <img
@@ -169,8 +169,8 @@ XHR e escolha a opção **Replay XHR**.
 
 ## Copiando requisições como comando cURL
 
-Praticamente uma derivação do replay de chamadas Ajax. Com a diferença que aqui
-é gerado um comando cURL da requisição feita, com todos os parâmetros e
+Praticamente uma derivação do _replay_ de chamadas Ajax. Com a diferença que
+aqui é gerado um comando cURL da requisição feita, com todos os parâmetros e
 cabeçalhos. Cole no seu terminal e aperte `enter` para disparar uma requisição
 idêntica à que foi disparada pelo seu navegador.
 
@@ -208,8 +208,8 @@ _**Preserve log upon navigation**_.
 ## Benchmark usando console.time
 
 Caso queira medir quanto tempo uma determinada operação leva para ser executada,
-basta usar `console.time` e, quando a operação acabar usar o método
-`console.timeEnd` passando a mesma _string_, como no exemplo abaixo.
+basta usar `console.time()` e, quando a operação acabar usar o método
+`console.timeEnd()` passando a mesma _string_, como no exemplo abaixo.
 
 <figure>
   <img
