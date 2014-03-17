@@ -62,6 +62,26 @@
     }
 }
 
+@media only screen and (max-width: 699px) {
+    section.talk {
+        div.log,
+        div.info {
+            float: none;
+            width: 100%;
+        }
+        div.log {
+            margin-top: 40px;
+        }
+    }
+    article.projects {
+        section.project {
+            div.content {
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 460px) {
     #content h1 {
         font-size: 36px;
@@ -71,11 +91,37 @@
         .post-container {
             article {
                 padding: 40px 10%;
+
                 > section .img,
                 > section img {
                     left: -13%;
                     width: 126%;
                 }
+            }
+        }
+    }
+
+    section.talk {
+        header figure img {
+            width: 113%;
+            margin-left: -6.5%;
+        }
+    }
+
+    section.author {
+    }
+}
+
+@media only screen and (max-width: 401px) {
+    article.projects {
+        section.project {
+            .project-icon {
+                width: 100%;
+                height: 100%;
+            }
+            div.content {
+                width: 100%;
+                padding: 20px 30px 0;
             }
         }
     }
