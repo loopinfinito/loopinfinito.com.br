@@ -12,9 +12,9 @@ keywords: >
   console, xhr, ajax
 resumo: >
   Inspecionar elemento, _breakpoints_ em JavaScript e `console` API já virou
-  _mainstream_ na comunidade _front-end_. Neste _post_ vamos explorar algumas
-  ferramentas pouco conhecidas — porém bastante úteis — dentro do Chrome Developer
-  Tools.
+  muito _mainstream_. Vamos conhecer neste _post_ algumas _features_ mais
+  _hipsters_ — porém úteis — do Chrome Developer Tools que vão melhorar seu
+  dia-a-dia.
 related:
   - title: "Chrome Dev Tools Tips and Tricks"
     url: https://developers.google.com/chrome-developer-tools/docs/tips-and-tricks
@@ -23,8 +23,7 @@ related:
 
 Inspecionar elemento, _breakpoints_ em JavaScript e `console` API já virou muito
 _mainstream_. Vamos conhecer neste _post_ algumas _features_ mais _hipsters_ —
-porém úteis — do Chrome Developer Tools que vão melhorar seu o dia-a-dia de
-caçador de _bugs_.
+porém úteis — do Chrome Developer Tools que vão melhorar seu dia-a-dia.
 
 
 ## Compartilhar e analisar uma Timeline gravada por outro
@@ -136,9 +135,9 @@ uma dada _string_ em sua URL.
 
 ## Procure por uma string entre todos os arquivos
 
-Um dos atalhos que mais uso. Aperte `Cmd` + `Opt` + `F` (`Ctrl` + `Shift` +
-`F` no  Windows e Linux) para procurar qualquer palavra ou expressão regular
-entre **todos** os arquivos carregados.
+Um dos atalhos que mais uso. Aperte `Cmd` + `Opt` + `F` (`Ctrl` + `Shift` + `F`
+no  Windows e Linux) para procurar qualquer palavra ou expressão regular entre
+**todos** os arquivos carregados (inclusive os carregados em tempo de execução).
 
 <figure>
   <img
@@ -222,7 +221,7 @@ basta usar `console.time()` e, quando a operação acabar usar o método
 
 ## Limpando o histórico do console
 
-Bastante útil quando se começa a usar bastante a aba console. `Cmd` + `K` no
+Bastante útil quando se começa a usar mais a aba console. `Cmd` + `K` no
 OS X e `Ctrl` + `L` no Windows e Linux para limpar o console. Também funciona
 com o método `console.clear()`.
 
