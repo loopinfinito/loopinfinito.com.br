@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-04-01-2-anos.jpg
 tags:
-comments: false
+comments: true
 keywords: >
   2 anos
 resumo: >
