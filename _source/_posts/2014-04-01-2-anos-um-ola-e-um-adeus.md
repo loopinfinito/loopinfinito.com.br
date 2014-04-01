@@ -8,23 +8,24 @@ image: images/posts/2014-04-01-2-anos.jpg
 tags:
 comments: true
 keywords: >
-  2 anos
+  2 anos, loop infinito, livro, coletanea front-end, 1 de abril, almir filho,
+  caio gondim
 resumo: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+  Hoje, 1º de abril, estamos completando 2 anos de existência — e [não é
+  mentira](http://loopinfinito.com.br/2012/04/01/hello-web/ "Hello Web") — e
+  temos algumas novidades.
 ---
 
-Como no [ano passado](http://loopinfinito.com.br/2013/04/05/1-ano-de-loop/ "1
+Hoje, 1º de abril, estamos completando 2 anos de existência — e [não é
+mentira](http://loopinfinito.com.br/2012/04/01/hello-web/ "Hello Web"), e
+como no [ano passado](http://loopinfinito.com.br/2013/04/05/1-ano-de-loop/ "1
 ano de loop infinito"), estou publicando mais um _post_ de retrospectiva sobre o
 Loop Infinito. Aproveito também para falar sobre algumas coisas que julgamos
-importantes — a parte do "olá" e do "adeus".
+importantes.
 
 ## 2 anos
 
-Hoje, 1º de abril, estamos completando 2 anos de existência — e [não é
-mentira](http://loopinfinito.com.br/2012/04/01/hello-web/ "Hello Web"). Há
-exatos 2 anos, [Caio](https://twitter.com/caio_gondim "Caio Gondim") e
+Há exatos 2 anos, [Caio](https://twitter.com/caio_gondim "Caio Gondim") e
 [eu](https://twitter.com/almirfilho "Almir Filho") começamos esse projeto
 maravilhoso para nós, que se trata deste humilde blog sobre _front-end_,
 produtividade e _lifestyle_.
