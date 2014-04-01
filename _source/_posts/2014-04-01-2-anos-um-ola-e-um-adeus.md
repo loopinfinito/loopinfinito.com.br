@@ -8,20 +8,22 @@ image: images/posts/2014-04-01-2-anos.jpg
 tags:
 comments: true
 keywords: >
-  2 anos, loop infinito, livro, coletanea front-end, 1 de abril, almir filho,
-  caio gondim
+  2 anos, loop infinito, olá, adeus, almir filho, caio gondim, amsterda, ano,
+  front-end, gráfico, conferência, palestra, coletânea front-end, livro, casa do
+  código, setup, wiredin, post, bernard de luna, giovanni Keppelen, Deivid
+  Marques, Diego Eis, Sérgio Lopes, Eduardo Shiota, Luiz Corte, Jaydson Gomes,
+  Reinaldo Ferraz
 resumo: >
-  Hoje, 1º de abril, estamos completando 2 anos de existência — e [não é
-  mentira](http://loopinfinito.com.br/2012/04/01/hello-web/ "Hello Web") — e
+  Hoje, 1º de abril, estamos completando 2 anos de existência ([não é
+  mentira](http://loopinfinito.com.br/2012/04/01/hello-web/ "Hello Web")), e
   temos algumas novidades.
 ---
 
-Hoje, 1º de abril, estamos completando 2 anos de existência — e [não é
-mentira](http://loopinfinito.com.br/2012/04/01/hello-web/ "Hello Web"), e
-como no [ano passado](http://loopinfinito.com.br/2013/04/05/1-ano-de-loop/ "1
-ano de loop infinito"), estou publicando mais um _post_ de retrospectiva sobre o
-Loop Infinito. Aproveito também para falar sobre algumas coisas que julgamos
-importantes.
+Hoje, 1º de abril, estamos completando 2 anos de existência ([não é
+mentira](http://loopinfinito.com.br/2012/04/01/hello-web/ "Hello Web")), e como
+no [ano passado](http://loopinfinito.com.br/2013/04/05/1-ano-de-loop/ "1 ano de
+loop infinito"), estou publicando mais um _post_ de retrospectiva sobre o Loop
+Infinito, além de algumas novidades.
 
 ## 2 anos
 
@@ -31,7 +33,7 @@ maravilhoso para nós, que se trata deste humilde blog sobre _front-end_,
 produtividade e _lifestyle_.
 
 De lá pra cá muita coisa aconteceu. Muita coisa mudou em nossas vidas. Decisões
-foram feitas, obstáculos foram superados, soluções foram descobertas, amizadas
+foram feitas, obstáculos foram superados, soluções foram descobertas, amizades
 foram firmadas, algumas decepções foram amargas, algumas conquistas não
 importaram, e no fim, muito se aprendeu — e esse sim é o objetivo principal para
 nós. Aprender. Tanto nós quanto vocês. Vocês são todos nossos parceiros nessa
@@ -112,7 +114,7 @@ projeto.
 ## Um adeus?
 
 Como alguns já devem estar sabendo, Caio está indo morar em Amsterdã, e isso
-pode influenciar bastate em como as coisas vão se desenrolar daqui pra frente.
+pode influenciar bastante em como as coisas vão se desenrolar daqui pra frente.
 Chegamos até a conversar sobre encerrar as atividades no Loop Infinito, e cada
 um continuar a fazer suas postagens em seus respectivos _blogs_. Porém, a ideia
 me pareceu um absurdo, e confesso que não me dei bem com essa possibilidade.
