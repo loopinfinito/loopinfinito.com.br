@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-04-01-2-anos.jpg
 tags:
-comments: false
+comments: true
 keywords: >
   2 anos, loop infinito, olá, adeus, almir filho, caio gondim, amsterda, ano,
   front-end, gráfico, conferência, palestra, coletânea front-end, livro, casa do
@@ -51,7 +51,7 @@ _mouse_ em cima dos gráficos__.
 Esse é o número mais óbvio, pois tá na cara que nossa frequência de postagens
 deixou muito a desejar nesse ano — e nós reconhecemos isso. Eu poderia citar N
 razões plausíveis para isso agora, mas tenho certeza de que no fim tudo não
-passará de desculpas para nossos leitores, e eu não os culpo por isso.
+passará de desculpas para nossos leitores, e eu não os culpo por pensar isso.
 
 ### Ranking de localidades
 
@@ -131,9 +131,9 @@ não para o Loop.
 Nos últimos meses estávamos trabalhando em conjunto com mais 9 autores na
 elaboração desse, que se tornou no nosso primeiro material publicado em um
 livro. O convite veio do Sérgio Lopes
-([@sergio_caelum](https://twitter.com/sergio_caelum)), que foi quem teve essa
-maravilhosa iniciativa. Para nós é uma grande honra poder compor algo juntamente
-com [Bernard de Luna](https://twitter.com/bernarddeluna),
+([@sergio_caelum](https://twitter.com/sergio_caelum)), que teve essa maravilhosa
+iniciativa. Para nós é uma grande honra poder compor algo juntamente com
+[Bernard de Luna](https://twitter.com/bernarddeluna),
 [Deivid Marques](https://twitter.com/deividmarques),
 [Diego Eis](https://twitter.com/diegoeis),
 [Eduardo Shiota](https://twitter.com/shiota),
