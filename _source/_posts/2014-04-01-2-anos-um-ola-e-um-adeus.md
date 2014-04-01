@@ -33,7 +33,7 @@ maravilhoso para nós, que se trata deste humilde blog sobre _front-end_,
 produtividade e _lifestyle_.
 
 De lá pra cá muita coisa aconteceu. Muita coisa mudou em nossas vidas. Decisões
-foram feitas, obstáculos foram superados, soluções foram descobertas, amizadas
+foram feitas, obstáculos foram superados, soluções foram descobertas, amizades
 foram firmadas, algumas decepções foram amargas, algumas conquistas não
 importaram, e no fim, muito se aprendeu — e esse sim é o objetivo principal para
 nós. Aprender. Tanto nós quanto vocês. Vocês são todos nossos parceiros nessa
@@ -114,7 +114,7 @@ projeto.
 ## Um adeus?
 
 Como alguns já devem estar sabendo, Caio está indo morar em Amsterdã, e isso
-pode influenciar bastate em como as coisas vão se desenrolar daqui pra frente.
+pode influenciar bastante em como as coisas vão se desenrolar daqui pra frente.
 Chegamos até a conversar sobre encerrar as atividades no Loop Infinito, e cada
 um continuar a fazer suas postagens em seus respectivos _blogs_. Porém, a ideia
 me pareceu um absurdo, e confesso que não me dei bem com essa possibilidade.
