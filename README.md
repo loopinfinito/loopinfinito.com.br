@@ -17,7 +17,7 @@ plataforma do blog. Pra usá-lo é necessário ter o [git](http://git-scm.com/do
 
 Para instalar o [Jekyll](https://github.com/mojombo/jekyll), digite o comando:
 ```bash
-$ gem install jekyll
+$ gem install jekyll -v 0.12.1
 ```
 
 E a _gem_ do [LESS](http://lesscss.loopinfinito.com.br/) e
@@ -41,7 +41,8 @@ $ git clone git://github.com/loopinfinito/loopinfinito.com.br.git
 E, finalmente, para gerar o blog digite:
 ```bash
 $ cd loopinfinito.com.br
-$ jekyll
+$ npm install
+$ grunt build && grunt
 ```
 
 Agora você já pode visitar o site na url `http://localhost:4000`.
