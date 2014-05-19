@@ -6,7 +6,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2014-02-26-segredos-do-chrome-dev-tools.png
 tags: javascript
-comments: false
+comments: true
 keywords: >
   debug, depurar, código, chrome, google, developer tools, dev tools, timeline,
   console, xhr, ajax
