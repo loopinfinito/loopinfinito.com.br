@@ -14,7 +14,7 @@ resumo: >
   frequência do que gostaríamos — como os eventos _resize_ e _scroll_ da
   _window_. Outras vezes nossos queridos usuários disparam mais eventos do que
   havíamos previsto em nossa aplicação, como um duplo-clique em um botão de
-  _submit_ de um _form_
+  _submit_ de um _form_&nbsp;
   <abbr title="Assynchronous JavaScript and XML">AJAX</abbr>. Neste _post_
   iremos aprender a controlar a __frequência de execução__ de um determinado
   trecho de código JavaScript, a diferença entre _debounce_ e _throttle_, quando
@@ -36,7 +36,7 @@ related:
 Alguns eventos do _browser_ acontecem de forma mais rápida e com mais frequência
 do que gostaríamos — como os eventos _resize_ e _scroll_ da _window_. Outras
 vezes nossos queridos usuários disparam mais eventos do que havíamos previsto em
-nossa aplicação, como um duplo-clique em um botão de _submit_ de um _form_
+nossa aplicação, como um duplo-clique em um botão de _submit_ de um _form_&nbsp;
 <abbr title="Assynchronous JavaScript and XML">AJAX</abbr>. Neste _post_ iremos
 aprender a controlar a __frequência de execução__ de um determinado trecho de
 código JavaScript, a diferença entre _debounce_ e _throttle_, quando e porque
