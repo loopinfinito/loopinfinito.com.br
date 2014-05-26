@@ -89,6 +89,13 @@ as propriedades CSS `object-fit` e `object-position`, o que achei bastante útil
 principalmente para quando precisamos construir miniaturas (<em>thumbnails</em>)
 para visualizar imagens. Abaixo temos uma mini galeria com algumas imagens.
 
+<p class="obs">
+	<strong>OBS.:</strong> Para visualizar os resultados experimentados neste
+	post, é preciso utilizar um navegador baseado na engine do blink (Google
+	Chrome ou Opera) — caso contrário, não fará o menos sentido ler este
+	material sem ver os resultados.
+</p>
+
 <div class="galeria">
 	<img src="/images/posts/2014-05-27-miniatura1.jpg" alt="Imagem 1" class="galeria-img fill" />
 	<img src="/images/posts/2014-05-27-miniatura1.jpg" alt="Imagem 2" class="galeria-img none" />
