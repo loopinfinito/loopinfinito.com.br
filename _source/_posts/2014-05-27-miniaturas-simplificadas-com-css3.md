@@ -5,14 +5,18 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-05-27-miniaturas.jpg
-tags:
+tags: CSS
 comments: false
 keywords: >
-  miniaturas
+  miniatura, css3, css, object-fit, object-position, object, fit, position,
+  thumbnail, fill, cover, none, contain, scale-down, imagem, vídeo, thumb,
+  suporte, chrome, opera, blink, background-position, galeria
 resumo: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  Existem propriedades CSS3 específicas para a definição de tamanhos de imagens,
+  o que as torna bastante úteis principalmente para quando precisamos construir
+  miniaturas (<em>thumbnails</em>) para visualização de imagens ou vídeos. Essas
+  propriedades são `object-fit` e `object-position`, e são nosso objeto de
+  estudo de hoje.
 related:
   - title: CSS Image Values and Replaced Content Module Level 3
     url: http://www.w3.org/TR/css3-images/
@@ -91,7 +95,7 @@ para visualizar imagens. Abaixo temos uma mini galeria com algumas imagens.
 
 <p class="obs">
 	<strong>OBS.:</strong> Para visualizar os resultados experimentados neste
-	post, é preciso utilizar um navegador baseado na engine do blink (Google
+	post, é preciso utilizar um navegador baseado na engine do Blink (Google
 	Chrome ou Opera) — caso contrário, não fará o menos sentido ler este
 	material sem ver os resultados.
 </p>
@@ -109,7 +113,7 @@ para visualizar imagens. Abaixo temos uma mini galeria com algumas imagens.
 
 As miniaturas acima foram compostas __apenas__ com o elemento `<img>`, ou seja,
 não foi preciso fazer uso de um elemento pai para servir de _empacotador_ para a
-imagem — coisa que é muito comum na construção de miniaturas, constuma-se
+imagem — coisa que é muito comum na construção de miniaturas, costuma-se
 utilizar uma `<div>` com `overflow: hidden` e fazer o redimensionamento da
 imagem para acompanhar o tamanho da `<div>`.
 
@@ -187,9 +191,9 @@ diferente da original (comportamento padrão das imagens até então).
 ### none
 
 Com `none`, não é realizado nenhum processamento na imagem, mas ela será
-"_cropada_" (<em>crop</em>) pelas dimensões definidas, ou seja, será renderizada
-com seu _bitmap_ inalterado, porém __cortado__. Com um exemplo fica mais fácil de
-entender:
+"<em>cropada</em>" (<em>crop</em>) pelas dimensões definidas, ou seja, será
+renderizada com seu _bitmap_ inalterado, porém __cortado__. Com um exemplo fica
+mais fácil de entender:
 
 <div class="galeria">
 	<figure class="galeria-figure">
@@ -234,7 +238,7 @@ correspondente original:
 }
 {% endhighlight %}
 
-Como dito, nenhumo processamento foi feito na imagem, e ala mantem seu tamnaho
+Como dito, nenhum processamento foi feito na imagem, e ela mantém seu tamanho
 original. Pode-se perceber também que, nesses dois exemplos, a imagem resultante
 foi posicionada de forma centralizada. Veremos isso mais adiante com a
 propriedade [`object-position`](#objectposition).
@@ -296,10 +300,10 @@ dentro da área definida pelas dimensões especificadas.
 
 Esse é um valor que pode causar um pouco de confusão. Ele fará com que a imagem
 se comporte de dois jeitos diferentes, dependendo do seu tamanho. `scale-down`
-irá sempre se comportar igual a `none` ou `contain`. O comportamente resultante
-irá ser sempre o que representar um __menor tamanho__ de imagem desenhada — e
-isso dependerá das dimensões originais da imagem e das dimensões definidas para
-o elemento `<img>`. De novo, com um exemplo fica mais fácil:
+irá sempre se comportar igual a `none` ou `contain`. O comportamento resultante
+sempre será o que representar um __menor tamanho__ de imagem desenhada — e isso
+dependerá das dimensões originais da imagem e das dimensões definidas para o
+elemento `<img>`. De novo, com um exemplo fica mais fácil:
 
 <div class="galeria">
 	<figure class="galeria-figure">
@@ -420,6 +424,14 @@ definidas com `object-fit: contain`.
 Claro que também é possível utilizar outras unidades como `px`, `em`, etc. e
 valores negativos também.
 
+
+## Ah, e mais uma coisinha...
+
+As propriedades `object-fit` e `object-position` podem ser utilizadas também no
+elemento `<video>`, nos possibilitando realizar exatamente as mesmas
+configurações de estilos tanto para imagens quanto para vídeos.
+
+
 <table class="support">
     <thead>
         <tr>
@@ -457,4 +469,4 @@ valores negativos também.
 
 Informações segundo o [caniuse](http://caniuse.com/#search=object-fit "object-fit no caniuse.com").
 Apenas o Google Chrome e o Opera dão suporte atualmente (logicamente, agora que
-o Opera também usa o blink).
+o Opera também usa o Blink).
