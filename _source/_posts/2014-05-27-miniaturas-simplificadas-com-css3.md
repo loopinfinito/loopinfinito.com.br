@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-05-27-miniaturas.jpg
 tags: CSS
-comments: false
+comments: true
 keywords: >
   miniatura, css3, css, object-fit, object-position, object, fit, position,
   thumbnail, fill, cover, none, contain, scale-down, imagem, vídeo, thumb,
