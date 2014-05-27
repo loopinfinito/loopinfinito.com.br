@@ -5,14 +5,18 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-05-27-miniaturas.jpg
-tags:
+tags: CSS
 comments: false
 keywords: >
-  miniaturas
+  miniatura, css3, css, object-fit, object-position, object, fit, position,
+  thumbnail, fill, cover, none, contain, scale-down, imagem, vídeo, thumb,
+  suporte, chrome, opera, blink, background-position, galeria
 resumo: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  Existem propriedades CSS3 específicas para a definição de tamanhos de imagens,
+  o que as torna bastante úteis principalmente para quando precisamos construir
+  miniaturas (<em>thumbnails</em>) para visualização de imagens ou vídeos. Essas
+  propriedades são `object-fit` e `object-position`, e são nosso objeto de
+  estudo de hoje.
 related:
   - title: CSS Image Values and Replaced Content Module Level 3
     url: http://www.w3.org/TR/css3-images/
@@ -419,6 +423,14 @@ definidas com `object-fit: contain`.
 
 Claro que também é possível utilizar outras unidades como `px`, `em`, etc. e
 valores negativos também.
+
+
+## Ah, e mais uma coisinha...
+
+As propriedades `object-fit` e `object-position` podem ser utilizadas também no
+elemento `<video>`, nos possibilitando realizar exatamente as mesmas
+configurações de estilos tanto para imagens quanto para vídeos.
+
 
 <table class="support">
     <thead>
