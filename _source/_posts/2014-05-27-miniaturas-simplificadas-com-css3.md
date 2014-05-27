@@ -91,7 +91,7 @@ para visualizar imagens. Abaixo temos uma mini galeria com algumas imagens.
 
 <p class="obs">
 	<strong>OBS.:</strong> Para visualizar os resultados experimentados neste
-	post, é preciso utilizar um navegador baseado na engine do blink (Google
+	post, é preciso utilizar um navegador baseado na engine do Blink (Google
 	Chrome ou Opera) — caso contrário, não fará o menos sentido ler este
 	material sem ver os resultados.
 </p>
@@ -109,7 +109,7 @@ para visualizar imagens. Abaixo temos uma mini galeria com algumas imagens.
 
 As miniaturas acima foram compostas __apenas__ com o elemento `<img>`, ou seja,
 não foi preciso fazer uso de um elemento pai para servir de _empacotador_ para a
-imagem — coisa que é muito comum na construção de miniaturas, constuma-se
+imagem — coisa que é muito comum na construção de miniaturas, costuma-se
 utilizar uma `<div>` com `overflow: hidden` e fazer o redimensionamento da
 imagem para acompanhar o tamanho da `<div>`.
 
@@ -187,9 +187,9 @@ diferente da original (comportamento padrão das imagens até então).
 ### none
 
 Com `none`, não é realizado nenhum processamento na imagem, mas ela será
-"_cropada_" (<em>crop</em>) pelas dimensões definidas, ou seja, será renderizada
-com seu _bitmap_ inalterado, porém __cortado__. Com um exemplo fica mais fácil de
-entender:
+"<em>cropada</em>" (<em>crop</em>) pelas dimensões definidas, ou seja, será
+renderizada com seu _bitmap_ inalterado, porém __cortado__. Com um exemplo fica
+mais fácil de entender:
 
 <div class="galeria">
 	<figure class="galeria-figure">
@@ -234,7 +234,7 @@ correspondente original:
 }
 {% endhighlight %}
 
-Como dito, nenhumo processamento foi feito na imagem, e ala mantem seu tamnaho
+Como dito, nenhum processamento foi feito na imagem, e ela mantém seu tamanho
 original. Pode-se perceber também que, nesses dois exemplos, a imagem resultante
 foi posicionada de forma centralizada. Veremos isso mais adiante com a
 propriedade [`object-position`](#objectposition).
@@ -296,10 +296,10 @@ dentro da área definida pelas dimensões especificadas.
 
 Esse é um valor que pode causar um pouco de confusão. Ele fará com que a imagem
 se comporte de dois jeitos diferentes, dependendo do seu tamanho. `scale-down`
-irá sempre se comportar igual a `none` ou `contain`. O comportamente resultante
-irá ser sempre o que representar um __menor tamanho__ de imagem desenhada — e
-isso dependerá das dimensões originais da imagem e das dimensões definidas para
-o elemento `<img>`. De novo, com um exemplo fica mais fácil:
+irá sempre se comportar igual a `none` ou `contain`. O comportamento resultante
+sempre será o que representar um __menor tamanho__ de imagem desenhada — e isso
+dependerá das dimensões originais da imagem e das dimensões definidas para o
+elemento `<img>`. De novo, com um exemplo fica mais fácil:
 
 <div class="galeria">
 	<figure class="galeria-figure">
@@ -457,4 +457,4 @@ valores negativos também.
 
 Informações segundo o [caniuse](http://caniuse.com/#search=object-fit "object-fit no caniuse.com").
 Apenas o Google Chrome e o Opera dão suporte atualmente (logicamente, agora que
-o Opera também usa o blink).
+o Opera também usa o Blink).
