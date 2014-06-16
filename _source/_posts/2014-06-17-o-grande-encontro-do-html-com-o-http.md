@@ -238,10 +238,12 @@ adequado de autorização na requisição, no caso, esse _header_ seria o
 A ação de _logout_ é mais simples ainda. Precisa-se apenas de um `<input>` do
 tipo `hidden` com seu atributo `name="_logout_"`.
 
+{% highlight html %}
 <form action="http://dandan.com/logout" method="POST">
     <input name="_logout_" type="hidden" />
     <button type="submit">Sair</button>
 </form>
+{% endhighlight %}
 
 Isso deve fazer com que o agente de usuário (que suporte autenticação HTTP e que
 reutilize credenciais de login em suas requisições) limpe quaisquer informações
@@ -271,14 +273,15 @@ removendo-os.
 Aqui temos uma resposta do Ian Hickson, que fechou a _issue_ como _Won't fix_:
 
 <blockquote>
-    PUT as a form method makes no sense, you wouldn't want to PUT a form
-    payload. DELETE only makes sense if there is no payload, so it doesn't make
-    much sense with forms either.
-    <cite>Ian Hickson</cite>
+    <p>
+        PUT as a form method makes no sense, you wouldn't want to PUT a form
+        payload. DELETE only makes sense if there is no payload, so it doesn't make
+        much sense with forms either.
+    </p>
+    <footer>
+        — Ian Hickson
+        (<a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=10671">Fonte 2</a>)
+    </footer>
 </blockquote>
 
-.[Fonte 2](https://www.w3.org/Bugs/Public/show_bug.cgi?id=10671).
-
-###
-
-dasdas
+E vocês, o que acham?
