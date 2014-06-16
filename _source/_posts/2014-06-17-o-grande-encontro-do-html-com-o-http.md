@@ -15,6 +15,9 @@ related:
   - title: O grande desencontro do HTTP com o HTML
     url: http://tableless.com.br/o-grande-desencontro-http-com-o-html/
     from: Tableless
+  - title: W3C HTML Form HTTP Extensions
+    url: http://www.w3.org/TR/form-http-extensions/
+    from: W3C
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -175,7 +178,7 @@ especificar um identificador para um `PUT`:
 
 Isso faria sentido. Deixando assim a URL do recurso mais limpa, e especificando
 seus parâmetros em outros lugares. A `action` resultante acima seria
-http://ego.globo.com/noticias/1440.
+"http://ego.globo.com/noticias/1440".
 
 ### payload="_header"
 
@@ -212,7 +215,7 @@ mesma maneira também há uma proposta para padronizar a ação de _logout_.
 ### Login
 
 Para determinar que um formulário realize uma submissão de um _login_, basta
-definir os `<input>`s de usuário e senha cada qual com seu atributo `name` como
+definir os elementos `<input>` de usuário e senha cada qual com seu atributo `name` como
 `_username_` e `_password_`, respectivamente.
 
 {% highlight html %}
@@ -225,8 +228,8 @@ definir os `<input>`s de usuário e senha cada qual com seu atributo `name` como
 </form>
 {% endhighlight %}
 
-- `_username_`: Deve ser utilizado apenas em `<input>`s do tipo `text` ou `email`.
-- `_password_`: Deve ser utilizado apenas em `<input>`s do tipo `password`.
+- `_username_`: Deve ser utilizado apenas em elementos `<input>` do tipo `text` ou `email`.
+- `_password_`: Deve ser utilizado apenas em elementos `<input>` do tipo `password`.
 
 Tá, mas qual a real vantagem disso? Bem, se essa convenção for utilizada, então
 o agente de usuário (navegador) automaticamente deverá incluir um _header_
