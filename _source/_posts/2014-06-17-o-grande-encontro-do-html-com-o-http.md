@@ -59,7 +59,9 @@ Uns dias depois do _post_ do Jean, me deparei com o seguinte
 </blockquote>
 <script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"> </script>
 
-O rascunho do editor virou
+O
+[rascunho do editor](http://cameronjones.github.io/form-http-extensions/index.html#form-method-attribute)
+evoluiu para um
 [rascunho público do W3C](http://www.w3.org/TR/form-http-extensions/ "W3C HTML Form HTTP Extensions"),
 ou seja, parece que a coisa vai rolar mesmo — então decidi dar uma estudada na
 proposta e falar um pouco sobre o que achei mais legal. Será esse o encontro
@@ -86,12 +88,20 @@ consigo imaginar uma utilidade para `HEAD` e `PATCH`, mas não para `OPTION` —
 também não há exemplos de utilização desses métodos no documento do W3C (por
 enquanto).
 
+Como mostrado no
+[_post_ do @jcemer](http://tableless.com.br/o-grande-desencontro-http-com-o-html/),
+os _frameworks_ geralmente utilizam campos `<input type="hidden">` para poder
+especificar métodos que não são `GET` nem `POST` e daí realizar as gambiarras
+necessárias no lado do servidor. Imagino que agora as coisas vão ficar um pouco
+mais simples.
+
 ### method="PUT"
 
-dsadasdasda
+O método `PUT`, como já sabemos, serve para atualizar um objeto/recurso no
+servidor.
 
 {% highlight html %}
-<form action="http://g1.globo.com/noticias/14" method="PUT">
+<form action="http://ego.globo.com/noticias/1440" method="PUT">
     <input type="text" name="titulo" value="Daniel Filho aparou a barba." />
     <textarea name="conteudo">
         Daniel Filho finalmente criou vergonha na cara e (...)
@@ -100,29 +110,100 @@ dsadasdasda
 </form>
 {% endhighlight%}
 
+No trecho acima, temos um formulário que atualiza uma notícia (de alto grau de
+importância) com identificador "1440" do portal (super relevante para nossas
+vidas #sqn) [ego](http://ego.globo.com).
+
+<p class="obs">
+    <strong>OBS.:</strong> Não mostrem isso ao Daniel. Ele nem vai ler esse post
+    mesmo. =P
+</p>
+
 ### method="DELETE"
 
-dasdsadasdsa
+Com o método `DELETE` podemos deletar um objeto/recurso (dãã).
+
+{% highlight html %}
+<form action="http://ego.globo.com/noticias" method="DELETE">
+    <button type="submit">Excluir</button>
+</form>
+{% endhighlight%}
+
+No trecho acima, temos um formulário que provê um __grande serviço à
+humanidade__, mandando todos as notícias do portal ego _pro raio que o parta_
+com o simples uso do método `DELETE` (acho que esse método nunca foi tão bem
+utilizado, hein). Claro que o serviço em questão deve estar em conformidade com
+o padrão REST para que isso aconteça.
 
 
 ## Atributo payload
 
 O atributo `payload` é usado para representar a associação entre um determinado
-dado (ou campo) de um formulário a um tipo de esquema de dados na submissão do
-formulário. Ele pode ter basicamente três valores:
+dado (ou campo) de um formulário a um tipo de esquema de dados
+(`http`/`https`/`data`/`mailto`) na submissão do formulário. Um _payload_ pode
+ser basicamente de três tipos: __action__, __header__ ou __body__ (valores
+`_action`, `_header` e `_body` respectivamente).
 
-- `_action`: dasdasd
-- `_header`: dasdasd
-- `_body`: dasdasd
+### payload="_action"
+
+Informação ou dado que descreve uma ação a ser executada no lado do servidor.
+Comumente referente ao atributo `action` do formulário.
+
+{% highlight html %}
+<form action="mailto:">
+    <input name="to" type="email" payload="_action" />
+    <textarea name="content">
+        Parabéns Daniel Filho, você foi contemplado com um barbeador (...)
+    </textarea>
+    <button type="submit">Enviar email</button>
+</form>
+{% endhighlight %}
+
+Fiz esse exemplo acima com base no que existe no rascunho do W3C. Pelo que
+entendi, o `input[name=to]` é associado à _action_ que descreve um endereço de
+_email_, no entanto, não ficou claro como isso acontence exatamente. Por
+exemplo, se adicionarmos mais um `<input>` com `payload="action"`, o que deverá
+acontecer? Não sei. Mas seguindo a lógica acima, podíamos utilizar isso para
+especificar um identificador para um `PUT`:
+
+{% highlight html %}
+<form action="http://ego.globo.com/noticias">
+    <input name="id" type="hidden" payload="_action" value="1440" />
+    <!-- ... -->
+</form>
+{% endhighlight %}
+
+Isso faria sentido. Deixando assim a URL do recurso mais limpa, e especificando
+seus parâmetros em outros lugares. A `action` resultante acima seria
+http://ego.globo.com/noticias/1440.
+
+### payload="_header"
+
+Informação que pode ser incluida no _header_ da submissão. Com isso pode-se
+especificar valores para um determinado _header_. O exemplo a seguir envia
+o _header_&nbsp;`If-Unmodified-Since` na submissão do formulário.
+
+{% highlight html %}
+<form action="http://ego.globo.com/noticias/1440" method="DELETE">
+    <input type="hidden"
+           name="If-Unmodified-Since"
+           value="Tue, 1 Jan 2013 12:00:00 GMT"
+           payload="_header"/>
+    <button type="submit">Excluir</button>
+</form>
+{% endhighlight%}
+
+Só vai excluir o objeto se o mesmo não foi modificado desde a data especificada.
+
+### payload="_body"
+
+Dado que pertence ao conteúdo (<em>body</em>) da submissão. É o valor padrão
+para a maioria dos casos.
 
 
 ## Autenticação HTTP
 
 dasdasdasd
-
-- `_username_`
-- `_password_`
-- `_logout_`
 
 
 ## Suporte
