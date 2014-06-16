@@ -203,9 +203,82 @@ para a maioria dos casos.
 
 ## Autenticação HTTP
 
-dasdasdasd
+Outra ação bem comum realizada via formulários é o _login_ em algum serviço.
+_Logins_ geralmente necessitam de pelo menos duas informações, o identificador
+do usuário que está tentando acessar o sistema e sua senha — claro que estamos
+falando de autenticações simples aqui (antes que venham falar sobre OAuth). Da
+mesma maneira também há uma proposta para padronizar a ação de _logout_.
+
+### Login
+
+Para determinar que um formulário realize uma submissão de um _login_, basta
+definir os `<input>`s de usuário e senha cada qual com seu atributo `name` como
+`_username_` e `_password_`, respectivamente.
+
+{% highlight html %}
+<form action="http://dandan.com/login" method="POST">
+    <label for="usuario">Usuário</label>
+    <input id="usuario" name="_username_" type="text" />
+    <label for="senha">Senha</label>
+    <input id="senha" name="_password_" type="password" />
+    <button type="submit">Entrar</button>
+</form>
+{% endhighlight %}
+
+- `_username_`: Deve ser utilizado apenas em `<input>`s do tipo `text` ou `email`.
+- `_password_`: Deve ser utilizado apenas em `<input>`s do tipo `password`.
+
+Tá, mas qual a real vantagem disso? Bem, se essa convenção for utilizada, então
+o agente de usuário (navegador) automaticamente deverá incluir um _header_
+adequado de autorização na requisição, no caso, esse _header_ seria o
+`Authorization`.
+
+### Logout
+
+A ação de _logout_ é mais simples ainda. Precisa-se apenas de um `<input>` do
+tipo `hidden` com seu atributo `name="_logout_"`.
+
+<form action="http://dandan.com/logout" method="POST">
+    <input name="_logout_" type="hidden" />
+    <button type="submit">Sair</button>
+</form>
+
+Isso deve fazer com que o agente de usuário (que suporte autenticação HTTP e que
+reutilize credenciais de login em suas requisições) limpe quaisquer informações
+sobre credenciais de _login_ previamente armazenadas.
 
 
-## Suporte
+## Curiosidades
 
-Calma pessoal, quase não tem nem um rascunho ainda.
+Na minha pesquisa, encontrei algumas informações interessantes.
+
+### PUT e DELETE no Firefox
+
+A Mozilla chegou a implementar os métodos `PUT` e `DELETE` em formulários no
+Firefox 4 Beta (2011), mas depois foram removidos.
+[Fonte](http://lists.w3.org/Archives/Public/public-html-comments/2011Mar/0007.html).
+
+### PUT e DELETE no HTML5
+
+Os métodos `PUT` e `DELETE` chegaram a fazer parte de alguns [rascunhos iniciais
+do HTML5](http://www.w3.org/TR/2010/WD-html5-20100624/association-of-controls-and-forms.html#attr-fs-method),
+mas foram removidos nas suas
+[versões subsequentes](http://www.w3.org/TR/2010/WD-html5-20101019/association-of-controls-and-forms.html#attr-fs-method).
+Vai ver foi por isso que o Firefox acabou implementando-os e depois
+removendo-os.
+[Fonte 1](http://html5.org/tools/web-apps-tracker?from=5565&to=5566).
+
+Aqui temos uma resposta do Ian Hickson, que fechou a _issue_ como _Won't fix_:
+
+<blockquote>
+    PUT as a form method makes no sense, you wouldn't want to PUT a form
+    payload. DELETE only makes sense if there is no payload, so it doesn't make
+    much sense with forms either.
+    <cite>Ian Hickson</cite>
+</blockquote>
+
+.[Fonte 2](https://www.w3.org/Bugs/Public/show_bug.cgi?id=10671).
+
+###
+
+dasdas
