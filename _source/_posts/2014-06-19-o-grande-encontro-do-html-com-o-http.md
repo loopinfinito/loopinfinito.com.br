@@ -4,7 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
-image: images/posts/2014-06-17-o-grande-encontro-do-http-com-o-html.jpg
+image: images/posts/2014-06-19-o-grande-encontro-do-html-com-o-http.jpg
 tags: HTML
 comments: false
 keywords: >
