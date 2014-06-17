@@ -8,7 +8,11 @@ image: images/posts/2014-06-17-o-grande-encontro-do-http-com-o-html.jpg
 tags:
 comments: false
 keywords: >
-  lorem, sss
+  form, html, http, formulário, método, method, put, delete, get, post, rest,
+  w3c, rascunho, login, logout, autenticação, header, body, action, ação, jean
+  carlo emer, payload, _username_, _password_, _logout_, ian hickson, firefox,
+  connect, trace, track, head, options, patch, cabeçalho, sumissão, requisição,
+  almir filho, loop infinito
 resumo: >
   lorem
 related:
