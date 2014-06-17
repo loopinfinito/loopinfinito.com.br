@@ -5,7 +5,7 @@ author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-06-17-o-grande-encontro-do-http-com-o-html.jpg
-tags:
+tags: HTML
 comments: false
 keywords: >
   form, html, http, formulário, método, method, put, delete, get, post, rest,
@@ -14,7 +14,10 @@ keywords: >
   connect, trace, track, head, options, patch, cabeçalho, sumissão, requisição,
   almir filho, loop infinito
 resumo: >
-  lorem
+  Há uma proposta na W3C para ampliar as capacidades dos formulários _web_.
+  Algumas dessas melhoras dizem respeito às capacidades dos formulários web de
+  realizar coisas consideradas bem comuns hoje em dia, mas que dependem de
+  JavaScript e de outras técnicas comuns que viabilizem seus usos.
 related:
   - title: O grande desencontro do HTTP com o HTML
     url: http://tableless.com.br/o-grande-desencontro-http-com-o-html/
@@ -24,26 +27,21 @@ related:
     from: W3C
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-## O problema
-
 Um dia desses li um
 [_post_ muito bom](http://tableless.com.br/o-grande-desencontro-http-com-o-html/ "O grande desencontro do HTTP com o HTML")
-do [@jcemer](https://twitter.com/jcemer "Jean Carlo Emer (twitter)") que abordava os
-problemas de inconsistência entre o
+do [@jcemer](https://twitter.com/jcemer "Jean Carlo Emer (twitter)") que
+abordava os problemas de inconsistência entre o
 <abbr title="HyperText Markup Language">HTML</abbr> e o
 <abbr title="HyperText Transfer Protocol">HTTP</abbr>. O artigo mencionou
 inclusive um rascunho do editor que propuzera umas melhoras ao que se diz
 respeito às capacidades dos formulários web de realizar coisas consideradas bem
 comuns hoje em dia, mas que dependem de JavaScript e de outras técnicas comuns
-desenvolvidas com o intuito de suprir tais limitações do HTML em relação ao
-<abbr title="Representational State Transfer">REST</abbr>, como por exemplo o
-uso dos métodos `PUT` e `DELETE` diretamente no atributo `method` do `<form>`.
+que viabilizem seus usos. Algumas dessas técnicas foram desenvolvidas com o
+intuito de suprir as questões divergentes entre o HTML e o HTTP, sobretudo
+quando se deseja utilizar
+<abbr title="Representational State Transfer">REST</abbr>
+— como por exemplo o uso dos métodos `PUT` e `DELETE` diretamente no atributo
+`method` do `<form>`.
 
 Para entender plenamente do que se tratam esses problemas, recomendo a leitura
 do [post do Jean](http://tableless.com.br/o-grande-desencontro-http-com-o-html/)
