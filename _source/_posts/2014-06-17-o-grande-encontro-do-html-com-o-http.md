@@ -28,7 +28,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## O problema
 
-Um dia desses lí um
+Um dia desses li um
 [_post_ muito bom](http://tableless.com.br/o-grande-desencontro-http-com-o-html/ "O grande desencontro do HTTP com o HTML")
 do [@jcemer](https://twitter.com/jcemer "Jean Carlo Emer (twitter)") que abordava os
 problemas de inconsistência entre o
@@ -49,7 +49,7 @@ do [post do Jean](http://tableless.com.br/o-grande-desencontro-http-com-o-html/)
 ## A motivação
 
 Uns dias depois do _post_ do Jean, me deparei com o seguinte
-[tweet](https://twitter.com/w3c/statuses/472032014942879744) do
+[_tweet_](https://twitter.com/w3c/statuses/472032014942879744) do
 [@W3C](https://twitter.com/w3c):
 
 <blockquote class="twitter-tweet" lang="en">
@@ -73,7 +73,7 @@ definitivo entre o HTML e seu protocolo de transferência?
 
 ## HTML ♥ Forms
 
-As propostas desse rascunho não se referem somente a entrar em conformância com
+As propostas desse rascunho não se referem somente a entrar em conformidade com
 os verbos REST. Há recursos para padronizar autenticação HTTP e até mesmo para
 enviar informações diretamente no _header_ de uma submissão de formulário.
 
@@ -84,7 +84,7 @@ Será possível especificar quase todos os métodos HTTP através do atributo
 `method` de um formulário. Atualmente apenas são suportados os métodos `GET` e
 `POST`.
 
-O HTTP tem 9 métodoso, e os únicos que __não__ poderão ser utilizados são
+O HTTP tem 9 métodos, e os únicos que __não__ poderão ser utilizados são
 `CONNECT`, `TRACE` e `TRACK`. Claro que, os que saltam aos olhos são os já
 utilizados no padrão REST — os métodos `PUT` e `DELETE`. Quanto aos restantes,
 consigo imaginar uma utilidade para `HEAD` e `PATCH`, mas não para `OPTION` — e
@@ -164,7 +164,7 @@ Comumente referente ao atributo `action` do formulário.
 
 Fiz esse exemplo acima com base no que existe no rascunho do W3C. Pelo que
 entendi, o `input[name=to]` é associado à _action_ que descreve um endereço de
-_email_, no entanto, não ficou claro como isso acontence exatamente. Por
+_email_, no entanto, não ficou claro como isso acontece exatamente. Por
 exemplo, se adicionarmos mais um `<input>` com `payload="action"`, o que deverá
 acontecer? Não sei. Mas seguindo a lógica acima, podíamos utilizar isso para
 especificar um identificador para um `PUT`:
@@ -182,7 +182,7 @@ seus parâmetros em outros lugares. A `action` resultante acima seria
 
 ### payload="_header"
 
-Informação que pode ser incluida no _header_ da submissão. Com isso pode-se
+Informação que pode ser incluída no _header_ da submissão. Com isso pode-se
 especificar valores para um determinado _header_. O exemplo a seguir envia
 o _header_&nbsp;`If-Unmodified-Since` na submissão do formulário.
 
@@ -249,8 +249,8 @@ tipo `hidden` com seu atributo `name="_logout_"`.
 {% endhighlight %}
 
 Isso deve fazer com que o agente de usuário (que suporte autenticação HTTP e que
-reutilize credenciais de login em suas requisições) limpe quaisquer informações
-sobre credenciais de _login_ previamente armazenadas.
+reutilize credenciais de _login_ em suas requisições) limpe quaisquer
+informações sobre credenciais de _login_ previamente armazenadas.
 
 
 ## Curiosidades
