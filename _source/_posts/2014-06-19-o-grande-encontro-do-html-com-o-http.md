@@ -6,7 +6,7 @@ author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/111718150595519513871/
 image: images/posts/2014-06-19-o-grande-encontro-do-html-com-o-http.jpg
 tags: HTML
-comments: false
+comments: true
 keywords: >
   form, html, http, formulário, método, method, put, delete, get, post, rest,
   w3c, rascunho, login, logout, autenticação, header, body, action, ação, jean
