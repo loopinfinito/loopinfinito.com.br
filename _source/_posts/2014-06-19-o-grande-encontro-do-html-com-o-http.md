@@ -27,17 +27,17 @@ related:
     from: W3C
 ---
 
-Um dia desses li um
+Li um
 [_post_ muito bom](http://tableless.com.br/o-grande-desencontro-http-com-o-html/ "O grande desencontro do HTTP com o HTML")
 do [@jcemer](https://twitter.com/jcemer "Jean Carlo Emer (twitter)") que
-abordava os problemas de inconsistência entre o
+aborda os problemas de inconsistência entre o
 <abbr title="HyperText Markup Language">HTML</abbr> e o
-<abbr title="HyperText Transfer Protocol">HTTP</abbr>. O artigo mencionou
-inclusive um rascunho do editor que propuzera umas melhoras ao que se diz
-respeito às capacidades dos formulários web de realizar coisas consideradas bem
+<abbr title="HyperText Transfer Protocol">HTTP</abbr>. O artigo menciona,
+inclusive, um rascunho do editor que propunha melhorias ao que se diz
+respeito às capacidades dos formulários web de realizar tarefas consideradas bem
 comuns hoje em dia, mas que dependem de JavaScript e de outras técnicas comuns
 que viabilizem seus usos. Algumas dessas técnicas foram desenvolvidas com o
-intuito de suprir as questões divergentes entre o HTML e o HTTP, sobretudo
+intuito de suprir algumas questões divergentes entre o HTML e o HTTP, sobretudo
 quando se deseja utilizar
 <abbr title="Representational State Transfer">REST</abbr>
 — como por exemplo o uso dos métodos `PUT` e `DELETE` diretamente no atributo
@@ -116,11 +116,11 @@ servidor.
 {% endhighlight%}
 
 No trecho acima, temos um formulário que atualiza uma notícia (de alto grau de
-importância) com identificador "1440" do portal (super relevante para nossas
-vidas #sqn) [ego](http://ego.globo.com).
+importância) com identificador "1440" do [portal ego](http://ego.globo.com)
+(super relevante para nossas vidas #sqn).
 
 <p class="obs">
-    <strong>OBS.:</strong> Não mostrem isso ao Daniel. Ele nem vai ler esse post
+    <strong>Obs.:</strong> Não mostrem isso ao Daniel. Ele nem vai ler esse post
     mesmo. =P
 </p>
 
@@ -158,7 +158,7 @@ Comumente referente ao atributo `action` do formulário.
 <form action="mailto:">
     <input name="to" type="email" payload="_action" />
     <textarea name="content">
-        Parabéns Daniel Filho, você foi contemplado com um barbeador (...)
+        Parabéns Daniel Filho! Você foi contemplado com um barbeador (...)
     </textarea>
     <button type="submit">Enviar email</button>
 </form>
