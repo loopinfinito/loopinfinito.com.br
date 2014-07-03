@@ -211,3 +211,12 @@ definido. <strong>Hein?</strong>
     Safari 6.1 e Firefox Nightly já apresentam suporte.
   </p>
 </div>
+<div class="update">
+  <h3>27/06/2014</h3>
+  <p>
+    A propriedade foi removida do Blink — o motor de renderização do Chrome.
+    Mais detalhes no
+    <a href="http://src.chromium.org/viewvc/blink?view=revision&amp;revision=177128#sticky">log do commit</a>
+    da alteração.
+  </p>
+</div>
