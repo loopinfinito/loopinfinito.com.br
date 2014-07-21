@@ -105,7 +105,7 @@ comercializar estas novas idéias, em 1981, com o computador Xerox Star.
 
 <figure>
   <img
-    src="/images/posts/2014-07-22-Xerox-alto.jpg"
+    src="/images/posts/2014-07-22-xerox-alto.jpg"
     alt="Xerox Alto"
     width="700"
   />
