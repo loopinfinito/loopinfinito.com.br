@@ -5,13 +5,20 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
-image: images/posts/2014-06-17-a-metafora-do-escritorio.png
+image: images/posts/2014-07-22-a-metafora-do-escritorio.png
 tags: interface
 comments: false
 keywords: >
-  lorem, ipsum
+  graphical user interface, gui, alan kay, douglas engelbart, terminal, desktop
+  metaphor, metáfora do escritório, windows, janelas, ícones, menus, ponteiros,
+  pointer device, Xerox, parc, vale do silício, mãe de todos os demos, apple,
+  steve jobs
 resumo: >
-  lorem ipsum
+  Computadores eram telas pretas com letras verdes. Máquinas que executavam uma
+  única tarefa por vez a partir da entrada de comandos no _terminal_. Comandos
+  esse difícies de serem decorados e quase impossíveis de serem deduzidos. Era
+  necessário uma mudança radical no modo de interagir com um computador. Mas a
+  tecnologia simplesmente ainda não existia para tal quebra de paradigma.
 related:
   - title: "Graphical User Interface GUI"
     url: http://www.britannica.com/EBchecked/topic/242033/graphical-user-interface-GUI
@@ -19,6 +26,9 @@ related:
   - title: "The desktop metaphor is like so five minutes ago"
     url: http://www.ethanhein.com/wp/2009/the-desktop-metaphor-is-like-so-five-minutes-ago/
     from: The Ethan Hein Blog
+  - title: "BumpTop"
+    url: http://en.wikipedia.org/wiki/BumpTop
+    from: Wikipedia
 ---
 
 <style>
@@ -37,13 +47,13 @@ esse difícies de serem decorados e quase impossíveis de serem deduzidos.
 Por volta de 1960, computadores começavam a ganhar alguma popularidade fora das
 empresas, principalmente entre grupos de _hobbistas_. Pessoas essas que gastavam
 um bom tempo lendo grossos manuais para só então serem capaz de interagir com
-uma computador. Toda essa complexidade assutava a maioria das pessoas e era,
-obviamente, um grande impecílio para a popularização dessas fantásticas
+um computador. Toda essa complexidade assustava a maioria das pessoas e era,
+obviamente, um grande impecílio para a popularização destas fantásticas
 máquinas.
 
 Era necessário uma mudança radical no modo de interagir com um computador. Algo
-mais visual, mais próximo da realidade de um ser humano, e mais distante da
-realidade baixo nivel de uma máquina. Mas a tecnologia simplesmente ainda não
+mais visual, mais próximo da realidade de um ser humano e mais distante da
+realidade baixo nivel de uma máquina. Porém, a tecnologia simplesmente ainda não
 existia para tal quebra de paradigma.
 
 
@@ -60,14 +70,15 @@ durante a segunda guerra mundial que, em 1945, publicou um artigo com o título
 ["As We May Think"](http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/)
 descrevendo sua visão do futuro de como usaríamos máquinas — chamadas por ele de
 **Memex** — para acessar um vasto conjunto de dados ligados entre si
-(_linked data_).
+(<em>linked data</em>).
 
-Este artigo serviu de inspiração para **Douglas Engelbart**. Durante sua estadia
-na faculdade de Stanford, no Vale do Silício, ele formou o
+Este artigo serviu de inspiração para
+[Douglas Engelbart](http://en.wikipedia.org/wiki/Douglas_Engelbart). Durante sua
+estadia na faculdade de Stanford, no Vale do Silício, ele formou o
 _Augmentation Research Center_ e lá concebeu algumas das invenções bases para a
-GUI ser o que é hoje. Entre essas invenções estava o _mouse_, um dispositivo que
-permitia mover um ponteiro na tela e manipular informação de uma maneira mais
-flexível e natural.
+<abbr title="Graphical User Interface">GUI</abbr> ser o que é hoje. Entre essas
+invenções estava o _mouse_, um dispositivo que permitia mover um ponteiro na
+tela e manipular informação de uma maneira mais flexível e natural.
 
 <q class="pushing-quotes">
   The digital revolution is <strong>far more significant</strong> than the
@@ -76,38 +87,38 @@ flexível e natural.
 
 Em dezembro de 1968, em San Francisco, Douglas Engelbart demonstrara todas as
 novas invenções feitas por sua equipe. Entre essas invenções estava o já citado
-_mouse_ e também o conceito de janelas, hipertexto, gráficos, video
-conferência, processador de texto, controle de versão e um editor de texto
-colaborativo. Essa apresentação foi — e é — um marco na história da computação,
-e ficou conhecida como **A mãe de todos os demos**, a demonstração mais
-fantástica e a frente de seu tempo de nossa área. A demonstração completa pode
-ser — e inclusive acho que deve ser — vista
-[aqui](http://www.youtube.com/watch?v=yJDv-zdhzMY).
+_mouse_ e também o conceito de janelas, hipertexto, gráficos, video conferência,
+processador de texto, controle de versão e um editor de texto colaborativo. Essa
+apresentação foi — e é — um marco na história da computação, e ficou conhecida
+como **A Mãe de Todos os Demos**, a demonstração mais fantástica e à frente de
+seu tempo da área. Ela pode ser  — e deveria ser — vista
+completa [aqui](http://www.youtube.com/watch?v=yJDv-zdhzMY).
 
 
 ## PARC
 
-Em 1970, boa parte da equipe de Engelbart foi trabalhar na XEROX,
-especificamente no laboratório PARC (Palo Alto Research Center). Lá refinaram
-suas idéias e inclusive conseguiram implementar e comercializar estas novas
-idéias, em 1981, com o computador XEROX Star.
+A próxima onda de inovação no campo das Interfaces Gráficas de Usuário
+aconteceria em Palo Alto, no lendário laboratório PARC (Palo Alto Research
+Center) da Xerox, onde, em 1970, boa parte da equipe de Engelbart foi
+trabalhar. Lá refinaram suas idéias e inclusive conseguiram implementar e
+comercializar estas novas idéias, em 1981, com o computador Xerox Star.
 
 <figure>
   <img
-    src="/images/posts/2014-06-17-xerox-alto.jpg"
+    src="/images/posts/2014-07-22-Xerox-alto.jpg"
     alt="Xerox Alto"
     width="700"
   />
 </figure>
 
-O XEROX Star foi o primeiro computador comercial a vir com uma interface de
-usuário gráfica baseada em janelas (_windows_), ícones, pastas, um _mouse_, rede
+O Xerox Star foi o primeiro computador comercial a vir com uma interface de
+usuário gráfica baseada em janelas (<em>windows</em>), ícones, pastas, um _mouse_, rede
 ethernet, servidor de arquivos, servidor de impressão e e-mail.
 
 Ele foi, também, o primeiro computador a empregar a técnica de _bit mapping_. Em
-essência, tudo na tela do XEROX Star era uma imagem. A técnica de _bit mapping_
+essência, tudo na tela do Xerox Star era uma imagem. A técnica de _bit mapping_
 tornou mais simples o ato de se trabalhar com gráficos e também permitiu que o
-computador apresentasse na tela uma exata representação do que seria imprimido.
+computador apresentasse na tela uma exata representação do que seria impresso.
 O que ficou conhecido como WYSIWYG (What You See Is What You Get).
 
 Muitos creditam a invenção das interfaces gráficas como conhecemos hoje ao PARC.
@@ -115,10 +126,10 @@ Lá, eles não só criaram (refinaram) a GUI, como também inventaram a programa
 orientada a objetos — com a linguagem SmallTalk — o design pattern MVC,
 a impressora a laser, o ethernet, editores de texto WYSIWYG e tantas outras.
 
-Os cientistas do PARC também definiram as bases da Interface de Usuário Gráfica
+Os cientistas do PARC definiram a base da Interface de Usuário Gráfica
 como sendo o WIMP, sigla para **Windows, Icons, Menu and Pointer Device**. Até
 hoje, a maioria dos sistemas _desktops_, entre eles Windows, OS X, Gnome, KDE,
-utilizam essas bases.
+utilizam essa base.
 
 <q class="pushing-quotes">
   The best way to predict the future is to <strong>invent it</strong> — Alan Kay
@@ -126,34 +137,38 @@ utilizam essas bases.
 
 Em cima desses elementos básicos, foi criada a Metáfora do Escritório. Os
 cientistas do PARC, principalmente Alan Kay, decidiram usar metáforas a tarefas
-comuns em um escritório para diminuir a curva de aprendizado para usar um
+comuns em um escritório para diminuir a curva de aprendizado de uso de um
 computador.
+
 
 ## A metáfora
 
-A primeira Graphical User Interface, ou GUI, era uma metáfora a um ambiente de
-escritório. O desktop, ou área de trabalho, era como se fosse uma mesa de
-escritório. Em cima dela tinhamos papéis, que eram arquivos do computador.
+A primeira _Graphical User Interface_, ou GUI, era uma
+**metáfora a um ambiente de escritório**. O desktop, ou área de trabalho,
+representava uma mesa de escritório. Em cima dela tínhamos papéis, que eram
+arquivos do computador.
 
-Estes mesmos arquivos podiam ser agrupados em pastas, assim como papeis sao
-postos em pastas em escritórios. Os arquivos poderiam ser jogados em uma
+Estes mesmos arquivos podiam ser agrupados em pastas, assim como papéis são
+organizados em pastas nos escritórios. Os arquivos poderiam ser jogados em uma
 lixeira, tal qual, também, é feito em um escritório. Estes arquivos poderiam,
 inclusive, serem resgatados da lixeira, do mesmo modo que podemos fazer com um
 papel amassado jogado no lixo.
 
 Além da métafora do escritório, foi desenvolvida o conceito de janelas. Cada
 janela representaria um aplicativo aberto. Cada aplicativo aberto seria o
-equivalente a um papel em uma mesa. Nele você trabalharia.
+equivalente a um papel em uma mesa. Nele o trabalho aconteceria.
 
-A Apple foi uam das grandes responsávei pela popularização da GUI. Steve Jobs
+A Apple foi uma das grandes responsáveis pela popularização da GUI. Steve Jobs
 em uma visita ao Xerox PARC conheceu a GUI, e logo percebeu que aquilo era o
 futuro. A Xerox estava com problemas para vender o Xerox Alto, o único
 computador que até então rodava com uma GUI. Jobs então fez uma proposta a Xerox
 para comprar a GUI, e implementar no que viria a ser o Apple Lisa.
 
-No védeo abaixo temos uma propaganda de televisão da Apple, anunciando seu novo
+No vídeo abaixo temos uma propaganda de televisão da Apple, anunciando seu novo
 computador e a sua GUI com a metáfora do escritório como sendo um diferencial
-entre outros produtos da época, devido a sua facilidade de uso.
+entre outros produtos da época, devido a sua facilidade de uso. Percebam como o
+ator usa o seu dedo como ponteiro, simulando um _mouse_, apontando para objetos
+que o Mac simula em sua interface, como papéis, pastas e calculadora.
 
 <iframe
   class="video-youtube-embed"
@@ -162,20 +177,36 @@ entre outros produtos da época, devido a sua facilidade de uso.
 >&nbsp;</iframe>
 
 Praticamente todos os sistemas operacionais que adotaram uma interface gráfica
-utilizaram ou utilizam a metáfora do escritório. Alguns mais puristas em relacao
-a própria métafora, outros mais préticos.
+utilizaram ou utilizam a metáfora do escritório. Alguns mais puristas em relação
+a própria métafora, outros mais práticos.
 
-O [BeOS](http://en.wikipedia.org/wiki/BeOS), pro exemplo, mostrava um icone de
+O [BeOS](http://en.wikipedia.org/wiki/BeOS), por exemplo, mostrava um ícone de
 dispositivos externos conectados no desktop, enquanto que dispositivos internos
 eram acessados atraves do ícone do computador, para ser mais fiel a metáfora.
+
+Um das implementações mais fiéis à metáfora em si veio em 2010 com o BumpTop. A
+idéia da interface do BumpTop era de simular de forma mais real uma mesa de
+trabalho de escritório. Nele, os documentos são pequenos objetos 3D que podem
+ser empilhados, manipulados usando gestos e, inclusive, jogados de um lado para
+o outro utilizando leis físicas para uma experiência mais realista.
+
+<iframe
+  class="video-youtube-embed"
+  src="http://www.youtube.com/embed/M0ODskdEPnQ"
+  frameborder="0"
+>&nbsp;</iframe>
+
+Infelizmente, o produto BumpTop foi descontinuado logo após a empresa ter sido
+comprada pelo Google.
+
 
 ## Impactos
 
 A Metáfora do Desktop desenvolvida pela equipe de Alan Kay é até hoje usada em
-todos os grandes sistemas operacionais de desktop. Ele foi um importante passo
+todos os grandes sistemas operacionais de desktop. Ela foi um importante passo
 para que computadores ganhassem a popularidade que hoje possuem. Tornou possível
-o uso por pessoas não técnicas e também abriu várias diferentes possibilidades
-na criação de programas de coputadores, já que não estavamos mais limitados a
+o uso de computadores por pessoas não técnicas e abriu diferentes possibilidades
+na criação de programas de computadores, já que não estávamos mais limitados a
 uma interface de linha de comando.
 
 Ela é hoje tão popular que, para muitos, superou sua "inspiração". Quando
