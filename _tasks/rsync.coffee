@@ -32,7 +32,7 @@ module.exports = (grunt) ->
 				'--exclude'
 				'.htpasswd'
 				"#{ __dirname }/#{ localRoot }"
-				"#{ user }@bugsy.dreamhost.com:#{ remoteRoot }"
+				"#{ user }@highland-park.dreamhost.com:#{ remoteRoot }"
 			])
 
 			# evento disparado quando a tarefa imprime algo no stdout

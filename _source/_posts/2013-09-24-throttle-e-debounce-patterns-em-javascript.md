@@ -127,15 +127,15 @@ ele é disparado, em média, a cada 13 milisegundos.
 O _throttle_ funciona como uma __válvula__ e não permite que o _handler_ seja
 executado mais de 1 vez a cada 400 milisegundos (uma vez a cada 2 barras).
 
-O _debounce_ __posterga__ a execução do _handler_ caso ele seja chamado
+O _debounce_&nbsp;__posterga__ a execução do _handler_ caso ele seja chamado
 novamente em menos de 200 milisegundos. Você deve parar um pouco de mexer o
 _mouse_ para parar de postergar o _handler_ _debounced_.
 
 
 ## Como usar
 
-Vamos agora ver como aplicar os conceitos de _throttle_ e _debounce_ ná
-pratica. Começando pelo _throttle_.
+Vamos agora ver como aplicar os conceitos de _throttle_ e _debounce_ na prática.
+Começando pelo _throttle_.
 
 
 {% highlight javascript %}
@@ -166,7 +166,7 @@ após o sinal de `=`. Não se deixe levar pelos nomes bonitos. Uma função
 auto-executável é apenas — como o próprio nome diz — uma função que se executa e
 serve apenas como um escopo para declararmos variáveis "privadas".
 
-Dentra da nossa <abbr title="Immediately-Invoked Function Expression">IIFE</abbr>
+Dentro da nossa <abbr title="Immediately-Invoked Function Expression">IIFE</abbr>
 no trecho `var onResize = function` definimos a lógica que queremos que seja
 executada. Na variável `timeWindow` o tempo minímo entre as execuções do trecho
 de código _throttled_. E, no final, retornamos a função `onResize` — com seu
