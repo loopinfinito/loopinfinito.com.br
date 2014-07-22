@@ -7,7 +7,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 image: images/posts/2014-07-22-a-metafora-do-escritorio.png
 tags: interface
-comments: false
+comments: true
 keywords: >
   graphical user interface, gui, alan kay, douglas engelbart, terminal, desktop
   metaphor, metáfora do escritório, windows, janelas, ícones, menus, ponteiros,
