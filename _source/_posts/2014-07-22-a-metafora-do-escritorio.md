@@ -16,7 +16,7 @@ keywords: >
 resumo: >
   Computadores eram telas pretas com letras verdes. Máquinas que executavam uma
   única tarefa por vez a partir da entrada de comandos no _terminal_. Comandos
-  esse difícies de serem decorados e quase impossíveis de serem deduzidos. Era
+  esse difíceis de serem decorados e quase impossíveis de serem deduzidos. Era
   necessário uma mudança radical no modo de interagir com um computador. Mas a
   tecnologia necessária ainda não existia para tal quebra de paradigma.
 related:
@@ -42,18 +42,18 @@ related:
 Usar um computador nem sempre foi uma tarefa fácil — não que hoje o seja.
 Computadores eram telas pretas com letras verdes. Máquinas que executavam uma
 única tarefa por vez a partir da entrada de comandos no _terminal_. Comandos
-esses difícies de serem decorados e quase impossíveis de serem deduzidos.
+esses difíceis de serem decorados e quase impossíveis de serem deduzidos.
 
 Por volta de 1960, computadores começavam a ganhar alguma popularidade fora das
 empresas, principalmente entre grupos de _hobbistas_. Pessoas essas que gastavam
 um bom tempo lendo grossos manuais para só então serem capaz de interagir com
 um computador. Toda essa complexidade assustava a maioria das pessoas e era,
-obviamente, um grande impecílio para a popularização destas fantásticas
+obviamente, um grande empecilho para a popularização destas fantásticas
 máquinas.
 
 Era necessário uma mudança radical no modo de interagir com um computador. Algo
 mais visual, mais próximo da realidade de um ser humano e mais distante da
-realidade baixo nivel de uma máquina. Porém, a tecnologia necessária
+realidade baixo nível de uma máquina. Porém, a tecnologia necessária
 simplesmente não existia para tal quebra de paradigma.
 
 
@@ -100,8 +100,8 @@ completa [aqui](http://www.youtube.com/watch?v=yJDv-zdhzMY).
 A próxima onda de inovação no campo das Interfaces Gráficas do Usuário
 aconteceria em Palo Alto, no lendário laboratório PARC (Palo Alto Research
 Center) da Xerox, onde, em 1970, boa parte da equipe de Engelbart foi
-trabalhar. Lá refinaram suas idéias e inclusive conseguiram implementar e
-comercializar estas novas idéias, em 1981, com o computador
+trabalhar. Lá refinaram suas ideias e inclusive conseguiram implementar e
+comercializar estas novas ideias, em 1981, com o computador
 [Xerox Star](http://en.wikipedia.org/wiki/Xerox_Star).
 
 <figure>
@@ -125,7 +125,7 @@ O que ficou conhecido como WYSIWYG (What You See Is What You Get).
 Muitos creditam a invenção das interfaces gráficas como conhecemos hoje ao PARC.
 Lá, eles não só criaram (refinaram) a GUI, como também inventaram a programação
 orientada a objetos — com a linguagem
-[Smalltalk](http://pt.wikipedia.org/wiki/Smalltalk) — o design pattern
+[Smalltalk](http://pt.wikipedia.org/wiki/Smalltalk) — o _design pattern_&nbsp;
 [MVC](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller),
 a impressora a laser, o ethernet, editores de texto WYSIWYG e tantas outras.
 
@@ -158,7 +158,7 @@ lixeira, tal qual, também, é feito em um escritório. Estes arquivos poderiam,
 inclusive, serem resgatados da lixeira, do mesmo modo que podemos fazer com um
 papel amassado jogado no lixo.
 
-Além da métafora do escritório, foi desenvolvido o conceito de janelas. Cada
+Além da metáfora do escritório, foi desenvolvido o conceito de janelas. Cada
 janela representaria um aplicativo aberto. Cada aplicativo aberto seria o
 equivalente a um papel em uma mesa. Nele o trabalho aconteceria.
 
@@ -183,14 +183,14 @@ que o Mac simula em sua interface, como papéis, pastas e calculadora.
 
 Praticamente todos os sistemas operacionais que adotaram uma interface gráfica
 utilizaram ou utilizam a metáfora do escritório. Alguns mais puristas em relação
-a própria métafora, outros mais práticos.
+a própria metáfora, outros mais práticos.
 
 O [BeOS](http://en.wikipedia.org/wiki/BeOS), por exemplo, mostrava um ícone de
 dispositivos externos conectados no desktop, enquanto que dispositivos internos
-eram acessados atraves do ícone do computador, para ser mais fiel a metáfora.
+eram acessados através do ícone do computador, para ser mais fiel a metáfora.
 
 Uma das implementações mais fiéis à metáfora em si veio em 2010 com o BumpTop. A
-idéia da interface do BumpTop era de simular de forma mais real uma mesa de
+ideia da interface do BumpTop era de simular de forma mais real uma mesa de
 trabalho de escritório. Nele, os documentos são pequenos objetos 3D que podem
 ser empilhados, manipulados usando gestos e, inclusive, jogados de um lado para
 o outro utilizando leis físicas para uma experiência mais realista.
