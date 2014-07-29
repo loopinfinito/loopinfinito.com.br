@@ -3,7 +3,7 @@ title: Seu browser no <span>plano astral</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2012-10-24-seu-browser-no-plano-astral.jpg
 tags: palestra
 comments: true

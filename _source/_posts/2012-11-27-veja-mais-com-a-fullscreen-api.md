@@ -3,7 +3,7 @@ title: Veja mais com a <span>Fullscreen API</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2012-11-27-fullscreen-api.jpg
 tags: HTML5 javascript CSS
 comments: true

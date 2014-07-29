@@ -3,7 +3,7 @@ title: "<span>CSS grid</span>: isso muda tudo de novo"
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2013-10-08-css-grid-isso-muda-tudo-de-novo.jpg
 tags: CSS
 comments: true

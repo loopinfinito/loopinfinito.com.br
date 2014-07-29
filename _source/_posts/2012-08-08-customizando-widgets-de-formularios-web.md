@@ -3,7 +3,7 @@ title: <span>Customizando</span> widgets de formulários web
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2012-08-08-customizando-widgets-de-formularios-web.jpg
 tags: CSS web-forms
 comments: true

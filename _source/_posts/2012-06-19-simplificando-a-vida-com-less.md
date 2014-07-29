@@ -3,7 +3,7 @@ title: Simplificando a vida com <span>LESS</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2012-06-19-vida-boa.jpg
 tags: CSS LESS
 comments: true

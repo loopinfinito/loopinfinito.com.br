@@ -3,7 +3,7 @@ title: <span>Vibration</span> API
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2014-02-11-vibration-api.jpg
 tags: HTML5 javascript
 comments: true

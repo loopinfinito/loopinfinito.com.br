@@ -3,7 +3,7 @@ title: Entendendo <span class="light">captura</span> e <span class="light">propa
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2013-05-14-entendendo-a-propagacao-de-eventos-no-dom.jpg
 tags: javascript
 comments: true

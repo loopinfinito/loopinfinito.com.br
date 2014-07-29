@@ -3,7 +3,7 @@ title: Emulando <span>chefes de cozinha</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2012-09-10-emulando-chefes-de-cozinha.jpg
 comments: true
 tags: lifestyle

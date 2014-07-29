@@ -3,7 +3,7 @@ title: Ganhando visibilidade com <span>schema.org</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2012-05-07-ganhando-visibilidade-com-schema-org.jpg
 tags: SEO microdata schema.org HTML5 web-semantica
 comments: true

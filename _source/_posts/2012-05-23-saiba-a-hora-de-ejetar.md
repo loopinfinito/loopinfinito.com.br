@@ -3,7 +3,7 @@ title: Saiba a Hora de <span>Ejetar</span>
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2012-05-20-saiba-a-hora-de-ejetar.jpg
 tags: produtividade lifestyle
 comments: true

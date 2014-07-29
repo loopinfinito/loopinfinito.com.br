@@ -3,7 +3,7 @@ title: Web audio hero
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2013-03-08-web-audio-hero.png
 tags: palestra
 comments: true

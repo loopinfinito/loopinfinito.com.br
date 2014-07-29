@@ -3,7 +3,7 @@ title: CSS <span>layout</span> pós-apocalipse
 layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/111718150595519513871/
+author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 image: images/posts/2013-06-14-css-layout-pos-apocalipse.gif
 tags: palestra
 comments: true
