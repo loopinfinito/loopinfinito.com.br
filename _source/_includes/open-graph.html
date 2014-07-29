@@ -10,8 +10,10 @@
 	<meta property="article:author" content="{{ page.author_facebook }}" />
 	<meta property="article:publisher" content="https://www.facebook.com/l8pinfinito" />
 	<meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}" />
-	<meta property="article:tag" content="{% for tag in page.tags %}{{ tag }}{% if forloop.last == false %},{% endif %}{% endfor %}" />
 	<meta property="fb:profile_id" content="{{ page.author_facebook }}" />
+	{% for tag in page.tags %}
+		<meta property="article:tag" content="{{ tag }}" />
+	{% endfor %}
 {% else %}
 	<meta property="og:type" content="blog" />
 {% endif %}
