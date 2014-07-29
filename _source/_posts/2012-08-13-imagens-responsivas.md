@@ -4,6 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
+author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2012-08-13-imagens-responsivas.jpg
 tags: HTML imagem
 comments: true

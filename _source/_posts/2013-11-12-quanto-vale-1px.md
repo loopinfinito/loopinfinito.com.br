@@ -4,6 +4,7 @@ layout: post
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
+author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2013-11-12-pixel.jpg
 tags: CSS
 comments: true

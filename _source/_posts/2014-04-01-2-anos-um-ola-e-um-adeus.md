@@ -4,6 +4,7 @@ layout: post
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
+author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2014-04-01-2-anos.jpg
 tags:
 comments: true
