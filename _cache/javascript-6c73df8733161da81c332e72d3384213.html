@@ -1,0 +1,13 @@
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span><span class="nx">bar</span><span class="o">:</span> <span class="mi">1</span><span class="p">}</span>
+
+<span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Proxy</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">receiver</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Seu código aqui...</span>
+
+    <span class="c1">// Comportamento padrão de acesso à propriedade</span>
+    <span class="k">return</span> <span class="nx">target</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class="c1">// Armadilha `get` será disparada nesta linha</span>
+</pre></div>
