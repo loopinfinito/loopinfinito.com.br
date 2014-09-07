@@ -112,9 +112,11 @@ que seja alterado nenhum código antigo.
 
 ## Aplicações
 
-Por ser uma API muito nova, a comunidade ainda há de criar os melhores *cases*
-de uso dessa nova *feature* do JavaScript. Porém, alguns cenários já se mostram
-ideais para a aplicação dos *proxies*.
+Por ser uma <abbr title="Application programming interface">API</abbr> muito
+nova, a comunidade ainda há de criar os melhores *cases* de uso dessa nova
+*feature* do JavaScript. Porém, alguns cenários já se mostram ideais para a
+aplicação dos *proxies*.
+
 
 ### Validação
 
@@ -204,12 +206,14 @@ No exemplo acima criamos uma função `loggable` que recebe um objeto como
 argumento e retorna um *proxy* que imprime na saída padrão todo o acesso,
 mudança e deleção de propriedades do objeto interceptado.
 
+
 ## Armadilhas
 
 Abaixo, uma lista com algumas das armadilhas que achei mais úteis. Vale lembrar
 que existem outras além das que estão listadas abaixo. Uma documentação
 atualizada e completa sobre armadilhas nos *proxies* pode ser vista na
 [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#Validation).
+
 
 ### Get
 
@@ -231,6 +235,7 @@ foo = new Proxy(foo, {
 foo.bar // Armadilha `get` será disparada nesta linha
 {% endhighlight %}
 
+
 ### Set
 
 Disparada quando se tenta trocar o valor de uma propriedade do objeto alvo.
@@ -250,6 +255,7 @@ foo = new Proxy(foo, {
 
 {% endhighlight %}
 
+
 ### Has
 
 Disparado quando é verificado se uma propriedade existe no objeto alvo através
@@ -266,6 +272,7 @@ foo = new Proxy(foo, {
   }
 })
 {% endhighlight %}
+
 
 ### Enumerate
 
@@ -318,12 +325,14 @@ for (prop in foo) {
   </tfoot>
 </table>
 
-Agora as más notícias. Atualmente a última versão da Proxy API definida no
+Agora as más notícias. Atualmente a última versão da Proxy
+<abbr title="Application programming interface">API</abbr> definida no
 ECMAScript 6 só está disponível no Firefox. No V8, a máquina virtual de
 JavaScript do Chrome e Node.js, ela também está presente, porém está
 implementada conforme a definição antiga. Entretanto é possível usar um *shim*,
-como o [harmony proxy](https://github.com/Swatinem/proxy) para normalizar a
-antiga API com a nova no Chrome e Node.js.
+como o [harmony proxy](https://github.com/Swatinem/proxy), para normalizar a
+antiga <abbr title="Application programming interface">API</abbr> com a nova no
+Chrome e Node.js.
 
 Para mais informações sobre compatibilidade do ECMAScript 6 com os mais
 populares ambientes JavaScripts, aconselho uma visita na
