@@ -36,7 +36,7 @@ related:
 O termo *proxy* tem suas origens no Direito dos países de língua inglesa. Um
 *proxy* é alguém com poderes legais de representar uma outra pessoa. No Brasil
 seria algo como alguém que possui uma procuração para representar uma outra. Por
-analogia, o termo acabou sendo usado na computação para designar softwares que
+analogia, o termo acabou sendo usado na computação para designar *softwares* que
 atuam por outros como, por exemplo, um
 [Web Proxy](http://en.wikipedia.org/wiki/Proxy_server), que funciona como um
 intermediário para requisições de um cliente a um servidor externo.
@@ -94,8 +94,8 @@ mais a fundo sobre todas as *traps* logo.
 
 Também é possível utilizar o *proxy* não apenas como intermediário, mas também
 como única porta de entrada para o objeto alvo, de forma transparente. Para
-isso, basta armazenar na variável que faz referência ao objeto alvo a referência
-para o *proxy*.
+isso, basta armazenar na variável que faz referência ao objeto alvo a própria
+referência ao *proxy*.
 
 {% highlight javascript %}
 console.log(joao.idade) //=> 37
@@ -113,13 +113,13 @@ que seja alterado nenhum código antigo.
 ## Aplicações
 
 Por ser uma API muito nova, a comunidade ainda há de criar os melhores *cases*
-de uso dessa nova tecnologia. Porém alguns cenários já se mostram ideais para a
-aplicação dos *proxies*.
+de uso dessa nova *feature* do JavaScript. Porém, alguns cenários já se mostram
+ideais para a aplicação dos *proxies*.
 
 ### Validação
 
 Podemos usar a armadilha `set` para validarmos o novo valor de uma propriedade
-do objeto alvo. Caso sejá um valor inválido, disparamos um erro e o valor não
+do objeto alvo. Caso seja um valor inválido, disparamos um erro e o valor não
 é alterado.
 
 {% highlight javascript %}
@@ -165,7 +165,7 @@ Perceba que a validação ocorre de forma transparente. Não é usado nenhum mé
 
 ### Log
 
-Com um *proxy* fica fácil criar uma função que recebe um objeto e intercepta
+Com um *proxy* fica fácil criar uma função que recebe um objeto, intercepta
 e loga todos os acessos às suas propriedades.
 
 {% highlight javascript %}
@@ -202,11 +202,11 @@ delete joao.idade //=> Deletada prop. idade
 
 No exemplo acima criamos uma função `loggable` que recebe um objeto como
 argumento e retorna um *proxy* que imprime na saída padrão todo o acesso,
-mudança e deleção de propriedades do interceptado.
+mudança e deleção de propriedades do objeto interceptado.
 
 ## Armadilhas
 
-Abaixo uma lista com algumas das armadilhas que achei mais úteis. Vale lembrar
+Abaixo, uma lista com algumas das armadilhas que achei mais úteis. Vale lembrar
 que existem outras além das que estão listadas abaixo. Uma documentação
 atualizada e completa sobre armadilhas nos *proxies* pode ser vista na
 [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#Validation).
