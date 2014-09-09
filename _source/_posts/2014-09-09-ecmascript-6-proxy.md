@@ -9,7 +9,8 @@ image: images/posts/2014-09-09-ecmascript-6-proxy.jpg
 tags: javascript
 comments: false
 keywords: >
-  lorem, ipsum
+  ecmascript 6 proxy, ecmascript, es6, proxy, es6 proxy, javascript, web, trap,
+  armadilha, target, handler, get, set, suporte, chrome, firefox, shim
 resumo: >
   O termo *proxy* tem suas origens no Direito dos países de língua inglesa. Um
   *proxy* é alguém com poderes legais de representar uma outra pessoa. No Brasil
