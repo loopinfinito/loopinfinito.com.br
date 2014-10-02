@@ -136,7 +136,7 @@ Com o método `DELETE` podemos deletar um objeto/recurso (dãã).
 {% endhighlight%}
 
 No trecho acima, temos um formulário que provê um __grande serviço à
-humanidade__, mandando todos as notícias do portal ego _pro raio que o parta_
+humanidade__, mandando todas as notícias do portal ego _pro raio que o parta_
 com o simples uso do método `DELETE` (acho que esse método nunca foi tão bem
 utilizado, hein). Claro que o serviço em questão deve estar em conformidade com
 o padrão REST para que isso aconteça.
@@ -168,12 +168,12 @@ Comumente referente ao atributo `action` do formulário.
 Fiz esse exemplo acima com base no que existe no rascunho do W3C. Pelo que
 entendi, o `input[name=to]` é associado à _action_ que descreve um endereço de
 _email_, no entanto, não ficou claro como isso acontece exatamente. Por
-exemplo, se adicionarmos mais um `<input>` com `payload="action"`, o que deverá
-acontecer? Não sei. Mas seguindo a lógica acima, podíamos utilizar isso para
-especificar um identificador para um `PUT`:
+exemplo, se adicionarmos mais um `<input>` com `payload="_action"`, o que deverá
+acontecer? Seguindo a lógica do _action_, informações adicionais seriam impostas
+na forma de _querystring_.
 
 {% highlight html %}
-<form action="http://ego.globo.com/noticias">
+<form action="http://ego.globo.com/noticias" method="PUT">
     <input name="id" type="hidden" payload="_action" value="1440" />
     <!-- ... -->
 </form>
@@ -181,7 +181,7 @@ especificar um identificador para um `PUT`:
 
 Isso faria sentido. Deixando assim a URL do recurso mais limpa, e especificando
 seus parâmetros em outros lugares. A `action` resultante acima seria
-"http://ego.globo.com/noticias/1440".
+"http://ego.globo.com/noticias?id=1440".
 
 ### payload="_header"
 
