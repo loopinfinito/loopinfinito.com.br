@@ -5,18 +5,17 @@ author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
-image: images/posts/2014-10-22-javascript-hoisting.jpg
+image: images/posts/2014-10-29-javascript-hoisting.jpg
 tags: javascript
 comments: false
 keywords: >
-  lorem, ipsum
+  javascript, hoisting, escopo, c, linguagem, ecmascript, ecmascript 6,
+  declaração de variáveis, declaração de funções, var, let
 resumo: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  O JavaScript é uma linguagem cheia de pequenas surpresas que pode espantar até
+  o mais experiente programador. Neste *post* vamos estudar um pouco mais sobre
+  uma delas — o *hoisting* — e saber como se comporta mais esse *dark corner* da
+  nossa querida linguagem.
 related:
   - title: "JavaScript Scoping and Hoisting"
     url: http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
@@ -54,11 +53,8 @@ foo()
 console.log(a)
 {% endhighlight %}
 
-Pela “lógica”, deveria ser primeiro impreso `1`, `1` e `2`, correto? **Não**. O
-código acima irá, na verdade, imprimir `undefined`, `2` e `1`. Você pode copiar
-e colar no Console do Dev Tools para verificar.
-
-E neste trecho de código, qual será a saída?
+Pela “lógica”, deveria ser primeiro impreso `1`, `1` e `2`, correto? **Não**. E
+neste outro trecho de código, qual será a saída?
 
 {% highlight javascript %}
 // Exemplo 2
@@ -77,10 +73,11 @@ function foo() {
 console.log(foo())
 {% endhighlight %}
 
-Se você não respondeu `8`, aconselho a leitura deste *post*. Aqui vamos discutir
-um pouco sobre o **_hoisting_** no JavaScript. Mas antes de elaborarmos mais
-sobre os motivos que levaram nosso código a se comportar de tal forma, vamos de
-volta ao básico e falar sobre **escopo**.
+Se você não respondeu `undefined`, `2` e `1` para o exemplo 1 e `8` para o
+exemplo 2, aconselho a leitura deste *post*. Aqui vamos discutir um pouco sobre
+o **_hoisting_** no JavaScript. Mas antes de elaborarmos mais sobre os motivos
+que levaram nosso código a se comportar de tal forma, vamos de volta ao básico e
+falar sobre **escopo**.
 
 
 ## Escopo
@@ -96,14 +93,14 @@ usar o seguinte trecho de código em C como exemplo:
 
 int main() {
   int a = 1;
-  printf("%d\n", a);
+  printf("%d\n", a); //=> 1
 
   if (1) {
     int a = 2;
-    printf("%d\n", a);
+    printf("%d\n", a); //=> 2
   }
 
-  printf("%d\n", a);
+  printf("%d\n", a); //=> 1
 }
 {% endhighlight %}
 
@@ -165,7 +162,7 @@ Existem 4 maneiras de um nome entrar em um escopo em JavaScript:
 - **Declaração de uma função**: funções declaradas na forma `function foo() {}`.
 - **Declaração de uma variável**: variáveis declaradas como `var bar`.
 
-Porém, para cada diferente método de entrada no escopo, existe uma diferença na
+Porém, para cada diferente método de entrada no escopo há diferença na
 ordem de resolução de nomes. Alguns podem ser resolvidos primeiro mesmo
 aparecendo ao fim do escopo, enquanto outros podem ter apenas seus nomes
 resolvidos, sem ter seus valores inicializados. E é esse comportamento não
@@ -214,8 +211,8 @@ try {
 Reparem no código acima que no exemplo 6, quando tentamos imprimir o valor de
 `a`, recebemos um erro pois esta variável não existe. Já no exemplo 7,
 `undefined` será impresso, mesmo tendo a declaração de `a` depois do do comando
-`console.log`. Ali ocorreu um `hoisting` da **declaração** da variável `a`, mas não
-da sua **inicialização**.
+`console.log`. Ali ocorreu um `hoisting` da **declaração** da variável `a`, mas
+não da sua **inicialização**.
 
 O código do exemplo 7 se comporta da mesma forma que este no exemplo 8:
 
@@ -231,7 +228,7 @@ try {
 }
 {% endhighlight %}
 
-No código acima — exemplo 8 — reescrevemos o exemplo 4 de tal forma que faça
+No código acima — exemplo 8 — reescrevemos o exemplo 7 de tal forma que faça
 mais sentido para nós, já que este código será executado de forma linear.
 
 Repare que apenas a **declaração** da variável vai para o topo, mas não sua
@@ -256,8 +253,9 @@ function foo() {
 }
 {% endhighlight %}
 
-O código acima irá imprimir `bar`, sem nenhum erro. Isso porque tanto o nome da
-função como seu corpo são *hoisted*.
+O código acima irá imprimir `bar`, sem nenhum erro. Mesmo executando uma função
+antes mesmo de ser definida. Isso porque tanto o nome da função como seu corpo
+são *hoisted*.
 
 Vamos analisar novamente o exemplo 2 que apareceu logo no começo do *post*. Por
 que seu *output* é `8`?
@@ -293,7 +291,7 @@ desta forma, ela obedece a regra de *hoisting* de variável. Apenas seu nome ser
 *hoisted*.
 
 {% highlight javascript %}
-//Exemplo 10
+// Exemplo 10
 foo() //=> TypeError
 var foo = function() {}
 {% endhighlight %}
@@ -334,9 +332,9 @@ Com o `let`, é criado um diferente escopo também dentro de blocos como `if`,
 
 <hr />
 
-Outra diferença com o uso do `let` é que não temos *hoisting•, ou seja, a
+Outra diferença com o uso do `let` é que não temos *hoisting*, ou seja, a
 declaração da variável não vai para o topo do escopo antes da execução do
-código. No código abaixo
+código.
 
 {% highlight javascript %}
 // Exemplo 12
