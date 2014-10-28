@@ -7,7 +7,7 @@ author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2014-10-29-javascript-hoisting.jpg
 tags: javascript
-comments: false
+comments: true
 keywords: >
   javascript, hoisting, escopo, c, linguagem, ecmascript, ecmascript 6,
   declaração de variáveis, declaração de funções, var, let
