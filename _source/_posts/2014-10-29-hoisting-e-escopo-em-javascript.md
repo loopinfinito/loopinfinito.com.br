@@ -359,5 +359,5 @@ recebemos um `ReferenceError`.
 ## Protip
 
 Como dica para evitar comportamentos inesperados, declare todas suas variáveis —
-todas mesmo — no topo das funções, utiliza apenas um único `var` por escopo e
-habilite a *flag* `onevar` do [JSHint](http://www.jshint.com).
+todas mesmo — no topo das funções, utilize apenas um único `var` por escopo e
+habilite a *flag*&nbsp;`onevar` do [JSHint](http://www.jshint.com).
