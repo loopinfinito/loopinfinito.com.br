@@ -9,8 +9,8 @@ image: images/posts/2014-10-29-javascript-hoisting.jpg
 tags: javascript
 comments: true
 keywords: >
-  javascript, hoisting, escopo, c, linguagem, ecmascript, ecmascript 6,
-  declaração de variáveis, declaração de funções, var, let
+  javascript, hoisting, escopo, c, linguagem, ecmascript, ecmascript 6, es6, js,
+  declaração de variáveis, declaração de funções, var, let, variável, erro
 resumo: >
   O JavaScript é uma linguagem cheia de pequenas surpresas que pode espantar até
   o mais experiente programador. Neste *post* vamos estudar um pouco mais sobre
