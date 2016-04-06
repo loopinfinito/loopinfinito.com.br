@@ -1,21 +1,39 @@
 {
   "name": "loopinfinito",
-  "version": "0.0.1",
+  "version": "2.0.0",
+  "description": "Loop Infinito's website.",
+  "keywords": [
+    "loopinfinito",
+    "l8p",
+    "blog",
+    "site"
+  ],
+  "homepage": "http://loopinfinito.com.br",
   "repository": {
     "type": "git",
     "url": "https://github.com/loopinfinito/loopinfinito.com.br.git"
   },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "colors": "~0.6.0",
-    "grunt-concurrent": "0.4.0",
-    "grunt-contrib-connect": "0.5.0",
-    "grunt-contrib-less": "0.8.1",
-    "grunt-contrib-watch": "0.5.3",
-    "grunt-jekyll": "0.2.2",
-    "string": "1.2.1",
-    "watch": "0.8.0",
-    "glob": "~3.2.8",
-    "execSync": "~1.0.1-pre"
-  }
+  "bugs": "https://github.com/loopinfinito/loopinfinito.com.br/issues",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "contributors": [
+    {
+      "name": "Almir Filho",
+      "email": "almir@almirfilho.com",
+      "url": "https://about.me/almirfilho"
+    },
+    {
+      "name": "Caio Gondim",
+      "email": "me@caiogondim.com",
+      "url": "https://twitter.com/caio_gondim"
+    }
+  ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "devDependencies": {},
+  "config": {}
 }
