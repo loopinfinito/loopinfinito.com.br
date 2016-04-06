@@ -34,6 +34,11 @@
   "engines": {
     "node": ">=4.0.0"
   },
-  "devDependencies": {},
-  "config": {}
+  "devDependencies": {
+    "metalsmith": "^2.1.0",
+    "metalsmith-markdown": "^0.2.1"
+  },
+  "config": {
+    "contentDir": "src/content"
+  }
 }
