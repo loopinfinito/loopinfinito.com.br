@@ -1,29 +1,12 @@
-# Jekyll #
-##########
-site/*
-site/**/*
-.cake_task_cache
-node_modules/*
-
-# Packages #
-############
-# é recomendável descompactar os arquivos e comitar os arquivos originais
-# o git possui seus próprios métodos de compressão
-*.7z
-*.dmg
-*.gz
-*.iso
-*.rar
-*.tar
-*.zip
-
-# Arquivos gerados pelo SO #
-############################
+# OS
 .DS_Store
-.DS_Store?
-._*
 .Spotlight-V100
 .Trashes
-Icon?
 ehthumbs.db
 Thumbs.db
+
+# deps
+node_modules
+
+# generated files
+build
