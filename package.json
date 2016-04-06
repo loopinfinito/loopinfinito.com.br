@@ -36,9 +36,17 @@
   },
   "devDependencies": {
     "metalsmith": "^2.1.0",
-    "metalsmith-markdown": "^0.2.1"
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-watch": "^1.0.1"
   },
   "config": {
-    "contentDir": "src/content"
+    "contentDir": "src/content",
+    "metalsmith": {
+      "watch": {
+        "paths": {
+          "src/content/**/*.md": true
+        }
+      }
+    }
   }
 }
