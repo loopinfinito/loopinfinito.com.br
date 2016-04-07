@@ -47,6 +47,9 @@
   },
   "config": {
     "contentDir": "src/content",
+    "nunjucks": {
+      "autoescape": false
+    },
     "metalsmith": {
       "collections": {
         "posts": {

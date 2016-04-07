@@ -7,6 +7,11 @@ const markdown = require('metalsmith-markdown');
 const inplace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const watch = require('metalsmith-watch');
+const nunjucks = require('nunjucks');
+const consolidate = require('consolidate');
+
+
+consolidate.requires.nunjucks = nunjucks.configure(config.nunjucks);
 
 
 module.exports = workingdir => {
