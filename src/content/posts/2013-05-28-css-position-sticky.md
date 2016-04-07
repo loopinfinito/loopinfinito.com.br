@@ -91,11 +91,12 @@ definido. <strong>Hein?</strong>
     vai se comportar como <code>position:fixed</code>.
   </p>
 
-  <div class="highlight"><pre><code class="css"><span class="nc">.title-sticky</span> <span class="p">{</span>
-    <span class="k">position</span><span class="o">:</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">sticky</span><span class="p">;</span> <span class="c">/* apenas chrome e webkit nightly */</span>
-    <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="p">}</span>
-  </code></pre></div>
+  ```css
+  .title-sticky {
+    position: -webkit-sticky; /* apenas chrome e webkit nightly */
+    top: 0;
+  }
+  ```
 
   <p>
     No exemplo acima, os elementos com a classe <code>title-sticky</code> irão
