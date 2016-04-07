@@ -1,6 +1,6 @@
 ---
 title: Seu browser no <span>plano astral</span>
-layout: post
+layout: post.html
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
