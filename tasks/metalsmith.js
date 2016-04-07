@@ -1,5 +1,6 @@
 const config = require('../package.json').config;
 const metalsmith = require('metalsmith');
+const collections = require('metalsmith-collections');
 const dateinfilename = require('metalsmith-date-in-filename');
 const metallic = require('metalsmith-metallic');
 const markdown = require('metalsmith-markdown');
@@ -11,6 +12,7 @@ module.exports = workingdir => {
   const pipeline = metalsmith(workingdir)
     .source(config.contentDir)
     .use(dateinfilename())
+    .use(collections(config.metalsmith.collections))
     .use(metallic())
     .use(markdown(config.metalsmith.markdown))
     .use(layouts(config.metalsmith.layouts));

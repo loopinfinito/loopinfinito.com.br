@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "metalsmith": "^2.1.0",
+    "metalsmith-collections": "^0.7.0",
     "metalsmith-date-in-filename": "0.0.14",
     "metalsmith-layouts": "^1.6.4",
     "metalsmith-markdown": "^0.2.1",
@@ -46,6 +47,13 @@
   "config": {
     "contentDir": "src/content",
     "metalsmith": {
+      "collections": {
+        "posts": {
+          "pattern": "posts/*.md",
+          "sortBy": "date",
+          "reverse": true
+        }
+      },
       "markdown": {
         "smartypants": true
       },
