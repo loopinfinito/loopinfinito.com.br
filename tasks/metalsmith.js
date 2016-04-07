@@ -8,7 +8,7 @@ const watch = require('metalsmith-watch');
 module.exports = workingdir => {
   const pipeline = metalsmith(workingdir)
     .source(config.contentDir)
-    .use(markdown())
+    .use(markdown(config.metalsmith.markdown))
     .use(layouts(config.metalsmith.layouts));
 
   const afterBuild = (err, files) => {

@@ -44,6 +44,9 @@
   "config": {
     "contentDir": "src/content",
     "metalsmith": {
+      "markdown": {
+        "smartypants": true
+      },
       "layouts": {
         "engine": "nunjucks",
         "directory": "src/templates/layouts",
