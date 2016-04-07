@@ -39,10 +39,10 @@ O primeiro browser, o
 por um _user-agent string_ bem simples. Informando apenas seu nome seguido de
 sua versão e o sistema operacional em que estava rodando.
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// Mosaic 0.9 user-agent string</span>
-<span class="nx">NCSA_Mosaic/2.0 (Windows 3.1)</span></code></pre>
-</div>
+```
+  // Mosaic 0.9 user-agent string
+  NCSA_Mosaic/2.0 (Windows 3.1)
+```
 
 No exemplo acima, apenas pela _user-agent string_ podemos saber que o navegador
 do usuário é o Mosaic, em sua versão 2.0 rodando no sistema operacional Windows 3.1.
@@ -67,10 +67,10 @@ renomeado para Netscape e se identificava como `Mozilla/1.0 (Win3.1)`.
 A Netscape usou um _user-agent string_ similar ao do Mosaic, mas adicionou
 algumas informações como língua, plataforma e encriptação.
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// Netscape 3.0 user-agent string</span>
-<span class="nx">Mozilla/3.0 (Win95; U)</span></code></pre>
-</div>
+```
+  // Netscape 3.0 user-agent string
+  Mozilla/3.0 (Win95; U)
+```
 
 O exemplo acima é de um navegador Netscape rodando em sua versão 3.0 rodando no
 Windows 95 com uma encriptação de 128-bits (o último "U" na _string_).
@@ -94,10 +94,10 @@ correta e enviassem _frames_ para ele. Então ela declarou que o IE era compatí
 com o Mozilla (Mozilla Compatible) e começou a se disfarçar de Netscape,
 recebendo assim _frames_.
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// Internet Explorer 2.0 user-agent string</span>
-<span class="nx">Mozilla/1.22 (compatible; MSIE 2.0; Windows 95)</span></code></pre>
-</div>
+```
+  // Internet Explorer 2.0 user-agent string
+  Mozilla/1.22 (compatible; MSIE 2.0; Windows 95)
+```
 
 ## Gecko
 
@@ -112,10 +112,10 @@ Mozilla construiu o Gecko, seu motor de renderização _open source_. E para ele
 foi feito uma especificação de como o _user-agent string_ deveria ser escrito a
 partir de agora, a tornando ainda mais complexa.
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// Padrão de user-agent string do Gecko</span>
-<span class="nx">Mozilla/MozillaVersion (Platform; Encryption; OS-or-CPU; Language; PrereleaseVersion)Gecko/GeckoVersion ApplicationProduct/ApplicationProductVersion</span></code></pre>
-</div>
+```
+  // Padrão de user-agent string do Gecko
+  Mozilla/MozillaVersion (Platform; Encryption; OS-or-CPU; Language; PrereleaseVersion)Gecko/GeckoVersion ApplicationProduct/ApplicationProductVersion
+```
 
 O Mozilla então se tornou o Firefox, e vários outros navegadores começaram a
 usar o Gecko como _render engine_. Abaixo temos exemplos de _user-agent strings_
@@ -123,16 +123,16 @@ de navegadores baseados no Gecko. A versão do Mozilla nunca foi alterada da
 versão 5.0 desde o primeiro _browser_ baseado no Gecko. E provavelmente nunca
 irá.
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// SeaMonkey 1.1a no Linux</span>
-<span class="nx">Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1b2) Gecko/20060823 SeaMonkey/1.1a</span></code>
+```
+  // SeaMonkey 1.1a no Linux
+  Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1b2) Gecko/20060823 SeaMonkey/1.1a
 
-<code class="javascript"><span class="c1">// Firefox 2.0.0.11 no Windows XP</span>
-<span class="nx">Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11</span></code>
+  // Firefox 2.0.0.11 no Windows XP
+  Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11
 
-<code class="javascript"><span class="c1">// Camino 1.5.1 no Mac OS X</span>
-<span class="nx">Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en; rv:1.8.1.6) Gecko/20070809 Camino/1.5.1</span></code></pre>
-</div>
+  // Camino 1.5.1 no Mac OS X
+  Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en; rv:1.8.1.6) Gecko/20070809 Camino/1.5.1
+```
 
 ## Konqueror
 
@@ -153,10 +153,10 @@ Sua engine, a KHTML, era excelente. Mas não era o Gecko e por isso
 não recebia o código mais moderno. Então ele, também, começou a se
 apresentar como "Gecko like".
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// Konqueror 3.2 no FreeBSD</span>
-<span class="nx">Mozilla/5.0 (compatible; Konqueror/3.2; FreeBSD) (KHTML, like Gecko)</span></code></pre>
-</div>
+```
+  // Konqueror 3.2 no FreeBSD
+  Mozilla/5.0 (compatible; Konqueror/3.2; FreeBSD) (KHTML, like Gecko)
+```
 
 ## Opera
 
@@ -170,16 +170,16 @@ poder ao usuário de decidir que navegador ele iria se disfarçar e criou um _me
 item_ que dava a opção de escolha entre uma de 3 diferentes _user-agent string_.
 Por que não bagunçar mais ainda?
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// Opera</span>
-<span class="nx">Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 9.51</span></code>
+```
+  // Opera
+  Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 9.51
 
-<code class="javascript"><span class="c1">// Opera</span>
-<span class="nx">Mozilla/5.0 (Windows NT 6.0; U; en; rv:1.8.1) Gecko/20061208 Firefox/2.0.0 Opera 9.51</span></code>
+  // Opera
+  Mozilla/5.0 (Windows NT 6.0; U; en; rv:1.8.1) Gecko/20061208 Firefox/2.0.0 Opera 9.51
 
-<code class="javascript"><span class="c1">// Opera</span>
-<span class="nx">Opera/9.51 (Windows NT 5.1; U; en)</span></code></pre>
-</div>
+  // Opera
+  Opera/9.51 (Windows NT 5.1; U; en)
+```
 
 ## Safari
 
@@ -193,10 +193,10 @@ criando um _fork_ do projeto conhecido como WebKit. Mas como era compatível com
 o KHTML, também se passava por tal. O KHTML por sua vez se passava por Gecko, e
 todos se passavam por Mozilla. Efeito cascata.
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// Safari no OS X</span>
-<span class="nx">Mozilla/5.0 (Macintosh; U; PPC Mac OS X; de-de) AppleWebKit/85.7 (KHTML, like Gecko)</span></code></pre>
-</div>
+```
+  // Safari no OS X
+  Mozilla/5.0 (Macintosh; U; PPC Mac OS X; de-de) AppleWebKit/85.7 (KHTML, like Gecko)
+```
 
 ## Chrome
 
@@ -211,10 +211,10 @@ por tal. O WebKit por sua vez se passava por KHTML, o KHTML se passava por Gecko
 e, todos os outros se passavam por Mozilla. Então o Chrome foi batizado com esta
 enorme e complexa _user-agent string_.
 
-<div class="highlight">
-	<pre><code class="javascript"><span class="c1">// Chrome no OS X</span>
-<span class="nx">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.26 Safari/537.22</span></code></pre>
-</div>
+```
+  // Chrome no OS X
+  Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.26 Safari/537.22
+```
 
 E é por isso que hoje temos essa _string_ gigantesca e aparentemente
 sem lógica nos browsers modernos.
