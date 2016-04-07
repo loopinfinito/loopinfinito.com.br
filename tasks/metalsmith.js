@@ -4,6 +4,7 @@ const collections = require('metalsmith-collections');
 const dateinfilename = require('metalsmith-date-in-filename');
 const metallic = require('metalsmith-metallic');
 const markdown = require('metalsmith-markdown');
+const inplace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const watch = require('metalsmith-watch');
 
@@ -13,6 +14,7 @@ module.exports = workingdir => {
     .source(config.contentDir)
     .use(dateinfilename())
     .use(collections(config.metalsmith.collections))
+    .use(inplace(config.metalsmith.layouts))
     .use(metallic())
     .use(markdown(config.metalsmith.markdown))
     .use(layouts(config.metalsmith.layouts));
