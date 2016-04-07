@@ -1,5 +1,6 @@
 ---
 title: teste
+layout: base.html
 ---
 {% if collections.posts %}
   <ul>
