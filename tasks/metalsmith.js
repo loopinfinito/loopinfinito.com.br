@@ -2,6 +2,7 @@ const config = require('../package.json').config;
 const metalsmith = require('metalsmith');
 const collections = require('metalsmith-collections');
 const dateinfilename = require('metalsmith-date-in-filename');
+const filemetadata = require('metalsmith-filemetadata');
 const metallic = require('metalsmith-metallic');
 const markdown = require('metalsmith-markdown');
 const inplace = require('metalsmith-in-place');
@@ -18,6 +19,7 @@ module.exports = workingdir => {
   const pipeline = metalsmith(workingdir)
     .source(config.contentDir)
     .use(dateinfilename())
+    .use(filemetadata(config.metalsmith.filemetadata))
     .use(collections(config.metalsmith.collections))
     .use(inplace(config.metalsmith.layouts))
     .use(metallic())

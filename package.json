@@ -38,6 +38,7 @@
     "metalsmith": "^2.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-date-in-filename": "0.0.14",
+    "metalsmith-filemetadata": "^1.0.0",
     "metalsmith-in-place": "^1.4.3",
     "metalsmith-layouts": "^1.6.4",
     "metalsmith-markdown": "^0.2.1",
@@ -58,6 +59,14 @@
           "reverse": true
         }
       },
+      "filemetadata": [
+        {
+          "pattern": "posts/*.md",
+          "metadata": {
+            "layout": "post.html"
+          }
+        }
+      ],
       "markdown": {
         "smartypants": true
       },

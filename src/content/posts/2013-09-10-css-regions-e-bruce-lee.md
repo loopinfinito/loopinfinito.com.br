@@ -1,6 +1,5 @@
 ---
 title: <span>CSS Regions</span> e Bruce Lee
-layout: post.html
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

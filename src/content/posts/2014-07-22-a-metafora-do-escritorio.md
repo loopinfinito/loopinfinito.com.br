@@ -1,6 +1,5 @@
 ---
 title: A <span>metáfora</span> do escritório
-layout: post.html
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
