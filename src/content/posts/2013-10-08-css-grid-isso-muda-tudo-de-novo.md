@@ -105,11 +105,11 @@ Simples.
   <img src="/images/posts/2013-10-08-grid-1.png" alt="display: grid" width="700" height="200" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #container {
     display: grid;
 }
-{% endhighlight %}
+```
 </div>
 
 Depois, só precisamos executar __2 passos__:
@@ -127,13 +127,13 @@ menos que as linhas e colunas da nossa _grid_.
   <img src="/images/posts/2013-10-08-grid-linhas-colunas.png" alt="regiões da grid" width="700" height="200" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #container {
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: auto auto auto;
 }
-{% endhighlight %}
+```
 </div>
 
 No trecho acima, estamos definindo 2 linhas de altura automática (`auto auto`) e
@@ -159,12 +159,12 @@ espaço horizontal livre:
   <img src="/images/posts/2013-10-08-grid-flexivel-1.png" alt="regiões flexíveis" width="700" height="200" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #container {
     /* ... */
     grid-template-columns: auto auto 1fr;
 }
-{% endhighlight %}
+```
 </div>
 
 A mesma coisa para a coluna do meio:
@@ -173,12 +173,12 @@ A mesma coisa para a coluna do meio:
   <img src="/images/posts/2013-10-08-grid-flexivel-2.png" alt="regiões flexíveis 2" width="700" height="200" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #container {
     /* ... */
     grid-template-columns: auto 1fr auto;
 }
-{% endhighlight %}
+```
 </div>
 
 Se quisermos que o espaço livre seja dividido igualmente entre mais colunas,
@@ -188,12 +188,12 @@ basta atribuir o mesmo valor a elas (`1fr`):
   <img src="/images/posts/2013-10-08-grid-flexivel-3.png" alt="regiões flexíveis 3" width="700" height="200" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #container {
     /* ... */
     grid-template-columns: auto 1fr 1fr;
 }
-{% endhighlight %}
+```
 </div>
 
 Para que uma coluna tenha o dobro da outra (ou qualquer outra proporção), os
@@ -205,12 +205,12 @@ coluna 3 tenha o dobro da largura da coluna 2.
   <img src="/images/posts/2013-10-08-grid-flexivel-4.png" alt="regiões flexíveis 4" width="700" height="200" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #container {
     /* ... */
     grid-template-columns: auto 1fr 2fr;
 }
-{% endhighlight %}
+```
 </div>
 
 E é claro, tudo isso pode também ser aplicado às alturas das linhas:
@@ -219,12 +219,12 @@ E é claro, tudo isso pode também ser aplicado às alturas das linhas:
   <img src="/images/posts/2013-10-08-grid-flexivel-5.png" alt="regiões flexíveis 5" width="700" height="200" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #container {
     /* ... */
     grid-template-rows: 1fr 1fr;
 }
-{% endhighlight %}
+```
 </div>
 
 ## 2. Associe o conteúdo
@@ -240,14 +240,14 @@ Agora é preciso jogar nosso conteúdo lá dentro.
 Vamos utilizar __este mesmo trecho__ de HTML abaixo durante todo o resto deste
 _post_, isto é, sem modificá-lo.
 
-{% highlight html %}
+```html
 <div id="page-container">
     <header id="page-header"> ... </header>
     <nav id="page-menu"> ... </nav>
     <section id="page-content"> ... </section>
     <footer id="page-footer"> ... </footer>
 </div>
-{% endhighlight %}
+```
 
 Seja a _grid_ definida da seguinte maneira:
 
@@ -255,13 +255,13 @@ Seja a _grid_ definida da seguinte maneira:
   <img src="/images/posts/2013-10-08-grid-content-1.png" alt="grid content" width="700" height="300" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #page-container {
     display: grid;
     grid-template-columns: 300px 500px;
     grid-template-rows: 150px auto 200px;
 }
-{% endhighlight %}
+```
 </div>
 
 É preciso decidir qual conteúdo _X_ vai estar localizado na região _Y_, e para
@@ -272,7 +272,7 @@ isso vamos utilizar as novas propriedades `grid-row`, `grid-row-start`,
   <img src="/images/posts/2013-10-08-grid-content-2.png" alt="grid content" width="700" height="300" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #page-header {
     grid-row: 1;
     grid-column-start: 1;
@@ -293,7 +293,7 @@ isso vamos utilizar as novas propriedades `grid-row`, `grid-row-start`,
     grid-row: 3;
     grid-column: 1 / 2;
 }
-{% endhighlight %}
+```
 </div>
 
 ### grid-row-start|end e grid-column-start|end
@@ -335,14 +335,14 @@ _grid_ com nomes — em vez de números — através da propriedade
   <img src="/images/posts/2013-10-08-grid-template.png" alt="grid template" width="700" height="300" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 #container {
     display: grid;
     grid-template-areas: "cabecalho cabecalho"
                          "menu conteudo"
                          "rodape rodape";
 }
-{% endhighlight %}
+```
 </div>
 
 O uso de `grid-template-areas` é bem simplificado, basta definirmos uma _string_
@@ -364,12 +364,12 @@ Para associar o conteúdo com esta abordagem de templates nomeados, usaremos a
 propriedade `grid-area`, e não precisaremos mais das propriedades `grid-row` e
 `grid-column`:
 
-{% highlight css %}
+```css
 #page-header  { grid-area: cabecalho; }
 #page-menu    { grid-area: menu; }
 #page-content { grid-area: conteudo; }
 #page-footer  { grid-area: rodape; }
-{% endhighlight %}
+```
 
 Muito simples, não?
 
@@ -384,7 +384,7 @@ Vamos implementar agora um _layout mobile_ simples para nossa _grid_:
   <img src="/images/posts/2013-10-08-grid-template-2.png" alt="grid template responsivo" width="700" height="300" />
 </figure>
 <div class="image-code">
-{% highlight css %}
+```css
 /* definição normal da grid */
 #container {
     display: grid;
@@ -408,7 +408,7 @@ Vamos implementar agora um _layout mobile_ simples para nossa _grid_:
 
     #page-menu { grid-area: cabecalho; } /* reassocia o conteúdo a outra região */
 }
-{% endhighlight %}
+```
 </div>
 
 E _voilà_!

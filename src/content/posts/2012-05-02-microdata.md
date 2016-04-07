@@ -238,18 +238,18 @@ Feito isto, vamos finalmente ao microdata de fato. Microdata define 5 diferentes
 
 Agora vamos voltar ao exemplo do Avatar. Digamos que o código HTML correspondente <a href="#exemplo-filme">àquele trecho</a> seja: (Este tutorial é basicamente o mesmo encontrado no <a href="http://schema.org/docs/gs.html">getting started</a> do site schema.org.)
 
-{% highlight html %}
+```html
 <div>
     <h4>Avatar</h4>
     <p>Diretor: James Cameron (16 de agosto de 1954)</p>
     <p>Ficção Científica</p>
     <p><a href="http://www.youtube.com/...">Veja o trailer</a></p>
 </div>
-{% endhighlight %}
+```
 
 Começamos definindo a entidade Movie e adicionando as propriedades <code>itemscope</code> e <code>itemtype</code> ao elemento <code>{{ '<div>' | escape }}</code>, já que este elemento possui todo conteúdo relacionado ao filme *Avatar*.
 
-{% highlight html %}
+```html
 <!-- adicionamos os atributos itemscope e itemtype -->
 <div itemscope="itemscope" itemtype="http://schema.org/Movie">
     <h4>Avatar</h4>
@@ -257,11 +257,11 @@ Começamos definindo a entidade Movie e adicionando as propriedades <code>itemsc
     <p>Ficção Científica</p>
     <p><a href="http://www.youtube.com/...">Veja o trailer</a></p>
 </div>
-{% endhighlight %}
+```
 
 Agora identificamos as propriedades presentes deste filme e definimos cada uma com o atributo <code>itemprop</code>, no nosso caso estas propriedades são *nome*, *diretor*, *gênero* e *trailer*.
 
-{% highlight html %}
+```html
 <div itemscope="itemscope" itemtype="http://schema.org/Movie">
     <!-- adicionamos o atributo itemprop ao nome do filme -->
     <h4 itemprop="name">Avatar</h4>
@@ -275,7 +275,7 @@ Agora identificamos as propriedades presentes deste filme e definimos cada uma c
     <!-- adicionamos o atributo itemprop ao trailer do filme -->
     <p><a itemprop="trailer" href="http://www.youtube.com/...">Veja o trailer</a></p>
 </div>
-{% endhighlight %}
+```
 
 Temos um Filme cujo nome é Avatar, gênero é Ficção científica, trailer aponta para uma URL e o diretor é James Cameron.
 Numa representação gráfica da semântica deste trecho de código, teríamos algo parecido como:
@@ -332,7 +332,7 @@ Numa representação gráfica da semântica deste trecho de código, teríamos a
 Se for do nosso interesse, podemos refinar mais ainda a nossa marcação tentando identificar se uma destas propriedades pode ser definida como uma outra entidade.
 No caso da propriedade <code>director</code> por exemplo, um diretor é uma **pessoa** também, então vamos aplicar o vocabulário **Person** do schema.org:
 
-{% highlight html %}
+```html
 <div itemscope="itemscope" itemtype="http://schema.org/Movie">
     <h4 itemprop="name">Avatar</h4>
     <!-- movemos o atributo itemprop do diretor para o wrapper (<p>) -->
@@ -344,14 +344,14 @@ No caso da propriedade <code>director</code> por exemplo, um diretor é uma **pe
     <p itemprop="genre">Ficção Científica</p>
     <p><a itemprop="trailer" href="http://www.youtube.com/...">Veja o trailer</a></p>
 </div>
-{% endhighlight %}
+```
 
 E para terminar, vamos especificar as propriedades desta pessoa – que neste caso são *nome* e *data de nascimento*.
 
 Observe que para data de nascimento criamos um novo elemento <code>{{ '<time datetime="...">' | escape }}</code>.
 Optei por fazer isto por quê <code>{{ '<time>' | escape }}</code> é uma <a href="http://www.w3schools.com/html5/tag_time.asp">nova tag</a> que faz parte da especificação HTML5, e usamos seu atributo <code>datetime</code> para especificar o formato padrão de data usado pelo schema.org – na especificação do tipo de dados <a href="http://schema.org/Date">Date</a>, o formato de data esperado é o <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> (AAAA-MM-DD).
 
-{% highlight html %}
+```html
 <div itemscope="itemscope" itemtype="http://schema.org/Movie">
     <h4 itemprop="name">Avatar</h4>
     <p itemprop="director" itemscope="itemscope" itemtype="http://schema.org/Person">
@@ -364,7 +364,8 @@ Optei por fazer isto por quê <code>{{ '<time>' | escape }}</code> é uma <a hre
     </p>
     <p itemprop="genre">Ficção Científica</p>
     <p><a itemprop="trailer" href="http://www.youtube.com/...">Veja o trailer</a></p>
-</div>{% endhighlight %}
+</div>
+```
 
 Agora temos um **Filme** cujo nome é Avatar, gênero é Ficção científica, trailer aponta para uma URL e o diretor é uma **Pessoa** cujo nome é James Cameron e sua data de nascimento é 16 de agosto de 1954.
 Com isso, uma representação gráfica da semântica passaria a ser algo como:

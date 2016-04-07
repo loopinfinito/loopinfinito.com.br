@@ -106,7 +106,7 @@ mais simples.
 O método `PUT`, como já sabemos, serve para atualizar um objeto/recurso no
 servidor.
 
-{% highlight html %}
+```html
 <form action="http://ego.globo.com/noticias/1440" method="PUT">
     <input type="text" name="titulo" value="Daniel Filho aparou a barba." />
     <textarea name="conteudo">
@@ -114,7 +114,7 @@ servidor.
     </textarea>
     <button type="submit">Atualizar</button>
 </form>
-{% endhighlight%}
+```
 
 No trecho acima, temos um formulário que atualiza uma notícia (de alto grau de
 importância) com identificador "1440" do [portal ego](http://ego.globo.com)
@@ -129,11 +129,11 @@ importância) com identificador "1440" do [portal ego](http://ego.globo.com)
 
 Com o método `DELETE` podemos deletar um objeto/recurso (dãã).
 
-{% highlight html %}
+```html
 <form action="http://ego.globo.com/noticias" method="DELETE">
     <button type="submit">Excluir</button>
 </form>
-{% endhighlight%}
+```
 
 No trecho acima, temos um formulário que provê um __grande serviço à
 humanidade__, mandando todas as notícias do portal ego _pro raio que o parta_
@@ -155,7 +155,7 @@ ser basicamente de três tipos: __action__, __header__ ou __body__ (valores
 Informação ou dado que descreve uma ação a ser executada no lado do servidor.
 Comumente referente ao atributo `action` do formulário.
 
-{% highlight html %}
+```html
 <form action="mailto:">
     <input name="to" type="email" payload="_action" />
     <textarea name="content">
@@ -163,7 +163,7 @@ Comumente referente ao atributo `action` do formulário.
     </textarea>
     <button type="submit">Enviar email</button>
 </form>
-{% endhighlight %}
+```
 
 Fiz esse exemplo acima com base no que existe no rascunho do W3C. Pelo que
 entendi, o `input[name=to]` é associado à _action_ que descreve um endereço de
@@ -172,12 +172,12 @@ exemplo, se adicionarmos mais um `<input>` com `payload="_action"`, o que dever�
 acontecer? Seguindo a lógica do _action_, informações adicionais seriam impostas
 na forma de _querystring_.
 
-{% highlight html %}
+```html
 <form action="http://ego.globo.com/noticias" method="PUT">
     <input name="id" type="hidden" payload="_action" value="1440" />
     <!-- ... -->
 </form>
-{% endhighlight %}
+```
 
 Isso faria sentido. Deixando assim a URL do recurso mais limpa, e especificando
 seus parâmetros em outros lugares. A `action` resultante acima seria
@@ -189,7 +189,7 @@ Informação que pode ser incluída no _header_ da submissão. Com isso pode-se
 especificar valores para um determinado _header_. O exemplo a seguir envia
 o _header_&nbsp;`If-Unmodified-Since` na submissão do formulário.
 
-{% highlight html %}
+```html
 <form action="http://ego.globo.com/noticias/1440" method="DELETE">
     <input type="hidden"
            name="If-Unmodified-Since"
@@ -197,7 +197,7 @@ o _header_&nbsp;`If-Unmodified-Since` na submissão do formulário.
            payload="_header"/>
     <button type="submit">Excluir</button>
 </form>
-{% endhighlight%}
+```
 
 Só vai excluir o objeto se o mesmo não foi modificado desde a data especificada.
 
@@ -221,7 +221,7 @@ Para determinar que um formulário realize uma submissão de um _login_, basta
 definir os elementos `<input>` de usuário e senha cada qual com seu atributo `name` como
 `_username_` e `_password_`, respectivamente.
 
-{% highlight html %}
+```html
 <form action="http://dandan.com/login" method="POST">
     <label for="usuario">Usuário</label>
     <input id="usuario" name="_username_" type="text" />
@@ -229,7 +229,7 @@ definir os elementos `<input>` de usuário e senha cada qual com seu atributo `n
     <input id="senha" name="_password_" type="password" />
     <button type="submit">Entrar</button>
 </form>
-{% endhighlight %}
+```
 
 - `_username_`: Deve ser utilizado apenas em elementos `<input>` do tipo `text` ou `email`.
 - `_password_`: Deve ser utilizado apenas em elementos `<input>` do tipo `password`.
@@ -244,12 +244,12 @@ adequado de autorização na requisição, no caso, esse _header_ seria o
 A ação de _logout_ é mais simples ainda. Precisa-se apenas de um `<input>` do
 tipo `hidden` com seu atributo `name="_logout_"`.
 
-{% highlight html %}
+```html
 <form action="http://dandan.com/logout" method="POST">
     <input name="_logout_" type="hidden" />
     <button type="submit">Sair</button>
 </form>
-{% endhighlight %}
+```
 
 Isso deve fazer com que o agente de usuário (que suporte autenticação HTTP e que
 reutilize credenciais de _login_ em suas requisições) limpe quaisquer

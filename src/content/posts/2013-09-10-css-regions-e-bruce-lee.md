@@ -188,7 +188,7 @@ maneira:
 
 ![Estrutura](/images/posts/2013-09-10-estrutura.png)
 
-{% highlight html %}
+```html
 <header>
     <h1 class="title">...</h1>
 </header>
@@ -208,7 +208,7 @@ maneira:
     <time class="date">...</time>
     <div class="content">...</div>
 </section>
-{% endhighlight %}
+```
 
 Até agora temos apenas elementos estruturais que representam nossas áreas de
 conteúdo através da classe `.content`. Nada de novo por enquanto.
@@ -260,18 +260,18 @@ Para isso, ele não pode estar espalhado em diversos lugares, primeiramente
 precisamos juntar todo o fluxo de conteúdo em um só lugar, como por exemplo, em
 `article.all-content`:
 
-{% highlight html %}
+```html
 <article class="all-content">Todos os lorem ipsum...</article>
-{% endhighlight %}
+```
 
 Agora, podemos criar nosso _named flow_ para o conteúdo de `.all-content`.
 Basta utilizarmos a propriedade `flow-into`:
 
-{% highlight css %}
+```css
 .all-content {
     flow-into: bruce-lee-fodao;
 }
-{% endhighlight %}
+```
 
 Beleza, acabamos de mandar todo nosso conteúdo para um lugar imaginário chamado
 de __bruce-lee-fodao__.
@@ -289,11 +289,11 @@ classe `.content`.
 Ou seja, agora vamos fazer nossa "água" virar o "copo", a "garrafa", ou qualquer
 outra coisa através da propriedade `flow-from`:
 
-{% highlight css %}
+```css
 .content {
     flow-from: bruce-lee-fodao;
 }
-{% endhighlight %}
+```
 
 Agora o conteúdo de __bruce-lee-fodao__ fluirá automaticamente através de todos
 os elementos `.content` da página.

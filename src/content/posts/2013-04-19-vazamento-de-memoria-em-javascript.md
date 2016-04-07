@@ -139,7 +139,7 @@ que a animação inicie__.
 
 Vamos focar apenas nesta parte do código, pois é aqui que a mágica acontece.
 
-{% highlight javascript %}
+```javascript
 $('.miniatura').on('click', function(event) {
   var img = $('<img />')
     .addClass('lightbox')
@@ -157,7 +157,7 @@ $('.miniatura').on('click', function(event) {
 function resizeImg(img) {
   console.log(img)
 }
-{% endhighlight %}
+```
 
 Sem pânico! Vamos entender o código passo-a-passo. Estou definindo que ao clicar
 em uma miniatura, é criada um novo elemento `img` com o mesmo `src` da imagem

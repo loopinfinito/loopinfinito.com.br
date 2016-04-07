@@ -67,7 +67,7 @@ pai possui um `em` especificado por
 <abbr title="Cascading Style Sheet">CSS</abbr>. Ai então a propriedade será
 calculada relativamente a esse valor herdado.
 
-{% highlight css %}
+```css
 body {
   font-size: 20px;
 }
@@ -79,7 +79,7 @@ h1 {
 h1 span {
   font-size: 2em; /* equivalente a 120px */
 }
-{% endhighlight %}
+```
 
 Já a unidade `ex` é equivalente a altura do glifo __“x”__ da fonte em uso pelo
 elemento sendo estilizado, e se comporta da mesma maneira que `em`. O que

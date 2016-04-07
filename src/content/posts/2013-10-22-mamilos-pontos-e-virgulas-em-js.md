@@ -130,7 +130,7 @@ ou caso acabe de uma forma que não faça sentindo, o
 <abbr title="Automatic Semicolon Insertion">ASI</abbr> não irá inserir
 automaticamente um `;`.
 
-{% highlight javascript %}
+```javascript
 // A.S.I. não será disparado, pois a linha acaba como um statement não válido
 var a = 1,
     b = 2,
@@ -139,7 +139,7 @@ var a = 1,
 // A.S.I. não será disparado, pois a linha acaba com um parênteses não fechado
 (new
 Date).getTime()
-{% endhighlight %}
+```
 
 É, inclusive, uma prática bem comum — até mesmo dentre os que utilizam `;` — de
 acabar linhas em determinadas situações sem `;`, como na declaração de várias
@@ -150,7 +150,7 @@ variáveis acima com apenas um `var`.
 Este caso é um pouco bizarro e este tipo de código só é visto neste tipo de
 discussão.
 
-{% highlight javascript %}
+```javascript
 // este trecho de código
 i
 ++
@@ -159,7 +159,7 @@ j
 // é equivalente ao código abaixo
 i;
 ++j;
-{% endhighlight %}
+```
 
 Percebam que se um incrementador/decrementador ocupa toda uma linha (o que não
 faz o menor sentido), ele não irá modificar a variável anterior, e sim a
@@ -175,7 +175,7 @@ que costumam nunca omitir `;`. Caso a linha acabe com a definição de um bloco
 interpretador só irá terminar a declaração do bloco quando achar um outro bloco
 ou _statement_.
 
-{% highlight javascript %}
+```javascript
 if (foo)
   bar()
 
@@ -183,19 +183,19 @@ if (foo)
 if (foo) {
   bar();
 }
-{% endhighlight %}
+```
 
 ### 4º caso
 
 Este caso é a raiz de todo o mal. Vejam no exemplo abaixo:
 
-{% highlight javascript %}
+```javascript
 foo()
 [1, 2, 3].forEach(bar)
 
 // o código acima é equivalente ao código abaixo
 foo()[1, 2, 3].forEach(bar)
-{% endhighlight %}
+```
 
 O perigo está onde as próximas linhas começam com `[` ou `(`, já que o
 interpretador pode juntar as duas linhas e fazer com que elas sejam parte de um
@@ -217,7 +217,7 @@ acompanhados de um _label_, que indica para onde devemos "pular". Caso você
 use _labels_ em seus programas (e você **não deveria**), sempre os ponha na mesma
 linha que o `continue` ou `break`.
 
-{% highlight javascript %}
+```javascript
 continue
   foo
 
@@ -233,13 +233,13 @@ break
 // é o mesmo que
 break;
   bar;
-{% endhighlight %}
+```
 
 Com o `throw` acontece o mesmo. Caso tenhamos um `throw` seguido por um `\n`,
 o _statement_ é logo finalizado. O que irá gerar um erro de sintaxe, pois um
 `throw` sempre deve "lançar" alguma coisa (dã).
 
-{% highlight javascript %}
+```javascript
 throw
   new Error('Nooooo')
 
@@ -247,13 +247,13 @@ throw
 throw;
   new Error('Nooooo');
 // irá gerar um erro de sintaxe, pois `throw` sempre deve "lançar" algo
-{% endhighlight %}
+```
 
 Na prática, essa regra costuma causar mais confusão com `return`, pois pode
 acarretar em alguns _bugs_ não muito óbvios ao programador que desconhece a
 malícia do <abbr title="Automatic Semicolon Insertion">ASI</abbr>.
 
-{% highlight javascript %}
+```javascript
 function foo() {
   // ...
   return
@@ -266,7 +266,7 @@ function foo() {
   return;
     'Uma string muito grande que não cabe na linha de cima';
 }
-{% endhighlight %}
+```
 
 Já que o `return` interrompe a execução da função, acabamos ficando com código
 morto, que nunca será excutado. Este é, inclusive, um dos clássicos exemplos
@@ -331,7 +331,7 @@ ausência de `;` no seu código.
 O clássico exemplo dos que querem converter os programadores pagãos que
 não usam `;`. É o mesmo exemplo citado acima, nas _restricted productions_.
 
-{% highlight javascript %}
+```javascript
 function foo() {
   return
     'lorem ipsum'
@@ -342,7 +342,7 @@ function foo() {
   return;
     'lorem ipsum';
 }
-{% endhighlight %}
+```
 
 Mas vejam que, nesse caso, o problema não está na falta de ponto-e-vírgula, mas,
 sim, no excesso de `\n`. Mesmo pondo `;`, iremos obter o mesmo resultado.

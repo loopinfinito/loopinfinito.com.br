@@ -54,19 +54,19 @@ Uma pergunta simples: Se um elemento e um de seus ancestrais tiverem ambos
 _listeners_ definidos para o __mesmo__ evento, qual deles deverá ser disparado
 __primeiro__? Não surpreendentemente, depende do navegador.
 
-{% highlight html %}
+```html
 <div id="um">
     <div id="dois">
         <div id="tres">Rá!</div>
     </div>
 </div>
-{% endhighlight %}
+```
 
 No trecho HTML acima temos um elemento `#tres` dentro de um elemento `#dois`,
 que por sua vez é filho do elemento `#um`.
 Agora definiremos manipuladores para o evento __click__ em dois destes elementos:
 
-{% highlight javascript %}
+```javascript
 document.getElementById( 'tres' ).addEventListener( 'click', function( event ){
     console.log( '#tres clicado' )
 })
@@ -83,7 +83,7 @@ $('#tres').click( function( event ){
 $('#um').click( function( event ){
     console.log( '#um clicado' )
 })
-{% endhighlight %}
+```
 
 Agora, quando clicarmos em `#tres`, o que você acha que irá acontecer?
 Dependendo do navegador, a ordem das execuções dos eventos pode ser invertida,
@@ -272,7 +272,7 @@ _bubbling_ por padrão__.
 
 Abaixo temos exemplos para ambos os tipos de registros:
 
-{% highlight javascript %}
+```javascript
 // registrando 'click' do elemento #tres na fase de bubbling (padrão)
 document.getElementById( 'tres' ).addEventListener( 'click', function( event ){
     console.log( '#tres clicado' )
@@ -282,7 +282,7 @@ document.getElementById( 'tres' ).addEventListener( 'click', function( event ){
 document.getElementById( 'dois' ).addEventListener( 'click', function( event ){
     console.log( '#dois clicado' )
 }, true)
-{% endhighlight %}
+```
 
 Eis o que acontecerá (na ordem) quando o usuário clicar em `#tres`:
 
@@ -336,7 +336,7 @@ Depois que a interação acabar, tente clicar em `#dois`.
 ...adicionarmos um manipulador para o evento `click` em cada uma das fases para
 o __mesmo__ elemento? O que acontecerá?
 
-{% highlight javascript %}
+```javascript
 // registrando 'click' do elemento #tres na fase de bubbling
 document.getElementById( 'tres' ).addEventListener( 'click', function( event ){
     console.log( '#tres clicado' )
@@ -346,7 +346,7 @@ document.getElementById( 'tres' ).addEventListener( 'click', function( event ){
 document.getElementById( 'tres' ).addEventListener( 'click', function( event ){
     console.log( '#tres clicado' )
 }, true)
-{% endhighlight %}
+```
 
 Felizmente, isto não é possível. O que vai acontecer no trecho de código acima
 é a sobrescrita do novo registro sobre o último. Então o manipulador registrado
@@ -359,7 +359,7 @@ Consideremos o seguinte cenário: Digamos que temos os elementos `#um`, `#dois` 
 Agora, digamos que, por alguma razão, quando ocorrer um clique em `#tres`, os
 outros cliques em `#dois` e `#tres`&nbsp;__não deverão ser disparados__.
 
-{% highlight javascript %}
+```javascript
 document.getElementById( 'tres' ).addEventListener( 'click', function( event ){
     console.log( '#tres clicado' )
 })
@@ -371,33 +371,33 @@ document.getElementById( 'dois' ).addEventListener( 'click', function( event ){
 document.getElementById( 'um' ).addEventListener( 'click', function( event ){
     console.log( '#um clicado' )
 })
-{% endhighlight %}
+```
 
 Pelo código acima, quando o usuário clicar em `#tres`, a saída do console será:
 
-{% highlight text %}
+```text
 #tres clicado
 #dois clicado
 #um clicado
-{% endhighlight %}
+```
 
 Mas queremos apenas isto:
 
-{% highlight text %}
+```text
 #tres clicado
-{% endhighlight %}
+```
 
 O que queremos na verdade é __impedir que o evento seja propagado__ para o resto
 dos elementos. Ou seja, parar com a varredura da fase de _bubbling_ a partir de
 um determinado momento. E para isso usaremos o método `.stopPropagation()`, que
 pertence ao objeto do próprio evento:
 
-{% highlight javascript %}
+```javascript
 document.getElementById( 'tres' ).addEventListener( 'click', function( event ){
     console.log( '#tres clicado' )
     event.stopPropagation()
 })
-{% endhighlight %}
+```
 
 E voilá! O _bubbling_ parou por aí.
 

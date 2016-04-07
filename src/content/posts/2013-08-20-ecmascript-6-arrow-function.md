@@ -53,7 +53,7 @@ uma vez que estamos passando uma função como argumento e nenhum objeto a possu
 No _strict mode_ o `this` é igual a `undefined` dentro de uma função passada
 como _callback_.
 
-{% highlight javascript %}
+```javascript
 var armazem = {
   estabelecimentoNome: 'Armazém do Chico',
 
@@ -68,7 +68,7 @@ var armazem = {
 }
 
 armazem.logVendaDeCerveja(cervejas);
-{% endhighlight %}
+```
 
 No exemplo acima um erro é gerado, uma vez que `this` aponta para `window` e não
 para objeto `armazem`, como é esperado. Temos alguns jeitos de contornar isso,
@@ -79,7 +79,7 @@ elas, o valor do `this` deixa de ser dinâmico e passa a ser estático. O que as
 tornam perfeitas para uso em _callbacks_. O exemplo acima poderia ser reescrito
 da seguinte forma:
 
-{% highlight javascript %}
+```javascript
 var armazem = {
   estabelecimentoNome: 'Armazém do Chico',
 
@@ -92,7 +92,7 @@ var armazem = {
 }
 
 armazem.logVendaDeCerveja(cervejas);
-{% endhighlight %}
+```
 
 Agora o valor do `this` está setado estaticamente como sendo uma referência ao
 objeto `armazem`. Ou, o valor do `this` foi setado como um `this` léxico, e não
@@ -107,28 +107,28 @@ arrow</em>) acabou se tornando o padrão para se tornar compatível com
 CoffeeScript, que já possui _fat arrow_ e se comporta de uma maneira similar à
 proposta do ECMAScript 6.
 
-{% highlight javascript %}
+```javascript
 let soma = (a, b) => {
   return a + b
 }
-{% endhighlight %}
+```
 
 Para definirmos argumentos, existem 3 maneiras possíveis. Sem argumentos, um
 argumento e vários argumentos.
 
-{% highlight javascript %}
+```javascript
 () => { ... } // sem argumentos
 a => { ... } // um argumento
 (a, b) => { ... } // vários argumentos
-{% endhighlight %}
+```
 
 Na especificação do corpo da função, podemos definir como um bloco (a forma
 padrão) ou como uma expressão que é retornada implicitamente.
 
-{% highlight javascript %}
+```javascript
 a => { return 2 * a } // bloco
 a => 2 * a // expressão, equivalente à linha anterior
-{% endhighlight %}
+```
 
 Por baixo dos panos, as _arrow functions_ são apenas _syntatic sugar_ para o
 método `Function.prototype.bind`.
@@ -141,9 +141,9 @@ interno \[\[Construct\]\] (o que permite que uma função normal seja usada com
 `new`) e muito menos a propriedade `prototype`. E já que seu _this_ é léxico, e
 não dinâmico, não faria o mínimo sentido de qualquer forma.
 
-{% highlight javascript %}
+```javascript
 var foo = new () => {}; // gera um erro
-{% endhighlight %}
+```
 
 <table class="support">
   <thead>

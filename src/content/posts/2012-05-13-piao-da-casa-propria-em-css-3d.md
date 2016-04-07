@@ -32,7 +32,7 @@ Todo o código deste experimento está disponível no [GitHub](https://github.co
 Vamos começar com o código HTML.
 Apenas uma <code>div</code> contendo 6 outras <code>div</code>, uma para cada face do pião, a <code>div</code> wrapper, que servirá de container para o pião, e mais uma última para a moldura do pião.
 
-{% highlight html %}
+```html
 <div id="wrapper">
   <div id="piao">
     <!-- todas as faces do pião -->
@@ -45,11 +45,11 @@ Apenas uma <code>div</code> contendo 6 outras <code>div</code>, uma para cada fa
   </div>
   <div id="moldura"> </div>
 </div>
-{% endhighlight %}
+```
 
 Agora vamos dar um pouco de estilo ao pião e à moldura.
 
-{% highlight css %}
+```css
 #wrapper {
   width: 400px;
   height: 400px;
@@ -102,7 +102,7 @@ Agora vamos dar um pouco de estilo ao pião e à moldura.
     -2px -2px 0px 3px rgb(150, 0, 0),
     -4px -4px 10px 10px rgba(0, 0, 0, 0.5);
 }
-{% endhighlight %}
+```
 
 Agora já podemos ver algo sem graça no browser com o código acima: um número 6 dentro de um círculo vermelho com um efeito 3D simulado.
 
@@ -122,7 +122,7 @@ Então, quanto mais "distante" do monitor o objeto aparentar estar, maior o valo
 
 Agora entendendo um pouco sobre o plano 3D, vamos organizar os elementos a fim de formar o pião.
 
-{% highlight css %}
+```css
 #piao > .numero.um {
   /*
     a rotação deste elemento é 0, o que já é o valor padrão
@@ -149,7 +149,7 @@ Agora entendendo um pouco sobre o plano 3D, vamos organizar os elementos a fim d
 #piao > .numero.seis {
   -webkit-transform: rotateY(300deg);
 }
-{% endhighlight %}
+```
 
 No trecho de CSS acima, nós giramos as faces em relação ao eixo Y.
 Precisamos girar todas as faces a fim de fecharmos uma volta.
@@ -157,7 +157,7 @@ Como uma volta possui 360 graus e o pião possui 6 faces, então iremos rotacion
 
 Porém se rotacionarmos apenas no eixo Y os elementos, eles ficarão todos um por cima dos outros, apenas inclinados de forma diferente. Estarão todos no centro do que será nosso pião. Precisamos agora afastar as faces umas das outras. E para isso iremos usar a propriedade <code>translateZ</code>.
 
-{% highlight css %}
+```css
 #piao {
   ...
   -webkit-transform-style: preserve-3d;
@@ -186,7 +186,7 @@ Porém se rotacionarmos apenas no eixo Y os elementos, eles ficarão todos um po
 #piao > .numero.seis {
   -webkit-transform: rotateY(300deg) translateZ(170px);
 }
-{% endhighlight %}
+```
 
 Com o <code>transform-style: preserve-3d</code> estamos dizendo que os filhos diretos do elemento pião irão compartilhar o mesmo espaço 3D que o pai.
 Caso contrário os elementos seriam renderizados de forma plana no elemento pai.
@@ -201,7 +201,7 @@ Com isso temos o nosso pião 3D, mas para deixar tudo mais interessante, vamos u
 O efeito que queremos ver é o do pião rodando em relação ao seu eixo Y, o mesmo eixo em que rotacionamos as faces do pião.
 Para isso iremos criar uma animação com o estado inicial no ponto 0 graus do eixo Y e estado final no 360 graus, ou seja, uma volta completa.
 
-{% highlight css %}
+```css
 /*
   animação para o pião rodar
   uma animação básica ao redor do eixo Y
@@ -210,17 +210,17 @@ Para isso iremos criar uma animação com o estado inicial no ponto 0 graus do e
   from { -webkit-transform: rotateY(0); }
   to   { -webkit-transform: rotateY(-360deg); }
 }
-{% endhighlight %}
+```
 
 No trecho acima definimos nossa animação e a chamamos de rodando (em homenagem).
 Agora é só a usarmos no elemento que desejarmos.
 
-{% highlight css %}
+```css
 #piao {
   ...
   -webkit-animation: rodando 4s infinite linear;
 }
-{% endhighlight %}
+```
 
 Aqui dizemos que queremos animar o elemento pião, utilizando a animação "rodando", demorando 4 segundos para ir de seu estado inicial ao estado final, essa animação não irá parar (infinite) e a sua transição entre estados será linear.
 
@@ -233,14 +233,14 @@ Iremos usar a nova tag <code>audio</code> para reproduzir a música sem a nececi
 <!-- O seu uso é bastante simples.  -->
 Basta declarar a tag <code>audio</code> e dentro dela as tags <code>source</code> com os caminhos para o mesmo arquivo salvo em diferentes codecs.
 
-{% highlight html %}
+```html
 <!-- trilha do pião da casa própria. máá ô-ê -->
 <audio preload="auto" loop="true">
   <source src="piao-da-casa-propria-soundtrack.mp3" />
   <source src="piao-da-casa-propria-soundtrack.m4a" />
   <source src="piao-da-casa-propria-soundtrack.ogg" />
 </audio>
-{% endhighlight %}
+```
 
 O navegador irá tentar de cima para baixo executar os formatos, e quando achar um que possa reproduzir, irá carregar e não irá mais procurar por outros <code>source</code>.
 O uso desta tag é necessário pois cada navegador dá suporte a um [diferente conjunto de codecs](http://html5doctor.com/native-audio-in-the-browser/).

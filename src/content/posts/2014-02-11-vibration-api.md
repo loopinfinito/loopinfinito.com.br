@@ -61,17 +61,17 @@ Pronto. É isso. Já podemos ir pra praia? Sério, só tem esse método. Legal n
 apenas um parâmetro que representa uma duração de tempo que o dispositivo deve
 permanecer vibrando.
 
-{% highlight javascript %}
+```javascript
 navigator.vibrate(1000); // vibra por 1000ms (1s)
-{% endhighlight %}
+```
 
 Esse parâmetro também pode ser uma lista representando um padrão de toques, onde
 cada item da lista alterna entre tempo de duração de uma vibração e tempo de
 duração de uma intervalo. Com um exemplo fica mais fácil de entender:
 
-{% highlight javascript %}
+```javascript
 navigator.vibrate([500, 1000, 800, 500, 1000]);
-{% endhighlight %}
+```
 
 No trecho acima o dispositivo começará vibrando por 500ms, depois pausa por
 1000ms, vibra novamente por 800ms, pausa por 500ms e termina vibrando por mais
@@ -80,18 +80,18 @@ No trecho acima o dispositivo começará vibrando por 500ms, depois pausa por
 Caso uma chamada de vibração já tenha sido disparada, também é possível
 cancelá-la passando um zero ou um _array_ vazio como parâmetro.
 
-{% highlight javascript %}
+```javascript
 navigator.vibrate(0); // cancela qualquer vibração em execução
 navigator.vibrate([]); // mesma coisa que o anterior
-{% endhighlight %}
+```
 
 Quer testar o suporte?
 
-{% highlight javascript %}
+```javascript
 if('vibrate' in navigator){
     // tann namm!
 }
-{% endhighlight %}
+```
 
 ## Utilidades
 

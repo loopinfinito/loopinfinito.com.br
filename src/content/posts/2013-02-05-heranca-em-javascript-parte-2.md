@@ -37,7 +37,7 @@ No exemplo abaixo primeiro definimos um objeto __pessoa__, para logo depois
 criarmos um novo objeto __joao__ que contém exatamente todas as propriedades de
 pessoa.
 
-{% highlight javascript %}
+```javascript
 var pessoa = {
   caminhar: function() {
     // ...
@@ -49,27 +49,27 @@ var pessoa = {
 
 var joao = Object.create(pessoa)
 joao.caminhar() // método clonado de *pessoa*
-{% endhighlight %}
+```
 
 
 
 Com este método é possível também criarmos um objeto sem propriedades, que não
 usa nenhum outro como protótipo. O que era impossível antes.
 
-{% highlight javascript %}
+```javascript
 var obj = {}
 obj.toString() // método herdado de Object
 
 var objVirgem = Object.create(null)
 objVirgem.toString() // não possui nenhum método
-{% endhighlight %}
+```
 
 ## Extendendo
 
 Além de simplesmente clonar, é possível criar um novo objeto extendendo um já
 existente.
 
-{% highlight javascript %}
+```javascript
 var animal = {
   respirar: function() {
     // ...
@@ -89,7 +89,7 @@ var cachorro = Object.create(animal, {
 
 cachorro.respirar() // método herdado
 cachorro.latir() // método adicionado
-{% endhighlight %}
+```
 
 No exemplo acima criamos um novo objeto do tipo __cachorro__ que contem todas as
 propriedades de __animal__ além de um novo método __latir__.
@@ -101,7 +101,7 @@ O novo meio de definirmos novas propriedades em um objeto é através do método
 mais apenas valores acessados através de uma chave. Agora podemos definir _setters_,
 _getters_, se a propriedade é apenas de leitura, enumerável, ...
 
-{% highlight javascript %}
+```javascript
 Object.defineProperty(cachorro, 'dormir', {
   value: function() {
     // ...
@@ -110,7 +110,7 @@ Object.defineProperty(cachorro, 'dormir', {
   enumerable: false,
   configurable: false
 })
-{% endhighlight %}
+```
 
 Os _descriptors_ de uma propriedade podem ser:
 
@@ -122,7 +122,7 @@ Os _descriptors_ de uma propriedade podem ser:
 Além disso é possivel definir _getters_ and _setters_ que irão ser disparados
 de forma transparente toda vez que a propriedade for acessada ou modificada.
 
-{% highlight javascript %}
+```javascript
 Object.defineProperty(cachorro, 'idade', {
   value: 1,
   get: funtion() {
@@ -136,7 +136,7 @@ Object.defineProperty(cachorro, 'idade', {
 
 cachorro.idade = 3
 cachorro.idade // retorna 21 (3*7)
-{% endhighlight %}
+```
 
 ## Métodos super
 
@@ -144,14 +144,14 @@ No exemplo abaixo, definimos uma nova propriedade __respirar__ no objeto
 cachorro. Mas essa propriedade já havia sido herdada do objeto __animal__, então
 acabamos a sobreescrevendo.
 
-{% highlight javascript %}
+```javascript
 Object.defineProperty(cachorro, 'respirar', {
   value: function(){
     // ...
   }
 })
 cachorro.respirar() // dispara função que acabamos de definir
-{% endhighlight %}
+```
 
 Mas mesmo assim ainda podemos percorrer a cadeia de protótipos e acessar o método
 definido no protótipo de cachorro, o método definido no objeto animal. O novo
@@ -159,11 +159,11 @@ método `Object.getPrototypeOf` nos dá acesso ao protótipo de um objeto. Entã
 basta acessarmos o protótipo de __cachorro__ e chamarmos o método anteriormente
 sobreescrito.
 
-{% highlight javascript %}
+```javascript
 Object.getPrototypeOf(cachorro).respirar()
 // o mesmo que
 animal.respirar()
-{% endhighlight %}
+```
 
 ## Modificando protótipo em tempo de execução
 
@@ -172,24 +172,24 @@ propriedades a objetos, bastando modificar seus protótipos. Por exemplo, caso
 um novo método seja implementado em animal, todos os objetos que usam animal
 como protótipo terão este método disponível.
 
-{% highlight javascript %}
+```javascript
 cachorro.morrer() // undefined
 
 Object.defineProperty(animal, 'morrer', {
   value: function() {  }
 })
 cachorro.morrer() // dispara função definida em animal
-{% endhighlight %}
+```
 
 Então imaginem que queremos dar a todos os cachorros já criados em nossa aplicação
 um novo método. Para isso basta acessar o protótipo de cachorro e definir uma nova
 propriedade. Após isso, todos os cachorros já poderão usar o novo método.
 
-{% highlight javascript %}
+```javascript
 Object.defineProperty(Object.getPrototypeOf(cachorro), 'comer', {
   value: function() {}
 })
-{% endhighlight %}
+```
 
 ## E no IE?
 

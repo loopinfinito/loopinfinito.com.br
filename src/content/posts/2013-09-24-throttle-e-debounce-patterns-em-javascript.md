@@ -139,7 +139,7 @@ Vamos agora ver como aplicar os conceitos de _throttle_ e _debounce_ na prática
 Começando pelo _throttle_.
 
 
-{% highlight javascript %}
+```javascript
 var onResize = (function () {
   'use strict';
 
@@ -157,7 +157,7 @@ var onResize = (function () {
     }
   };
 }());
-{% endhighlight %}
+```
 
 Calma. Respire. O algoritmo acima não é tão difícil. Na primeira linha, nós
 definimos que a variável `onResize` recebe o valor retornado pela função
@@ -177,7 +177,7 @@ contexto devidamente setado — apenas se a última chamada a ela foi em menos d
 Agora vamos estudar o _debounce_. Como ele __posterga__ a execução de um dado
 trecho de código, vamos brincar bastante com o `setTimeout`.
 
-{% highlight javascript %}
+```javascript
 var autocomplete = (function () {
   'use strict';
 
@@ -197,7 +197,7 @@ var autocomplete = (function () {
     }, timeWindow);
   };
 }());
-{% endhighlight %}
+```
 
 Este exemplo utiliza, da mesma forma que o exemplo do _throttle_, uma
 <abbr title="Immediately-Invoked Function Expression">IIFE</abbr>. É ela que irá
@@ -219,7 +219,7 @@ algumas bibliotecas JavaScript, como o [underscore.js](http://underscorejs.org/)
 já os trazem implementados prontos para aplicarmos _throttle_ e _debounce_ em
 funções já existentes.
 
-{% highlight javascript %}
+```javascript
 // função que será disparada no evento "onresize" da window
 function onResizeHandler() {
   // ...
@@ -229,7 +229,7 @@ function onResizeHandler() {
 // garante que a função "onResizeHandler" não será executada
 // mais que uma vez a cada 200ms
 $(window).on('resize', _.throttle(onResizeHandler, 200));
-{% endhighlight %}
+```
 
 E para quem usa o [Sublime Text](http://www.sublimetext.com/), eu fiz um
 [_package_](https://github.com/caiogondim/js-patterns-sublime-snippets) com

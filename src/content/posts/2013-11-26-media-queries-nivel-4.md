@@ -54,7 +54,7 @@ tenha suporte ou JavaScript ativado, como por exemplo, mostrar as opções de um
 menu _dropdown_ que apenas responde ao evento _mouse over_ por JavaScript
 (prática muito comum).
 
-{% highlight css %}
+```css
 .menu-opcao {
     display: none;
 }
@@ -66,7 +66,7 @@ menu _dropdown_ que apenas responde ao evento _mouse over_ por JavaScript
         display: block;
     }
 }
-{% endhighlight %}
+```
 
 Este caso é interessante pois um usuário poderá nunca ter acesso às opções do
 seu menu. Esta _feature_ com certeza beneficia a acessibilidade, e pode ser bem
@@ -89,7 +89,7 @@ toque, telas sensíveis a _Pen Stylus_ (como por exemplo, o
 - `fine`: Há dispositivo apontador de alta precisão (<em>mouse</em>, _trackpad_
 e tela sensível a _Pen Stylus_).
 
-{% highlight css %}
+```css
 /* para telas de toque */
 @media (pointer: coarse) {
     /* aumenta tamanho de checkboxes e radio buttons em 75% */
@@ -98,7 +98,7 @@ e tela sensível a _Pen Stylus_).
         transform: scale(1.75);
     }
 }
-{% endhighlight %}
+```
 
 No exemplo acima estamos melhorando a acessibilidade principalmente para os
 usuários _mobile_, que podem ter dificuldade para marcar _checkboxes_ com
@@ -117,7 +117,7 @@ _feature_&nbsp;`script`, podemos refiná-lo ainda mais com `hover`, pois o menu
 só deverá aparecer aberto se o usuário __não__ for capaz de realizar o evento
 _mouse over_ (ou não ter JavaScript ativado).
 
-{% highlight css %}
+```css
 .menu-opcao {
     display: none;
 }
@@ -129,7 +129,7 @@ _mouse over_ (ou não ter JavaScript ativado).
         display: block;
     }
 }
-{% endhighlight %}
+```
 
 ### mas pera ai..
 
@@ -142,11 +142,11 @@ um _hover_ sem precisar tocar na tela, e acredito que isto caracteriza um novo
 tipo de dispositivo apontador. Se traduzíssemos isso numa _media query_, acho
 que o resultado seria algo do tipo:
 
-{% highlight css %}
+```css
 @media hover and (pointer: coarse) {
     /* air view */
 }
-{% endhighlight %}
+```
 
 Procurei por alguma informação sobre este recurso funcionar dentro de
 navegadores _web_, mas não obtive sucesso.
@@ -205,7 +205,7 @@ escuro).
 Agora, como seria legal se uma aplicação fizesse isso de maneira totalmente
 automática, hein? Com `luminosity`, será muito fácil (e sem JavaScript):
 
-{% highlight css %}
+```css
 body {
     color: #513B2C; /* marrom */
     background-color: #FBF0D9; /* bege */
@@ -228,7 +228,7 @@ body {
         background-color: white;
     }
 }
-{% endhighlight %}
+```
 
 Acho que nem precisaria mencionar, mas como tudo, é bom utilizar esta _feature_
 com parcimônia. Bom senso é sempre bem vindo. Acredito que outros bons casos de

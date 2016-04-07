@@ -66,26 +66,26 @@ nova [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)&nbsp;
 `@supports` e, entre parênteses, a regra (junto com o valor) que queremos
 verificar se o navegador suporta. Como no exemplo abaixo.
 
-{% highlight css %}
+```css
 @supports (propriedade:valor) {
   /*
   este código só irá ser interpretado caso
   o navegador dê suporte a propriedade testada
   */
 }
-{% endhighlight %}
+```
 
 Usando a sintaxe descrita acima podemos verificar se um navegador suporta
 _transform_ com `rotate` da seguinte forma:
 
-{% highlight css %}
+```css
 @supports (transform: rotate(45deg)) {
   /*
   este código só será interpretado caso o navegador
   suporte transform rotate com 45 unidades expressas em graus
   */
 }
-{% endhighlight %}
+```
 
 Reparem que no trecho de código acima estamos verificando se o navegador dá
 suporte à regra `transform` e, além disso, se ele suporta o valor `rotate`
@@ -95,7 +95,7 @@ Podemos também usar condicionais como `or`, `not` e `and` para
 verificarmos regras em conjunto ou verificar se o navegador __não__ suporta uma
 dada _feature_, facilitando a escrita de códigos de _fallback_.
 
-{% highlight css %}
+```css
 @supports (display: flexbox) or (display: -webkit-flex) {
   /* aqui temos suporte ao flexbox */
 }
@@ -105,7 +105,7 @@ dada _feature_, facilitando a escrita de códigos de _fallback_.
 @supports ((display: flexbox) and (not (display: inline-grid))) {
   /* aqui não temos suporte ao inline-grid, mas temos ao flexbox */
 }
-{% endhighlight %}
+```
 
 É importante lembrar também de testar pelas regras prefixadas. Como fizemos
 acima ao testar o suporte à regra `flexbox`.
@@ -118,7 +118,7 @@ global `CSS` temos um novo método `supports` em que nele podemos passar dois
 argumentos, sendo o primeiro a regra e o segundo o valor a serem testados, ou
 apenas 1 argumento sendo este uma _string_ ta qual usaríamos em CSS.
 
-{% highlight javascript %}
+```javascript
 if (CSS.supports('display', 'flex')) {
   // temos suporte ao flexbox
 } else {
@@ -128,7 +128,7 @@ if (CSS.supports('display', 'flex')) {
 if (CSS.supports('(display: flexbox) and (not (display: inline-grid))')) {
   // temos suporte ao flexbox, mas não ao inline-grid
 }
-{% endhighlight %}
+```
 
 <table class="support">
   <thead>

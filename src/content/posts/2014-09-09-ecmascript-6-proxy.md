@@ -50,7 +50,7 @@ alterar o resultado da chamada.
 
 Para melhor entender, vamos utilizar um exemplo simples.
 
-{% highlight javascript %}
+```javascript
 function Pessoa(nome, idade) {
   this.nome = nome
   this.idade = idade
@@ -58,7 +58,7 @@ function Pessoa(nome, idade) {
 
 var joao = new Pessoa("João", 37)
 console.log(joao.idade) //=> 37
-{% endhighlight %}
+```
 
 Acima criamos uma função construtora `Pessoa` e logo após instanciamos um objeto
 do tipo `Pessoa`. Checamos sua idade com `console.log` e temos o resultado
@@ -67,7 +67,7 @@ esperado: `37`.
 Agora vamos usar um *Proxy* para interceptar chamadas à propriedade `idade` do
 objeto `joao`:
 
-{% highlight javascript %}
+```javascript
 proxy = new Proxy(joao, {
   get: function(target, prop) {
     if (prop === "idade") {
@@ -77,7 +77,7 @@ proxy = new Proxy(joao, {
     return target[prop]
   }
 })
-{% endhighlight %}
+```
 
 Vamos passo-a-passo no código acima. O construtor de um *proxy* aceita dois
 argumentos: o primeiro é o `target` — o objeto que queremos interceptar as
@@ -97,13 +97,13 @@ como única porta de entrada para o objeto alvo, de forma transparente. Para
 isso, basta armazenar na variável que faz referência ao objeto alvo a própria
 referência ao *proxy*.
 
-{% highlight javascript %}
+```javascript
 console.log(joao.idade) //=> 37
 
 joao = proxy
 console.log(joao.idade) //=> Acesso a prop. idade interceptado
                         //=> 37
-{% endhighlight %}
+```
 
 Sendo assim, todo código que fazia referência à variável `joao` passará agora
 pelo *proxy* e este irá interceptar as chamadas ao objeto sem
@@ -124,7 +124,7 @@ Podemos usar a armadilha `set` para validarmos o novo valor de uma propriedade
 do objeto alvo. Caso seja um valor inválido, disparamos um erro e o valor não
 é alterado.
 
-{% highlight javascript %}
+```javascript
 joao = new Proxy(joao, {
   set: function(target, prop, val) {
     // Verifica se estamos acessando a propriedade `idade` do obj. alvo
@@ -153,7 +153,7 @@ joao = new Proxy(joao, {
 })
 
 joao.idade = "Uma string" // Irá disparar o erro `TypeError`
-{% endhighlight %}
+```
 
 Neste exemplo estamos validando se a idade é:
 
@@ -170,7 +170,7 @@ Perceba que a validação ocorre de forma transparente. Não é usado nenhum mé
 Com um *proxy* fica fácil criar uma função que recebe um objeto, intercepta
 e loga todos os acessos às suas propriedades.
 
-{% highlight javascript %}
+```javascript
 function loggable(target) {
   target =  new Proxy(target, {
     // Armadilha de acesso a propriedades
@@ -200,7 +200,7 @@ loggable(joao)
 joao.idade //=> Lendo prop. idade
 joao.idade = 38 //=> Mudando valor da prop. idade para 38. Era 37
 delete joao.idade //=> Deletada prop. idade
-{% endhighlight %}
+```
 
 No exemplo acima criamos uma função `loggable` que recebe um objeto como
 argumento e retorna um *proxy* que imprime na saída padrão todo o acesso,
@@ -220,7 +220,7 @@ atualizada e completa sobre armadilhas nos *proxies* pode ser vista na
 Disparada quando se tenta acessar uma propriedade no objeto alvo. A assinatura
 do *handler* é a seguinte: `get function(target, name, receiver) -> any`.
 
-{% highlight javascript %}
+```javascript
 var foo = {bar: 1}
 
 foo = new Proxy(foo, {
@@ -233,7 +233,7 @@ foo = new Proxy(foo, {
 })
 
 foo.bar // Armadilha `get` será disparada nesta linha
-{% endhighlight %}
+```
 
 
 ### Set
@@ -241,7 +241,7 @@ foo.bar // Armadilha `get` será disparada nesta linha
 Disparada quando se tenta trocar o valor de uma propriedade do objeto alvo.
 A assinatura do *handler* é: `set function(target, name, val, receiver) -> boolean`.
 
-{% highlight javascript %}
+```javascript
 var foo = {}
 
 foo = new Proxy(foo, {
@@ -253,7 +253,7 @@ foo = new Proxy(foo, {
   }
 })
 
-{% endhighlight %}
+```
 
 
 ### Has
@@ -262,7 +262,7 @@ Disparado quando é verificado se uma propriedade existe no objeto alvo através
 do código `prop in proxy`. A assinatura do *handler* é:
 `has function(target, name) -> boolean`.
 
-{% highlight javascript %}
+```javascript
 var foo = {bar: 1}
 
 foo = new Proxy(foo, {
@@ -271,7 +271,7 @@ foo = new Proxy(foo, {
     return name in target
   }
 })
-{% endhighlight %}
+```
 
 
 ### Enumerate
@@ -280,7 +280,7 @@ Retorna um *array* de *string* com o nomes das propriedades que devem ser lidas
 em um *loop* `for in`. A assinatura do *handler*:
 `enumerate function(target) -> [String]`.
 
-{% highlight javascript %}
+```javascript
 var foo = {lorem: 1, ipsum: 2}
 
 foo = new Proxy(foo, {
@@ -292,7 +292,7 @@ foo = new Proxy(foo, {
 for (prop in foo) {
   // irá iterar apenas na propriedade `lorem`
 }
-{% endhighlight %}
+```
 
 
 <table class="support">

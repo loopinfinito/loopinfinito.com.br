@@ -118,7 +118,7 @@ imagem — coisa que é muito comum na construção de miniaturas, costuma-se
 utilizar uma `<div>` com `overflow: hidden` e fazer o redimensionamento da
 imagem para acompanhar o tamanho da `<div>`.
 
-{% highlight html %}
+```html
 <!-- Isso -->
 <img class="galeria-img" src="einstein.jpg" alt="Einstein" />
 
@@ -126,7 +126,7 @@ imagem para acompanhar o tamanho da `<div>`.
 <div class="galeria-thumb">
     <img  class="galeria-img" src="einstein.jpg" alt="Einstein" />
 </div>
-{% endhighlight %}
+```
 
 Note que as quatro primeiras imagens são a mesma imagem, assim como as quatro
 últimas. A imagem do Einstein tem uma orientação de retrato (altura maior que
@@ -154,12 +154,12 @@ uso dessa propriedade, é necessário que a imagem em questão tenha altura e
 largura definidas. No nosso exemplo acima temos ambas as dimensões com 140
 _pixels_:
 
-{% highlight css %}
+```css
 .galeria-img {
     width: 140px;
     height: 140px;
 }
-{% endhighlight %}
+```
 
 Agora, vamos ao que interessa.
 
@@ -181,13 +181,13 @@ diferente da original (comportamento padrão das imagens até então).
 	</figure>
 </div>
 
-{% highlight css %}
+```css
 .galeria-img {
     width: 140px;
     height: 140px;
     object-fit: fill;
 }
-{% endhighlight %}
+```
 
 ### none
 
@@ -208,13 +208,13 @@ mais fácil de entender:
 	</figure>
 </div>
 
-{% highlight css %}
+```css
 .galeria-img {
     width: 140px;
     height: 140px;
     object-fit: none;
 }
-{% endhighlight %}
+```
 
 Agora, vejamos o que acontece quando uma das dimensões definidas excede sua
 correspondente original:
@@ -231,13 +231,13 @@ correspondente original:
 	</figure>
 </div>
 
-{% highlight css %}
+```css
 .galeria-img {
     width: 220px;
     height: 140px;
     object-fit: none;
 }
-{% endhighlight %}
+```
 
 Como dito, nenhum processamento foi feito na imagem, e ela mantém seu tamanho
 original. Pode-se perceber também que, nesses dois exemplos, a imagem resultante
@@ -263,13 +263,13 @@ anterior, a única coisa que muda é o valor de `object-fit` para `cover`.
 	</figure>
 </div>
 
-{% highlight css %}
+```css
 .galeria-img {
     width: 220px;
     height: 140px;
     object-fit: cover;
 }
-{% endhighlight %}
+```
 
 ### contain
 
@@ -289,13 +289,13 @@ dentro da área definida pelas dimensões especificadas.
 	</figure>
 </div>
 
-{% highlight css %}
+```css
 .galeria-img {
     width: 140px;
     height: 140px;
     object-fit: contain;
 }
-{% endhighlight %}
+```
 
 ### scale-down
 
@@ -323,7 +323,7 @@ elemento `<img>`. De novo, com um exemplo fica mais fácil:
 	</figure>
 </div>
 
-{% highlight css %}
+```css
 .einstein-fit-1 {
     width: 120px;
     height: 250px;
@@ -335,7 +335,7 @@ elemento `<img>`. De novo, com um exemplo fica mais fácil:
     height: 250px;
     object-fit: scale-down;
 }
-{% endhighlight %}
+```
 
 Podemos perceber que nas duas imagens temos a mesma altura, e apenas mudamos a
 largura de um para o outro. No primeiro caso, `scale-down` se comporta como
@@ -368,7 +368,7 @@ com `object-fit: cover` e modificamos seu alinhamento vertical.
 	</figure>
 </div>
 
-{% highlight css %}
+```css
 .einstein-fit-1 {
     object-fit: cover;
     object-position: 50% 50%; /* valor padrão */
@@ -383,7 +383,7 @@ com `object-fit: cover` e modificamos seu alinhamento vertical.
     object-fit: cover;
     object-position: 50% 100%; /* alinhada à base */
 }
-{% endhighlight %}
+```
 
 Agora, para ilustrar o alinhamento horizontal, no exemplo a seguir temos imagens
 definidas com `object-fit: contain`.
@@ -405,7 +405,7 @@ definidas com `object-fit: contain`.
 	</figure>
 </div>
 
-{% highlight css %}
+```css
 .einstein-fit-1 {
     object-fit: contain;
     object-position: 50% 50%; /* valor padrão */
@@ -420,7 +420,7 @@ definidas com `object-fit: contain`.
     object-fit: contain;
     object-position: 100% 50%; /* alinhada à direita */
 }
-{% endhighlight %}
+```
 
 Claro que também é possível utilizar outras unidades como `px`, `em`, etc. e
 valores negativos também.

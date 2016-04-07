@@ -29,16 +29,16 @@ Com o símbolo `$` declaramos em que elemento iremos aplicar os estilos.
 No exemplo abaixo, iremos selecionar apenas as tags `div` que
 possuem uma `ul` com a classe *menu*.
 
-{% highlight css %}
+```css
 /* seleciona a <div>, e não a <ul> */
 $div ul.menu { ... }
-{% endhighlight %}
+```
 
 Podemos misturá-lo com outros e assim ter mais poder para
 selecionar exatamente os elementos que queremos, sem a necessidade de marcação
 adicional.
 
-{% highlight css %}
+```css
 /* estiliza o <h2> que possui um elemento <a> como filho direto */
 $h2 > a { ... }
 
@@ -47,14 +47,14 @@ $ul > li:only-child { ... }
 
 /* estiliza a <div> que possui um <h2> e <p> como descendentes */
 $div h2 ~ p { ... }
-{% endhighlight %}
+```
 
 ## E:not(s1, s2)
 
 Já presente no CSS3, agora a pseudo-classe <code>:not()</code> pode receber mais de um seletor.
 Combinadores como `+`, `~` e `>` não são suportados.
 
-{% highlight css %}
+```css
 /* seleciona todos os elementos, menos os <p> e <a> */
 *:not(p, a) { ... }
 
@@ -63,14 +63,14 @@ input:not(:checked) { ... }
 
 /* seletor não válido */
 a:not(p > a) { ... }
-{% endhighlight %}
+```
 
 ## E:matches(s1, s2)
 
 Meu segundo seletor favorito.
 Com ele podemos expressar em um único seletor o que antes era necessário declarar em várias linhas.
 
-{% highlight css %}
+```css
 /* seleciona todos os <a> e <p> que estão dentro de um <section> */
 section :matches(a, p) { ... }
 
@@ -79,7 +79,7 @@ section :matches(a, p) { ... }
 
 /* seleciona os <input> nos estados de focus e hover  */
 input:matches(:focus, :hover) { ... }
-{% endhighlight %}
+```
 
 ## E\[foo="bar" i\]
 
@@ -87,37 +87,37 @@ O mesmo que `E\[foo="bar"\]`, porém este é *case-insensitive*.
 Reparem o `i` adicional.
 Não me vejo utilizando, mas se algum dia for necessário é bom saber que existe.
 
-{% highlight css %}
+```css
 /* seleciona os elementos <div data-user="JoAo">, <div data-user="JOAO"> e <div data-user="joao"> */
 div[data-user="joao" i] { ... }
 
 /* seleciona apenas <div data-user="joao"> */
 div[data-user="joao"] { ... }
-{% endhighlight %}
+```
 
 ## E:local-link
 
 Fácil e útil. Seleciona apenas os links que apontam para dentro da página atual.
 
-{% highlight css %}
+```css
 /* seleciona todos os links que apontam para um elemento dentro do documento */
 a:local-link { ... }
 
 /* seleciona todos os links que apontam para fora do documento atual */
 a:not(:local-link) { ... }
-{% endhighlight %}
+```
 
 ## E:local-link(0)
 
 Semelhante ao `:local-link`, porém seleciona todos os links que apontam para o domínio atual.
 
-{% highlight css %}
+```css
 /* seleciona todos os links que apontam para o mesmo domínio atual */
 a:local-link(0) { ... }
 
 /* seleciona todos os links que apontam para um domínio diferente do atual */
 a:not(:local-link(0)) { ... }
-{% endhighlight %}
+```
 
 ## E /foo/ F
 
@@ -125,10 +125,10 @@ Este seletor é um pouco mais complexo.
 No código `E /foo/ F`, selecionamos o elemento `F` cujo ID esteja no atributo `/foo/` de `E`.
 OK, melhor um exemplo.
 
-{% highlight css %}
+```css
 /* selecionamos o <input> quando o seu <label> estiver no estado hover ou focus */
 label:matches(:hover, :focus) /for/ input { ... }
-{% endhighlight %}
+```
 
 No exemplo acima, aplicamos uma regra ao `input` quando o seu `label` estiver
 `:hover` ou `:focus`. Fazemos a relação entre `label` e `input` através de um

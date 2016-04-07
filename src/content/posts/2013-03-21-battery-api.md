@@ -50,7 +50,7 @@ O exeperimento encontra-se disponível no
 Todas as funcionalidades relacionadas a bateria estão definidas na interface
 `BatteryManager`, que é acessível através do objeto `navigator.battery`.
 
-{% highlight javascript %}
+```javascript
 if( navigator.battery ){
     // seu navegador suporta a Battery API
 }
@@ -61,7 +61,7 @@ var battery = navigator.battery || navigator.mozBattery || navigator.webkitBatte
 if( battery ){
     // seu navegador suporta a Battery API
 }
-{% endhighlight %}
+```
 
 Como já mencionado, apenas a implementação `navigator.mozBattery` existe
 atualmente.
@@ -80,11 +80,11 @@ uma fonte de energia, pois temos o caso de estar ligada na fonte **e** 100% carr
 o que implica em dizer que o dispositivo talvez passe a utilizar a energia
 proveniente da fonte – isto acontece no MacBook e nos dispositivos iOS.
 
-{% highlight javascript %}
+```javascript
 if( navigator.battery.charging ){
     // a bateria está sendo carregada
 }
-{% endhighlight %}
+```
 
 ### chargingTime
 
@@ -94,12 +94,12 @@ será um inteiro que representa o tempo em segundos.
 Caso contrário, será `'Infinity'` – o que faz sentido pois se a bateria não está
 carregando, podemos dizer que o tempo estimado é infinito.
 
-{% highlight javascript %}
+```javascript
 if( navigator.battery.charging ){
     console.log( navigator.battery.chargingTime ) // 3226s
     // faltam 53.7min para terminar de carregar
 }
-{% endhighlight %}
+```
 
 ### dischargingTime
 
@@ -109,20 +109,20 @@ Se a bateria não estiver carregando – quando `charging == false` –, seu val
 será um inteiro que representa o tempo em segundos.
 Caso contrário, será `'Infinity'`.
 
-{% highlight javascript %}
+```javascript
 if( !navigator.battery.charging ){
     console.log( navigator.battery.dischargingTime ) // 5564s
     // faltam 1h32min para descarregar totalmente
 }
-{% endhighlight %}
+```
 
 ### level
 
 Indica o nível de carga atual da bateria – *float* de 0 a 1.
 
-{% highlight javascript %}
+```javascript
 console.log( navigator.battery.level ) // 0.34 = 34% de carga
-{% endhighlight %}
+```
 
 ## Eventos
 
@@ -132,7 +132,7 @@ Para cada uma das 4 propriedades mostradas acima, temos um evento associado.
 
 `onchargingchange` será disparado toda vez que o valor de `charging` mudar.
 
-{% highlight javascript %}
+```javascript
 navigator.battery.addEventListener( 'chargingchange', function(){
     if( navigator.battery.charging ){
         console.log( 'Bateria carregando' )
@@ -140,19 +140,19 @@ navigator.battery.addEventListener( 'chargingchange', function(){
         console.log( 'Bateria DEScarregando' )
     }
 }, false)
-{% endhighlight %}
+```
 
 ### onchargingtimechange
 
 Se a bateria estiver carregando, `onchargingtimechange` será disparado toda vez
 que o valor de `chargingTime` mudar.
 
-{% highlight javascript %}
+```javascript
 navigator.battery.addEventListener( 'chargingtimechange', function(){
     var tempoRestante = navigator.battery.chargingTime / 60
     console.log( 'Faltam ' + tempoRestante + ' minutos para terminar de carregar' )
 }, false)
-{% endhighlight %}
+```
 
 ### ondischargingtimechange
 
@@ -160,23 +160,23 @@ De maneira análoga a `onchargingtimechange`, se a bateria **não** estiver
 carregando, `ondischargingtimechange` será disparado toda vez que o valor de
 `dischargingTime` mudar.
 
-{% highlight javascript %}
+```javascript
 navigator.battery.addEventListener( 'dischargingtimechange', function(){
     var tempoRestante = navigator.battery.dischargingTime / 60
     console.log( 'Faltam ' + tempoRestante + ' minutos para descarregar totalmente' )
 }, false)
-{% endhighlight %}
+```
 
 ### onlevelchange
 
 `onlevelchange` será disparado toda vez que o valor de `level` mudar.
 
-{% highlight javascript %}
+```javascript
 navigator.battery.addEventListener( 'levelchange', function(){
     var nivel = navigator.battery.level * 100
     console.log( 'O nível da bateria mudou para ' + nivel + '%' )
 }, false)
-{% endhighlight %}
+```
 
 ## Pra quê isso em JavaScript?
 

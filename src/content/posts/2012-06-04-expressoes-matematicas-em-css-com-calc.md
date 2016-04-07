@@ -108,19 +108,19 @@ Em CSS, sabemos que existem diversos tipos de valores e medidas: <code>px</code>
 <code>in</code>, <code>cm</code>, <code>mm</code>, <code>pc</code>, <code>pt</code> e <code>ex</code>.
 Se quisermos atribuir qualquer valor numérico a uma determinada propriedade, apenas escolhemos uma destas unidades:
 
-{% highlight css %}
+```css
 #acdc {
     width: 100px;
 }
-{% endhighlight %}
+```
 
 Contudo, em CSS **não** é permitido fazer isto:
 
-{% highlight css %}
+```css
 #acdc {
     width: 100px + 10px; /* incorreto */
 }
-{% endhighlight %}
+```
 
 Ou seja, não é possível calcular nenhuma expressão matemática – mesmo que seja uma coisa totalmente desnecessária e tosca
 como o exemplo acima. E desculpem-me por isto, no próximo melhora.
@@ -133,7 +133,7 @@ Dai você pensa, *"p!@# q%$ p%$!# como é que vou fazer esta m!@#$ funcionar?"*.
 
 A <span style="text-decoration:line-through;">gambiarra</span> solução para este pequeno impasse é bem simples, na verdade:
 
-{% highlight css %}
+```css
 #pinkfloyd {
     width: 200px;
     height: 150px;
@@ -143,7 +143,7 @@ A <span style="text-decoration:line-through;">gambiarra</span> solução para es
     margin-top: -75px; /* metade da altura */
     margin-left: -100px; /* metade da largura */
 }
-{% endhighlight %}
+```
 
 Hora do purismo: Ter que resolver um problema de posição de um elemento usando <code>margin</code> é **toscasso**!
 Se já existem as propriedades <code>top</code>, <code>left</code>, <code>right</code> e <code>bottom</code>, isto deveria
@@ -166,7 +166,7 @@ O mais interessante é que podemos *misturar* valores relativos com valores abso
 ### Misturando valores relativos e absolutos
 O exemplo anterior ficaria:
 
-{% highlight css %}
+```css
 #pinkfloyd {
     width: 200px;
     height: 150px;
@@ -178,17 +178,17 @@ O exemplo anterior ficaria:
     /* margin-left: -100px; */
     left: calc(50% - 100px);
 }
-{% endhighlight %}
+```
 
 ### Misturando unidades
 Também é possível usar valores de unidades diferentes numa mesma expressão:
 
-{% highlight css %}
+```css
 #ledzeppelin {
     width: calc(100px + 2in + 5em);
     min-height: calc(5em + 30px + 25% + 3.5pc);
 }
-{% endhighlight %}
+```
 
 ## Suporte
 No momento em que escrevo este post, os únicos navegadores que estão dando suporte a esta propriedade são o

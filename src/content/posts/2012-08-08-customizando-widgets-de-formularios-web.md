@@ -196,7 +196,7 @@ Webkit (<strong>Google Chrome</strong> ou <strong>Safari</strong>).</p>
 
 Neste primeiro exemplo vamos fazer uma coisa bem simples, mudaremos a aparência de um grupo de radio buttons:
 
-{% highlight html %}
+```html
 <input type="radio" name="pinkfloyd" id="syd" />
 <label for="syd">Syd Barret</label>
 
@@ -205,7 +205,7 @@ Neste primeiro exemplo vamos fazer uma coisa bem simples, mudaremos a aparência
 
 <input type="radio" name="pinkfloyd" id="roger" />
 <label for="roger">Roger Waters</label>
-{% endhighlight %}
+```
 
 Este trecho de código gera os widgets abaixo:
 
@@ -225,13 +225,13 @@ Dentre tantas opções, escolhi a que achei mais didática para este exemplo –
 outra opção qualquer.
 No CSS, precisamos apenas:
 
-{% highlight css %}
+```css
 input[type=radio] {
     -webkit-appearance: checkbox; /* Chrome e Safari */
     -moz-appearance: checkbox; /* Firefox */
     appearance: checkbox; /* ainda não é suportado */
 }
-{% endhighlight %}
+```
 
 Como podemos ver a seguir, a aparência dos radio buttons mudou para a mesma aparência das checkboxes, mas não se enganem,
 os widgets ainda são de fato radio buttons, podemos constatar isto pelo fato de que apenas uma das opções abaixo pode ser
@@ -261,7 +261,7 @@ O que devemos fazer primeiramente é **remover a aparência padrão** setando a 
 dará a liberdade de modificar qualquer propriedade do elemento, só assim poderemos começar a customização do widget.
 Vamos então dar continuidade com os passos iniciais no nosso *widget de range* de *id* `#rolling-stones`:
 
-{% highlight css %}
+```css
 input#rolling-stones {
     /* removendo a aparência padrão (Chrome e Safari) */
     -webkit-appearance: none;
@@ -274,7 +274,7 @@ input#rolling-stones {
     background-color: rgba( 0,0,0,0.1 );
     background-image: -webkit-linear-gradient( rgba(0,0,0,0.2), rgba(0,0,0,0) );
 }
-{% endhighlight %}
+```
 
 Após remover a aparência padrão com `-webkit-appearance: none`, nosso elemento vai ficar com um fundo branco, e é ai que
 as estilizações acima entram em cena.
@@ -283,7 +283,7 @@ ainda permanecerá com sua aparência padrão, isso ocorre porque este botão é
 *input range*, e para mudarmos sua aparência padrão deveremos usar um seletor especial `::slider-thumb` – que por enquanto
 apenas o Webkit (Chrome e Safari) dá suporte através da flag `-webkit`. Customizando o botão:
 
-{% highlight css %}
+```css
 input#rolling-stones::-webkit-slider-thumb {
     /* removendo a aparência padrão (Chrome e Safari) */
     -webkit-appearance: none;
@@ -296,13 +296,13 @@ input#rolling-stones::-webkit-slider-thumb {
     background-color: #999;
     background-image: -webkit-linear-gradient( #999, #666 );
 }
-{% endhighlight %}
+```
 
 A parte seguinte é mais relacionada à interação do widget com o usuário.
 Especificamos os comportamentos para quando há foco (`:focus`), para quando passamos a seta do mouse em cima do botão (`:hover`)
 e para quando clicamos e arrastamos o botão (`:active`):
 
-{% highlight css %}
+```css
 input#rolling-stones:focus {
     outline: none;
 }
@@ -321,7 +321,7 @@ input#rolling-stones::-webkit-slider-thumb:active {
     background-image: none;
     background-color: #555;
 }
-{% endhighlight %}
+```
 
 E eis o resultado! Recomendo testar também o *focus* (aperte *tab* e depois ← e →).
 
@@ -381,7 +381,7 @@ Já o pseudo-elemento `::slider-thumb` é suportado apenas pelo Webkit e ainda n
 Agora é a vez de fazermos o mesmo com as checkboxes e radio buttons.
 Abaixo temos o HTML dos nossos widgets, criei a classe `.estilizado` apenas para enfatizar o reaproveitamento de CSS logo a seguir.
 
-{% highlight html %}
+```html
 <!-- checkboxes -->
 <input class="estilizado" type="checkbox" id='c1' />
 <label for="c1">Paul</label>
@@ -399,7 +399,7 @@ Abaixo temos o HTML dos nossos widgets, criei a classe `.estilizado` apenas para
 <label for="r2">AC/DC</label>
 <input class="estilizado" type="radio" name="band" id="r3" />
 <label for="r3">Motley Crue</label>
-{% endhighlight %}
+```
 
 Abaixo o resultado padrão do código acima:
 
@@ -427,7 +427,7 @@ Abaixo o resultado padrão do código acima:
 Agora vamos ao que interessa, CSS! Começamos definindo a classe `.estilizado`, ou seja, as propriedades inerentes tanto às
 *checkboxes* quanto aos *radio buttons*.
 
-{% highlight css %}
+```css
 input.estilizado {
     /* removendo a aparência padrão (Chrome e Safari) */
     -webkit-appearance: none;
@@ -449,11 +449,11 @@ input.estilizado:focus {
     outline: none;
     box-shadow: 0px 0px 5px 1px red;
 }
-{% endhighlight %}
+```
 
 Feito isso, agora vamos aos estilos adicionais das **checkboxes**:
 
-{% highlight css %}
+```css
 input[type=checkbox].estilizado {
     width: 12px;
     height: 12px;
@@ -469,11 +469,11 @@ input[type=checkbox].estilizado:checked:before {
     top: -6px;
     left: 2px;
 }
-{% endhighlight %}
+```
 
 E continuando com os estilos adicionais dos **radio buttons**:
 
-{% highlight css %}
+```css
 input[type=radio].estilizado {
     width: 13px;
     height: 13px;
@@ -489,7 +489,7 @@ input[type=radio].estilizado:checked:before {
     top: -5px;
     left: 1px;
 }
-{% endhighlight %}
+```
 
 O resultado encontra-se abaixo, teste você mesmo (o *focus* também)!
 

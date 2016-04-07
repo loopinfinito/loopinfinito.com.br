@@ -203,16 +203,16 @@ O input `range` visivelmente é composto basicamente por 2 partes: uma trilha e 
 
 Sabemos que não temos acesso aos elementos internos do componente/widget, não podemos manipula-los e nem mesmo estiliza-los, justamente porque **não temos acesso** a shadow DOM do elemento. Para ilustrar este exemplo, suponha que tenhamos:
 
-{% highlight html %}
+```html
 <input type="range" id="slider" />
-{% endhighlight %}
+```
 
 Se tentarmos obter o primeiro elemento filho de `#slider` via JavaScript:
 
-{% highlight javascript %}
+```javascript
 var slider = document.getElementsById( "slider" )
 console.log( slider.firstChild ) // retorna null
-{% endhighlight %}
+```
 
 Nada é retornado, mas como isto é possível, então? **Isso é a shadow DOM em ação**.
 Apenas  precisamos incluir `<input type="range">` em nosso código e o navegador se vira com o resto, ou seja, com a montagem estrutural e com a renderização do componente por completo.

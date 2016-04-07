@@ -98,7 +98,7 @@ Obviamente os nossos posts se encaixam na categoria **BlogPosting**, então este
 O trecho de código abaixo mostra como era o código fonte de um resumo de post (o exemplo abaixo ilustra o <a href="#print-home">print screen</a> acima).
 Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de ficar olhando para um monte de linhas de código de uma vez, né).
 
-{% highlight html %}
+```html
 <!-- bloco do post -->
 <section class="post-container">
     <!-- menu da lateral direita -->
@@ -106,11 +106,11 @@ Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de 
     <!-- área principal do post -->
     <article> ... </article>
 </section>
-{% endhighlight %}
+```
 
 *Menu da lateral direita* detalhadamente:
 
-{% highlight html %}
+```html
 <aside class="post-meta">
     <ul>
         <!-- data da publicação -->
@@ -131,11 +131,11 @@ Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de 
         </li>
     </ul>
 </aside>
-{% endhighlight %}
+```
 
 *Área principal do post* detalhadamente:
 
-{% highlight html %}
+```html
 <article>
     <!-- título do post -->
     <header>
@@ -151,7 +151,7 @@ Dividi o código em blocos para facilitar a leitura (acho que ninguém gosta de 
         <a href="..." class="leia-mais">Continue lendo &rarrw;</a>
     </section>
 </article>
-{% endhighlight %}
+```
 
 OK, nada de mais. Basicamente uma marcação simples HTML5.
 
@@ -162,7 +162,7 @@ Mesmo esquema aqui, dividi o código em blocos:
 ### Elemento geral
 <p></p>
 
-{% highlight html %}
+```html
 <!-- adicionamos as propriedades itemscope e itemtype para BlogPosting -->
 <section class="post-container" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
     <!-- adicionamos esta tag <span> para o publicador do post -->
@@ -171,7 +171,7 @@ Mesmo esquema aqui, dividi o código em blocos:
     <aside class="post-meta"> ... </aside>
     <article> ... </article>
 </section>
-{% endhighlight %}
+```
 
 - Definimos a entidade principal (BlogPosting) no elemento que engloba todos os dados sobre o post;
 - O elemento <code>{{ '<span>' | escape }}</code> não é visível para o leitor (classe <code>.hidden</code>), pois foi adicionado apenas para podermos especificar que este post foi publicado pelo Loop Infinito com <code>itemprop="publisher"</code>;
@@ -183,7 +183,7 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
 ### Menu lateral direito
 <p></p>
 
-{% highlight html %}
+```html
 <aside class="post-meta">
     <ul>
         <li class="post-data">
@@ -211,7 +211,7 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
         </li>
     </ul>
 </aside>
-{% endhighlight %}
+```
 
 - Envolvemos a data de publicação com um elemento <code>{{'<time>'|escape}}</code> (novo no HTML5) para usar a propriedade <code>itemprop="datePublished"</code>. Usamos também a propriedade <code>datetime</code> para podermos especificar a data no formato padrão (aaaa-mm-dd);
 - Em autor, é aconselhável o uso da propriedade HTML <code>rel="author"</code> (<a href="http://webdesign.about.com/od/html5tags/qt/rel-author-authorship.htm">leia sobre</a>), além de especificar a propriedade <code>itemprop="author"</code>;
@@ -221,7 +221,7 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
 ### Área principal do post
 <p></p>
 
-{% highlight html %}
+```html
 <article>
     <header>
     	<!-- título do post -->
@@ -242,7 +242,7 @@ Apenas usamos assim porque estamos obedecendo à sintaxe XHTML – também permi
         <a href="..." class="leia-mais" itemprop="url">Continue lendo &rarrw;</a>
     </section>
 </article>
-{% endhighlight %}
+```
 
 - Definimos o título do post com a propriedade <code>itemprop="headline"</code>;
 - A propriedade <code>itemprop="thumbnailUrl"</code> serve para especificar uma imagem associada ao post;

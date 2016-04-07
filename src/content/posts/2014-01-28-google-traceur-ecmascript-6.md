@@ -52,7 +52,7 @@ Implementa a especificação ainda em rascunho do ECMAScript 6 sobre classes.
 Apenas suporta a implementação mínima, pois muito ainda está sendo discutido
 sobre como de fato irá ser a especificação final.
 
-{% highlight javascript %}
+```javascript
 class Monstro extends Personagem {
   constructor(x, y, nome) {
     super(x, y)
@@ -74,7 +74,7 @@ class Monstro extends Personagem {
     this.life_ = valor
   }
 }
-{% endhighlight %}
+```
 
 Reparem no código acima que temos alguns elementos comuns em linguagens
 orientadas a objeto como: uma função construtora, herança e uma palavra
@@ -88,7 +88,7 @@ passarmos um novo valor para um atributo ou pedirmos seu valor atual.
 
 Um atalho para inicializar ou definir várias variáveis de uma só vez.
 
-{% highlight javascript %}
+```javascript
 var ponto = {x: 1, y: 2}
 var retangulo = {topLeft: {x: 3, y: 4}, bottomRight: {x: 5, y: 6}}
 
@@ -98,7 +98,7 @@ console.log(x, y) // imprime 1 2
 // descompacta o retângulo
 var {topLeft: {x: x1, y: y1}, bottomRight: {x: x2, y: y2}} = retangulo
 console.log(x1, y1, x2, y2) // imprime 3 4 5 6
-{% endhighlight %}
+```
 
 
 ### Block scoped bindings
@@ -108,7 +108,7 @@ global. Isto assegura que as variáveis não vazem de um escopo sem a necessidad
 de usarmos
 [funções de execução imediata](https://github.com/caiogondim/js-patterns-sublime-snippets#immediate-function).
 
-{% highlight javascript %}
+```javascript
 {
   const salario = 750,
   nome = 'n3rd',
@@ -116,7 +116,7 @@ de usarmos
 }
 // não é acessível fora do escopo do objeto onde foi definido
 console.log(salario)
-{% endhighlight %}
+```
 
 As palavras reservadas `const` e `let` são, até o momento, as únicas que possuem
 esse comportamento de escopo em bloco.
@@ -126,20 +126,20 @@ esse comportamento de escopo em bloco.
 Tão óbvio que os novatos em JS nem conseguem acreditar que não existe um meio
 de definirmos valores _default_ para parâmetros. Finalmente agora é possível.
 
-{% highlight javascript %}
+```javascript
 function foo(a = 1, b = 2, c = 3) {
   // ...
 }
 
 foo(3) // a = 3, b = 2, c = 3
-{% endhighlight %}
+```
 
 ### Rest parameters
 
 Permite que funções tenham um número variável de parâmetros sem a necessidade
 do uso do objeto `arguments`.
 
-{% highlight javascript %}
+```javascript
 var ouro = prata = restante = 'desconhecido'
 
 function concedeMedalha(primeiro, segundo, ...outros) {
@@ -153,7 +153,7 @@ concedeMedalha('Michael Phelps', 'Liu Xiang', 'Yao Ming', 'Allyson Felix')
 console.log(ouro) // imprime “Michael Phelps”
 console.log(prata) // imprime “Liu Xiang”
 console.log(restante.join(', ')) // imprime o “Yao Ming, Allyson Felix”
-{% endhighlight %}
+```
 
 
 ### Spread operator
@@ -164,7 +164,7 @@ Continuando com o exemplo acima, imaginem que agora, no lugar de passarmos um
 a um os competidores para a função `concedeMedalha`, pudessemos passar um
 _array_ e cada posição desse _array_ ser interpretado como um argumento.
 
-{% highlight javascript %}
+```javascript
 var ouro = prata = restante = 'desconhecido'
 
 function concedeMedalha(primeiro, segundo, ...outros) {
@@ -185,7 +185,7 @@ concedeMedalha(...competidores)
 console.log(ouro) // imprime “Michael Phelps”
 console.log(prata) // imprime “Liu Xiang”
 console.log(restante.join(', ')) // imprime o “Yao Ming, Allyson Felix”
-{% endhighlight %}
+```
 
 
 ### Atalho para inicializar objeto
@@ -193,7 +193,7 @@ console.log(restante.join(', ')) // imprime o “Yao Ming, Allyson Felix”
 Evita o repetitivo código `{x: x, y: y, z: z}` quando estamos definindo um
 objeto cujo a chave possui o valor da variável de mesmo nome.
 
-{% highlight javascript %}
+```javascript
 var obj = {x, y}
 // um atalho para o código acima
 var obj = {x: x, y: y}
@@ -201,7 +201,7 @@ var obj = {x: x, y: y}
 function f(x, y) { return {x: x, y: y} }
 // o mesmo que o código acima
 function f(x, y) { return {x, y} }
-{% endhighlight %}
+```
 
 Reparem que na primeira linha do trecho de código acima, inicializamos a
 variável `obj` com o valor `{x, y}`, o que é sintaticamente errado no
@@ -211,12 +211,12 @@ este trecho: `var obj = {x: x, y: y}`, dando um atalho para tal, desta forma:
 `var obj = {x, y}`. Dificil de explicar, mas fácil de entender. Tenta
 acompanhar esse outro exemplo.
 
-{% highlight javascript %}
+```javascript
 var nome = "Joao"
 var sobrenome = "Silva"
 
 var pessoa = {nome, sobrenome} // o mesmo que `var pessoa = {nome: nome, sobrenome: sobrenome}`
-{% endhighlight %}
+```
 
 
 ### Property method assignment
@@ -225,7 +225,7 @@ Permite que métodos de objetos sejam definidos de uma maneira mais clara.
 Reparem que, abaixo, definimos os métodos `bunizar` e `ligar` sem usar
 a palavra-reservada `function`.
 
-{% highlight javascript %}
+```javascript
 var carro = {
   nome: 'Lorem',
   marca: 'Ipsum',
@@ -236,7 +236,7 @@ var carro = {
     // ...
   }
 }
-{% endhighlight %}
+```
 
 Isto é, até o momento, o que o Google Traceur suporta sobre
 _Property method assignment_. Porém a
@@ -277,11 +277,11 @@ No terminal, entre na pasta do seu projeto e vamos instalar todos os pacotes
 necessários. Primeiro vamos instalar o Grunt e, logo em seguida, o grunt-
 traceur.
 
-{% highlight bash %}
+```bash
 npm install -g grunt-cli
 npm install grunt --save-dev
 npm install grunt-traceur --save-dev
-{% endhighlight %}
+```
 
 Algumas considerações sobre os comandos usados acima: a _flag_&nbsp;`-g` usada para
 instalar o Grunt é para que o **grunt-cli** seja instalado de forma global, que
@@ -294,7 +294,7 @@ Crie um arquivo chamado **Gruntfile.js** (ou Gruntfile.coffee) na raíz do seu
 projeto. Abaixo um exemplo de um Gruntfile.js completo. Caso você já possua um,
 extraia apenas as partes relacionadas ao grunt-traceur.
 
-{% highlight javascript %}
+```javascript
 module.exports = function (grunt) {
   'use strict';
 
@@ -319,7 +319,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig(gruntConfig)
 }
-{% endhighlight %}
+```
 
 No objeto `files` passamos como chave o arquivo de _output_ e como valor um
 _array_ com todos os arquivos que serão compilados, em ordem. No exemplo acima,
@@ -339,14 +339,14 @@ hoje.
 
 Para instalar o pacote **grunt-watch** digite no seu terminal o comando abaixo:
 
-{% highlight bash %}
+```bash
 npm install grunt-watch --save-dev
-{% endhighlight %}
+```
 
 E agora vamos configurar a _task_. Vamos adicionar um objeto `watch` ao nosso
 objeto de configuração do Grunt.
 
-{% highlight javascript %}
+```javascript
 grunt.loadNpmTasks('grunt-watch')
 
 gruntConfig.watch = {
@@ -355,7 +355,7 @@ gruntConfig.watch = {
     tasks: ['traceur']
   }
 }
-{% endhighlight %}
+```
 
 Com isso, basta rodarmos no terminal o comando `grunt watch:traceur` e, toda vez
 que um arquivo for modificado, ele será traduzido/compilado/transpilado para

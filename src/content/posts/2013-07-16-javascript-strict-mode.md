@@ -54,7 +54,7 @@ Nenhum código pode vir antes da declaração `"use strict";` (apenas _whitespac
 e comentários são permitidos). Caso um trecho de código apareça antes, o modo
 _strict_ não é disparado.
 
-{% highlight javascript %}
+```javascript
 // código "strict"
 "use strict";
 var foo = "bar";
@@ -62,13 +62,13 @@ var foo = "bar";
 // código "não strict"
 var whatsUp = "suuup";
 "use strict";
-{% endhighlight %}
+```
 
 A outra forma de uso é a nível de função. Quando usado dentro de uma função,
 apenas o código dentro dela é executado no modo _strict_. Todo o código
 externo continua a ser executado normalmente.
 
-{% highlight javascript %}
+```javascript
 function foo() {
   "use strict";
   // código da função em modo "strict"
@@ -77,7 +77,7 @@ function foo() {
 function bar() {
   // código da função em modo "não strict"
 }
-{% endhighlight %}
+```
 
 Hoje é muito comum concatenarmos arquivos para diminuir a quantidade de dados
 trafegados e o número de requisições. Para não disparar o modo _strict_ em
@@ -85,14 +85,14 @@ código que não foi testado neste modo, é interessante deixarmos o código que
 roda e foi testado para rodar no modo _strict_ isolado. As funções de invocação
 imediata são perfeitas para isso.
 
-{% highlight javascript %}
+```javascript
 // código no modo "não strict"
 (function() {
   "use strict";
   // código no modo "strict"
 }());
 // código no modo "não strict"
-{% endhighlight %}
+```
 
 A Amazon teve um problema ao concatenar um arquivo
 <abbr title="JavaScript">JS</abbr> que tinha `"use strict";` declarado de forma
@@ -120,14 +120,14 @@ trouxe.
 A tão mal compreendida declaração `with` foi removida da linguagem.
 No _strict mode_ seu uso gera um erro de sintaxe.
 
-{% highlight javascript %}
+```javascript
 "use strict";
 
 // gera um erro de sintaxe no "strict mode"
 with (location) {
   console.log(href);
 }
-{% endhighlight %}
+```
 
 
 ### Declaração implícita de __variáveis globais__
@@ -136,13 +136,13 @@ Um dos erros mais comuns em JavaScript. Sem o _strict mode_, uma nova variável
 global é criada sempre que atribuimos um valor a uma variável não declarada. No
 modo _strict_, isto gera um erro.
 
-{% highlight javascript %}
+```javascript
 // gera um erro no "strict mode"
 (function() {
   "use strict";
   variavelNaoDeclarada = 'foo';
 }());
-{% endhighlight %}
+```
 
 
 ### Restrição de nomes
@@ -152,13 +152,13 @@ parâmetros. `eval` e `arguments` não mais podem ser usados como identificadore
 muito menos tentar atribuir um valor a eles. O que é muito bom, uma vez que o
 JavaScript possui nativamente uma função `eval` e um objeto `arguments`.
 
-{% highlight javascript %}
+```javascript
 // gera um erro de sintaxe no "strict mode"
 function() {
   "use strict";
   arguments = 'foo';
 }
-{% endhighlight %}
+```
 
 Algumas palavras também são proibidas de serem usadas como identificadores pois
 são candidatas a serem usadas como nomes de futuras _features_ da linguagem.
@@ -185,13 +185,13 @@ No modo _strict_, caso o `this` seja usado em uma função que é definida no es
 global, ele retorna o valor `undefined`. Caso uma função pertença a um objeto,
 ele continua a apontar para o objeto, como acontecia anteriormente.
 
-{% highlight javascript %}
+```javascript
 // retorna "undefined"
 function() {
   "use strict";
   return this;
 }
-{% endhighlight %}
+```
 
 Isso evita erros comuns com funções usadas como construtores. No código abaixo
 chamamos uma função construtora sem o uso do `new`. No modo não _strict_, o
@@ -201,7 +201,7 @@ Como no _strict mode_ o `this` retorna `undefined`, e não podemos adicionar
 propriedades a `undefined`, um erro é gerado. Quando usado da forma apropriada,
 com o `new`, nenhum erro é disparado.
 
-{% highlight javascript %}
+```javascript
 "use strict";
 
 function Blog(nome) {
@@ -210,7 +210,7 @@ function Blog(nome) {
 
 // gera um erro no "strict mode"
 var blog = Blog('Loop Infinito');
-{% endhighlight %}
+```
 
 
 ### Parâmetros e propriedades __duplicadas__
@@ -219,7 +219,7 @@ O JavaScript não reclama caso você declare duas propriedades de um objeto com 
 mesmo nome. A última declaração vai simplesmente sobreescrever a anterior. O modo
 _strict_ força o uso de nomes únicos de propriedades.
 
-{% highlight javascript %}
+```javascript
 "use strict";
 
 // gera um erro de sintaxe no modo strict
@@ -228,19 +228,19 @@ obj = {
   bar: 2,
   foo: 3
 }
-{% endhighlight %}
+```
 
 Com o nome de parâmetros temos um cenário parecido. Normalmente o JavaScript
 aceita como sintaxe válida a declaração de parâmetros com o mesmo nome. No modo
 _strict_ isso gera um erro de sintaxe.
 
-{% highlight javascript %}
+```javascript
 // gera um erro de sintaxe
 function foo(param1, param1) {
   "use strict";
   return param1 + 1;
 }
-{% endhighlight %}
+```
 
 
 ### Variáveis do contexto _eval()_
@@ -257,12 +257,12 @@ No código abaixo, sem o _strict mode_, seria inserido uma variável `foo` e o
 valor do `alert` seria "bar". No _strict mode_ acontece um erro de sintaxe pois
 a variável não foi definida.
 
-{% highlight javascript %}
+```javascript
 "use strict";
 
 eval('var foo="bar";');
 alert(foo); // gera um erro de sintaxe no "strict mode"
-{% endhighlight %}
+```
 
 
 ### Números no sistema __octal__
@@ -274,18 +274,18 @@ JavaScript equivale a 19 em decimal. Isso gerava muita confusão, já que muitos
 achavam que um zero a esquerda não iria fazer nenhuma diferença na representação
 do número.
 
-{% highlight javascript %}
+```javascript
 "use strict";
 
 // gera um erro de sintaxe no modo strict
 var foo = 023;
-{% endhighlight %}
+```
 
 No modo _strict_ o uso de números no sistema octal não é permitido. Caso um 0
 seja posto na frente de um número octal válido, será gerado um erro de sintaxe.
 Caso contrário ele será simplesmente tratado como decimal.
 
-{% highlight javascript %}
+```javascript
 "use strict";
 
 // octal válido. gera erro de sintaxe no "strict mode"
@@ -293,7 +293,7 @@ var foo = 023;
 
 // ocatal não válido. é tratado como decimal
 var bar = 08;
-{% endhighlight %}
+```
 
 Como o número 08 não é um número octal válido, já que números no sistema octal
 vão de 0 a 7, ele é tratado como um número decimal. No caso do número 023, por

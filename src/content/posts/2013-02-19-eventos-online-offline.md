@@ -32,7 +32,7 @@ disparados. O evento irá, na verdade, acontecer no elemento `body`, mas irá
 propagar até o objeto `window`, passando por `document`. Por isso podemos por o
 _listener_ em qualquer um.
 
-{% highlight javascript %}
+```javascript
 // javascript puro
 window.addEventListener('online', function() {
   // ...
@@ -40,14 +40,14 @@ window.addEventListener('online', function() {
 window.addEventListener('offline', function() {
   // ...
 })
-{% endhighlight %}
+```
 
 No exemplo acima estamos escutando o evento através de JavaScript puro. No
 exemplo abaixo estamos usando jQuery. O método `on` é agora o método padrão para
 escutar eventos no jQuery, inclusive para os eventos clássicos como `click`,
 `hover`, etc. Os dois códigos são equivalentes.
 
-{% highlight javascript %}
+```javascript
 // jQuery style
 $(window)
   .on('online', function() {
@@ -56,7 +56,7 @@ $(window)
   .on('offline', function() {
     // ...
   })
-{% endhighlight %}
+```
 
 ## Propriedade online
 
@@ -64,13 +64,13 @@ Também é possível detectar se o navegador está _online_ de forma síncrona.
 Basta checar a propriedade `navigator.onLine`. Se ela retornar `true`, significa
 que estamos com conexão à rede, se retornar `false`...vocês entenderam.
 
-{% highlight javascript %}
+```javascript
 if (navigator.onLine) {
   // está online
 } else {
   // está offline
 }
-{% endhighlight %}
+```
 
 ## Demo
 

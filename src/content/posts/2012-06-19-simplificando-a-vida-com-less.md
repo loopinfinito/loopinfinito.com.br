@@ -71,9 +71,9 @@ Na verdade, LESS se trata de um CSS turbinado (odeio esta palavra, mas é o jeit
 Um exemplo? Quem nunca desejou **variáveis** em CSS?
 Imagine poder guardar *aquele valor hexadecimal super chato* `#A9D73C` de uma cor em uma variável `@cor-link` e depois, quando precisar desta cor, apenas referenciar a variável `@cor-link` em qualquer parte do código CSS. Ex.:
 
-{% highlight css %}
+```css
 #the-beatles { color: @cor-link }
-{% endhighlight %}
+```
 
 Pois é, LESS te dá isso e muito mais.
 

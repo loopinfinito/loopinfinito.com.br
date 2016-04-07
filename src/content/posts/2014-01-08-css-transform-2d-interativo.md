@@ -67,14 +67,14 @@ ambos. Caso seja passado apenas um parâmetro para a função, o elemento será
 movido em relação ao eixo X. Já com dois parâmetros, o primeiro será o valor
 usado para a movimentação no eixo X, e o segundo para o eixo Y.
 
-{% highlight css %}
+```css
 img {
   transform: translate(13px, 10px); /* move elemento 13px em X e 10px em Y */
   transform: translate(13px); /* move elemento 13px no eixo X */
   transform: translateX(13px); /* move elemento 13px no eixo X */
   transform: translateY(10px); /* move elemento 10px no eixo Y */
 }
-{% endhighlight %}
+```
 
 Além de `px`, também podemos passar valores expressos em `%`. Neste caso, 100%
 será equivalente a dimensão do elemento no eixo em que vamos efetuar o
@@ -105,12 +105,12 @@ elemento 5 _pixels_ para cima.
 
 A função `skew` irá __“entortar”__ um elemento em relação a um dos eixos.
 
-{% highlight css %}
+```css
 img {
   transform: skewX(30deg); /* “entorta” o elemento horizontalmente */
   transform: skewY(30deg); /* “entorta” o elemento verticalmente */
 }
-{% endhighlight %}
+```
 
 As funções usadas para efetuarmos o _skew_ são `skewX` e `skewY`. Cada uma
 recebe apenas um parâmetro, estes expressos em graus (`deg`). No experimento
@@ -142,14 +142,14 @@ A função `rotate` ... __rotaciona__. Simples assim. Ela recebe um único
 parâmetro que pode ser expresso em graus (`deg`), radianos (`rad`) ou voltas
 (`turn`).
 
-{% highlight css %}
+```css
 img {
   transform: rotate(30deg); /* rotaciona 30' no sentido horário */
   transform: rotate(-45deg); /* rotaciona 45' no sentido anti-horário */
   transform: rotate(2rad); /* rotaciona ~ 144,59' no sentido horário */
   transform: rotate(0.5turn); /* rotaciona meia-volta no sentido horário */
 }
-{% endhighlight %}
+```
 
 Valores positivos rotacionam o elemento no sentido horário, enquanto que valores
 negativos rotacionam o elemento no sentido anti-horário. O experimento abaixo
@@ -178,14 +178,14 @@ Os valores passados como parâmetros não possuem unidades. Eles funcionam como
 “multiplicadores” do tamanho do elemento. Um `transform: scale(2)` irá duplicar
 o tamanho do elemento. Um `transform: scale(0.5)` irá reduzi-lo pela metade.
 
-{% highlight css %}
+```css
 img {
   transform: scale(2); /* dobra o tamanho do elemento em todas as direções */
   transform: scale(2, 3); /* dobra a largura e triplica a altura */
   transform: scaleX(0.5); /* reduz largura do elemento pela metade */
   transform: scaleY(2); /* deixa o elemento duas vezes mais alto */
 }
-{% endhighlight %}
+```
 
 Além da função `scale`, podemos usar as funções específicas de cada eixo: para
 o eixo X a `scaleX` e para o eixo Y a `scaleY`. Abaixo também podemos interagir
@@ -213,13 +213,13 @@ cabeça para baixo (invertido na vertical).
 Para isso, é só declarar todas as funções — com seus devidos valores — separados
 por um espaço.
 
-{% highlight css %}
+```css
 img {
   transform: translateX(2px);
   transform: skewX(45deg); /* sobrescreve a transformação acima */
   transform: rotate(0.5turn) scale(2); /* rotaciona em 180º e duplica o tamanho */
 }
-{% endhighlight %}
+```
 
 Cuidado para não declarar várias regras `transform` no mesmo elemento, pois
 dessa forma a última regra sobrescreve todas as outras declaradas

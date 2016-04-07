@@ -75,7 +75,7 @@ método dispara um _dialog_ no navegador perguntando se o usuário permite o uso
 de notificações no domínio atual. Após o usuário permitir ou não, a função de
 _callback_ é executada.
 
-{% highlight javascript %}
+```javascript
 $('.pedir-permissao').click(function(event) {
     // testando se seu navegador suporta Web Notifications
     if (!window.Notification) {
@@ -97,7 +97,7 @@ $('.pedir-permissao').click(function(event) {
     }
 }
 })
-{% endhighlight %}
+```
 
 Clique no botão abaixo e verifique o _dialog_ que aparecerá pedindo permissão
 para o uso de notificações no site atual. E lembrem de conceder permissão para
@@ -140,10 +140,10 @@ Agora que o usuário nos cedeu permissão, já podemos criar nossa primeira
 notificação. No código abaixo temos um exemplo básico de uma
 _Web Notification_.
 
-{% highlight javascript %}
+```javascript
 var notificationBasica = new Notification('Título da Notificação')
 notificationBasica.show()
-{% endhighlight %}
+```
 
 Criamos um novo objeto do tipo `Notification` passando o título da notificação
 como argumento. Depois de criado, basta executar o método `show` para que a
@@ -183,7 +183,7 @@ O único paramêtro obrigatório de uma notificação é o título. Porém exist
 outros parâmetros opcionais que podem ser passados como um objeto. Objeto?
 Melhor um exemplo:
 
-{% highlight javascript %}
+```javascript
 var notification = new Notification('Título da Notificação', {
     body: 'Body da Notifição',
     tag: 'novo e-mail',
@@ -202,7 +202,7 @@ var notification = new Notification('Título da Notificação', {
 }
 })
 notification.show()
-{% endhighlight %}
+```
 
 Esses são todos os parâmetros aceitos pelas notifications no Safari e Chrome no Mac:
 - `body`: Mensagem mais detalhada sobre a notificação;

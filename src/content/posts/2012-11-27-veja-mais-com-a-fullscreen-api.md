@@ -123,9 +123,9 @@ Ou seja, nós podemos sim entrar em *fullscreen* com **qualquer elemento**.
 
 Então, sabendo disso, se quisermos entrar em tela cheia com a página inteira:
 
-{% highlight javascript %}
+```javascript
 document.documentElement.requestFullscreen()
-{% endhighlight %}
+```
 
 <span id="video-js"> </span>
 
@@ -133,12 +133,12 @@ Onde `document.documentElement` é o elemento `<html>` da página.
 Agora se quisermos, por exemplo, entrar no modo tela cheia apenas com um elemento
 `<video>`:
 
-{% highlight javascript %}
+```javascript
 document.getElementByTagName('video')[0].requestFullscreen()
 
 // ou, de uma maneira mais popular (com jQuery)
 $('video').get(0).requestFullscreen()
-{% endhighlight %}
+```
 
 Quando entramos em tela cheia com apenas um elemento, o comportamento padrão
 do navegador (até onde testei com o Chrome, Safari e Firefox) é isolar o elemento
@@ -161,9 +161,9 @@ de elementos em tela cheia.
 Como mencionado, para sair do modo de tela cheia – uma vez estando nele –, basta
 chamarmos o método `exitFullscreen()` – que pertence apenas a `document`.
 
-{% highlight javascript %}
+```javascript
 document.exitFullscreen()
-{% endhighlight %}
+```
 
 Não importa se estamos em tela cheia com a página inteira ou com apenas um
 elemento específico, o navegador deve identificar o estado e o elemento
@@ -207,7 +207,7 @@ Este evento é disparado toda vez que há uma mudança em relação ao estado de
 tela cheia, ou seja, ele também será disparado quando o usuário **sair**
 de tela cheia.
 
-{% highlight javascript %}
+```javascript
 document.addEventListener( 'fullscreenchange', function( event ){
 
     if( document.fullscreenElement != null )
@@ -215,7 +215,7 @@ document.addEventListener( 'fullscreenchange', function( event ){
     else
         console.log( 'Saímos de tela cheia' )
 })
-{% endhighlight %}
+```
 
 O curioso é que o objeto `Event` retornado não carrega
 nenhuma informação sobre o usuário estar ou não entrando em tela cheia –
@@ -230,12 +230,12 @@ Com o trecho de código acima é possível identificar quando o usuário
 O evento `fullscreenerror` é disparado quando o navegador (por alguma
 razão) não consegue ou não pode entrar/sair de tela cheia.
 
-{% highlight javascript %}
+```javascript
 document.addEventListener( 'fullscreenerror', function( event ){
     // ops, ocorreu algum erro
     console.log( 'Talvez não seja possível entrar em tela cheia.' )
 })
-{% endhighlight %}
+```
 
 ## CSS! \o/
 
@@ -249,7 +249,7 @@ Ao entrar em tela cheia com qualquer elemento, a pseudo-classe `:fullscreen`
 diferenciado para qualquer parte da nossa página (ou até mesmo para ela
 inteira) quando estivermos visualizando-a em tela cheia.
 
-{% highlight css %}
+```css
 /* aumenta o tamanho da fonte, quando em tela cheia */
 :fullscreen {
     font-size: 1.2em;
@@ -259,7 +259,7 @@ inteira) quando estivermos visualizando-a em tela cheia.
 :fullscreen header {
     display: none;
 }
-{% endhighlight %}
+```
 
 No trecho de CSS acima nós apenas aumentamos o tamanho de fonte padrão e
 escondemos o elemento `<header>`.
@@ -269,13 +269,13 @@ como no [exemplo anterior](#video-js) –, ele irá manter suas dimensões origi
 ou seja, o vídeo centralizado na tela. Para fazê-lo preencher toda a tela,
 precisamos definir um simples CSS:
 
-{% highlight css %}
+```css
 /* vídeo em tela cheia */
 video:fullscreen {
     width: 100%;
     height: 100%;
 }
-{% endhighlight %}
+```
 
 O pequeno trecho acima fará com que o elemento `<video>` preencha toda a tela
 quando o mesmo estiver em tela cheia.
@@ -310,7 +310,7 @@ O elemento `<iframe>` ganhou um monte de novos atributos ultimamente, e um deles
 aos *scripts* que estão dentro do `<iframe>` para que os mesmos possam ou não
 executar a função de tela cheia.
 
-{% highlight html %}
+```html
 <iframe allowfullscreen="false">
     <script>
         // ...
@@ -318,7 +318,7 @@ executar a função de tela cheia.
         // ...
     </script>
 </iframe>
-{% endhighlight %}
+```
 
 O *script* acima não conseguirá entrar em modo de tela cheia (e irá disparar o
 evento [fullscreenerror](#fullscreenerror)).

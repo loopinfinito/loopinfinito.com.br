@@ -26,16 +26,16 @@ criar um atalho para um comando com várias _flags_ para que seja  mas fácil de
 lembrar e digitar. Eles podem ser criados de dois modos. Através do comando no
 terminal:
 
-{% highlight bash %}
+```bash
 $ git config --global alias.nome_do_alias "comando inteiro"
-{% endhighlight %}
+```
 
 Ou editando diretamente o arquivo `~/.gitconfig`
 
-{% highlight bash %}
+```bash
 $ cd ~
 $ nano .gitconfig
-{% endhighlight %}
+```
 
 Não importa o método que você utilize, suas configurações sempre ficarão salvas
 no arquivo `~/.gitconfig`. Sabendo o que são atalhos e para que servem, vamos
@@ -52,9 +52,9 @@ Não faz sentido vermos essas intruções todas as vezes.
 
 Vamos criar um atalho com uma saída mais simples
 
-{% highlight bash %}
+```bash
 $ git config --global alias.st "status -s"
-{% endhighlight %}
+```
 
 Agora toda vez que digitarmos `git st` veremos um status mais simplificado.
 No exemplo anterior, o nosso status mais simples ficaria assim.
@@ -72,9 +72,9 @@ O log do Git é bastante verboso por padrão.
 Mas é também bastante flexível. Usando uma infinidade de _flags_, podemos fazer
 o nosso `git log` mais compacto, simples e bonito.
 
-{% highlight bash %}
+```bash
 $ git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-{% endhighlight %}
+```
 
 O exemplo anterior com o nosso novo _alias_&nbsp;`git lg` fica assim:
 
@@ -91,18 +91,18 @@ data e a _branch_. Lindo, hein?
 Mais um atalho simples. Vamos substituir o comando `git add .` por `git aa`
 (pense em add all) para versionar todos os arquivos do projeto.
 
-{% highlight bash %}
+```bash
 $ git config --global alias.aa "add ."
-{% endhighlight %}
+```
 
 ## Who
 
 Para saber de forma rápida o número de _commits_ de cada um no projeto, ordenado
 de forma decrescente.
 
-{% highlight bash %}
+```bash
 $ git config --global alias.who "shortlog -sn"
-{% endhighlight %}
+```
 
 Esse é o `git who` do Loop Infinito.
 
@@ -114,18 +114,18 @@ Esse é o `git who` do Loop Infinito.
 Para voltarmos, de forma rápida, o repositório para o exato modo como estava no
 último _commit_.
 
-{% highlight bash %}
+```bash
 $ git config --global alias.undo "reset --hard HEAD"
-{% endhighlight %}
+```
 
 ## Serve
 
 Um dos meus favoritos. Algo digno de bruxaria. Com esse atalho você pode
 transformar o seu repositório em um servidor Git.
 
-{% highlight bash %}
+```bash
 $ git config --global alias.serve "\!git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git"
-{% endhighlight %}
+```
 
 Com o atalho setado, vá na raiz do seu repositório e digite `git serve`. Abra
 outra aba no terminal e agora digite `git ls-remote git://127.0.0.1/` e veja que

@@ -67,11 +67,11 @@ da foto. Ou então descartá-la apertando o botão com ícone de lixeira e tenta
 Já sabendo como brincar com a WebPix, vamos ver como ela funciona.
 A primeira coisa que temos que fazer é pedir ao usuário permissão para usar a câmera.
 
-{% highlight javascript %}
+```javascript
 
 navigator.webkitGetUserMedia( { video: true }, sucessoCallback, falhaCallback )
 
-{% endhighlight %}
+```
 
 Esta função recebe 3 argumentos:
 
@@ -90,7 +90,7 @@ Quando o usuário liberar o acesso, a função de callback de sucesso irá dispa
 Com acesso à câmera, agora vamos direcionar o *stream* da câmera para um elemento
 `video`.
 
-{% highlight javascript %}
+```javascript
 
 function sucessoCallback( stream ) {
   var video = document.querySelector( 'video' )
@@ -98,7 +98,7 @@ function sucessoCallback( stream ) {
   video.play()
 }
 
-{% endhighlight %}
+```
 
 Imaginem que já temos uma *tag*&nbsp;`video` em nosso HTML. No código acima estamos
 apenas setando o `src` da *tag*&nbsp;`video` como sendo o *stream* da nossa câmera e
@@ -111,7 +111,7 @@ Fazer uma aplicação "espelho" é bem fácil. Mas como capturar os dados vindos
 câmera e manipular esses dados da forma que quisermos? Para isso vamos usar o
 `canvas`.
 
-{% highlight javascript %}
+```javascript
 
 var canvas = document.querySelector( 'canvas' )
 canvas.width = video.videoWidth
@@ -119,7 +119,7 @@ canvas.height = video.videoHeight
 var ctx = canvas.getContext( '2d' )
 var ctx.drawImage( video, 0, 0 )
 
-{% endhighlight %}
+```
 
 No código acima capturamos a referência ao elemento `canvas` definido em nosso HTML,
 setamos sua altura e largura com sendo iguais ao do vídeo, setamos o contexto do
@@ -136,12 +136,12 @@ uma *tag*&nbsp;`img` que estava anteriormente escondida. Então quando você ach
 está vendo o vídeo pausado, aquilo é na verdade uma `img` com o `src` de um
 frame da *tag*&nbsp;`video`.
 
-{% highlight javascript %}
+```javascript
 
 var img = document.querySelector( 'img' )
 img.src = canvas.toDataURL('image/png')
 
-{% endhighlight %}
+```
 
 Poderíamos obter o mesmo efeito apenas chamando o método `pause()` da *tag*&nbsp;`video`,
 mas já vamos explicar porque precisamos dessa imagem escondida.
@@ -163,21 +163,21 @@ sendo gerada e disponibilizada diretamente pelo navegador.
 Com o novo atributo `download`, nós informamos ao navegador que não queremos visitar
 aquele link, e sim fazer o *download* daquele *link*.
 
-{% highlight html %}
+```html
 
 <a download="minha-foto-na-webpix.png" href="#" class="download"> </a>
 
-{% endhighlight %}
+```
 
 E toda vez que a foto é modificada, nós dinamicamente setamos o `href` da *tag*&nbsp;`a` que
 acabamos de ver.
 
-{% highlight javascript %}
+```javascript
 
 var downloadLink = document.querySelector( '.download' )
 downloadLink.href = canvas.toDataURL('image/png')
 
-{% endhighlight %}
+```
 
 O que está acontecendo no trecho acima é que setamos o `href` do *link* como sendo
 o que está no `canvas`. Fazemos isso transformando o que está desenhado no `canvas`

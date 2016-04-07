@@ -90,7 +90,7 @@ função pode ser disparada a cada evento. Caso seja usado o _event handler even
 type_, pode se usar quantas funções forem necessárias como _listeners_ do
 evento.
 
-{% highlight javascript %}
+```javascript
 // event handler
 window.onlightlevel = function(event) {
   console.log(event.value)
@@ -100,7 +100,7 @@ window.onlightlevel = function(event) {
 window.addEventListener('lightlevel', function(event) {
   console.log(event.value)
 })
-{% endhighlight %}
+```
 
 
 ## Device Light Event
@@ -113,7 +113,7 @@ valor de iluminação do ambiente expresso em lux.
 Ele também expõe uma interface comum de evento, com o _event handler_&nbsp;
 `ondevicelight` e o _event handler event type_&nbsp;`devicelight`.
 
-{% highlight javascript %}
+```javascript
 // event handler
 window.ondevicelight = function(event) {
   console.log(event.value)
@@ -123,7 +123,7 @@ window.ondevicelight = function(event) {
 window.addEventListener('devicelight', function(event) {
   console.log(event.value)
 })
-{% endhighlight %}
+```
 
 
 <table class="support">
@@ -165,7 +165,7 @@ Infelizmente, até o momento, o Firefox é o único navegador que implementa ess
 nova especificação no _desktop_. E de forma muito restrita ainda, pois só roda
 em Macs e apenas o evento _Device Light_ de fato funciona.
 
-{% highlight javascript %}
+```javascript
 if ('ondevicelight' in window) {
   // seu navegador dá suporte ao evento *Device Light*
 })
@@ -173,7 +173,7 @@ if ('ondevicelight' in window) {
 if ('onlightlevel' in window) {
   // seu navegador dá suporte ao evento *Light Level*
 })
-{% endhighlight %}
+```
 
 Caso queiram testar programaticamente se o navegador onde seu código está sendo
 executado dá suporte aos novos eventos, basta verificar pela propriedade

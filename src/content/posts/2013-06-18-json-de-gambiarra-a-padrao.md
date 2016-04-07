@@ -44,7 +44,7 @@ Notation">JSON</abbr> trafegada na Veil. Ela foi enviada em abril de 2001, como
 resposta (*response*) a um *submit* de um *form* enviado pelo *laptop* de
 Crockford.
 
-{% highlight html %}
+```html
 <html><head><script>
   document.domain = 'fudco.com';
   parent.session.receive(
@@ -52,7 +52,7 @@ Crockford.
     "text": "Hello world"}
   );
 </script></head></html>
-{% endhighlight %}
+```
 
 Uma breve descrição de como funciona esse código: ele era encapsulado por *tag*s
 <abbr title="HyperText Markup Language">HTML</abbr> pois deveria funcionar no

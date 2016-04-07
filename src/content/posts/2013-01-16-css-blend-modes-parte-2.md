@@ -48,7 +48,7 @@ Vamos considerar que a imagem acima pode ser composta por uma `<div>` geral
 que tem o *Moe's* (bar do Moe) como fundo e por mais uma `<div>` de fundo
 que contém o conteúdo – a imagem do Homer e seus nomes (HTML abaixo):
 
-{% highlight html %}
+```html
 <div class="bar">
     <div class="fundo-azul">
     	<img class="homer" src="homer.png" />
@@ -56,7 +56,7 @@ que contém o conteúdo – a imagem do Homer e seus nomes (HTML abaixo):
         <h2>Simpson</h2>
     </div>
 </div>
-{% endhighlight %}
+```
 
 ### background-blend-mode
 
@@ -71,12 +71,12 @@ Aplicando o *blend mode*&nbsp;**exclusion** no fundo da `div.fundo-azul`:
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 .fundo-azul {
     background-color: #4DA6FF; /* azul claro */
     background-blend-mode: exclusion;
 }
-{% endhighlight %}
+```
 </div>
 
 Perceba que o *blend mode* apenas é aplicado ao *background* do elemento,
@@ -107,12 +107,12 @@ Vamos definir o `foreground-blend-mode` na `div.fundo-azul` como **exclusion**:
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 .fundo-azul {
     foreground-blend-mode: exclusion; /* elementos filhos */
     /* ... */
 }
-{% endhighlight %}
+```
 </div>
 
 Assim todos os elementos aninhados no elemento `div.fundo-azul` (a imagem e os
@@ -139,13 +139,13 @@ mesmo *blend mode* (*exclusion*).
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 .fundo-azul {
     /* aplicando a sombra */
     box-shadow: 0px 0px 22px 22px #4DA6FF; /* mesma cor que o fundo */
     box-shadow-blend-mode: exclusion; /* mesmo blend mode que o fundo */
 }
-{% endhighlight %}
+```
 </div>
 
 Legal, hein!?
@@ -161,13 +161,13 @@ sombra do elemento `<h1>`:
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 h1 {
     /* aplicando a sombra no texto */
     text-shadow: 7px 7px 1px black;
     text-shadow-blend-mode: overlay;
 }
-{% endhighlight %}
+```
 </div>
 
 Perceba como a sombra de `<h1>` ("Homer") ficou bem direfente da sombra de
@@ -185,7 +185,7 @@ Abaixo um exemplo com `text-shadow-blend-mode`:
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 #psicodelia {
     color: white;
     font-size: 120px;
@@ -200,7 +200,7 @@ Abaixo um exemplo com `text-shadow-blend-mode`:
                             difference,
                             exclusion;
 }
-{% endhighlight %}
+```
 </div>
 
 O mesmo serve para `background-blend-mode` e `box-shadow-blend-mode`.

@@ -75,7 +75,7 @@ Esta API consiste basicamente da implementação de três eventos: `deviceorient
 Para saber se seu navegador já suporta esses eventos, apenas realize os testes
 (também pode ser necessário testar com *vendor prefixes*):
 
-{% highlight javascript %}
+```javascript
 if( window.DeviceOrientationEvent != null ){
     // seu navegador suporta DeviceOrientationEvent
 }
@@ -87,7 +87,7 @@ if( window.DeviceMotionEvent != null ){
 if( window.CompassNeedsCalibrationEvent != null ){
     // seu navegador suporta CompassNeedsCalibrationEvent
 }
-{% endhighlight %}
+```
 
 Antes de prosseguirmos com os eventos, algo deve ficar bem claro: os eixos do
 sistema de coordenadas usados. Os eventos retornam dados referentes a cada
@@ -111,11 +111,11 @@ Disparado quando há novos dados disponíveis fornecidos pelo sensor de orienta�
 ou seja, quando a orientação atual muda. Para termos acesso a estes dados,
 precisamos apenas definir uma função manipuladora para o evento `deviceorientation`:
 
-{% highlight javascript %}
+```javascript
 window.addEventListener( 'deviceorientation', function( orientData ){
     // faça algo de legal aqui
 })
-{% endhighlight %}
+```
 
 Todos os dados disponíveis na ocorrência do evento estarão em `orientData`.
 As propriedades contidas em `orientData` são: `target`, `type`, `canBubble`,
@@ -146,11 +146,11 @@ chamadas do próprio evento). Fornece dados sobre taxa de rotação, assim como
 a aceleração referente a cada um dos três eixos. Para termos acesso a estes dados,
 apenas definimos uma função para manipulação do evento `devicemotion`:
 
-{% highlight javascript %}
+```javascript
 window.addEventListener( 'devicemotion', function( eventData ){
     // faça algo de legal aqui
 })
-{% endhighlight %}
+```
 
 Os dados fornecidos por `eventData` são: `target`, `type`, `canBubble`,
 `cancelable`, `acceleration`, `accelerationIncludingGravity`, `interval` e `rotationRate`.
@@ -222,7 +222,7 @@ valores de modo que se aproximassem dos valores em graus (como se estivesse
 obtendo a orientação com `deviceorientation`). Ou seja, **uma bela de uma gâmbi**,
 algo parecido com isto:
 
-{% highlight javascript %}
+```javascript
 // no Chrome, obtendo a orientação
 window.addEventListener( 'devicemotion', function( orientData ){
     // seta o próximo impulso na bola
@@ -236,7 +236,7 @@ window.addEventListener( 'devicemotion', function( eventData ){
     ball.impulse.x = eventData.accelerationIncludingGravity.x * (-3) / scale
     ball.impulse.y = eventData.accelerationIncludingGravity.y * 3 / scale
 })
-{% endhighlight %}
+```
 
 A variável `scale` é apenas uma constante do jogo.
 

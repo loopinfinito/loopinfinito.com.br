@@ -38,7 +38,7 @@ O JavaScript é uma linguagem cheia de pequenas surpresas que pode espantar até
 o mais experiente programador. Vamos tomar como exemplo o trecho de código
 abaixo. Você sabe quais valores serão impressos?
 
-{% highlight javascript %}
+```javascript
 // Exemplo 1
 var a = 1
 
@@ -51,12 +51,12 @@ function foo() {
 foo()
 
 console.log(a)
-{% endhighlight %}
+```
 
 Pela “lógica”, deveria ser primeiro impreso `1`, `1` e `2`, correto? **Não**. E
 neste outro trecho de código, qual será a saída?
 
-{% highlight javascript %}
+```javascript
 // Exemplo 2
 function foo() {
   function bar() {
@@ -71,7 +71,7 @@ function foo() {
 }
 
 console.log(foo())
-{% endhighlight %}
+```
 
 Se você não respondeu `undefined`, `2` e `1` para o exemplo 1 e `8` para o
 exemplo 2, aconselho a leitura deste *post*. Aqui vamos discutir um pouco sobre
@@ -87,7 +87,7 @@ linguagem. Apesar de pertencer a família das linguagens baseadas em C, o escopo
 em JavaScript não funciona da mesma forma como em C, C++ ou mesmo Java. Vamos
 usar o seguinte trecho de código em C como exemplo:
 
-{% highlight c %}
+```c
 // Exemplo 3
 #include <stdio.h>
 
@@ -102,14 +102,14 @@ int main() {
 
   printf("%d\n", a); //=> 1
 }
-{% endhighlight %}
+```
 
 No código acima, o exemplo 3 irá imprimir `1`, `2` e `1`. Isso acontece porque
 em C (assim como Java e C++), temos escopo por bloco. Em JavaScript só temos
 escopo a nível de função. O código anterior traduzido de uma forma “ingênua” pra
 JavaScript seria algo assim:
 
-{% highlight javascript %}
+```javascript
 // Exemplo 4
 var a = 1
 console.log(a) //=> 1
@@ -120,7 +120,7 @@ if (true) {
 }
 
 console.log(a) //=> 2
-{% endhighlight %}
+```
 
 Mas este código — exemplo 4 — não se comporta da mesma forma que o código
 anterior em C — exemplo 3. Repare que o bloco `if` não cria um escopo. Logo,
@@ -131,7 +131,7 @@ Para criarmos um escopo dentro do `if` temos que usar uma função — uma
 <abbr title="Immediately-invoked function expression">IIFE</abbr> —
 pois, em JavaScript, esta é a única ferramenta que temos para criar um escopo.
 
-{% highlight javascript %}
+```javascript
 // Exemplo 5
 var a = 1
 console.log(a) //=> 1
@@ -144,7 +144,7 @@ if (true) {
 }
 
 console.log(a) //=> 1
-{% endhighlight %}
+```
 
 Agora sim nosso algoritmo em JavaScript está se comportando de forma semelhante
 ao nosso código anterior em C. Mesmo sendo considerada como uma linguagem que
@@ -189,7 +189,7 @@ sua inicialização. O que quer dizer que a declaração da variável vai para c
 do escopo antes mesmo do código ser executado, mas esta variável não recebe
 nenhum valor e permanece como `undefined`.
 
-{% highlight javascript %}
+```javascript
 // Exemplo 6
 // Irá imprimir o erro dentro do `catch`
 try {
@@ -206,7 +206,7 @@ try {
 } catch (e) {
   console.error('A variável `a` não foi definida.')
 }
-{% endhighlight %}
+```
 
 Reparem no código acima que no exemplo 6, quando tentamos imprimir o valor de
 `a`, recebemos um erro pois esta variável não existe. Já no exemplo 7,
@@ -216,7 +216,7 @@ não da sua **inicialização**.
 
 O código do exemplo 7 se comporta da mesma forma que este no exemplo 8:
 
-{% highlight javascript %}
+```javascript
 // Exemplo 8
 // Irá imprimir `undefined`
 try {
@@ -226,7 +226,7 @@ try {
 } catch (e) {
   console.error('a não existe no contexto atual')
 }
-{% endhighlight %}
+```
 
 No código acima — exemplo 8 — reescrevemos o exemplo 7 de tal forma que faça
 mais sentido para nós, já que este código será executado de forma linear.
@@ -245,13 +245,13 @@ Por isso recebemos um `undefined` quando tentamos acessar seu valor.
 O *hosting* com funções acontece de maneira diferente. Aqui, não só o nome da
 função é *hoisted* como também seu corpo.
 
-{% highlight javascript %}
+```javascript
 // Exemplo 9
 foo()
 function foo() {
   console.log('bar')
 }
-{% endhighlight %}
+```
 
 O código acima irá imprimir `bar`, sem nenhum erro. Mesmo executando uma função
 antes mesmo de ser definida. Isso porque tanto o nome da função como seu corpo
@@ -260,7 +260,7 @@ são *hoisted*.
 Vamos analisar novamente o exemplo 2 que apareceu logo no começo do *post*. Por
 que seu *output* é `8`?
 
-{% highlight javascript %}
+```javascript
 // Exemplo 2
 function foo(){
   function bar() {
@@ -275,7 +275,7 @@ function foo(){
 }
 
 console.log(foo())
-{% endhighlight %}
+```
 
 Dentro do escopo da função `foo`, primeiro temos a definição da função `bar` que
 já está no topo. Depois do `return` temos uma outra definição de função com o
@@ -290,11 +290,11 @@ Uma função pode ser declarada também como uma expressão, e quando declarada
 desta forma, ela obedece a regra de *hoisting* de variável. Apenas seu nome será
 *hoisted*.
 
-{% highlight javascript %}
+```javascript
 // Exemplo 10
 foo() //=> TypeError
 var foo = function() {}
-{% endhighlight %}
+```
 
 No exemplo acima — exemplo 10 — será disparado um erro do tipo `TypeError`, nos
 avisando que `undefined` não pode ser usado como uma função.
@@ -306,7 +306,7 @@ O ECMAScript 6 introduz um novo meio de definir variáveis através do `let`. Co
 ele nós temos escopo a nível de bloco. No exemplo 11 temos um trecho de código
 extraído da [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let).
 
-{% highlight javascript %}
+```javascript
 // Exemplo 11
 function varTest() {
   var x = 31
@@ -325,7 +325,7 @@ function letTest() {
   }
   console.log(x) // 31
 }
-{% endhighlight %}
+```
 
 Com o `let`, é criado um diferente escopo também dentro de blocos como `if`,
 `for`, `while`, etc.
@@ -336,7 +336,7 @@ Outra diferença com o uso do `let` é que não temos *hoisting*, ou seja, a
 declaração da variável não vai para o topo do escopo antes da execução do
 código.
 
-{% highlight javascript %}
+```javascript
 // Exemplo 12
 function fooLet() {
   console.log(bar) //=> ReferenceError
@@ -349,7 +349,7 @@ function fooVar() {
   var bar = 2
 }
 fooVar()
-{% endhighlight %}
+```
 
 No exemplo 12 temos dois trechos de código, um deles declara a variável `bar`
 com `var`, o outro com `let`. Quando usamos `let` não há *hoisting*, e então

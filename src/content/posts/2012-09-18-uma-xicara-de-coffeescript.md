@@ -49,7 +49,7 @@ apenas considera a indentação do código (assim como em Python).
 
 Para definir um simples objeto, até o uso de `,` é opcional:
 
-{% highlight coffeescript %}
+```coffeescript
 bandas =
     rock:
         nome: 'Creedence Clearwater Revival'
@@ -57,12 +57,12 @@ bandas =
     funk:
         nome: James Brown
         ano: 1956
-{% endhighlight %}
+```
 
 Mas se você quiser declarar tudo em uma única linha, deve-se utilizar `,`
 normalmente. O JavaScript equivalente ao código acima é:
 
-{% highlight javascript %}
+```javascript
 bandas = {
     rock: {
         nome: 'Creedence Clearwater Revival',
@@ -73,25 +73,25 @@ bandas = {
         ano: 1956
     }
 };
-{% endhighlight %}
+```
 
 ## Interpolação de strings
 
 JavaScript não tem interpolação de strings, então CoffeeScript nos traz esse
 recurso super útil no estilo de Ruby, usando `#{}` dentro da *string*:
 
-{% highlight coffeescript %}
+```coffeescript
 numero = 42
 string = "O número #{ numero } dividido por 3 é #{ numero / 3 }."
-{% endhighlight %}
+```
 
 Em JavaScript, precisaríamos realizar a concatenação de *strings*:
 
-{% highlight javascript %}
+```javascript
 var numero, string;
 numero = 42;
 string = "O número " + numero + " dividido por 3 é " + (numero / 3) + ".";
-{% endhighlight %}
+```
 
 ## Intervalos
 
@@ -99,7 +99,7 @@ Os intervalos (*ranges*) são expressões que retornam *arrays* com números
 sequenciais. Podemos utilizar intervalos para fazer iterações e fatiar (*slice*)
 *arrays*:
 
-{% highlight coffeescript %}
+```coffeescript
 # definindo intervalos
 sequenciaCrescente   = [0..10] # com .. inclui o último índice
 sequenciaDecrescente = [7...3] # com ... exclui o último índice
@@ -109,11 +109,11 @@ bebidas = [ 'jack daniel’s', 'heineken', 'stella artois', 'martini', 'smirnoff
 # fatiamento de array
 bebidasDeMacho  = bebidas[0..1]
 bebidasDeMenina = bebidas[2..4]
-{% endhighlight %}
+```
 
 O *script* acima gera a seguinte saída em JavaScript:
 
-{% highlight javascript %}
+```javascript
 var sequencia, bebidas, bebidasDeMacho, bebidasDeMenina;
 
 sequenciaCrescente   = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -123,7 +123,7 @@ bebidas = [ 'jack daniel’s', 'heineken', 'stella artois', 'martini', 'smirnoff
 
 bebidasDeMacho  = bebidas.slice(0, 2);
 bebidasDeMenina = bebidas.slice(2, 5);
-{% endhighlight %}
+```
 
 ## Compreensões de lista
 
@@ -132,7 +132,7 @@ São expressões que executam determinadas ações em *arrays*, objetos e interv
 e ainda retornam valores.
 Por exemplo, vamos percorrer um objeto e retornar *strings*:
 
-{% highlight coffeescript %}
+```coffeescript
 nirvana =
     vocalista: 'Kurt Cobain'
     baixista: 'Krist Novoselic'
@@ -141,12 +141,12 @@ nirvana =
 # iterando sobre chaves/valores do objeto
 funcoes = for funcao, integrante of nirvana
     "#{integrante} é #{funcao}"
-{% endhighlight %}
+```
 
 Perceba a diferença (quantidade de linhas e legibilidade) entre essas últimas 2
 linhas do código acima e as 9 últimas linhas de JavaScript geradas abaixo:
 
-{% highlight javascript %}
+```javascript
 var funcao, funcoes, integrante, nirvana;
 
 nirvana = {
@@ -164,19 +164,19 @@ funcoes = (function() {
     }
     return _results;
 })();
-{% endhighlight %}
+```
 
 Para fazer um `for` clássico, simplesmente utilizamos os <a href="#intervalos">intervalos</a>. Podemos basicamente
 fazer de duas maneiras:
 
-{% highlight coffeescript %}
+```coffeescript
 # forma mais clássica
 for numero in [0...5]
     console.log numero
 
 # forma mais elegante
 console.log numero for numero in [0...5]
-{% endhighlight %}
+```
 
 ## Operador existencial
 
@@ -184,20 +184,20 @@ Verificar a existência de variáveis em JavaScript é um pouco chato, pois prec
 efetuar 2 testes. CoffeeScript tem um operador `?` que torna essa tarefa
 muito simples:
 
-{% highlight coffeescript %}
+```coffeescript
 rockBand = true if guitarra? and not sertanejoUniversitario?
-{% endhighlight %}
+```
 
 `rockBand` será verdadeiro se existir `guitarra` e se não existir `sertanejoUniversitario`.
 A seguir, o JavaScript equivalente:
 
-{% highlight javascript %}
+```javascript
 var rockBand;
 
 if ((typeof guitarra !== "undefined" && guitarra !== null) && !(typeof sertanejoUniversitario !== "undefined" && sertanejoUniversitario !== null)) {
     rockBand = true;
 }
-{% endhighlight %}
+```
 
 ## Classes
 
@@ -207,7 +207,7 @@ protótipos, e trabalhar com prototipação e herança prototipada é um pouco c
 vem da orientação à objetos. CoffeeScript oferece uma maneira simples de definição de classes
 e herança, inclusive com construtores mais simples.
 
-{% highlight coffeescript %}
+```coffeescript
 class Animal
   constructor: (@nome) ->
 
@@ -229,14 +229,14 @@ tom  = new Gato "Tom, o gato"
 
 toto.mover()
 tom.mover()
-{% endhighlight %}
+```
 
 Quer adicionar propriedades ou métodos à sua classe (protótipo) em tempo de execução?
 
-{% highlight coffeescript %}
+```coffeescript
 Animal::morrer = ->
   alert "#{@nome} morreu =("
-{% endhighlight %}
+```
 
 Eu poderia continuar falando das **N** coisas legais de CoffeeScript – como herança,
 funções, *splats*, atribuições de troca, *switchs*, comparações em cadeia,

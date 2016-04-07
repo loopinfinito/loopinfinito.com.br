@@ -125,11 +125,11 @@ Uma das primeiras propostas foi a criação de um atributo `srcset` para o eleme
 Sua função seria especificar outras imagens e suas respectivas proporções em relação à imagem em `src`.
 Veja o exemplo abaixo:
 
-{% highlight html %}
+```html
 <img alt="Uma cerva gelada!"
      src="heineken_pequena.jpg"
      srcset="heineken_media.jpg 2x, heineken_grande.jpg 3x" />
-{% endhighlight %}
+```
 
 No código acima temos então a imagem `heineken_pequena.jpg` como sendo a padrão em `src` – no caso de a imagem estar sendo enviada para um
 celular –, e em `srcset` temos as outras imagens de tamanhos diferentes: `heineken_media.jpg` é 2 vezes maior e `heineken_grande.jpg`
@@ -145,7 +145,7 @@ a serem tocadas de acordo com os *codecs* disponíveis no navegador ou sistema o
 `<picture>`, `<source>` desempenha um papel um pouco diferente pois a escolha da mídia não depende de *codecs* e sim da
 resolução de tela do usuário.
 
-{% highlight html %}
+```html
 <picture alt="Uma cerva gelada!">
     <source src="heineken_pequena.jpg" />
     <source media="min-width:800px" src="heineken_media.jpg" />
@@ -153,7 +153,7 @@ resolução de tela do usuário.
     <!-- fallback para navegadores sem suporte -->
     <img src="heineken_media.jpg" alt="Uma cerva gelada!" />
 </picture>
-{% endhighlight %}
+```
 
 Acima teríamos o mesmo resultado da alternativa `srcset`, mas com uma sintaxe totalmente diferente.
 A seleção do `<source>` acontece por meio do atributo `media`, que utiliza-se de *media queries*.
@@ -167,7 +167,7 @@ A [última proposta](http://www.w3.org/community/respimg/wiki/Picture_Element_Pr
 feita pelo WHATWG é uma fusão das duas acima, ou seja, a criação do elemento `<picture>` com a possibilidade
 de também utilizar o atributo `srcset` nos elementos `<source>`:
 
-{% highlight html %}
+```html
 <picture alt="Uma cerva gelada!">
     <source srcset="heineken_pequena1.jpg 1x, heineken_pequena2.jpg 2x" />
     <source media="min-width:800px" srcset="heineken_media1.jpg 1x, heineken_media2.jpg 2x" />
@@ -175,7 +175,7 @@ de também utilizar o atributo `srcset` nos elementos `<source>`:
     <!-- fallback para navegadores sem suporte -->
     <img src="heineken_media.jpg" alt="Uma cerva gelada!" />
 </picture>
-{% endhighlight %}
+```
 
 ## Conclusões
 

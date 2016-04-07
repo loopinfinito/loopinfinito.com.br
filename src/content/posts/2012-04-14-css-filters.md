@@ -58,33 +58,33 @@ Para verificar se o seu navegador suporta o CSS Filter, apenas passe o mouse por
 <p><img src="/images/posts/2012-04-14-jeri-grayscale.jpg" width="700" height="200" /></p>
 Com o filtro <code>grayscale</code> nós indicamos o quão preto-e-branco queremos que o elemento fique, numa escala de 0 a 1 ou 0% 100%.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: grayscale(100%);
 }
-{% endhighlight %}
+```
 
 ## Blur
 <p><img src="/images/posts/2012-04-14-jeri-blur.jpg" width="700" height="200" /></p>
 Com o filtro <code>blur</code> podemos embaçar um elemento. Algo parecido como ver uma foto sem óculos (eu imagino que seja assim).
 Os valores são definidos em pixels. Quanto maior o valor, mais embaçado o elemento.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: blur(3px);
 }
-{% endhighlight %}
+```
 
 ## Sepia
 <p><img src="/images/posts/2012-04-14-jeri-sepia.jpg" width="700" height="200" /></p>
 Este efeito é normamelmente usado em fotos, dando a elas um efeito de fotos antigas.
 Os valores do efeito vão de 0 a 1.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: sepia(1);
 }
-{% endhighlight %}
+```
 
 ## Saturate
 <p><img src="/images/posts/2012-04-14-jeri-saturate.jpg" width="700" height="200" /></p>
@@ -92,22 +92,22 @@ Com o <code>saturate</code> modificamos o canal saturação da cores do elemento
 Quanto maior a saturação, mais vivas as cores estarão, e quanto menor a saturação, mais próximas do cinza elas estarão.
 Com o <ceode>saturate</ceode> em 0, obtemos o mesmo resultado que o <code>grayscale</code> em 100%
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: saturate(4);
 }
-{% endhighlight %}
+```
 
 ## Opacity
 <p><img src="/images/posts/2012-04-14-jeri-opacity.jpg" width="700" height="200" /></p>
 Ok, esse é bastante fácil. Simplesmente mude a opacidade do elemento.
 Os valores vão de 0 a 1. 0 deixa o elemento invisível.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: opacity(0.5);
 }
-{% endhighlight %}
+```
 
 ## Brightness
 <p><img src="/images/posts/2012-04-14-jeri-brightness.jpg" width="700" height="200" /></p>
@@ -116,33 +116,33 @@ O <code>brightness</code> altera o brilho do elemento.
 ficando totalmente preto em 0%.
 Aumentando o valor para mais de 100%, ele irá ficar cada vez mais claro.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: brightness(50%);
 }
-{% endhighlight %}
+```
 
 ## Contrast
 <p><img src="/images/posts/2012-04-14-jeri-contrast.jpg" width="700" height="200" /></p>
 Também bastante óbvio. Aqui alteramos a saturação do elemento.
 O valor desse filtro pode ser expresso em unidades (0, 1, 3, 4, ...) ou em percentagem (0%, 100%, 1500%).
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: constrast(1.5);
 }
-{% endhighlight %}
+```
 
 ## Hue Rotate
 <p><img src="/images/posts/2012-04-14-jeri-hue-rotate.jpg" width="700" height="200" /></p>
 Neste filtro podemos mover todas as cores do elemento em graus dentro da roda de cores.
 Com 0deg não iremos realizar nenhuma alteração, enquanto com 180deg iremos inverter todas as cores.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: hue-rotate(180deg);
 }
-{% endhighlight %}
+```
 
 ## Invert
 <p><img src="/images/posts/2012-04-14-jeri-invert.jpg" width="700" height="200" /></p>
@@ -151,22 +151,22 @@ Na verdade a inversão completa acontece apenas se usarmos o valor 100%.
 Com 50% as cores estarão no meio caminho entre suas cores invertidas, o que significa que estarão com um tom de cinza.
 Os valores vão de 0% a 100%.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: invert(100%);
 }
-{% endhighlight %}
+```
 
 ## Vários filtros
 <p><img src="/images/posts/2012-04-14-jeri-various.jpg" width="700" height="200" /></p>
 Também é possível o uso de vários filtros em conjunto, para obtermos um efeito mais único.
 Na imagem acima usamos <code>hue-rotate</code> e <code>sepia</code>.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: hue-rotate(60deg) sepia(1);
 }
-{% endhighlight %}
+```
 
 ## Drop shadow
 
@@ -190,11 +190,11 @@ cima do elemento.
 - __blur__: valor opcional. indica o quão "embaçado" ou "desfocado" a sombra
 irá ficar. `0` deixa a sombra sólida.
 
-{% highlight css %}
+```css
 img {
     -webkit-filter: drop-shadow(5px 5px 6px #000);
 }
-{% endhighlight %}
+```
 
 Como podemos ver o CSS Filters vem adicionar ainda mais poder ao HTML5. E isto é só uma prévia do que há por vir, como os <a href="http://www.youtube.com/watch?v=NZRqnohI3m4">CSS Shaders</a>.
 

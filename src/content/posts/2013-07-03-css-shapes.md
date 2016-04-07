@@ -178,10 +178,10 @@ ser absolutos (`px`, `in`, `pt`, `cm`, etc.) ou relativos (`%`, `em`, `rem`,
 
 ### rectangle()
 
-{% highlight css %}
+```css
 /* rectangle(x, y, width, height, rx, ry) */
    rectangle(0, 0, 100px, 80px, 20%, 40%)
-{% endhighlight %}
+```
 
 - `x` e `y`: coordenadas do ponto inicial nos _eixos X e Y_ (horizontal e vertical);
 - `width` e `height`: largura e altura;
@@ -190,10 +190,10 @@ ser absolutos (`px`, `in`, `pt`, `cm`, etc.) ou relativos (`%`, `em`, `rem`,
 
 ### inset-rectangle()
 
-{% highlight css %}
+```css
 /* inset-rectangle(top, right, bottom, left, rx, ry) */
    inset-rectangle(10%, 20%, 40px, 20%, 8px, 8px)
-{% endhighlight %}
+```
 
 - `top`, `right`, `bottom` e `left`: Define o retângulo em relação ao seu
 elemento ancestral;
@@ -202,10 +202,10 @@ elemento ancestral;
 
 ### circle()
 
-{% highlight css %}
+```css
 /* circle(cx, cy, radius) */
    circle(50%, 50%, 80px)
-{% endhighlight %}
+```
 
 - `cx` e `cy`: coordenadas do ponto central nos _eixos X e Y_
 (horizontal e vertical);
@@ -213,10 +213,10 @@ elemento ancestral;
 
 ### ellipse()
 
-{% highlight css %}
+```css
 /* ellipse(cx, cy, rx, ry) */
    ellipse(50%, 50%, 80px, 200px)
-{% endhighlight %}
+```
 
 - `cx` e `cy`: coordenadas do ponto central nos _eixos X e Y_
 (horizontal e vertical);
@@ -224,10 +224,10 @@ elemento ancestral;
 
 ### polygon()
 
-{% highlight css %}
+```css
 /* polygon(x1 y1, x2 y2, ..., xn yn) */
    polygon(10px 10px, 20px 10px, 20px 20px) /* um triângulo */
-{% endhighlight %}
+```
 
 - `xn` e `yn`: tuplas com as coordenadas dos pontos do polígono no _eixos X e Y_
 (horizontal e vertical). O polígono será fechado automaticamente ligando-se o
@@ -249,12 +249,12 @@ Atualmente apenas funciona em elementos flutuantes (com `float: left` ou
 Por exemplo, podemos ter uma `<div>` de tamanho 100x100px que flutua à esquerda de
 um texto, e ainda ter a forma de um círculo (com a propriedade `border-radius`):
 
-{% highlight html %}
+```html
 <article>
     <div class="flutua"></div>
     Vou mostrando como sou e vou sendo como posso (...)
 </article>
-{% endhighlight %}
+```
 
 E `.flutua` definido no CSS abaixo, vamos ter algo parecido como isto:
 
@@ -273,14 +273,14 @@ E `.flutua` definido no CSS abaixo, vamos ter algo parecido como isto:
 </div>
 
 <div class="example-code">
-{% highlight css %}
+```css
 .flutua {
     width: 100px;
     height: 100px;
     float: left;
     border-radius: 50%;
 }
-{% endhighlight %}
+```
 </div>
 
 Perceba que, apesar do elemento `.flutua` ter sua aparência circular, o seu
@@ -310,12 +310,12 @@ tamanho e localização que o ilustrado por `.flutua`, e veremos o que acontece.
 </div>
 
 <div class="example-code">
-{% highlight css %}
+```css
 .flutua {
     /* ... */
     shape-outside: circle(50px, 50px, 50px);
 }
-{% endhighlight %}
+```
 </div>
 
 _Voilà!_ Agora o texto acompanha a forma definida!
@@ -340,14 +340,14 @@ Hora de brincar com outras formas:
 </div>
 
 <div class="example-code">
-{% highlight css %}
+```css
 .flutua {
     width: 200px;
     height: 60px;
     /* ... */
     shape-outside: ellipse(50%, 50%, 50%, 50%);
 }
-{% endhighlight %}
+```
 </div>
 
 ### shape-outside: polygon()
@@ -367,14 +367,14 @@ Hora de brincar com outras formas:
 </div>
 
 <div class="example-code">
-{% highlight css %}
+```css
 .flutua {
     width: 100px;
     height: 88px;
     /* um triângulo: */
     shape-outside: polygon(0 0, 100% 100%, 0 100%);
 }
-{% endhighlight %}
+```
 </div>
 
 ## shape-margin
@@ -404,13 +404,13 @@ deveria acontecer.</p>
 </div>
 
 <div class="example-code">
-{% highlight css %}
+```css
 .flutua {
     /* ... */
     shape-outside: circle(50%, 50%, 50%);
     shape-margin: 15px;
 }
-{% endhighlight %}
+```
 </div>
 
 ## Contornando imagens
@@ -433,12 +433,12 @@ imagens são quadradas como qualquer outro elemento.
 </div>
 
 <div class="example-code">
-{% highlight css %}
+```css
 .rolling-stones {
     float: left;
     shape-outside: polygon(0 0, 123px 0, 134px 36px, 155px 56px, 134px 78px, 109px 129px, 62px 164px, 0 164px);
 }
-{% endhighlight %}
+```
 </div>
 
 ### Contornando imagens automaticamente
@@ -458,13 +458,13 @@ _shape_.
 <p class="obs"><strong>OBS.:</strong> Esta funcionalidade ainda não foi
 implementada em nenhum navegador até o momento.</p>
 
-{% highlight css %}
+```css
 .rolling-stones {
     float: left;
     shape-outside: url('rolling_stones.png');
     shape-image-threshold: 0.3;
 }
-{% endhighlight %}
+```
 
 ## shape-inside
 
@@ -493,7 +493,7 @@ conteúdo do elemento em si. Dois exemplos:
 </div>
 
 <div class="example-code">
-{% highlight css %}
+```css
 .inside-circle {
     shape-inside: circle(50%, 50%, 50%);
 }
@@ -501,7 +501,7 @@ conteúdo do elemento em si. Dois exemplos:
 .inside-hexagon {
     shape-inside: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 }
-{% endhighlight %}
+```
 </div>
 
 ## shape-padding

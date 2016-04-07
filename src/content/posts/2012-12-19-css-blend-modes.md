@@ -35,11 +35,11 @@ e `knock-out`. Falarei sobre cada uma delas posteriormente. Primeiro vamos come�
 Vamos começar a brincadeira aplicando um *blend mode* a um determinado elemento:
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.blend {
     blend-mode: overlay;
 }
-{% endhighlight %}
+```
 </div>
 
 Agora toda `img` com a classe `.blend` será renderizada como *overlay* (o veremos a seguir).
@@ -76,11 +76,11 @@ novas imagens são da classe `.heineken` (veja abaixo).
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: normal;
 }
-{% endhighlight %}
+```
 </div>
 
 Como o próprio nome já diz, este não tem nada de mais, é apenas o valor de *blending*&nbsp;**padrão**
@@ -93,11 +93,11 @@ de qualquer elemento – este será renderizado sem nenhuma composição gráfic
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: multiply;
 }
-{% endhighlight %}
+```
 </div>
 
 ### screen
@@ -107,11 +107,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: screen;
 }
-{% endhighlight %}
+```
 </div>
 
 ### overlay
@@ -121,11 +121,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: overlay;
 }
-{% endhighlight %}
+```
 </div>
 
 ### darken
@@ -135,11 +135,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: darken;
 }
-{% endhighlight %}
+```
 </div>
 
 ### lighten
@@ -149,11 +149,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: lighten;
 }
-{% endhighlight %}
+```
 </div>
 
 ### color-dodge
@@ -163,11 +163,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: color-dodge;
 }
-{% endhighlight %}
+```
 </div>
 
 ### color-burn
@@ -177,11 +177,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: color-burn;
 }
-{% endhighlight %}
+```
 </div>
 
 ### hard-light
@@ -191,11 +191,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: hard-light;
 }
-{% endhighlight %}
+```
 </div>
 
 ### soft-light
@@ -205,11 +205,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: soft-light;
 }
-{% endhighlight %}
+```
 </div>
 
 ### difference
@@ -219,11 +219,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: difference;
 }
-{% endhighlight %}
+```
 </div>
 
 ### exclusion
@@ -233,11 +233,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: exclusion;
 }
-{% endhighlight %}
+```
 </div>
 
 ### hue
@@ -247,11 +247,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: hue;
 }
-{% endhighlight %}
+```
 </div>
 
 ### saturation
@@ -261,11 +261,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: saturation;
 }
-{% endhighlight %}
+```
 </div>
 
 ### color
@@ -275,11 +275,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: color;
 }
-{% endhighlight %}
+```
 </div>
 
 ### luminosity
@@ -289,11 +289,11 @@ img.heineken {
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 img.heineken {
     blend-mode: luminosity;
 }
-{% endhighlight %}
+```
 </div>
 
 Se quiser saber mais detalhes a nível matemático sobre qualquer um desses
@@ -332,12 +332,12 @@ No exemplo acima temos um exemplo que mostra as mesmas duas imagens de antes com
 A diferença aqui é que elas estão se sobrepondo – note que a estrela sobrepõe a cerveja.
 Agora, vamos considerar que estas duas imagens estão agrupadas dentro de uma `<div>` qualquer:
 
-{% highlight html %}
+```html
 <div>
     <img src="cerveja.jpg" />
     <img src="estrela.jpg" />
 </div>
-{% endhighlight %}
+```
 
 Agora compare a imagem acima com o exemplo abaixo. Consegue notar a diferença?
 No exemplo abaixo, o grupo (a `<div>`) é um grupo *knock-out*.
@@ -347,11 +347,11 @@ No exemplo abaixo, o grupo (a `<div>`) é um grupo *knock-out*.
 </figure>
 
 <div class="image-code">
-{% highlight css %}
+```css
 div {
     knock-out: knock-out;
 }
-{% endhighlight %}
+```
 </div>
 
 Perceba como os elementos de dentro do grupo realizam o *blending* apenas considerando
