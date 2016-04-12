@@ -223,7 +223,7 @@ Antes de querermos marcar conteúdo semanticamente, é necessário identificar a
 Para nós é muito fácil identificar qual entidade de que se tratam as informações acima, **mas e as máquinas**? Como elas saberão que "James Cameron" é o diretor do filme Avatar? Esta palavra "Diretor" também não tem o menor significado para uma máquina. E se "Diretor" estivesse em japonês ou em russo? **Como elas saberiam dizer sequer o que é "Avatar"?** Seria Avatar, o **desenho**, o **filme**, ou até mesmo uma **entidade divina** do mundo espiritual encarnada em uma pessoa? Quando você procura por Avatar no Google, como ele sabe pelo que você está procurando exatamente? Ele **não sabe**. O que o Google e os outros motores de busca atuais fazem é aplicar um monte de algoritmos super complexos que fazem uma porrada de associações pra tentar **adivinhar** do que seu conteúdo se trata (*n* teses de doutorado e muita matemática por trás), e assim poder melhorar sua indexação e classificação de conteúdo.
 
 ## Propriedades microdata
-Como vimos, os vocabulários schema.org definem entidades do mundo real, suas propriedades e seus relacionamentos com outras entidades. Agora vamos ver como utilizar de fato todos estes metadados em nosso código HTML. Primeiro certifique-se de que seu cabeçalho tenha a definição *doctype* correta, sendo microdata um padrão HTML5, a primeira linha do seu código deve ser <code>{{ '<!doctype html>' | escape }}</code>, apenas isso – sem nomes complicados de versões e/ou urls que ninguém tem paciência de ficar escrevendo.
+Como vimos, os vocabulários schema.org definem entidades do mundo real, suas propriedades e seus relacionamentos com outras entidades. Agora vamos ver como utilizar de fato todos estes metadados em nosso código HTML. Primeiro certifique-se de que seu cabeçalho tenha a definição *doctype* correta, sendo microdata um padrão HTML5, a primeira linha do seu código deve ser `<!doctype html>`, apenas isso – sem nomes complicados de versões e/ou urls que ninguém tem paciência de ficar escrevendo.
 
 Feito isto, vamos finalmente ao microdata de fato. Microdata define 5 diferentes atributos que podem ser adicionados a qualquer elemento HTML o qual você queira descrever semanticamente. Estes atributos são:
 
@@ -246,7 +246,7 @@ Agora vamos voltar ao exemplo do Avatar. Digamos que o código HTML corresponden
 </div>
 ```
 
-Começamos definindo a entidade Movie e adicionando as propriedades <code>itemscope</code> e <code>itemtype</code> ao elemento <code>{{ '<div>' | escape }}</code>, já que este elemento possui todo conteúdo relacionado ao filme *Avatar*.
+Começamos definindo a entidade Movie e adicionando as propriedades <code>itemscope</code> e <code>itemtype</code> ao elemento `<div>`, já que este elemento possui todo conteúdo relacionado ao filme *Avatar*.
 
 ```html
 <!-- adicionamos os atributos itemscope e itemtype -->
@@ -347,8 +347,8 @@ No caso da propriedade <code>director</code> por exemplo, um diretor é uma **pe
 
 E para terminar, vamos especificar as propriedades desta pessoa – que neste caso são *nome* e *data de nascimento*.
 
-Observe que para data de nascimento criamos um novo elemento <code>{{ '<time datetime="...">' | escape }}</code>.
-Optei por fazer isto por quê <code>{{ '<time>' | escape }}</code> é uma <a href="http://www.w3schools.com/html5/tag_time.asp">nova tag</a> que faz parte da especificação HTML5, e usamos seu atributo <code>datetime</code> para especificar o formato padrão de data usado pelo schema.org – na especificação do tipo de dados <a href="http://schema.org/Date">Date</a>, o formato de data esperado é o <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> (AAAA-MM-DD).
+Observe que para data de nascimento criamos um novo elemento `<time datetime="...">`.
+Optei por fazer isto por quê `<time>` é uma <a href="http://www.w3schools.com/html5/tag_time.asp">nova tag</a> que faz parte da especificação HTML5, e usamos seu atributo <code>datetime</code> para especificar o formato padrão de data usado pelo schema.org – na especificação do tipo de dados <a href="http://schema.org/Date">Date</a>, o formato de data esperado é o <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> (AAAA-MM-DD).
 
 ```html
 <div itemscope="itemscope" itemtype="http://schema.org/Movie">
