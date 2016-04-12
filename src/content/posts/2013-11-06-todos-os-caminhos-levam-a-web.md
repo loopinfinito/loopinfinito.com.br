@@ -1,5 +1,5 @@
 ---
-title: Todos os caminhos levam à <span>web</span>
+title: Todos os caminhos levam à web
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

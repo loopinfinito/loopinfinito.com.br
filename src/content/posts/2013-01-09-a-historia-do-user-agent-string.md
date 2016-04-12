@@ -1,5 +1,5 @@
 ---
-title: A história do <span>user-agent</span> string
+title: A história do user-agent string
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/

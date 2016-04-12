@@ -1,5 +1,5 @@
 ---
-title: Ganhando visibilidade com <span>schema.org</span>
+title: Ganhando visibilidade com schema.org
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

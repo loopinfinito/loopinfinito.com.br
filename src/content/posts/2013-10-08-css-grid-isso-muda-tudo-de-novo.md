@@ -1,5 +1,5 @@
 ---
-title: "<span>CSS grid</span>: isso muda tudo de novo"
+title: "CSS grid: isso muda tudo de novo"
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

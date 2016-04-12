@@ -1,5 +1,5 @@
 ---
-title: CSS <span>layout</span> pós-apocalipse
+title: CSS layout pós-apocalipse
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

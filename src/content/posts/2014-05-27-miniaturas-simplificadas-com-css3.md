@@ -1,5 +1,5 @@
 ---
-title: Miniaturas simplificadas com <span>CSS3</span>
+title: Miniaturas simplificadas com CSS3
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

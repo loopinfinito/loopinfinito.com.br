@@ -1,5 +1,5 @@
 ---
-title: <span>2 anos</span>, um olá e um adeus
+title: 2 anos, um olá e um adeus
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

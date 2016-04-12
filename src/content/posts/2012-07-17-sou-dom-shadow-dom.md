@@ -1,5 +1,5 @@
 ---
-title: Sou DOM, <span>Shadow DOM</span>
+title: Sou DOM, Shadow DOM
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

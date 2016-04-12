@@ -1,5 +1,5 @@
 ---
-title: Pião da Casa Própria em <span>CSS 3D</span>
+title: Pião da Casa Própria em CSS 3D
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/

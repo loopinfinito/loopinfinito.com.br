@@ -1,5 +1,5 @@
 ---
-title: Entendendo <span class="light">captura</span> e <span class="light">propagação</span> de eventos
+title: Entendendo captura e propagação de eventos
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts

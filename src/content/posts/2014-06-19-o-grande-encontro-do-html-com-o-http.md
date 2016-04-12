@@ -1,5 +1,5 @@
 ---
-title: O grande encontro do <span>HTML</span> com o <span>HTTP</span>
+title: O grande encontro do HTML com o HTTP
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
