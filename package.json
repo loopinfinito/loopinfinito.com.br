@@ -44,6 +44,7 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-metallic": "^0.3.1",
     "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-slug": "^0.2.0",
     "metalsmith-watch": "^1.0.1",
     "nunjucks": "^2.4.1"
   },
@@ -60,6 +61,9 @@
           "reverse": true
         }
       },
+      "slug": {
+        "lower": true
+      },
       "filemetadata": [
         {
           "pattern": "posts/*.md",
@@ -74,7 +78,7 @@
       "permalinks": {
         "linksets": [
           {
-            "pattern": "posts/:date/:title",
+            "pattern": "posts/:date/:slug",
             "match": {
               "collection": "posts"
             }
