@@ -24,10 +24,10 @@ module.exports = workingdir => {
     .use(filemetadata(config.metalsmith.filemetadata))
     .use(collections(config.metalsmith.collections))
     .use(slug(config.metalsmith.slug))
-    .use(inplace(config.metalsmith.layouts))
     .use(metallic())
     .use(markdown(config.metalsmith.markdown))
     .use(permalinks(config.metalsmith.permalinks))
+    .use(inplace(config.metalsmith.layouts))
     .use(layouts(config.metalsmith.layouts));
 
   const afterBuild = (err, files) => {
