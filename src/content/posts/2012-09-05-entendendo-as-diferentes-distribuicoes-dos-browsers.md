@@ -1,5 +1,6 @@
 ---
 title: Entendendo as diferentes distribuições dos navegadores
+slug: entendendo-as-diferentes-distribuicoes-dos-browsers
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
