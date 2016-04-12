@@ -1,0 +1,22 @@
+{% extends "src/templates/layouts/base.html" %}
+
+
+{% block content %}
+
+  {% if pagination.files %}
+    <ul>
+    {% for post in pagination.files %}
+      <li><a href="{{ post.path }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+    {% if pagination.previous %}
+      <a href="/{{ pagination.previous.path }}">prev</a>
+    {% endif %}
+    {% if pagination.next %}
+      <a href="/{{ pagination.next.path }}">next</a>
+    {% endif %}
+  {% else %}
+    Nenhum post.
+  {% endif %}
+
+{% endblock %}

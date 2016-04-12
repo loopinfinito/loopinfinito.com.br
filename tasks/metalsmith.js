@@ -4,6 +4,7 @@ const collections = require('metalsmith-collections');
 const dateinfilename = require('metalsmith-date-in-filename');
 const filemetadata = require('metalsmith-filemetadata');
 const permalinks = require('metalsmith-permalinks');
+const pagination = require('metalsmith-pagination');
 const metallic = require('metalsmith-metallic');
 const markdown = require('metalsmith-markdown');
 const inplace = require('metalsmith-in-place');
@@ -27,6 +28,7 @@ module.exports = workingdir => {
     .use(metallic())
     .use(markdown(config.metalsmith.markdown))
     .use(permalinks(config.metalsmith.permalinks))
+    .use(pagination(config.metalsmith.pagination))
     .use(inplace(config.metalsmith.layouts))
     .use(layouts(config.metalsmith.layouts));
 

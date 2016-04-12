@@ -43,6 +43,7 @@
     "metalsmith-layouts": "^1.6.4",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-metallic": "^0.3.1",
+    "metalsmith-pagination": "^1.4.0",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-slug": "^0.2.0",
     "metalsmith-watch": "^1.0.1",
@@ -78,12 +79,21 @@
       "permalinks": {
         "linksets": [
           {
-            "pattern": "posts/:date/:slug",
+            "pattern": "posts/:date/:slug/",
             "match": {
               "collection": "posts"
             }
           }
         ]
+      },
+      "pagination": {
+        "collections.posts": {
+          "perPage": 5,
+          "layout": "list.html",
+          "first": "index.html",
+          "path": "page/:num/index.html",
+          "noPageOne": true
+        }
       },
       "layouts": {
         "engine": "nunjucks",
