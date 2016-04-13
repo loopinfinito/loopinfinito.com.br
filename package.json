@@ -47,6 +47,7 @@
     "metalsmith-pagination": "^1.4.0",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-slug": "^0.2.0",
+    "metalsmith-tags": "^1.2.1",
     "metalsmith-watch": "^1.0.1",
     "nunjucks": "^2.4.1"
   },
@@ -95,6 +96,12 @@
           "path": "page/:num/index.html",
           "noPageOne": true
         }
+      },
+      "tags": {
+        "path": "tag/:tag/index.html",
+        "layout": "list.html",
+        "sortBy": "date",
+        "reverse": true
       },
       "layouts": {
         "engine": "nunjucks",

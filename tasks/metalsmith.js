@@ -11,6 +11,7 @@ const inplace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const watch = require('metalsmith-watch');
 const slug = require('metalsmith-slug');
+const tags = require('metalsmith-tags');
 const nunjucks = require('nunjucks');
 const consolidate = require('consolidate');
 
@@ -28,6 +29,7 @@ module.exports = workingdir => {
     .use(metallic())
     .use(markdown(config.metalsmith.markdown))
     .use(pagination(config.metalsmith.pagination))
+    .use(tags(config.metalsmith.tags))
     .use(permalinks(config.metalsmith.permalinks))
     .use(inplace(config.metalsmith.layouts))
     .use(layouts(config.metalsmith.layouts));
