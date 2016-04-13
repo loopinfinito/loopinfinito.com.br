@@ -1,11 +1,11 @@
 ---
 title: "CSS grid: isso muda tudo de novo"
+tags: css
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2013-10-08-css-grid-isso-muda-tudo-de-novo.jpg
-tags: CSS
 comments: true
 keywords: >
   css grid, grid, css, layout, independencia, estrutura, html, especificacao,

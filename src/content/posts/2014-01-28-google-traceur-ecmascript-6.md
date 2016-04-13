@@ -1,12 +1,12 @@
 ---
 title: Google Traceur, ou "Como usar ECMAScript 6 hoje"
 slug: google-traceur-ecmascript-6
+tags: javascript
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2014-01-28-traceur.jpg
-tags: javascript
 comments: true
 keywords: >
   javascript, js, google traceur, ecmascript 6, grunt, gulp, classes,

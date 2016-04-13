@@ -1,12 +1,12 @@
 ---
 title: Pião da Casa Própria em CSS 3D
+tags: css, experimento
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2012-05-13-piao-da-casa-propria-em-css-3d.jpg
 has_inner_image: false
-tags: CSS 3D experimento
 comments: true
 keywords: >
   silvio santos, css3, 3d, html5, frontend, web, development, desenvolvimento,

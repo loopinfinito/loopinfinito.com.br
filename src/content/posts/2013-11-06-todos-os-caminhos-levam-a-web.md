@@ -1,11 +1,11 @@
 ---
 title: Todos os caminhos levam à web
+tags: evento
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2013-11-06-todos-os-caminhos-levam-a-web.jpg
-tags: evento
 comments: true
 keywords: >
   web.br, web br, w3c, w3c brasil, conferência, web, front-end, brasil, loop

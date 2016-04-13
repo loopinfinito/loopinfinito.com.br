@@ -5,7 +5,7 @@ author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2012-04-14-css-filters.jpg
-tags: CSS
+tags: css
 comments: true
 keywords: >
   css, css filters, html5, adobe, apple, webkit, frontend, front end, webdev,

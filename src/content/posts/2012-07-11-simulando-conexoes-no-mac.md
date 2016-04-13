@@ -1,11 +1,11 @@
 ---
 title: Simulando conexões no Mac
+tags: tooling
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2012-07-11-simulando-conexoes-no-mac.jpg
-tags: Mac
 comments: true
 keywords: >
   mac, os x, conexão, simulando conexão, mobile, móvel, bsd, network, firewall

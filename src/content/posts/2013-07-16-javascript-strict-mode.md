@@ -1,11 +1,11 @@
 ---
 title: JavaScript Strict Mode
+tags: javascript
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2013-07-16-javascript-strict-mode.jpg
-tags: javascript
 comments: true
 keywords: >
   javascript, strict mode, parser, navegador, browser, js, ecmascript, amazon, firefox

@@ -1,11 +1,11 @@
 ---
 title: Sou DOM, Shadow DOM
+tags: html
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2012-07-17-shadow-dom.jpg
-tags: web-components HTML
 comments: true
 keywords: >
   shadow-dom, shadow dom, web-components, web components, html, html5, component,

@@ -1,11 +1,11 @@
 ---
 title: ECMAScript 6 Proxy
+tags: javascript
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2014-09-09-ecmascript-6-proxy.jpg
-tags: javascript
 comments: true
 keywords: >
   ecmascript 6 proxy, ecmascript, es6, proxy, es6 proxy, javascript, web, trap,

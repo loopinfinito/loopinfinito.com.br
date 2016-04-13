@@ -1,11 +1,11 @@
 ---
 title: Simplificando a vida com LESS
+tags: css
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2012-06-19-vida-boa.jpg
-tags: CSS LESS
 comments: true
 keywords: >
   css, lesscss, less, less css, mixin, import, less portugues, portugues, br,

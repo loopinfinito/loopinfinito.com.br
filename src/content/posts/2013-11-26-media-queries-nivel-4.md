@@ -1,11 +1,11 @@
 ---
 title: "@media queries {nível: 4}"
+tags: css
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2013-11-26-media-queries-nivel-4.jpg
-tags: CSS
 comments: true
 keywords: >
   css, media queries, media query, 4, nivel 4, level 4, media, @media, script,

@@ -1,12 +1,12 @@
 ---
 title: Eventos online e offline
 slug: eventos-online-offline
+tags: html, javascript
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2013-02-19-eventos-online-offline.jpg
-tags: HTML5 javascript
 comments: true
 keywords: >
   html5, eventos, events, javascript, online, offline, rede, internet, net,

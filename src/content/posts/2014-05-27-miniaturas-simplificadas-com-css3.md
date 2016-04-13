@@ -1,11 +1,11 @@
 ---
 title: Miniaturas simplificadas com CSS3
+tags: css
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2014-05-27-miniaturas.jpg
-tags: CSS
 comments: true
 keywords: >
   miniatura, css3, css, object-fit, object-position, object, fit, position,

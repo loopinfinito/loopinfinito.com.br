@@ -1,11 +1,11 @@
 ---
 title: Veja mais com a Fullscreen API
+tags: html, javascript, css, experimento
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2012-11-27-fullscreen-api.jpg
-tags: HTML5 javascript CSS
 comments: true
 keywords: >
   full, screen, fullscreen, html5, html, js, javascript, api, fullscreen api,

@@ -1,11 +1,11 @@
 ---
 title: Hoisting e escopo em JavaScript
+tags: javascript
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2014-10-29-javascript-hoisting.jpg
-tags: javascript
 comments: true
 keywords: >
   javascript, hoisting, escopo, c, linguagem, ecmascript, ecmascript 6, es6, js,

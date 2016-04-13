@@ -1,10 +1,10 @@
 ---
 title: Microdata
+tags: seo, html
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
-tags: web-semantica microdata schema.org SEO HTML5
 image: images/posts/2012-05-02-semantics-html5.jpg
 comments: true
 keywords: >

@@ -1,11 +1,11 @@
 ---
 title: Front in Maceió 2012
+tags: evento
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2012-10-31-front-in-maceio-2012.jpg
-tags: evento
 comments: true
 keywords: >
   evento, palestra, maceio, alagoas, frontinmaceio, front in maceio, front-end,

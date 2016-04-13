@@ -1,11 +1,11 @@
 ---
 title: CSS position sticky
+tags: css
 author: Caio Gondim
 author_link: http://twitter.com/caio_gondim
 author_profile: https://plus.google.com/109656206006790732674/
 author_facebook: https://www.facebook.com/caiogondim
 image: images/posts/2013-05-28-css-position-sticky.jpg
-tags: css
 comments: true
 keywords: >
   css, position sticky, webkit, google chrome, chrome canary

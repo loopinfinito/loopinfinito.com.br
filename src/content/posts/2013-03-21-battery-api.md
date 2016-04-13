@@ -1,12 +1,12 @@
 ---
 title: Battery API
+tags: html, javascript, experimento
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2013-03-21-battery-api.png
 has_inner_image: false
-tags: HTML5 javascript experimento
 comments: true
 keywords: >
   bateria, battery, api, html5, javascript, js, charging, carregar, tempo,

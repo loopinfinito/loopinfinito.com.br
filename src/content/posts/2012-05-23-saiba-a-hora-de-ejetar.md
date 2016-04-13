@@ -1,11 +1,11 @@
 ---
 title: Saiba a Hora de Ejetar
+tags: produtividade, lifestyle
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2012-05-20-saiba-a-hora-de-ejetar.jpg
-tags: produtividade lifestyle
 comments: true
 keywords: produtividade, lifestyle, rework, 37signals, porque, decisao, ejetar
 resumo: >

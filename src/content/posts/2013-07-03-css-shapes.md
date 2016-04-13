@@ -1,11 +1,11 @@
 ---
 title: CSS shapes
+tags: css
 author: Almir Filho
 author_link: http://twitter.com/almirfilho
 author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
 author_facebook: https://www.facebook.com/almirflorenciofilho
 image: images/posts/2013-07-03-css-shapes.jpg
-tags: CSS
 comments: true
 keywords: >
   css, css3, css shapes, shapes, retangulo, circulo, poligono, elipse,
