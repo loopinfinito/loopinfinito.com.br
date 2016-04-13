@@ -1,0 +1,62 @@
+{
+  "contentDir": "src/content",
+  "nunjucks": {
+    "autoescape": false
+  },
+  "metalsmith": {
+    "filemetadata": [{
+      "pattern": "posts/*.md",
+      "metadata": {
+        "layout": "post.html"
+      }
+    }],
+    "collections": {
+      "posts": {
+        "pattern": "posts/*.md",
+        "sortBy": "date",
+        "reverse": true
+      }
+    },
+    "slug": {
+      "lower": true
+    },
+    "markdown": {
+      "smartypants": true
+    },
+    "pagination": {
+      "collections.posts": {
+        "perPage": 5,
+        "layout": "list.html",
+        "first": "index.html",
+        "path": "page/:num/index.html",
+        "noPageOne": true
+      }
+    },
+    "tags": {
+      "perPage": 5,
+      "layout": "list.html",
+      "path": "tag/:tag/index.html",
+      "pathPage": "tag/:tag/:num/index.html",
+      "sortBy": "date",
+      "reverse": true
+    },
+    "permalinks": {
+      "linksets": [{
+        "pattern": "posts/:date/:slug/",
+        "match": {
+          "collection": "posts"
+        }
+      }]
+    },
+    "layouts": {
+      "engine": "nunjucks",
+      "directory": "src/templates/layouts",
+      "partials": "src/templates/partials"
+    },
+    "watch": {
+      "paths": {
+        "src/content/**/*.md": true
+      }
+    }
+  }
+}

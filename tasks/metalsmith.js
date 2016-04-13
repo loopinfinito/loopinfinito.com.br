@@ -1,4 +1,4 @@
-const config = require('../package.json').config;
+const config = require('./metalsmith.json');
 const metalsmith = require('metalsmith');
 const collections = require('metalsmith-collections');
 const dateinfilename = require('metalsmith-date-in-filename');
