@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "consolidate": "^0.14.0",
+    "load-metalsmith-plugins": "^0.1.1",
     "metalsmith": "^2.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-date-in-filename": "0.0.14",
