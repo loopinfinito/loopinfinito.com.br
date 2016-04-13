@@ -101,7 +101,9 @@
         "path": "tag/:tag/index.html",
         "layout": "list.html",
         "sortBy": "date",
-        "reverse": true
+        "reverse": true,
+        "perPage": 5,
+        "pathPage": "tag/:tag/:num/index.html"
       },
       "layouts": {
         "engine": "nunjucks",
