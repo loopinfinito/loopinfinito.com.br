@@ -6,7 +6,7 @@
   {% if pagination.files %}
     <ul>
     {% for post in pagination.files %}
-      <li><a href="{{ post.path }}">{{ post.title }}</a></li>
+      <li><a href="/{{ post.path }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
     {% if pagination.previous %}

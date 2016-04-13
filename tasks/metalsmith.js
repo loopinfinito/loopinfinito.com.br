@@ -27,8 +27,8 @@ module.exports = workingdir => {
     .use(slug(config.metalsmith.slug))
     .use(metallic())
     .use(markdown(config.metalsmith.markdown))
-    .use(permalinks(config.metalsmith.permalinks))
     .use(pagination(config.metalsmith.pagination))
+    .use(permalinks(config.metalsmith.permalinks))
     .use(inplace(config.metalsmith.layouts))
     .use(layouts(config.metalsmith.layouts));
 
