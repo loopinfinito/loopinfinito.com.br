@@ -15,6 +15,7 @@ module.exports = workingdir => {
     .use(plugins.filemetadata(config.metalsmith.filemetadata))
     .use(plugins.collections(config.metalsmith.collections))
     .use(plugins.slug(config.metalsmith.slug))
+    .use(plugins.ignore(config.metalsmith.ignore))
     .use(plugins.metallic())
     .use(plugins.markdown(config.metalsmith.markdown))
     .use(plugins.pagination(config.metalsmith.pagination))
