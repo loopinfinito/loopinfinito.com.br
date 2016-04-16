@@ -51,6 +51,7 @@
     "metalsmith-slug": "^0.2.0",
     "metalsmith-tags": "^1.2.1",
     "metalsmith-watch": "^1.0.1",
-    "nunjucks": "^2.4.1"
+    "nunjucks": "^2.4.1",
+    "nunjucks-date-filter": "^0.1.1"
   }
 }

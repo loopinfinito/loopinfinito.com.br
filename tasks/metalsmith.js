@@ -2,10 +2,12 @@ const config = require('./metalsmith.json');
 const metalsmith = require('metalsmith');
 const plugins = require("load-metalsmith-plugins")();
 const nunjucks = require('nunjucks');
+const nunjucksdate = require('nunjucks-date-filter');
 const consolidate = require('consolidate');
 
 
 consolidate.requires.nunjucks = nunjucks.configure(config.nunjucks);
+consolidate.requires.nunjucks.addFilter('date', nunjucksdate);
 
 
 module.exports = workingdir => {
@@ -15,9 +17,9 @@ module.exports = workingdir => {
     .use(plugins.filemetadata(config.metalsmith.filemetadata))
     .use(plugins.collections(config.metalsmith.collections))
     .use(plugins.slug(config.metalsmith.slug))
-    .use(plugins.ignore(config.metalsmith.ignore))
     .use(plugins.metallic())
     .use(plugins.markdown(config.metalsmith.markdown))
+    .use(plugins.ignore(config.metalsmith.ignore))
     .use(plugins.pagination(config.metalsmith.pagination))
     .use(plugins.tags(config.metalsmith.tags))
     .use(plugins.permalinks(config.metalsmith.permalinks))
