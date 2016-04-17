@@ -1,5 +1,8 @@
 ---
 title: "HTML5: seu navegador não é mais o mesmo"
+links:
+  - label: Speakerdeck
+    url: https://speakerdeck.com/loopinfinito/html5-seu-navegador-nao-e-mais-o-mesmo
 events:
   - title: PHP Conference 2011
     url: http://www.phpconf.com.br/
