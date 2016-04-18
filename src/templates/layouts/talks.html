@@ -1,0 +1,17 @@
+{% extends 'src/templates/layouts/base.html' %}
+{% from 'src/templates/partials/talk.html' import talk %}
+
+
+{% block content %}
+
+  {% if pagination.files %}
+    <ul>
+    {% for t in pagination.files %}
+      <li>{{ talk(t.title) }}</li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    Nenhuma talk.
+  {% endif %}
+
+{% endblock %}

@@ -41,7 +41,7 @@
       },
       "collections.talks": {
         "perPage": 999,
-        "layout": "list.html",
+        "layout": "talks.html",
         "first": "talks/index.html",
         "path": "talks/:num/index.html",
         "noPageOne": true
