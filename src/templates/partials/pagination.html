@@ -1,0 +1,13 @@
+{% macro pagination(prev, next) %}
+
+<p>
+  {% if prev %}
+    <a href="/{{ prev.path }}">prev</a>
+  {% endif %}
+
+  {% if next %}
+    <a href="/{{ next.path }}">next</a>
+  {% endif %}
+</p>
+
+{% endmacro %}

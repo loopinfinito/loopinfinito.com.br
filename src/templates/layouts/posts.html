@@ -1,5 +1,6 @@
 {% extends 'src/templates/layouts/base.html' %}
 {% from 'src/templates/partials/preview.html' import preview %}
+{% from 'src/templates/partials/pagination.html' import pagination as paginationButtons %}
 
 
 {% block content %}
@@ -11,12 +12,7 @@
     {% endfor %}
     </ul>
 
-    {% if pagination.previous %}
-      <a href="/{{ pagination.previous.path }}">prev</a>
-    {% endif %}
-    {% if pagination.next %}
-      <a href="/{{ pagination.next.path }}">next</a>
-    {% endif %}
+    {{ paginationButtons(pagination.previous, pagination.next) }}
   {% else %}
     Nenhum post.
   {% endif %}
