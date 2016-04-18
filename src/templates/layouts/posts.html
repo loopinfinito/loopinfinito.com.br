@@ -1,4 +1,5 @@
-{% extends "src/templates/layouts/base.html" %}
+{% extends 'src/templates/layouts/base.html' %}
+{% from 'src/templates/partials/preview.html' import preview %}
 
 
 {% block content %}
@@ -6,9 +7,10 @@
   {% if pagination.files %}
     <ul>
     {% for post in pagination.files %}
-      <li><a href="/{{ post.path }}">{{ post.title }}</a></li>
+      <li>{{ preview(post.title, post.path) }}</li>
     {% endfor %}
     </ul>
+
     {% if pagination.previous %}
       <a href="/{{ pagination.previous.path }}">prev</a>
     {% endif %}

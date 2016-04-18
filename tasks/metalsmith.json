@@ -34,7 +34,7 @@
     "pagination": {
       "collections.posts": {
         "perPage": 5,
-        "layout": "list.html",
+        "layout": "posts.html",
         "first": "index.html",
         "path": "page/:num/index.html",
         "noPageOne": true
