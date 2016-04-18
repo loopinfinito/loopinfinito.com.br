@@ -49,7 +49,7 @@
     },
     "tags": {
       "perPage": 5,
-      "layout": "list.html",
+      "layout": "tags.html",
       "path": "tag/:tag/index.html",
       "pathPage": "tag/:tag/:num/index.html",
       "sortBy": "date",
