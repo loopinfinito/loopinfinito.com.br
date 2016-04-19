@@ -5,6 +5,14 @@
   <meta charset="UTF-8" />
 </head>
 <body>
-  {% block content %}{{ contents }}{% endblock %}
+  {% include 'src/templates/partials/header.html' %}
+
+  <main>
+    {% block content %}
+      {{ contents }}
+    {% endblock %}
+  </main>
+
+  {% include 'src/templates/partials/footer.html' %}
 </body>
 </html>
