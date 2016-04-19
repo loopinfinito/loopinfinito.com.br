@@ -1,4 +1,4 @@
-const config = require('./config.json');
+const config = require('../config.json');
 const metalsmith = require('metalsmith');
 const plugins = require('load-metalsmith-plugins')();
 const nunjucks = require('nunjucks');

@@ -36,6 +36,8 @@
   },
   "devDependencies": {
     "consolidate": "^0.14.0",
+    "grunt": "^1.0.1",
+    "load-grunt-tasks": "^3.5.0",
     "load-metalsmith-plugins": "^0.1.1",
     "metalsmith": "^2.1.0",
     "metalsmith-collections": "^0.7.0",

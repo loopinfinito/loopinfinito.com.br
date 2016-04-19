@@ -1,3 +1,3 @@
-const metal = require('./tasks/metalsmith')(__dirname);
+const metal = require('./config/scripts/metalsmith')(__dirname);
 
 metal.build()
