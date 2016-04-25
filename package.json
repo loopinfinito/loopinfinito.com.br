@@ -14,10 +14,13 @@
     "url": "https://github.com/loopinfinito/loopinfinito.com.br.git"
   },
   "bugs": "https://github.com/loopinfinito/loopinfinito.com.br/issues",
-  "license": "MIT",
+  "license": "CC-BY-4.0",
   "main": "index.js",
   "scripts": {
     "help": "grunt help"
+  },
+  "author": {
+    "name": "Almir Filho & Caio Gondim"
   },
   "contributors": [
     {
@@ -34,6 +37,7 @@
   "engines": {
     "node": ">=4.0.0"
   },
+  "dependencies": {},
   "devDependencies": {
     "consolidate": "^0.14.0",
     "grunt": "^1.0.1",
