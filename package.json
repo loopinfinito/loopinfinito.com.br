@@ -17,7 +17,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "help": "grunt help"
   },
   "contributors": [
     {
@@ -37,6 +37,7 @@
   "devDependencies": {
     "consolidate": "^0.14.0",
     "grunt": "^1.0.1",
+    "grunt-available-tasks": "^0.6.2",
     "load-grunt-tasks": "^3.5.0",
     "load-metalsmith-plugins": "^0.1.1",
     "metalsmith": "^2.1.0",

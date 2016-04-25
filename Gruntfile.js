@@ -7,5 +7,4 @@ module.exports = (grunt) => {
   });
 
   grunt.loadTasks('config/tasks');
-  grunt.registerTask('default', () => console.log('dasdasdsads'));
 };
