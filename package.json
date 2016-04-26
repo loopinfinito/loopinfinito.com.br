@@ -17,7 +17,7 @@
   "license": "CC-BY-4.0",
   "main": "config/lib/generate.js",
   "scripts": {
-    "help": "grunt help"
+    "grunt": "grunt"
   },
   "author": {
     "name": "Almir Filho & Caio Gondim"
