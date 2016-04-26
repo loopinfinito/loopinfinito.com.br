@@ -14,6 +14,7 @@ module.exports = workingdir => {
   const pipeline = metalsmith(workingdir)
     .source(config.contentDir)
     .destination(config.buildDir)
+    .use(plugins.metadata(config.metalsmith.metadata))
     .use(plugins.dateInFilename())
     .use(plugins.filemetadata(config.metalsmith.filemetadata))
     .use(plugins.collections(config.metalsmith.collections))

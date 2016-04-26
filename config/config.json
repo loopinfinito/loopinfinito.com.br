@@ -6,6 +6,10 @@
     "autoescape": false
   },
   "metalsmith": {
+    "metadata": {
+      "site": "site.yaml",
+      "authors": "authors.yaml"
+    },
     "filemetadata": [{
       "pattern": "posts/*.md",
       "metadata": {
