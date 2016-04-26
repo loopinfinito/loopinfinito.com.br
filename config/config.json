@@ -52,8 +52,8 @@
     "tags": {
       "perPage": 5,
       "layout": "tags.html",
-      "path": "tag/:tag/index.html",
-      "pathPage": "tag/:tag/:num/index.html",
+      "path": "tags/:tag/index.html",
+      "pathPage": "tags/:tag/:num/index.html",
       "sortBy": "date",
       "reverse": true,
       "metadataKey": "allTags"
