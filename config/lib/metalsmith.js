@@ -13,6 +13,7 @@ consolidate.requires.nunjucks.addFilter('date', nunjucksdate);
 module.exports = workingdir => {
   const pipeline = metalsmith(workingdir)
     .source(config.contentDir)
+    .destination(config.buildDir)
     .use(plugins.dateInFilename())
     .use(plugins.filemetadata(config.metalsmith.filemetadata))
     .use(plugins.collections(config.metalsmith.collections))

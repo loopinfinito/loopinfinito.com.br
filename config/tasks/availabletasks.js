@@ -7,8 +7,8 @@ module.exports = grunt => {
         tasks: ['default'],
         sort: ['run', 'generate', 'help'],
         descriptions: {
-          run: 'Builds to /build and runs server at localhost:8888',
-          generate: 'Generates contents to /build.',
+          run: 'Builds to /<%= cfg.buildDir %> and runs server at localhost:<%= cfg.serverPort %>',
+          generate: 'Generates contents to /<%= cfg.buildDir %>.',
           help: 'Prints the available workflows.'
         }
       }
