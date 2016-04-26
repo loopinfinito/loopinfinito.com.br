@@ -24,6 +24,7 @@ module.exports = workingdir => {
     .use(plugins.pagination(config.metalsmith.pagination))
     .use(plugins.tags(config.metalsmith.tags))
     .use(plugins.permalinks(config.metalsmith.permalinks))
+    .use(plugins.mapsite(config.metalsmith.mapsite))
     .use(plugins.inPlace(config.metalsmith.layouts))
     .use(plugins.layouts(config.metalsmith.layouts));
 
