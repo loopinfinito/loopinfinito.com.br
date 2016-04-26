@@ -5,8 +5,9 @@ module.exports = grunt => {
         showTasks: 'user',
         filter: 'exclude',
         tasks: ['default'],
-        sort: ['help'],
+        sort: ['generate', 'help'],
         descriptions: {
+          generate: 'Generates contents to /build.',
           help: 'Prints the available workflows.'
         }
       }
