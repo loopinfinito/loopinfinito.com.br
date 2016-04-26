@@ -15,7 +15,7 @@
   },
   "bugs": "https://github.com/loopinfinito/loopinfinito.com.br/issues",
   "license": "CC-BY-4.0",
-  "main": "index.js",
+  "main": "config/lib/generate.js",
   "scripts": {
     "help": "grunt help"
   },
