@@ -60,7 +60,7 @@
     },
     "permalinks": {
       "linksets": [{
-        "pattern": "posts/:date/:slug/",
+        "pattern": ":date/:slug/",
         "match": {
           "collection": "posts"
         }
