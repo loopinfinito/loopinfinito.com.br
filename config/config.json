@@ -1,4 +1,5 @@
 {
+  "serverPort": 8888,
   "contentDir": "src/content",
   "nunjucks": {
     "autoescape": false

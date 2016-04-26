@@ -3,7 +3,7 @@ module.exports = (grunt) => {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    paths: grunt.file.readJSON('config/config.json')
+    cfg: grunt.file.readJSON('config/config.json')
   });
 
   grunt.loadTasks('config/tasks');
