@@ -53,7 +53,8 @@
       "path": "tag/:tag/index.html",
       "pathPage": "tag/:tag/:num/index.html",
       "sortBy": "date",
-      "reverse": true
+      "reverse": true,
+      "metadataKey": "allTags"
     },
     "permalinks": {
       "linksets": [{
