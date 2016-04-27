@@ -11,7 +11,7 @@
       "authors": "authors.yaml"
     },
     "filemetadata": [{
-      "pattern": "posts/*.md",
+      "pattern": "posts/**/*.md",
       "metadata": {
         "layout": "post.html",
         "priority": 1.0,
@@ -20,7 +20,7 @@
     }],
     "collections": {
       "posts": {
-        "pattern": "posts/*.md",
+        "pattern": "posts/**/*.md",
         "sortBy": "date",
         "reverse": true
       },
