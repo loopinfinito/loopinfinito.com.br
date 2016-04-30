@@ -17,15 +17,16 @@ module.exports = workingdir => {
     .use(plugins.metadata(config.metalsmith.metadata))
     .use(plugins.dateInFilename())
     .use(plugins.filemetadata(config.metalsmith.filemetadata))
+    .use(plugins.tags(config.metalsmith.tags))
     .use(plugins.collections(config.metalsmith.collections))
     .use(plugins.slug(config.metalsmith.slug))
     .use(plugins.metallic())
     .use(plugins.markdown(config.metalsmith.markdown))
     .use(plugins.ignore(config.metalsmith.ignore))
     .use(plugins.pagination(config.metalsmith.pagination))
-    .use(plugins.tags(config.metalsmith.tags))
     .use(plugins.permalinks(config.metalsmith.permalinks))
     .use(plugins.mapsite(config.metalsmith.mapsite))
+    .use(plugins.feedAtom(config.metalsmith.feedatom))
     .use(plugins.inPlace(config.metalsmith.layouts))
     .use(plugins.layouts(config.metalsmith.layouts));
 

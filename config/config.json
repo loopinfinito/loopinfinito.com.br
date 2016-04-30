@@ -85,6 +85,15 @@
       "priority": 0.6,
       "changefreq": "weekly"
     },
+    "feedatom": {
+      "collection": "posts",
+      "destination": "feed/index.xml",
+      "limit": 10,
+      "metadata": {
+        "title": "Loop Infinito",
+        "url": "http://loopinfinito.com.br"
+      }
+    },
     "layouts": {
       "engine": "nunjucks",
       "directory": "src/templates/layouts",

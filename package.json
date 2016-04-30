@@ -50,6 +50,7 @@
     "metalsmith": "^2.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-date-in-filename": "0.0.14",
+    "metalsmith-feed-atom": "^1.0.0",
     "metalsmith-filemetadata": "^1.0.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-in-place": "^1.4.3",
