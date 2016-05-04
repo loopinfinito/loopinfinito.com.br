@@ -30,6 +30,9 @@
         "reverse": true
       }
     },
+    "author": {
+      "collection": "posts"
+    },
     "slug": {
       "lower": true
     },

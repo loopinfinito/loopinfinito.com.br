@@ -19,6 +19,7 @@ module.exports = workingdir => {
     .use(plugins.filemetadata(config.metalsmith.filemetadata))
     .use(plugins.tags(config.metalsmith.tags))
     .use(plugins.collections(config.metalsmith.collections))
+    .use(plugins.author(config.metalsmith.author))
     .use(plugins.slug(config.metalsmith.slug))
     .use(plugins.metallic())
     .use(plugins.markdown(config.metalsmith.markdown))
