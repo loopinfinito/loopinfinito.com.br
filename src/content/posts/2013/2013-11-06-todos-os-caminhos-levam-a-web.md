@@ -1,10 +1,7 @@
 ---
 title: Todos os caminhos levam à web
 tags: evento
-author: Almir Filho
-author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
-author_facebook: https://www.facebook.com/almirflorenciofilho
+author: almir
 image: images/posts/2013-11-06-todos-os-caminhos-levam-a-web.jpg
 comments: true
 keywords: >

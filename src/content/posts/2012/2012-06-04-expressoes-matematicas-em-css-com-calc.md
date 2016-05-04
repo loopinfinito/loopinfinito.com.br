@@ -1,10 +1,7 @@
 ---
 title: Expressões matemáticas em CSS com calc()
 tags: css, experimento
-author: Almir Filho
-author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
-author_facebook: https://www.facebook.com/almirflorenciofilho
+author: almir
 image: images/posts/2012-06-04-isaac-newton.jpg
 comments: true
 keywords: css, css3, calc, matematica, calculo, unidades css

@@ -1,10 +1,7 @@
 ---
 title: HTML5 câmera com WebPix
 tags: html, javascript, experimento
-author: Caio Gondim
-author_link: http://twitter.com/caio_gondim
-author_profile: https://plus.google.com/109656206006790732674/
-author_facebook: https://www.facebook.com/caiogondim
+author: caio
 image: images/posts/2012-11-20-webpix.jpg
 has_inner_image: false
 comments: true

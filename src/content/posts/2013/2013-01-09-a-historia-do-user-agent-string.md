@@ -1,10 +1,7 @@
 ---
 title: A história do user-agent string
 tags: historia
-author: Caio Gondim
-author_link: http://twitter.com/caio_gondim
-author_profile: https://plus.google.com/109656206006790732674/
-author_facebook: https://www.facebook.com/caiogondim
+author: caio
 image: images/posts/2013-01-09-a-historia-do-user-agent-string.jpg
 comments: true
 keywords: >

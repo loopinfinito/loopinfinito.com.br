@@ -1,10 +1,7 @@
 ---
 title: O grande encontro do HTML com o HTTP
 tags: html
-author: Almir Filho
-author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
-author_facebook: https://www.facebook.com/almirflorenciofilho
+author: almir
 image: images/posts/2014-06-19-o-grande-encontro-do-html-com-o-http.jpg
 comments: true
 keywords: >

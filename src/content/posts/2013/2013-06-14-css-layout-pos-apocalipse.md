@@ -1,10 +1,7 @@
 ---
 title: CSS layout pós-apocalipse
 tags: evento
-author: Almir Filho
-author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
-author_facebook: https://www.facebook.com/almirflorenciofilho
+author: almir
 image: images/posts/2013-06-14-css-layout-pos-apocalipse.gif
 comments: true
 keywords: >

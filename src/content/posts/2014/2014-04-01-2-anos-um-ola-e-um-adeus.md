@@ -1,10 +1,7 @@
 ---
 title: 2 anos, um olá e um adeus
 tags:
-author: Almir Filho
-author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
-author_facebook: https://www.facebook.com/almirflorenciofilho
+author: almir
 image: images/posts/2014-04-01-2-anos.jpg
 comments: true
 keywords: >

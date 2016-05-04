@@ -1,10 +1,7 @@
 ---
 title: Throttle e Debounce patterns em JavaScript
 tags: javascript
-author: Caio Gondim
-author_link: http://twitter.com/caio_gondim
-author_profile: https://plus.google.com/109656206006790732674/
-author_facebook: https://www.facebook.com/caiogondim
+author: caio
 image: images/posts/2013-09-24-throttle-e-debounce-patterns-em-js.jpg
 comments: true
 keywords: >

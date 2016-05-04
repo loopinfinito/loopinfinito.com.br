@@ -1,10 +1,7 @@
 ---
 title: Customizando widgets de formulários web
 tags: html, css, experimento
-author: Almir Filho
-author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
-author_facebook: https://www.facebook.com/almirflorenciofilho
+author: almir
 image: images/posts/2012-08-08-customizando-widgets-de-formularios-web.jpg
 comments: true
 keywords: >

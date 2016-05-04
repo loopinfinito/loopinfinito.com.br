@@ -1,10 +1,7 @@
 ---
 title: Lance agora!
 tags: produtividade
-author: Almir Filho
-author_link: http://twitter.com/almirfilho
-author_profile: https://plus.google.com/u/0/+AlmirFilho0/posts
-author_facebook: https://www.facebook.com/almirflorenciofilho
+author: almir
 image: images/posts/2013-07-23-lance-agora.jpg
 comments: true
 keywords: >
