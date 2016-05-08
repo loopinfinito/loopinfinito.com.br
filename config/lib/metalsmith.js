@@ -6,8 +6,10 @@ const nunjucksdate = require('nunjucks-date-filter');
 const consolidate = require('consolidate');
 
 
-consolidate.requires.nunjucks = nunjucks.configure(config.nunjucks);
-consolidate.requires.nunjucks.addFilter('date', nunjucksdate);
+consolidate.requires.nunjucks = nunjucks
+  .configure(config.nunjucks)
+  .addFilter('date', nunjucksdate)
+  .addGlobal('context', function(){ return this.ctx });
 
 
 module.exports = workingdir => {
