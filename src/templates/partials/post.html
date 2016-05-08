@@ -1,9 +1,35 @@
-<header>
-  <h1>{{ title }}</h1>
-</header>
+{% macro post(data) %}
 
 <article>
-  {{ contents }}
+  <header>
+    <small>{{ data.tags }}</small>
+    <h1>{{ data.title }}</h1>
+    <small>por {{ data.author.name }}</small>
+  </header>
+
+  <figure>
+    <img src="/{{ data.image }}" />
+  </figure>
+
+  <section>
+    {{ data.contents }}
+  </section>
+
+  <footer>
+    <time datetime="{{ data.date }}">Publicado em {{ data.date }}</time>
+    <small>{{ data.tags }}</small>
+    <h3>Referência</h3>
+    <ul>
+      {% for link in data.related %}
+        <li>
+          <a href="{{ data.link.url }}">{{ link.title }}</a>
+          {% if link.from %}
+            <span>// {{ link.from }}</span>
+          {% endif %}
+        </li>
+      {% endfor%}
+    </ul>
+  </footer>
 </article>
 
-<footer></footer>
+{% endmacro %}
