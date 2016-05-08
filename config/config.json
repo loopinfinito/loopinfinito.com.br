@@ -25,7 +25,7 @@
         "reverse": true
       },
       "talks": {
-        "pattern": "talks/*.md",
+        "pattern": "palestras/items/*.md",
         "sortBy": "date",
         "reverse": true
       }
@@ -37,7 +37,7 @@
       "lower": true
     },
     "ignore": [
-      "talks/*"
+      "palestras/items/*"
     ],
     "markdown": {
       "smartypants": true
@@ -51,17 +51,6 @@
         "noPageOne": true,
         "pageMetadata": {
           "priority": 0.8
-        }
-      },
-      "collections.talks": {
-        "perPage": 999,
-        "layout": "talks.html",
-        "first": "palestras/index.html",
-        "path": "palestras/:num/index.html",
-        "noPageOne": true,
-        "pageMetadata": {
-          "priority": 0.7,
-          "changefreq": "monthly"
         }
       }
     },

@@ -21,6 +21,7 @@ module.exports = workingdir => {
     .use(plugins.collections(config.metalsmith.collections))
     .use(plugins.author(config.metalsmith.author))
     .use(plugins.slug(config.metalsmith.slug))
+    .use(plugins.inPlace(config.metalsmith.layouts))
     .use(plugins.metallic())
     .use(plugins.markdown(config.metalsmith.markdown))
     .use(plugins.ignore(config.metalsmith.ignore))
@@ -28,7 +29,6 @@ module.exports = workingdir => {
     .use(plugins.permalinks(config.metalsmith.permalinks))
     .use(plugins.mapsite(config.metalsmith.mapsite))
     .use(plugins.feedAtom(config.metalsmith.feedatom))
-    .use(plugins.inPlace(config.metalsmith.layouts))
     .use(plugins.layouts(config.metalsmith.layouts));
 
   const afterBuild = (err, files) => {
