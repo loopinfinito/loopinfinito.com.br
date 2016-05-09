@@ -1,0 +1,13 @@
+{% macro taglink(name) -%}
+  <a href="/tags/{{ name }}/">{{ name }}</a>
+{%- endmacro %}
+
+
+{% macro taglist(tags) -%}
+  {% set comma = joiner() %}
+  <small>
+    {% for tag in tags -%}
+      {{ comma() }} {{ taglink(tag) }}
+    {%- endfor %}
+  </small>
+{%- endmacro %}
