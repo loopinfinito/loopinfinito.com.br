@@ -1,0 +1,3 @@
+{% macro time(date) -%}
+  <time datetime="{{ date|date }}">{{ date|date('D MMMM Y') }}</time>
+{%- endmacro %}

@@ -1,5 +1,6 @@
 {% from 'src/templates/partials/author.html' import authorlink %}
 {% from 'src/templates/partials/tag.html' import taglink, taglist %}
+{% from 'src/templates/partials/time.html' import time %}
 {% from 'src/templates/partials/reference.html' import reference %}
 
 
@@ -21,7 +22,7 @@
 
     <footer>
       <p>
-        <time datetime="{{ data.date }}">Publicado em {{ data.date }}</time>
+        Publicado em {{ time(data.date) }}
         {% if data.tags %}
           {{ taglist(data.tags) }}
         {% endif %}

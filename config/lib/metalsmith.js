@@ -4,8 +4,10 @@ const plugins = require('load-metalsmith-plugins')();
 const nunjucks = require('nunjucks');
 const nunjucksdate = require('nunjucks-date-filter');
 const consolidate = require('consolidate');
+const moment = require('moment');
 
 
+moment.locale('pt');
 consolidate.requires.nunjucks = nunjucks
   .configure(config.nunjucks)
   .addFilter('date', nunjucksdate)
