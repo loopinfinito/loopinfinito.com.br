@@ -1,7 +1,7 @@
 {% extends "src/templates/layouts/base.html" %}
-{% from 'src/templates/partials/post.html' import post %}
+{% from 'src/templates/partials/post.html' import postview %}
 
 
 {% block content %}
-  {{ post(context()) }}
+  {{ postview(context()) }}
 {% endblock %}
