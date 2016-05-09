@@ -1,35 +1,34 @@
+{% from 'src/templates/partials/author.html' import authorlink %}
+{% from 'src/templates/partials/tag.html' import taglink, taglist %}
+{% from 'src/templates/partials/reference.html' import reference %}
+
+
 {% macro post(data) %}
+  <article>
+    <header>
+      {% if data.tags %}
+        <small>{{ taglink(data.tags[0]) }}</small>
+      {% endif %}
+      <h1>{{ data.title }}</h1>
+      <small>por {{ authorlink(data.author) }}</small>
+    </header>
 
-<article>
-  <header>
-    <small>{{ data.tags }}</small>
-    <h1>{{ data.title }}</h1>
-    <small>por {{ data.author.name }}</small>
-  </header>
+    <figure>
+      <img src="/{{ data.image }}" />
+    </figure>
 
-  <figure>
-    <img src="/{{ data.image }}" />
-  </figure>
+    <section>{{ data.contents }}</section>
 
-  <section>
-    {{ data.contents }}
-  </section>
-
-  <footer>
-    <time datetime="{{ data.date }}">Publicado em {{ data.date }}</time>
-    <small>{{ data.tags }}</small>
-    <h3>Referência</h3>
-    <ul>
-      {% for link in data.related %}
-        <li>
-          <a href="{{ data.link.url }}">{{ link.title }}</a>
-          {% if link.from %}
-            <span>// {{ link.from }}</span>
-          {% endif %}
-        </li>
-      {% endfor%}
-    </ul>
-  </footer>
-</article>
-
+    <footer>
+      <p>
+        <time datetime="{{ data.date }}">Publicado em {{ data.date }}</time>
+        {% if data.tags %}
+          {{ taglist(data.tags) }}
+        {% endif %}
+      </p>
+      {% if data.related %}
+        {{ reference(data.related) }}
+      {% endif %}
+    </footer>
+  </article>
 {% endmacro %}
