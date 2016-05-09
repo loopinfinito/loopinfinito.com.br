@@ -14,7 +14,7 @@ resumo: >
   Esses efeitos, chamados de filtros, irão nos permitir modificar a renderização
   de qualquer elemento DOM, de um simples `p`, até elementos mais complexos como
   `image` ou `video`.
-related:
+references:
   - title: Say Hello to CSS3 Filters
     url: http://net.tutsplus.com/tutorials/html-css-techniques/say-hello-to-css3-filters/
     from: NetTuts

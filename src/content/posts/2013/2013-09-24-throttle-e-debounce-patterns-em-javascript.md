@@ -18,7 +18,7 @@ resumo: >
   e porque usá-las e a se __defender de situações corriqueiras__ como as que
   acabamos de citar.
 
-related:
+references:
   - title: Debounce and Throttle. A visual explanation
     url: http://drupalmotion.com/article/debounce-and-throttle-visual-explanation
     from: Drupal Motion

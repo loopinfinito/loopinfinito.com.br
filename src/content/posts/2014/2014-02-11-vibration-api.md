@@ -15,7 +15,7 @@ resumo: >
   <abbr title="Application Programming Interface">API</abbr> bastante simples e
   que possibilita algumas funcinoalidades bem interessantes no contexto
   _mobile_.
-related:
+references:
   - title: Vibration API (recommendation)
     url: http://www.w3.org/TR/vibration/
     from: W3C

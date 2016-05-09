@@ -12,7 +12,7 @@ resumo: >
   ainda é conseguir isto de forma que seu conteúdo chegue ao público correto.
   Neste post, apresentamos as principais formas de marcação semântica de dados
   usadas na web de hoje e fazemos alguns comparativos.
-related:
+references:
   - title: RDF
     url: http://en.wikipedia.org/wiki/Resource_Description_Framework
     from: wikipedia

@@ -16,7 +16,7 @@ resumo: >
   não ser o equivalente a 1 _pixel_ do dispositivo usado para renderização. Mas
   afinal, quanto vale 1px, então? A resposta para essa pergunta, assim como
   quase tudo na computação, é: __depende do contexto__.
-related:
+references:
   - title: CSS 2 Specification
     url: http://www.w3.org/TR/CSS2/syndata.html#length-units
     from: W3C

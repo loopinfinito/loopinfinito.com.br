@@ -12,7 +12,7 @@ resumo: >
   o mais experiente programador. Neste *post* vamos estudar um pouco mais sobre
   uma delas — o *hoisting* — e saber como se comporta mais esse *dark corner* da
   nossa querida linguagem.
-related:
+references:
   - title: "JavaScript Scoping and Hoisting"
     url: http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
     from: adequately good

@@ -14,7 +14,7 @@ resumo: >
   seu objetivo é tornar possível o uso de _features_ da linguagem que ainda não
   foram implementadas na maioria dos _browsers_ e, até mesmo, outras que ainda
   estão sendo discutidas.
-related:
+references:
   - title: Google Traceur compiler
     url: https://github.com/google/traceur-compiler
     from: GitHub

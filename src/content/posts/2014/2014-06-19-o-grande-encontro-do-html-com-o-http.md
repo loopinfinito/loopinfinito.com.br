@@ -15,7 +15,7 @@ resumo: >
   Algumas dessas melhoras dizem respeito às capacidades dos formulários web de
   realizar coisas consideradas bem comuns hoje em dia, mas que dependem de
   JavaScript e de outras técnicas comuns que viabilizem seus usos.
-related:
+references:
   - title: O grande desencontro do HTTP com o HTML
     url: http://tableless.com.br/o-grande-desencontro-http-com-o-html/
     from: Tableless

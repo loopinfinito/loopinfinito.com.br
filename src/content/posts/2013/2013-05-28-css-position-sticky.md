@@ -11,7 +11,7 @@ resumo: >
   Com ele é possível criarmos elementos que se comportam ora como
   <code>position:fixed</code>, ora como <code>position:relative</code> dependendo
   de um valor de <em>offset</em> definido. <strong>Hein?</strong>
-related:
+references:
   - title: "Stick your landings! position: sticky lands in WebKit"
     url: http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit
     from: HTML5 Rocks

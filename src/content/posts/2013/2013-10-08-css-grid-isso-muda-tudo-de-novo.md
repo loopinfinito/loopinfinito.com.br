@@ -18,7 +18,7 @@ resumo: >
   apresentação separada do conteúdo. Mas atenção, se você tem problemas
   cardíacos, melhor não ler este _post_, pois seu conteúdo é altamente
   empolgante e pode ser perigoso principalmente para pessoas hipertensas.
-related:
+references:
   - title: CSS Grid Layout
     url: http://www.w3.org/TR/css3-grid-layout/
     from: W3C

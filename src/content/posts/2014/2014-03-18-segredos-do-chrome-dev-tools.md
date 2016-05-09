@@ -13,7 +13,7 @@ resumo: >
   muito _mainstream_. Vamos conhecer neste _post_ algumas _features_ mais
   _hipsters_ — porém úteis — do Chrome Developer Tools que vão melhorar seu
   dia-a-dia.
-related:
+references:
   - title: "Chrome Dev Tools Tips and Tricks"
     url: https://developers.google.com/chrome-developer-tools/docs/tips-and-tricks
     from: Google Developers

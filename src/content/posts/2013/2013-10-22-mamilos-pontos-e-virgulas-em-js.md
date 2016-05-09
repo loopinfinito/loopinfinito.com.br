@@ -19,7 +19,7 @@ resumo: >
   não usar `;`? Ou isso tudo é apenas uma moda jovem que os Rubyistas e
   Pythonistas estão tentando impor na comunidade
   <abbr title="JavaScript">JS</abbr>?
-related:
+references:
   - title: Semicolons in JavaScript are optional
     url: http://mislav.uniqpath.com/2010/05/semicolons/
     from: Mislav Marohnić

@@ -14,7 +14,7 @@ resumo: >
   inclusive, tentam simular este comportamento no JavaScript, mas poucos
   conseguem com sucesso. Neste post numa série de 2, iremos relembrar o que é
   herança, a cadeia de protótipos e como era feito a herança em JavaScript.
-related:
+references:
   - title: Inheritance and the Prototype Chain
     url: https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain
     from: MDN

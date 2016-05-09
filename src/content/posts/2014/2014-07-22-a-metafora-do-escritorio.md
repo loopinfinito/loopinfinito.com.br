@@ -15,7 +15,7 @@ resumo: >
   esse difíceis de serem decorados e quase impossíveis de serem deduzidos. Era
   necessário uma mudança radical no modo de interagir com um computador. Mas a
   tecnologia necessária ainda não existia para tal quebra de paradigma.
-related:
+references:
   - title: "Graphical User Interface GUI"
     url: http://www.britannica.com/EBchecked/topic/242033/graphical-user-interface-GUI
     from: Britannica

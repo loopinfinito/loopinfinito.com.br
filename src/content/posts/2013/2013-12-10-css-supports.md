@@ -14,7 +14,7 @@ resumo: >
   enhancement_, já que facilita na escrita de códigos de _fallback_ para os
   cenários em que o navegador não suporta a regra (ou conjunto de regras) que
   queremos usar.
-related:
+references:
   - title: "@supports"
     url: https://developer.mozilla.org/en-US/docs/Web/CSS/@supports
     from: Mozilla Developer Network

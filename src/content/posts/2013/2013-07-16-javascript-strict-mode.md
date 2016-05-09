@@ -13,7 +13,7 @@ resumo: >
   silenciados e, até mesmo, proibindo o uso de certas partes da linguagem que são
   tidas como problemáticas, nos forçando assim a escrever um código de melhor
   qualidade e ajudando a capturar _bugs_ mais precocemente.
-related:
+references:
   - title: ECMAScript 5 Strict Mode, JSON, and More
     url: http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/
     from: John Resig blog

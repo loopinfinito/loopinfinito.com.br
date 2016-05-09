@@ -12,7 +12,7 @@ resumo: >
   Se um elemento e um de seus ancestrais tiverem ambos _listeners_ definidos
   para o __mesmo__ evento, qual deles deverá ser disparado __primeiro__?
   Não surpreendentemente, depende do navegador.
-related:
+references:
   - title: Event Order
     url: http://www.quirksmode.org/js/events_order.html
     from: quirksmode

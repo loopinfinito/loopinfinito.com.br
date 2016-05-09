@@ -15,7 +15,7 @@ resumo: >
   Ou quando aparece por exemplo, um gráfico de pizza, e dentro de cada fatia tem
   um texto que se _adequa_ a forma dela?
   Pois é, agora podemos fazer o mesmo com CSS.
-related:
+references:
   - title: CSS Shapes Module Level 1 (draft)
     url: http://www.w3.org/TR/css-shapes/
     from: W3C

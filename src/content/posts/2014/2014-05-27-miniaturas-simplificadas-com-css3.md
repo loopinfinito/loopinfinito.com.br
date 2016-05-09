@@ -14,7 +14,7 @@ resumo: >
   miniaturas (<em>thumbnails</em>) para visualização de imagens ou vídeos. Essas
   propriedades são `object-fit` e `object-position`, e são nosso objeto de
   estudo de hoje.
-related:
+references:
   - title: CSS Image Values and Replaced Content Module Level 3
     url: http://www.w3.org/TR/css3-images/
     from: W3C

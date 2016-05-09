@@ -14,7 +14,7 @@ resumo: >
   No ECMAScript 6, um *proxy* é um objeto que **representa** um outro. Ele é
   capaz de interceptar chamadas às propriedades do objeto alvo, podendo até
   mesmo alterar o resultado da chamada.
-related:
+references:
   - title: "harmony-proxy shim"
     url: https://github.com/Swatinem/proxy
     from: GitHub

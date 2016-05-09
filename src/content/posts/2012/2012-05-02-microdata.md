@@ -13,7 +13,7 @@ resumo: >
   hoje continuarei falando de marcação semântica, com a diferença de que focarei
   em microdata e mostrarei também como realizar a marcação semântica de conteúdo
   usando os vocabulários **Schema.org**.
-related:
+references:
   - title: Microdata
     url: http://en.wikipedia.org/wiki/Microdata
     from: wikipedia

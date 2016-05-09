@@ -11,7 +11,7 @@ resumo: >
   Eu acho Bruce Lee muito foda e inspirador, então viajei geral nesse _post_.
   Hoje vamos aprender o que as __CSS Regions__ têm a ver com __Bruce Lee__.
   Isso mesmo! Esvazie sua mente, seja disforme, adápte-se, seja como a água.
-related:
+references:
   - title: CSS Regions Module Level 1 (draft)
     url: http://dev.w3.org/csswg/css-regions/
     from: W3C

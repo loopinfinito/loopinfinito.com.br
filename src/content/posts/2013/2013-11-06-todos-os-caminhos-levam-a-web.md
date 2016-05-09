@@ -16,7 +16,7 @@ resumo: >
   toda a Plataforma _Web_, que promete reunir expoentes da comunidade _web_
   brasileira em um só local, e nos trará palestras sobre os mais variados
   assuntos que envolvem nosso dia-a-dia em contato com o mundo _web_.
-related:
+references:
   - title: Fique por dentro do que vai rolar na 5ª edição da Conferência Web W3C Brasil
     url: http://conferenciaweb.w3c.br/fique-por-dentro-do-que-vai-rolar-na-5a-edicao-da-conferencia-web-w3c-brasil/
   - title: Destaques da 5ª edição da Conferência Web W3C Brasil

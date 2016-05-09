@@ -15,7 +15,7 @@ resumo: >
   através de _plug-ins_ de terceiros. Também servem de base para animações mais
   complexas e podem ser aplicados em qualquer elemento HTML. E é sobre eles que
   vamos estudar e experimentar na prática como funcionam.
-related:
+references:
   - title: "CSS Transforms An Interactive Guide"
     url: http://csstransforms.com/
     from: CSS Transforms An Interactive Guide e-book

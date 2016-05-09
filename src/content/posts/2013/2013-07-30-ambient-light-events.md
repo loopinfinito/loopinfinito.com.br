@@ -14,7 +14,7 @@ resumo: >
   foram desmembrados em uma especificação independente de menor escopo. E será com
   estas novas <abbr title="Application Programming Interface">API</abbr>s que
   vamos nos divertir hoje.
-related:
+references:
   - title: Ambient Light Events
     url: https://dvcs.w3.org/hg/dap/raw-file/default/light/Overview.html
     from: W3C

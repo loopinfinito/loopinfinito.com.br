@@ -12,7 +12,7 @@ resumo: >
   Não só _syntatic sugar_, elas vêm para resolver (de forma elegante) o problema
   do `this` dinâmico que todos já enfrentamos ao passarmos funções como
   _callback_.
-related:
+references:
   - title: Thoughts on ECMAScript 6 and new syntax
     url: http://www.nczonline.net/blog/2012/07/24/thoughts-on-ecmascript-6-and-new-syntax/
     from: NCZOnline

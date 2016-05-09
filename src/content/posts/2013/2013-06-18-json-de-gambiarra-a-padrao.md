@@ -11,7 +11,7 @@ resumo: >
   de troca de dados entre cliente e servidor. Nasceu como uma gambiarra e hoje
   é o **padrão**, sendo implementado nativamente em todos os grandes *browsers*,
   inclusive o <abbr title="Internet Explorer">IE</abbr>.
-related:
+references:
   - title: The JSON Saga
     url: http://youtu.be/-C-JoyNuQJs
     from: YUI Library Youtube channel

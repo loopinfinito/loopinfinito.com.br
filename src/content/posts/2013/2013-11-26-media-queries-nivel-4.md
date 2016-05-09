@@ -16,7 +16,7 @@ resumo: >
   13 já existentes: `script`, `pointer`, `hover` e `luminosity`. Veremos que
   estas novas _features_ de mídia vêm para beneficiar primordialmente questões
   sobre acessibilidade e _mobile_.
-related:
+references:
   - title: Media Queries Level 4 (draft)
     url: http://dev.w3.org/csswg/mediaqueries4/
     from: W3C
