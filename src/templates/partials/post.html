@@ -33,3 +33,23 @@
     </footer>
   </article>
 {% endmacro %}
+
+
+{% macro postpreview(data) %}
+  <article>
+    <header>
+      <h1>{{ data.title }}</h1>
+      <small>por {{ authorlink(data.author) }} em {{ time(data.date) }}</small>
+    </header>
+
+    <figure>
+      <img src="/{{ data.image }}" />
+    </figure>
+
+    <section>{{ data.resumo }}</section>
+
+    <footer>
+      <a href="/{{ data.path }}">Continue lendo</a>
+    </footer>
+  </article>
+{% endmacro %}
