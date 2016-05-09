@@ -1,0 +1,15 @@
+{% macro reference(links) %}
+  <aside>
+    <h3>Referência</h3>
+    <ul>
+      {% for link in links %}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          {% if link.from %}
+            <span>// {{ link.from }}</span>
+          {% endif %}
+        </li>
+      {% endfor%}
+    </ul>
+  </aside>
+{% endmacro %}
