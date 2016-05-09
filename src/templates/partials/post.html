@@ -4,56 +4,56 @@
 {% from 'src/templates/partials/reference.html' import reference %}
 
 
-{% macro postview(data) %}
+{% macro postview(post) %}
   <article>
     <header>
-      {% if data.tags %}
-        <small>{{ taglink(data.tags[0]) }}</small>
+      {% if post.tags %}
+        <small>{{ taglink(post.tags[0]) }}</small>
       {% endif %}
-      <h1>{{ data.title }}</h1>
-      <small>por {{ authorlink(data.author) }}</small>
+      <h1>{{ post.title }}</h1>
+      <small>por {{ authorlink(post.author) }}</small>
     </header>
 
     <figure>
-      <img src="{{ data.image|url }}" />
+      <img src="{{ post.image|url }}" />
     </figure>
 
-    <section>{{ data.contents }}</section>
+    <section>{{ post.contents }}</section>
 
     <footer>
       <p>
-        Publicado em {{ time(data.date) }}
-        {% if data.tags %}
-          {{ taglist(data.tags) }}
+        Publicado em {{ time(post.date) }}
+        {% if post.tags %}
+          {{ taglist(post.tags) }}
         {% endif %}
       </p>
-      {% if data.references %}
-        {{ reference(data.references) }}
+      {% if post.references %}
+        {{ reference(post.references) }}
       {% endif %}
     </footer>
   </article>
 {% endmacro %}
 
 
-{% macro postpreview(data) %}
+{% macro postpreview(post) %}
   <article>
     <header>
       <h1>
-        <a href="{{ data.path|url }}">{{ data.title }}</a>
+        <a href="{{ post.path|url }}">{{ post.title }}</a>
       </h1>
-      <small>por {{ authorlink(data.author) }} em {{ time(data.date) }}</small>
+      <small>por {{ authorlink(post.author) }} em {{ time(post.date) }}</small>
     </header>
 
     <figure>
-      <a href="{{ data.path|url }}">
-        <img src="{{ data.image|url }}" alt="{{ data.title }}" />
+      <a href="{{ post.path|url }}">
+        <img src="{{ post.image|url }}" alt="{{ post.title }}" />
       </a>
     </figure>
 
-    <section>{{ data.excerpt }}</section>
+    <section>{{ post.excerpt }}</section>
 
     <footer>
-      <a href="{{ data.path|url }}">Continue lendo</a>
+      <a href="{{ post.path|url }}">Continue lendo</a>
     </footer>
   </article>
 {% endmacro %}
