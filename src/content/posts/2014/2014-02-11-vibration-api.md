@@ -8,7 +8,7 @@ keywords: >
   vibration api, vibration, html5, javascript, api, vibrator, vibrate, acesso a
   dispositivos, dispositivo, mobile, movel, vibrar, suporte, navegadore,
   browser, firefox os, firefox, chrome, safari, ie, opera, html
-resumo: >
+excerpt: >
   Embora __ainda__ não seja possível provocar terremotos de escala geográfica,
   já podemos fazer dispositivos vibrar com
   <abbr title="HyperText Markup Language">HTML5</abbr>. Uma

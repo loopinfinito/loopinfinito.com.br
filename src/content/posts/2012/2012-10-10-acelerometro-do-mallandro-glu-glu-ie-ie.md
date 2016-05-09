@@ -9,7 +9,7 @@ keywords: >
   javascript, html5, api, acelerometro, aceleracao, orientacao, jogo, chrome,
   firefox, orientation, acceleration, gravity, gravidade, serginho, mallandro,
   malandro, box2d, webaudio, rotacao
-resumo: >
+excerpt: >
   Hoje vamos entender como funciona a nova **API de Acelerômetro** do HTML5, que
   usei num experimento bem legal chamado
   [**Cilada do Mallandro**](http://almirfilho.github.com/cilada/).

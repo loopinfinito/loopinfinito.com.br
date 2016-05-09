@@ -7,7 +7,7 @@ comments: true
 keywords: >
   css, suporte, supports, progressive enhancement, graceful degradation,
   chrome, firefox, css object model, javascript css api
-resumo: >
+excerpt: >
   Antes feito apenas via JavaScript, a nova regra `@supports` do CSS vai nos
   permitir testar, de forma nativa, o suporte de uma dada _feature_ no
   navegador. Fazendo com que fique mais fácil trabalhar com _progressive

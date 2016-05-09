@@ -8,7 +8,7 @@ comments: true
 keywords: >
   javascript, js, web development, desenvolvimento web, html5, front-end,
   programação, oop, orientação a objetos, herança, orientação a protótipos, java
-resumo: >
+excerpt: >
   Uma das coisas que mais assusta programadores vindos de linguagens orientadas
   a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos,
   inclusive, tentam simular este comportamento no JavaScript, mas poucos

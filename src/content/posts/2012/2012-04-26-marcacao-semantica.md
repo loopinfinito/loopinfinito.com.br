@@ -7,7 +7,7 @@ comments: true
 keywords: >
   web semantica, microdata, schema.org, microformats, rdf, rdfa, marcacao,
   marcacao semantica, html, html5, webdev, desenvolvimento web, seo
-resumo: >
+excerpt: >
   Uma das coisas mais importantes na web é ter visibilidade, mas mais importante
   ainda é conseguir isto de forma que seu conteúdo chegue ao público correto.
   Neste post, apresentamos as principais formas de marcação semântica de dados

@@ -7,7 +7,7 @@ comments: true
 keywords: >
   javascript, js, vazamento de memória, memory leak, alocação de memória,
   garbage collector, coletor de lixo, mark and sweep
-resumo: >
+excerpt: >
   Vazamento de memória é um problema apenas de linguagens de baixo nível, como C
   ou C++. Nós não precisamos nos preocupar com isso, afinal, a linguagem possui
   um lindíssimo coletor de lixo e `malloc` é coisa do passado. Então, se houver

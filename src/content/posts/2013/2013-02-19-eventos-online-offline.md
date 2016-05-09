@@ -8,7 +8,7 @@ comments: true
 keywords: >
   html5, eventos, events, javascript, online, offline, rede, internet, net,
   conexão, connection
-resumo: >
+excerpt: >
   Mais uma <abbr title="Application Program Interface">API</abbr> simples e útil
   do HTML5. Com ela temos acesso, de forma nativa, ao __status da conexão do
   navegador__, ou seja, se ele tem acesso ou não à rede.

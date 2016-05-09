@@ -8,7 +8,7 @@ keywords: >
   miniatura, css3, css, object-fit, object-position, object, fit, position,
   thumbnail, fill, cover, none, contain, scale-down, imagem, vídeo, thumb,
   suporte, chrome, opera, blink, background-position, galeria
-resumo: >
+excerpt: >
   Existem propriedades CSS3 específicas para a definição de tamanhos de imagens,
   o que as torna bastante úteis principalmente para quando precisamos construir
   miniaturas (<em>thumbnails</em>) para visualização de imagens ou vídeos. Essas

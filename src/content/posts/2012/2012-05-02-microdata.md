@@ -7,7 +7,7 @@ comments: true
 keywords: >
   web semantica, microdata, schema.org, marcacao, marcacao semantica, html,
   html5, webdev, desenvolvimento web, vocabulario, seo
-resumo: >
+excerpt: >
   Olá pessoal, continuando o papo do nosso
   [último post](http://loopinfinito.com.br/2012/04/26/marcacao-semantica/),
   hoje continuarei falando de marcação semântica, com a diferença de que focarei

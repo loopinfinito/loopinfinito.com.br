@@ -6,7 +6,7 @@ image: images/posts/2013-06-18-json.jpg
 comments: true
 keywords: >
   javascript, json, js, crockford, javascript object notation
-resumo: >
+excerpt: >
   O JSON começou como uma alternativa mais simples ao XML para ser um formato
   de troca de dados entre cliente e servidor. Nasceu como uma gambiarra e hoje
   é o **padrão**, sendo implementado nativamente em todos os grandes *browsers*,

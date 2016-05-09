@@ -9,7 +9,7 @@ keywords: >
   especificacao, contorno, limite, flutua, float, forma, shape-inside,
   shape-outside, shape-margin, shape-image-threshold, shape-padding, grafico,
   revista, texto, imagem, rectangle, polygon, circle, ellipse
-resumo: >
+excerpt: >
   Sabe quando você vai ler uma revista, e no meio do texto há uma imagem
   irregular, mas o texto elegantemente a _contorna_, respeitando sua forma?
   Ou quando aparece por exemplo, um gráfico de pizza, e dentro de cada fatia tem

@@ -7,7 +7,7 @@ comments: true
 keywords: >
   css, css filters, html5, adobe, apple, webkit, frontend, front end, webdev,
   desenvolvimento web
-resumo: >
+excerpt: >
   A Adobe, Apple e Opera estão
   [trabalhando juntas](https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html)
   para trazer alguns efeitos no estilo Photoshop para o CSS.

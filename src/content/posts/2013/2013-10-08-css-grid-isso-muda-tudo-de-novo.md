@@ -12,7 +12,7 @@ keywords: >
   unidade fr, grid-row-end, grid-column-end, grid-template-areas, espaço livre,
   flexivel, template, grid template, responsivo, grid responsivo, template
   responsivo, media queries, ie, ie10, ie11, internet explorer, suporte, colspan
-resumo: >
+excerpt: >
   Esta nova especificação nos permitirá construir e manter _layouts_ de forma
   fácil e __independente__ da estrutura HTML. Enfim teremos realmente
   apresentação separada do conteúdo. Mas atenção, se você tem problemas

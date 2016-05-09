@@ -7,7 +7,7 @@ comments: true
 keywords: >
   web-notification, notificações, notificações-web, safari-6, chrome,
   notification-center, api, html5, webkit
-resumo: >
+excerpt: >
   A Web Notifications é uma nova API para enviarmos notificações ao usuário fora
   do contexto de uma página web. Para quem usa Mac, imaginem que Web Notifications
   é o Growl para a web. Uma API simples que nos dá acesso a features antes só

@@ -7,7 +7,7 @@ comments: true
 keywords: >
   css, lesscss, less, less css, mixin, import, less portugues, portugues, br,
   pt, less br, less pt
-resumo: >
+excerpt: >
   Finalmente passamos a utilizar LESS aqui no blog, neste post irei falar
   brevemente sobre LESS, expor suas principais vantagens e mostrar como fizemos
   aqui no Loop Infinito.

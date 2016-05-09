@@ -7,7 +7,7 @@ image: images/posts/2012-10-19-segredos-do-git.jpg
 comments: true
 keywords: >
   git, atalho, terminal, linha de comando, mac, produtividade, alias, server
-resumo: >
+excerpt: >
   Usado por grandes projetos como [jQuery](https://github.com/jquery/jquery),
   [Node.js](https://github.com/joyent/node), [Bootstrap](https://github.com/twitter/bootstrap)
   e [Loop Infinito](https://github.com/loopinfinito/loopinfinito.com.br) (rá),

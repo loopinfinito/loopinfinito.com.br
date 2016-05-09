@@ -7,7 +7,7 @@ comments: true
 keywords: >
   evento, palestra, maceio, alagoas, frontinmaceio, front in maceio, front-end,
   nordeste
-resumo: >
+excerpt: >
   Ter a oportunidade de participar palestrando no evento, conhecer grandes
   figuras da nossa industria e, de quebra, acordar e olhar praquela maravilha
   que é o litoral de Alagoas, foi único para nós.
