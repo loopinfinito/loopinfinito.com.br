@@ -15,7 +15,7 @@
     </header>
 
     <figure>
-      <img src="/{{ data.image }}" />
+      <img src="{{ data.image|url }}" />
     </figure>
 
     <section>{{ data.contents }}</section>
@@ -38,18 +38,22 @@
 {% macro postpreview(data) %}
   <article>
     <header>
-      <h1>{{ data.title }}</h1>
+      <h1>
+        <a href="{{ data.path|url }}">{{ data.title }}</a>
+      </h1>
       <small>por {{ authorlink(data.author) }} em {{ time(data.date) }}</small>
     </header>
 
     <figure>
-      <img src="/{{ data.image }}" />
+      <a href="{{ data.path|url }}">
+        <img src="{{ data.image|url }}" alt="{{ data.title }}" />
+      </a>
     </figure>
 
     <section>{{ data.excerpt }}</section>
 
     <footer>
-      <a href="/{{ data.path }}">Continue lendo</a>
+      <a href="{{ data.path|url }}">Continue lendo</a>
     </footer>
   </article>
 {% endmacro %}
