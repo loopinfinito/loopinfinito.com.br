@@ -6,7 +6,7 @@ image: images/posts/2013-07-30-ambient-light-events.jpg
 comments: true
 keywords: >
   javascript, w3c, js, eventos, events, ambiente, luz, iluminacao, lux, navegador, browser
-resumo: >
+excerpt: >
   Esta nova especificação da <abbr title="World Wide Web Consortium">W3C</abbr>
   define dois novos eventos capazes de detectar mudanças na iluminação do
   ambiente: os __Ambient Light Events__. Antes eles faziam parte da [Sensors
@@ -14,7 +14,7 @@ resumo: >
   foram desmembrados em uma especificação independente de menor escopo. E será com
   estas novas <abbr title="Application Programming Interface">API</abbr>s que
   vamos nos divertir hoje.
-related:
+references:
   - title: Ambient Light Events
     url: https://dvcs.w3.org/hg/dap/raw-file/default/light/Overview.html
     from: W3C

@@ -6,12 +6,12 @@ image: images/posts/2013-05-28-css-position-sticky.jpg
 comments: true
 keywords: >
   css, position sticky, webkit, google chrome, chrome canary
-resumo: >
+excerpt: >
   O <code>sticky</code> é um novo valor da propriedade <code>position</code> do CSS.
   Com ele é possível criarmos elementos que se comportam ora como
   <code>position:fixed</code>, ora como <code>position:relative</code> dependendo
   de um valor de <em>offset</em> definido. <strong>Hein?</strong>
-related:
+references:
   - title: "Stick your landings! position: sticky lands in WebKit"
     url: http://updates.html5rocks.com/2012/08/Stick-your-landings-position-sticky-lands-in-WebKit
     from: HTML5 Rocks

@@ -6,13 +6,13 @@ image: images/posts/2013-08-20-ecmascript-6-arrow-function.jpg
 comments: true
 keywords: >
   javascript, arrow function, função seta, ecmascript, ecmascript 6, js, coffeescript, firefox
-resumo: >
+excerpt: >
   Inspirado no CoffeeScript, a versão 6 do ECMAScript nos traz um jeito mais
   simples e elegante de definirmos funções, as chamadas **arrow functions**.
   Não só _syntatic sugar_, elas vêm para resolver (de forma elegante) o problema
   do `this` dinâmico que todos já enfrentamos ao passarmos funções como
   _callback_.
-related:
+references:
   - title: Thoughts on ECMAScript 6 and new syntax
     url: http://www.nczonline.net/blog/2012/07/24/thoughts-on-ecmascript-6-and-new-syntax/
     from: NCZOnline

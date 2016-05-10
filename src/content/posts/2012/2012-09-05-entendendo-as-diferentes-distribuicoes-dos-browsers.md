@@ -8,7 +8,7 @@ comments: true
 keywords: >
   desenvolvimento, release, beta, alpha, chrome, safari, firefox, opera, aurora,
   nightly, webkit, canary, dev, estável, stable, channel, distribuições, browsers
-resumo: >
+excerpt: >
   O novo método de desenvolvimento do Chrome, com releases mais rápidos e
   constantes causou um forte impacto no método de desenvolvimento de todos os
   grandes navegadores. Hoje, Firefox, Opera e até mesmo o Internet Explorer de

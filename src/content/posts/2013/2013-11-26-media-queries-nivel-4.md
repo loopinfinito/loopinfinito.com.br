@@ -9,14 +9,14 @@ keywords: >
   pointer, hover, luminosity, luminosidade, iluminação, lux, acessibilidade,
   mobile, feature, javascript, web, mouse, trackpad, air view, touch, dropdown,
   menu, contraste, suporte, firefox
-resumo: >
+excerpt: >
   A nova especificação
   [_media queries_ nível 4](http://dev.w3.org/csswg/mediaqueries4/)
   introduz __4 novas e interessantes__&nbsp;_features_ de mídia, além das
   13 já existentes: `script`, `pointer`, `hover` e `luminosity`. Veremos que
   estas novas _features_ de mídia vêm para beneficiar primordialmente questões
   sobre acessibilidade e _mobile_.
-related:
+references:
   - title: Media Queries Level 4 (draft)
     url: http://dev.w3.org/csswg/mediaqueries4/
     from: W3C

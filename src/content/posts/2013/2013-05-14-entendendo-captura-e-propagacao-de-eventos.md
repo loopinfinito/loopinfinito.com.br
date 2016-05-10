@@ -8,11 +8,11 @@ keywords: >
   javascript, evento, event, dom, propagacao, captura, bubbling, capturing, listener,
   manipulador, registrado, addEventListener, stopPropagation, navegador, w3c,
   netscape, ie, ie8, ie9, ancestral, disparar, varredura, clique, click
-resumo: >
+excerpt: >
   Se um elemento e um de seus ancestrais tiverem ambos _listeners_ definidos
   para o __mesmo__ evento, qual deles deverá ser disparado __primeiro__?
   Não surpreendentemente, depende do navegador.
-related:
+references:
   - title: Event Order
     url: http://www.quirksmode.org/js/events_order.html
     from: quirksmode

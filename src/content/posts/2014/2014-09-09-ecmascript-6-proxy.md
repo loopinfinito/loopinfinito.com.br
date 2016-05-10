@@ -7,14 +7,14 @@ comments: true
 keywords: >
   ecmascript 6 proxy, ecmascript, es6, proxy, es6 proxy, javascript, web, trap,
   armadilha, target, handler, get, set, suporte, chrome, firefox, shim
-resumo: >
+excerpt: >
   O termo *proxy* tem suas origens no Direito dos países de língua inglesa. Um
   *proxy* é alguém com poderes legais de representar uma outra pessoa. No Brasil
   seria algo como alguém que possui uma procuração para representar uma outra.
   No ECMAScript 6, um *proxy* é um objeto que **representa** um outro. Ele é
   capaz de interceptar chamadas às propriedades do objeto alvo, podendo até
   mesmo alterar o resultado da chamada.
-related:
+references:
   - title: "harmony-proxy shim"
     url: https://github.com/Swatinem/proxy
     from: GitHub

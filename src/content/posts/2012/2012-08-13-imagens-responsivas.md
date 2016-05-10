@@ -8,7 +8,7 @@ keywords: >
   imagens reposnsivas, imagem, responsiva, responsive image, html5, html,
   srcset, picture element, picture, source, w3c, desktop, smartphone, tablet,
   adaptive images
-resumo: >
+excerpt: >
   Hoje falaremos de um assunto bastante acalourado no momento, **Imagens
   reponsivas**. Apresentar-vos-ei várias alternativas que desenvolvedores têm
   encontrado para tentar resolver este problema. Falaremos também sobre os

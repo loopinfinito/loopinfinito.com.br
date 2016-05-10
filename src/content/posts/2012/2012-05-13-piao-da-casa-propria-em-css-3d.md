@@ -8,7 +8,7 @@ comments: true
 keywords: >
   silvio santos, css3, 3d, html5, frontend, web, development, desenvolvimento,
   web development, animacao, piao da casa propria
-resumo: >
+excerpt: >
   Quem não lembra do **lendário** programa do Silvio Santos
   [Pião da Casa Própria](http://www.youtube.com/watch?v=X0YAnNNK2OE)?
   Neste post vamos trazer esta lenda de volta a vida, desta vez encarnado em

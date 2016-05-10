@@ -1,0 +1,3 @@
+{% macro authorlink(author, type='gplus_url') -%}
+  <a href="{{ author[type] }}" target="_blank">{{ author.name }}</a>
+{%- endmacro%}

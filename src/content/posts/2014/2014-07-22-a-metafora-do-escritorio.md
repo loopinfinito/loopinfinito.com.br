@@ -9,13 +9,13 @@ keywords: >
   metaphor, metáfora do escritório, windows, janelas, ícones, menus, ponteiros,
   pointer device, Xerox, parc, vale do silício, mãe de todos os demos, apple,
   steve jobs
-resumo: >
+excerpt: >
   Computadores eram telas pretas com letras verdes. Máquinas que executavam uma
   única tarefa por vez a partir da entrada de comandos no _terminal_. Comandos
   esse difíceis de serem decorados e quase impossíveis de serem deduzidos. Era
   necessário uma mudança radical no modo de interagir com um computador. Mas a
   tecnologia necessária ainda não existia para tal quebra de paradigma.
-related:
+references:
   - title: "Graphical User Interface GUI"
     url: http://www.britannica.com/EBchecked/topic/242033/graphical-user-interface-GUI
     from: Britannica

@@ -7,7 +7,7 @@ comments: true
 keywords: >
   web audio, web audio api, audio, api, web, javascript, js, html5, mixagem,
   processamento, efeitos, aplicacao,
-resumo: >
+excerpt: >
   Fala pessoal! **Web Audio Hero** é a minha nova palestra que ministrarei amanhã
   no primeiro [Rio.JS](http://riojs.org "Rio.JS") (desconsiderando os *meetings*).
   Abordarei os princípios e as técnicas de uso essenciais desta nova API para

@@ -7,7 +7,7 @@ comments: true
 keywords: >
   shadow-dom, shadow dom, web-components, web components, html, html5, component,
   widget, encapsulamento, componente
-resumo: >
+excerpt: >
   Shadow DOM é uma especificação (ainda em status de rascunho) que faz parte do
   recente trabalho **Web Components** da W3C. Neste post vamos entender o que é,
   como funciona e o que muda com esta novidade.

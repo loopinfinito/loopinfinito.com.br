@@ -8,14 +8,14 @@ comments: true
 keywords: >
   css, transform, vicki murley, css transforms an interactive guide, rotate,
   skew, scale, translate, apple
-resumo: >
+excerpt: >
   Hoje o CSS Trasforms já está implementado em todos os grandes navegadores e
   seu uso em produção é bem comum e, inclusive, aconselhado. Ele torna possível
   adicionarmos efeitos visuais à _web_ que antes só podiam ser implementados
   através de _plug-ins_ de terceiros. Também servem de base para animações mais
   complexas e podem ser aplicados em qualquer elemento HTML. E é sobre eles que
   vamos estudar e experimentar na prática como funcionam.
-related:
+references:
   - title: "CSS Transforms An Interactive Guide"
     url: http://csstransforms.com/
     from: CSS Transforms An Interactive Guide e-book

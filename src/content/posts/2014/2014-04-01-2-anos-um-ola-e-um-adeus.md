@@ -10,7 +10,7 @@ keywords: >
   código, setup, wiredin, post, bernard de luna, giovanni Keppelen, Deivid
   Marques, Diego Eis, Sérgio Lopes, Eduardo Shiota, Luiz Corte, Jaydson Gomes,
   Reinaldo Ferraz
-resumo: >
+excerpt: >
   Hoje, 1º de abril, estamos completando 2 anos de existência ([não é
   mentira](http://loopinfinito.com.br/2012/04/01/hello-web/ "Hello Web")), e
   temos algumas novidades.

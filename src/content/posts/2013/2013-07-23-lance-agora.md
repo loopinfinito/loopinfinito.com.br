@@ -7,12 +7,12 @@ comments: true
 keywords: >
   mvp, minimum viable product, lancar, lancamento, produto, produto minimo
   viavel, estrategia, mercado,
-resumo: >
+excerpt: >
   Quando seu produto ou serviço ficará __pronto__? Quando você deverá
   disponibilizá-lo no mercado? Quando é seguro deixar que as pessoas o usem?
   Provavelmente, muito mais cedo do que você imagina ou está confortável. Um vez
   que seu produto faz o que precisa fazer, tire-o da caixa. __Lance agora!__
-related:
+references:
   - title: Minimum Viable Product
     url: http://en.wikipedia.org/wiki/Minimum_viable_product
     from: Wikipedia

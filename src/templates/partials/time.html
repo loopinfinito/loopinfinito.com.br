@@ -1,0 +1,5 @@
+{% macro time(date, pubdate=true) -%}
+  <time {% if pubdate %}pubdate{% endif %} datetime="{{ date|date }}">
+    {{ date|date('D MMMM Y') }}
+  </time>
+{%- endmacro %}

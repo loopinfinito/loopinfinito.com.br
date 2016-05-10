@@ -9,7 +9,7 @@ keywords: >
   javascript, ponto e vírgula, semicolons, ASI, Automatic Semicolon Insertion,
   Crockford, "@fat", "@izs", JSMin, GitHub, Bootstrap, npm, Nodejs, Node,
   Restricted Productions, bom senso
-resumo: >
+excerpt: >
   Provavelmente um dos assuntos mais polêmicos na comunidade
   <abbr title="JavaScript">JS</abbr> seja a omissão do `;`. Esse simples
   caractere já foi responsável por inúmeras discussões no GitHub relacionadas ao
@@ -19,7 +19,7 @@ resumo: >
   não usar `;`? Ou isso tudo é apenas uma moda jovem que os Rubyistas e
   Pythonistas estão tentando impor na comunidade
   <abbr title="JavaScript">JS</abbr>?
-related:
+references:
   - title: Semicolons in JavaScript are optional
     url: http://mislav.uniqpath.com/2010/05/semicolons/
     from: Mislav Marohnić

@@ -8,13 +8,13 @@ comments: true
 keywords: >
   javascript, js, web development, desenvolvimento web, html5, front-end,
   programação, oop, orientação a objetos, herança, orientação a protótipos, java
-resumo: >
+excerpt: >
   Uma das coisas que mais assusta programadores vindos de linguagens orientadas
   a objeto, como Java e C++, é a falta de classes em JavaScript. Muitos,
   inclusive, tentam simular este comportamento no JavaScript, mas poucos
   conseguem com sucesso. Neste post numa série de 2, iremos relembrar o que é
   herança, a cadeia de protótipos e como era feito a herança em JavaScript.
-related:
+references:
   - title: Inheritance and the Prototype Chain
     url: https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain
     from: MDN

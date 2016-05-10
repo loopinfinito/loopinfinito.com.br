@@ -10,12 +10,12 @@ keywords: >
   carlo emer, payload, _username_, _password_, _logout_, ian hickson, firefox,
   connect, trace, track, head, options, patch, cabeçalho, sumissão, requisição,
   almir filho, loop infinito
-resumo: >
+excerpt: >
   Há uma proposta na W3C para ampliar as capacidades dos formulários _web_.
   Algumas dessas melhoras dizem respeito às capacidades dos formulários web de
   realizar coisas consideradas bem comuns hoje em dia, mas que dependem de
   JavaScript e de outras técnicas comuns que viabilizem seus usos.
-related:
+references:
   - title: O grande desencontro do HTTP com o HTML
     url: http://tableless.com.br/o-grande-desencontro-http-com-o-html/
     from: Tableless

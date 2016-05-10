@@ -1,16 +1,14 @@
 {% extends 'src/templates/layouts/base.html' %}
-{% from 'src/templates/partials/preview.html' import preview %}
+{% from 'src/templates/partials/post.html' import postpreview %}
 {% from 'src/templates/partials/pagination.html' import pagination as paginationButtons %}
 
 
 {% block content %}
 
   {% if pagination.files %}
-    <ul>
     {% for post in pagination.files %}
-      <li>{{ preview(post.title, post.path) }}</li>
+      {{ postpreview(post) }}
     {% endfor %}
-    </ul>
 
     {{ paginationButtons(pagination.previous, pagination.next) }}
   {% else %}

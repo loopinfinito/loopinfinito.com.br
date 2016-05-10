@@ -9,13 +9,13 @@ keywords: >
   especificacao, contorno, limite, flutua, float, forma, shape-inside,
   shape-outside, shape-margin, shape-image-threshold, shape-padding, grafico,
   revista, texto, imagem, rectangle, polygon, circle, ellipse
-resumo: >
+excerpt: >
   Sabe quando você vai ler uma revista, e no meio do texto há uma imagem
   irregular, mas o texto elegantemente a _contorna_, respeitando sua forma?
   Ou quando aparece por exemplo, um gráfico de pizza, e dentro de cada fatia tem
   um texto que se _adequa_ a forma dela?
   Pois é, agora podemos fazer o mesmo com CSS.
-related:
+references:
   - title: CSS Shapes Module Level 1 (draft)
     url: http://www.w3.org/TR/css-shapes/
     from: W3C

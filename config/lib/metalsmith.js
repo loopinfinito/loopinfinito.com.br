@@ -4,10 +4,8 @@ const plugins = require('load-metalsmith-plugins')();
 const nunjucks = require('nunjucks');
 const nunjucksdate = require('nunjucks-date-filter');
 const consolidate = require('consolidate');
-
-
-consolidate.requires.nunjucks = nunjucks.configure(config.nunjucks);
-consolidate.requires.nunjucks.addFilter('date', nunjucksdate);
+const moment = require('moment');
+const urlfilter = require('./helpers/url-filter');
 
 
 module.exports = workingdir => {
@@ -30,6 +28,13 @@ module.exports = workingdir => {
     .use(plugins.mapsite(config.metalsmith.mapsite))
     .use(plugins.feedAtom(config.metalsmith.feedatom))
     .use(plugins.layouts(config.metalsmith.layouts));
+
+  moment.locale('pt');
+  consolidate.requires.nunjucks = nunjucks
+    .configure(config.nunjucks)
+    .addFilter('date', nunjucksdate)
+    .addFilter('url', urlfilter(pipeline, config))
+    .addGlobal('context', function(){ return this.ctx });
 
   const afterBuild = (err, files) => {
     if(err) throw err;

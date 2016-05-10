@@ -7,7 +7,7 @@ comments: true
 keywords: >
   lifestyle, produtividade, chef, estilo de vida, compartilhar, conhecimento,
   livro, receita
-resumo: >
+excerpt: >
   Hoje falaremos da importância do compartilhamento de conhecimento, traçando um
   paralelo com os chefes de cozinha famosos.
 ---

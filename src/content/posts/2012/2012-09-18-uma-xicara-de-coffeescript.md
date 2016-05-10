@@ -7,7 +7,7 @@ comments: true
 keywords: >
   coffeescript, javascript, documentacao, script, ruby, python, string,
   interpolacao, classe, class, list, compreenshion, compreensao, lista, prototype
-resumo: >
+excerpt: >
   CoffeeScript é uma linda linguagem que traz o que há de melhor (sintaticamente
    falando) em outras linguagens como Python e Ruby, e pra completar, também é
    compilável para JavaScript.

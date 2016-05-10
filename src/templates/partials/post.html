@@ -1,9 +1,59 @@
-<header>
-  <h1>{{ title }}</h1>
-</header>
+{% from 'src/templates/partials/author.html' import authorlink %}
+{% from 'src/templates/partials/tag.html' import taglink, taglist %}
+{% from 'src/templates/partials/time.html' import time %}
+{% from 'src/templates/partials/reference.html' import reference %}
 
-<article>
-  {{ contents }}
-</article>
 
-<footer></footer>
+{% macro postview(post) %}
+  <article>
+    <header>
+      {% if post.tags %}
+        <small>{{ taglink(post.tags[0]) }}</small>
+      {% endif %}
+      <h1>{{ post.title }}</h1>
+      <small>por {{ authorlink(post.author) }}</small>
+    </header>
+
+    <figure>
+      <img src="{{ post.image|url }}" />
+    </figure>
+
+    <section>{{ post.contents }}</section>
+
+    <footer>
+      <p>
+        Publicado em {{ time(post.date) }}
+        {% if post.tags %}
+          {{ taglist(post.tags) }}
+        {% endif %}
+      </p>
+      {% if post.references %}
+        {{ reference(post.references) }}
+      {% endif %}
+    </footer>
+  </article>
+{% endmacro %}
+
+
+{% macro postpreview(post) %}
+  <article>
+    <header>
+      <h1>
+        <a href="{{ post.path|url }}">{{ post.title }}</a>
+      </h1>
+      <small>por {{ authorlink(post.author) }} em {{ time(post.date) }}</small>
+    </header>
+
+    <figure>
+      <a href="{{ post.path|url }}">
+        <img src="{{ post.image|url }}" alt="{{ post.title }}" />
+      </a>
+    </figure>
+
+    <section>{{ post.excerpt }}</section>
+
+    <footer>
+      <a href="{{ post.path|url }}">Continue lendo</a>
+    </footer>
+  </article>
+{% endmacro %}

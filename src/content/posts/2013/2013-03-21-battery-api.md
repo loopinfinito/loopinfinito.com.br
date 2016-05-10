@@ -9,7 +9,7 @@ keywords: >
   bateria, battery, api, html5, javascript, js, charging, carregar, tempo,
   eventos, experimento, nivel, level, descarregar, chargingTime, dischargingTime,
   onchargingtimechange, onchargingchange, ondischargingtimechange, onlevelchange
-resumo: >
+excerpt: >
   A **Battery API** permite que tenhamos acesso a informações sobre a bateria do
   nosso dispositivo – seja ele um dispositivo móvel (*smartphone* ou *tablet*) ou
   um *laptop*. Veja o *status* da sua bateria neste pequeno exeperimento que

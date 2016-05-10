@@ -7,7 +7,7 @@ comments: true
 keywords: >
   css, cascading stylesheets, pixel, em, ex, in, pt, pc, px, cm, mm,
   pixel referência, diâmetro angular, unidades absolutas, unidades relativas
-resumo: >
+excerpt: >
   Em CSS, as unidades de medidas absolutas — como `in` (polegadas), `cm`
   (centímetros), `mm` (milímetros), `pt` (pontos), `pc` (picas (epa)) e `px`
   (<em>pixel</em>) — são todas relativas entre si. 1cm no
@@ -16,7 +16,7 @@ resumo: >
   não ser o equivalente a 1 _pixel_ do dispositivo usado para renderização. Mas
   afinal, quanto vale 1px, então? A resposta para essa pergunta, assim como
   quase tudo na computação, é: __depende do contexto__.
-related:
+references:
   - title: CSS 2 Specification
     url: http://www.w3.org/TR/CSS2/syndata.html#length-units
     from: W3C
