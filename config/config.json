@@ -42,6 +42,13 @@
     "markdown": {
       "smartypants": true
     },
+    "propdown": {
+      "collection": "posts",
+      "property": "excerpt",
+      "markdownOptions": {
+        "smartypants": true
+      }
+    },
     "pagination": {
       "collections.posts": {
         "perPage": 5,
