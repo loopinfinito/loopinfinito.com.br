@@ -2,6 +2,9 @@
 {% from 'src/templates/partials/post.html' import postview %}
 
 
+{% block header %}{% endblock %}
+
+
 {% block content %}
   {{ postview(context()) }}
 {% endblock %}

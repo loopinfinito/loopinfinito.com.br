@@ -8,6 +8,10 @@
   {% include 'src/templates/partials/header.html' %}
 
   <main>
+    {% block header %}
+      <h1>{{ title }}</h1>
+    {% endblock %}
+
     {% block content %}
       {{ contents }}
     {% endblock %}
