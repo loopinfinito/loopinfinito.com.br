@@ -24,6 +24,11 @@
         "sortBy": "date",
         "reverse": true
       },
+      "projects": {
+        "pattern": "projetos/items/*.md",
+        "sortBy": "order",
+        "reverse": true
+      },
       "talks": {
         "pattern": "palestras/items/*.md",
         "sortBy": "date",
@@ -37,7 +42,8 @@
       "lower": true
     },
     "ignore": [
-      "palestras/items/*"
+      "palestras/items/*",
+      "projetos/items/*"
     ],
     "markdown": {
       "smartypants": true
