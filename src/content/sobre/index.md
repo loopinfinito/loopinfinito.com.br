@@ -1,6 +1,8 @@
 ---
 title: Sobre
 layout: base.html
+priority: 1.0
+changefreq: yearly
 ---
 
 {% from 'src/templates/partials/author.html' import authorcard %}
