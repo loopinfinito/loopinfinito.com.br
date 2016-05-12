@@ -5,7 +5,7 @@ const nunjucks = require('nunjucks');
 const nunjucksdate = require('nunjucks-date-filter');
 const consolidate = require('consolidate');
 const moment = require('moment');
-const urlfilter = require('./helpers/url-filter');
+const urlfilters = require('./helpers/url-filter');
 
 
 module.exports = workingdir => {
@@ -34,7 +34,7 @@ module.exports = workingdir => {
   consolidate.requires.nunjucks = nunjucks
     .configure(config.nunjucks)
     .addFilter('date', nunjucksdate)
-    .addFilter('url', urlfilter(pipeline, config))
+    .addFilter('urlresolve', urlfilters.resolveInit(pipeline, config))
     .addGlobal('context', function(){ return this.ctx });
 
   const afterBuild = (err, files) => {

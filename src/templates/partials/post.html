@@ -15,7 +15,7 @@
     </header>
 
     <figure>
-      <img src="{{ post.image|url }}" />
+      <img src="{{ post.image|urlresolve }}" />
     </figure>
 
     <section>{{ post.contents }}</section>
@@ -39,21 +39,21 @@
   <article>
     <header>
       <h1>
-        <a href="{{ post.path|url }}">{{ post.title }}</a>
+        <a href="{{ post.path|urlresolve }}">{{ post.title }}</a>
       </h1>
       <small>por {{ authorlink(post.author) }} em {{ time(post.date) }}</small>
     </header>
 
     <figure>
-      <a href="{{ post.path|url }}">
-        <img src="{{ post.image|url }}" alt="{{ post.title }}" />
+      <a href="{{ post.path|urlresolve }}">
+        <img src="{{ post.image|urlresolve }}" alt="{{ post.title }}" />
       </a>
     </figure>
 
     <section>{{ post.excerpt }}</section>
 
     <footer>
-      <a href="{{ post.path|url }}">Continue lendo</a>
+      <a href="{{ post.path|urlresolve }}">Continue lendo</a>
     </footer>
   </article>
 {% endmacro %}
