@@ -1,5 +1,64 @@
-{% macro talk(title, image, links, events, content) %}
+{% from 'src/templates/partials/author.html' import authorlink %}
+{% from 'src/templates/partials/time.html' import time %}
 
-<p>{{ title }}</p>
 
+{# TODO: remove allauthors params. author infos must come within talk events.
+ - add array support to metalsmith-author plugin. #}
+
+
+{% macro talkview(talk, allauthors) %}
+  <article>
+    <h2>{{ talk.title }}</h2>
+
+    <figure>
+      <img src="{{ talk.image|urlresolve }}" />
+    </figure>
+
+    <section>{{ talk.contents }}</section>
+
+    {% if talk.events %}
+      <ul>
+        {% for event in talk.events %}
+          <li>{{ talkevent(event, allauthors) }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <footer>
+      Slides:
+      {% if talk.links -%}
+        {{ talkslides(talk.links) }}
+      {%- else -%}
+        Ainda não disponíveis.
+      {%- endif %}
+    </footer>
+  </article>
 {% endmacro %}
+
+
+{% macro talkevent(event, allauthors) %}
+  <div>
+    <h3>
+      <a href="{{ event.url }}">{{ event.title }}</a>
+    </h3>
+    <p>{{ time(event.date, pubdate=false) }}</p>
+    <p>{{ event.location.city }}–{{ event.location.state }}</p>
+    <p>{{ eventspeakers(event.speakers, allauthors) }}</p>
+  </div>
+{% endmacro %}
+
+
+{% macro eventspeakers(speakers, allauthors) -%}
+  {% set chain = joiner(' &') %}
+  {% for speaker in speakers -%}
+    {{ chain() }} {{ authorlink(allauthors[speaker], type='speakerdeck') }}
+  {%- endfor %}
+{%- endmacro %}
+
+
+{% macro talkslides(slides) -%}
+  {% set comma = joiner() %}
+  {% for slide in slides -%}
+    {{ comma() }} <a href="{{ slide.url }}" target="_blank">{{ slide.label }}</a>
+  {%- endfor %}
+{%- endmacro %}

@@ -5,15 +5,13 @@ priority: 0.7
 changefreq: monthly
 ---
 
-{% from 'src/templates/partials/talk.html' import talk as _talk %}
+{% from 'src/templates/partials/talk.html' import talkview %}
 
 
-{% if collections.talks %}
-  <ul>
-  {% for talk in collections.talks %}
-    <li>{{ _talk(talk.title) }}</li>
-  {% endfor %}
-  </ul>
+Lorem dasd asdasd sadsa dsakfsafa fdsfasd fasdf sdfkjdsfsdafsadf sfsdsd.
+
+{% for talk in collections.talks %}
+  {{ talkview(talk, authors) }}
 {% else %}
   Nenhuma palestra.
-{% endif %}
+{% endfor %}
