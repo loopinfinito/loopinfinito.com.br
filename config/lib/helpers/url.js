@@ -9,4 +9,6 @@ module.exports = {
       return url.resolve(baseurl, path);
     }
   },
+
+  url: host => (/^https?\:\/\/.*/).test(host) ? host : `http://${host}`
 };

@@ -34,6 +34,7 @@ module.exports = workingdir => {
   consolidate.requires.nunjucks = nunjucks
     .configure(config.nunjucks)
     .addFilter('date', nunjucksdate)
+    .addFilter('url', urlfilters.url)
     .addFilter('urlresolve', urlfilters.resolveInit(pipeline, config))
     .addGlobal('context', function(){ return this.ctx });
 
