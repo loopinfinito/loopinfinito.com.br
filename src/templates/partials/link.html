@@ -1,0 +1,45 @@
+{% macro iconlink(url, icon='', label='', title='') -%}
+  <a class="{{ icon }}"
+     href="{{ url }}"
+     target="_blank"
+     {% if title %}title="{{ title }}"{% endif %}>
+    {{ label }}
+  </a>
+{%- endmacro %}
+
+
+{% macro githublink(username, label=true) -%}
+  {% set url = 'https://github.com/' + username %}
+  {% set icon = 'github' %}
+
+  {% if label %}
+    {{ iconlink(url=url, icon=icon, label=username) }}
+  {% else %}
+    {{ iconlink(url=url, icon=icon, title=username) }}
+  {% endif %}
+{%- endmacro %}
+
+
+{% macro twitterlink(username, label=true) -%}
+  {% set url = 'https://twitter.com/' + username %}
+  {% set icon = 'twitter' %}
+  {% set label = '@' + username %}
+
+  {% if label %}
+    {{ iconlink(url=url, icon=icon, label=label) }}
+  {% else %}
+    {{ iconlink(url=url, icon=icon, title=label) }}
+  {% endif %}
+{%- endmacro %}
+
+
+{% macro homelink(host, label=true) -%}
+  {% set url = host|url %}
+  {% set icon = 'home' %}
+
+  {% if label %}
+    {{ iconlink(url=url, icon=icon, label=host) }}
+  {% else %}
+    {{ iconlink(url=url, icon=icon, title=host) }}
+  {% endif %}
+{%- endmacro %}
