@@ -1,15 +1,21 @@
 almir:
   name: Almir Filho
+  site: almirfilho.com
   email: almir@almirfilho.com
   twitter: almirfilho
   github: almirfilho
   facebook: almirflorenciofilho
   gplus_url: https://plus.google.com/u/0/+AlmirFilho0/posts
+  image: images/authors/almirfilho.jpg
+  bio: Lorem ipsum dasd asdas dsadasd asdsa dsad sad asdasdas dasd asd asdasd
 
 caio:
   name: Caio Gondim
+  site: caiogondim.com
   email: me@caiogondim.com
   twitter: caio_gondim
   github: caiogondim
   facebook: caiogondim
   gplus_url: https://plus.google.com/109656206006790732674/
+  image: images/authors/caiogondim.jpg
+  bio: Lorem ipsum dasd asdas dsadasd asdsa dsad sad asdasdas dasd asd asdasd

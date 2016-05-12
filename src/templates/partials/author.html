@@ -1,3 +1,20 @@
+{% from 'src/templates/partials/link.html' import twitterlink, githublink, homelink %}
+
+
 {% macro authorlink(author, type='gplus_url') -%}
   <a href="{{ author[type] }}" target="_blank">{{ author.name }}</a>
-{%- endmacro%}
+{%- endmacro %}
+
+
+{% macro authorcard(author) %}
+  <div>
+    <h3>{{ author.name }}</h3>
+    <img src="{{ author.image|urlresolve }}" alt="{{ author.name }}" />
+    <p>{{ author.bio }}</p>
+    <ul>
+      <li>{{ twitterlink(username=author.twitter) }}</li>
+      <li>{{ githublink(username=author.github) }}</li>
+      <li>{{ homelink(host=author.site) }}</li>
+    </ul>
+  </div>
+{% endmacro %}
