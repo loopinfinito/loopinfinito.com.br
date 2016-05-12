@@ -1,5 +1,6 @@
 ---
 title: Dissecando sua app com Chrome Dev Tools
+image: images/talks/chrome-dev-tools.jpg
 events:
   - title: Sampa.js 3.1
     url: http://sampajs.com.br/
@@ -8,7 +9,7 @@ events:
       city: São Paulo
       state: SP
       country: Brasil
-    presenters:
+    speakers:
       - caio
   - title: RSJS 2013
     url: http://rsjs.org/2013/
@@ -17,7 +18,7 @@ events:
       city: Porto Alegre
       state: RS
       country: Brasil
-    presenters:
+    speakers:
       - caio
   - title: Rio.JS 2013
     url: http://riojs.org/
@@ -26,7 +27,7 @@ events:
       city: Rio de Janeiro
       state: RJ
       country: Brasil
-    presenters:
+    speakers:
       - caio
 ---
 

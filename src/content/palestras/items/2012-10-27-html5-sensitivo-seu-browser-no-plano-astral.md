@@ -1,5 +1,6 @@
 ---
 title: "HTML5 Sensitivo: Seu browser no plano astral"
+image: images/talks/html5-sensitivo-seu-browser-no-plano-astral.jpg
 links:
   - label: Speakerdeck
     url: https://speakerdeck.com/loopinfinito/html5-sensitivo-seu-browser-no-plano-astral
@@ -11,7 +12,7 @@ events:
       city: Nova Friburgo
       state: RJ
       country: Brasil
-    presenters:
+    speakers:
       - caio
   - title: FEEC Recife 2013
     url: http://www.feecbr.com.br/edicoes-anteriores/
@@ -20,7 +21,7 @@ events:
       city: Recife
       state: PE
       country: Brasil
-    presenters:
+    speakers:
       - caio
   - title: W3C Web.br 2013
     url: http://conferenciaweb.w3c.br/2013/
@@ -29,7 +30,7 @@ events:
       city: São Paulo
       state: SP
       country: Brasil
-    presenters:
+    speakers:
       - caio
   - title: CEJS 2013
     url: http://www.cejs.com.br/
@@ -38,7 +39,7 @@ events:
       city: Fortaleza
       state: CE
       country: Brasil
-    presenters:
+    speakers:
       - caio
   - title: OlhóSEO 2013
     url: http://www.olhoseo.com.br/2013/
@@ -47,7 +48,7 @@ events:
       city: Florianópolis
       state: SC
       country: Brasil
-    presenters:
+    speakers:
       - caio
   - title: Jubileu de Prata de Ciência da Computação UFMA
     url: http://www.connection.ufma.br/jubileu/index.php/programacao
@@ -56,7 +57,7 @@ events:
       city: São Luís
       state: MA
       country: Brasil
-    presenters:
+    speakers:
       - almir
   - title: Front in Maceió 2012
     url: http://frontinmaceio.com.br/2012/
@@ -65,7 +66,7 @@ events:
       city: Maceió
       state: AL
       country: Brasil
-    presenters:
+    speakers:
       - almir
       - caio
 ---

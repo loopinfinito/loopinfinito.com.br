@@ -1,5 +1,6 @@
 ---
 title: "CSS layout: o ontem, o hoje e o depois"
+image: images/talks/css-layout.gif
 links:
   - label: Speakerdeck
     url: https://speakerdeck.com/loopinfinito/css-layout-o-ontem-o-hoje-e-o-depois
@@ -11,7 +12,7 @@ events:
       city: São Paulo
       state: SP
       country: Brasil
-    presenters:
+    speakers:
       - almir
   - title: Front in Sampa 2013
     url: http://frontinsampa.com.br/2013/
@@ -20,7 +21,7 @@ events:
       city: São Paulo
       state: SP
       country: Brasil
-    presenters:
+    speakers:
       - almir
       - caio
   - title: Front in Aracaju 2013
@@ -30,7 +31,7 @@ events:
       city: Aracaju
       state: SE
       country: Brasil
-    presenters:
+    speakers:
       - almir
   - title: Front in Rio 2013
     url: http://frontinrio.com.br/
@@ -39,7 +40,7 @@ events:
       city: Rio de Janeiro
       state: RJ
       country: Brasil
-    presenters:
+    speakers:
       - almir
       - caio
 ---

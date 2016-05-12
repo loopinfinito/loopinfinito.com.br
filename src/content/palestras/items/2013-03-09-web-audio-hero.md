@@ -1,5 +1,6 @@
 ---
 title: Web Audio Hero
+image: images/talks/web-audio-hero.png
 links:
   - label: Speakerdeck
     url: https://speakerdeck.com/almirfilho/web-audio-hero
@@ -11,7 +12,7 @@ events:
       city: Florianópolis
       state: SC
       country: Brasil
-    presenters:
+    speakers:
       - almir
   - title: RSJS 2013
     url: http://rsjs.org/2013/
@@ -20,7 +21,7 @@ events:
       city: Porto Alegre
       state: RS
       country: Brasil
-    presenters:
+    speakers:
       - almir
   - title: Rio.JS 2013
     url: http://riojs.org/
@@ -29,7 +30,7 @@ events:
       city: Rio de Janeiro
       state: RJ
       country: Brasil
-    presenters:
+    speakers:
       - almir
 ---
 

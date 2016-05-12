@@ -1,5 +1,6 @@
 ---
 title: "HTML5: seu navegador não é mais o mesmo"
+image: images/talks/html5-seu-navegador-nao-e-mais-o-mesmo.jpg
 links:
   - label: Speakerdeck
     url: https://speakerdeck.com/loopinfinito/html5-seu-navegador-nao-e-mais-o-mesmo
@@ -11,7 +12,7 @@ events:
       city: Osasco
       state: SP
       country: Brasil
-    presenters:
+    speakers:
       - caio
   - title: 3.PHP
     url: https://joind.in/event/view/794
@@ -20,7 +21,7 @@ events:
       city: São Luís
       state: MA
       country: Brasil
-    presenters:
+    speakers:
       - almir
       - caio
 ---

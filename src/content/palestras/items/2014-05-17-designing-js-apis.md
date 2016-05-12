@@ -1,5 +1,6 @@
 ---
 title: Designing JS APIs
+image: images/talks/designing-js-apis.jpg
 links:
   - label: Speakerdeck
     url: https://speakerdeck.com/caiogondim/designing-js-apis
@@ -11,7 +12,7 @@ events:
       city: Fortaleza
       state: CE
       country: Brasil
-    presenters:
+    speakers:
       - caio
 ---
 
