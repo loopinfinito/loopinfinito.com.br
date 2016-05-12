@@ -5,7 +5,7 @@ const nunjucks = require('nunjucks');
 const nunjucksdate = require('nunjucks-date-filter');
 const consolidate = require('consolidate');
 const moment = require('moment');
-const urlfilters = require('./helpers/url-filter');
+const urlfilters = require('./helpers/url');
 
 
 module.exports = workingdir => {
