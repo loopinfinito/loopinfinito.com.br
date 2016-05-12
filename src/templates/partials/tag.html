@@ -1,5 +1,5 @@
 {% macro taglink(name) -%}
-  <a href="/tags/{{ name }}/">{{ name }}</a>
+  <a href="{{ 'tags/{{ name }}/'|urlresolve }}">{{ name }}</a>
 {%- endmacro %}
 
 
