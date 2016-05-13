@@ -6,7 +6,7 @@ image: images/posts/2013-09-24-throttle-e-debounce-patterns-em-js.jpg
 comments: true
 keywords: >
   javascript, debounce, throttle, eventos, AJAX, usuários, UI, interface
-excerpt: >
+description: >
   Alguns eventos do _browser_ acontecem de forma mais rápida e com mais
   frequência do que gostaríamos — como os eventos _resize_ e _scroll_ da
   _window_. Outras vezes nossos queridos usuários disparam mais eventos do que

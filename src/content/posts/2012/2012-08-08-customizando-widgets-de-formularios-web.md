@@ -7,7 +7,7 @@ comments: true
 keywords: >
   css, css3, web-forms, web forms, formulario web, formulario-web, webkit,
   customizacao, widget, range, radio, checkbox
-excerpt: >
+description: >
   Hoje vamos descobrir como estilizar elementos de formulário e os deixarmos
   assim, como essa máquina da foto acima, totalmente customizada.
 ---

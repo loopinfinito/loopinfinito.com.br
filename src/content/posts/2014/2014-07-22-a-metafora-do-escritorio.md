@@ -9,7 +9,7 @@ keywords: >
   metaphor, metáfora do escritório, windows, janelas, ícones, menus, ponteiros,
   pointer device, Xerox, parc, vale do silício, mãe de todos os demos, apple,
   steve jobs
-excerpt: >
+description: >
   Computadores eram telas pretas com letras verdes. Máquinas que executavam uma
   única tarefa por vez a partir da entrada de comandos no _terminal_. Comandos
   esse difíceis de serem decorados e quase impossíveis de serem deduzidos. Era

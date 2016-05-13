@@ -5,7 +5,7 @@ author: caio
 image: images/posts/2012-10-16-foco-sucesso-fracasso.jpg
 comments: true
 keywords: foco, sucesso, fracasso, minimalismo, objetivo, planejamento, carreira
-excerpt: >
+description: >
   Foco nos leva ao sucesso. Sucesso nos traz mais oportunidades.
   E essas oportunidades podem nos tirar o foco que uma vez nos levou ao sucesso.
   Abraçar todas as oportunidades que o sucesso irá nos proporcionar só irá

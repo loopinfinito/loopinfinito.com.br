@@ -5,7 +5,7 @@ author: almir
 image: images/posts/2012-06-04-isaac-newton.jpg
 comments: true
 keywords: css, css3, calc, matematica, calculo, unidades css
-excerpt: >
+description: >
   Um novo recurso bastante interessante do CSS3 é a função `calc()`.
   Com esta função agora é possível calcularmos valores de **expressões matemáticas**
   diretamente no CSS! *Like a rockstar coder*.

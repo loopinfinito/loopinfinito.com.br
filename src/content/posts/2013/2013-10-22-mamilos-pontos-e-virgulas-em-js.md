@@ -9,7 +9,7 @@ keywords: >
   javascript, ponto e vírgula, semicolons, ASI, Automatic Semicolon Insertion,
   Crockford, "@fat", "@izs", JSMin, GitHub, Bootstrap, npm, Nodejs, Node,
   Restricted Productions, bom senso
-excerpt: >
+description: >
   Provavelmente um dos assuntos mais polêmicos na comunidade
   <abbr title="JavaScript">JS</abbr> seja a omissão do `;`. Esse simples
   caractere já foi responsável por inúmeras discussões no GitHub relacionadas ao

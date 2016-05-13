@@ -8,7 +8,7 @@ keywords: >
   navegadores, navegador, browser, user-agent string, user-agent, mosaic,
   netscape, mozilla, firefox, gecko, safari, webkit, konqueror, opera,
   internet explorer, trident, chrome, história
-excerpt: >
+description: >
   No início da história da *web*, era uma prática comum se fazer uma detecção do
   navegador usado, através da *user-agent string*, para enviar um código otimizado
   aos *browsers* mais modernos. Mas cada novo navegador que surgia também desejava

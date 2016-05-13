@@ -8,7 +8,7 @@ keywords: >
   css, css3, blend mode, blend, blend-mode, w3c, grafico, filter, filtros,
   mistura, backdrop, overlay, elemento, imagem, backdrop, composicao, calculo,
   alpha-compositing, knock-out, isolation
-excerpt: >
+description: >
   Essa é quente. Os **blend modes** estão vindo para o CSS através de uma nova
   especificação! No post de hoje conheceremos suas novas propriedades e saberemos
   como vamos utilizar estas novas funcionalidades.

@@ -7,7 +7,7 @@ comments: true
 keywords: >
   user, interface, user interface, interface de usuário, ui, ux, experiência de
   usuário
-excerpt:
+description:
   O que acontece quando todas as coisas em que nossos ícones são baseados não
   existem mais? Será que eles se tornam apenas símbolos emblemáticos cujas
   origens estão envoltas em mistério?

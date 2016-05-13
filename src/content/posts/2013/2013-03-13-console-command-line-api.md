@@ -9,7 +9,7 @@ keywords: >
   console, command line, api, debug, depurar, código, javascript, js,
   chrome, firefox, browser, error, warn, log, terminal, sublime text, plugin,
   monitorEvents, time
-excerpt: >
+description: >
   Antes, para _debugar_ código, enchiamos nosso código de `alert()`. Hoje temos
   várias ferramentas que nos auxiliam a melhor debugar, e entre elas estão
   o Console e a Command Line API.

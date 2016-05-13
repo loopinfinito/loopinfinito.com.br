@@ -50,7 +50,7 @@
     },
     "propdown": {
       "collection": "posts",
-      "property": "excerpt",
+      "property": "description",
       "markdownOptions": {
         "smartypants": true
       }

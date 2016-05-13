@@ -10,7 +10,7 @@ keywords: >
   carlo emer, payload, _username_, _password_, _logout_, ian hickson, firefox,
   connect, trace, track, head, options, patch, cabeçalho, sumissão, requisição,
   almir filho, loop infinito
-excerpt: >
+description: >
   Há uma proposta na W3C para ampliar as capacidades dos formulários _web_.
   Algumas dessas melhoras dizem respeito às capacidades dos formulários web de
   realizar coisas consideradas bem comuns hoje em dia, mas que dependem de

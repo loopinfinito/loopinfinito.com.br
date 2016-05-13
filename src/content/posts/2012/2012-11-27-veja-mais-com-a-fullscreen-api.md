@@ -7,7 +7,7 @@ comments: true
 keywords: >
   full, screen, fullscreen, html5, html, js, javascript, api, fullscreen api,
   tela cheia, tela-cheia, tela, cheia, css, css3
-excerpt: >
+description: >
   A **Fullscreen API** é nova no HTML5 e nos permite entrar em modo de **tela
   cheia** programaticamente através de JavaScript. Vamos entender quais são suas
   limitações e algumas funcionalidades super legais.

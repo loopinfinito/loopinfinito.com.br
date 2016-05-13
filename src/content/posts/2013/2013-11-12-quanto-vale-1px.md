@@ -7,7 +7,7 @@ comments: true
 keywords: >
   css, cascading stylesheets, pixel, em, ex, in, pt, pc, px, cm, mm,
   pixel referência, diâmetro angular, unidades absolutas, unidades relativas
-excerpt: >
+description: >
   Em CSS, as unidades de medidas absolutas — como `in` (polegadas), `cm`
   (centímetros), `mm` (milímetros), `pt` (pontos), `pc` (picas (epa)) e `px`
   (<em>pixel</em>) — são todas relativas entre si. 1cm no

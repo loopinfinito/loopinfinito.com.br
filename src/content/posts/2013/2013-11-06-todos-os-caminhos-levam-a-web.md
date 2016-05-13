@@ -11,7 +11,7 @@ keywords: >
   sockets, web components, acessibilide, mercado, e-commerce, semântica, git,
   internacionalização, phonegap, privacidade, networking, são paulo, sorteio,
   cortesia, twitter, facebook
-excerpt: >
+description: >
   A [__Web.br__](http://conferenciaweb.w3c.br/) é uma conferência focada em
   toda a Plataforma _Web_, que promete reunir expoentes da comunidade _web_
   brasileira em um só local, e nos trará palestras sobre os mais variados

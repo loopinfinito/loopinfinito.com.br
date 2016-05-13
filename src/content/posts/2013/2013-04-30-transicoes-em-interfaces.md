@@ -7,7 +7,7 @@ comments: true
 keywords: >
   interface, transição, ui, user experience, user interface, usuário, ux, ihc,
   hci, transition, animation
-excerpt: >
+description: >
   Transições em interfaces podem ser mais do que algo "bonitinho". Se usadas de
   forma correta, elas não só melhoram a aparência da aplicação como também sua
   __funcionalidade__, diminuindo o esforço cognitivo do usuário e deixando assim

@@ -8,7 +8,7 @@ comments: true
 keywords: >
   SEO, microdata, schema.org, HTML5, marcacao semantica, web semantica,
   desenvolvimento web, crawler, visibilidade
-excerpt: >
+description: >
   Ontem finalmente saímos da teoria e realizamos a marcação semântica do nosso
   blog usando **microdata** e os vocabulários **schema.org**.
   Hoje explicarei passo a passo como fiz isto aqui no Loop Infinito.

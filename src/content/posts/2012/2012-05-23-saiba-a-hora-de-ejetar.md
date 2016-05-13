@@ -5,7 +5,7 @@ author: almir
 image: images/posts/2012-05-20-saiba-a-hora-de-ejetar.jpg
 comments: true
 keywords: produtividade, lifestyle, rework, 37signals, porque, decisao, ejetar
-excerpt: >
+description: >
   É fácil se conformar, baixar a cabeça e apenas trabalhar no que você **pensa**
   ser importante. Difícil é levantar sua cabeça e se perguntar o **porquê**.
   Aqui estão algumas perguntas importantes para você indagar a si mesmo e poder

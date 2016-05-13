@@ -7,7 +7,7 @@ comments: true
 keywords: >
   css regions, bruce lee, css, css3, regions, conteudo, flow-into, flow-from,
   layout, coluna, multi coluna, água, disforme, experimento
-excerpt: >
+description: >
   Eu acho Bruce Lee muito foda e inspirador, então viajei geral nesse _post_.
   Hoje vamos aprender o que as __CSS Regions__ têm a ver com __Bruce Lee__.
   Isso mesmo! Esvazie sua mente, seja disforme, adápte-se, seja como a água.

@@ -8,7 +8,7 @@ keywords: >
   css, css3, blend mode, blend, blend-mode, background, fundo, w3c, grafico,
   filter, filtros, mistura, backdrop, overlay, elemento, imagem, composicao,
   calculo, alpha-compositing, knock-out, isolation
-excerpt: >
+description: >
   Esta é uma continuação do nosso *post*&nbsp;
   [CSS blend modes](http://loopinfinito.com.br/2012/12/19/css-blend-modes/),
   pois iremos falar sobre como será possível aplicar os mesmos *blend modes* em

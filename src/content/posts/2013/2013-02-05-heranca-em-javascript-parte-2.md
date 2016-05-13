@@ -8,7 +8,7 @@ comments: true
 keywords: >
   javascript, js, web development, desenvolvimento web, html5, front-end,
   programação, oop, orientação a objetos, herança, orientação a protótipos, java
-excerpt: >
+description: >
   E finalmente sai a parte II do post __Herança com JavaScript__. Na
   [parte I](http://loopinfinito.com.br/2012/05/04/heranca-em-javascript-parte-1/)
   relembramos o que é herança em linguagens de programação orientadas a objeto

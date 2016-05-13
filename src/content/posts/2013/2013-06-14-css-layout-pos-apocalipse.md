@@ -7,7 +7,7 @@ comments: true
 keywords: >
   css, layout, futuro, palestra, grid, grid layout, flexbox, flex-box, flex box,
   css3, css exclusions, css regions, exclusions, regions, cyberpunk
-excerpt: >
+description: >
   Pra quem vai ao [Front in Rio](http://frontinrio.com.br) amanhã, vamos estreiar
   nossa nova palestra, onde fazemos um grande resumão desde o surgimento dos
   _layouts_ na _web_ (antes mesmo do surgimento do CSS) até as mais novas e

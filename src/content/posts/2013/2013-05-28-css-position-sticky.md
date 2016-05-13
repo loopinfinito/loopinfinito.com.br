@@ -6,7 +6,7 @@ image: images/posts/2013-05-28-css-position-sticky.jpg
 comments: true
 keywords: >
   css, position sticky, webkit, google chrome, chrome canary
-excerpt: >
+description: >
   O <code>sticky</code> é um novo valor da propriedade <code>position</code> do CSS.
   Com ele é possível criarmos elementos que se comportam ora como
   <code>position:fixed</code>, ora como <code>position:relative</code> dependendo

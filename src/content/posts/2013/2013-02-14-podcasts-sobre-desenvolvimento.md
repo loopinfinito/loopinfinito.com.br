@@ -7,7 +7,7 @@ comments: true
 keywords: >
   podcast, desenvolvimento, web, tecnologia, entrevista, apresentador, 5by5,
   html, css, semanal, conversa
-excerpt: >
+description: >
   Bons *podcasts* sobre desenvolvimento são uma raridade, por isso, resolvemos
   compartilhar com vocês dicas sobre os melhores *podcasts* que conhecemos.
 ---

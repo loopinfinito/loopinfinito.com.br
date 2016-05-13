@@ -7,7 +7,7 @@ has_inner_image: false
 comments: true
 keywords: >
   camera, getusermedia, api, javascript, html5, video, canvas, browser, navegador
-excerpt: >
+description: >
   Hoje vamos falar de coisa boa. Vamos falar de como usar sua câmera apenas com
   HTML5. E para mostrar isso na prática de um jeito menos chato, fizemos um
   pequeno experimento para ensinar melhor como funciona essa nova API de acesso

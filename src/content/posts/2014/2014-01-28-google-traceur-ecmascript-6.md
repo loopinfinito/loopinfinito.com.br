@@ -9,7 +9,7 @@ keywords: >
   javascript, js, google traceur, ecmascript 6, grunt, gulp, classes,
   orientação a objetos, oop, programação orientada a objetos, escopo,
   parâmetros
-excerpt: >
+description: >
   Google Traceur é um compilador de ECMAScript 6 para o JavaScript de hoje. O
   seu objetivo é tornar possível o uso de _features_ da linguagem que ainda não
   foram implementadas na maioria dos _browsers_ e, até mesmo, outras que ainda

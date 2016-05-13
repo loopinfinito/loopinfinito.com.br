@@ -8,7 +8,7 @@ keywords: >
   palestra, talk, html, html5, javascript, api, loop, infinito, evento, acesso,
   dispositivos, web, astral, navegador, browser, plano, almir filho, caio gondim,
   lsd, sensitivo
-excerpt: >
+description: >
   *Mas que papo é esse de browser no plano astral? HTML5 Sensitivo? Como assim?
   Essa galera do Loop Infinito deve tá ficando maluca mesmo, só pode ser isso.*
 ---
