@@ -1,8 +1,15 @@
 {% from 'src/templates/partials/link.html' import twitterlink, githublink, homelink %}
 
 
-{% macro authorlink(author, type='gplus_url') -%}
-  <a href="{{ author[type] }}" target="_blank">{{ author.name }}</a>
+{% macro authorlink(author, type='gplus_url', itemprop=null) -%}
+  <a title="{{ author.name }}"
+    alt="{{ author.name }}"
+    href="{{ author[type] }}"
+    rel="author"
+    target="_blank"
+    {% if itemprop %}itemprop="{{ itemprop }}"{% endif %}>
+    {{ author.name }}
+  </a>
 {%- endmacro %}
 
 
