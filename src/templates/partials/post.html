@@ -5,24 +5,26 @@
 
 
 {% macro postview(post) %}
-  <article>
+  <article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       {% if post.tags %}
         <small>{{ taglink(post.tags[0]) }}</small>
       {% endif %}
-      <h1>{{ post.title }}</h1>
-      <small>por {{ authorlink(post.author) }}</small>
+      <h1 itemprop="headline">{{ post.title }}</h1>
+      <small>por {{ authorlink(post.author, itemprop='author') }}</small>
     </header>
 
     <figure>
-      <img src="{{ post.image|urlresolve }}" />
+      <img src="{{ post.image|urlresolve }}"
+        alt="{{ post.title }}"
+        itemprop="thumbnailUrl" />
     </figure>
 
-    <section>{{ post.contents }}</section>
+    <section itemprop="articleBody">{{ post.contents }}</section>
 
     <footer>
       <p>
-        Publicado em {{ time(post.date) }}
+        Publicado em {{ time(post.date, itemprop='datePublished') }}
         {% if post.tags %}
           {{ taglist(post.tags) }}
         {% endif %}
@@ -36,24 +38,31 @@
 
 
 {% macro postpreview(post) %}
-  <article>
+  <article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1>
-        <a href="{{ post.path|urlresolve }}">{{ post.title }}</a>
+        <a href="{{ post.path|urlresolve }}" itemprop="headline">
+          {{ post.title }}
+        </a>
       </h1>
-      <small>por {{ authorlink(post.author) }} em {{ time(post.date) }}</small>
+      <small>
+        por {{ authorlink(post.author, itemprop='author') }}
+        em {{ time(post.date, itemprop='datePublished') }}
+      </small>
     </header>
 
     <figure>
       <a href="{{ post.path|urlresolve }}">
-        <img src="{{ post.image|urlresolve }}" alt="{{ post.title }}" />
+        <img src="{{ post.image|urlresolve }}"
+          alt="{{ post.title }}"
+          itemprop="thumbnailUrl" />
       </a>
     </figure>
 
-    <section>{{ post.excerpt }}</section>
+    <section itemprop="description">{{ post.excerpt }}</section>
 
     <footer>
-      <a href="{{ post.path|urlresolve }}">Continue lendo</a>
+      <a href="{{ post.path|urlresolve }}" itemprop="url">Continue lendo</a>
     </footer>
   </article>
 {% endmacro %}
