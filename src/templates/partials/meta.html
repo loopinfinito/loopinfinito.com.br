@@ -1,0 +1,17 @@
+{% if title %}
+  {% set pagetitle = title + ' | ' + site.title %}
+{% else %}
+  {% set pagetitle = site.title %}
+{% endif %}
+
+
+{% if description %}
+  {% set pagedescription = description %}
+{% else %}
+  {% set pagedescription = site.description %}
+{% endif %}
+
+
+<title>{{ pagetitle }}</title>
+<meta name="description" content="{{ pagedescription }}" />
+<meta charset="UTF-8" />
