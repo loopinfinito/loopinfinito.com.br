@@ -716,6 +716,12 @@ header#main {
 					background-size: 30px 30px;
 					background-position: 0 0, 15px 15px;
 					.default-bg;
+					-webkit-transition: -webkit-filter .5s;
+					-webkit-filter: grayscale(100%);
+
+					&:hover {
+						-webkit-filter: grayscale(0%);
+					}
 				}
 
 				figure {
