@@ -1,0 +1,115 @@
+
+@media only screen and (max-width: 1000px) {
+    aside.post-meta {
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    header#main {
+        nav {
+            right: 40px;
+        }
+        .search-button {
+            right: 10px;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+    aside.post-meta {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 810px) {
+    #links {
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    header#main {
+        a#logo {
+            left: 30px;
+        }
+    }
+    #links {
+        display: none;
+    }
+    #content {
+        .post-container {
+            margin-bottom: 0;
+            border-bottom: 1px solid #ccc;
+            article {
+                padding-bottom: 20px !important;
+                border-width: 0;
+                .box-shadow(0, 0, 0, rgba(0, 0, 0, 0));
+                a.leia-mais {
+                    margin-top: 0;
+                }
+            }
+            &:first-child {
+                article {
+                    border-top-width: 1px;
+                }
+            }
+        }
+    }
+    #post-pagination {
+        margin: 50px 0 30px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    #content {
+        .post-container {
+            article {
+                padding: 40px 10%;
+                > section .img,
+                > section img {
+                    left: -13%;
+                    width: 126%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    header#main {
+        nav {
+            ul {
+                li {
+                    margin: 0 10px;
+                }
+            }
+       }
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    header#main {
+        nav {
+            ul {
+                li {
+                    margin: 0 5px;
+                }
+            }
+       }
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    header#main {
+        nav {
+            ul {
+                li a {
+                    font-size: 14px;
+                }
+            }
+       }
+    }
+}
+

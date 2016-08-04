@@ -4,7 +4,8 @@ exclude: [
   projetos.less,
   sobre.less,
   palestras.less,
-  search.less
+  search.less,
+  mobile.less
 ]
 permalink: pretty
 pygments: true
